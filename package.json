@@ -1,0 +1,13 @@
+{
+  "name": "personal-research-journal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal research journal with Docsify browsing",
+  "scripts": {
+    "docs": "docsify serve . --port 3000",
+    "docs:open": "docsify serve . --port 3000 --open"
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.4.4"
+  }
+}
