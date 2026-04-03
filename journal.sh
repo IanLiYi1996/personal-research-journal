@@ -124,7 +124,7 @@ cmd_index() {
             basename="$(basename "$f" .md)"
             local title
             title="$(head -1 "$f" | sed 's/^#\s*//')"
-            echo "- [${title}](${basename}.md)"
+            echo "- [${title}](/papers/${basename}.md)"
         done
         if [[ "$found" == false ]]; then
             echo "<!-- No papers yet -->"
@@ -150,7 +150,7 @@ cmd_index() {
             basename="$(basename "$f" .md)"
             local title
             title="$(head -1 "$f" | sed 's/^#\s*//')"
-            echo "- [${title}](${basename}.md)"
+            echo "- [${title}](/research-notes/${basename}.md)"
         done
         if [[ "$found" == false ]]; then
             echo "<!-- No notes yet -->"
@@ -174,7 +174,7 @@ cmd_index() {
             basename="$(basename "$f" .md)"
             local title
             title="$(head -1 "$f" | sed 's/^#\s*//')"
-            echo "- [${title}](${basename}.md)"
+            echo "- [${title}](/weekly/${basename}.md)"
         done
         if [[ "$found" == false ]]; then
             echo "<!-- No weekly entries yet -->"
@@ -196,7 +196,7 @@ cmd_index() {
             found=true
             local dirname
             dirname="$(basename "$d")"
-            echo "- [${dirname}](${dirname}/)"
+            echo "- [${dirname}](/topics/${dirname}/)"
         done
         if [[ "$found" == false ]]; then
             echo "<!-- No topics yet -->"

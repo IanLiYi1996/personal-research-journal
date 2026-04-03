@@ -6,4 +6,4 @@ Naming: `YYYY-short-title.md`
 
 ## Index
 
-- [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](2025-agentic-rl-survey.md)
+- [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
