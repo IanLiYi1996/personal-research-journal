@@ -1,39 +1,80 @@
 # Personal Research Journal
 
-## Structure
+> *A living notebook tracking my exploration of AI, NLP, and beyond.*
 
-| Folder | Purpose |
-|---|---|
-| [papers/](papers/) | Paper reading notes |
-| [research-notes/](research-notes/) | Research summaries and reflections |
-| [topics/](topics/) | Topic-based notes organized by research area |
-| [weekly/](weekly/) | Weekly progress logs |
-| [resources/](resources/) | Datasets, tools, and useful links |
+---
+
+## Browse by Section
+
+<div class="home-grid">
+<div class="home-card">
+<span class="card-icon">&#128220;</span>
+
+#### [Papers](/papers/)
+Deep dives into research papers — summaries, critiques, and key takeaways from the latest in AI/ML.
+</div>
+
+<div class="home-card">
+<span class="card-icon">&#128300;</span>
+
+#### [Research Notes](/research-notes/)
+Working notes, experiment logs, and structured analyses on specific research topics.
+</div>
+
+<div class="home-card">
+<span class="card-icon">&#127793;</span>
+
+#### [Topics](/topics/)
+Long-running knowledge bases organized by research area — NLP, multimodal, agents, and more.
+</div>
+
+<div class="home-card">
+<span class="card-icon">&#128197;</span>
+
+#### [Weekly](/weekly/)
+Week-by-week progress logs — what I read, what I built, what I learned.
+</div>
+
+<div class="home-card">
+<span class="card-icon">&#128218;</span>
+
+#### [Resources](/resources/)
+Curated datasets, tools, frameworks, and reference materials.
+</div>
+</div>
+
+---
+
+## Recent Activity
+
+| Date | Type | Title |
+|------|------|-------|
+| 2026-04-03 | Research Note | [HuggingFace Daily Papers Digest](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
+| 2026-02-27 | Research Note | [Google CE Scenario 4 — Full Design](/research-notes/2026-02-27-google-ce-scenario4-full-design) |
+| 2026-02-09 | Research Note | [LLM Intro — Comprehensive Overview](/research-notes/2026-02-09-llm-intro-comprehensive) |
+| 2026-02-09 | Research Note | [3D Generation Technology Survey](/research-notes/2026-02-09-3d-generation-survey) |
+| 2025 | Paper | [Agentic RL Survey](/papers/2025-agentic-rl-survey) |
+
+---
 
 ## Naming Conventions
 
-- Papers: `papers/YYYY-short-title.md`
-- Research notes: `research-notes/YYYY-MM-DD-title.md`
-- Topics: `topics/area-name/title.md`
-- Weekly: `weekly/YYYY-WXX.md`
+| Folder | Pattern | Example |
+|--------|---------|---------|
+| `papers/` | `YYYY-short-title.md` | `2025-agentic-rl-survey.md` |
+| `research-notes/` | `YYYY-MM-DD-title.md` | `2026-04-03-huggingface-daily-papers-digest.md` |
+| `topics/` | `area-name/title.md` | `topics/nlp/transformers.md` |
+| `weekly/` | `YYYY-WXX.md` | `2026-W06.md` |
 
 ## Quick Start
 
 ```bash
-# Install dependencies
-npm install
+npm install            # Install dependencies
+npm run docs           # Browse at http://localhost:3000
 
-# Browse notes in the browser
-npm run docs          # opens at http://localhost:3000
-```
-
-## CLI Tools
-
-```bash
-./journal.sh paper <name>      # Create a paper note from template
-./journal.sh note <name>       # Create a research note from template
-./journal.sh weekly            # Create this week's weekly note
-./journal.sh search <keyword>  # Full-text search across all notes
-./journal.sh index             # Regenerate all README index files
-./journal.sh serve             # Start Docsify local server
+./journal.sh note <name>    # New research note
+./journal.sh paper <name>   # New paper note
+./journal.sh weekly         # New weekly log
+./journal.sh search <kw>    # Full-text search
+./journal.sh index          # Rebuild indexes
 ```
