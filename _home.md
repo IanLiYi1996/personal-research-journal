@@ -1,56 +1,62 @@
-# Welcome to My Research Journal
+# Li Yi's Research Journal
 
-> *Navigating the frontiers of AI — one paper at a time.*
+> Navigating the frontiers of AI — one paper at a time.
 
 ---
 
-## Browse by Section
+## Browse
 
 <div class="home-grid">
 <div class="home-card">
-<span class="card-icon">&#128220;</span>
+<span class="card-icon">📄</span>
 
 #### [Papers](/papers/)
-Deep dives into research papers — summaries, critiques, and key takeaways from the latest in AI/ML.
-</div>
 
+Paper reading notes — summaries, critiques, and key takeaways.
+
+</div>
 <div class="home-card">
-<span class="card-icon">&#128300;</span>
+<span class="card-icon">🔬</span>
 
 #### [Research Notes](/research-notes/)
-Working notes, experiment logs, and structured analyses on specific research topics.
-</div>
 
+Working notes and structured analyses on research topics.
+
+</div>
 <div class="home-card">
-<span class="card-icon">&#127793;</span>
+<span class="card-icon">🌿</span>
 
 #### [Topics](/topics/)
-Long-running knowledge bases organized by research area — NLP, multimodal, agents, and more.
-</div>
 
+Knowledge bases by area — NLP, multimodal, agents, and more.
+
+</div>
 <div class="home-card">
-<span class="card-icon">&#128197;</span>
+<span class="card-icon">📅</span>
 
 #### [Weekly](/weekly/)
-Week-by-week progress logs — what I read, what I built, what I learned.
-</div>
 
+Week-by-week logs — what I read, built, and learned.
+
+</div>
 <div class="home-card">
-<span class="card-icon">&#128218;</span>
+<span class="card-icon">📚</span>
 
 #### [Resources](/resources/)
-Curated datasets, tools, frameworks, and reference materials.
+
+Datasets, tools, frameworks, and reference materials.
+
 </div>
 </div>
 
 ---
 
-## Recent Activity
+## Recent
 
 | Date | Type | Title |
 |------|------|-------|
-| 2026-04-03 | Research Note | [HuggingFace Daily Papers Digest](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
-| 2026-02-27 | Research Note | [Google CE Scenario 4 — Full Design](/research-notes/2026-02-27-google-ce-scenario4-full-design) |
-| 2026-02-09 | Research Note | [LLM Intro — Comprehensive Overview](/research-notes/2026-02-09-llm-intro-comprehensive) |
-| 2026-02-09 | Research Note | [3D Generation Technology Survey](/research-notes/2026-02-09-3d-generation-survey) |
+| 2026-04-03 | Note | [HuggingFace Daily Papers Digest](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
+| 2026-02-27 | Note | [Google CE Scenario 4 — Full Design](/research-notes/2026-02-27-google-ce-scenario4-full-design) |
+| 2026-02-09 | Note | [LLM 大模型技术全景总结](/research-notes/2026-02-09-llm-intro-comprehensive) |
+| 2026-02-09 | Note | [3D Generation Technology Survey](/research-notes/2026-02-09-3d-generation-survey) |
 | 2025 | Paper | [Agentic RL Survey](/papers/2025-agentic-rl-survey) |

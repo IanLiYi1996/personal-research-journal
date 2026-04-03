@@ -5,71 +5,58 @@
   <title>Li Yi's Research Journal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A personal research journal tracking AI, NLP, and ML explorations.">
-  <meta name="theme-color" content="#0f1117">
+  <meta name="theme-color" content="#09090b">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
-  <!-- Base Docsify dark theme -->
+  <!-- Base dark theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
-  <!-- Prism syntax highlighting (tomorrow night) -->
+  <!-- Prism syntax highlighting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
-  <!-- Custom Academic Ink theme -->
+  <!-- Custom theme override -->
   <link rel="stylesheet" href="_media/custom.css">
 </head>
 <body>
   <div id="app">Loading...</div>
   <script>
     window.$docsify = {
-      name: '📓 Research Journal',
+      name: '<span style="opacity:0.5">📓</span> Research Journal',
+      nameLink: '/',
       repo: 'https://github.com/IanLiYi1996/personal-research-journal',
-      loadSidebar: true,
-      coverpage: true,
-      onlyCover: false,
-      subMaxLevel: 3,
       homepage: '_home.md',
+      loadSidebar: true,
+      subMaxLevel: 3,
       auto2top: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       search: {
-        placeholder: 'Search notes...',
-        noData: 'No results found.',
+        placeholder: 'Search...',
+        noData: 'No results.',
         depth: 6,
         pathNamespaces: ['/']
       },
+      copyCode: {
+        buttonText: 'Copy',
+        successText: 'Copied'
+      },
       pagination: {
-        previousText: 'Previous',
+        previousText: 'Prev',
         nextText: 'Next',
         crossChapter: true,
         crossChapterText: true
-      },
-      copyCode: {
-        buttonText: 'Copy',
-        successText: 'Copied!'
-      },
-      progress: {
-        position: 'top',
-        color: '#e2b04a',
-        height: '2px'
-      },
-      tabs: {
-        persist: true,
-        sync: false,
-        theme: 'material'
       }
     };
   </script>
-  <!-- Docsify core -->
+  <!-- Core -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- Plugins -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
-  <!-- Syntax highlighting -->
+  <!-- Syntax -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
 </body>
 </html>
