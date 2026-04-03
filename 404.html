@@ -11,6 +11,7 @@
   <script>
     window.$docsify = {
       name: 'Research Journal',
+      repo: 'https://github.com/IanLiYi1996/personal-research-journal',
       loadSidebar: true,
       subMaxLevel: 2,
       search: {
@@ -19,7 +20,9 @@
         depth: 6
       },
       auto2top: true,
-      relativePath: true
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
