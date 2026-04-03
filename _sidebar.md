@@ -1,6 +1,21 @@
 - [**Home**](/)
-- [**Papers**](/papers/)
-- [**Research Notes**](/research-notes/)
-- [**Topics**](/topics/)
-- [**Weekly**](/weekly/)
-- [**Resources**](/resources/)
+- **Papers**
+  - [Agentic RL Survey](/papers/2025-agentic-rl-survey.md)
+- **Research Notes**
+  - [HF Daily Papers 2026-04-03](/research-notes/2026-04-03-huggingface-daily-papers-digest.md)
+  - [Google CE Scenario 4 — Full Design](/research-notes/2026-02-27-google-ce-scenario4-full-design.md)
+  - [Google CE Scenario 4 — Presentation](/research-notes/2026-02-27-google-ce-scenario4-presentation-design.md)
+  - [Google CE Scenario 4 — Search & Vector DB](/research-notes/2026-02-27-google-ce-scenario4-search-vector-db.md)
+  - [LLM 大模型技术全景总结（索引）](/research-notes/2026-02-09-llm-intro-comprehensive.md)
+  - [LLM Architecture](/research-notes/2026-02-09-llm-intro-architecture.md)
+  - [Build LLM from Scratch](/research-notes/2026-02-09-llm-intro-build-from-scratch.md)
+  - [受控生成与角色定制](/research-notes/2026-02-09-llm-intro-controlled-gen.md)
+  - [LLM 幻觉问题综述](/research-notes/2026-02-09-llm-intro-hallucination.md)
+  - [多模态大模型技术总结](/research-notes/2026-02-09-llm-intro-multimodal.md)
+  - [Post-training 101](/research-notes/2026-02-09-llm-intro-post-training.md)
+  - [大模型推理 Reasoning](/research-notes/2026-02-09-llm-intro-reasoning.md)
+  - [LLM 长上下文训练技术](/research-notes/2026-02-09-llm-long-context-training.md)
+  - [3D 生成技术全景总结](/research-notes/2026-02-09-3d-generation-survey.md)
+- **Topics**
+- **Weekly**
+- **Resources**

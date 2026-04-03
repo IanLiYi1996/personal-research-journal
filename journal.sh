@@ -204,6 +204,49 @@ cmd_index() {
     } > topics/README.md
     echo "Updated: topics/README.md"
 
+    # Sidebar
+    {
+        echo "- [**Home**](/)"
+
+        echo "- **Papers**"
+        for f in papers/[0-9]*.md; do
+            [[ -f "$f" ]] || continue
+            local basename title
+            basename="$(basename "$f" .md)"
+            title="$(head -1 "$f" | sed 's/^#\s*//')"
+            echo "  - [${title}](/papers/${basename}.md)"
+        done
+
+        echo "- **Research Notes**"
+        for f in $(ls -r research-notes/[0-9]*.md 2>/dev/null); do
+            [[ -f "$f" ]] || continue
+            local basename title
+            basename="$(basename "$f" .md)"
+            title="$(head -1 "$f" | sed 's/^#\s*//')"
+            echo "  - [${title}](/research-notes/${basename}.md)"
+        done
+
+        echo "- **Topics**"
+        for d in topics/*/; do
+            [[ -d "$d" ]] || continue
+            local dirname
+            dirname="$(basename "$d")"
+            echo "  - [${dirname}](/topics/${dirname}/)"
+        done
+
+        echo "- **Weekly**"
+        for f in $(ls -r weekly/[0-9]*.md 2>/dev/null); do
+            [[ -f "$f" ]] || continue
+            local basename title
+            basename="$(basename "$f" .md)"
+            title="$(head -1 "$f" | sed 's/^#\s*//')"
+            echo "  - [${title}](/weekly/${basename}.md)"
+        done
+
+        echo "- **Resources**"
+    } > _sidebar.md
+    echo "Updated: _sidebar.md"
+
     echo "Done. All indexes regenerated."
 }
 
