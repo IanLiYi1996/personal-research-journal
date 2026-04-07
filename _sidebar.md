@@ -4,9 +4,6 @@
 - **Research Notes**
   - [Hugging Face Daily Papers Digest: 2026-04-04 ~ 04-06](/research-notes/2026-04-07-hf-weekly-papers-apr4.md)
   - [Hugging Face Daily Papers Digest: 2026-04-03](/research-notes/2026-04-03-huggingface-daily-papers-digest.md)
-  - [Google Cloud Practice CE Presentation - Scenario 4: Retail Search & Vector Database](/research-notes/2026-02-27-google-ce-scenario4-search-vector-db.md)
-  - [Scenario 4: Retail Search & Vector Database — Presentation Design](/research-notes/2026-02-27-google-ce-scenario4-presentation-design.md)
-  - [Fashion E-Commerce Semantic Search — Technical Design Document](/research-notes/2026-02-27-google-ce-scenario4-full-design.md)
   - [LLM 长上下文训练技术总结](/research-notes/2026-02-09-llm-long-context-training.md)
   - [大模型推理 Reasoning](/research-notes/2026-02-09-llm-intro-reasoning.md)
   - [Post-training 101: 从预训练到指令调优](/research-notes/2026-02-09-llm-intro-post-training.md)
