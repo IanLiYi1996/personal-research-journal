@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
   <!-- Prism syntax highlighting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css">
+  <!-- Swiper carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <!-- Custom theme override -->
   <link rel="stylesheet" href="_media/custom.css">
 </head>
@@ -117,6 +119,50 @@
               }
               updateIcon();
             };
+
+            // Remove sidebar arrow indicators
+            document.querySelectorAll('.sidebar-nav a, .sidebar-nav strong').forEach(function(el) {
+              el.childNodes.forEach(function(node) {
+                if (node.nodeType === 3 && node.textContent) {
+                  node.textContent = node.textContent.replace(/^\s*>\s*/, '');
+                }
+              });
+              // Also check for span/element-based arrows
+              el.querySelectorAll('span').forEach(function(span) {
+                if (span.textContent.trim() === '>' || span.textContent.trim() === '›') {
+                  span.remove();
+                }
+              });
+            });
+
+            // Show aurora only on homepage
+            var aurora = document.getElementById('home-aurora');
+            if (aurora) {
+              aurora.style.display = 'block';
+            }
+
+            // Initialize Swiper if present on page
+            var swiperEl = document.querySelector('.home-swiper');
+            if (swiperEl && typeof Swiper !== 'undefined') {
+              new Swiper('.home-swiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                grabCursor: true,
+                loop: false,
+                pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true
+                },
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev'
+                },
+                breakpoints: {
+                  640: { slidesPerView: 2.2, spaceBetween: 20 },
+                  1024: { slidesPerView: 3.2, spaceBetween: 24 }
+                }
+              });
+            }
           });
         }
       ]
@@ -148,6 +194,8 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- Syntax -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>

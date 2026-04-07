@@ -217,7 +217,7 @@ cmd_index() {
     {
         echo "- [**Home**](/)"
 
-        echo "- **Papers**"
+        echo "- **📄 Papers**"
         for f in papers/[0-9]*.md; do
             [[ -f "$f" ]] || continue
             local basename title
@@ -226,7 +226,7 @@ cmd_index() {
             echo "  - [${title}](/papers/${basename}.md)"
         done
 
-        echo "- **Research Notes**"
+        echo "- **🔬 Research Notes**"
         for f in $(ls -r research-notes/[0-9]*.md 2>/dev/null); do
             [[ -f "$f" ]] || continue
             local basename title
@@ -235,7 +235,7 @@ cmd_index() {
             echo "  - [${title}](/research-notes/${basename}.md)"
         done
 
-        echo "- **Topics**"
+        echo "- **🌿 Topics**"
         for d in topics/*/; do
             [[ -d "$d" ]] || continue
             local dirname
@@ -250,7 +250,7 @@ cmd_index() {
             done
         done
 
-        echo "- **Weekly**"
+        echo "- **📅 Weekly**"
         for f in $(ls -r weekly/[0-9]*.md 2>/dev/null); do
             [[ -f "$f" ]] || continue
             local basename title
@@ -259,7 +259,8 @@ cmd_index() {
             echo "  - [${title}](/weekly/${basename}.md)"
         done
 
-        echo "- **Resources**"
+        echo "- **📚 Resources**"
+        echo '- <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>'
     } > _sidebar.md
     echo "Updated: _sidebar.md"
 
