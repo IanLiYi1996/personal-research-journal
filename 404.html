@@ -15,6 +15,24 @@
   <link rel="stylesheet" href="_media/custom.css">
 </head>
 <body>
+  <!-- Reading progress bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+  <!-- Theme toggle button -->
+  <button id="theme-toggle" title="Toggle theme">🌙</button>
+  <!-- Back to top button -->
+  <div id="back-to-top">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </div>
+  <!-- Theme init (runs before render to prevent flash) -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
   <div id="app">Loading...</div>
   <script>
     window.$docsify = {
@@ -29,10 +47,11 @@
         '/.*/_sidebar.md': '/_sidebar.md'
       },
       search: {
-        placeholder: 'Search...',
+        placeholder: '搜索 / Search...',
         noData: 'No results.',
         depth: 6,
-        pathNamespaces: ['/']
+        pathNamespaces: ['/'],
+        hideOtherSidebarContent: true
       },
       copyCode: {
         buttonText: 'Copy',
@@ -43,7 +62,64 @@
         nextText: 'Next',
         crossChapter: true,
         crossChapterText: true
-      }
+      },
+      'flexible-alerts': {
+        style: 'callout',
+        note:      { label: { en: 'Note',      zh: '注意' } },
+        tip:       { label: { en: 'Tip',        zh: '提示' } },
+        warning:   { label: { en: 'Warning',    zh: '警告' } },
+        attention: { label: { en: 'Important',  zh: '重要' } }
+      },
+      tabs: {
+        persist: true,
+        sync: true
+      },
+      plugins: [
+        // Back-to-top + reading progress + theme toggle
+        function(hook) {
+          hook.doneEach(function() {
+            // Back-to-top & progress bar
+            var btn = document.getElementById('back-to-top');
+            function onScroll() {
+              var main = document.querySelector('.content');
+              if (!main) return;
+              var scrollTop = main.scrollTop || window.pageYOffset || document.documentElement.scrollTop;
+              btn.classList.toggle('visible', scrollTop > 400);
+              var bar = document.getElementById('reading-progress');
+              var docHeight = main.scrollHeight - main.clientHeight;
+              bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+            }
+            var main = document.querySelector('.content');
+            if (main) { main.addEventListener('scroll', onScroll); onScroll(); }
+            window.addEventListener('scroll', onScroll);
+            btn.onclick = function() {
+              var m = document.querySelector('.content');
+              if (m) m.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            // Theme toggle
+            var toggle = document.getElementById('theme-toggle');
+            function updateIcon() {
+              var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+              toggle.textContent = isLight ? '☀️' : '🌙';
+              toggle.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+            }
+            updateIcon();
+            toggle.onclick = function() {
+              var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+              if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+              } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+              }
+              updateIcon();
+            };
+          });
+        }
+      ]
     };
   </script>
   <!-- Core -->
@@ -52,6 +128,26 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-image-zoom@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <!-- Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'dark',
+      themeVariables: {
+        primaryColor: '#818cf8',
+        primaryTextColor: '#e4e4e7',
+        primaryBorderColor: '#6366f1',
+        lineColor: '#52525b',
+        secondaryColor: '#18181b',
+        tertiaryColor: '#111114'
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
   <!-- Syntax -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>

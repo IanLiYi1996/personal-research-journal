@@ -55,8 +55,8 @@ Datasets, tools, frameworks, and reference materials.
 
 | Date | Type | Title |
 |------|------|-------|
-| 2026-04-03 | Note | [HuggingFace Daily Papers Digest](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
-| 2026-02-27 | Note | [Google CE Scenario 4 — Full Design](/research-notes/2026-02-27-google-ce-scenario4-full-design) |
-| 2026-02-09 | Note | [LLM 大模型技术全景总结](/research-notes/2026-02-09-llm-intro-comprehensive) |
-| 2026-02-09 | Note | [3D Generation Technology Survey](/research-notes/2026-02-09-3d-generation-survey) |
+| 2026-04-07 | Note | [HF Daily Papers Digest: Apr 4-6](/research-notes/2026-04-07-hf-weekly-papers-apr4) |
+| 2026-04-03 | Note | [HF Daily Papers Digest: Apr 3](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
+| 2026-02-09 | Topic | [LLM 大模型技术全景总结](/topics/llm/2026-02-09-llm-intro-comprehensive) |
+| 2026-02-09 | Topic | [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey) |
 | 2025 | Paper | [Agentic RL Survey](/papers/2025-agentic-rl-survey) |

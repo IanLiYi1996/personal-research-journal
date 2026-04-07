@@ -196,7 +196,16 @@ cmd_index() {
             found=true
             local dirname
             dirname="$(basename "$d")"
-            echo "- [${dirname}](/topics/${dirname}/)"
+            echo "### ${dirname}"
+            echo ""
+            for f in "${d}"[0-9]*.md; do
+                [[ -f "$f" ]] || continue
+                local basename title
+                basename="$(basename "$f" .md)"
+                title="$(head -1 "$f" | sed 's/^#\s*//')"
+                echo "- [${title}](/topics/${dirname}/${basename}.md)"
+            done
+            echo ""
         done
         if [[ "$found" == false ]]; then
             echo "<!-- No topics yet -->"
@@ -231,7 +240,14 @@ cmd_index() {
             [[ -d "$d" ]] || continue
             local dirname
             dirname="$(basename "$d")"
-            echo "  - [${dirname}](/topics/${dirname}/)"
+            echo "  - **${dirname^^}**"
+            for f in "${d}"[0-9]*.md; do
+                [[ -f "$f" ]] || continue
+                local basename title
+                basename="$(basename "$f" .md)"
+                title="$(head -1 "$f" | sed 's/^#\s*//')"
+                echo "    - [${title}](/topics/${dirname}/${basename}.md)"
+            done
         done
 
         echo "- **Weekly**"
