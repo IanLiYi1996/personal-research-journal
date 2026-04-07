@@ -142,33 +142,75 @@
               });
             });
 
+            // Homepage: hide sidebar; other pages: show sidebar
+            var isHome = !location.hash || location.hash === '#/' || location.hash === '#/?';
+            var body = document.body;
+            if (isHome) {
+              body.classList.add('close');
+              body.classList.add('home-page');
+            } else {
+              body.classList.remove('close');
+              body.classList.remove('home-page');
+            }
+
             // Show aurora only on homepage
             var aurora = document.getElementById('home-aurora');
             if (aurora) {
               aurora.style.display = 'block';
             }
 
-            // Initialize Swiper if present on page
-            var swiperEl = document.querySelector('.home-swiper');
-            if (swiperEl && typeof Swiper !== 'undefined') {
-              new Swiper('.home-swiper', {
-                slidesPerView: 1.2,
-                spaceBetween: 16,
-                grabCursor: true,
-                loop: false,
-                pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true
-                },
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev'
-                },
-                breakpoints: {
-                  640: { slidesPerView: 2.2, spaceBetween: 20 },
-                  1024: { slidesPerView: 3.2, spaceBetween: 24 }
-                }
-              });
+            // Arc Gallery Hero — position cards on a semicircle
+            var pivot = document.getElementById('arc-pivot');
+            if (pivot) {
+              var cards = pivot.querySelectorAll('.arc-card');
+              var startAngle = 20, endAngle = 160;
+
+              function layoutArc() {
+                var w = window.innerWidth;
+                var radius, cardSize;
+                if (w < 640) { radius = 220; cardSize = 70; }
+                else if (w < 1024) { radius = 340; cardSize = 90; }
+                else { radius = 440; cardSize = 110; }
+
+                var container = document.getElementById('arc-container');
+                if (container) container.style.height = (radius * 1.15) + 'px';
+
+                var count = Math.max(cards.length, 2);
+                var step = (endAngle - startAngle) / (count - 1);
+
+                cards.forEach(function(card, i) {
+                  var angle = startAngle + step * i;
+                  var rad = angle * Math.PI / 180;
+                  var x = Math.cos(rad) * radius;
+                  var y = Math.sin(rad) * radius;
+
+                  card.style.width = cardSize + 'px';
+                  card.style.height = cardSize + 'px';
+                  card.style.left = 'calc(50% + ' + x + 'px)';
+                  card.style.bottom = y + 'px';
+                  card.style.transform = 'translate(-50%, 50%)';
+                  card.style.animationDelay = (i * 80) + 'ms';
+                  card.style.zIndex = count - i;
+
+                  // Create inner content if not done yet
+                  if (!card.querySelector('.arc-card-inner')) {
+                    var inner = document.createElement('div');
+                    inner.className = 'arc-card-inner';
+                    inner.style.transform = 'rotate(' + (angle / 5) + 'deg)';
+                    var img = document.createElement('img');
+                    img.src = card.getAttribute('data-src');
+                    img.alt = 'Research ' + (i + 1);
+                    img.draggable = false;
+                    inner.appendChild(img);
+                    card.appendChild(inner);
+                  } else {
+                    card.querySelector('.arc-card-inner').style.transform = 'rotate(' + (angle / 5) + 'deg)';
+                  }
+                });
+              }
+
+              layoutArc();
+              window.addEventListener('resize', layoutArc);
             }
           });
         }

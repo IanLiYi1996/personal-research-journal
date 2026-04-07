@@ -1,81 +1,29 @@
 <div class="home-aurora" id="home-aurora"><div class="home-aurora-inner"></div></div>
 
-# Li Yi's Research Journal
-
-> Navigating the frontiers of AI — one paper at a time.
-
----
-
-## Highlights
-
-<div class="swiper home-swiper">
-<div class="swiper-wrapper">
-
-<div class="swiper-slide">
-<a class="slide-card" href="#/research-notes/2026-04-07-hf-weekly-papers-apr4">
-<div class="slide-image" style="background-image:url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80')"></div>
-<div class="slide-overlay"></div>
-<div class="slide-content">
-<span class="slide-tag">Research Note</span>
-<h3>HF Papers Digest: Apr 4-6</h3>
-<p>推理效率、数据驱动范式、Agent 评测等 11 篇论文系统梳理</p>
+<section class="arc-hero" id="arc-hero">
+<div class="arc-container" id="arc-container">
+<div class="arc-pivot" id="arc-pivot">
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80"></div>
+<div class="arc-card" data-src="https://images.unsplash.com/photo-1488229297570-58520851e868?w=400&q=80"></div>
 </div>
-</a>
 </div>
-
-<div class="swiper-slide">
-<a class="slide-card" href="#/research-notes/2026-04-03-huggingface-daily-papers-digest">
-<div class="slide-image" style="background-image:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80')"></div>
-<div class="slide-overlay"></div>
-<div class="slide-content">
-<span class="slide-tag">Research Note</span>
-<h3>HF Papers Digest: Apr 3</h3>
-<p>Agent 框架、文档解析、语音合成、RAG 等 15 篇论文深度分析</p>
+<div class="arc-hero-text" id="arc-hero-text">
+<h1>Li Yi's Research Journal</h1>
+<p>Navigating the frontiers of AI — one paper at a time.</p>
+<div class="arc-hero-buttons">
+<a href="#/research-notes/2026-04-07-hf-weekly-papers-apr4" class="arc-btn-primary">Latest Digest</a>
+<a href="#/topics/llm/2026-02-09-llm-intro-comprehensive" class="arc-btn-secondary">Explore Topics</a>
 </div>
-</a>
 </div>
-
-<div class="swiper-slide">
-<a class="slide-card" href="#/papers/2025-agentic-rl-survey">
-<div class="slide-image" style="background-image:url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80')"></div>
-<div class="slide-overlay"></div>
-<div class="slide-content">
-<span class="slide-tag">Paper</span>
-<h3>Agentic RL Survey</h3>
-<p>The Landscape of Agentic Reinforcement Learning for LLMs</p>
-</div>
-</a>
-</div>
-
-<div class="swiper-slide">
-<a class="slide-card" href="#/topics/llm/2026-02-09-llm-intro-comprehensive">
-<div class="slide-image" style="background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80')"></div>
-<div class="slide-overlay"></div>
-<div class="slide-content">
-<span class="slide-tag">Topic</span>
-<h3>LLM 大模型技术全景</h3>
-<p>从架构到推理、从后训练到多模态的完整知识索引</p>
-</div>
-</a>
-</div>
-
-<div class="swiper-slide">
-<a class="slide-card" href="#/topics/3d/2026-02-09-3d-generation-survey">
-<div class="slide-image" style="background-image:url('https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&q=80')"></div>
-<div class="slide-overlay"></div>
-<div class="slide-content">
-<span class="slide-tag">Topic</span>
-<h3>3D 生成技术全景</h3>
-<p>NeRF、3D Gaussian Splatting、扩散模型等前沿 3D 生成方法综述</p>
-</div>
-</a>
-</div>
-
-</div>
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
-</div>
+</section>
 
 ---
 

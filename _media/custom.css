@@ -478,6 +478,16 @@ section.cover.has-mask .mask {
 /* ============================================================
    MAIN CONTENT
    ============================================================ */
+
+/* Homepage: wider content when sidebar is closed */
+body.home-page.close .content {
+  margin-left: 0 !important;
+}
+
+body.home-page.close .markdown-section {
+  max-width: 960px !important;
+}
+
 .content {
   padding: 2.5rem 3rem !important;
 }
@@ -774,158 +784,145 @@ section.cover.has-mask .mask {
 }
 
 /* ============================================================
-   HOME PAGE — Swiper Carousel (Highlights)
+   HOME PAGE — Arc Gallery Hero
    ============================================================ */
-.markdown-section .home-swiper {
-  margin: 1.5em -1rem 0;
-  padding: 0 0 2.5rem;
-  overflow: hidden;
+@keyframes arcFadeInUp {
+  from { opacity: 0; transform: translate(-50%, 60%); }
+  to   { opacity: 1; transform: translate(-50%, 50%); }
 }
 
-.markdown-section .slide-card {
-  display: block;
+@keyframes arcFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.arc-hero {
   position: relative;
-  height: 280px;
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border);
-  text-decoration: none !important;
-  transition: all 0.3s var(--ease);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  margin: -2.5rem -3rem 0 !important;
+  padding: 0 !important;
 }
 
-.markdown-section .slide-card:hover {
-  border-color: var(--accent-dim);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+.arc-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.markdown-section .slide-image {
+.arc-pivot {
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s var(--ease);
-}
-
-.markdown-section .slide-card:hover .slide-image {
-  transform: scale(1.06);
-}
-
-.markdown-section .slide-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(9, 9, 11, 0.1) 0%,
-    rgba(9, 9, 11, 0.5) 50%,
-    rgba(9, 9, 11, 0.92) 100%
-  );
-}
-
-[data-theme="light"] .markdown-section .slide-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.0) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.82) 100%
-  );
-}
-
-.markdown-section .slide-content {
-  position: absolute;
+  left: 50%;
   bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
-  z-index: 1;
+  transform: translateX(-50%);
 }
 
-.markdown-section .slide-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent-bright);
-  background: rgba(129, 140, 248, 0.15);
-  border: 1px solid rgba(129, 140, 248, 0.25);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+.arc-card {
+  position: absolute;
+  opacity: 0;
+  animation: arcFadeInUp 0.7s ease-out forwards;
 }
 
-.markdown-section .slide-content h3 {
-  font-family: var(--font-sans) !important;
-  font-size: 1.05rem !important;
-  font-weight: 600 !important;
-  color: #fff !important;
-  margin: 0 0 6px !important;
-  line-height: 1.3;
-}
-
-.markdown-section .slide-content p {
-  font-size: 0.78rem !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  margin: 0 !important;
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+.arc-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
   overflow: hidden;
-}
-
-/* Swiper overrides */
-.home-swiper .swiper-pagination {
-  bottom: 0 !important;
-}
-
-.home-swiper .swiper-pagination-bullet {
-  background: var(--text-muted) !important;
-  opacity: 0.4;
-  width: 8px;
-  height: 8px;
-  transition: all 0.2s var(--ease);
-}
-
-.home-swiper .swiper-pagination-bullet-active {
-  background: var(--accent) !important;
-  opacity: 1;
-  width: 24px;
-  border-radius: 4px;
-}
-
-.home-swiper .swiper-button-prev,
-.home-swiper .swiper-button-next {
-  color: var(--text-muted) !important;
-  width: 36px !important;
-  height: 36px !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
   background: var(--bg-elevated);
-  border: 1px solid var(--border-strong);
-  border-radius: 50%;
-  top: calc(50% - 1.2rem);
+  transition: transform 0.25s var(--ease);
+}
+
+.arc-card:hover .arc-card-inner {
+  transform: scale(1.08);
+}
+
+.arc-card-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+/* Hero text below the arc */
+.arc-hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  opacity: 0;
+  animation: arcFadeIn 0.8s ease-out 0.9s forwards;
+}
+
+.arc-hero-text h1 {
+  font-family: var(--font-serif) !important;
+  font-size: 2.8rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--text-strong) !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 1.15 !important;
+}
+
+.arc-hero-text p {
+  font-size: 1.05rem !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 24px !important;
+  font-style: italic;
+  font-family: var(--font-serif) !important;
+}
+
+.arc-hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.arc-btn-primary,
+.arc-btn-secondary {
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-family: var(--font-sans) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-bottom: none !important;
   transition: all 0.2s var(--ease);
+  cursor: pointer;
 }
 
-.home-swiper .swiper-button-prev:hover,
-.home-swiper .swiper-button-next:hover {
-  color: var(--accent) !important;
-  border-color: var(--accent-dim);
+.arc-btn-primary {
+  background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.arc-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.45);
+}
+
+.arc-btn-secondary {
+  border: 1px solid var(--border-strong) !important;
+  color: var(--text) !important;
+  background: transparent;
+}
+
+.arc-btn-secondary:hover {
   background: var(--bg-hover);
-}
-
-.home-swiper .swiper-button-prev::after,
-.home-swiper .swiper-button-next::after {
-  font-size: 14px !important;
-  font-weight: 700;
-}
-
-.home-swiper .swiper-button-prev {
-  left: 6px !important;
-}
-
-.home-swiper .swiper-button-next {
-  right: 6px !important;
+  color: var(--text-strong) !important;
+  border-color: var(--accent-dim) !important;
 }
 
 /* ============================================================
@@ -1314,13 +1311,17 @@ section.cover.has-mask .mask {
     grid-template-columns: 1fr;
   }
 
-  .markdown-section .slide-card {
-    height: 240px;
+  .arc-hero {
+    margin: -1.5rem -1rem 0 !important;
+    min-height: 60vh;
   }
 
-  .home-swiper .swiper-button-prev,
-  .home-swiper .swiper-button-next {
-    display: none !important;
+  .arc-hero-text h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .arc-hero-text p {
+    font-size: 0.9rem !important;
   }
 
   section.cover h1 {
