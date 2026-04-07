@@ -1,4 +1,4 @@
-- [**Home**](/)
+- [**🏠 Home**](/)
 - **📄 Papers**
   - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
 - **🔬 Research Notes**

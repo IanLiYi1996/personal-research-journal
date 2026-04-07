@@ -64,6 +64,20 @@
   --table-cell-border-color:    var(--border) !important;
   --pagination-title-color:     var(--text-strong) !important;
   --docsifytabs-tab-highlight-color: var(--accent) !important;
+
+  /* Remove sidebar link arrows */
+  --sidebar-nav-link-before-content:              "" !important;
+  --sidebar-nav-link-before-content-l1:           "" !important;
+  --sidebar-nav-link-before-content-l2:           "" !important;
+  --sidebar-nav-link-before-content-l3:           "" !important;
+  --sidebar-nav-link-before-content--active:      "" !important;
+  --sidebar-nav-link-before-content-l1--active:   "" !important;
+  --sidebar-nav-link-before-content-l2--active:   "" !important;
+  --sidebar-nav-link-before-content-l3--active:   "" !important;
+  --sidebar-nav-link-before-margin:               0 !important;
+  --sidebar-nav-link-before-margin-l1:            0 !important;
+  --sidebar-nav-link-before-margin-l2:            0 !important;
+  --sidebar-nav-link-before-margin-l3:            0 !important;
 }
 
 /* ---- Light Theme ---- */

@@ -52,8 +52,9 @@
         placeholder: '搜索 / Search...',
         noData: 'No results.',
         depth: 6,
-        pathNamespaces: ['/'],
-        hideOtherSidebarContent: true
+        hideOtherSidebarContent: true,
+        paths: 'auto',
+        namespace: 'research-journal'
       },
       copyCode: {
         buttonText: 'Copy',
@@ -77,8 +78,14 @@
         sync: true
       },
       plugins: [
-        // Back-to-top + reading progress + theme toggle
+        // Kill sidebar arrows + back-to-top + reading progress + theme toggle
         function(hook) {
+          hook.ready(function() {
+            // Inject style AFTER all CSS to override docsify-themeable arrows
+            var s = document.createElement('style');
+            s.textContent = '.sidebar-nav a::before, .sidebar-nav a:before, .sidebar-nav strong::before, .sidebar-nav strong:before { content: none !important; display: none !important; }';
+            document.head.appendChild(s);
+          });
           hook.doneEach(function() {
             // Back-to-top & progress bar
             var btn = document.getElementById('back-to-top');

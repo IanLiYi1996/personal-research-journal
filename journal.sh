@@ -215,7 +215,7 @@ cmd_index() {
 
     # Sidebar
     {
-        echo "- [**Home**](/)"
+        echo "- [**🏠 Home**](/)"
 
         echo "- **📄 Papers**"
         for f in papers/[0-9]*.md; do
