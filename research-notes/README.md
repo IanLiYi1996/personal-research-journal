@@ -20,3 +20,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Scenario 4: Retail Search & Vector Database — Presentation Design](/research-notes/2026-02-27-google-ce-scenario4-presentation-design.md)
 - [Google Cloud Practice CE Presentation - Scenario 4: Retail Search & Vector Database](/research-notes/2026-02-27-google-ce-scenario4-search-vector-db.md)
 - [Hugging Face Daily Papers Digest: 2026-04-03](/research-notes/2026-04-03-huggingface-daily-papers-digest.md)
+- [Hugging Face Daily Papers Digest: 2026-04-04 ~ 04-06](/research-notes/2026-04-07-hf-weekly-papers-apr4.md)
