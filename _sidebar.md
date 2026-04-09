@@ -1,6 +1,7 @@
 - [**🏠 Home**](/)
 - **📄 Papers**
   - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
+  - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
 - **🔬 Research Notes**
   - [Hugging Face Daily Papers Digest: 2026-04-07 ~ 04-08](/research-notes/2026-04-08-hf-daily-papers-apr7-8.md)
   - [Hugging Face Daily Papers Digest: 2026-04-04 ~ 04-06](/research-notes/2026-04-07-hf-weekly-papers-apr4.md)
