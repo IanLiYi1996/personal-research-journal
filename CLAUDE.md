@@ -83,6 +83,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-04-07-hf-weekly-papers-apr4.md` | 04/04-06 (11 papers) |
 | `2026-04-08-hf-daily-papers-apr7-8.md` | 04/07-08 (12 papers, with 13 figures) |
 | `2026-04-10-hf-daily-papers-apr9-10.md` | 04/09-10 (33 papers, with 10 figures) |
+| `2026-04-13-hf-daily-papers-apr11-13.md` | 04/11-13 (8 papers, with 5 figures) |
 
 ## WeChat Publishing
 

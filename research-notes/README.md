@@ -10,3 +10,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Hugging Face Daily Papers Digest: 2026-04-04 ~ 04-06](/research-notes/2026-04-07-hf-weekly-papers-apr4.md)
 - [Hugging Face Daily Papers Digest: 2026-04-07 ~ 04-08](/research-notes/2026-04-08-hf-daily-papers-apr7-8.md)
 - [Hugging Face Daily Papers Digest: 2026-04-09 ~ 04-10](/research-notes/2026-04-10-hf-daily-papers-apr9-10.md)
+- [Hugging Face Daily Papers Digest: 2026-04-11 ~ 04-13](/research-notes/2026-04-13-hf-daily-papers-apr11-13.md)
