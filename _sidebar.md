@@ -25,6 +25,15 @@
     - [Post-training 101: 从预训练到指令调优](/topics/llm/2026-02-09-llm-intro-post-training.md)
     - [大模型推理 Reasoning](/topics/llm/2026-02-09-llm-intro-reasoning.md)
     - [LLM 长上下文训练技术总结](/topics/llm/2026-02-09-llm-long-context-training.md)
+  - **Quantum Computing**
+    - [量子计算技术全景总结（索引）](/topics/quantum-computing/2026-04-15-quantum-computing-comprehensive.md)
+    - [量子计算基础原理](/topics/quantum-computing/2026-04-15-quantum-fundamentals.md)
+    - [量子硬件路线](/topics/quantum-computing/2026-04-15-quantum-hardware.md)
+    - [量子算法与应用](/topics/quantum-computing/2026-04-15-quantum-algorithms.md)
+    - [量子纠错与容错计算](/topics/quantum-computing/2026-04-15-quantum-error-correction.md)
+    - [量子计算行业格局](/topics/quantum-computing/2026-04-15-quantum-industry-landscape.md)
+    - [量子计算生态：新兴公司与国家战略](/topics/quantum-computing/2026-04-15-quantum-ecosystem.md)
+    - [量子计算前沿与趋势](/topics/quantum-computing/2026-04-15-quantum-frontiers.md)
 - **📅 Weekly**
 - **📚 Resources**
 - <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>
