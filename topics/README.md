@@ -30,4 +30,5 @@ Organize notes by research area. Create subdirectories for each topic.
 - [量子计算基础原理](/topics/quantum-computing/2026-04-15-quantum-fundamentals.md)
 - [量子硬件路线](/topics/quantum-computing/2026-04-15-quantum-hardware.md)
 - [量子计算行业格局](/topics/quantum-computing/2026-04-15-quantum-industry-landscape.md)
+- [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 
