@@ -4,6 +4,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [Hugging Face Daily Papers Digest: 2026-04-14 ~ 04-24](/research-notes/2026-04-24-hf-daily-papers-apr14-24.md)
   - [HuggingFace Daily Papers Digest: 04/13-14](/research-notes/2026-04-14-hf-daily-papers-apr13-14.md)
   - [Harness 工程：让 AI Agent 从"能用"到"好用"的系统设计](/research-notes/2026-04-14-harness-engineering-analysis.md)
   - [Hugging Face Daily Papers Digest: 2026-04-11 ~ 04-13](/research-notes/2026-04-13-hf-daily-papers-apr11-13.md)
