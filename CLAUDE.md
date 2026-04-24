@@ -111,6 +111,30 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
   ```
 - **Dependencies**: Run `cd ~/.claude/skills/baoyu-post-to-wechat/scripts && npx -y bun install` if first time
 
+## AWS What's New Tracker
+
+### Directory
+
+`aws-whats-new/` — Private directory for tracking AWS service announcements. In git but **not** linked in `_sidebar.md`.
+
+### Structure
+
+- `YYYY-WXX.md` — Weekly digests (primary format)
+- `YYYY-MM-DD.md` — Daily digests (optional, for high-volume weeks)
+- `by-service/` — Per-service tracking (optional)
+
+### Workflow
+
+1. **Fetch RSS**: `curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/"` or use `mcp__aws-documentation` tools
+2. **Write digest**: Group by service category, tag impact (High/Medium/Low), highlight top 5
+3. **Focus areas**: AI/ML (Bedrock, SageMaker), Compute (Lambda, ECS/EKS), Data, Security, Developer Tools
+
+### Previous Digests
+
+| File | Coverage |
+|------|----------|
+| `2026-W17.md` | 04/17-23 (72 announcements) |
+
 ## Docsify Plugins
 
 The site uses these plugins (configured in `index.html`):
