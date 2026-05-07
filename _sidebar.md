@@ -5,6 +5,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](/research-notes/2026-05-07-aidlc-deep-dive.md)
   - [Hugging Face Daily Papers Digest: 2026-04-14 ~ 04-24](/research-notes/2026-04-24-hf-daily-papers-apr14-24.md)
   - [DeepSeek-V4 深度解读：百万 Token 上下文的高效智能](/research-notes/2026-04-24-deepseek-v4-analysis.md)
   - [HuggingFace Daily Papers Digest: 04/13-14](/research-notes/2026-04-14-hf-daily-papers-apr13-14.md)
