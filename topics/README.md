@@ -20,6 +20,10 @@ Organize notes by research area. Create subdirectories for each topic.
 - [大模型推理 Reasoning](/topics/llm/2026-02-09-llm-intro-reasoning.md)
 - [LLM 长上下文训练技术总结](/topics/llm/2026-02-09-llm-long-context-training.md)
 
+### nlp
+
+- [图结构 × 大模型：从依存句法到 GraphRAG 的演化谱系](/topics/nlp/2026-05-08-graph-structures-meet-llms.md)
+
 ### quantum-computing
 
 - [量子算法与应用](/topics/quantum-computing/2026-04-15-quantum-algorithms.md)

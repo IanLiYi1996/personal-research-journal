@@ -7,6 +7,7 @@ Naming: `YYYY-short-title.md`
 ## Index
 
 - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
+- [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](/papers/2025-kismath-causal-cot-graph.md)
 - [Model Spec Midtraining: Improving How Alignment Training Generalizes](/papers/2026-model-spec-midtraining.md)
 - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
 - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)

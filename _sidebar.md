@@ -1,10 +1,12 @@
 - [**🏠 Home**](/)
 - **📄 Papers**
   - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
+  - [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](/papers/2025-kismath-causal-cot-graph.md)
   - [Model Spec Midtraining: Improving How Alignment Training Generalizes](/papers/2026-model-spec-midtraining.md)
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [CoT 机制 / 因果解释性 / RLVR 代价 — Mini-Survey (2023–2025)](/research-notes/2026-05-08-cot-mechanism-mini-survey.md)
   - [Hugging Face Daily Papers 深度解读 (2026-04-25 ~ 2026-05-07)](/research-notes/2026-05-07-hf-daily-papers-apr25-may7.md)
   - [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](/research-notes/2026-05-07-aidlc-deep-dive.md)
   - [Hugging Face Daily Papers Digest: 2026-04-14 ~ 04-24](/research-notes/2026-04-24-hf-daily-papers-apr14-24.md)
@@ -30,6 +32,8 @@
     - [Post-training 101: 从预训练到指令调优](/topics/llm/2026-02-09-llm-intro-post-training.md)
     - [大模型推理 Reasoning](/topics/llm/2026-02-09-llm-intro-reasoning.md)
     - [LLM 长上下文训练技术总结](/topics/llm/2026-02-09-llm-long-context-training.md)
+  - **NLP**
+    - [图结构 × 大模型：从依存句法到 GraphRAG 的演化谱系](/topics/nlp/2026-05-08-graph-structures-meet-llms.md)
   - **QUANTUM-COMPUTING**
     - [量子算法与应用](/topics/quantum-computing/2026-04-15-quantum-algorithms.md)
     - [量子计算技术全景总结（索引）](/topics/quantum-computing/2026-04-15-quantum-computing-comprehensive.md)

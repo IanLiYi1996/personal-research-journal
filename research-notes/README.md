@@ -18,3 +18,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Hugging Face Daily Papers Digest: 2026-04-14 ~ 04-24](/research-notes/2026-04-24-hf-daily-papers-apr14-24.md)
 - [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](/research-notes/2026-05-07-aidlc-deep-dive.md)
 - [Hugging Face Daily Papers 深度解读 (2026-04-25 ~ 2026-05-07)](/research-notes/2026-05-07-hf-daily-papers-apr25-may7.md)
+- [CoT 机制 / 因果解释性 / RLVR 代价 — Mini-Survey (2023–2025)](/research-notes/2026-05-08-cot-mechanism-mini-survey.md)
