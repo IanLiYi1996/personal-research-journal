@@ -6,6 +6,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [从 Attention 到异步连续批处理：HuggingFace 高效 LLM 推理两篇博客深度解读](/research-notes/2026-05-18-hf-continuous-batching-deep-dive.md)
   - [Hugging Face Daily Papers 深度解读 (2026-05-08 ~ 2026-05-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15.md)
   - [CoT 机制 / 因果解释性 / RLVR 代价 — Mini-Survey (2023–2025)](/research-notes/2026-05-08-cot-mechanism-mini-survey.md)
   - [Hugging Face Daily Papers 深度解读 (2026-04-25 ~ 2026-05-07)](/research-notes/2026-05-07-hf-daily-papers-apr25-may7.md)
