@@ -2,10 +2,12 @@
 - **📄 Papers**
   - [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](/papers/2025-agentic-rl-survey.md)
   - [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](/papers/2025-kismath-causal-cot-graph.md)
+  - [CAFM: Constraint-Aware Flow Matching — 把"约束投影"端到端嵌进训练目标](/papers/2026-cafm-constraint-aware-flow-matching.md)
   - [Model Spec Midtraining: Improving How Alignment Training Generalizes](/papers/2026-model-spec-midtraining.md)
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [GPU Infra Benchmark 知识总结：Blackwell / Hopper 推理与训练实践要点](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge.md)
   - [从 Attention 到异步连续批处理：HuggingFace 高效 LLM 推理两篇博客深度解读](/research-notes/2026-05-18-hf-continuous-batching-deep-dive.md)
   - [四篇论文合读：扩散×自回归、连续嵌入流、RAG 失败的电路追踪、时序预测多智能体](/research-notes/2026-05-18-four-papers-review.md)
   - [Hugging Face Daily Papers 深度解读 (2026-05-08 ~ 2026-05-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15.md)

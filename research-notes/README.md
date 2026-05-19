@@ -22,3 +22,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Hugging Face Daily Papers 深度解读 (2026-05-08 ~ 2026-05-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15.md)
 - [四篇论文合读：扩散×自回归、连续嵌入流、RAG 失败的电路追踪、时序预测多智能体](/research-notes/2026-05-18-four-papers-review.md)
 - [从 Attention 到异步连续批处理：HuggingFace 高效 LLM 推理两篇博客深度解读](/research-notes/2026-05-18-hf-continuous-batching-deep-dive.md)
+- [GPU Infra Benchmark 知识总结：Blackwell / Hopper 推理与训练实践要点](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge.md)
