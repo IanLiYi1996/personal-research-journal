@@ -264,7 +264,141 @@ cmd_index() {
     } > _sidebar.md
     echo "Updated: _sidebar.md"
 
+    update_home_md
+    echo "Updated: _home.md"
+
     echo "Done. All indexes regenerated."
+}
+
+# Find the most recent file under a directory (by filename sort, descending),
+# matching files whose basename starts with a digit and excluding _template.md.
+latest_in_dir() {
+    local dir="$1"
+    local f
+    for f in $(ls -r "${dir}"/[0-9]*.md 2>/dev/null); do
+        [[ -f "$f" ]] || continue
+        echo "$f"
+        return 0
+    done
+    return 1
+}
+
+# Latest topic: walk topics/*/ subdirs, pick the file with the lexicographically
+# largest basename across all subdirs.
+latest_topic() {
+    local best=""
+    local d f basename
+    for d in topics/*/; do
+        [[ -d "$d" ]] || continue
+        for f in "${d}"[0-9]*.md; do
+            [[ -f "$f" ]] || continue
+            basename="$(basename "$f")"
+            if [[ -z "$best" || "$basename" > "$(basename "$best")" ]]; then
+                best="$f"
+            fi
+        done
+    done
+    [[ -n "$best" ]] && echo "$best"
+}
+
+# Extract date from filename. Handles YYYY-MM-DD-* and YYYY-* and YYYY-WXX.
+# Falls back to mtime YYYY-MM-DD if no date prefix is found.
+file_date() {
+    local f="$1"
+    local base
+    base="$(basename "$f" .md)"
+    if [[ "$base" =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2}) ]]; then
+        echo "${BASH_REMATCH[1]}"
+    elif [[ "$base" =~ ^([0-9]{4}-W[0-9]{2}) ]]; then
+        echo "${BASH_REMATCH[1]}"
+    elif [[ "$base" =~ ^([0-9]{4}) ]]; then
+        echo "${BASH_REMATCH[1]}"
+    else
+        date -r "$f" +%Y-%m-%d 2>/dev/null || echo ""
+    fi
+}
+
+file_title() {
+    head -1 "$1" | sed 's/^#\s*//'
+}
+
+# URL path for Docsify hash routing: strip leading / and trailing .md
+docsify_path() {
+    local f="$1"
+    echo "/${f%.md}"
+}
+
+# Replace the content between `<!-- AUTO:<MARKER>:START -->` and
+# `<!-- AUTO:<MARKER>:END -->` in $file with the lines from stdin.
+# Markers are preserved.
+replace_block() {
+    local file="$1"
+    local marker="$2"
+    local payload
+    payload="$(cat)"
+
+    awk -v marker="$marker" -v payload="$payload" '
+        BEGIN { in_block = 0 }
+        $0 ~ ("<!-- AUTO:" marker ":START -->") {
+            print
+            print payload
+            in_block = 1
+            next
+        }
+        $0 ~ ("<!-- AUTO:" marker ":END -->") {
+            in_block = 0
+            print
+            next
+        }
+        !in_block { print }
+    ' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+}
+
+update_home_md() {
+    [[ -f _home.md ]] || return 0
+
+    local latest_note latest_topic_file
+    latest_note="$(latest_in_dir research-notes || true)"
+    latest_topic_file="$(latest_topic || true)"
+
+    # --- Hero buttons ---
+    {
+        if [[ -n "$latest_note" ]]; then
+            local p="$(docsify_path "$latest_note")"
+            echo "<a href=\"#${p}\" class=\"arc-btn-primary\">Latest Digest</a>"
+        fi
+        if [[ -n "$latest_topic_file" ]]; then
+            local p="$(docsify_path "$latest_topic_file")"
+            echo "<a href=\"#${p}\" class=\"arc-btn-secondary\">Explore Topics</a>"
+        fi
+    } | replace_block _home.md "HERO_BUTTONS"
+
+    # --- Recent table: 5 most recent entries across notes / topics / papers ---
+    # Build a sortable list: "<date>\t<type>\t<title>\t<path>"
+    {
+        echo "| Date | Type | Title |"
+        echo "|------|------|-------|"
+        {
+            local f d t p
+            for f in $(ls -r research-notes/[0-9]*.md 2>/dev/null); do
+                [[ -f "$f" ]] || continue
+                d="$(file_date "$f")"; t="$(file_title "$f")"; p="$(docsify_path "$f")"
+                printf '%s\t%s\t%s\t%s\n' "$d" "Note" "$t" "$p"
+            done
+            for f in topics/*/[0-9]*.md; do
+                [[ -f "$f" ]] || continue
+                d="$(file_date "$f")"; t="$(file_title "$f")"; p="$(docsify_path "$f")"
+                printf '%s\t%s\t%s\t%s\n' "$d" "Topic" "$t" "$p"
+            done
+            for f in papers/[0-9]*.md; do
+                [[ -f "$f" ]] || continue
+                d="$(file_date "$f")"; t="$(file_title "$f")"; p="$(docsify_path "$f")"
+                printf '%s\t%s\t%s\t%s\n' "$d" "Paper" "$t" "$p"
+            done
+        } | sort -r -k1,1 | head -5 | while IFS=$'\t' read -r d t title p; do
+            echo "| ${d} | ${t} | [${title}](${p}) |"
+        done
+    } | replace_block _home.md "RECENT"
 }
 
 cmd_serve() {
