@@ -7,6 +7,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [MCP 授权落地实战：从 OAuth 2.1 RFC 规范到 AWS AgentCore + Cognito 的最小可行适配器](/research-notes/2026-05-20-mcp-oauth-aws-agentcore-cognito.md)
   - [GPU Infra Benchmark 知识总结：Blackwell / Hopper 推理与训练实践要点](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge.md)
   - [从 Attention 到异步连续批处理：HuggingFace 高效 LLM 推理两篇博客深度解读](/research-notes/2026-05-18-hf-continuous-batching-deep-dive.md)
   - [四篇论文合读：扩散×自回归、连续嵌入流、RAG 失败的电路追踪、时序预测多智能体](/research-notes/2026-05-18-four-papers-review.md)

@@ -19,8 +19,10 @@
 <h1>Li Yi's Research Journal</h1>
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
-<a href="#/research-notes/2026-04-07-hf-weekly-papers-apr4" class="arc-btn-primary">Latest Digest</a>
-<a href="#/topics/llm/2026-02-09-llm-intro-comprehensive" class="arc-btn-secondary">Explore Topics</a>
+<!-- AUTO:HERO_BUTTONS:START -->
+<a href="#/research-notes/2026-05-20-mcp-oauth-aws-agentcore-cognito" class="arc-btn-primary">Latest Digest</a>
+<a href="#/topics/nlp/2026-05-08-graph-structures-meet-llms" class="arc-btn-secondary">Explore Topics</a>
+<!-- AUTO:HERO_BUTTONS:END -->
 </div>
 </div>
 </section>
@@ -76,10 +78,12 @@ Datasets, tools, frameworks, and reference materials.
 
 ## Recent
 
+<!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
-| 2026-04-07 | Note | [HF Daily Papers Digest: Apr 4-6](/research-notes/2026-04-07-hf-weekly-papers-apr4) |
-| 2026-04-03 | Note | [HF Daily Papers Digest: Apr 3](/research-notes/2026-04-03-huggingface-daily-papers-digest) |
-| 2026-02-09 | Topic | [LLM 大模型技术全景总结](/topics/llm/2026-02-09-llm-intro-comprehensive) |
-| 2026-02-09 | Topic | [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey) |
-| 2025 | Paper | [Agentic RL Survey](/papers/2025-agentic-rl-survey) |
+| 2026-05-20 | Note | [MCP 授权落地实战：从 OAuth 2.1 RFC 规范到 AWS AgentCore + Cognito 的最小可行适配器](/research-notes/2026-05-20-mcp-oauth-aws-agentcore-cognito) |
+| 2026-05-19 | Note | [GPU Infra Benchmark 知识总结：Blackwell / Hopper 推理与训练实践要点](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge) |
+| 2026-05-18 | Note | [四篇论文合读：扩散×自回归、连续嵌入流、RAG 失败的电路追踪、时序预测多智能体](/research-notes/2026-05-18-four-papers-review) |
+| 2026-05-18 | Note | [从 Attention 到异步连续批处理：HuggingFace 高效 LLM 推理两篇博客深度解读](/research-notes/2026-05-18-hf-continuous-batching-deep-dive) |
+| 2026-05-15 | Note | [Hugging Face Daily Papers 深度解读 (2026-05-08 ~ 2026-05-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15) |
+<!-- AUTO:RECENT:END -->
