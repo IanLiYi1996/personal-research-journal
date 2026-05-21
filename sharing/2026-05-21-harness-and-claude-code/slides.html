@@ -92,15 +92,11 @@
   <section class="slide" data-title="What is Harness">
     <p class="kicker">// 2. definition</p>
     <h2 class="h2">什么是 Harness？</h2>
-    <p class="lede mt-m">Harness 是<strong>包裹在 LLM 外面的程序化框架</strong>，<br>负责管理 Agent 的运行环境、上下文、状态、工具和生命周期。</p>
-    <div class="quote-big mt-l">
-      如果 LLM 是一位能力出众的工程师，<br>那 Harness 就是他的<span class="accent">工作环境</span>——<br>项目管理、代码仓库、CI/CD、Code Review、协作协议。
+    <p class="lede mt-s">Harness = <strong>包裹在 LLM 外面的程序化框架</strong> · 管理 Agent 的运行环境、上下文、状态、工具和生命周期。</p>
+    <div class="figure compact">
+      <img src="./diagrams/fig-harness-analogy.svg" alt="LLM alone vs LLM in a harness">
     </div>
-    <p class="lede mt-m">单独一个厉害的工程师 ≠ 一个配备完善工程体系的团队。<br><strong>产出质量天差地别。</strong></p>
-    <div class="quote-big mt-l" style="font-size: clamp(24px, 2.8vw, 36px);">
-      "Humans steer. Agents execute."
-      <span class="author">— Ryan Lopopolo, OpenAI · Harness Engineering, 2026-02</span>
-    </div>
+    <p class="quote-inline mt-s" style="font-size: 18px"><strong>"Humans steer. Agents execute."</strong> &nbsp;— Ryan Lopopolo, OpenAI · 2026-02</p>
     <aside class="notes">
       <p>定义先讲清楚。Harness——脚手架——是<em>包裹在 LLM 外面的程序化框架</em>。它不改变模型本身，但通过工程手段让模型在复杂任务中接近能力上限。</p>
       <p>类比讲：把 LLM 想象成一个能力出众的工程师，他写代码很快、思考很周全。但<strong>同一个工程师单干，跟在一个完善的团队里干，产出质量天差地别</strong>。</p>
@@ -149,28 +145,11 @@
   <section class="slide" data-title="Harness Architecture">
     <p class="kicker">// 2. anatomy</p>
     <h2 class="h2">Harness 由哪些层组成？</h2>
-    <p class="small mt-s">以 Claude Code（~512K 行 TS 实现）为例，从底层到上层 5 层：</p>
-    <div class="layer mt-m">
-      <div class="lvl">L1 / 基础设施</div><div class="pct">运行时</div>
-      <div class="desc"><b>Bootstrap · Context · Skills · Memory</b><p>状态初始化 / 上下文管理 / 行为扩展 / 跨会话记忆</p></div>
+    <p class="small mt-s">以 Claude Code（~512K 行 TS 实现）为例：</p>
+    <div class="figure compact">
+      <img src="./diagrams/fig-architecture.svg" alt="Claude Code 5-layer harness architecture">
     </div>
-    <div class="layer">
-      <div class="lvl">L2 / 控制层</div><div class="pct">拦截</div>
-      <div class="desc"><b>Hook 系统</b><p>UserPromptSubmit → PreToolUse → 执行 → PostToolUse，注入校验和重写逻辑</p></div>
-    </div>
-    <div class="layer">
-      <div class="lvl">L3 / 协作层</div><div class="pct">分工</div>
-      <div class="desc"><b>Coordinator · Lead Agent + Worker Agents</b><p>主 Agent 调度，子 Agent 隔离工具集，解耦"做事"和"评估"</p></div>
-    </div>
-    <div class="layer">
-      <div class="lvl">L4 / 任务层</div><div class="pct">调度</div>
-      <div class="desc"><b>Task System · 6 类任务</b><p>Shell · Agent · Teammate · Remote · Dream · Workflow</p></div>
-    </div>
-    <div class="layer">
-      <div class="lvl">L5 / 协议层</div><div class="pct">接口</div>
-      <div class="desc"><b>App Server · MCP · JSON-RPC</b><p>对外暴露 harness 能力，让 IDE / Web / CLI 共享同一套底层</p></div>
-    </div>
-    <p class="lede mt-m">今天 demo 重点用到 <span class="accent">L1 (Memory + Skills)</span> 和 <span class="accent">L3 (Coordinator)</span>。</p>
+    <p class="lede mt-s">今天 demo 重点用到 <span class="accent">L1 (Memory + Skills)</span> 和 <span class="accent">L3 (Coordinator)</span>。</p>
     <aside class="notes">
       <p>这页给大家看 harness 的解剖图。Claude Code 的实际实现有 5 层，从底到上——</p>
       <p><strong>L1 基础设施</strong>：Bootstrap、Context、Skills、Memory。这一层管"Agent 启动时知道什么、看到什么、记得什么"。</p>
@@ -186,31 +165,8 @@
   <section class="slide" data-title="6 Patterns">
     <p class="kicker">// 2. core patterns</p>
     <h2 class="h2">Harness 的 6 个跨公司共识设计模式</h2>
-    <div class="num-list mt-m">
-      <div class="item"><div class="n">①</div><div class="body">
-        <b>仓库即世界（Repository as the Agent's World）</b>
-        <p>Agent 看不到的就不存在。Slack、Google Doc、人脑里的假设对它<em>都不存在</em>。把一切推进仓库。</p>
-      </div></div>
-      <div class="item"><div class="n">②</div><div class="body">
-        <b>渐进式披露（Progressive Disclosure）</b>
-        <p>AGENTS.md / CLAUDE.md 是<strong>地图</strong>不是百科。"<em>When everything is important, nothing is.</em>"</p>
-      </div></div>
-      <div class="item"><div class="n">③</div><div class="body">
-        <b>机械化约束（Mechanical Enforcement）</b>
-        <p>把品味编码为 linter，convention 编码为 CI。"<em>Constraints are what allows speed without decay.</em>"</p>
-      </div></div>
-      <div class="item"><div class="n">④</div><div class="body">
-        <b>应用可读性（Application Legibility）</b>
-        <p>让 Agent 能"看见"运行中的应用——DOM、日志、指标。Playwright / Chrome DevTools / LogQL。</p>
-      </div></div>
-      <div class="item"><div class="n">⑤</div><div class="body">
-        <b>生成-评估分离（Generator-Evaluator Split）</b>
-        <p>"<em>Out of the box, Claude is a poor QA agent.</em>" 必须用<strong>独立 Agent</strong> 评估。</p>
-      </div></div>
-      <div class="item"><div class="n">⑥</div><div class="body">
-        <b>熵管理（Entropy &amp; Garbage Collection）</b>
-        <p>"<em>Technical debt is like a high-interest loan.</em>" 用后台 Agent 持续扫描和重构。</p>
-      </div></div>
+    <div class="figure compact">
+      <img src="./diagrams/fig-six-patterns.svg" alt="6 harness design patterns">
     </div>
     <aside class="notes">
       <p>这 6 个模式是 Anthropic 4 篇博客 + OpenAI 2 篇博客 + Claude Code 源码分析里提炼出来的<strong>跨公司共识</strong>——不是某一家的私货。</p>
@@ -226,7 +182,10 @@
   <section class="slide" data-title="3 Maturity Levels">
     <p class="kicker">// 3. maturity</p>
     <h2 class="h2">用好 AI 工具的 3 个成熟度层级</h2>
-    <table class="compare mt-m">
+    <div class="figure compact">
+      <img src="./diagrams/fig-maturity.svg" alt="3 maturity levels: typewriter / collaborator / system designer">
+    </div>
+    <table class="compare mt-s">
       <thead>
         <tr><th>层级</th><th>典型行为</th><th>典型 prompt</th><th>瓶颈</th></tr>
       </thead>
@@ -323,49 +282,9 @@
     <p class="kicker">// 4. ai research pipeline</p>
     <h2 class="h2">AI 研究 pipeline · <span class="accent">6 个阶段</span></h2>
     <p class="lede mt-s">每一阶段都有 HF / arXiv / Skill 工具栈对应，<em>不是宽泛的"读论文写论文"</em>。</p>
-    <table class="compare mt-m">
-      <thead>
-        <tr><th style="width:13%">阶段</th><th style="width:22%">核心问题</th><th style="width:30%">关键工具</th><th>研究产物</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>① Discover</td>
-          <td class="old">每天 200+ 篇怎么不漏关键工作</td>
-          <td><span class="mono">paper_search</span> · <span class="mono">semantic_search</span> · <span class="mono">watch_topic</span> · <span class="mono">citation_graph</span></td>
-          <td class="new">待读队列 + alert</td>
-        </tr>
-        <tr>
-          <td>② Digest</td>
-          <td class="old">30 min 把 paper 变成可复用笔记</td>
-          <td><span class="mono">huggingface-papers</span> · <span class="mono">read_paper</span> · <span class="mono">hub_repo_details</span></td>
-          <td class="new">结构化 markdown + 链接 HF model/dataset ID</td>
-        </tr>
-        <tr>
-          <td>③ Spec</td>
-          <td class="old">从"我觉得 X 有意思"到 N 个可测假设</td>
-          <td><span class="mono">brainstorming</span> · <span class="mono">writing-plans</span> · MEMORY 系统</td>
-          <td class="new">spec.md + config.yaml（含 base_model/dataset ID）</td>
-        </tr>
-        <tr>
-          <td>④ Build</td>
-          <td class="old">把 spec 落成可跑代码且不重造轮子</td>
-          <td><span class="mono">peft</span> · <span class="mono">axolotl</span> · <span class="mono">trl</span> · <span class="mono">torchtitan</span> · <span class="mono">accelerate</span> + <span class="mono">datasets</span></td>
-          <td class="new">checkpoints + wandb/mlflow runs</td>
-        </tr>
-        <tr>
-          <td>⑤ Evaluate</td>
-          <td class="old">表面 work ≠ 真 work</td>
-          <td><span class="mono">lm-eval-harness</span> · <span class="mono">bigcode-eval</span> · invariant tests · sub-agent reviewer</td>
-          <td class="new">三层 eval 报告（benchmark / invariant / 定性）</td>
-        </tr>
-        <tr>
-          <td>⑥ Publish</td>
-          <td class="old">让别人能引用、能复现</td>
-          <td>Artifact Registry · model card · demo（HF Hub / GitHub / W&amp;B 等）</td>
-          <td class="new">&lt;paper · model · dataset · space&gt; 四元组</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="figure compact">
+      <img src="./diagrams/fig-pipeline.svg" alt="AI research pipeline: 6 stages with REFLECT loop">
+    </div>
     <p class="lede mt-m">研究员的产物不再是"<strong>论文 + 一坨 colab</strong>"，<br>而是 <span class="accent">&lt;paper, model, dataset, space&gt;</span> 这一组互相引用的对象。</p>
     <aside class="notes">
       <p><strong>过渡</strong>：上面 7 页讲了 Harness 概念 + 三层成熟度 + prompt 模板。<em>接下来 12 页是把这套概念落到 AI 研究的具体场景上</em>——也就是这一段最干货的部分。</p>
@@ -658,33 +577,10 @@
   <section class="slide" data-title="Artifact Registry = Bus">
     <p class="kicker">// 4. the unifier</p>
     <h2 class="h2">把 6 阶段串起来：<br><span class="accent">Artifact Registry = pipeline 总线</span></h2>
-    <p class="lede mt-s"><strong>Artifact Registry</strong> = 任何能给产物提供"稳定 ID + 元数据 + 跨阶段引用"的系统。<em>它是 pipeline 各阶段之间的总线</em>。</p>
-    <div class="num-list mt-m">
-      <div class="item"><div class="n">①</div><div class="body">
-        <b>稳定 ID（stable identifiers）</b>
-        <p>不是文件路径，是<strong>跨机器跨时间不变的引用</strong>。任何阶段都可以靠 ID 互相引用，不用拷文件、不会因为搬家而失效。</p>
-      </div></div>
-      <div class="item"><div class="n">②</div><div class="body">
-        <b>机器可读 provenance</b>
-        <p>每个产物有<span class="mono">base_model</span> / <span class="mono">datasets</span> / <span class="mono">commit</span> / <span class="mono">config</span> 字段，<strong>能反查 "这个产物从哪来、用什么训的"</strong>。</p>
-      </div></div>
-      <div class="item"><div class="n">③</div><div class="body">
-        <b>跨阶段闭环（input = output）</b>
-        <p>① 阶段读到的 paper，往往链接到 ② 的 dataset、③ 的 model、④ 的 demo。<strong>研究的输入和输出是同一类对象</strong>。</p>
-      </div></div>
+    <p class="lede mt-s"><strong>Artifact Registry</strong> = 任何能给产物提供"稳定 ID + 元数据 + 跨阶段引用"的系统。</p>
+    <div class="figure compact">
+      <img src="./diagrams/fig-registry-bus.svg" alt="Artifact Registry as the pipeline bus connecting 6 stages">
     </div>
-    <p class="h3 mt-l">实例 · 按场景挑一个就够：</p>
-    <table class="compare mt-s">
-      <thead><tr><th style="width:24%">场景</th><th style="width:38%">Registry 选择</th><th>稳定 ID 形态</th></tr></thead>
-      <tbody>
-        <tr><td>NLP / 大模型</td><td class="new">Hugging Face Hub</td><td><span class="mono">meta-llama/Llama-3-8B</span></td></tr>
-        <tr><td>CV / 通用 ML</td><td class="new">GitHub Releases · 自有 S3</td><td><span class="mono">user/repo@v1.2.3</span> · <span class="mono">s3://.../checkpoints/</span></td></tr>
-        <tr><td>实验追踪 · 中间产物</td><td class="new">W&amp;B Artifacts · MLflow</td><td><span class="mono">project/artifact:v3</span></td></tr>
-        <tr><td>国内合规 · 中文社区</td><td class="new">ModelScope</td><td><span class="mono">damo/nlp-bert-base</span></td></tr>
-        <tr><td>课题组 / 团队内部</td><td class="new">DVC · 内部 manifest.json</td><td><span class="mono">data/v2025-04.dvc</span></td></tr>
-      </tbody>
-    </table>
-    <p class="quote-inline mt-l">关键不是用哪个 Registry——<br>而是 <strong>"凡是产物，必须有稳定 ID"</strong> 这个纪律。<em>"仓库即世界"在 AI 研究语境下的具体形态。</em></p>
     <aside class="notes">
       <p>把刚才 6 阶段串起来看，会发现一件之前没强调的事——<strong>所有阶段都需要一种"产物注册中心"来当总线</strong>。</p>
       <p>我把这种系统抽象叫 <strong>Artifact Registry</strong>。它的定义是——<em>任何能给产物提供"稳定 ID + 元数据 + 跨阶段引用"的系统</em>。</p>
@@ -702,87 +598,8 @@
   <section class="slide" data-title="Experiment Flow Compare">
     <p class="kicker">// 4. before vs after</p>
     <h2 class="h2">实验流程对比 · <span class="accent">从碎片到管线</span></h2>
-    <div class="flow-grid">
-
-      <div class="flow-col bad">
-        <h4>Before · 散点式实验</h4>
-
-        <div class="flow-step bad-step">
-          <span class="label-tag">IDEA</span><b>"我觉得 X 可能 work"</b>
-          <span class="artifact">脑子里 / 微信收藏</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step bad-step">
-          <span class="label-tag">CODE</span><b>立刻动手写实验代码</b>
-          <span class="artifact">colab.ipynb · 超参藏在 cell 里</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step bad-step">
-          <span class="label-tag">RUN</span><b>跑通就行</b>
-          <span class="artifact">截屏 + 微信发导师</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step bad-step">
-          <span class="label-tag">EVAL</span><b>跑 1 个 benchmark 自我安慰</b>
-          <span class="artifact">"看起来比 baseline 高了"</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step bad-step">
-          <span class="label-tag">DONE?</span><b>写进周报，没了</b>
-          <span class="artifact">无 audit trail · 无法复现</span>
-        </div>
-
-        <div class="flow-outcome">
-          上下文藏在脑子里 · 判据靠"我觉得对" · 失败后无法回溯 · 三个月后自己都看不懂
-        </div>
-      </div>
-
-      <div class="flow-col good">
-        <h4>After · Spec-driven 管线</h4>
-
-        <div class="flow-step good-step">
-          <span class="label-tag">DDD</span><b>"为什么做 X？"</b>
-          <span class="artifact">domain 文档：背景 · 前序工作 · 假设</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step good-step">
-          <span class="label-tag">SDD</span><b>spec.yaml = single source of truth</b>
-          <span class="artifact">hypothesis · metric · invariant · registry IDs</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step good-step">
-          <span class="label-tag">TDD</span><b>先写 invariant 测试，再写实现</b>
-          <span class="artifact">tests/ 先存在 · 实现后 RED → GREEN</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step good-step">
-          <span class="label-tag">EVAL</span><b>三层评测：benchmark · invariant · reviewer</b>
-          <span class="artifact">lm-eval-harness + pytest + sub-agent</span>
-        </div>
-        <div class="flow-arrow-down">↓</div>
-
-        <div class="flow-step good-step">
-          <span class="label-tag">PUBLISH</span><b>四件套自动落 Registry</b>
-          <span class="artifact">paper · model · dataset · demo（互相 ID 引用）</span>
-        </div>
-        <div class="flow-arrow-down">↺</div>
-        <div class="flow-step good-step" style="border-style: dashed">
-          <span class="label-tag">REFLECT</span><b>失败也是产物</b>
-          <span class="artifact">失败原因写回 DDD 文档 · 下次实验自动避坑</span>
-        </div>
-
-        <div class="flow-outcome">
-          spec 是契约 · 测试是证据 · DDD 是知识 · 反思可累积 · 复现链条完整
-        </div>
-      </div>
-
+    <div class="figure compact">
+      <img src="./diagrams/fig-experiment-flow.svg" alt="Before vs after: scattered experiment vs spec-driven pipeline">
     </div>
     <aside class="notes">
       <p>这一页是今天<strong>最有冲击力</strong>的一页。我把"以前怎么做实验"和"现在怎么做实验"并排放出来。</p>
@@ -797,31 +614,11 @@
   <section class="slide" data-title="Scientific Properties">
     <p class="kicker">// 4. why is this scientific</p>
     <h2 class="h2">为什么这个流程<span class="accent">才叫科学</span>？</h2>
-    <p class="lede mt-s">不是因为用了 AI——而是因为它满足科研方法论的<strong>5 个基本属性</strong>。每条属性都由具体 harness 部件保证：</p>
-    <div class="science-row">
-      <div class="science-prop">
-        <div class="name">① 可重复 (Reproducible)</div>
-        <div class="by">spec.yaml 锁定 base_model / dataset / hyperparam 的 registry ID · 别人 git clone 即可复现</div>
-      </div>
-      <div class="science-prop">
-        <div class="name">② 可证伪 (Falsifiable)</div>
-        <div class="by">TDD invariant 把 "<em>什么叫做对</em>" 写成可执行代码 · 失败有明确 RED 信号</div>
-      </div>
-      <div class="science-prop">
-        <div class="name">③ 可审计 (Auditable)</div>
-        <div class="by">DDD 文档记录决策链 · wandb 记录 run · sub-agent reviewer log · 整条 audit trail</div>
-      </div>
-      <div class="science-prop">
-        <div class="name">④ 可累积 (Compounding)</div>
-        <div class="by">REFLECT 把失败原因写回 DDD · 下次实验前 AI 自动读 · 经验不再只在脑子里</div>
-      </div>
-      <div class="science-prop">
-        <div class="name">⑤ 可比较 (Comparable)</div>
-        <div class="by">三层评测（benchmark / invariant / 定性）+ 标准 metric · 不同实验之间能横向比</div>
-      </div>
+    <p class="lede mt-s">不是因为用了 AI——而是因为它满足科研方法论的<strong>5 个基本属性</strong>，每条都由具体 harness 部件保证：</p>
+    <div class="figure compact">
+      <img src="./diagrams/fig-science.svg" alt="5 scientific properties: reproducible / falsifiable / auditable / compounding / comparable">
     </div>
-    <p class="quote-inline mt-l">"AI 加速科研" 的真正意义不是<em>跑得快</em>，<br>而是让科研的 <span class="accent">5 个基本属性都从"自觉"变成"机械化保证"</span>。</p>
-    <p class="small mt-m"><strong>反向自查</strong>：你最近一次实验，能勾几个？<br>① 别人能复现吗？ ② 失败 / 成功有明确判据吗？ ③ 决策链有文字记录吗？ ④ 教训沉淀到团队了吗？ ⑤ 能跟同方向其他工作横向比吗？</p>
+    <p class="small mt-s tc"><strong>反向自查</strong>：① 别人能复现吗？ ② 失败/成功有明确判据吗？ ③ 决策链有文字记录吗？ ④ 教训沉淀到团队了吗？ ⑤ 能跟同方向横向比吗？</p>
     <aside class="notes">
       <p>上一页讲了"以前 vs 现在"的流程对比。这一页回答<strong>更深的问题——为什么右边那个流程才叫"科学"？</strong></p>
       <p>科学方法论本身有 5 个基本属性——<em>可重复、可证伪、可审计、可累积、可比较</em>。这些不是 AI 时代发明的，是从 17 世纪科学革命就定下来的标准。</p>

@@ -537,6 +537,29 @@
   line-height: 1.45;
 }
 
+/* ---------- Diagram embed (SVG figures) ---------- */
+.tpl-harness-talk .figure {
+  width: 100%;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tpl-harness-talk .figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.tpl-harness-talk .figure.compact { margin: 8px 0; }
+.tpl-harness-talk .figure-caption {
+  margin-top: 8px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 /* ---------- Spacing helpers ---------- */
 .tpl-harness-talk .mt-s { margin-top: 12px; }
 .tpl-harness-talk .mt-m { margin-top: 22px; }
