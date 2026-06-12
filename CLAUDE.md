@@ -146,21 +146,22 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 
 `reddit-digests/` — Reddit 热门话题周报。In git but **not** linked in `_sidebar.md`.
 
-### 数据获取（重要）
+### 数据获取（重要 — 2026-06 实测现状）
 
-- 免认证 JSON API（`www`/`old.reddit.com/*.json`）在本机 IP 已被 **403 封禁**，不可用。
-- `.rss` feed 可用但缺 score/评论数，无法做热度排序——**不采用**。
-- **采用 Reddit 官方 OAuth API**（application-only，只读，无需账号密码）：
-  - 凭证：`~/.reddit/.env`（模板见 `~/.reddit/.env.example`）。注册入口 https://www.reddit.com/prefs/apps ，app 类型选 **script**。
-  - 拉取脚本：`scripts/reddit_fetch.py`。
+- 免认证 JSON API（`www`/`old.reddit.com/*.json`）已对**所有可达 IP** 返回 **403**（含 AWS 云浏览器，已实测），不可用。
+- 官方 OAuth API 需 script app 凭证，但**当前账号被 Reddit 新 Responsible Builder 政策卡在 create app 步骤**，暂未拿到凭证。
+- **当前采用 `.rss` feed**（`r/{sub}/top/.rss?t={time}`，仍返回 200）。局限：**RSS 无 score/评论数**，热度只能用 Reddit 原生 top-of-week 排序。
+  - 拉取脚本：`scripts/reddit_fetch.py`（RSS 版，内建 429 退避 + 子版间隔）。
+  - ⚠️ RSS 限流很凶（429），子版间隔建议 ≥7s；失败的子版单独补抓（`--subs a,b,c --delay 20`）。
+- **若日后拿到 OAuth 凭证**：凭证存 `~/.reddit/.env`（模板 `~/.reddit/.env.example`），把脚本切回 OAuth 路径即可恢复 score/评论数与跨子版数字排序。
 
 ### Workflow
 
-1. **Fetch**: `uv run python3 scripts/reddit_fetch.py --time week --limit 30 > /tmp/reddit.json`
-2. **Deduplicate**: 对照上一份 digest，按 permalink/标题排除已覆盖帖子
-3. **Select**: 跨子版按 score + num_comments 排序，精选 Top N（与 HF digest 风格一致）
-4. **Write digest**: 中文，按主题分组（不是按子版），含 总览表 → 分主题热帖解读 → 趋势 → Open Questions；每条标 score/评论数/permalink
-5. **Sources**: 所有引用用真实 permalink（脚本输出自带），遵守"引用须可验证"约束
+1. **Fetch**: `uv run python3 scripts/reddit_fetch.py --time week --delay 7 > /tmp/reddit.json`（失败子版用更大 delay 补抓后合并）
+2. **Deduplicate**: 对照上一份 digest，按 permalink/id 排除已覆盖帖子
+3. **Select**: 按各子版 top-of-week 的 `rank` 取头部（RSS 无 score，故无法跨子版数字排序）
+4. **Write digest**: 中文，按四主题组分节，含 跨社区主线表 → 分组热帖解读 → 趋势 → Open Questions；标注 RSS 热度局限
+5. **Sources**: 所有引用用脚本输出的真实 permalink，遵守"引用须可验证"约束
 
 ### 跟踪的 Subreddit（4 组）
 
@@ -179,7 +180,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 
 | File | Coverage |
 |------|----------|
-| _(none yet — 待凭证配置后首次运行)_ | |
+| `2026-W24-reddit-hot.md` | W24 截至 06/12（12 子版，290 帖；RSS-only，无 score） |
 
 ## Docsify Plugins
 

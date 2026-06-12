@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
-"""Fetch top posts from tracked subreddits via Reddit's OAuth API (read-only).
+"""Fetch top posts from tracked subreddits via Reddit's public RSS feeds.
 
-Reads credentials from ~/.reddit/.env. Uses application-only OAuth
-(client_credentials grant) — no account password needed for public reads.
+Reddit's JSON API (*.json) is 403-blocked for unauthenticated clients on all
+IPs we can reach (verified June 2026), so this uses the `.rss` feeds, which
+still return 200. RSS provides title / link / author / timestamp / flair-ish
+category, but NOT score or comment count — ranking falls back to Reddit's own
+"top of week" ordering (feed order). If you later obtain official API
+credentials, swap this for the OAuth path to recover score/comments.
+
+Politeness: RSS is aggressively rate-limited (HTTP 429). This script spaces
+requests out and retries with exponential backoff.
 
 Usage:
-  uv run python3 scripts/reddit_fetch.py --time week --limit 30
-  uv run python3 scripts/reddit_fetch.py --subs MachineLearning,LocalLLaMA --time week
-Output: JSON array on stdout (one object per post), sorted by score desc.
+  uv run python3 scripts/reddit_fetch.py --time week > /tmp/reddit.json
+  uv run python3 scripts/reddit_fetch.py --subs MachineLearning,aws --time week
+Output: JSON array on stdout, grouped-order preserved, each post tagged with
+its subreddit and feed rank (lower = higher on that sub's top list).
 """
 import argparse
 import json
-import os
+import re
 import sys
 import time
-import urllib.parse
+import urllib.error
 import urllib.request
-from pathlib import Path
+from html import unescape
 
-ENV_PATH = Path.home() / ".reddit" / ".env"
-
-# Default tracked subreddits, grouped (matches CLAUDE.md workflow).
 DEFAULT_SUBS = [
     # AI/ML research
     "MachineLearning", "LocalLLaMA", "singularity",
@@ -32,92 +37,91 @@ DEFAULT_SUBS = [
     "datascience", "statistics", "AskAcademia",
 ]
 
-
-def load_env(path=ENV_PATH):
-    if not path.exists():
-        sys.exit(f"ERROR: {path} not found. Copy ~/.reddit/.env.example to ~/.reddit/.env and fill it in.")
-    env = {}
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        k, v = line.split("=", 1)
-        env[k.strip()] = v.strip()
-    for req in ("REDDIT_CLIENT_ID", "REDDIT_CLIENT_SECRET"):
-        if not env.get(req) or env[req].startswith("your_"):
-            sys.exit(f"ERROR: {req} not set in {path}.")
-    return env
+UA = "Mozilla/5.0 (research-journal-digest/0.2; weekly digest; respectful)"
 
 
-def get_token(env):
-    user = env.get("REDDIT_USERNAME", "anon")
-    ua = f"research-journal-digest/0.1 by u/{user}"
-    data = urllib.parse.urlencode({"grant_type": "client_credentials"}).encode()
-    req = urllib.request.Request(
-        "https://www.reddit.com/api/v1/access_token", data=data
-    )
-    import base64
-    auth = base64.b64encode(
-        f"{env['REDDIT_CLIENT_ID']}:{env['REDDIT_CLIENT_SECRET']}".encode()
-    ).decode()
-    req.add_header("Authorization", f"Basic {auth}")
-    req.add_header("User-Agent", ua)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        tok = json.load(r)
-    if "access_token" not in tok:
-        sys.exit(f"ERROR: auth failed: {tok}")
-    return tok["access_token"], ua
+def fetch_rss(sub, time_filter="week", max_retries=4, base_delay=5):
+    url = f"https://www.reddit.com/r/{sub}/top/.rss?t={time_filter}"
+    for attempt in range(max_retries):
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/atom+xml"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = r.read().decode("utf-8", "replace")
+            if body.strip():
+                return body
+            sys.stderr.write(f"WARN: r/{sub} empty body (attempt {attempt+1})\n")
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                wait = base_delay * (2 ** attempt)
+                sys.stderr.write(f"WARN: r/{sub} 429, backing off {wait}s\n")
+                time.sleep(wait)
+                continue
+            sys.stderr.write(f"WARN: r/{sub} HTTP {e.code}\n")
+            return None
+        except Exception as e:
+            sys.stderr.write(f"WARN: r/{sub} {e}\n")
+        time.sleep(base_delay * (2 ** attempt))
+    sys.stderr.write(f"ERROR: r/{sub} gave up after {max_retries} attempts\n")
+    return None
 
 
-def fetch_sub(sub, token, ua, time_filter="week", limit=30):
-    url = f"https://oauth.reddit.com/r/{sub}/top?{urllib.parse.urlencode({'t': time_filter, 'limit': limit})}"
-    req = urllib.request.Request(url)
-    req.add_header("Authorization", f"Bearer {token}")
-    req.add_header("User-Agent", ua)
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r:
-            d = json.load(r)
-    except Exception as e:
-        sys.stderr.write(f"WARN: r/{sub} fetch failed: {e}\n")
-        return []
+def parse_entries(xml, sub):
     out = []
-    for c in d.get("data", {}).get("children", []):
-        p = c["data"]
+    entries = re.findall(r"<entry>(.*?)</entry>", xml, re.S)
+    for rank, e in enumerate(entries):
+        title = re.search(r"<title>(.*?)</title>", e, re.S)
+        link = re.search(r'<link href="([^"]+)"', e)
+        author = re.search(r"<author>.*?<name>(.*?)</name>", e, re.S)
+        updated = re.search(r"<updated>(.*?)</updated>", e, re.S)
+        pid = re.search(r"<id>(.*?)</id>", e, re.S)
+        title_txt = unescape(title.group(1)).strip() if title else ""
+        # extract trailing [D]/[R]/[P]/[N] tag common on r/MachineLearning
+        flair = ""
+        m = re.search(r"\[([A-Za-z]{1,3})\]\s*$", title_txt)
+        if m:
+            flair = m.group(1)
         out.append({
             "sub": sub,
-            "title": p.get("title", ""),
-            "score": p.get("ups", 0),
-            "ratio": p.get("upvote_ratio", 0),
-            "comments": p.get("num_comments", 0),
-            "flair": p.get("link_flair_text") or "",
-            "author": p.get("author", ""),
-            "created_utc": int(p.get("created_utc", 0)),
-            "permalink": "https://www.reddit.com" + p.get("permalink", ""),
-            "url": p.get("url", ""),
-            "selftext": (p.get("selftext", "") or "")[:500],
+            "rank": rank,  # 0 = top of this sub's weekly list
+            "title": title_txt,
+            "flair": flair,
+            "author": (author.group(1) if author else "").lstrip("/u/"),
+            "updated": updated.group(1) if updated else "",
+            "id": pid.group(1) if pid else "",
+            "permalink": link.group(1) if link else "",
+            # RSS has no score/comments — explicitly null so the digest layer knows
+            "score": None,
+            "comments": None,
         })
     return out
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--subs", default=",".join(DEFAULT_SUBS),
-                    help="comma-separated subreddits")
+    ap.add_argument("--subs", default=",".join(DEFAULT_SUBS))
     ap.add_argument("--time", default="week",
                     choices=["hour", "day", "week", "month", "year", "all"])
-    ap.add_argument("--limit", type=int, default=30, help="posts per sub")
+    ap.add_argument("--delay", type=float, default=6,
+                    help="seconds between subreddit fetches (avoid 429)")
     args = ap.parse_args()
 
-    env = load_env()
-    token, ua = get_token(env)
     subs = [s.strip() for s in args.subs.split(",") if s.strip()]
-    all_posts = []
-    for s in subs:
-        all_posts.extend(fetch_sub(s, token, ua, args.time, args.limit))
-        time.sleep(1)  # be polite to the API
-    all_posts.sort(key=lambda p: -p["score"])
+    all_posts, failed = [], []
+    for i, s in enumerate(subs):
+        xml = fetch_rss(s, args.time)
+        if xml:
+            posts = parse_entries(xml, s)
+            all_posts.extend(posts)
+            sys.stderr.write(f"OK: r/{s} -> {len(posts)} posts\n")
+        else:
+            failed.append(s)
+        if i < len(subs) - 1:
+            time.sleep(args.delay)
+
     json.dump(all_posts, sys.stdout, ensure_ascii=False, indent=2)
-    sys.stderr.write(f"\nFetched {len(all_posts)} posts from {len(subs)} subs.\n")
+    sys.stderr.write(f"\nDone: {len(all_posts)} posts from {len(subs)-len(failed)}/{len(subs)} subs.\n")
+    if failed:
+        sys.stderr.write(f"FAILED (retry later): {', '.join(failed)}\n")
 
 
 if __name__ == "__main__":
