@@ -33,6 +33,13 @@
 - **🌿 Topics**
   - **3D**
     - [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey.md)
+  - **AI-FRONTIER-2026H1**
+    - [Agent 体系演化谱系 · 2026 上半年](/topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md)
+    - [2026 上半年 AI 前沿演化谱系](/topics/ai-frontier-2026h1/2026-06-12-ai-frontier-comprehensive.md)
+    - [自动科研系统演化谱系](/topics/ai-frontier-2026h1/2026-06-12-auto-research.md)
+    - [训练动态显微镜化：从经验配方到优化几何](/topics/ai-frontier-2026h1/2026-06-12-training-dynamics.md)
+    - [2026 上半年 AI 前沿：趋势综合与开放问题](/topics/ai-frontier-2026h1/2026-06-12-trends.md)
+    - [世界模型与具身演化](/topics/ai-frontier-2026h1/2026-06-12-world-models.md)
   - **LLM**
     - [LLM Architecture](/topics/llm/2026-02-09-llm-intro-architecture.md)
     - [LLM Intro: 语言模型解释与训练 - Build LLM from Scratch](/topics/llm/2026-02-09-llm-intro-build-from-scratch.md)
