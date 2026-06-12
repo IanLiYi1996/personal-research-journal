@@ -140,6 +140,47 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-W17.md` | 04/17-23 (72 announcements) |
 | `2026-W24.md` | 05/29-06/11 (100 announcements; W18-W23 已滚出 feed) |
 
+## Reddit Hot Topics Digest
+
+### Directory
+
+`reddit-digests/` — Reddit 热门话题周报。In git but **not** linked in `_sidebar.md`.
+
+### 数据获取（重要）
+
+- 免认证 JSON API（`www`/`old.reddit.com/*.json`）在本机 IP 已被 **403 封禁**，不可用。
+- `.rss` feed 可用但缺 score/评论数，无法做热度排序——**不采用**。
+- **采用 Reddit 官方 OAuth API**（application-only，只读，无需账号密码）：
+  - 凭证：`~/.reddit/.env`（模板见 `~/.reddit/.env.example`）。注册入口 https://www.reddit.com/prefs/apps ，app 类型选 **script**。
+  - 拉取脚本：`scripts/reddit_fetch.py`。
+
+### Workflow
+
+1. **Fetch**: `uv run python3 scripts/reddit_fetch.py --time week --limit 30 > /tmp/reddit.json`
+2. **Deduplicate**: 对照上一份 digest，按 permalink/标题排除已覆盖帖子
+3. **Select**: 跨子版按 score + num_comments 排序，精选 Top N（与 HF digest 风格一致）
+4. **Write digest**: 中文，按主题分组（不是按子版），含 总览表 → 分主题热帖解读 → 趋势 → Open Questions；每条标 score/评论数/permalink
+5. **Sources**: 所有引用用真实 permalink（脚本输出自带），遵守"引用须可验证"约束
+
+### 跟踪的 Subreddit（4 组）
+
+- **AI/ML 研究**: r/MachineLearning, r/LocalLLaMA, r/singularity
+- **AI 产品/应用**: r/OpenAI, r/ClaudeAI, r/StableDiffusion
+- **AWS/云/工程**: r/aws, r/devops, r/programming
+- **数据科学/学术**: r/datascience, r/statistics, r/AskAcademia
+
+### Digest Format
+
+- **File**: `reddit-digests/YYYY-WXX-reddit-hot.md`
+- **Language**: 中文（技术术语保留英文）
+- **Structure**: Context → 热帖总览表 → 分主题详解 → 趋势分析 → Open Questions → References（permalink）
+
+### Previous Digests
+
+| File | Coverage |
+|------|----------|
+| _(none yet — 待凭证配置后首次运行)_ | |
+
 ## Docsify Plugins
 
 The site uses these plugins (configured in `index.html`):
