@@ -27,3 +27,5 @@ Naming: `YYYY-MM-DD-title.md`
 - [Agent Harness Engineering: A Survey · 深度解读](/research-notes/2026-05-25-agent-harness-engineering-survey.md)
 - [Hugging Face Daily Papers 深度解读 (2026-05-16 ~ 2026-05-26)](/research-notes/2026-05-26-hf-daily-papers-may16-26.md)
 - [Two 2026-05 Harness Surveys: ETCLOVG vs Code-as-Substrate](/research-notes/2026-05-26-two-harness-surveys-comparison.md)
+- [HF Daily Papers Digest · 2026-05-16 ~ 05-28](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
+- [HF Daily Papers Digest · 2026-05-29 ~ 06-12](/research-notes/2026-06-12-hf-daily-papers-may29-jun12.md)

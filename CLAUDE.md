@@ -87,6 +87,8 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-04-24-hf-daily-papers-apr14-24.md` | 04/14-24 (300+ papers, 10 figures, 精选 Top 20) |
 | `2026-05-07-hf-daily-papers-apr25-may7.md` | 04/25-05/07 (200+ papers, 22 精选, 6 deep dives) |
 | `2026-05-15-hf-daily-papers-may8-15.md` | 05/08-15 (275 papers, 22 精选, 4 deep dives, 12 figures) |
+| `2026-05-28-hf-daily-papers-may16-28.md` | 05/16-28 (394 papers, 25 精选, 4 deep dives, 11 figures) |
+| `2026-06-12-hf-daily-papers-may29-jun12.md` | 05/29-06/12 (521 papers, 25 精选, 4 deep dives, 5 figures) |
 
 ## WeChat Publishing
 

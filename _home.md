@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-05-26-two-harness-surveys-comparison" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-06-12-hf-daily-papers-may29-jun12" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/nlp/2026-05-08-graph-structures-meet-llms" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-06-12 | Note | [HF Daily Papers Digest · 2026-05-29 ~ 06-12](/research-notes/2026-06-12-hf-daily-papers-may29-jun12) |
+| 2026-05-28 | Note | [HF Daily Papers Digest · 2026-05-16 ~ 05-28](/research-notes/2026-05-28-hf-daily-papers-may16-28) |
 | 2026-05-26 | Note | [Two 2026-05 Harness Surveys: ETCLOVG vs Code-as-Substrate](/research-notes/2026-05-26-two-harness-surveys-comparison) |
 | 2026-05-26 | Note | [Hugging Face Daily Papers 深度解读 (2026-05-16 ~ 2026-05-26)](/research-notes/2026-05-26-hf-daily-papers-may16-26) |
 | 2026-05-25 | Note | [Agent Harness Engineering: A Survey · 深度解读](/research-notes/2026-05-25-agent-harness-engineering-survey) |
-| 2026-05-20 | Note | [MCP 授权落地实战：从 OAuth 2.1 RFC 规范到 AWS AgentCore + Cognito 的最小可行适配器](/research-notes/2026-05-20-mcp-oauth-aws-agentcore-cognito) |
-| 2026-05-19 | Note | [GPU Infra Benchmark 知识总结：Blackwell / Hopper 推理与训练实践要点](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge) |
 <!-- AUTO:RECENT:END -->
