@@ -138,6 +138,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | File | Coverage |
 |------|----------|
 | `2026-W17.md` | 04/17-23 (72 announcements) |
+| `2026-W24.md` | 05/29-06/11 (100 announcements; W18-W23 已滚出 feed) |
 
 ## Docsify Plugins
 
