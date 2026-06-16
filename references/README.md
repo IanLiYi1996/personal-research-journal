@@ -1,25 +1,26 @@
 # 文献库索引
 
-> 共 **1002** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1008** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （403）
-- [智能体 / Agent](#-agent) （52）
-- [强化学习 / RLHF](#-rlhf) （135）
-- [推理 / Reasoning](#-reasoning) （136）
-- [图神经网络 / Graph](#-graph) （218）
-- [扩散 / 生成模型](#-) （146）
+- [大语言模型 (LLM)](#-llm-) （407）
+- [智能体 / Agent](#-agent) （54）
+- [强化学习 / RLHF](#-rlhf) （138）
+- [推理 / Reasoning](#-reasoning) （139）
+- [图神经网络 / Graph](#-graph) （219）
+- [扩散 / 生成模型](#-) （147）
 - [多模态 / 视觉语言](#-) （121）
 - [Transformer / 架构](#transformer-) （251）
-- [高效训练 / 推理](#-) （213）
-- [综述 / Survey](#-survey) （125）
+- [高效训练 / 推理](#-) （214）
+- [综述 / Survey](#-survey) （126）
 - [检索增强 / RAG](#-rag) （50）
 - 未分类（127）
 
 ## 大语言模型 (LLM)
 
+- **2026** [Model Spec Midtraining: Improving How Alignment Training Generalizes](http://arxiv.org/abs/2605.02087) — Chloe Li et al. · arXiv:2605.02087 `{Li2026Model}`
 - **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
 - **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
@@ -31,13 +32,16 @@
 - **2025** [Reasoning Models Can Be Effective Without Thinking](http://arxiv.org/abs/2504.09858) — Wenjie Ma et al. · arXiv:2504.09858 `{Ma2025Reasoning}`
 - **2025** [DeepSeek-R1 Thoughtology: Let's <think> about LLM Reasoning](http://arxiv.org/abs/2504.07128) — Sara Vera Marjanović et al. · arXiv:2504.07128 `{Marjanovi2025Deepseek}`
 - **2025** [s1: Simple test-time scaling](http://arxiv.org/abs/2501.19393) — Niklas Muennighoff et al. · arXiv:2501.19393 `{Muennighoff2025S1}`
+- **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
 - **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
 - **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
 - **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
 - **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
+- **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
+- **2025** [Scaling Latent Reasoning via Looped Language Models](http://arxiv.org/abs/2510.25741) — Rui-Jie Zhu et al. · arXiv:2510.25741 `{Zhu2025Scaling}`
 - **2024** [Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws](https://en.wikipedia.) — Zeyuan Allen-Zhu et al. `{AllenZhu2024Physics}`
 - **2024** [Training-Free Long-Context Scaling of Large Language Models](http://arxiv.org/abs/2402.17463) — Chenxin An et al. · arXiv:2402.17463 `{An2024Training}`
 - **2024** [Does Refusal Training in LLMs Generalize to the Past Tense?](http://arxiv.org/abs/2407.11969) — Maksym Andriushchenko et al. · arXiv:2407.11969 `{Andriushchenko2024Does}`
@@ -426,7 +430,9 @@
 
 ## 智能体 / Agent
 
+- **2026** [OpenClaw-RL: Train Any Agent Simply by Talking](http://arxiv.org/abs/2603.10165) — Yinjie Wang et al. · arXiv:2603.10165 `{Wang2026Openclaw}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
+- **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2024** [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](http://arxiv.org/abs/2408.07055) — Yushi Bai et al. · arXiv:2408.07055 `{Bai2024Longwriter}`
 - **2024** [Navigation World Models](http://arxiv.org/abs/2412.03572) — Amir Bar et al. · arXiv:2412.03572 `{Bar2024Navigation}`
 - **2024** [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](http://arxiv.org/abs/2404.00282 http://dx.doi.org/10.1109/TNNLS.2024.3497992) — Yuji Cao et al. · arXiv:2404.00282 `{Cao2024Survey}`
@@ -481,6 +487,8 @@
 
 ## 强化学习 / RLHF
 
+- **2026** [Model Spec Midtraining: Improving How Alignment Training Generalizes](http://arxiv.org/abs/2605.02087) — Chloe Li et al. · arXiv:2605.02087 `{Li2026Model}`
+- **2026** [OpenClaw-RL: Train Any Agent Simply by Talking](http://arxiv.org/abs/2603.10165) — Yinjie Wang et al. · arXiv:2603.10165 `{Wang2026Openclaw}`
 - **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
 - **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
 - **2025** [Synthetic Data RL: Task Definition Is All You Need](http://arxiv.org/abs/2505.17063) — Yiduo Guo et al. · arXiv:2505.17063 `{Guo2025Synthetic}`
@@ -492,6 +500,7 @@
 - **2025** [All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning](http://arxiv.org/abs/2503.01067) — Gokul Swamy et al. · arXiv:2503.01067 `{Swamy2025All}`
 - **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
 - **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
+- **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
 - **2024** [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](http://arxiv.org/abs/2406.02430) — Philip Anastassiou et al. · arXiv:2406.02430 `{Anastassiou2024Seed}`
 - **2024** [Does Refusal Training in LLMs Generalize to the Past Tense?](http://arxiv.org/abs/2407.11969) — Maksym Andriushchenko et al. · arXiv:2407.11969 `{Andriushchenko2024Does}`
@@ -628,13 +637,16 @@
 - **2025** [Reasoning Models Can Be Effective Without Thinking](http://arxiv.org/abs/2504.09858) — Wenjie Ma et al. · arXiv:2504.09858 `{Ma2025Reasoning}`
 - **2025** [DeepSeek-R1 Thoughtology: Let's <think> about LLM Reasoning](http://arxiv.org/abs/2504.07128) — Sara Vera Marjanović et al. · arXiv:2504.07128 `{Marjanovi2025Deepseek}`
 - **2025** [s1: Simple test-time scaling](http://arxiv.org/abs/2501.19393) — Niklas Muennighoff et al. · arXiv:2501.19393 `{Muennighoff2025S1}`
+- **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
 - **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
 - **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
 - **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
 - **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
 - **2025** [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](http://arxiv.org/abs/2502.11089) — Jingyang Yuan et al. · arXiv:2502.11089 `{Yuan2025Native}`
+- **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
+- **2025** [Scaling Latent Reasoning via Looped Language Models](http://arxiv.org/abs/2510.25741) — Rui-Jie Zhu et al. · arXiv:2510.25741 `{Zhu2025Scaling}`
 - **2024** [LLM Augmented LLMs: Expanding Capabilities through Composition](http://arxiv.org/abs/2401.02412) — Rachit Bansal et al. · arXiv:2401.02412 `{Bansal2024Llm}`
 - **2024** [Scaling Synthetic Data Creation with 1,000,000,000 Personas](http://arxiv.org/abs/2406.20094) — Xin Chan et al. · arXiv:2406.20094 `{Chan2024Scaling}`
 - **2024** [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](http://arxiv.org/abs/2401.06081) — Zhipeng Chen et al. · arXiv:2401.06081 `{Chen2024Improving}`
@@ -759,6 +771,7 @@
 ## 图神经网络 / Graph
 
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2024** [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](http://arxiv.org/abs/2402.05391) — Zhuo Chen et al. · arXiv:2402.05391 `{Chen2024Knowledge}`
 - **2024** [A Survey on 3D Gaussian Splatting](http://arxiv.org/abs/2401.03890) — Guikun Chen et al. · arXiv:2401.03890 `{Chen2024Survey}`
 - **2024** UNIVERSITY OF CALIFORNIA Los Angeles Latent Diffusion Energy-based Model for Graph Generation — Jingbang Chen et al. `{Chen2024University}`
@@ -979,6 +992,7 @@
 
 ## 扩散 / 生成模型
 
+- **2026** [Constraint-Aware Flow Matching: Decision Aligned End-to-End Training for Constrained Sampling](http://arxiv.org/abs/2605.12754) — Jacob K. Christopher et al. · arXiv:2605.12754 `{Christopher2026Constraint}`
 - **2025** [VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models](http://arxiv.org/abs/2502.02492) — Hila Chefer et al. · arXiv:2502.02492 `{Chefer2025Videojam}`
 - **2025** [SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images](http://arxiv.org/abs/2501.04689) — Zixuan Huang et al. · arXiv:2501.04689 `{Huang2025Spar3d}`
 - **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
@@ -1506,6 +1520,7 @@
 
 ## 高效训练 / 推理
 
+- **2026** [OpenClaw-RL: Train Any Agent Simply by Talking](http://arxiv.org/abs/2603.10165) — Yinjie Wang et al. · arXiv:2603.10165 `{Wang2026Openclaw}`
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
 - **2025** [Parallel Scaling Law for Language Models](http://arxiv.org/abs/2505.10475) — Mouxiang Chen et al. · arXiv:2505.10475 `{Chen2025Parallel}`
 - **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
@@ -1725,6 +1740,7 @@
 - **2025** [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](http://arxiv.org/abs/2502.21321) — Komal Kumar et al. · arXiv:2502.21321 `{Kumar2025Llm}`
 - **2025** [SurveyX: Academic Survey Automation via Large Language Mod-els](http://www.surveyx.cn) — Xun Liang et al. `{Liang2025Surveyx}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
+- **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2024** [A Comprehensive Survey on Diffusion Models and Their Applications](http://arxiv.org/abs/2408.10207) — Md Manjurul Ahsan et al. · arXiv:2408.10207 `{Ahsan2024Comprehensive}`
 - **2024** [Comprehensive Exploration of Synthetic Data Generation: A Survey](http://arxiv.org/abs/2401.02524) — André Bauer et al. · arXiv:2401.02524 `{Bauer2024Comprehensive}`
 - **2024** The Life Cycle of Knowledge in Big Language Models: A Survey — Boxi Cao et al. `{Cao2024Life}`
