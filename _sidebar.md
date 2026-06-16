@@ -65,4 +65,6 @@
     - [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 - **📅 Weekly**
 - **📚 Resources**
+- **📖 文献库**
+  - [文献库索引（1002 条）](/references/README.md)
 - <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>

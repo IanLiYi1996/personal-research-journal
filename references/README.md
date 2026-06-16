@@ -1,0 +1,2033 @@
+# 文献库索引
+
+> 共 **1002** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
+
+## 主题导航
+
+- [大语言模型 (LLM)](#-llm-) （403）
+- [智能体 / Agent](#-agent) （52）
+- [强化学习 / RLHF](#-rlhf) （135）
+- [推理 / Reasoning](#-reasoning) （136）
+- [图神经网络 / Graph](#-graph) （218）
+- [扩散 / 生成模型](#-) （146）
+- [多模态 / 视觉语言](#-) （121）
+- [Transformer / 架构](#transformer-) （251）
+- [高效训练 / 推理](#-) （213）
+- [综述 / Survey](#-survey) （125）
+- [检索增强 / RAG](#-rag) （50）
+- 未分类（127）
+
+## 大语言模型 (LLM)
+
+- **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
+- **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
+- **2025** [Synthetic Data RL: Task Definition Is All You Need](http://arxiv.org/abs/2505.17063) — Yiduo Guo et al. · arXiv:2505.17063 `{Guo2025Synthetic}`
+- **2025** [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](http://arxiv.org/abs/2502.21321) — Komal Kumar et al. · arXiv:2502.21321 `{Kumar2025Llm}`
+- **2025** Reinforcement Learning from Human Feedback A short introduction to RLHF and post-training focused on language models — Nathan Lambert et al. `{Lambert2025Reinforcement}`
+- **2025** [SurveyX: Academic Survey Automation via Large Language Mod-els](http://www.surveyx.cn) — Xun Liang et al. `{Liang2025Surveyx}`
+- **2025** [Inference-Time Scaling for Generalist Reward Modeling](http://arxiv.org/abs/2504.02495) — Zijun Liu et al. · arXiv:2504.02495 `{Liu2025Inference}`
+- **2025** [Reasoning Models Can Be Effective Without Thinking](http://arxiv.org/abs/2504.09858) — Wenjie Ma et al. · arXiv:2504.09858 `{Ma2025Reasoning}`
+- **2025** [DeepSeek-R1 Thoughtology: Let's <think> about LLM Reasoning](http://arxiv.org/abs/2504.07128) — Sara Vera Marjanović et al. · arXiv:2504.07128 `{Marjanovi2025Deepseek}`
+- **2025** [s1: Simple test-time scaling](http://arxiv.org/abs/2501.19393) — Niklas Muennighoff et al. · arXiv:2501.19393 `{Muennighoff2025S1}`
+- **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
+- **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
+- **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
+- **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
+- **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
+- **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
+- **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
+- **2024** [Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws](https://en.wikipedia.) — Zeyuan Allen-Zhu et al. `{AllenZhu2024Physics}`
+- **2024** [Training-Free Long-Context Scaling of Large Language Models](http://arxiv.org/abs/2402.17463) — Chenxin An et al. · arXiv:2402.17463 `{An2024Training}`
+- **2024** [Does Refusal Training in LLMs Generalize to the Past Tense?](http://arxiv.org/abs/2407.11969) — Maksym Andriushchenko et al. · arXiv:2407.11969 `{Andriushchenko2024Does}`
+- **2024** [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](http://arxiv.org/abs/2408.07055) — Yushi Bai et al. · arXiv:2408.07055 `{Bai2024Longwriter}`
+- **2024** [LLM Augmented LLMs: Expanding Capabilities through Composition](http://arxiv.org/abs/2401.02412) — Rachit Bansal et al. · arXiv:2401.02412 `{Bansal2024Llm}`
+- **2024** [xLSTM: Extended Long Short-Term Memory](http://arxiv.org/abs/2405.04517) — Maximilian Beck et al. · arXiv:2405.04517 `{Beck2024Xlstm}`
+- **2024** [Does your data spark joy? Performance gains from domain upsampling at the end of training](http://arxiv.org/abs/2406.03476) — Cody Blakeney et al. · arXiv:2406.03476 `{Blakeney2024Does}`
+- **2024** USER INTENT RECOGNITION AND SATISFACTION WITH LARGE LANGUAGE MODELS: A USER STUDY WITH CHATGPT A PREPRINT — Anna Bodonhelyi et al. `{Bodonhelyi2024User}`
+- **2024** [An Introduction to Vision-Language Modeling](http://arxiv.org/abs/2405.17247) — Florian Bordes et al. · arXiv:2405.17247 `{Bordes2024Introduction}`
+- **2024** [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](http://arxiv.org/abs/2404.00282 http://dx.doi.org/10.1109/TNNLS.2024.3497992) — Yuji Cao et al. · arXiv:2404.00282 `{Cao2024Survey}`
+- **2024** [Scaling Synthetic Data Creation with 1,000,000,000 Personas](http://arxiv.org/abs/2406.20094) — Xin Chan et al. · arXiv:2406.20094 `{Chan2024Scaling}`
+- **2024** [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](http://arxiv.org/abs/2401.06081) — Zhipeng Chen et al. · arXiv:2401.06081 `{Chen2024Improving}`
+- **2024** [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](http://arxiv.org/abs/2402.05391) — Zhuo Chen et al. · arXiv:2402.05391 `{Chen2024Knowledge}`
+- **2024** [Teaching Large Language Models to Express Knowledge Boundary from Their Own Signals](http://arxiv.org/abs/2406.10881) — Lida Chen et al. · arXiv:2406.10881 `{Chen2024Teaching}`
+- **2024** [Towards Effective and Efficient Continual Pre-training of Large Language Models](http://arxiv.org/abs/2407.18743) — Jie Chen et al. · arXiv:2407.18743 `{Chen2024Towards}`
+- **2024** [Unveiling the Flaws: Exploring Imperfections in Synthetic Data and Mitigation Strategies for Large Language Models](http://arxiv.org/abs/2406.12397) — Jie Chen et al. · arXiv:2406.12397 `{Chen2024Unveiling}`
+- **2024** [Can AI Assistants Know What They Don't Know?](http://arxiv.org/abs/2401.13275) — Qinyuan Cheng et al. · arXiv:2401.13275 `{Cheng2024Can}`
+- **2024** [Sinkhorn Distance Minimization for Knowledge Distillation](http://arxiv.org/abs/2402.17110) — Xiao Cui et al. · arXiv:2402.17110 `{Cui2024Sinkhorn}`
+- **2024** [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](http://arxiv.org/abs/2404.16130) — Darren Edge et al. · arXiv:2404.16130 `{Edge2024Local}`
+- **2024** [KTO: Model Alignment as Prospect Theoretic Optimization](http://arxiv.org/abs/2402.01306) — Kawin Ethayarajh et al. · arXiv:2402.01306 `{EthayarajhndKto}`
+- **2024** [LLaMA-Omni: Seamless Speech Interaction with Large Language Models](http://arxiv.org/abs/2409.06666) — Qingkai Fang et al. · arXiv:2409.06666 `{Fang2024Llama}`
+- **2024** [Improving Language Model Reasoning with Self-motivated Learning](http://arxiv.org/abs/2404.07017) — Yunlong Feng et al. · arXiv:2404.07017 `{Feng2024Improving}`
+- **2024** [VITA: Towards Open-Source Interactive Omni Multimodal LLM](http://arxiv.org/abs/2408.05211) — Chaoyou Fu et al. · arXiv:2408.05211 `{Fu2024Vita}`
+- **2024** [Parameter-Efficient Fine-Tuning with Discrete Fourier Transform](http://arxiv.org/abs/2405.03003) — Ziqi Gao et al. · arXiv:2405.03003 `{Gao2024Parameter}`
+- **2024** [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](http://arxiv.org/abs/2406.11768) — Sreyan Ghosh et al. · arXiv:2406.11768 `{Ghosh2024Gama}`
+- **2024** [Asynchronous LLM Function Calling](http://arxiv.org/abs/2412.07017) — In Gim et al. · arXiv:2412.07017 `{Gim2024Asynchronous}`
+- **2024** PROMPT CACHE: MODULAR ATTENTION REUSE FOR LOW-LATENCY INFERENCE — In Gim et al. `{Gim2024Prompt}`
+- **2024** [Better \& Faster Large Language Models via Multi-token Prediction](http://arxiv.org/abs/2404.19737) — Fabian Gloeckle et al. · arXiv:2404.19737 `{Gloeckle2024Better}`
+- **2024** [Training Large Language Models to Reason in a Continuous Latent Space](http://arxiv.org/abs/2412.06769) — Shibo Hao et al. · arXiv:2412.06769 `{Hao2024Training}`
+- **2024** [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](http://arxiv.org/abs/2404.06395) — Shengding Hu et al. · arXiv:2404.06395 `{Hu2024Minicpm}`
+- **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
+- **2024** [Align Anything: Training All-Modality Models to Follow Instructions with Language Feedback](http://arxiv.org/abs/2412.15838) — Jiaming Ji et al. · arXiv:2412.15838 `{Ji2024Align}`
+- **2024** [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](http://arxiv.org/abs/2407.02490) — Huiqiang Jiang et al. · arXiv:2407.02490 `{Jiang2024Minference}`
+- **2024** [Efficient Multimodal Large Language Models: A Survey](http://arxiv.org/abs/2405.10739) — Yizhang Jin et al. · arXiv:2405.10739 `{Jin2024Efficient}`
+- **2024** [Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs](http://arxiv.org/abs/2404.07103) — Bowen Jin et al. · arXiv:2404.07103 `{Jin2024Graph}`
+- **2024** [The Impact of Reasoning Step Length on Large Language Models](http://arxiv.org/abs/2401.04925) — Mingyu Jin et al. · arXiv:2401.04925 `{Jin2024Impact}`
+- **2024** [Investigating Multi-Hop Factual Shortcuts in Knowledge Editing of Large Language Models](http://arxiv.org/abs/2402.11900) — Tianjie Ju et al. · arXiv:2402.11900 `{Ju2024Investigating}`
+- **2024** [On the Empirical Complexity of Reasoning and Planning in LLMs](http://arxiv.org/abs/2404.11041) — Liwei Kang et al. · arXiv:2404.11041 `{Kang2024Empirical}`
+- **2024** [Spectra: A Comprehensive Study of Ternary, Quantized, and FP16 Language Models](http://arxiv.org/abs/2407.12327) — Ayush Kaushal et al. · arXiv:2407.12327 `{Kaushal2024Spectra}`
+- **2024** [PROVER-VERIFIER GAMES IMPROVE LEGIBILITY OF LLM OUTPUTS](http://arxiv.org/abs/2407.13692) — Jan Hendrik Kirchner et al. · arXiv:2407.13692 `{KirchnerndProver}`
+- **2024** [Aligning Large Language Models with Representation Editing: A Control Perspective](http://arxiv.org/abs/2406.05954) — Lingkai Kong et al. · arXiv:2406.05954 `{Kong2024Aligning}`
+- **2024** [Can large language models explore in-context?](http://arxiv.org/abs/2403.15371) — Akshay Krishnamurthy et al. · arXiv:2403.15371 `{Krishnamurthy2024Can}`
+- **2024** [Enhancing Training Efficiency Using Packing with Flash Attention](http://arxiv.org/abs/2407.09105) — Achintya Kundu et al. · arXiv:2407.09105 `{Kundu2024Enhancing}`
+- **2024** [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](http://arxiv.org/abs/2405.17428) — Chankyu Lee et al. · arXiv:2405.17428 `{Lee2024Nv}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](http://arxiv.org/abs/2405.02957) — Junkai Li et al. · arXiv:2405.02957 `{Li2024Agent}`
+- **2024** [DataComp-LM: In search of the next generation of training sets for language models](http://arxiv.org/abs/2406.11794) — Jeffrey Li et al. · arXiv:2406.11794 `{Li2024Datacomp}`
+- **2024** [Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding](http://arxiv.org/abs/2405.08748) — Zhimin Li et al. · arXiv:2405.08748 `{Li2024Hunyuan}`
+- **2024** [UrbanGPT: Spatio-Temporal Large Language Models](http://arxiv.org/abs/2403.00813) — Zhonghang Li et al. · arXiv:2403.00813 `{Li2024Urbangpt}`
+- **2024** [Internal Consistency and Self-Feedback in Large Language Models: A Survey](http://arxiv.org/abs/2407.14507) — Xun Liang et al. · arXiv:2407.14507 `{Liang2024Internal}`
+- **2024** [AudioLCM: Text-to-Audio Generation with Latent Consistency Models](http://arxiv.org/abs/2406.00356) — Huadai Liu et al. · arXiv:2406.00356 `{Liu2024Audiolcm}`
+- **2024** [Datasets for Large Language Models: A Comprehensive Survey Large Language Model Datasets Pre-training Corpora (Sec 2.)](https://github.com/lmmlzn/Awesome-LLMs-Datasets.) — Yang Liu et al. `{Liu2024Datasets}`
+- **2024** [Efficient Detection of Toxic Prompts in Large Language Models](http://arxiv.org/abs/2408.11727) — Yi Liu et al. · arXiv:2408.11727 `{Liu2024Efficient}`
+- **2024** [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](http://arxiv.org/abs/2401.02777) — Na Liu et al. · arXiv:2401.02777 `{Liu2024Llm}`
+- **2024** [On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey](http://arxiv.org/abs/2406.15126) — Lin Long et al. · arXiv:2406.15126 `{Long2024Llms}`
+- **2024** [CogGPT: Unleashing the Power of Cognitive Dynamics on Large Language Models](http://arxiv.org/abs/2401.08438) — Yaojia Lv et al. · arXiv:2401.08438 `{Lv2024Coggpt}`
+- **2024** [An Embarrassingly Simple Approach for LLM with Strong ASR Capacity](http://arxiv.org/abs/2402.08846) — Ziyang Ma et al. · arXiv:2402.08846 `{Ma2024Embarrassingly}`
+- **2024** [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](http://arxiv.org/abs/2402.17764) — Shuming Ma et al. · arXiv:2402.17764 `{Ma2024Era}`
+- **2024** [LLM Critics Help Catch LLM Bugs](http://arxiv.org/abs/2407.00215) — Nat McAleese et al. · arXiv:2407.00215 `{McAleesendLlm}`
+- **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
+- **2024** [PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](http://arxiv.org/abs/2404.02948) — Fanxu Meng et al. · arXiv:2404.02948 `{Meng2024Pissa}`
+- **2024** [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](http://arxiv.org/abs/2402.12869) — Dehai Min et al. · arXiv:2402.12869 `{Min2024Exploring}`
+- **2024** Orca-Math: Unlocking the potential of SLMs in Grade School Math — Arindam Mitra et al. `{Mitra2024Orca}`
+- **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
+- **2024** [Rule Based Rewards for Language Model Safety](http://arxiv.org/abs/2411.01111) — Tong Mu et al. · arXiv:2411.01111 `{MundRule}`
+- **2024** [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](http://arxiv.org/abs/2404.07143) — Tsendsuren Munkhdalai et al. · arXiv:2404.07143 `{MunkhdalaindLeave}`
+- **2024** [Autoformalizing Euclidean Geometry](http://arxiv.org/abs/2405.17216) — Logan Murphy et al. · arXiv:2405.17216 `{Murphy2024Autoformalizing}`
+- **2024** [Better Alignment with Instruction Back-and-Forth Translation](http://arxiv.org/abs/2408.04614) — Thao Nguyen et al. · arXiv:2408.04614 `{Nguyen2024Better}`
+- **2024** Accelerating End-to-End Large Language Models System using a Unified Inference Architecture and FP8 — Xiaonan Nie et al. `{Nie2024Accelerating}`
+- **2024** [HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs](http://arxiv.org/abs/2406.06027) — Pranoy Panda et al. · arXiv:2406.06027 `{PandandHolmes}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](http://arxiv.org/abs/2407.00079) — Ruoyu Qin et al. · arXiv:2407.00079 `{Qin2024Mooncake}`
+- **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
+- **2024** [Watermarking Makes Language Models Radioactive](http://arxiv.org/abs/2402.14904) — Tom Sander et al. · arXiv:2402.14904 `{SanderndWatermarking}`
+- **2024** [Generative Explore-Exploit: Training-free Optimization of Generative Recommender Systems using LLM Optimizers](http://arxiv.org/abs/2406.05255) — Lütfi Kerem Senel et al. · arXiv:2406.05255 `{Senel2024Generative}`
+- **2024** [Case2Code: Learning Inductive Reasoning with Synthetic Data](http://arxiv.org/abs/2407.12504) — Yunfan Shao et al. · arXiv:2407.12504 `{Shao2024Case2code}`
+- **2024** [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](http://arxiv.org/abs/2402.03300) — Zhihong Shao et al. · arXiv:2402.03300 `{Shao2024Deepseekmath}`
+- **2024** [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](http://arxiv.org/abs/2408.03314) — Charlie Snell et al. · arXiv:2408.03314 `{Snell2024Scaling}`
+- **2024** [The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism](http://arxiv.org/abs/2407.10457) — Yifan Song et al. · arXiv:2407.10457 `{Song2024Good}`
+- **2024** [To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning](http://arxiv.org/abs/2409.12183) — Zayne Sprague et al. · arXiv:2409.12183 `{Sprague2024Cot}`
+- **2024** [LLM Pruning and Distillation in Practice: The Minitron Approach](http://arxiv.org/abs/2408.11796) — Sharath Turuvekere Sreenivas et al. · arXiv:2408.11796 `{Sreenivas2024Llm}`
+- **2024** [Living in the Moment: Can Large Language Models Grasp Co-Temporal Reasoning?](http://arxiv.org/abs/2406.09072) — Zhaochen Su et al. · arXiv:2406.09072 `{Su2024Living}`
+- **2024** Unraveling the Mystery of Scaling Laws: Part I — Hui Su et al. `{Su2024Unraveling}`
+- **2024** [Inverse-RLignment: Inverse Reinforcement Learning from Demonstrations for LLM Alignment](http://arxiv.org/abs/2405.15624) — Hao Sun et al. · arXiv:2405.15624 `{Sun2024Inverse}`
+- **2024** MOSS: An Open Conversational Large Language Model — Tianxiang Sun et al. `{Sun2024Moss}`
+- **2024** [Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding](http://arxiv.org/abs/2401.12954) — Mirac Suzgun et al. · arXiv:2401.12954 `{Suzgun2024Meta}`
+- **2024** [Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models](http://arxiv.org/abs/2408.02442) — Zhi Rui Tam et al. · arXiv:2408.02442 `{Tam2024Let}`
+- **2024** [Large Language Models for Data Annotation: A Survey](http://arxiv.org/abs/2402.13446) — Zhen Tan et al. · arXiv:2402.13446 `{Tan2024Large}`
+- **2024** [GraphGPT: Graph Instruction Tuning for Large Language Models](http://arxiv.org/abs/2310.13023) — Jiabin Tang et al. · arXiv:2310.13023 `{Tang2024Graphgpt}`
+- **2024** [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](http://arxiv.org/abs/2407.13623) — Chaofan Tao et al. · arXiv:2407.13623 `{Tao2024Scaling}`
+- **2024** [Chain-of-Discussion: A Multi-Model Framework for Complex Evidence-Based Question Answering](http://arxiv.org/abs/2402.16313) — Mingxu Tao et al. · arXiv:2402.16313 `{TaondChain}`
+- **2024** [Chameleon: Mixed-Modal Early-Fusion Foundation Models](http://arxiv.org/abs/2405.09818) — Chameleon Team et al. · arXiv:2405.09818 `{Team2024Chameleon}`
+- **2024** The Llama 3 Herd of Models — Llama Team et al. `{Team2024Llama}`
+- **2024** [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](http://arxiv.org/abs/2406.16860) — Shengbang Tong et al. · arXiv:2406.16860 `{Tong2024Cambrian}`
+- **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
+- **2024** [Knowledge Fusion of Large Language Models](http://arxiv.org/abs/2401.10491) — Fanqi Wan et al. · arXiv:2401.10491 `{Wan2024Knowledge}`
+- **2024** [Can Language Models Serve as Text-Based World Simulators?](http://arxiv.org/abs/2406.06485) — Ruoyao Wang et al. · arXiv:2406.06485 `{Wang2024Can}`
+- **2024** [CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs](http://arxiv.org/abs/2406.18521) — Zirui Wang et al. · arXiv:2406.18521 `{Wang2024Charxiv}`
+- **2024** [A Comprehensive Survey of LLM Alignment Techniques: RLHF, RLAIF, PPO, DPO and More](http://arxiv.org/abs/2407.16216) — Zhichao Wang et al. · arXiv:2407.16216 `{Wang2024Comprehensive}`
+- **2024** [Diffusion Feedback Helps CLIP See Better](http://arxiv.org/abs/2407.20171) — Wenxuan Wang et al. · arXiv:2407.20171 `{Wang2024Diffusion}`
+- **2024** [Executable Code Actions Elicit Better LLM Agents](http://arxiv.org/abs/2402.01030) — Xingyao Wang et al. · arXiv:2402.01030 `{Wang2024Executable}`
+- **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
+- **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
+- **2024** [LLMFactor: Extracting Profitable Factors through Prompts for Explainable Stock Movement Prediction](http://arxiv.org/abs/2406.10811) — Meiyun Wang et al. · arXiv:2406.10811 `{Wang2024Llmfactor}`
+- **2024** [LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings](http://arxiv.org/abs/2408.14512) — Duo Wang et al. · arXiv:2408.14512 `{Wang2024Llms}`
+- **2024** [Model Compression and Efficient Inference for Large Language Models: A Survey](http://arxiv.org/abs/2402.09748) — Wenxiao Wang et al. · arXiv:2402.09748 `{Wang2024Model}`
+- **2024** [OpenDevin: An Open Platform for AI Software Developers as Generalist Agents](http://arxiv.org/abs/2407.16741) — Xingyao Wang et al. · arXiv:2407.16741 `{Wang2024Opendevin}`
+- **2024** [Reinforcement Learning Enhanced LLMs: A Survey](http://arxiv.org/abs/2412.10400) — Shuhe Wang et al. · arXiv:2412.10400 `{Wang2024Reinforcement}`
+- **2024** [Retriever-and-Memory: Towards Adaptive Note-Enhanced Retrieval-Augmented Generation](http://arxiv.org/abs/2410.08821) — Ruobing Wang et al. · arXiv:2410.08821 `{Wang2024Retriever}`
+- **2024** [A Comprehensive Review of Multimodal Large Language Models: Performance and Challenges Across Different Tasks](http://arxiv.org/abs/2408.01319) — Jiaqi Wang et al. · arXiv:2408.01319 `{WangndComprehensive}`
+- **2024** [Knowledge Mechanisms in Large Language Models: A Survey and Perspective](http://arxiv.org/abs/2407.15017) — Mengru Wang et al. · arXiv:2407.15017 `{WangndKnowledge}`
+- **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
+- **2024** [Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge](http://arxiv.org/abs/2407.19594) — Tianhao Wu et al. · arXiv:2407.19594 `{Wu2024Meta}`
+- **2024** [Who Wrote This? The Key to Zero-Shot LLM-Generated Text Detection Is GECScore](http://arxiv.org/abs/2405.04286) — Junchao Wu et al. · arXiv:2405.04286 `{Wu2024Who}`
+- **2024** [Mixture-of-Subspaces in Low-Rank Adaptation](http://arxiv.org/abs/2406.11909) — Taiqiang Wu et al. · arXiv:2406.11909 `{WundMixture}`
+- **2024** [Towards Visual Grounding: A Survey](http://arxiv.org/abs/2412.20206) — Linhui Xiao et al. · arXiv:2412.20206 `{Xiao2024Towards}`
+- **2024** [ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities](http://arxiv.org/abs/2407.14482) — Peng Xu et al. · arXiv:2407.14482 `{Xu2024Chatqa}`
+- **2024** [Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study](http://arxiv.org/abs/2404.10719) — Shusheng Xu et al. · arXiv:2404.10719 `{Xu2024Dpo}`
+- **2024** [Faithful Logical Reasoning via Symbolic Chain-of-Thought](http://arxiv.org/abs/2405.18357) — Jundong Xu et al. · arXiv:2405.18357 `{Xu2024Faithful}`
+- **2024** [Hallucination is Inevitable: An Innate Limitation of Large Language Models](http://arxiv.org/abs/2401.11817) — Ziwei Xu et al. · arXiv:2401.11817 `{Xu2024Hallucination}`
+- **2024** [Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing](http://arxiv.org/abs/2406.08464) — Zhangchen Xu et al. · arXiv:2406.08464 `{Xu2024Magpie}`
+- **2024** [Item-Language Model for Conversational Recommendation](http://arxiv.org/abs/2406.02844) — Li Yang et al. · arXiv:2406.02844 `{Yang2024Item}`
+- **2024** [Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning](http://arxiv.org/abs/2402.13669) — Zhaorui Yang et al. · arXiv:2402.13669 `{Yang2024Self}`
+- **2024** [Social Skill Training with Large Language Models](http://arxiv.org/abs/2404.04204) — Diyi Yang et al. · arXiv:2404.04204 `{YangndSocial}`
+- **2024** [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](http://arxiv.org/abs/2408.01800) — Yuan Yao et al. · arXiv:2408.01800 `{Yao2024Minicpm}`
+- **2024** [Differential Transformer](http://arxiv.org/abs/2410.05258) — Tianzhu Ye et al. · arXiv:2410.05258 `{Ye2024Differential}`
+- **2024** [ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios](http://arxiv.org/abs/2401.00741) — Junjie Ye et al. · arXiv:2401.00741 `{Ye2024Tooleyes}`
+- **2024** [When Can Transformers Count to n?](http://arxiv.org/abs/2407.15160) — Gilad Yehudai et al. · arXiv:2407.15160 `{Yehudai2024When}`
+- **2024** [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](http://arxiv.org/abs/2406.02536) — Yijiong Yu et al. · arXiv:2406.02536 `{Yu2024Mitigate}`
+- **2024** [xFinder: Robust and Pinpoint Answer Extraction for Large Language Models](http://arxiv.org/abs/2405.11874) — Qingchen Yu et al. · arXiv:2405.11874 `{Yu2024Xfinder}`
+- **2024** [Self-Rewarding Language Models](http://arxiv.org/abs/2401.10020) — Weizhe Yuan et al. · arXiv:2401.10020 `{Yuan2024Self}`
+- **2024** [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](http://arxiv.org/abs/2402.17152) — Jiaqi Zhai et al. · arXiv:2402.17152 `{Zhai2024Actions}`
+- **2024** [Knowledge Graph Enhanced Large Language Model Editing](http://arxiv.org/abs/2402.13593) — Mengqi Zhang et al. · arXiv:2402.13593 `{Zhang2024Knowledge}`
+- **2024** [Large Language Model-Brained GUI Agents: A Survey](http://arxiv.org/abs/2411.18279) — Chaoyun Zhang et al. · arXiv:2411.18279 `{Zhang2024Large}`
+- **2024** LLM–Assisted Data Augmentation for Chinese Dialogue–Level Dependency Parsing — Meishan Zhang et al. `{Zhang2024Llm}`
+- **2024** [MM-LLMs: Recent Advances in MultiModal Large Language Models](http://arxiv.org/abs/2401.13601) — Duzhen Zhang et al. · arXiv:2401.13601 `{Zhang2024Mm}`
+- **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
+- **2024** [NoteLLM: A Retrievable Large Language Model for Note Recommendation](https://dl.acm.org/doi/10.1145/3589335.3648314) — Chao Zhang et al. · arXiv:9335.36483 `{Zhang2024Notellm}`
+- **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
+- **2024** [Is In-Context Learning Sufficient for Instruction Following in LLMs?](http://arxiv.org/abs/2405.19874) — Hao Zhao et al. · arXiv:2405.19874 `{Zhao2024Context}`
+- **2024** [Reverse Multi-Choice Dialogue Commonsense Inference with Graph-of-Thought](www.aaai.org) — Li Zheng et al. `{Zheng2024Reverse}`
+- **2024** [RMB: Comprehensively Benchmarking Reward Models in LLM Alignment](http://arxiv.org/abs/2410.09893) — Enyu Zhou et al. · arXiv:2410.09893 `{Zhou2024Rmb}`
+- **2024** [Self-Discover: Large Language Models Self-Compose Reasoning Structures](http://arxiv.org/abs/2402.03620) — Pei Zhou et al. · arXiv:2402.03620 `{Zhou2024Self}`
+- **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
+- **2023** [InstructEval: Systematic Evaluation of Instruction Selection Methods](http://arxiv.org/abs/2307.00259) — Anirudh Ajith et al. · arXiv:2307.00259 `{Ajith2023Instructeval}`
+- **2023** [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](http://arxiv.org/abs/2312.11514) — Keivan Alizadeh et al. · arXiv:2312.11514 `{AlizadehndLlm}`
+- **2023** [QWEN TECHNICAL REPORT](http://arxiv.org/abs/2309.16609) — Jinze Bai et al. · arXiv:2309.16609 `{BaindQwen}`
+- **2023** [Graph of Thoughts: Solving Elaborate Problems with Large Language Models](http://arxiv.org/abs/2308.09687 http://dx.doi.org/10.1609/aaai.v38i16.29720) — Maciej Besta et al. · arXiv:2308.09687 `{Besta2023Graph}`
+- **2023** [WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION](http://arxiv.org/abs/2312.09390) — Collin Burns et al. · arXiv:2312.09390 `{BurnsndWeak}`
+- **2023** [Large Language Models as Tool Makers](http://arxiv.org/abs/2305.17126) — Tianle Cai et al. · arXiv:2305.17126 `{Cai2023Large}`
+- **2023** [Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback](http://arxiv.org/abs/2307.15217) — Stephen Casper et al. · arXiv:2307.15217 `{Casper2023Open}`
+- **2023** [Accelerating Large Language Model Decoding with Speculative Sampling](http://arxiv.org/abs/2302.01318) — Charlie Chen et al. · arXiv:2302.01318 `{Chen2023Accelerating}`
+- **2023** [AutoAgents: A Framework for Automatic Agent Generation](http://arxiv.org/abs/2309.17288) — Guangyao Chen et al. · arXiv:2309.17288 `{Chen2023Autoagents}`
+- **2023** [Exploring the Potential of Large Language Models (LLMs) in Learning on Graphs](http://arxiv.org/abs/2307.03393) — Zhikai Chen et al. · arXiv:2307.03393 `{Chen2023Exploringa}`
+- **2023** [Exploring the Use of Large Language Models for Reference-Free Text Quality Evaluation: An Empirical Study](http://arxiv.org/abs/2304.00723) — Yi Chen et al. · arXiv:2304.00723 `{Chen2023Exploringb}`
+- **2023** [Extending Context Window of Large Language Models via Positional Interpolation](http://arxiv.org/abs/2306.15595) — Shouyuan Chen et al. · arXiv:2306.15595 `{Chen2023Extending}`
+- **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`
+- **2023** [Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis](http://arxiv.org/abs/2310.10477) — Kai Chen et al. · arXiv:2310.10477 `{Chen2023Gaining}`
+- **2023** [LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models](http://arxiv.org/abs/2309.12307) — Yukang Chen et al. · arXiv:2309.12307 `{Chen2023Longlora}`
+- **2023** [Say What You Mean! Large Language Models Speak Too Positively about Negative Commonsense Knowledge](http://arxiv.org/abs/2305.05976) — Jiangjie Chen et al. · arXiv:2305.05976 `{Chen2023Say}`
+- **2023** [TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](http://arxiv.org/abs/2311.16465) — Jingye Chen et al. · arXiv:2311.16465 `{Chen2023Textdiffuser}`
+- **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
+- **2023** [Adapting Large Language Models via Reading Comprehension](http://arxiv.org/abs/2309.09530) — Daixuan Cheng et al. · arXiv:2309.09530 `{Cheng2023Adapting}`
+- **2023** [Adversarial Preference Optimization](http://arxiv.org/abs/2311.08045) — Pengyu Cheng et al. · arXiv:2311.08045 `{Cheng2023Adversarial}`
+- **2023** [Black-Box Prompt Optimization: Aligning Large Language Models without Model Training](http://arxiv.org/abs/2311.04155) — Jiale Cheng et al. · arXiv:2311.04155 `{Cheng2023Black}`
+- **2023** [Evaluating Hallucinations in Chinese Large Language Models](http://arxiv.org/abs/2310.03368) — Qinyuan Cheng et al. · arXiv:2310.03368 `{Cheng2023Evaluating}`
+- **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
+- **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [QLoRA: Efficient Finetuning of Quantized LLMs](http://arxiv.org/abs/2305.14314) — Tim Dettmers et al. · arXiv:2305.14314 `{Dettmers2023Qlora}`
+- **2023** [Chain-of-Verification Reduces Hallucination in Large Language Models](http://arxiv.org/abs/2309.11495) — Shehzaad Dhuliawala et al. · arXiv:2309.11495 `{Dhuliawala2023Chain}`
+- **2023** [Enhancing Chat Language Models by Scaling High-quality Instructional Conversations](http://arxiv.org/abs/2305.14233) — Ning Ding et al. · arXiv:2305.14233 `{Ding2023Enhancing}`
+- **2023** [How Abilities in Large Language Models are Affected by Supervised Fine-tuning Data Composition](http://arxiv.org/abs/2310.05492) — Guanting Dong et al. · arXiv:2310.05492 `{Dong2023How}`
+- **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
+- **2023** [LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](http://arxiv.org/abs/2312.09979) — Shihan Dou et al. · arXiv:2312.09979 `{Dou2023Loramoe}`
+- **2023** [AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback](http://arxiv.org/abs/2305.14387) — Yann Dubois et al. · arXiv:2305.14387 `{Dubois2023Alpacafarm}`
+- **2023** [Language acquisition: do children and language models follow similar learning stages?](http://arxiv.org/abs/2306.03586) — Linnea Evanson et al. · arXiv:2306.03586 `{Evanson2023Language}`
+- **2023** [Trends in Integration of Knowledge and Large Language Models: A Survey and Taxonomy of Methods, Benchmarks, and Applications](http://arxiv.org/abs/2311.05876) — Zhangyin Feng et al. · arXiv:2311.05876 `{Feng2023Trends}`
+- **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
+- **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [Textbooks Are All You Need](http://arxiv.org/abs/2306.11644) — Suriya Gunasekar et al. · arXiv:2306.11644 `{Gunasekar2023Textbooks}`
+- **2023** [Evaluating Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2310.19736) — Zishan Guo et al. · arXiv:2310.19736 `{Guo2023Evaluating}`
+- **2023** [HyperAttention: Long-context Attention in Near-Linear Time](http://arxiv.org/abs/2310.05869) — Insu Han et al. · arXiv:2310.05869 `{Han2023Hyperattention}`
+- **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
+- **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
+- **2023** [Backpack Language Models](http://arxiv.org/abs/2305.16765) — John Hewitt et al. · arXiv:2305.16765 `{Hewitt2023Backpack}`
+- **2023** [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework](http://arxiv.org/abs/2308.00352) — Sirui Hong et al. · arXiv:2308.00352 `{Hong2023Metagpt}`
+- **2023** [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](http://arxiv.org/abs/2305.02301) — Cheng-Yu Hsieh et al. · arXiv:2305.02301 `{Hsieh2023Distilling}`
+- **2023** [LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models](http://arxiv.org/abs/2304.01933) — Zhiqiang Hu et al. · arXiv:2304.01933 `{Hu2023Llm}`
+- **2023** [Predicting Emergent Abilities with Infinite Resolution Evaluation](http://arxiv.org/abs/2310.03262) — Shengding Hu et al. · arXiv:2310.03262 `{Hu2023Predicting}`
+- **2023** [Advancing Transformer Architecture in Long-Context Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2311.12351) — Yunpeng Huang et al. · arXiv:2311.12351 `{Huang2023Advancing}`
+- **2023** [Language Is Not All You Need: Aligning Perception with Language Models](http://arxiv.org/abs/2302.14045) — Shaohan Huang et al. · arXiv:2302.14045 `{Huang2023Language}`
+- **2023** [Large Language Models Cannot Self-Correct Reasoning Yet](http://arxiv.org/abs/2310.01798) — Jie Huang et al. · arXiv:2310.01798 `{Huang2023Large}`
+- **2023** [A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions](http://arxiv.org/abs/2311.05232) — Lei Huang et al. · arXiv:2311.05232 `{Huang2023Survey}`
+- **2023** [Has It All Been Solved? Open NLP Research Questions Not Solved by Large Language Models](http://arxiv.org/abs/2305.12544) — Oana Ignat et al. · arXiv:2305.12544 `{Ignat2023Has}`
+- **2023** [MathPrompter: Mathematical Reasoning using Large Language Models](http://arxiv.org/abs/2303.05398) — Shima Imani et al. · arXiv:2303.05398 `{Imani2023Mathprompter}`
+- **2023** [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](http://arxiv.org/abs/2312.06674) — Hakan Inan et al. · arXiv:2312.06674 `{Inan2023Llama}`
+- **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
+- **2023** [NEFTune: Noisy Embeddings Improve Instruction Finetuning](http://arxiv.org/abs/2310.05914) — Neel Jain et al. · arXiv:2310.05914 `{Jain2023Neftune}`
+- **2023** [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](http://arxiv.org/abs/2310.05736) — Huiqiang Jiang et al. · arXiv:2310.05736 `{Jiang2023Llmlingua}`
+- **2023** [StructGPT: A General Framework for Large Language Model to Reason over Structured Data](http://arxiv.org/abs/2305.09645) — Jinhao Jiang et al. · arXiv:2305.09645 `{Jiang2023Structgpt}`
+- **2023** [Challenges and Applications of Large Language Models](http://arxiv.org/abs/2307.10169) — Jean Kaddour et al. · arXiv:2307.10169 `{Kaddour2023Challenges}`
+- **2023** [RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback](http://arxiv.org/abs/2309.00267) — Harrison Lee et al. · arXiv:2309.00267 `{Lee2023Rlaif}`
+- **2023** [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model](http://arxiv.org/abs/2306.03341) — Kenneth Li et al. · arXiv:2306.03341 `{Li2023Inference}`
+- **2023** [Large Multimodal Models: Notes on CVPR 2023 Tutorial](http://arxiv.org/abs/2306.14895) — Chunyuan Li et al. · arXiv:2306.14895 `{Li2023Largea}`
+- **2023** [Large Multimodal Models Towards Building and Surpassing Multimodal GPT-4 Chunyuan Li Deep Learning Team Microsoft Research, Redmond](https://chunyuan.li) — Li et al. `{Li2023Largeb}`
+- **2023** [LooGLE: Can Long-Context Language Models Understand Long Contexts?](http://arxiv.org/abs/2311.04939) — Jiaqi Li et al. · arXiv:2311.04939 `{Li2023Loogle}`
+- **2023** [From Quantity to Quality: Boosting LLM Performance with Self-Guided Data Selection for Instruction Tuning](http://arxiv.org/abs/2308.12032) — Ming Li et al. · arXiv:2308.12032 `{Li2023Quantity}`
+- **2023** [Self-Alignment with Instruction Backtranslation](http://arxiv.org/abs/2308.06259) — Xian Li et al. · arXiv:2308.06259 `{Li2023Self}`
+- **2023** [A Survey of Graph Meets Large Language Model: Progress and Future Directions](http://arxiv.org/abs/2311.12399) — Yuhan Li et al. · arXiv:2311.12399 `{Li2023Survey}`
+- **2023** [Symbolic Chain-of-Thought Distillation: Small Models Can Also "Think" Step-by-Step](http://arxiv.org/abs/2306.14050) — Liunian Harold Li et al. · arXiv:2306.14050 `{Li2023Symbolic}`
+- **2023** [Textbooks Are All You Need II: phi-1.5 technical report](http://arxiv.org/abs/2309.05463) — Yuanzhi Li et al. · arXiv:2309.05463 `{Li2023Textbooks}`
+- **2023** [Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data](http://arxiv.org/abs/2312.12832) — Yiwei Li et al. · arXiv:2312.12832 `{Li2023Turning}`
+- **2023** [Prompting Large Language Models with Chain-of-Thought for Few-Shot Knowledge Base Question Generation](http://arxiv.org/abs/2310.08395) — Yuanyuan Liang et al. · arXiv:2310.08395 `{Liang2023Prompting}`
+- **2023** [How Can Recommender Systems Benefit from Large Language Models: A Survey](http://arxiv.org/abs/2306.05817) — Jianghao Lin et al. · arXiv:2306.05817 `{Lin2023How}`
+- **2023** [Aligning Large Language Models with Human Preferences through Representation Engineering](http://arxiv.org/abs/2312.15997) — Wenhao Liu et al. · arXiv:2312.15997 `{Liu2023Aligning}`
+- **2023** [Evaluating the Logical Reasoning Ability of ChatGPT and GPT-4](http://arxiv.org/abs/2304.03439) — Hanmeng Liu et al. · arXiv:2304.03439 `{Liu2023Evaluating}`
+- **2023** [Goat: Fine-tuned LLaMA Outperforms GPT-4 on Arithmetic Tasks](http://arxiv.org/abs/2305.14201) — Tiedong Liu et al. · arXiv:2305.14201 `{Liu2023Goat}`
+- **2023** [LLM360: Towards Fully Transparent Open-Source LLMs](http://arxiv.org/abs/2312.06550) — Zhengzhong Liu et al. · arXiv:2312.06550 `{Liu2023Llm360}`
+- **2023** [Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training](http://arxiv.org/abs/2305.14342) — Hong Liu et al. · arXiv:2305.14342 `{Liu2023Sophia}`
+- **2023** [Towards Graph Foundation Models: A Survey and Beyond](http://arxiv.org/abs/2310.11829) — Jiawei Liu et al. · arXiv:2310.11829 `{Liu2023Towards}`
+- **2023** [Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment](http://arxiv.org/abs/2308.05374) — Yang Liu et al. · arXiv:2308.05374 `{Liu2023Trustworthy}`
+- **2023** [Visual Instruction Tuning](http://arxiv.org/abs/2304.08485) — Haotian Liu et al. · arXiv:2304.08485 `{Liu2023Visual}`
+- **2023** [From Zero to Hero: Examining the Power of Symbolic Tasks in Instruction Tuning](http://arxiv.org/abs/2304.07995) — Qian Liu et al. · arXiv:2304.07995 `{Liu2023Zero}`
+- **2023** [Augmented Large Language Models with Parametric Knowledge Guiding](http://arxiv.org/abs/2305.04757) — Ziyang Luo et al. · arXiv:2305.04757 `{Luo2023Augmented}`
+- **2023** [ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models](http://arxiv.org/abs/2310.08975) — Haoran Luo et al. · arXiv:2310.08975 `{Luo2023Chatkbqa}`
+- **2023** [Cheap and Quick: Efficient Vision-Language Instruction Tuning for Large Language Models](http://arxiv.org/abs/2305.15023) — Gen Luo et al. · arXiv:2305.15023 `{Luo2023Cheap}`
+- **2023** [Full Parameter Fine-tuning for Large Language Models with Limited Resources](http://arxiv.org/abs/2306.09782) — Kai Lv et al. · arXiv:2306.09782 `{Lv2023Full}`
+- **2023** [Brain in a Vat: On Missing Pieces Towards Artificial General Intelligence in Large Language Models](http://arxiv.org/abs/2307.03762) — Yuxi Ma et al. · arXiv:2307.03762 `{Ma2023Brain}`
+- **2023** [Large Language Model Is Not a Good Few-shot Information Extractor, but a Good Reranker for Hard Samples!](http://arxiv.org/abs/2303.08559 http://dx.doi.org/10.18653/v1/2023.findings-emnlp.710) — Yubo Ma et al. · arXiv:2303.08559 `{Ma2023Large}`
+- **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [MemGPT: Towards LLMs as Operating Systems](http://arxiv.org/abs/2310.08560) — Charles Packer et al. · arXiv:2310.08560 `{Packer2023Memgpt}`
+- **2023** [Unifying Large Language Models and Knowledge Graphs: A Roadmap](http://arxiv.org/abs/2306.08302 http://dx.doi.org/10.1109/TKDE.2024.3352100) — Shirui Pan et al. · arXiv:2306.08302 `{Pan2023Unifying}`
+- **2023** [ART: Automatic multi-step reasoning and tool-use for large language models](http://arxiv.org/abs/2303.09014) — Bhargavi Paranjape et al. · arXiv:2303.09014 `{Paranjape2023Art}`
+- **2023** [Generative Agents: Interactive Simulacra of Human Behavior](http://arxiv.org/abs/2304.03442) — Joon Sung Park et al. · arXiv:2304.03442 `{Park2023Generative}`
+- **2023** [Graph-Guided Reasoning for Multi-Hop Question Answering in Large Language Models](http://arxiv.org/abs/2311.09762) — Jinyoung Park et al. · arXiv:2311.09762 `{Park2023Graph}`
+- **2023** [Check Your Facts and Try Again: Improving Large Language Models with External Knowledge and Automated Feedback](http://arxiv.org/abs/2302.12813) — Baolin Peng et al. · arXiv:2302.12813 `{Peng2023Check}`
+- **2023** [YaRN: Efficient Context Window Extension of Large Language Models](http://arxiv.org/abs/2309.00071) — Bowen Peng et al. · arXiv:2309.00071 `{Peng2023Yarn}`
+- **2023** [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](http://arxiv.org/abs/2307.16789) — Yujia Qin et al. · arXiv:2307.16789 `{Qin2023Toolllm}`
+- **2023** [ControlRec: Bridging the Semantic Gap between Language Model and Personalized Recommendation](http://arxiv.org/abs/2311.16441) — Junyan Qiu et al. · arXiv:2311.16441 `{Qiu2023Controlrec}`
+- **2023** [Representation Learning with Large Language Models for Recommendation](http://arxiv.org/abs/2310.15950 http://dx.doi.org/10.1145/3589334.3645458) — Xubin Ren et al. · arXiv:2310.15950 `{Ren2023Representation}`
+- **2023** [Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation](http://arxiv.org/abs/2311.03348) — Rusheb Shah et al. · arXiv:2311.03348 `{Shah2023Scalable}`
+- **2023** [Synthetic Prompting: Generating Chain-of-Thought Demonstrations for Large Language Models](http://arxiv.org/abs/2302.00618) — Zhihong Shao et al. · arXiv:2302.00618 `{Shao2023Synthetic}`
+- **2023** [Large Language Model Alignment: A Survey](http://arxiv.org/abs/2309.15025) — Tianhao Shen et al. · arXiv:2309.15025 `{Shen2023Large}`
+- **2023** [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](http://arxiv.org/abs/2311.03285) — Ying Sheng et al. · arXiv:2311.03285 `{Sheng2023Lora}`
+- **2023** [PandaGPT: One Model To Instruction-Follow Them All](http://arxiv.org/abs/2305.16355) — Yixuan Su et al. · arXiv:2305.16355 `{Su2023Pandagpt}`
+- **2023** [A Comparative Study between Full-Parameter and LoRA-based Fine-Tuning on Chinese Instruction Data for Instruction Following Large Language Model](http://arxiv.org/abs/2304.08109) — Xianghui Sun et al. · arXiv:2304.08109 `{Sun2023Comparative}`
+- **2023** [Retentive Network: A Successor to Transformer for Large Language Models](http://arxiv.org/abs/2307.08621) — Yutao Sun et al. · arXiv:2307.08621 `{Sun2023Retentive}`
+- **2023** [Schema-learning and rebinding as mechanisms of in-context learning and emergence](http://arxiv.org/abs/2307.01201) — Sivaramakrishnan Swaminathan et al. · arXiv:2307.01201 `{Swaminathan2023Schema}`
+- **2023** [CMD: a framework for Context-aware Model self-Detoxification](http://arxiv.org/abs/2308.08295) — Zecheng Tang et al. · arXiv:2308.08295 `{Tang2023Cmd}`
+- **2023** [Multiscale Positive-Unlabeled Detection of AI-Generated Texts](http://arxiv.org/abs/2305.18149) — Yuchuan Tian et al. · arXiv:2305.18149 `{Tian2023Multiscale}`
+- **2023** [Llama 2: Open Foundation and Fine-Tuned Chat Models](http://arxiv.org/abs/2307.09288) — Hugo Touvron et al. · arXiv:2307.09288 `{Touvron2023Llama}`
+- **2023** [Zephyr: Direct Distillation of LM Alignment](http://arxiv.org/abs/2310.16944) — Lewis Tunstall et al. · arXiv:2310.16944 `{Tunstall2023Zephyr}`
+- **2023** [Focused Transformer: Contrastive Training for Context Scaling](http://arxiv.org/abs/2307.03170) — Szymon Tworkowski et al. · arXiv:2307.03170 `{Tworkowski2023Focused}`
+- **2023** [LLMs cannot find reasoning errors, but can correct them!](http://arxiv.org/abs/2311.08516) — Gladys Tyen et al. · arXiv:2311.08516 `{Tyen2023Llms}`
+- **2023** [Data Management For Large Language Models: A Survey](http://arxiv.org/abs/2312.01700) — Zige Wang et al. · arXiv:2312.01700 `{Wang2023Data}`
+- **2023** [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](http://arxiv.org/abs/2308.13387) — Yuxia Wang et al. · arXiv:2308.13387 `{Wang2023Do}`
+- **2023** [EasyEdit: An Easy-to-use Knowledge Editing Framework for Large Language Models](http://arxiv.org/abs/2308.07269) — Peng Wang et al. · arXiv:2308.07269 `{Wang2023Easyedit}`
+- **2023** [Improving Text Embeddings with Large Language Models](http://arxiv.org/abs/2401.00368) — Liang Wang et al. · arXiv:2401.00368 `{Wang2023Improving}`
+- **2023** [InstructUIE: Multi-task Instruction Tuning for Unified Information Extraction](http://arxiv.org/abs/2304.08085) — Xiao Wang et al. · arXiv:2304.08085 `{Wang2023Instructuie}`
+- **2023** [KnowledGPT: Enhancing Large Language Models with Retrieval and Storage Access on Knowledge Bases](http://arxiv.org/abs/2308.11761) — Xintao Wang et al. · arXiv:2308.11761 `{Wang2023Knowledgpt}`
+- **2023** [Query2doc: Query Expansion with Large Language Models](http://arxiv.org/abs/2303.07678) — Liang Wang et al. · arXiv:2303.07678 `{Wang2023Query2doc}`
+- **2023** [Survey on Factuality in Large Language Models: Knowledge, Retrieval and Domain-Specificity](http://arxiv.org/abs/2310.07521) — Cunxiang Wang et al. · arXiv:2310.07521 `{Wang2023Surveya}`
+- **2023** [A Survey on Large Language Model based Autonomous Agents](http://arxiv.org/abs/2308.11432 http://dx.doi.org/10.1007/s11704-024-40231-1) — Lei Wang et al. · arXiv:2308.11432 `{Wang2023Surveyb}`
+- **2023** [InstructionGPT-4: A 200-Instruction Paradigm for Fine-Tuning MiniGPT-4](http://arxiv.org/abs/2308.12067) — Lai Wei et al. · arXiv:2308.12067 `{Wei2023Instructiongpt}`
+- **2023** [Skywork: A More Open Bilingual Foundation Model](http://arxiv.org/abs/2310.19341) — Tianwen Wei et al. · arXiv:2310.19341 `{Wei2023Skywork}`
+- **2023** [BloombergGPT: A Large Language Model for Finance](http://arxiv.org/abs/2303.17564) — Shijie Wu et al. · arXiv:2303.17564 `{Wu2023Bloomberggpt}`
+- **2023** [The Rise and Potential of Large Language Model Based Agents: A Survey](http://arxiv.org/abs/2309.07864) — Zhiheng Xi et al. · arXiv:2309.07864 `{Xi2023Rise}`
+- **2023** [Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning](http://arxiv.org/abs/2310.06694) — Mengzhou Xia et al. · arXiv:2310.06694 `{Xia2023Sheared}`
+- **2023** [Efficient Streaming Language Models with Attention Sinks](http://arxiv.org/abs/2309.17453) — Guangxuan Xiao et al. · arXiv:2309.17453 `{Xiao2023Efficient}`
+- **2023** [FreeAL: Towards Human-Free Active Learning in the Era of Large Language Models](http://arxiv.org/abs/2311.15614) — Ruixuan Xiao et al. · arXiv:2311.15614 `{Xiao2023Freeal}`
+- **2023** [LM-Cocktail: Resilient Tuning of Language Models via Model Merging](http://arxiv.org/abs/2311.13534) — Shitao Xiao et al. · arXiv:2311.13534 `{Xiao2023Lm}`
+- **2023** Graph-Aware Language Model Pre-Training on a Large Graph Corpus Can Help Multiple Graph Applications — Han Xie et al. · arXiv:0305.35998 `{Xie2023Graph}`
+- **2023** [ResiDual: Transformer with Dual Residual Connections](http://arxiv.org/abs/2304.14802) — Shufang Xie et al. · arXiv:2304.14802 `{Xie2023Residual}`
+- **2023** [Effective Long-Context Scaling of Foundation Models](http://arxiv.org/abs/2309.16039) — Wenhan Xiong et al. · arXiv:2309.16039 `{Xiong2023Effective}`
+- **2023** [kNN Prompting: Beyond-Context Learning with Calibration-Free Nearest Neighbor Inference](http://arxiv.org/abs/2303.13824) — Benfeng Xu et al. · arXiv:2303.13824 `{Xu2023Knn}`
+- **2023** [Large Language Models for Generative Information Extraction: A Survey](http://arxiv.org/abs/2312.17617) — Derong Xu et al. · arXiv:2312.17617 `{Xu2023Large}`
+- **2023** [ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models](http://arxiv.org/abs/2305.18323) — Binfeng Xu et al. · arXiv:2305.18323 `{Xu2023Rewoo}`
+- **2023** [FinGPT: Open-Source Financial Large Language Models](http://arxiv.org/abs/2306.06031) — Hongyang Yang et al. · arXiv:2306.06031 `{Yang2023Fingpt}`
+- **2023** [Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond](http://arxiv.org/abs/2304.13712) — Jingfeng Yang et al. · arXiv:2304.13712 `{Yang2023Harnessing}`
+- **2023** [Inference with Reference: Lossless Acceleration of Large Language Models](http://arxiv.org/abs/2304.04487) — Nan Yang et al. · arXiv:2304.04487 `{Yang2023Inference}`
+- **2023** [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](http://arxiv.org/abs/2306.15626) — Kaiyu Yang et al. · arXiv:2306.15626 `{Yang2023Leandojo}`
+- **2023** [Zhongjing: Enhancing the Chinese Medical Capabilities of Large Language Model through Expert Feedback and Real-world Multi-turn Dialogue](http://arxiv.org/abs/2308.03549) — Songhua Yang et al. · arXiv:2308.03549 `{Yang2023Zhongjing}`
+- **2023** [Editing Large Language Models: Problems, Methods, and Opportunities](http://arxiv.org/abs/2305.13172) — Yunzhi Yao et al. · arXiv:2305.13172 `{Yao2023Editing}`
+- **2023** [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](http://arxiv.org/abs/2305.10601) — Shunyu Yao et al. · arXiv:2305.10601 `{Yao2023Tree}`
+- **2023** [Do Large Language Models Know What They Don't Know?](http://arxiv.org/abs/2305.18153) — Zhangyue Yin et al. · arXiv:2305.18153 `{Yin2023Do}`
+- **2023** [A Survey on Multimodal Large Language Models](http://arxiv.org/abs/2306.13549) — Shukang Yin et al. · arXiv:2306.13549 `{Yin2023Survey}`
+- **2023** [Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models](http://arxiv.org/abs/2311.09210) — Wenhao Yu et al. · arXiv:2311.09210 `{Yu2023Chain}`
+- **2023** [BatchEval: Towards Human-like Text Evaluation](http://arxiv.org/abs/2401.00437) — Peiwen Yuan et al. · arXiv:2401.00437 `{Yuan2023Batcheval}`
+- **2023** [AgentTuning: Enabling Generalized Agent Abilities for LLMs](http://arxiv.org/abs/2310.12823) — Aohan Zeng et al. · arXiv:2310.12823 `{Zeng2023Agenttuning}`
+- **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
+- **2023** [CGCE: A Chinese Generative Chat Evaluation Benchmark for General and Financial Domains](http://arxiv.org/abs/2305.14471) — Xuanyu Zhang et al. · arXiv:2305.14471 `{Zhang2023Cgce}`
+- **2023** [Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization](http://arxiv.org/abs/2311.09096) — Zhexin Zhang et al. · arXiv:2311.09096 `{Zhang2023Defending}`
+- **2023** [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](http://arxiv.org/abs/2311.03687) — Longteng Zhang et al. · arXiv:2311.03687 `{Zhang2023Dissecting}`
+- **2023** [Igniting Language Intelligence: The Hitchhiker's Guide From Chain-of-Thought Reasoning to Language Agents](http://arxiv.org/abs/2311.11797) — Zhuosheng Zhang et al. · arXiv:2311.11797 `{Zhang2023Igniting}`
+- **2023** [LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention](http://arxiv.org/abs/2303.16199) — Renrui Zhang et al. · arXiv:2303.16199 `{Zhang2023Llama}`
+- **2023** [LLM4DyG: Can Large Language Models Solve Spatial-Temporal Problems on Dynamic Graphs?](http://arxiv.org/abs/2310.17110) — Zeyang Zhang et al. · arXiv:2310.17110 `{Zhang2023Llm4dyg}`
+- **2023** [Retrieve Anything To Augment Large Language Models](http://arxiv.org/abs/2310.07554) — Peitian Zhang et al. · arXiv:2310.07554 `{Zhang2023Retrieve}`
+- **2023** [Self-QA: Unsupervised Knowledge Guided Language Model Alignment](http://arxiv.org/abs/2305.11952) — Xuanyu Zhang et al. · arXiv:2305.11952 `{Zhang2023Self}`
+- **2023** [Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models](http://arxiv.org/abs/2309.01219) — Yue Zhang et al. · arXiv:2309.01219 `{Zhang2023Siren}`
+- **2023** [TableLlama: Towards Open Large Generalist Models for Tables](http://arxiv.org/abs/2311.09206) — Tianshu Zhang et al. · arXiv:2311.09206 `{Zhang2023Tablellama}`
+- **2023** [Explainability for Large Language Models: A Survey](http://arxiv.org/abs/2309.01029) — Haiyan Zhao et al. · arXiv:2309.01029 `{Zhao2023Explainability}`
+- **2023** [Length Extrapolation of Transformers: A Survey from the Perspective of Positional Encoding](http://arxiv.org/abs/2312.17044) — Liang Zhao et al. · arXiv:2312.17044 `{Zhao2023Length}`
+- **2023** [A Survey of Large Language Models](http://arxiv.org/abs/2303.18223) — Wayne Xin Zhao et al. · arXiv:2303.18223 `{Zhao2023Survey}`
+- **2023** [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](http://arxiv.org/abs/2306.05685) — Lianmin Zheng et al. · arXiv:2306.05685 `{Zheng2023Judging}`
+- **2023** [Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models](http://arxiv.org/abs/2310.06117) — Huaixiu Steven Zheng et al. · arXiv:2310.06117 `{Zheng2023Take}`
+- **2023** [AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models](http://arxiv.org/abs/2304.06364) — Wanjun Zhong et al. · arXiv:2304.06364 `{Zhong2023Agieval}`
+- **2023** [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](http://arxiv.org/abs/2312.02439) — Shanshan Zhong et al. · arXiv:2312.02439 `{Zhong2023Let}`
+- **2023** [CharacterGLM: Customizing Chinese Conversational AI Characters with Large Language Models](http://arxiv.org/abs/2311.16832) — Jinfeng Zhou et al. · arXiv:2311.16832 `{Zhou2023Characterglm}`
+- **2023** [LIMA: Less Is More for Alignment](http://arxiv.org/abs/2305.11206) — Chunting Zhou et al. · arXiv:2305.11206 `{Zhou2023Lima}`
+- **2023** [Large Language Models can Learn Rules](http://arxiv.org/abs/2310.07064) — Zhaocheng Zhu et al. · arXiv:2310.07064 `{Zhu2023Large}`
+- **2023** [A Survey on Model Compression for Large Language Models](http://arxiv.org/abs/2308.07633) — Xunyu Zhu et al. · arXiv:2308.07633 `{Zhu2023Survey}`
+- **2023** [Generalizable Chain-of-Thought Prompting in Mixed-task Scenarios with Large Language Models](http://arxiv.org/abs/2310.06692) — Anni Zou et al. · arXiv:2310.06692 `{Zou2023Generalizable}`
+- **2023** [Representation Engineering: A Top-Down Approach to AI Transparency](http://arxiv.org/abs/2310.01405) — Andy Zou et al. · arXiv:2310.01405 `{Zou2023Representation}`
+- **2022** [PaLI: A Jointly-Scaled Multilingual Language-Image Model](http://arxiv.org/abs/2209.06794) — Xi Chen et al. · arXiv:2209.06794 `{Chen2022Pali}`
+- **2022** [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](http://arxiv.org/abs/2205.14135) — Tri Dao et al. · arXiv:2205.14135 `{Dao2022Flashattention}`
+- **2022** [RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning](http://arxiv.org/abs/2205.12548) — Mingkai Deng et al. · arXiv:2205.12548 `{Deng2022Rlprompt}`
+- **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
+- **2022** [Towards Reasoning in Large Language Models: A Survey](http://arxiv.org/abs/2212.10403) — Jie Huang et al. · arXiv:2212.10403 `{Huang2022Towards}`
+- **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
+- **2022** [Solving Quantitative Reasoning Problems with Language Models](http://arxiv.org/abs/2206.14858) — Aitor Lewkowycz et al. · arXiv:2206.14858 `{LewkowyczndSolving}`
+- **2022** [Language Models of Code are Few-Shot Commonsense Learners](http://arxiv.org/abs/2210.07128) — Aman Madaan et al. · arXiv:2210.07128 `{Madaan2022Language}`
+- **2022** Human Language Understanding \& Reasoning — Christopher D. Manning et al. `{Manning2022Human}`
+- **2022** [Locating and Editing Factual Associations in GPT](http://arxiv.org/abs/2202.05262) — Kevin Meng et al. · arXiv:2202.05262 `{Meng2022Locating}`
+- **2022** [Training language models to follow instructions with human feedback](http://arxiv.org/abs/2203.02155) — Long Ouyang et al. · arXiv:2203.02155 `{Ouyang2022Training}`
+- **2022** [Knowledge-in-Context: Towards Knowledgeable Semi-Parametric Language Models](http://arxiv.org/abs/2210.16433) — Xiaoman Pan et al. · arXiv:2210.16433 `{Pan2022Knowledge}`
+- **2022** [Controllable Natural Language Generation with Contrastive Prefixes](http://arxiv.org/abs/2202.13257) — Jing Qian et al. · arXiv:2202.13257 `{QianndControllable}`
+- **2022** [MVP: Multi-task Supervised Pre-training for Natural Language Generation](http://arxiv.org/abs/2206.12131) — Tianyi Tang et al. · arXiv:2206.12131 `{Tang2022Mvp}`
+- **2022** [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions](http://arxiv.org/abs/2212.10509) — Harsh Trivedi et al. · arXiv:2212.10509 `{TrivedindInterleaving}`
+- **2022** [Self-Instruct: Aligning Language Models with Self-Generated Instructions](http://arxiv.org/abs/2212.10560) — Yizhong Wang et al. · arXiv:2212.10560 `{Wang2022Self}`
+- **2022** [ReAct: Synergizing Reasoning and Acting in Language Models](http://arxiv.org/abs/2210.03629) — Shunyu Yao et al. · arXiv:2210.03629 `{Yao2022React}`
+- **2022** [Large Language Models Meet NL2Code: A Survey](http://arxiv.org/abs/2212.09420) — Daoguang Zan et al. · arXiv:2212.09420 `{Zan2022Large}`
+- **2021** [The Power of Scale for Parameter-Efficient Prompt Tuning](http://arxiv.org/abs/2104.08691) — Brian Lester et al. · arXiv:2104.08691 `{Lester2021Power}`
+- **2021** [GPT Understands, Too](http://arxiv.org/abs/2103.10385) — Xiao Liu et al. · arXiv:2103.10385 `{Liu2021Gpt}`
+- **2021** [Multitask Prompted Training Enables Zero-Shot Task Generalization](http://arxiv.org/abs/2110.08207) — Victor Sanh et al. · arXiv:2110.08207 `{Sanh2021Multitask}`
+- **2021** [NSP-BERT: A Prompt-based Zero-Shot Learner Through an Original Pre-training Task--Next Sentence Prediction](http://arxiv.org/abs/2109.03564) — Yi Sun et al. · arXiv:2109.03564 `{Sun2021Nsp}`
+- **2021** [Finetuned Language Models Are Zero-Shot Learners](http://arxiv.org/abs/2109.01652) — Jason Wei et al. · arXiv:2109.01652 `{Wei2021Finetuned}`
+- **2020** GPT-GNN: Generative Pre-Training of Graph Neural Networks — Ziniu Hu et al. · arXiv:4486.34032 `{Hu2020Gpt}`
+- **2019** [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](http://arxiv.org/abs/1910.02054) — Samyam Rajbhandari et al. · arXiv:1910.02054 `{Rajbhandari2019Zero}`
+- **1390** [Transformer Language Models without Positional Encodings Still Learn Positional Information](https://github.com/adihaviv/NoPos) — Adi Haviv et al. `{Haviv1390Transformer}`
+- **n.d.** Post-Training Distillation for LLMs — Rishabh Agarwal et al. `{AgarwalndPost}`
+- **n.d.** [A Survey on Data Selection for Language Models](https://commoncrawl.org/) — Alon Albalak et al. `{AlbalakndSurvey}`
+- **n.d.** [A little guide to building Large Language Models in 2024](https://thomwolf.io) — ? et al. `{AnonndLittle}`
+- **n.d.** LLM实战 — ? et al. `{AnonndLlm实战}`
+- **n.d.** [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs Microsoft](https://github.com/openai/tiktoken) — ? et al. `{AnonndPhia}`
+- **n.d.** Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone Microsoft — ? et al. `{AnonndPhib}`
+- **n.d.** [Scaling your LLM inference workloads: multi-node deployment with TensorRT-LLM and Triton on Amazon EKS | AWS HPC Blog](https://aws.amazon.com/blogs/hpc/scaling-your-llm-inference-workloads-multi-node-deployment-with-tensorrt-llm-and-triton-on-amazon-eks/) — ? et al. `{AnonndScaling}`
+- **n.d.** [The State of Reinforcement Learning for LLM Reasoning](https://magazine.sebastianraschka.com/p/the-state-of-llm-reasoning-model-training) — ? et al. `{AnonndStatea}`
+- **n.d.** [港大等发布GraphGPT：1/50微调参数，准确率提升10倍！无需超长token，LLM也能读懂图结构](https://mp.weixin.qq.com/s/rvKTFdCk719Q6hT09Caglw) — ? et al. `{Anonnd港大等发布graphgpt}`
+- **n.d.** [LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders](https://github.com/McGill-NLP/) — Parishad Behnamghader et al. `{BehnamghaderndLlm2vec}`
+- **n.d.** [AlphaMath Almost Zero: process Supervision without process](https://github.com/MARIO-Math-Reasoning/Super_MARIO.) — Guoxin Chen et al. `{ChenndAlphamath}`
+- **n.d.** [EXTENDING CONTEXT WINDOW OF LARGE LAN-GUAGE MODELS VIA POSITION INTERPOLATION](https://www.reddit.com/r/LocalLLaMA/comments/14fgjqj/a_simple_way_to_) — Shouyuan Chen et al. `{ChenndExtending}`
+- **n.d.** [Pre-print RETHINKING LLM LANGUAGE ADAPTATION: A CASE STUDY ON CHINESE MIXTRAL](https://github.com/ymcui/Chinese-Mixtral.) — Yiming Cui et al. `{CuindPre}`
+- **n.d.** DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning MATH-500 MMLU SWE-bench Verified DeepSeek-R1 OpenAI-o1-1217 DeepSeek-R1-32B OpenAI-o1-mini DeepSeek-V3 — DeepSeek-AI et al. `{DeepSeekAIndDeepseeka}`
+- **n.d.** [TALK LIKE A GRAPH: ENCODING GRAPHS FOR LARGE LANGUAGE MODELS](https://github.com/google-research/) — Bahare Fatemi et al. `{FatemindTalk}`
+- **n.d.** [BIRD: A TRUSTWORTHY BAYESIAN INFERENCE FRAMEWORK FOR LARGE LANGUAGE MODELS](https://github.com/CogComp/BIRD.) — Yu Feng et al. `{FengndBird}`
+- **n.d.** [Scaling and evaluating sparse autoencoders](https://openaipublic.blob.core.windows.net/sparse-autoencoder/sae-viewer/index.html) — Leo Gao et al. `{GaondScaling}`
+- **n.d.** [GraphEdit: Large Language Models for Graph Structure Learning](https://github.com/HKUDS/GraphEdit.) — Zirui Guo et al. `{GuondGraphedit}`
+- **n.d.** [ORPO: Monolithic Preference Optimization without Reference Model](https://huggingface.co/kaist-ai/) — Jiwoo Hong et al. `{HongndOrpo}`
+- **n.d.** [Analyzing the Role of Semantic Representations in the Era of Large Language Models](https://github.com/causalNLP/amr_llm.) — Zhijing Jin et al. `{JinndAnalyzing}`
+- **n.d.** Optimize Generative AI Inference with Quantization in TensorRT-LLM and TensorRT — Asma Beevi Kt et al. `{KtndOptimize}`
+- **n.d.** Accelerating Generative AI with TensorRT-LLM To Enhance Seller Experience at Amazon — Vishwanath Kumaraswamy et al. `{KumaraswamyndAccelerating}`
+- **n.d.** [Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/) — / Kyutai et al. `{KyutaindMoshi}`
+- **n.d.** [Fishing for Magikarp: Automatically detecting under-trained tokens in large language models](https://github.com/cohere-ai/magikarp) — Sander Land et al. `{LandndFishing}`
+- **n.d.** [What matters when building vision-language models?](https://huggingface.co/collections/HuggingFaceM4/idefics2-661d1971b7c50831dd3ce0fe) — Hugo Laurençon et al. `{LaurenonndWhat}`
+- **n.d.** [Controlled Text Generation for Large Language Model with Dynamic Attribute Graphs](https://github.com/) — Xun Liang et al. `{LiangndControlled}`
+- **n.d.** [Current Best Practices for Training LLMs from Scratch](www.wandb.ai•contact@wandb.ai) — Rebecca Li et al. `{LindCurrent}`
+- **n.d.** [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought Chain-of-Thought Multimodal Visualization-of-Thought](https://aka.ms/GeneralAI) — Chengzu Li et al. `{LindImagine}`
+- **n.d.** [Large Language Models in Finance: A Survey](https://openai.com/product) — Yinheng Li et al. `{LindLarge}`
+- **n.d.** [RA-ISF: Learning to Answer and Understand from Retrieval Augmentation via Iterative Self-Feedback](https://github.com/OceannTwT/) — Yanming Liu et al. `{LiundRa}`
+- **n.d.** [REFT: Reasoning with REinforced Fine-Tuning](https://chat.openai.com/) — Trung Quoc Luong et al. `{LuongndReft}`
+- **n.d.** [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://github.com/Dao-AILab/flash-attention) — Jay Shah et al. `{ShahndFlashattention}`
+- **n.d.** [FunAudioLLM: Voice Understanding and Generation Foundation Models for Natural Interaction Between Humans and LLMs](https://fun-audio-llm.github.io,) — Tongyi Speechteam et al. `{SpeechteamndFunaudiollm}`
+- **n.d.** [Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models](https://github.) — Tianyi Tang et al. `{TangndLanguage}`
+- **n.d.** [A UNIFIED SEQUENCE PARALLELISM APPROACH FOR LONG CONTEXT GENERATIVE AI](https://github.com/feifeibear/long-context-attention.) — Jiarui Fang Tencent et al. `{TencentndUnified}`
+- **n.d.** [Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction](https://github.com/FoundationVision/VAR) — Keyu Tian et al. `{TianndVisual}`
+- **n.d.** [LM Transparency Tool: Interactive Tool for Analyzing Transformer Language Models](https://github.com/facebookresearch/) — Igor Tufanov et al. `{TufanovndLm}`
+- **n.d.** [FP6-LLM: Efficiently Serving Large Language Models Through FP6-Centric Algorithm-System Co-Design](https://github.com/usyd-fsalab/fp6_llm.) — Haojun Xia et al. `{XiandFp6}`
+- **n.d.** [Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://chat.openai.com) — Heming Xia et al. `{XiandUnlocking}`
+- **n.d.** [A Method for Parsing and Vectorization of Semi-structured Data used in Retrieval Augmented Generation](https://github.com/linancn/TianGong-AI-Unstructure.git.) — Hang Yang et al. `{YangndMethod}`
+- **n.d.** [PROAGENT: FROM ROBOTIC PROCESS AUTOMATION TO AGENTIC PROCESS AUTOMATION](https://github.com/OpenBMB/ProAgent.) — Yining Ye et al. `{YendProagent}`
+- **n.d.** [Do Large Language Models Understand Conversational Implicature-A case study with a Chinese sitcom](https://github.com/sjtu-compling/llm-) — Shisen Yue et al. `{YuendDo}`
+- **n.d.** [Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference](https://sites.google.com/view/cobravlm.) — Han Zhao et al. `{ZhaondCobra}`
+- **n.d.** [Secrets of RLHF in Large Language Models Part I: PPO](https://github.com/OpenLMLab/MOSS-RLHF) — Rui Zheng et al. `{ZhengndSecrets}`
+- **n.d.** [Reasoning Over Semantic-Level Graph for Fact Checking](https://demo.allennlp.org/) — Wanjun Zhong et al. `{ZhongndReasoning}`
+
+## 智能体 / Agent
+
+- **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
+- **2024** [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](http://arxiv.org/abs/2408.07055) — Yushi Bai et al. · arXiv:2408.07055 `{Bai2024Longwriter}`
+- **2024** [Navigation World Models](http://arxiv.org/abs/2412.03572) — Amir Bar et al. · arXiv:2412.03572 `{Bar2024Navigation}`
+- **2024** [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](http://arxiv.org/abs/2404.00282 http://dx.doi.org/10.1109/TNNLS.2024.3497992) — Yuji Cao et al. · arXiv:2404.00282 `{Cao2024Survey}`
+- **2024** [Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion](http://arxiv.org/abs/2407.01392) — Boyuan Chen et al. · arXiv:2407.01392 `{Chen2024Diffusion}`
+- **2024** [Agent AI: Surveying the Horizons of Multimodal Interaction](http://arxiv.org/abs/2401.03568) — Zane Durante et al. · arXiv:2401.03568 `{Durante2024Agent}`
+- **2024** [Training Large Language Models to Reason in a Continuous Latent Space](http://arxiv.org/abs/2412.06769) — Shibo Hao et al. · arXiv:2412.06769 `{Hao2024Training}`
+- **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
+- **2024** [On the Empirical Complexity of Reasoning and Planning in LLMs](http://arxiv.org/abs/2404.11041) — Liwei Kang et al. · arXiv:2404.11041 `{Kang2024Empirical}`
+- **2024** [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](http://arxiv.org/abs/2405.02957) — Junkai Li et al. · arXiv:2405.02957 `{Li2024Agent}`
+- **2024** [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](http://arxiv.org/abs/2401.02777) — Na Liu et al. · arXiv:2401.02777 `{Liu2024Llm}`
+- **2024** Orca-Math: Unlocking the potential of SLMs in Grade School Math — Arindam Mitra et al. `{Mitra2024Orca}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** [A Multimodal Automated Interpretability Agent](http://arxiv.org/abs/2404.14394) — Tamar Rott Shaham et al. · arXiv:2404.14394 `{Shaham2024Multimodal}`
+- **2024** [To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning](http://arxiv.org/abs/2409.12183) — Zayne Sprague et al. · arXiv:2409.12183 `{Sprague2024Cot}`
+- **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
+- **2024** [Can Language Models Serve as Text-Based World Simulators?](http://arxiv.org/abs/2406.06485) — Ruoyao Wang et al. · arXiv:2406.06485 `{Wang2024Can}`
+- **2024** [Executable Code Actions Elicit Better LLM Agents](http://arxiv.org/abs/2402.01030) — Xingyao Wang et al. · arXiv:2402.01030 `{Wang2024Executable}`
+- **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
+- **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
+- **2024** [ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios](http://arxiv.org/abs/2401.00741) — Junjie Ye et al. · arXiv:2401.00741 `{Ye2024Tooleyes}`
+- **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
+- **2024** [Large Language Model-Brained GUI Agents: A Survey](http://arxiv.org/abs/2411.18279) — Chaoyun Zhang et al. · arXiv:2411.18279 `{Zhang2024Large}`
+- **2024** [Self-Discover: Large Language Models Self-Compose Reasoning Structures](http://arxiv.org/abs/2402.03620) — Pei Zhou et al. · arXiv:2402.03620 `{Zhou2024Self}`
+- **2023** [QWEN TECHNICAL REPORT](http://arxiv.org/abs/2309.16609) — Jinze Bai et al. · arXiv:2309.16609 `{BaindQwen}`
+- **2023** [AutoAgents: A Framework for Automatic Agent Generation](http://arxiv.org/abs/2309.17288) — Guangyao Chen et al. · arXiv:2309.17288 `{Chen2023Autoagents}`
+- **2023** [TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](http://arxiv.org/abs/2311.16465) — Jingye Chen et al. · arXiv:2311.16465 `{Chen2023Textdiffuser}`
+- **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
+- **2023** [Adversarial Preference Optimization](http://arxiv.org/abs/2311.08045) — Pengyu Cheng et al. · arXiv:2311.08045 `{Cheng2023Adversarial}`
+- **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
+- **2023** [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework](http://arxiv.org/abs/2308.00352) — Sirui Hong et al. · arXiv:2308.00352 `{Hong2023Metagpt}`
+- **2023** Faster sorting algorithms discovered using deep reinforcement learning — Daniel J. Mankowitz et al. `{Mankowitz2023Faster}`
+- **2023** [ART: Automatic multi-step reasoning and tool-use for large language models](http://arxiv.org/abs/2303.09014) — Bhargavi Paranjape et al. · arXiv:2303.09014 `{Paranjape2023Art}`
+- **2023** [Generative Agents: Interactive Simulacra of Human Behavior](http://arxiv.org/abs/2304.03442) — Joon Sung Park et al. · arXiv:2304.03442 `{Park2023Generative}`
+- **2023** [Tool Learning with Foundation Models](http://arxiv.org/abs/2304.08354) — Yujia Qin et al. · arXiv:2304.08354 `{Qin2023Tool}`
+- **2023** [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](http://arxiv.org/abs/2307.16789) — Yujia Qin et al. · arXiv:2307.16789 `{Qin2023Toolllm}`
+- **2023** [A Survey on Large Language Model based Autonomous Agents](http://arxiv.org/abs/2308.11432 http://dx.doi.org/10.1007/s11704-024-40231-1) — Lei Wang et al. · arXiv:2308.11432 `{Wang2023Surveyb}`
+- **2023** [The Rise and Potential of Large Language Model Based Agents: A Survey](http://arxiv.org/abs/2309.07864) — Zhiheng Xi et al. · arXiv:2309.07864 `{Xi2023Rise}`
+- **2023** [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](http://arxiv.org/abs/2305.10601) — Shunyu Yao et al. · arXiv:2305.10601 `{Yao2023Tree}`
+- **2023** [AgentTuning: Enabling Generalized Agent Abilities for LLMs](http://arxiv.org/abs/2310.12823) — Aohan Zeng et al. · arXiv:2310.12823 `{Zeng2023Agenttuning}`
+- **2023** [Igniting Language Intelligence: The Hitchhiker's Guide From Chain-of-Thought Reasoning to Language Agents](http://arxiv.org/abs/2311.11797) — Zhuosheng Zhang et al. · arXiv:2311.11797 `{Zhang2023Igniting}`
+- **2023** [LIMA: Less Is More for Alignment](http://arxiv.org/abs/2305.11206) — Chunting Zhou et al. · arXiv:2305.11206 `{Zhou2023Lima}`
+- **2022** Unified Dialog Model Pre-training for Task-Oriented Dialog Understanding and Generation — Wanwei He et al. · arXiv:7495.35320 `{He2022Unified}`
+- **2022** [ReAct: Synergizing Reasoning and Acting in Language Models](http://arxiv.org/abs/2210.03629) — Shunyu Yao et al. · arXiv:2210.03629 `{Yao2022React}`
+- **2017** [Hierarchical and Interpretable Skill Acquisition in Multi-task Reinforcement Learning](http://arxiv.org/abs/1712.07294) — Tianmin Shu et al. · arXiv:1712.07294 `{Shu2017Hierarchical}`
+- **2015** [Continuous control with deep reinforcement learning](http://arxiv.org/abs/1509.02971) — Timothy P. Lillicrap et al. · arXiv:1509.02971 `{Lillicrap2015Continuous}`
+- **2011** Augmenting Reinforcement Learning with Human Feedback — W Bradley Knox et al. `{Knox2011Augmenting}`
+- **n.d.** Multi-Agent Reinforcement Learning: Foundations and Modern Approaches PRE-PRINT, NON-FINAL DRAFT DATE: 29 MAY 2023 — Stefano V Albrecht et al. `{AlbrechtndMulti}`
+- **n.d.** [Tiny Agents: 一个基于 MCP 的 50 行代码代理 --- Tiny Agents: an MCP-powered agent in 50 lines of code](https://huggingface.co/blog/tiny-agents) — ? et al. `{AnonndTiny}`
+- **n.d.** [BIRD: A TRUSTWORTHY BAYESIAN INFERENCE FRAMEWORK FOR LARGE LANGUAGE MODELS](https://github.com/CogComp/BIRD.) — Yu Feng et al. `{FengndBird}`
+- **n.d.** [PROAGENT: FROM ROBOTIC PROCESS AUTOMATION TO AGENTIC PROCESS AUTOMATION](https://github.com/OpenBMB/ProAgent.) — Yining Ye et al. `{YendProagent}`
+- **n.d.** [Secrets of RLHF in Large Language Models Part I: PPO](https://github.com/OpenLMLab/MOSS-RLHF) — Rui Zheng et al. `{ZhengndSecrets}`
+
+## 强化学习 / RLHF
+
+- **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
+- **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
+- **2025** [Synthetic Data RL: Task Definition Is All You Need](http://arxiv.org/abs/2505.17063) — Yiduo Guo et al. · arXiv:2505.17063 `{Guo2025Synthetic}`
+- **2025** [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](http://arxiv.org/abs/2502.21321) — Komal Kumar et al. · arXiv:2502.21321 `{Kumar2025Llm}`
+- **2025** Reinforcement Learning from Human Feedback A short introduction to RLHF and post-training focused on language models — Nathan Lambert et al. `{Lambert2025Reinforcement}`
+- **2025** [Reinforcement Learning from Human Feedback](http://arxiv.org/abs/2504.12501) — Nathan Lambert et al. · arXiv:2504.12501 `{LambertndReinforcement}`
+- **2025** [Inference-Time Scaling for Generalist Reward Modeling](http://arxiv.org/abs/2504.02495) — Zijun Liu et al. · arXiv:2504.02495 `{Liu2025Inference}`
+- **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
+- **2025** [All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning](http://arxiv.org/abs/2503.01067) — Gokul Swamy et al. · arXiv:2503.01067 `{Swamy2025All}`
+- **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
+- **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
+- **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
+- **2024** [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](http://arxiv.org/abs/2406.02430) — Philip Anastassiou et al. · arXiv:2406.02430 `{Anastassiou2024Seed}`
+- **2024** [Does Refusal Training in LLMs Generalize to the Past Tense?](http://arxiv.org/abs/2407.11969) — Maksym Andriushchenko et al. · arXiv:2407.11969 `{Andriushchenko2024Does}`
+- **2024** [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](http://arxiv.org/abs/2408.07055) — Yushi Bai et al. · arXiv:2408.07055 `{Bai2024Longwriter}`
+- **2024** [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](http://arxiv.org/abs/2404.00282 http://dx.doi.org/10.1109/TNNLS.2024.3497992) — Yuji Cao et al. · arXiv:2404.00282 `{Cao2024Survey}`
+- **2024** [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](http://arxiv.org/abs/2401.06081) — Zhipeng Chen et al. · arXiv:2401.06081 `{Chen2024Improving}`
+- **2024** [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](http://arxiv.org/abs/2402.05391) — Zhuo Chen et al. · arXiv:2402.05391 `{Chen2024Knowledge}`
+- **2024** [Can AI Assistants Know What They Don't Know?](http://arxiv.org/abs/2401.13275) — Qinyuan Cheng et al. · arXiv:2401.13275 `{Cheng2024Can}`
+- **2024** [Bailing-TTS: Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation](http://arxiv.org/abs/2408.00284) — Xinhan Di et al. · arXiv:2408.00284 `{Di2024Bailing}`
+- **2024** [KTO: Model Alignment as Prospect Theoretic Optimization](http://arxiv.org/abs/2402.01306) — Kawin Ethayarajh et al. · arXiv:2402.01306 `{EthayarajhndKto}`
+- **2024** [Attention as an RNN](http://arxiv.org/abs/2405.13956) — Leo Feng et al. · arXiv:2405.13956 `{Feng2024Attention}`
+- **2024** [Improving Language Model Reasoning with Self-motivated Learning](http://arxiv.org/abs/2404.07017) — Yunlong Feng et al. · arXiv:2404.07017 `{Feng2024Improving}`
+- **2024** [VITA: Towards Open-Source Interactive Omni Multimodal LLM](http://arxiv.org/abs/2408.05211) — Chaoyou Fu et al. · arXiv:2408.05211 `{Fu2024Vita}`
+- **2024** [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](http://arxiv.org/abs/2404.06395) — Shengding Hu et al. · arXiv:2404.06395 `{Hu2024Minicpm}`
+- **2024** [Align Anything: Training All-Modality Models to Follow Instructions with Language Feedback](http://arxiv.org/abs/2412.15838) — Jiaming Ji et al. · arXiv:2412.15838 `{Ji2024Align}`
+- **2024** [PROVER-VERIFIER GAMES IMPROVE LEGIBILITY OF LLM OUTPUTS](http://arxiv.org/abs/2407.13692) — Jan Hendrik Kirchner et al. · arXiv:2407.13692 `{KirchnerndProver}`
+- **2024** [Aligning Large Language Models with Representation Editing: A Control Perspective](http://arxiv.org/abs/2406.05954) — Lingkai Kong et al. · arXiv:2406.05954 `{Kong2024Aligning}`
+- **2024** [Can large language models explore in-context?](http://arxiv.org/abs/2403.15371) — Akshay Krishnamurthy et al. · arXiv:2403.15371 `{Krishnamurthy2024Can}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [LiPO: Listwise Preference Optimization through Learning-to-Rank](http://arxiv.org/abs/2402.01878) — Tianqi Liu et al. · arXiv:2402.01878 `{Liu2024Lipo}`
+- **2024** [An Embarrassingly Simple Approach for LLM with Strong ASR Capacity](http://arxiv.org/abs/2402.08846) — Ziyang Ma et al. · arXiv:2402.08846 `{Ma2024Embarrassingly}`
+- **2024** [LLM Critics Help Catch LLM Bugs](http://arxiv.org/abs/2407.00215) — Nat McAleese et al. · arXiv:2407.00215 `{McAleesendLlm}`
+- **2024** [Rule Based Rewards for Language Model Safety](http://arxiv.org/abs/2411.01111) — Tong Mu et al. · arXiv:2411.01111 `{MundRule}`
+- **2024** [Better Alignment with Instruction Back-and-Forth Translation](http://arxiv.org/abs/2408.04614) — Thao Nguyen et al. · arXiv:2408.04614 `{Nguyen2024Better}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [From r to Q * : Your Language Model is Secretly a Q-Function](http://arxiv.org/abs/2404.12358) — Rafael Rafailov et al. · arXiv:2404.12358 `{RafailovndYour}`
+- **2024** [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](http://arxiv.org/abs/2402.03300) — Zhihong Shao et al. · arXiv:2402.03300 `{Shao2024Deepseekmath}`
+- **2024** [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](http://arxiv.org/abs/2408.03314) — Charlie Snell et al. · arXiv:2408.03314 `{Snell2024Scaling}`
+- **2024** [The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism](http://arxiv.org/abs/2407.10457) — Yifan Song et al. · arXiv:2407.10457 `{Song2024Good}`
+- **2024** [Inverse-RLignment: Inverse Reinforcement Learning from Demonstrations for LLM Alignment](http://arxiv.org/abs/2405.15624) — Hao Sun et al. · arXiv:2405.15624 `{Sun2024Inverse}`
+- **2024** MOSS: An Open Conversational Large Language Model — Tianxiang Sun et al. `{Sun2024Moss}`
+- **2024** [GraphGPT: Graph Instruction Tuning for Large Language Models](http://arxiv.org/abs/2310.13023) — Jiabin Tang et al. · arXiv:2310.13023 `{Tang2024Graphgpt}`
+- **2024** [Chameleon: Mixed-Modal Early-Fusion Foundation Models](http://arxiv.org/abs/2405.09818) — Chameleon Team et al. · arXiv:2405.09818 `{Team2024Chameleon}`
+- **2024** [Boximator: Generating Rich and Controllable Motions for Video Synthesis](http://arxiv.org/abs/2402.01566) — Jiawei Wang et al. · arXiv:2402.01566 `{Wang2024Boximator}`
+- **2024** [A Comprehensive Survey of LLM Alignment Techniques: RLHF, RLAIF, PPO, DPO and More](http://arxiv.org/abs/2407.16216) — Zhichao Wang et al. · arXiv:2407.16216 `{Wang2024Comprehensive}`
+- **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
+- **2024** [LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings](http://arxiv.org/abs/2408.14512) — Duo Wang et al. · arXiv:2408.14512 `{Wang2024Llms}`
+- **2024** [Reinforcement Learning Enhanced LLMs: A Survey](http://arxiv.org/abs/2412.10400) — Shuhe Wang et al. · arXiv:2412.10400 `{Wang2024Reinforcement}`
+- **2024** [Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge](http://arxiv.org/abs/2407.19594) — Tianhao Wu et al. · arXiv:2407.19594 `{Wu2024Meta}`
+- **2024** [Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study](http://arxiv.org/abs/2404.10719) — Shusheng Xu et al. · arXiv:2404.10719 `{Xu2024Dpo}`
+- **2024** [Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation](http://arxiv.org/abs/2406.08801) — Mingwang Xu et al. · arXiv:2406.08801 `{Xu2024Hallo}`
+- **2024** [Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing](http://arxiv.org/abs/2406.08464) — Zhangchen Xu et al. · arXiv:2406.08464 `{Xu2024Magpie}`
+- **2024** [Item-Language Model for Conversational Recommendation](http://arxiv.org/abs/2406.02844) — Li Yang et al. · arXiv:2406.02844 `{Yang2024Item}`
+- **2024** [Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning](http://arxiv.org/abs/2402.13669) — Zhaorui Yang et al. · arXiv:2402.13669 `{Yang2024Self}`
+- **2024** [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](http://arxiv.org/abs/2408.01800) — Yuan Yao et al. · arXiv:2408.01800 `{Yao2024Minicpm}`
+- **2024** [ToolEyes: Fine-Grained Evaluation for Tool Learning Capabilities of Large Language Models in Real-world Scenarios](http://arxiv.org/abs/2401.00741) — Junjie Ye et al. · arXiv:2401.00741 `{Ye2024Tooleyes}`
+- **2024** [Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think](http://arxiv.org/abs/2410.06940) — Sihyun Yu et al. · arXiv:2410.06940 `{Yu2024Representation}`
+- **2024** [Self-Rewarding Language Models](http://arxiv.org/abs/2401.10020) — Weizhe Yuan et al. · arXiv:2401.10020 `{Yuan2024Self}`
+- **2024** [IterComp: Iterative Composition-Aware Feedback Learning from Model Gallery for Text-to-Image Generation](http://arxiv.org/abs/2410.07171) — Xinchen Zhang et al. · arXiv:2410.07171 `{Zhang2024Itercomp}`
+- **2024** [Is In-Context Learning Sufficient for Instruction Following in LLMs?](http://arxiv.org/abs/2405.19874) — Hao Zhao et al. · arXiv:2405.19874 `{Zhao2024Context}`
+- **2024** Mathematical Foundations of Reinforcement Learning — Shiyu Zhao et al. `{Zhao2024Mathematical}`
+- **2024** [RMB: Comprehensively Benchmarking Reward Models in LLM Alignment](http://arxiv.org/abs/2410.09893) — Enyu Zhou et al. · arXiv:2410.09893 `{Zhou2024Rmb}`
+- **2023** [A General Theoretical Paradigm to Understand Learning from Human Preferences](http://arxiv.org/abs/2310.12036) — Mohammad Gheshlaghi Azar et al. · arXiv:2310.12036 `{AzarndGeneral}`
+- **2023** [QWEN TECHNICAL REPORT](http://arxiv.org/abs/2309.16609) — Jinze Bai et al. · arXiv:2309.16609 `{BaindQwen}`
+- **2023** [A Survey of Meta-Reinforcement Learning](http://arxiv.org/abs/2301.08028) — Jacob Beck et al. · arXiv:2301.08028 `{Beck2023Survey}`
+- **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION](http://arxiv.org/abs/2312.09390) — Collin Burns et al. · arXiv:2312.09390 `{BurnsndWeak}`
+- **2023** [Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback](http://arxiv.org/abs/2307.15217) — Stephen Casper et al. · arXiv:2307.15217 `{Casper2023Open}`
+- **2023** [Gaining Wisdom from Setbacks: Aligning Large Language Models via Mistake Analysis](http://arxiv.org/abs/2310.10477) — Kai Chen et al. · arXiv:2310.10477 `{Chen2023Gaining}`
+- **2023** [Adversarial Preference Optimization](http://arxiv.org/abs/2311.08045) — Pengyu Cheng et al. · arXiv:2311.08045 `{Cheng2023Adversarial}`
+- **2023** [Black-Box Prompt Optimization: Aligning Large Language Models without Model Training](http://arxiv.org/abs/2311.04155) — Jiale Cheng et al. · arXiv:2311.04155 `{Cheng2023Black}`
+- **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
+- **2023** [AlpacaFarm: A Simulation Framework for Methods that Learn from Human Feedback](http://arxiv.org/abs/2305.14387) — Yann Dubois et al. · arXiv:2305.14387 `{Dubois2023Alpacafarm}`
+- **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [Evaluating Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2310.19736) — Zishan Guo et al. · arXiv:2310.19736 `{Guo2023Evaluating}`
+- **2023** [NEFTune: Noisy Embeddings Improve Instruction Finetuning](http://arxiv.org/abs/2310.05914) — Neel Jain et al. · arXiv:2310.05914 `{Jain2023Neftune}`
+- **2023** [AI Alignment: A Comprehensive Survey](http://arxiv.org/abs/2310.19852) — Jiaming Ji et al. · arXiv:2310.19852 `{Ji2023Ai}`
+- **2023** [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](http://arxiv.org/abs/2310.05736) — Huiqiang Jiang et al. · arXiv:2310.05736 `{Jiang2023Llmlingua}`
+- **2023** [RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback](http://arxiv.org/abs/2309.00267) — Harrison Lee et al. · arXiv:2309.00267 `{Lee2023Rlaif}`
+- **2023** [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model](http://arxiv.org/abs/2306.03341) — Kenneth Li et al. · arXiv:2306.03341 `{Li2023Inference}`
+- **2023** [Self-Alignment with Instruction Backtranslation](http://arxiv.org/abs/2308.06259) — Xian Li et al. · arXiv:2308.06259 `{Li2023Self}`
+- **2023** [A Survey of Graph Meets Large Language Model: Progress and Future Directions](http://arxiv.org/abs/2311.12399) — Yuhan Li et al. · arXiv:2311.12399 `{Li2023Survey}`
+- **2023** [Aligning Large Language Models with Human Preferences through Representation Engineering](http://arxiv.org/abs/2312.15997) — Wenhao Liu et al. · arXiv:2312.15997 `{Liu2023Aligning}`
+- **2023** [Blockwise Parallel Transformer for Large Context Models](http://arxiv.org/abs/2305.19370) — Hao Liu et al. · arXiv:2305.19370 `{Liu2023Blockwise}`
+- **2023** [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) — Hao Liu et al. · arXiv:2310.01889 `{Liu2023Ring}`
+- **2023** [Training Socially Aligned Language Models on Simulated Social Interactions](http://arxiv.org/abs/2305.16960) — Ruibo Liu et al. · arXiv:2305.16960 `{Liu2023Training}`
+- **2023** [Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment](http://arxiv.org/abs/2308.05374) — Yang Liu et al. · arXiv:2308.05374 `{Liu2023Trustworthy}`
+- **2023** Faster sorting algorithms discovered using deep reinforcement learning — Daniel J. Mankowitz et al. `{Mankowitz2023Faster}`
+- **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [ControlRec: Bridging the Semantic Gap between Language Model and Personalized Recommendation](http://arxiv.org/abs/2311.16441) — Junyan Qiu et al. · arXiv:2311.16441 `{Qiu2023Controlrec}`
+- **2023** [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](http://arxiv.org/abs/2305.18290) — Rafael Rafailov et al. · arXiv:2305.18290 `{Rafailov2023Direct}`
+- **2023** [Representation Learning with Large Language Models for Recommendation](http://arxiv.org/abs/2310.15950 http://dx.doi.org/10.1145/3589334.3645458) — Xubin Ren et al. · arXiv:2310.15950 `{Ren2023Representation}`
+- **2023** [Large Language Model Alignment: A Survey](http://arxiv.org/abs/2309.15025) — Tianhao Shen et al. · arXiv:2309.15025 `{Shen2023Large}`
+- **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
+- **2023** [Zephyr: Direct Distillation of LM Alignment](http://arxiv.org/abs/2310.16944) — Lewis Tunstall et al. · arXiv:2310.16944 `{Tunstall2023Zephyr}`
+- **2023** [LLMs cannot find reasoning errors, but can correct them!](http://arxiv.org/abs/2311.08516) — Gladys Tyen et al. · arXiv:2311.08516 `{Tyen2023Llms}`
+- **2023** [InstructionGPT-4: A 200-Instruction Paradigm for Fine-Tuning MiniGPT-4](http://arxiv.org/abs/2308.12067) — Lai Wei et al. · arXiv:2308.12067 `{Wei2023Instructiongpt}`
+- **2023** [Zhongjing: Enhancing the Chinese Medical Capabilities of Large Language Model through Expert Feedback and Real-world Multi-turn Dialogue](http://arxiv.org/abs/2308.03549) — Songhua Yang et al. · arXiv:2308.03549 `{Yang2023Zhongjing}`
+- **2023** [Retrieve Anything To Augment Large Language Models](http://arxiv.org/abs/2310.07554) — Peitian Zhang et al. · arXiv:2310.07554 `{Zhang2023Retrieve}`
+- **2023** [Self-QA: Unsupervised Knowledge Guided Language Model Alignment](http://arxiv.org/abs/2305.11952) — Xuanyu Zhang et al. · arXiv:2305.11952 `{Zhang2023Self}`
+- **2023** [LIMA: Less Is More for Alignment](http://arxiv.org/abs/2305.11206) — Chunting Zhou et al. · arXiv:2305.11206 `{Zhou2023Lima}`
+- **2022** [eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers](http://arxiv.org/abs/2211.01324) — Yogesh Balaji et al. · arXiv:2211.01324 `{Balaji2022Ediff}`
+- **2022** [RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning](http://arxiv.org/abs/2205.12548) — Mingkai Deng et al. · arXiv:2205.12548 `{Deng2022Rlprompt}`
+- **2022** [Scaling Laws for Reward Model Overoptimization](http://arxiv.org/abs/2210.10760) — Leo Gao et al. · arXiv:2210.10760 `{Gao2022Scaling}`
+- **2022** LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking — Yupan Huang et al. · arXiv:3161.35481 `{Huang2022Layoutlmv3}`
+- **2022** [Training language models to follow instructions with human feedback](http://arxiv.org/abs/2203.02155) — Long Ouyang et al. · arXiv:2203.02155 `{Ouyang2022Training}`
+- **2022** [Towards Unified Conversational Recommender Systems via Knowledge-Enhanced Prompt Learning](http://arxiv.org/abs/2206.09363) — Xiaolei Wang et al. · arXiv:2206.09363 `{Wang2022Towards}`
+- **2022** [ReAct: Synergizing Reasoning and Acting in Language Models](http://arxiv.org/abs/2210.03629) — Shunyu Yao et al. · arXiv:2210.03629 `{Yao2022React}`
+- **2021** Unsupervised Graph Alignment with Wasserstein Distance Discriminator — Ji Gao et al. · arXiv:7548.34673 `{Gao2021Unsupervised}`
+- **2021** Meta-Learning in Neural Networks: A Survey — Timothy M. Hospedales et al. · arXiv:2021.30792 `{Hospedales2021Meta}`
+- **2021** Dual Attention Network for Cross-lingual Entity Alignment — Jian Sun et al. `{Sun2021Dual}`
+- **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
+- **2020** Type-aware anchor link prediction across heterogeneous networks based on graph attention network — Xiaoxue Li et al. `{Li2020Type}`
+- **2020** Hierarchical Adaptive Contextual Bandits for Resource Constraint based Recommendation — Mengyue Yang et al. · arXiv:6423.33801 `{Yang2020Hierarchical}`
+- **2020** XGNN: Towards Model-Level Explanations of Graph Neural Networks — Hao Yuan et al. · arXiv:4486.34030 `{Yuan2020Xgnn}`
+- **2020** [Transfer Learning in Deep Reinforcement Learning: A Survey](http://arxiv.org/abs/2009.07888) — Zhuangdi Zhu et al. · arXiv:2009.07888 `{Zhu2020Transfer}`
+- **2019** Cross-lingual Joint Entity and Word Embedding to Improve Entity Linking and Parallel Sentence Mining — Xiaoman Pan et al. `{Pan2019Cross}`
+- **2018** Adversarial attack on graph structured data — Hanjun Dai et al. `{Dai2018Adversarial}`
+- **2018** Graph classification using structural attention — John Boaz Lee et al. · arXiv:9819.32199 `{Lee2018Graph}`
+- **2018** [Deep Learning on Graphs: A Survey](http://arxiv.org/abs/1812.04202) — Ziwei Zhang et al. · arXiv:1812.04202 `{Zhang2018Deep}`
+- **2017** [Hierarchical and Interpretable Skill Acquisition in Multi-task Reinforcement Learning](http://arxiv.org/abs/1712.07294) — Tianmin Shu et al. · arXiv:1712.07294 `{Shu2017Hierarchical}`
+- **2015** [Continuous control with deep reinforcement learning](http://arxiv.org/abs/1509.02971) — Timothy P. Lillicrap et al. · arXiv:1509.02971 `{Lillicrap2015Continuous}`
+- **2015** [High-Dimensional Continuous Control Using Generalized Advantage Estimation](http://arxiv.org/abs/1506.02438) — John Schulman et al. · arXiv:1506.02438 `{Schulman2015High}`
+- **2011** Augmenting Reinforcement Learning with Human Feedback — W Bradley Knox et al. `{Knox2011Augmenting}`
+- **n.d.** Multi-Agent Reinforcement Learning: Foundations and Modern Approaches PRE-PRINT, NON-FINAL DRAFT DATE: 29 MAY 2023 — Stefano V Albrecht et al. `{AlbrechtndMulti}`
+- **n.d.** [The State of Reinforcement Learning for LLM Reasoning](https://magazine.sebastianraschka.com/p/the-state-of-llm-reasoning-model-training) — ? et al. `{AnonndStatea}`
+- **n.d.** [PLUG AND PLAY LANGUAGE MODELS: A SIMPLE APPROACH TO CONTROLLED TEXT GENERATION](https://github.com/uber-research/PPLM.) — Sumanth Dathathri et al. `{DathathrindPlug}`
+- **n.d.** DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning MATH-500 MMLU SWE-bench Verified DeepSeek-R1 OpenAI-o1-1217 DeepSeek-R1-32B OpenAI-o1-mini DeepSeek-V3 — DeepSeek-AI et al. `{DeepSeekAIndDeepseeka}`
+- **n.d.** [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://github.com/deepseek-ai/DeepSeek-V2.) — DeepSeek-AI et al. `{DeepSeekAIndDeepseekb}`
+- **n.d.** [ORPO: Monolithic Preference Optimization without Reference Model](https://huggingface.co/kaist-ai/) — Jiwoo Hong et al. `{HongndOrpo}`
+- **n.d.** [REFT: Reasoning with REinforced Fine-Tuning](https://chat.openai.com/) — Trung Quoc Luong et al. `{LuongndReft}`
+- **n.d.** [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://github.com/THUDM/CogVideo.) — Zhuoyi Yang et al. `{YangndCogvideox}`
+- **n.d.** [Secrets of RLHF in Large Language Models Part I: PPO](https://github.com/OpenLMLab/MOSS-RLHF) — Rui Zheng et al. `{ZhengndSecrets}`
+
+## 推理 / Reasoning
+
+- **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
+- **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2025** [Parallel Scaling Law for Language Models](http://arxiv.org/abs/2505.10475) — Mouxiang Chen et al. · arXiv:2505.10475 `{Chen2025Parallel}`
+- **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
+- **2025** [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](http://arxiv.org/abs/2502.21321) — Komal Kumar et al. · arXiv:2502.21321 `{Kumar2025Llm}`
+- **2025** [Inference-Time Scaling for Generalist Reward Modeling](http://arxiv.org/abs/2504.02495) — Zijun Liu et al. · arXiv:2504.02495 `{Liu2025Inference}`
+- **2025** [Reasoning Models Can Be Effective Without Thinking](http://arxiv.org/abs/2504.09858) — Wenjie Ma et al. · arXiv:2504.09858 `{Ma2025Reasoning}`
+- **2025** [DeepSeek-R1 Thoughtology: Let's <think> about LLM Reasoning](http://arxiv.org/abs/2504.07128) — Sara Vera Marjanović et al. · arXiv:2504.07128 `{Marjanovi2025Deepseek}`
+- **2025** [s1: Simple test-time scaling](http://arxiv.org/abs/2501.19393) — Niklas Muennighoff et al. · arXiv:2501.19393 `{Muennighoff2025S1}`
+- **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
+- **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
+- **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
+- **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
+- **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
+- **2025** [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](http://arxiv.org/abs/2502.11089) — Jingyang Yuan et al. · arXiv:2502.11089 `{Yuan2025Native}`
+- **2025** [The Lessons of Developing Process Reward Models in Mathematical Reasoning](http://arxiv.org/abs/2501.07301) — Zhenru Zhang et al. · arXiv:2501.07301 `{Zhang2025Lessons}`
+- **2024** [LLM Augmented LLMs: Expanding Capabilities through Composition](http://arxiv.org/abs/2401.02412) — Rachit Bansal et al. · arXiv:2401.02412 `{Bansal2024Llm}`
+- **2024** [Scaling Synthetic Data Creation with 1,000,000,000 Personas](http://arxiv.org/abs/2406.20094) — Xin Chan et al. · arXiv:2406.20094 `{Chan2024Scaling}`
+- **2024** [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](http://arxiv.org/abs/2401.06081) — Zhipeng Chen et al. · arXiv:2401.06081 `{Chen2024Improving}`
+- **2024** [Towards Effective and Efficient Continual Pre-training of Large Language Models](http://arxiv.org/abs/2407.18743) — Jie Chen et al. · arXiv:2407.18743 `{Chen2024Towards}`
+- **2024** [Improving Language Model Reasoning with Self-motivated Learning](http://arxiv.org/abs/2404.07017) — Yunlong Feng et al. · arXiv:2404.07017 `{Feng2024Improving}`
+- **2024** [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](http://arxiv.org/abs/2406.11768) — Sreyan Ghosh et al. · arXiv:2406.11768 `{Ghosh2024Gama}`
+- **2024** [Better \& Faster Large Language Models via Multi-token Prediction](http://arxiv.org/abs/2404.19737) — Fabian Gloeckle et al. · arXiv:2404.19737 `{Gloeckle2024Better}`
+- **2024** [Training Large Language Models to Reason in a Continuous Latent Space](http://arxiv.org/abs/2412.06769) — Shibo Hao et al. · arXiv:2412.06769 `{Hao2024Training}`
+- **2024** [Efficient Multimodal Large Language Models: A Survey](http://arxiv.org/abs/2405.10739) — Yizhang Jin et al. · arXiv:2405.10739 `{Jin2024Efficient}`
+- **2024** [Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs](http://arxiv.org/abs/2404.07103) — Bowen Jin et al. · arXiv:2404.07103 `{Jin2024Graph}`
+- **2024** [The Impact of Reasoning Step Length on Large Language Models](http://arxiv.org/abs/2401.04925) — Mingyu Jin et al. · arXiv:2401.04925 `{Jin2024Impact}`
+- **2024** [Investigating Multi-Hop Factual Shortcuts in Knowledge Editing of Large Language Models](http://arxiv.org/abs/2402.11900) — Tianjie Ju et al. · arXiv:2402.11900 `{Ju2024Investigating}`
+- **2024** [On the Empirical Complexity of Reasoning and Planning in LLMs](http://arxiv.org/abs/2404.11041) — Liwei Kang et al. · arXiv:2404.11041 `{Kang2024Empirical}`
+- **2024** [Spectra: A Comprehensive Study of Ternary, Quantized, and FP16 Language Models](http://arxiv.org/abs/2407.12327) — Ayush Kaushal et al. · arXiv:2407.12327 `{Kaushal2024Spectra}`
+- **2024** [PROVER-VERIFIER GAMES IMPROVE LEGIBILITY OF LLM OUTPUTS](http://arxiv.org/abs/2407.13692) — Jan Hendrik Kirchner et al. · arXiv:2407.13692 `{KirchnerndProver}`
+- **2024** [Aligning Large Language Models with Representation Editing: A Control Perspective](http://arxiv.org/abs/2406.05954) — Lingkai Kong et al. · arXiv:2406.05954 `{Kong2024Aligning}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [Internal Consistency and Self-Feedback in Large Language Models: A Survey](http://arxiv.org/abs/2407.14507) — Xun Liang et al. · arXiv:2407.14507 `{Liang2024Internal}`
+- **2024** [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](http://arxiv.org/abs/2401.02777) — Na Liu et al. · arXiv:2401.02777 `{Liu2024Llm}`
+- **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
+- **2024** [Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems](http://arxiv.org/abs/2412.09413) — Yingqian Min et al. · arXiv:2412.09413 `{Min2024Imitate}`
+- **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
+- **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [From r to Q * : Your Language Model is Secretly a Q-Function](http://arxiv.org/abs/2404.12358) — Rafael Rafailov et al. · arXiv:2404.12358 `{RafailovndYour}`
+- **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
+- **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
+- **2024** [Case2Code: Learning Inductive Reasoning with Synthetic Data](http://arxiv.org/abs/2407.12504) — Yunfan Shao et al. · arXiv:2407.12504 `{Shao2024Case2code}`
+- **2024** [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](http://arxiv.org/abs/2402.03300) — Zhihong Shao et al. · arXiv:2402.03300 `{Shao2024Deepseekmath}`
+- **2024** [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](http://arxiv.org/abs/2408.03314) — Charlie Snell et al. · arXiv:2408.03314 `{Snell2024Scaling}`
+- **2024** [To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning](http://arxiv.org/abs/2409.12183) — Zayne Sprague et al. · arXiv:2409.12183 `{Sprague2024Cot}`
+- **2024** [Living in the Moment: Can Large Language Models Grasp Co-Temporal Reasoning?](http://arxiv.org/abs/2406.09072) — Zhaochen Su et al. · arXiv:2406.09072 `{Su2024Living}`
+- **2024** [Learning to (Learn at Test Time): RNNs with Expressive Hidden States](http://arxiv.org/abs/2407.04620) — Yu Sun et al. · arXiv:2407.04620 `{Sun2024Learning}`
+- **2024** [Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models](http://arxiv.org/abs/2408.02442) — Zhi Rui Tam et al. · arXiv:2408.02442 `{Tam2024Let}`
+- **2024** The Llama 3 Herd of Models — Llama Team et al. `{Team2024Llama}`
+- **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
+- **2024** [An Empirical Study of Mamba-based Language Models](http://arxiv.org/abs/2406.07887) — Roger Waleffe et al. · arXiv:2406.07887 `{Waleffe2024Empirical}`
+- **2024** [Knowledge Fusion of Large Language Models](http://arxiv.org/abs/2401.10491) — Fanqi Wan et al. · arXiv:2401.10491 `{Wan2024Knowledge}`
+- **2024** [CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs](http://arxiv.org/abs/2406.18521) — Zirui Wang et al. · arXiv:2406.18521 `{Wang2024Charxiv}`
+- **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
+- **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
+- **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
+- **2024** [Mixture-of-Subspaces in Low-Rank Adaptation](http://arxiv.org/abs/2406.11909) — Taiqiang Wu et al. · arXiv:2406.11909 `{WundMixture}`
+- **2024** [Faithful Logical Reasoning via Symbolic Chain-of-Thought](http://arxiv.org/abs/2405.18357) — Jundong Xu et al. · arXiv:2405.18357 `{Xu2024Faithful}`
+- **2024** [Item-Language Model for Conversational Recommendation](http://arxiv.org/abs/2406.02844) — Li Yang et al. · arXiv:2406.02844 `{Yang2024Item}`
+- **2024** [MM-LLMs: Recent Advances in MultiModal Large Language Models](http://arxiv.org/abs/2401.13601) — Duzhen Zhang et al. · arXiv:2401.13601 `{Zhang2024Mm}`
+- **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
+- **2024** [Reverse Multi-Choice Dialogue Commonsense Inference with Graph-of-Thought](www.aaai.org) — Li Zheng et al. `{Zheng2024Reverse}`
+- **2024** [Self-Discover: Large Language Models Self-Compose Reasoning Structures](http://arxiv.org/abs/2402.03620) — Pei Zhou et al. · arXiv:2402.03620 `{Zhou2024Self}`
+- **2023** [Graph of Thoughts: Solving Elaborate Problems with Large Language Models](http://arxiv.org/abs/2308.09687 http://dx.doi.org/10.1609/aaai.v38i16.29720) — Maciej Besta et al. · arXiv:2308.09687 `{Besta2023Graph}`
+- **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
+- **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
+- **2023** [How Abilities in Large Language Models are Affected by Supervised Fine-tuning Data Composition](http://arxiv.org/abs/2310.05492) — Guanting Dong et al. · arXiv:2310.05492 `{Dong2023How}`
+- **2023** [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](http://arxiv.org/abs/2312.00752) — Albert Gu et al. · arXiv:2312.00752 `{Gu2023Mamba}`
+- **2023** [LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models](http://arxiv.org/abs/2304.01933) — Zhiqiang Hu et al. · arXiv:2304.01933 `{Hu2023Llm}`
+- **2023** [Language Is Not All You Need: Aligning Perception with Language Models](http://arxiv.org/abs/2302.14045) — Shaohan Huang et al. · arXiv:2302.14045 `{Huang2023Language}`
+- **2023** [Large Language Models Cannot Self-Correct Reasoning Yet](http://arxiv.org/abs/2310.01798) — Jie Huang et al. · arXiv:2310.01798 `{Huang2023Large}`
+- **2023** [MathPrompter: Mathematical Reasoning using Large Language Models](http://arxiv.org/abs/2303.05398) — Shima Imani et al. · arXiv:2303.05398 `{Imani2023Mathprompter}`
+- **2023** [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](http://arxiv.org/abs/2310.05736) — Huiqiang Jiang et al. · arXiv:2310.05736 `{Jiang2023Llmlingua}`
+- **2023** [StructGPT: A General Framework for Large Language Model to Reason over Structured Data](http://arxiv.org/abs/2305.09645) — Jinhao Jiang et al. · arXiv:2305.09645 `{Jiang2023Structgpt}`
+- **2023** [The Impact of Positional Encoding on Length Generalization in Transformers](http://arxiv.org/abs/2305.19466) — Amirhossein Kazemnejad et al. · arXiv:2305.19466 `{Kazemnejad2023Impact}`
+- **2023** [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model](http://arxiv.org/abs/2306.03341) — Kenneth Li et al. · arXiv:2306.03341 `{Li2023Inference}`
+- **2023** [Symbolic Chain-of-Thought Distillation: Small Models Can Also "Think" Step-by-Step](http://arxiv.org/abs/2306.14050) — Liunian Harold Li et al. · arXiv:2306.14050 `{Li2023Symbolic}`
+- **2023** [Textbooks Are All You Need II: phi-1.5 technical report](http://arxiv.org/abs/2309.05463) — Yuanzhi Li et al. · arXiv:2309.05463 `{Li2023Textbooks}`
+- **2023** [Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data](http://arxiv.org/abs/2312.12832) — Yiwei Li et al. · arXiv:2312.12832 `{Li2023Turning}`
+- **2023** [Prompting Large Language Models with Chain-of-Thought for Few-Shot Knowledge Base Question Generation](http://arxiv.org/abs/2310.08395) — Yuanyuan Liang et al. · arXiv:2310.08395 `{Liang2023Prompting}`
+- **2023** [How Can Recommender Systems Benefit from Large Language Models: A Survey](http://arxiv.org/abs/2306.05817) — Jianghao Lin et al. · arXiv:2306.05817 `{Lin2023How}`
+- **2023** [Evaluating the Logical Reasoning Ability of ChatGPT and GPT-4](http://arxiv.org/abs/2304.03439) — Hanmeng Liu et al. · arXiv:2304.03439 `{Liu2023Evaluating}`
+- **2023** [Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment](http://arxiv.org/abs/2308.05374) — Yang Liu et al. · arXiv:2308.05374 `{Liu2023Trustworthy}`
+- **2023** [From Zero to Hero: Examining the Power of Symbolic Tasks in Instruction Tuning](http://arxiv.org/abs/2304.07995) — Qian Liu et al. · arXiv:2304.07995 `{Liu2023Zero}`
+- **2023** [ART: Automatic multi-step reasoning and tool-use for large language models](http://arxiv.org/abs/2303.09014) — Bhargavi Paranjape et al. · arXiv:2303.09014 `{Paranjape2023Art}`
+- **2023** [Graph-Guided Reasoning for Multi-Hop Question Answering in Large Language Models](http://arxiv.org/abs/2311.09762) — Jinyoung Park et al. · arXiv:2311.09762 `{Park2023Graph}`
+- **2023** [Tool Learning with Foundation Models](http://arxiv.org/abs/2304.08354) — Yujia Qin et al. · arXiv:2304.08354 `{Qin2023Tool}`
+- **2023** [ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs](http://arxiv.org/abs/2307.16789) — Yujia Qin et al. · arXiv:2307.16789 `{Qin2023Toolllm}`
+- **2023** [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](http://arxiv.org/abs/2305.18290) — Rafael Rafailov et al. · arXiv:2305.18290 `{Rafailov2023Direct}`
+- **2023** [Synthetic Prompting: Generating Chain-of-Thought Demonstrations for Large Language Models](http://arxiv.org/abs/2302.00618) — Zhihong Shao et al. · arXiv:2302.00618 `{Shao2023Synthetic}`
+- **2023** [Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models](http://arxiv.org/abs/2312.06585) — Avi Singh et al. · arXiv:2312.06585 `{Singh2023Beyond}`
+- **2023** [LLMs cannot find reasoning errors, but can correct them!](http://arxiv.org/abs/2311.08516) — Gladys Tyen et al. · arXiv:2311.08516 `{Tyen2023Llms}`
+- **2023** [Symbol tuning improves in-context learning in language models](http://arxiv.org/abs/2305.08298) — Jerry Wei et al. · arXiv:2305.08298 `{Wei2023Symbol}`
+- **2023** [ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models](http://arxiv.org/abs/2305.18323) — Binfeng Xu et al. · arXiv:2305.18323 `{Xu2023Rewoo}`
+- **2023** [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](http://arxiv.org/abs/2305.10601) — Shunyu Yao et al. · arXiv:2305.10601 `{Yao2023Tree}`
+- **2023** [A Survey on Multimodal Large Language Models](http://arxiv.org/abs/2306.13549) — Shukang Yin et al. · arXiv:2306.13549 `{Yin2023Survey}`
+- **2023** [Igniting Language Intelligence: The Hitchhiker's Guide From Chain-of-Thought Reasoning to Language Agents](http://arxiv.org/abs/2311.11797) — Zhuosheng Zhang et al. · arXiv:2311.11797 `{Zhang2023Igniting}`
+- **2023** [LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention](http://arxiv.org/abs/2303.16199) — Renrui Zhang et al. · arXiv:2303.16199 `{Zhang2023Llama}`
+- **2023** [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](http://arxiv.org/abs/2306.05685) — Lianmin Zheng et al. · arXiv:2306.05685 `{Zheng2023Judging}`
+- **2023** [Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models](http://arxiv.org/abs/2310.06117) — Huaixiu Steven Zheng et al. · arXiv:2310.06117 `{Zheng2023Take}`
+- **2023** [AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models](http://arxiv.org/abs/2304.06364) — Wanjun Zhong et al. · arXiv:2304.06364 `{Zhong2023Agieval}`
+- **2023** [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](http://arxiv.org/abs/2312.02439) — Shanshan Zhong et al. · arXiv:2312.02439 `{Zhong2023Let}`
+- **2023** [Large Language Models can Learn Rules](http://arxiv.org/abs/2310.07064) — Zhaocheng Zhu et al. · arXiv:2310.07064 `{Zhu2023Large}`
+- **2023** [Generalizable Chain-of-Thought Prompting in Mixed-task Scenarios with Large Language Models](http://arxiv.org/abs/2310.06692) — Anni Zou et al. · arXiv:2310.06692 `{Zou2023Generalizable}`
+- **2022** [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](http://arxiv.org/abs/2208.09392) — Arpit Bansal et al. · arXiv:2208.09392 `{Bansal2022Cold}`
+- **2022** [Scaling Instruction-Finetuned Language Models](http://arxiv.org/abs/2210.11416) — Hyung Won Chung et al. · arXiv:2210.11416 `{Chung2022Scaling}`
+- **2022** [Towards Reasoning in Large Language Models: A Survey](http://arxiv.org/abs/2212.10403) — Jie Huang et al. · arXiv:2212.10403 `{Huang2022Towards}`
+- **2022** Algorithms for decision making — Mykel J.. Kochenderfer et al. `{Kochenderfer2022Algorithms}`
+- **2022** [Solving Quantitative Reasoning Problems with Language Models](http://arxiv.org/abs/2206.14858) — Aitor Lewkowycz et al. · arXiv:2206.14858 `{LewkowyczndSolving}`
+- **2022** [Language Models of Code are Few-Shot Commonsense Learners](http://arxiv.org/abs/2210.07128) — Aman Madaan et al. · arXiv:2210.07128 `{Madaan2022Language}`
+- **2022** Human Language Understanding \& Reasoning — Christopher D. Manning et al. `{Manning2022Human}`
+- **2022** [Reasoning with Language Model Prompting: A Survey](http://arxiv.org/abs/2212.09597) — Shuofei Qiao et al. · arXiv:2212.09597 `{Qiao2022Reasoning}`
+- **2022** [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions](http://arxiv.org/abs/2212.10509) — Harsh Trivedi et al. · arXiv:2212.10509 `{TrivedindInterleaving}`
+- **2022** [ReAct: Synergizing Reasoning and Acting in Language Models](http://arxiv.org/abs/2210.03629) — Shunyu Yao et al. · arXiv:2210.03629 `{Yao2022React}`
+- **2022** [A Survey on Knowledge-Enhanced Pre-trained Language Models](http://arxiv.org/abs/2212.13428) — Chaoqi Zhen et al. · arXiv:2212.13428 `{Zhen2022Survey}`
+- **2022** [ST-MoE: Designing Stable and Transferable Sparse Expert Models](http://arxiv.org/abs/2202.08906) — Barret Zoph et al. · arXiv:2202.08906 `{Zoph2022St}`
+- **2021** Document-Level Event Argument Extraction by Conditional Generation — Sha Li et al. `{Li2021Document}`
+- **2021** [Generated Knowledge Prompting for Commonsense Reasoning](http://arxiv.org/abs/2110.08387) — Jiacheng Liu et al. · arXiv:2110.08387 `{Liu2021Generated}`
+- **2019** Understanding attention and generalization in graph neural networks — Boris Knyazev et al. `{Knyazev2019Understanding}`
+- **2016** [Dynamic Graph Neural Networks](https://doi.org/10.475/123_4) — Yao Ma et al. `{Ma2016Dynamic}`
+- **n.d.** [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs Microsoft](https://github.com/openai/tiktoken) — ? et al. `{AnonndPhia}`
+- **n.d.** [The State of Reinforcement Learning for LLM Reasoning](https://magazine.sebastianraschka.com/p/the-state-of-llm-reasoning-model-training) — ? et al. `{AnonndStatea}`
+- **n.d.** [AlphaMath Almost Zero: process Supervision without process](https://github.com/MARIO-Math-Reasoning/Super_MARIO.) — Guoxin Chen et al. `{ChenndAlphamath}`
+- **n.d.** DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning MATH-500 MMLU SWE-bench Verified DeepSeek-R1 OpenAI-o1-1217 DeepSeek-R1-32B OpenAI-o1-mini DeepSeek-V3 — DeepSeek-AI et al. `{DeepSeekAIndDeepseeka}`
+- **n.d.** [CogLTX: Applying BERT to Long Texts](https://github.com/Sleepychord/CogLTX.) — Ming Ding et al. `{DingndCogltx}`
+- **n.d.** [TALK LIKE A GRAPH: ENCODING GRAPHS FOR LARGE LANGUAGE MODELS](https://github.com/google-research/) — Bahare Fatemi et al. `{FatemindTalk}`
+- **n.d.** [GraphEdit: Large Language Models for Graph Structure Learning](https://github.com/HKUDS/GraphEdit.) — Zirui Guo et al. `{GuondGraphedit}`
+- **n.d.** [Test-time Computing: from System-1 Thinking to System-2 Thinking](https://github.com/Dereck0602/) — Yixin Ji et al. `{JindTest}`
+- **n.d.** [Analyzing the Role of Semantic Representations in the Era of Large Language Models](https://github.com/causalNLP/amr_llm.) — Zhijing Jin et al. `{JinndAnalyzing}`
+- **n.d.** [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought Chain-of-Thought Multimodal Visualization-of-Thought](https://aka.ms/GeneralAI) — Chengzu Li et al. `{LindImagine}`
+- **n.d.** [RA-ISF: Learning to Answer and Understand from Retrieval Augmentation via Iterative Self-Feedback](https://github.com/OceannTwT/) — Yanming Liu et al. `{LiundRa}`
+- **n.d.** [REFT: Reasoning with REinforced Fine-Tuning](https://chat.openai.com/) — Trung Quoc Luong et al. `{LuongndReft}`
+- **n.d.** [Do PLMs Know and Understand Ontological Knowledge?](https://github.com/) — Weiqi Wu et al. `{WundDo}`
+- **n.d.** [Secrets of RLHF in Large Language Models Part I: PPO](https://github.com/OpenLMLab/MOSS-RLHF) — Rui Zheng et al. `{ZhengndSecrets}`
+- **n.d.** [Reasoning Over Semantic-Level Graph for Fact Checking](https://demo.allennlp.org/) — Wanjun Zhong et al. `{ZhongndReasoning}`
+
+## 图神经网络 / Graph
+
+- **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2024** [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](http://arxiv.org/abs/2402.05391) — Zhuo Chen et al. · arXiv:2402.05391 `{Chen2024Knowledge}`
+- **2024** [A Survey on 3D Gaussian Splatting](http://arxiv.org/abs/2401.03890) — Guikun Chen et al. · arXiv:2401.03890 `{Chen2024Survey}`
+- **2024** UNIVERSITY OF CALIFORNIA Los Angeles Latent Diffusion Energy-based Model for Graph Generation — Jingbang Chen et al. `{Chen2024University}`
+- **2024** [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](http://arxiv.org/abs/2404.16130) — Darren Edge et al. · arXiv:2404.16130 `{Edge2024Local}`
+- **2024** [Training Language Models on the Knowledge Graph: Insights on Hallucinations and Their Detectability](http://arxiv.org/abs/2408.07852) — Jiri Hron et al. · arXiv:2408.07852 `{Hron2024Training}`
+- **2024** [Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs](http://arxiv.org/abs/2404.07103) — Bowen Jin et al. · arXiv:2404.07103 `{Jin2024Graph}`
+- **2024** [GRAFX: An Open-Source Library for Audio Processing Graphs in PyTorch](http://arxiv.org/abs/2408.03204) — Sungho Lee et al. · arXiv:2408.03204 `{Lee2024Grafx}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [Advances in 3D Generation: A Survey](http://arxiv.org/abs/2401.17807) — Xiaoyu Li et al. · arXiv:2401.17807 `{Li2024Advances}`
+- **2024** [Graph Neural Networks for Tabular Data Learning: A Survey with Taxonomy and Directions](http://arxiv.org/abs/2401.02143) — Cheng-Te Li et al. · arXiv:2401.02143 `{Li2024Graph}`
+- **2024** [Class-Imbalanced Graph Learning without Class Rebalancing](https://github.) — Zhining Liu et al. `{Liu2024Class}`
+- **2024** [ECHO-GL: Earnings Calls-Driven Heterogeneous Graph Learning for Stock Movement Prediction](www.aaai.org) — Mengpu Liu et al. `{Liu2024Echo}`
+- **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
+- **2024** [HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs](http://arxiv.org/abs/2406.06027) — Pranoy Panda et al. · arXiv:2406.06027 `{PandandHolmes}`
+- **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
+- **2024** [Temporal Knowledge Graph Question Answering: A Survey](http://arxiv.org/abs/2406.14191) — Miao Su et al. · arXiv:2406.14191 `{Su2024Temporal}`
+- **2024** [GraphGPT: Graph Instruction Tuning for Large Language Models](http://arxiv.org/abs/2310.13023) — Jiabin Tang et al. · arXiv:2310.13023 `{Tang2024Graphgpt}`
+- **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
+- **2024** [Dependency Structure-Enhanced Graph Attention Networks for Event Detection](www.aaai.org) — Qizhi Wan et al. `{Wan2024Dependency}`
+- **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
+- **2024** [LLMs as Zero-shot Graph Learners: Alignment of GNN Representations with LLM Token Embeddings](http://arxiv.org/abs/2408.14512) — Duo Wang et al. · arXiv:2408.14512 `{Wang2024Llms}`
+- **2024** [Knowledge Graph Enhanced Large Language Model Editing](http://arxiv.org/abs/2402.13593) — Mengqi Zhang et al. · arXiv:2402.13593 `{Zhang2024Knowledge}`
+- **2024** [Reverse Multi-Choice Dialogue Commonsense Inference with Graph-of-Thought](www.aaai.org) — Li Zheng et al. `{Zheng2024Reverse}`
+- **2023** [Graph of Thoughts: Solving Elaborate Problems with Large Language Models](http://arxiv.org/abs/2308.09687 http://dx.doi.org/10.1609/aaai.v38i16.29720) — Maciej Besta et al. · arXiv:2308.09687 `{Besta2023Graph}`
+- **2023** [Exploring the Potential of Large Language Models (LLMs) in Learning on Graphs](http://arxiv.org/abs/2307.03393) — Zhikai Chen et al. · arXiv:2307.03393 `{Chen2023Exploringa}`
+- **2023** [Crawling the Internal Knowledge-Base of Language Models](http://arxiv.org/abs/2301.12810) — Roi Cohen et al. · arXiv:2301.12810 `{Cohen2023Crawling}`
+- **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
+- **2023** [Transformers as Graph-to-Graph Models](http://arxiv.org/abs/2310.17936) — James Henderson et al. · arXiv:2310.17936 `{Henderson2023Transformers}`
+- **2023** [A Comprehensive Survey on Deep Graph Representation Learning](http://arxiv.org/abs/2304.05055 http://dx.doi.org/10.1016/j.neunet.2024.106207) — Wei Ju et al. · arXiv:2304.05055 `{Ju2023Comprehensive}`
+- **2023** [ExeKGLib: Knowledge Graphs-Empowered Machine Learning Analytics](http://arxiv.org/abs/2305.02966) — Antonis Klironomos et al. · arXiv:2305.02966 `{Klironomos2023Exekglib}`
+- **2023** [A Survey of Graph Meets Large Language Model: Progress and Future Directions](http://arxiv.org/abs/2311.12399) — Yuhan Li et al. · arXiv:2311.12399 `{Li2023Survey}`
+- **2023** [A Survey of Imbalanced Learning on Graphs: Problems, Techniques, and Future Directions](http://arxiv.org/abs/2308.13821) — Zemin Liu et al. · arXiv:2308.13821 `{Liu2023Survey}`
+- **2023** [Towards Graph Foundation Models: A Survey and Beyond](http://arxiv.org/abs/2310.11829) — Jiawei Liu et al. · arXiv:2310.11829 `{Liu2023Towards}`
+- **2023** [ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models](http://arxiv.org/abs/2310.08975) — Haoran Luo et al. · arXiv:2310.08975 `{Luo2023Chatkbqa}`
+- **2023** [Unifying Large Language Models and Knowledge Graphs: A Roadmap](http://arxiv.org/abs/2306.08302 http://dx.doi.org/10.1109/TKDE.2024.3352100) — Shirui Pan et al. · arXiv:2306.08302 `{Pan2023Unifying}`
+- **2023** [Graph-Guided Reasoning for Multi-Hop Question Answering in Large Language Models](http://arxiv.org/abs/2311.09762) — Jinyoung Park et al. · arXiv:2311.09762 `{Park2023Graph}`
+- **2023** [Representation Learning with Large Language Models for Recommendation](http://arxiv.org/abs/2310.15950 http://dx.doi.org/10.1145/3589334.3645458) — Xubin Ren et al. · arXiv:2310.15950 `{Ren2023Representation}`
+- **2023** [Schema-learning and rebinding as mechanisms of in-context learning and emergence](http://arxiv.org/abs/2307.01201) — Sivaramakrishnan Swaminathan et al. · arXiv:2307.01201 `{Swaminathan2023Schema}`
+- **2023** [The Snowflake Hypothesis: Training Deep GNN with One Node One Receptive field](http://arxiv.org/abs/2308.10051) — Kun Wang et al. · arXiv:2308.10051 `{Wang2023Snowflake}`
+- **2023** Graph-Aware Language Model Pre-Training on a Large Graph Corpus Can Help Multiple Graph Applications — Han Xie et al. · arXiv:0305.35998 `{Xie2023Graph}`
+- **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
+- **2023** [LLM4DyG: Can Large Language Models Solve Spatial-Temporal Problems on Dynamic Graphs?](http://arxiv.org/abs/2310.17110) — Zeyang Zhang et al. · arXiv:2310.17110 `{Zhang2023Llm4dyg}`
+- **2023** [Generating Visual Spatial Description via Holistic 3D Scene Understanding](http://arxiv.org/abs/2305.11768) — Yu Zhao et al. · arXiv:2305.11768 `{Zhao2023Generating}`
+- **2023** [Are More Layers Beneficial to Graph Transformers?](http://arxiv.org/abs/2303.00579) — Haiteng Zhao et al. · arXiv:2303.00579 `{Zhao2023More}`
+- **2022** The graph connection — ? et al. `{Anon2022Graph}`
+- **2022** MSRA Graphormer Team — ? et al. `{Anon2022Msra}`
+- **2022** [Pathways: Asynchronous Distributed Dataflow for ML](http://arxiv.org/abs/2203.12533) — Paul Barham et al. · arXiv:2203.12533 `{Barham2022Pathways}`
+- **2022** Meta-Knowledge Transfer for Inductive Knowledge Graph Embedding — Mingyang Chen et al. · arXiv:7495.35317 `{Chen2022Meta}`
+- **2022** [Optimization-Induced Graph Implicit Nonlinear Diffusion](http://arxiv.org/abs/2206.14418) — Qi Chen et al. · arXiv:2206.14418 `{Chen2022Optimization}`
+- **2022** What is Event Knowledge Graph: A Survey — Saiping Guan et al. · arXiv:2022.31803 `{Guan2022What}`
+- **2022** [Going Deeper into Permutation-Sensitive Graph Neural Networks](http://arxiv.org/abs/2205.14368) — Zhongyu Huang et al. · arXiv:2205.14368 `{Huang2022Going}`
+- **2022** Mask and Reason: Pre-Training Knowledge Graph Transformers for Complex Logical Queries — Xiao Liu et al. · arXiv:4678.35394 `{Liu2022Mask}`
+- **2022** [Language Models of Code are Few-Shot Commonsense Learners](http://arxiv.org/abs/2210.07128) — Aman Madaan et al. · arXiv:2210.07128 `{Madaan2022Language}`
+- **2022** [Interpretable and Generalizable Graph Learning via Stochastic Attention Mechanism](http://arxiv.org/abs/2201.12987) — Siqi Miao et al. · arXiv:2201.12987 `{Miao2022Interpretable}`
+- **2022** A NEW P ERSPECTIVE ON HOW GRAPH NEURAL NET - WORKS GO B EYOND WEISFEILER -LEHMAN ? — Erspective On et al. `{On2022New}`
+- **2022** [Recipe for a General, Powerful, Scalable Graph Transformer](http://arxiv.org/abs/2205.12454) — Ladislav Rampášek et al. · arXiv:2205.12454 `{Rampek2022Recipe}`
+- **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
+- **2022** ClusterSCL: Cluster-Aware Supervised Contrastive Learning on Graphs — Yanling Wang et al. · arXiv:5447.35122 `{Wang2022Clusterscl}`
+- **2022** [A Survey of Pretraining on Graphs: Taxonomy, Methods, and Applications](http://arxiv.org/abs/2202.07893) — Jun Xia et al. · arXiv:2202.07893 `{Xia2022Survey}`
+- **2022** [Diffusion Models: A Comprehensive Survey of Methods and Applications](http://arxiv.org/abs/2209.00796) — Ling Yang et al. · arXiv:2209.00796 `{Yang2022Diffusion}`
+- **2022** Ontology-enhanced Prompt-tuning for Few-shot Learning — Hongbin Ye et al. · arXiv:5447.35119 `{Ye2022Ontology}`
+- **2022** [Graph Masked Autoencoders with Transformers](http://arxiv.org/abs/2202.08391) — Sixiao Zhang et al. · arXiv:2202.08391 `{Zhang2022Graph}`
+- **2022** [Hierarchical Graph Transformer with Adaptive Node Sampling](http://arxiv.org/abs/2210.03930) — Zaixi Zhang et al. · arXiv:2210.03930 `{Zhang2022Hierarchical}`
+- **2021** [Learning Attributed Graph Representations with Communicative Message Passing Transformer](http://arxiv.org/abs/2107.08773) — Jianwen Chen et al. · arXiv:2107.08773 `{Chen2021Learning}`
+- **2021** PASSLEAF: A Pool-bAsed Semi-Supervised LEArning Framework for Uncertain Knowledge Graph Embedding — Zhu Mu Chen et al. `{Chen2021Passleaf}`
+- **2021** Graph Adversarial Training: Dynamically Regularizing Based on Graph Structure — Fuli Feng et al. · arXiv:2019.29577 `{Feng2021Graph}`
+- **2021** [GNNAutoScale: Scalable and Expressive Graph Neural Networks via Historical Embeddings](http://arxiv.org/abs/2106.05609) — Matthias Fey et al. · arXiv:2106.05609 `{Fey2021Gnnautoscale}`
+- **2021** Unsupervised Graph Alignment with Wasserstein Distance Discriminator — Ji Gao et al. · arXiv:7548.34673 `{Gao2021Unsupervised}`
+- **2021** Graph Neural Networksの 判断根拠エッジの可視化 — Tetsu Kasanishi et al. `{Kasanishi2021Graph}`
+- **2021** [Rethinking Graph Transformers with Spectral Attention](http://arxiv.org/abs/2106.03893) — Devin Kreuzer et al. · arXiv:2106.03893 `{Kreuzer2021Rethinking}`
+- **2021** Heterogeneous Information Network based Recommender Systems: a survey — Jiawei Liu et al. `{Liu2021Heterogeneous}`
+- **2021** Leverage external knowledge and self-attention for chinese semantic dependency graph parsing — Dianqing Liu et al. · arXiv:2021.01632 `{Liu2021Leverage}`
+- **2021** Graph Neural Networks in Computer Vision — Yao Ma et al. `{Ma2021Grapha}`
+- **2021** Graph Neural Networks in Data Mining — Yao Ma et al. `{Ma2021Graphb}`
+- **2021** Graph Neural Networks in Natural Language Processing — Yao Ma et al. `{Ma2021Graphc}`
+- **2021** [GraphiT: Encoding Graph Structure in Transformers](http://arxiv.org/abs/2106.05667) — Grégoire Mialon et al. · arXiv:2106.05667 `{MialonndGraphit}`
+- **2021** GRAPH NEURAL NETWORKS EXPONENTIALLY LOSE EXPRESSIVE POWER FOR NODE CLASSIFICATION — Graph Convolutional Network et al. `{Network2021Graph}`
+- **2021** Dual Attention Network for Cross-lingual Entity Alignment — Jian Sun et al. `{Sun2021Dual}`
+- **2021** [Graph Neural Networks for Natural Language Processing: A Survey](http://arxiv.org/abs/2106.06090) — Lingfei Wu et al. · arXiv:2106.06090 `{Wu2021Graph}`
+- **2021** [InfoGCL: Information-Aware Graph Contrastive Learning](http://arxiv.org/abs/2110.15438) — Dongkuan Xu et al. · arXiv:2110.15438 `{Xu2021Infogcl}`
+- **2021** [Do Transformers Really Perform Bad for Graph Representation?](http://arxiv.org/abs/2106.05234) — Chengxuan Ying et al. · arXiv:2106.05234 `{Ying2021Do}`
+- **2021** [On Explainability of Graph Neural Networks via Subgraph Explorations](http://arxiv.org/abs/2102.05152) — Hao Yuan et al. · arXiv:2102.05152 `{Yuan2021Explainability}`
+- **2021** [Distilling Holistic Knowledge with Graph Neural Networks](http://arxiv.org/abs/2108.05507) — Sheng Zhou et al. · arXiv:2108.05507 `{Zhou2021Distilling}`
+- **2021** Graph contrastive learning with adaptive augmentation — Yanqiao Zhu et al. · arXiv:2381.34498 `{Zhu2021Graph}`
+- **2021** [A Survey on Graph Structure Learning: Progress and Opportunities](http://arxiv.org/abs/2103.03036) — Yanqiao Zhu et al. · arXiv:2103.03036 `{Zhu2021Survey}`
+- **2021** Review of event causality extraction based on deep learning — Wang Zhujun et al. `{Zhujun2021Review}`
+- **2020** Temporal Graph Neural Networks for Social Recommendation — Ting Bai et al. · arXiv:0022.2020 `{Bai2020Temporal}`
+- **2020** Explanation-Based Weakly-Supervised Learning of Visual Relations with Graph Networks — Federico Baldassarre et al. `{Baldassarre2020Explanation}`
+- **2020** Scaling Graph Neural Networks with Approximate PageRank — Aleksandar Bojchevski et al. · arXiv:4486.34032 `{Bojchevski2020Scaling}`
+- **2020** [Bridging the Gap between Spatial and Spectral Domains: A Survey on Graph Neural Networks](http://arxiv.org/abs/2002.11867) — Zhiqian Chen et al. · arXiv:2002.11867 `{Chen2020Bridging}`
+- **2020** Revisiting graph based collaborative filtering: A linear residual graph convolutional network approach — Lei Chen et al. `{Chen2020Revisiting}`
+- **2020** Simple and deep graph convolutional networks — Ming Chen et al. `{Chen2020Simplea}`
+- **2020** [Knowledge Graph Embeddings: From Theory to Practice](https://kge-tutorial-ecai2020.github.io/) — Luca Costabello et al. `{Costabello2020Knowledge}`
+- **2020** Drop Edge: Towards Deep Graph Convolution — Tional N Etworks et al. `{Etworks2020Drop}`
+- **2020** [SIGN: Scalable Inception Graph Neural Networks](http://arxiv.org/abs/2004.11198) — Fabrizio Frasca et al. · arXiv:2004.11198 `{Frasca2020Sign}`
+- **2020** Graphrel: Modeling text as relational graphs for joint entity and relation extraction — Tsu Jui Fu et al. `{Fu2020Graphrel}`
+- **2020** On the integration of knowledge graphs into deep learning models for a more comprehensible AI-Three challenges for future research — Giuseppe Futia et al. `{Futia2020Integration}`
+- **2020** Generalization and representational limits of graph neural networks — Vikas K. Garg et al. `{Garg2020Generalization}`
+- **2020** Graph Representation Learning Hamilton — William L. Hamilton et al. `{Hamilton2020Graph}`
+- **2020** Contrastive multi-view representation learning on graphs — Kaveh Hassani et al. `{Hassani2020Contrastive}`
+- **2020** LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation — Xiangnan He et al. · arXiv:7271.34010 `{He2020Lightgcn}`
+- **2020** GPT-GNN: Generative Pre-Training of Graph Neural Networks — Ziniu Hu et al. · arXiv:4486.34032 `{Hu2020Gpt}`
+- **2020** Heterogeneous Graph Transformer — Ziniu Hu et al. · arXiv:6423.33800 `{Hu2020Heterogeneous}`
+- **2020** Graph-based dependency parsing with graph neural networks — Tao Ji et al. `{Ji2020Graph}`
+- **2020** Multi-behavior Recommendation with Graph Convolutional Networks — Bowen Jin et al. · arXiv:7271.34010 `{Jin2020Multi}`
+- **2020** SemSUM: Semantic dependency guided neural abstractive summarization — Hanqi Jin et al. `{Jin2020Semsum}`
+- **2020** [DeeperGCN: All You Need to Train Deeper GCNs](http://arxiv.org/abs/2006.07739) — Guohao Li et al. · arXiv:2006.07739 `{Li2020Deepergcn}`
+- **2020** Type-aware anchor link prediction across heterogeneous networks based on graph attention network — Xiaoxue Li et al. `{Li2020Type}`
+- **2020** A Joint Neural Model for Information Extraction with Global Features — Ying Lin et al. `{Lin2020Joint}`
+- **2020** Graph Neural Network for Tag Ranking in Tag-enhanced Video Recommendation — Qi Liu et al. · arXiv:0531.34160 `{Liu2020Graph}`
+- **2020** [Self-supervised Learning: Generative or Contrastive](http://arxiv.org/abs/2006.08218) — Xiao Liu et al. · arXiv:2006.08218 `{Liu2020Self}`
+- **2020** Towards Deeper Graph Neural Networks — Meng Liu et al. · arXiv:4486.34030 `{Liu2020Towards}`
+- **2020** GCAN: Graph-aware Co-Attention Networks for Explainable Fake News Detection on Social Media — Yi-Ju Lu et al. `{Lu2020Gcan}`
+- **2020** [a Self - Attention Based Graph H Yper -Sagnn :](https://github.com/rootlu/SIAN.) — Yuanfu Lu et al. `{Lu2020Self}`
+- **2020** Parameterized explainer for graph neural network — Dongsheng Luo et al. `{Luo2020Parameterized}`
+- **2020** Graph-Based Text Representation and Matching: A Review of the State of the Art and Future Challenges — Ahmed Hamza Osman et al. · arXiv:2020.29931 `{Osman2020Graph}`
+- **2020** GCC: Graph Contrastive Coding for Graph Neural Network Pre-Training — Jiezhong Qiu et al. · arXiv:4486.34031 `{Qiu2020Gcc}`
+- **2020** Evaluating attribution for graph neural networks — Benjamin Sanchez-Lengeling et al. `{SanchezLengeling2020Evaluating}`
+- **2020** Aspect-level sentiment analysis via convolution over dependency tree — Kai Sun et al. `{Sun2020Aspect}`
+- **2020** [CoLAKE: Contextualized Language and Knowledge Embedding](http://arxiv.org/abs/2010.00309) — Tianxiang Sun et al. · arXiv:2010.00309 `{Sun2020Colake}`
+- **2020** Multi-modal Knowledge Graphs for Recommender Systems — Rui Sun et al. · arXiv:0531.34119 `{Sun2020Multi}`
+- **2020** COMPOSITION-BASED MULTI-RELATIONAL GRAPH CONVOLUTIONAL NETWORKS — Shikhar Vashishth et al. `{Vashishth2020Composition}`
+- **2020** PGM-explainer: Probabilistic graphical model explanations for graph neural networks — Minh N. Vu et al. `{Vu2020Pgm}`
+- **2020** Second-order semantic dependency parsing with end-to-end neural networks — Xinyu Wang et al. `{Wang2020Second}`
+- **2020** Graph information bottleneck — Tailin Wu et al. `{Wu2020Grapha}`
+- **2020** [Graph Neural Networks in Recommender Systems: A Survey](http://arxiv.org/abs/2011.02260) — Shiwen Wu et al. · arXiv:2011.02260 `{Wu2020Graphb}`
+- **2020** When does self-supervision help graph convolutional networks? — Yuning You et al. `{You2020When}`
+- **2020** TAGNN: Target Attentive Graph Neural Networks for Session-based Recommendation — Feng Yu et al. · arXiv:7271.34013 `{Yu2020Tagnn}`
+- **2020** [Explainability in Graph Neural Networks: A Taxonomic Survey](http://arxiv.org/abs/2012.15445) — Hao Yuan et al. · arXiv:2012.15445 `{Yuan2020Explainability}`
+- **2020** XGNN: Towards Model-Level Explanations of Graph Neural Networks — Hao Yuan et al. · arXiv:4486.34030 `{Yuan2020Xgnn}`
+- **2020** [Graph Neural Networks: Taxonomy, Advances and Trends](http://arxiv.org/abs/2012.08752) — Yu Zhou et al. · arXiv:2012.08752 `{Zhou2020Graph}`
+- **2020** [Deep Graph Contrastive Representation Learning](http://arxiv.org/abs/2006.04131) — Yanqiao Zhu et al. · arXiv:2006.04131 `{Zhu2020Deep}`
+- **2019** Adversarial attacks on node embeddings via graph poisoning — Aleksandar Bojchevski et al. `{Bojchevski2019Adversarial}`
+- **2019** [Graph Transformer for Graph-to-Sequence Learning](http://arxiv.org/abs/1911.07470) — Deng Cai et al. · arXiv:1911.07470 `{Cai2019Graph}`
+- **2019** Representation learning for attributed multiplex heterogeneous network — Yukuo Cen et al. · arXiv:2500.33309 `{Cen2019Representation}`
+- **2019** Activehne: Active heterogeneous network embedding — Xia Chen et al. `{Chen2019Activehne}`
+- **2019** On the equivalence between graph isomorphism testing and function approximation with GNNs — Zhengdao Chen et al. `{Chen2019Equivalence}`
+- **2019** Cluster-GCN: An efficient algorithm for training deep and large graph convolutional networks — Wei Lin Chiang et al. · arXiv:2500.33309 `{Chiang2019Cluster}`
+- **2019** Understanding the representation power of graph neural networks in learning graph topology — Nima Dehmamy et al. `{Dehmamy2019Understanding}`
+- **2019** Hypergraph neural networks — Yifan Feng et al. `{Feng2019Hypergraph}`
+- **2019** Graph U-Nets — Hongyang Gao et al. `{Gao2019Graph}`
+- **2019** Eep raph nfomax — William L Hamilton et al. `{Hamilton2019Eep}`
+- **2019** Dynamic hypergraph neural networks — Jianwen Jiang et al. `{Jiang2019Dynamic}`
+- **2019** Universal invariant and equivariant graph neural networks — Nicolas Keriven et al. `{Keriven2019Universal}`
+- **2019** Diffusion improves graph learning — Johannes Klicpera et al. `{Klicpera2019Diffusion}`
+- **2019** Predict then Propagate: GNNs meet Personalized PageRank — Aleksandar Bojchevski Johannes Klicpera et al. `{Klicpera2019Predict}`
+- **2019** Understanding attention and generalization in graph neural networks — Boris Knyazev et al. `{Knyazev2019Understanding}`
+- **2019** DeepGCNs: Can GCNs go as deep as CNNs? — Guohao Li et al. · arXiv:2019.00936 `{Li2019Deepgcns}`
+- **2019** Fi-GNN: Modeling feature interactions via graph neural networks for CTR prediction — Zekun Li et al. · arXiv:7384.33579 `{Li2019Fi}`
+- **2019** INVARIANT AND EQUIVARIANT GRAPH NETWORKS — Haggai Maron et al. `{Maron2019Invariant}`
+- **2019** Provably powerful graph networks — Haggai Maron et al. `{Maron2019Provably}`
+- **2019** Explainability methods for graph convolutional neural networks — Phillip E. Pope et al. · arXiv:2019.01103 `{Pope2019Explainability}`
+- **2019** [DropEdge: Towards Deep Graph Convolutional Networks on Node Classification](http://arxiv.org/abs/1907.10903) — Yu Rong et al. · arXiv:1907.10903 `{Rong2019Dropedge}`
+- **2019** [InfoGraph: Unsupervised and Semi-supervised Graph-Level Representation Learning via Mutual Information Maximization](http://arxiv.org/abs/1908.01000) — Fan-Yun Sun et al. · arXiv:1908.01000 `{Sun2019Infograph}`
+- **2019** [RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space](http://arxiv.org/abs/1902.10197) — Zhiqing Sun et al. · arXiv:1902.10197 `{Sun2019Rotate}`
+- **2019** Stability and generalization of graph convolutional neural networks — Saurabh Verma et al. · arXiv:2500.33309 `{Verma2019Stability}`
+- **2019** Heterogeneous graph attention network — Xiao Wang et al. · arXiv:8558.33135 `{Wang2019Heterogeneous}`
+- **2019** KGAT: Knowledge graph attention network for recommendation — Xiang Wang et al. · arXiv:2500.33309 `{Wang2019Kgat}`
+- **2019** Neural graph collaborative filtering — Xiang Wang et al. · arXiv:1184.33312 `{Wang2019Neural}`
+- **2019** Adversarial examples for graph data: Deep insights into attack and defense — Huijun Wu et al. `{Wu2019Adversarial}`
+- **2019** Session-based recommendation with graph neural networks — Shu Wu et al. `{Wu2019Session}`
+- **2019** Simplifying graph convolutional networks — Felix Wu et al. `{Wu2019Simplifying}`
+- **2019** How powerful are graph neural networks? — Keyulu Xu et al. `{Xu2019How}`
+- **2019** Topology attack and defense for graph neural networks: An optimization perspective — Kaidi Xu et al. `{Xu2019Topology}`
+- **2019** HyperGCN: A new method of training graph convolutional networks on hypergraphs — Naganand Yadati et al. `{Yadati2019Hypergcn}`
+- **2019** [GraphSAINT: Graph Sampling Based Inductive Learning Method](http://arxiv.org/abs/1907.04931) — Hanqing Zeng et al. · arXiv:1907.04931 `{Zeng2019Graphsaint}`
+- **2019** Adversarial attacks on graph neural networks via meta learning — Daniel Zügner et al. `{Zgner2019Adversarial}`
+- **2019** Certifiable robustness and robust training for graph convolutional networks — Daniel Zügner et al. · arXiv:2500.33309 `{Zgner2019Certifiable}`
+- **2019** Robust graph convolutional networks against adversarial attacks — Dingyuan Zhu et al. · arXiv:2500.33308 `{Zhu2019Robust}`
+- **2019** Layer-dependent importance sampling for training deep and large graph convolutional networks — Difan Zou et al. `{Zou2019Layer}`
+- **2018** FastGCN: Fast learning with graph convolu-tional networks via importance sampling — Jie Chen et al. `{Chen2018Fastgcn}`
+- **2018** Stochastic training of graph convolutional networks with variance reduction — Jianfei Chen et al. `{Chen2018Stochastic}`
+- **2018** Adversarial attack on graph structured data — Hanjun Dai et al. `{Dai2018Adversarial}`
+- **2018** Graph Neural Networks — M L G Reading Group et al. `{Group2018Graph}`
+- **2018** Adaptive sampling towards fast graph representation learning — Wenbing Huang et al. `{Huang2018Adaptive}`
+- **2018** Graph classification using structural attention — John Boaz Lee et al. · arXiv:9819.32199 `{Lee2018Graph}`
+- **2018** Deeper insights into graph convolutional networks for semi-supervised learning — Qimai Li et al. `{Li2018Deeper}`
+- **2018** [Adversarial Attack and Defense on Graph Data: A Survey](http://arxiv.org/abs/1812.10528) — Lichao Sun et al. · arXiv:1812.10528 `{Sun2018Adversarial}`
+- **2018** Representation learning on graphs with jumping knowledge networks — Keyulu Xu et al. `{Xu2018Representation}`
+- **2018** Hierarchical graph representation learning with differentiable pooling — Rex Ying et al. `{Ying2018Hierarchical}`
+- **2018** Adversarial attacks on neural networks for graph data — Daniel Zügner et al. · arXiv:9819.32200 `{Zgner2018Adversarial}`
+- **2018** [Deep Learning on Graphs: A Survey](http://arxiv.org/abs/1812.04202) — Ziwei Zhang et al. · arXiv:1812.04202 `{Zhang2018Deep}`
+- **2017** [Graph Convolutional Matrix Completion](http://arxiv.org/abs/1706.02263) — Rianne van den Berg et al. · arXiv:1706.02263 `{Berg2017Graph}`
+- **2017** Neural message passing for quantum chemistry — Justin Gilmer et al. `{Gilmer2017Neural}`
+- **2017** Inductive Representation Learning on Large Graphs — William L Hamilton et al. `{Hamilton2017Inductive}`
+- **2017** Semi-supervised classification with graph convolutional networks — Thomas N. Kipf et al. `{Kipf2017Semi}`
+- **2016** GATED GRAPH SEQUENCE NEURAL NETWORKS — Marc Brockschmidt et al. `{Brockschmidt2016Gated}`
+- **2016** [Training Deep Nets with Sublinear Memory Cost](http://arxiv.org/abs/1604.06174) — Tianqi Chen et al. · arXiv:1604.06174 `{Chen2016Training}`
+- **2016** Convolutional neural networks on graphs with fast localized spectral filtering — Michaël Defferrard et al. `{Defferrard2016Convolutional}`
+- **2016** [Dynamic Graph Neural Networks](https://doi.org/10.475/123_4) — Yao Ma et al. `{Ma2016Dynamic}`
+- **2015** Convolutional networks on graphs for learning molecular fingerprints — David Duvenaud et al. `{Duvenaud2015Convolutional}`
+- **2011** Event detection in twitter — Jianshu Weng et al. `{Weng2011Event}`
+- **2010** Inferring applications at the network layer using collective traffic statistics — Yu Jin et al. · arXiv:2010.56087 `{Jin2010Inferring}`
+- **n.d.** Graph Neural Networks in Program Analysis — Miltiadis Allamanis et al. `{AllamanisndGraph}`
+- **n.d.** Graph Neural Networks : Graph Structure Learning — Yu Chen et al. `{ChenndGraph}`
+- **n.d.** Graph Neural Networks in Modern Recommender Systems — Yunfei Chu et al. `{ChundGraph}`
+- **n.d.** Dependency Graph based Chinese Semantic Parsing — Yu Ding et al. `{DingndDependency}`
+- **n.d.** [TALK LIKE A GRAPH: ENCODING GRAPHS FOR LARGE LANGUAGE MODELS](https://github.com/google-research/) — Bahare Fatemi et al. `{FatemindTalk}`
+- **n.d.** [Attention Guided Graph Convolutional Networks for Relation Extraction](http://www.statnlp.org/) — Zhijiang Guo et al. `{GuondAttention}`
+- **n.d.** [GraphEdit: Large Language Models for Graph Structure Learning](https://github.com/HKUDS/GraphEdit.) — Zirui Guo et al. `{GuondGraphedit}`
+- **n.d.** [Graph Neural Networks in Practice](https://www.cs.mcgill.ca/~wlh/grl_book/) — William L. Hamilton et al. `{HamiltonndGraph}`
+- **n.d.** Graph Neural Networks in Predicting Protein Function and Interactions — Anowarul Kabir et al. `{KabirndGraph}`
+- **n.d.** Hands-on graph neural networks using Python : practical techniques and architectures for building powerful graph and deep learning apps with PyTorch — Maxime Labonne et al. `{LabonnendHands}`
+- **n.d.** [Controlled Text Generation for Large Language Model with Dynamic Attribute Graphs](https://github.com/) — Xun Liang et al. `{LiangndControlled}`
+- **n.d.** Interpretability in Graph Neural Networks — Ninghao Liu et al. `{LiundInterpretability}`
+- **n.d.** [Multimodal Graph Networks for Compositional Generalization in Visual Question Answering](https://github.com/raeidsaqur/mgn) — Raeid Saqur et al. `{SaqurndMultimodal}`
+- **n.d.** Dependency-Gated Cascade Biaffine Network for Chinese Semantic Dependency Graph Parsing — Zizhuo Shen et al. `{ShenndDependency}`
+- **n.d.** Heterogeneous Graph Neural Networks — Chuan Shi et al. `{ShindHeterogeneous}`
+- **n.d.** X-Sample Contrastive Loss: Improving Contrastive Learning with Sample Similarity Graphs — Vlad Sobal et al. `{SobalndSample}`
+- **n.d.** GNN-based Biomedical Knowledge Graph Mining in Drug Development — Chang Su et al. `{SundGnn}`
+- **n.d.** Graph Neural Networks for Node Classification — Jian Tang et al. `{TangndGraph}`
+- **n.d.** [CONTRASTIVE LEARNING IS SPECTRAL CLUSTERING ON SIMILARITY GRAPH](https://github.com/yifanzhang-pro/Kernel-InfoNCE.) — Zhiquan Tan et al. `{TanndContrastive}`
+- **n.d.** Graph Neural Networks : Self-supervised Learning — Yu Wang et al. `{WangndGraph}`
+- **n.d.** [SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models](https://github.com/DeepGraphLearning/) — Liang Wang et al. `{WangndSimkgc}`
+- **n.d.** [Probabilistic Transformer: A Probabilistic Dependency Model for Contextual Word Representation](https://github.com/) — Haoyi Wu et al. `{WundProbabilistic}`
+- **n.d.** Graph Neural Networks : Link Prediction — Muhan Zhang et al. `{ZhangndGraph}`
+- **n.d.** [Reasoning Over Semantic-Level Graph for Fact Checking](https://demo.allennlp.org/) — Wanjun Zhong et al. `{ZhongndReasoning}`
+
+## 扩散 / 生成模型
+
+- **2025** [VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models](http://arxiv.org/abs/2502.02492) — Hila Chefer et al. · arXiv:2502.02492 `{Chefer2025Videojam}`
+- **2025** [SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images](http://arxiv.org/abs/2501.04689) — Zixuan Huang et al. · arXiv:2501.04689 `{Huang2025Spar3d}`
+- **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
+- **2025** [Inference-Time Scaling for Generalist Reward Modeling](http://arxiv.org/abs/2504.02495) — Zijun Liu et al. · arXiv:2504.02495 `{Liu2025Inference}`
+- **2025** [UVGS: Reimagining Unstructured 3D Gaussian Splatting using UV Mapping](http://arxiv.org/abs/2502.01846) — Aashish Rai et al. · arXiv:2502.01846 `{Rai2025Uvgs}`
+- **2024** [A Comprehensive Survey on Diffusion Models and Their Applications](http://arxiv.org/abs/2408.10207) — Md Manjurul Ahsan et al. · arXiv:2408.10207 `{Ahsan2024Comprehensive}`
+- **2024** [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](http://arxiv.org/abs/2406.02430) — Philip Anastassiou et al. · arXiv:2406.02430 `{Anastassiou2024Seed}`
+- **2024** [Navigation World Models](http://arxiv.org/abs/2412.03572) — Amir Bar et al. · arXiv:2412.03572 `{Bar2024Navigation}`
+- **2024** [Lumiere: A Space-Time Diffusion Model for Video Generation](http://arxiv.org/abs/2401.12945) — Omer Bar-Tal et al. · arXiv:2401.12945 `{BarTal2024Lumiere}`
+- **2024** [Comprehensive Exploration of Synthetic Data Generation: A Survey](http://arxiv.org/abs/2401.02524) — André Bauer et al. · arXiv:2401.02524 `{Bauer2024Comprehensive}`
+- **2024** [Meta 3D Gen](http://arxiv.org/abs/2407.02599) — Raphael Bensadoun et al. · arXiv:2407.02599 `{BensadounndMeta}`
+- **2024** [An Introduction to Vision-Language Modeling](http://arxiv.org/abs/2405.17247) — Florian Bordes et al. · arXiv:2405.17247 `{Bordes2024Introduction}`
+- **2024** [Deconstructing Denoising Diffusion Models for Self-Supervised Learning](http://arxiv.org/abs/2401.14404) — Xinlei Chen et al. · arXiv:2401.14404 `{Chen2024Deconstructing}`
+- **2024** [Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion](http://arxiv.org/abs/2407.01392) — Boyuan Chen et al. · arXiv:2407.01392 `{Chen2024Diffusion}`
+- **2024** [Improving Large Language Models via Fine-grained Reinforcement Learning with Minimum Editing Constraint](http://arxiv.org/abs/2401.06081) — Zhipeng Chen et al. · arXiv:2401.06081 `{Chen2024Improving}`
+- **2024** UNIVERSITY OF CALIFORNIA Los Angeles Latent Diffusion Energy-based Model for Graph Generation — Jingbang Chen et al. `{Chen2024University}`
+- **2024** [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](http://arxiv.org/abs/2403.03206) — Patrick Esser et al. · arXiv:2403.03206 `{Esser2024Scaling}`
+- **2024** [Scalable Diffusion Models with State Space Backbone](http://arxiv.org/abs/2402.05608) — Zhengcong Fei et al. · arXiv:2402.05608 `{Fei2024Scalable}`
+- **2024** [Discrete Flow Matching](http://arxiv.org/abs/2407.15595) — Itai Gat et al. · arXiv:2407.15595 `{GatndDiscrete}`
+- **2024** [Better \& Faster Large Language Models via Multi-token Prediction](http://arxiv.org/abs/2404.19737) — Fabian Gloeckle et al. · arXiv:2404.19737 `{Gloeckle2024Better}`
+- **2024** [Imagine yourself: Tuning-Free Personalized Image Generation](http://arxiv.org/abs/2409.13346) — Zecheng He et al. · arXiv:2409.13346 `{HendImagine}`
+- **2024** [Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency](http://arxiv.org/abs/2409.02634) — Jianwen Jiang et al. · arXiv:2409.02634 `{Jiang2024Loopy}`
+- **2024** [Advances in 3D Generation: A Survey](http://arxiv.org/abs/2401.17807) — Xiaoyu Li et al. · arXiv:2401.17807 `{Li2024Advances}`
+- **2024** [Autoregressive Image Generation without Vector Quantization](http://arxiv.org/abs/2406.11838) — Tianhong Li et al. · arXiv:2406.11838 `{Li2024Autoregressive}`
+- **2024** [Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding](http://arxiv.org/abs/2405.08748) — Zhimin Li et al. · arXiv:2405.08748 `{Li2024Hunyuan}`
+- **2024** [Training-free Long Video Generation with Chain of Diffusion Model Experts](http://arxiv.org/abs/2408.13423) — Wenhao Li et al. · arXiv:2408.13423 `{Li2024Training}`
+- **2024** [AudioLCM: Text-to-Audio Generation with Latent Consistency Models](http://arxiv.org/abs/2406.00356) — Huadai Liu et al. · arXiv:2406.00356 `{Liu2024Audiolcm}`
+- **2024** [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://github.com/lichao-sun/SoraReview) — Yixin Liu et al. `{Liu2024Sora}`
+- **2024** [Timer-XL: Long-Context Transformers for Unified Time Series Forecasting](http://arxiv.org/abs/2410.04803) — Yong Liu et al. · arXiv:2410.04803 `{Liu2024Timer}`
+- **2024** [Diffusion Guided Language Modeling](http://arxiv.org/abs/2408.04220) — Justin Lovelace et al. · arXiv:2408.04220 `{Lovelace2024Diffusion}`
+- **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
+- **2024** [Step-by-Step Diffusion: An Elementary Tutorial](http://arxiv.org/abs/2406.08929) — Preetum Nakkiran et al. · arXiv:2406.08929 `{Nakkiran2024Step}`
+- **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
+- **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [From r to Q * : Your Language Model is Secretly a Q-Function](http://arxiv.org/abs/2404.12358) — Rafael Rafailov et al. · arXiv:2404.12358 `{RafailovndYour}`
+- **2024** [The Prompt Report: A Systematic Survey of Prompting Techniques](http://arxiv.org/abs/2406.06608) — Sander Schulhoff et al. · arXiv:2406.06608 `{Schulhoff2024Prompt}`
+- **2024** [Generative Explore-Exploit: Training-free Optimization of Generative Recommender Systems using LLM Optimizers](http://arxiv.org/abs/2406.05255) — Lütfi Kerem Senel et al. · arXiv:2406.05255 `{Senel2024Generative}`
+- **2024** [Chameleon: Mixed-Modal Early-Fusion Foundation Models](http://arxiv.org/abs/2405.09818) — Chameleon Team et al. · arXiv:2405.09818 `{Team2024Chameleon}`
+- **2024** [Knowledge Fusion of Large Language Models](http://arxiv.org/abs/2401.10491) — Fanqi Wan et al. · arXiv:2401.10491 `{Wan2024Knowledge}`
+- **2024** [Boximator: Generating Rich and Controllable Motions for Video Synthesis](http://arxiv.org/abs/2402.01566) — Jiawei Wang et al. · arXiv:2402.01566 `{Wang2024Boximator}`
+- **2024** [Diffusion Feedback Helps CLIP See Better](http://arxiv.org/abs/2407.20171) — Wenxuan Wang et al. · arXiv:2407.20171 `{Wang2024Diffusion}`
+- **2024** [InstantStyle-Plus: Style Transfer with Content-Preserving in Text-to-Image Generation](http://arxiv.org/abs/2407.00788) — Haofan Wang et al. · arXiv:2407.00788 `{Wang2024Instantstyle}`
+- **2024** [Phased Consistency Model](http://arxiv.org/abs/2405.18407) — Fu-Yun Wang et al. · arXiv:2405.18407 `{Wang2024Phased}`
+- **2024** [Direct3D: Scalable Image-to-3D Generation via 3D Latent Diffusion Transformer](http://arxiv.org/abs/2405.14832) — Shuang Wu et al. · arXiv:2405.14832 `{Wu2024Direct3d}`
+- **2024** [Mixture-of-Subspaces in Low-Rank Adaptation](http://arxiv.org/abs/2406.11909) — Taiqiang Wu et al. · arXiv:2406.11909 `{WundMixture}`
+- **2024** [Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation](http://arxiv.org/abs/2406.08801) — Mingwang Xu et al. · arXiv:2406.08801 `{Xu2024Hallo}`
+- **2024** [OOTDiffusion: Outfitting Fusion based Latent Diffusion for Controllable Virtual Try-on](http://arxiv.org/abs/2403.01779) — Yuhao Xu et al. · arXiv:2403.01779 `{Xu2024Ootdiffusion}`
+- **2024** [Unifying Bayesian Flow Networks and Diffusion Models through Stochastic Differential Equations](http://arxiv.org/abs/2404.15766) — Kaiwen Xue et al. · arXiv:2404.15766 `{Xue2024Unifying}`
+- **2024** [Inf-DiT: Upsampling Any-Resolution Image with Memory-Efficient Diffusion Transformer](http://arxiv.org/abs/2405.04312) — Zhuoyi Yang et al. · arXiv:2405.04312 `{Yang2024Inf}`
+- **2024** [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](http://arxiv.org/abs/2406.02536) — Yijiong Yu et al. · arXiv:2406.02536 `{Yu2024Mitigate}`
+- **2024** [Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think](http://arxiv.org/abs/2410.06940) — Sihyun Yu et al. · arXiv:2410.06940 `{Yu2024Representation}`
+- **2024** [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](http://arxiv.org/abs/2402.17152) — Jiaqi Zhai et al. · arXiv:2402.17152 `{Zhai2024Actions}`
+- **2024** [IterComp: Iterative Composition-Aware Feedback Learning from Model Gallery for Text-to-Image Generation](http://arxiv.org/abs/2410.07171) — Xinchen Zhang et al. · arXiv:2410.07171 `{Zhang2024Itercomp}`
+- **2024** [MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance](http://arxiv.org/abs/2406.19680) — Yuang Zhang et al. · arXiv:2406.19680 `{Zhang2024Mimicmotion}`
+- **2024** [RMB: Comprehensively Benchmarking Reward Models in LLM Alignment](http://arxiv.org/abs/2410.09893) — Enyu Zhou et al. · arXiv:2410.09893 `{Zhou2024Rmb}`
+- **2024** [Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model](http://arxiv.org/abs/2408.11039) — Chunting Zhou et al. · arXiv:2408.11039 `{Zhou2024Transfusion}`
+- **2023** [Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture](http://arxiv.org/abs/2301.08243) — Mahmoud Assran et al. · arXiv:2301.08243 `{Assran2023Self}`
+- **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`
+- **2023** [TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](http://arxiv.org/abs/2311.16465) — Jingye Chen et al. · arXiv:2311.16465 `{Chen2023Textdiffuser}`
+- **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
+- **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
+- **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
+- **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
+- **2023** [Has It All Been Solved? Open NLP Research Questions Not Solved by Large Language Models](http://arxiv.org/abs/2305.12544) — Oana Ignat et al. · arXiv:2305.12544 `{Ignat2023Has}`
+- **2023** [DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion](http://arxiv.org/abs/2304.06025) — Johanna Karras et al. · arXiv:2304.06025 `{Karras2023Dreampose}`
+- **2023** [DiffuRec: A Diffusion Model for Sequential Recommendation](http://arxiv.org/abs/2304.00686) — Zihao Li et al. · arXiv:2304.00686 `{Li2023Diffurec}`
+- **2023** [Evaluating the Logical Reasoning Ability of ChatGPT and GPT-4](http://arxiv.org/abs/2304.03439) — Hanmeng Liu et al. · arXiv:2304.03439 `{Liu2023Evaluating}`
+- **2023** [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](http://arxiv.org/abs/2312.17172) — Jiasen Lu et al. · arXiv:2312.17172 `{Lu2023Unified}`
+- **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [The Blessing of Randomness: SDE Beats ODE in General Diffusion-based Image Editing](http://arxiv.org/abs/2311.01410) — Shen Nie et al. · arXiv:2311.01410 `{Nie2023Blessing}`
+- **2023** Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold — Xingang Pan et al. · arXiv:8432.35915 `{Pan2023Drag}`
+- **2023** [Generative Agents: Interactive Simulacra of Human Behavior](http://arxiv.org/abs/2304.03442) — Joon Sung Park et al. · arXiv:2304.03442 `{Park2023Generative}`
+- **2023** [mmT5: Modular Multilingual Pre-Training Solves Source Language Hallucinations](http://arxiv.org/abs/2305.14224) — Jonas Pfeiffer et al. · arXiv:2305.14224 `{Pfeiffer2023Mmt5}`
+- **2023** EFFICIENTLY SCALING TRANSFORMER INFERENCE — Reiner Pope et al. `{Pope2023Efficiently}`
+- **2023** [Controlling Text-to-Image Diffusion by Orthogonal Finetuning](http://arxiv.org/abs/2306.07280) — Zeju Qiu et al. · arXiv:2306.07280 `{Qiu2023Controlling}`
+- **2023** [NaturalSpeech 2: Latent Diffusion Models are Natural and Zero-Shot Speech and Singing Synthesizers](http://arxiv.org/abs/2304.09116) — Kai Shen et al. · arXiv:2304.09116 `{Shen2023Naturalspeech}`
+- **2023** [CodeFusion: A Pre-trained Diffusion Model for Code Generation](http://arxiv.org/abs/2310.17680) — Mukul Singh et al. · arXiv:2310.17680 `{Singh2023Codefusion}`
+- **2023** [Vocos: Closing the gap between time-domain and Fourier-based neural vocoders for high-quality audio synthesis](http://arxiv.org/abs/2306.00814) — Hubert Siuzdak et al. · arXiv:2306.00814 `{Siuzdak2023Vocos}`
+- **2023** [Consistency Models](http://arxiv.org/abs/2303.01469) — Yang Song et al. · arXiv:2303.01469 `{Song2023Consistency}`
+- **2023** [Improved Techniques for Training Consistency Models](http://arxiv.org/abs/2310.14189) — Yang Song et al. · arXiv:2310.14189 `{Song2023Improved}`
+- **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
+- **2023** [Improving and generalizing flow-based generative models with minibatch optimal transport](http://arxiv.org/abs/2302.00482) — Alexander Tong et al. · arXiv:2302.00482 `{Tong2023Improving}`
+- **2023** [DMV3D: Denoising Multi-View Diffusion using 3D Large Reconstruction Model](http://arxiv.org/abs/2311.09217) — Yinghao Xu et al. · arXiv:2311.09217 `{Xu2023Dmv3d}`
+- **2023** [Large Language Models for Generative Information Extraction: A Survey](http://arxiv.org/abs/2312.17617) — Derong Xu et al. · arXiv:2312.17617 `{Xu2023Large}`
+- **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
+- **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
+- **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
+- **2023** [Adding Conditional Control to Text-to-Image Diffusion Models](http://arxiv.org/abs/2302.05543) — Lvmin Zhang et al. · arXiv:2302.05543 `{Zhang2023Adding}`
+- **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
+- **2023** [CGCE: A Chinese Generative Chat Evaluation Benchmark for General and Financial Domains](http://arxiv.org/abs/2305.14471) — Xuanyu Zhang et al. · arXiv:2305.14471 `{Zhang2023Cgce}`
+- **2023** [DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance](http://arxiv.org/abs/2304.03117) — Longwen Zhang et al. · arXiv:2304.03117 `{Zhang2023Dreamface}`
+- **2023** [Self-QA: Unsupervised Knowledge Guided Language Model Alignment](http://arxiv.org/abs/2305.11952) — Xuanyu Zhang et al. · arXiv:2305.11952 `{Zhang2023Self}`
+- **2023** [Make-A-Protagonist: Generic Video Editing with An Ensemble of Experts](http://arxiv.org/abs/2305.08850) — Yuyang Zhao et al. · arXiv:2305.08850 `{Zhao2023Make}`
+- **2022** [eDiff-I: Text-to-Image Diffusion Models with an Ensemble of Expert Denoisers](http://arxiv.org/abs/2211.01324) — Yogesh Balaji et al. · arXiv:2211.01324 `{Balaji2022Ediff}`
+- **2022** [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](http://arxiv.org/abs/2208.09392) — Arpit Bansal et al. · arXiv:2208.09392 `{Bansal2022Cold}`
+- **2022** [Pathways: Asynchronous Distributed Dataflow for ML](http://arxiv.org/abs/2203.12533) — Paul Barham et al. · arXiv:2203.12533 `{Barham2022Pathways}`
+- **2022** [Optimization-Induced Graph Implicit Nonlinear Diffusion](http://arxiv.org/abs/2206.14418) — Qi Chen et al. · arXiv:2206.14418 `{Chen2022Optimization}`
+- **2022** [An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](http://arxiv.org/abs/2208.01618) — Rinon Gal et al. · arXiv:2208.01618 `{Gal2022Image}`
+- **2022** GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-supervised Learning and Explicit Policy Injection — Wanwei He et al. `{He2022Galaxy}`
+- **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
+- **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
+- **2022** [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364) — Tero Karras et al. · arXiv:2206.00364 `{Karras2022Elucidating}`
+- **2022** [Diffusion-LM Improves Controllable Text Generation](http://arxiv.org/abs/2205.14217) — Xiang Lisa Li et al. · arXiv:2205.14217 `{Li2022Diffusion}`
+- **2022** [Flow Matching for Generative Modeling](http://arxiv.org/abs/2210.02747) — Yaron Lipman et al. · arXiv:2210.02747 `{Lipman2022Flow}`
+- **2022** [Dynamic Prefix-Tuning for Generative Template-based Event Extraction](http://arxiv.org/abs/2205.06166 http://dx.doi.org/10.18653/v1/2022.acl-long.358) — Xiao Liu et al. · arXiv:2205.06166 `{Liu2022Dynamic}`
+- **2022** [Scalable Diffusion Models with Transformers](http://arxiv.org/abs/2212.09748) — William Peebles et al. · arXiv:2212.09748 `{Peebles2022Scalable}`
+- **2022** [Progressive Distillation for Fast Sampling of Diffusion Models](http://arxiv.org/abs/2202.00512) — Tim Salimans et al. · arXiv:2202.00512 `{Salimans2022Progressive}`
+- **2022** [What the DAAM: Interpreting Stable Diffusion Using Cross Attention](http://arxiv.org/abs/2210.04885) — Raphael Tang et al. · arXiv:2210.04885 `{Tang2022What}`
+- **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
+- **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
+- **2022** [Poisson Flow Generative Models](http://arxiv.org/abs/2209.11178) — Yilun Xu et al. · arXiv:2209.11178 `{Xu2022Poisson}`
+- **2022** [Diffusion Models: A Comprehensive Survey of Methods and Applications](http://arxiv.org/abs/2209.00796) — Ling Yang et al. · arXiv:2209.00796 `{Yang2022Diffusion}`
+- **2021** [ERNIE-VILG: UNIFIED GENERATIVE PRE-TRAINING FOR BIDIRECTIONAL VISION-LANGUAGE GENERATION](http://arxiv.org/abs/2112.15283) — Baidu et al. · arXiv:2112.15283 `{BaidundErnie}`
+- **2021** [Learning Attributed Graph Representations with Communicative Message Passing Transformer](http://arxiv.org/abs/2107.08773) — Jianwen Chen et al. · arXiv:2107.08773 `{Chen2021Learning}`
+- **2021** [Diffusion Models Beat GANs on Image Synthesis](http://arxiv.org/abs/2105.05233) — Prafulla Dhariwal et al. · arXiv:2105.05233 `{Dhariwal2021Diffusion}`
+- **2021** Dynamical variational autoencoders: A comprehensive review — Laurent Girin et al. `{Girin2021Dynamical}`
+- **2021** [Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech](http://arxiv.org/abs/2106.06103) — Jaehyeon Kim et al. · arXiv:2106.06103 `{Kim2021Conditional}`
+- **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
+- **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
+- **2020** Scaling Graph Neural Networks with Approximate PageRank — Aleksandar Bojchevski et al. · arXiv:4486.34032 `{Bojchevski2020Scaling}`
+- **2020** [Bridging the Gap between Spatial and Spectral Domains: A Survey on Graph Neural Networks](http://arxiv.org/abs/2002.11867) — Zhiqian Chen et al. · arXiv:2002.11867 `{Chen2020Bridging}`
+- **2020** [SIGN: Scalable Inception Graph Neural Networks](http://arxiv.org/abs/2004.11198) — Fabrizio Frasca et al. · arXiv:2004.11198 `{Frasca2020Sign}`
+- **2020** Graph Representation Learning Hamilton — William L. Hamilton et al. `{Hamilton2020Graph}`
+- **2020** Contrastive multi-view representation learning on graphs — Kaveh Hassani et al. `{Hassani2020Contrastive}`
+- **2020** [Scaling Laws for Autoregressive Generative Modeling](http://arxiv.org/abs/2010.14701) — Tom Henighan et al. · arXiv:2010.14701 `{Henighan2020Scaling}`
+- **2020** GPT-GNN: Generative Pre-Training of Graph Neural Networks — Ziniu Hu et al. · arXiv:4486.34032 `{Hu2020Gpt}`
+- **2020** [Self-supervised Learning: Generative or Contrastive](http://arxiv.org/abs/2006.08218) — Xiao Liu et al. · arXiv:2006.08218 `{Liu2020Self}`
+- **2020** [Score-Based Generative Modeling through Stochastic Differential Equations](http://arxiv.org/abs/2011.13456) — Yang Song et al. · arXiv:2011.13456 `{Song2020Score}`
+- **2020** [A Mathematical Introduction to Generative Adversarial Nets (GAN)](http://arxiv.org/abs/2009.00169) — Yang Wang et al. · arXiv:2009.00169 `{Wang2020Mathematical}`
+- **2019** Diffusion improves graph learning — Johannes Klicpera et al. `{Klicpera2019Diffusion}`
+- **2019** [An Edit-centric Approach for Wikipedia Article Quality Assessment](http://arxiv.org/abs/1909.08880) — Edison Marrese-Taylor et al. · arXiv:1909.08880 `{MarreseTaylor2019Edit}`
+- **2019** [DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation](http://arxiv.org/abs/1911.00536) — Yizhe Zhang et al. · arXiv:1911.00536 `{Zhang2019Dialogpt}`
+- **n.d.** Improving Image Generation with Better Captions — James Betker et al. `{BetkerndImproving}`
+- **n.d.** A Survey on Generative Diffusion Models — Hanqun Cao et al. `{CaondSurvey}`
+- **n.d.** [Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling](https://github.com/deepseek-ai/Janus) — Xiaokang Chen et al. `{ChenndJanus}`
+- **n.d.** [Diffusion Model-Based Image Editing: A Survey](https://github.com/SiatMMLab/) — Yi Huang et al. `{HuangndDiffusion}`
+- **n.d.** Optimize Generative AI Inference with Quantization in TensorRT-LLM and TensorRT — Asma Beevi Kt et al. `{KtndOptimize}`
+- **n.d.** Accelerating Generative AI with TensorRT-LLM To Enhance Seller Experience at Amazon — Vishwanath Kumaraswamy et al. `{KumaraswamyndAccelerating}`
+- **n.d.** [Large Language Models in Finance: A Survey](https://openai.com/product) — Yinheng Li et al. `{LindLarge}`
+- **n.d.** [A UNIFIED SEQUENCE PARALLELISM APPROACH FOR LONG CONTEXT GENERATIVE AI](https://github.com/feifeibear/long-context-attention.) — Jiarui Fang Tencent et al. `{TencentndUnified}`
+- **n.d.** [Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction](https://github.com/FoundationVision/VAR) — Keyu Tian et al. `{TianndVisual}`
+- **n.d.** [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://github.com/THUDM/CogVideo.) — Zhuoyi Yang et al. `{YangndCogvideox}`
+- **n.d.** [A Survey on Diffusion Models for Time Series and Spatio-Temporal Data](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model) — Yiyuan Yang et al. `{YangndSurvey}`
+
+## 多模态 / 视觉语言
+
+- **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
+- **2025** [VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models](http://arxiv.org/abs/2502.02492) — Hila Chefer et al. · arXiv:2502.02492 `{Chefer2025Videojam}`
+- **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
+- **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
+- **2024** [Multimodal Table Understanding](http://arxiv.org/abs/2406.08100) — ? et al. · arXiv:2406.08100 `{AnonndMultimodal}`
+- **2024** [Navigation World Models](http://arxiv.org/abs/2412.03572) — Amir Bar et al. · arXiv:2412.03572 `{Bar2024Navigation}`
+- **2024** [Lumiere: A Space-Time Diffusion Model for Video Generation](http://arxiv.org/abs/2401.12945) — Omer Bar-Tal et al. · arXiv:2401.12945 `{BarTal2024Lumiere}`
+- **2024** [An Introduction to Vision-Language Modeling](http://arxiv.org/abs/2405.17247) — Florian Bordes et al. · arXiv:2405.17247 `{Bordes2024Introduction}`
+- **2024** [Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion](http://arxiv.org/abs/2407.01392) — Boyuan Chen et al. · arXiv:2407.01392 `{Chen2024Diffusion}`
+- **2024** [EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditions](http://arxiv.org/abs/2407.08136) — Zhiyuan Chen et al. · arXiv:2407.08136 `{Chen2024Echomimic}`
+- **2024** [Agent AI: Surveying the Horizons of Multimodal Interaction](http://arxiv.org/abs/2401.03568) — Zane Durante et al. · arXiv:2401.03568 `{Durante2024Agent}`
+- **2024** [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](http://arxiv.org/abs/2403.03206) — Patrick Esser et al. · arXiv:2403.03206 `{Esser2024Scaling}`
+- **2024** [FancyVideo: Towards Dynamic and Consistent Video Generation via Cross-frame Textual Guidance](http://arxiv.org/abs/2408.08189) — Jiasong Feng et al. · arXiv:2408.08189 `{Feng2024Fancyvideo}`
+- **2024** [VITA: Towards Open-Source Interactive Omni Multimodal LLM](http://arxiv.org/abs/2408.05211) — Chaoyou Fu et al. · arXiv:2408.05211 `{Fu2024Vita}`
+- **2024** [Dissecting Dissonance: Benchmarking Large Multimodal Models Against Self-Contradictory Instructions](http://arxiv.org/abs/2408.01091) — Jin Gao et al. · arXiv:2408.01091 `{Gao2024Dissecting}`
+- **2024** [Discrete Flow Matching](http://arxiv.org/abs/2407.15595) — Itai Gat et al. · arXiv:2407.15595 `{GatndDiscrete}`
+- **2024** [ReSyncer: Rewiring Style-based Generator for Unified Audio-Visually Synced Facial Performer](http://arxiv.org/abs/2408.03284) — Jiazhi Guan et al. · arXiv:2408.03284 `{Guan2024Resyncer}`
+- **2024** [Align Anything: Training All-Modality Models to Follow Instructions with Language Feedback](http://arxiv.org/abs/2412.15838) — Jiaming Ji et al. · arXiv:2412.15838 `{Ji2024Align}`
+- **2024** [Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency](http://arxiv.org/abs/2409.02634) — Jianwen Jiang et al. · arXiv:2409.02634 `{Jiang2024Loopy}`
+- **2024** [Efficient Multimodal Large Language Models: A Survey](http://arxiv.org/abs/2405.10739) — Yizhang Jin et al. · arXiv:2405.10739 `{Jin2024Efficient}`
+- **2024** [Building and better understanding vision-language models: insights and future directions](http://arxiv.org/abs/2408.12637) — Hugo Laurençon et al. · arXiv:2408.12637 `{Laurenon2024Building}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding](http://arxiv.org/abs/2405.08748) — Zhimin Li et al. · arXiv:2405.08748 `{Li2024Hunyuan}`
+- **2024** [Training-free Long Video Generation with Chain of Diffusion Model Experts](http://arxiv.org/abs/2408.13423) — Wenhao Li et al. · arXiv:2408.13423 `{Li2024Training}`
+- **2024** [VideoMamba: State Space Model for Efficient Video Understanding](http://arxiv.org/abs/2403.06977) — Kunchang Li et al. · arXiv:2403.06977 `{Li2024Videomamba}`
+- **2024** [ECHO-GL: Earnings Calls-Driven Heterogeneous Graph Learning for Stock Movement Prediction](www.aaai.org) — Mengpu Liu et al. `{Liu2024Echo}`
+- **2024** [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://github.com/lichao-sun/SoraReview) — Yixin Liu et al. `{Liu2024Sora}`
+- **2024** 3D Gaussian Blendshapes for Head Avatar Animation — Shengjie Ma et al. · arXiv:1519.36574 `{Ma20243d}`
+- **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
+- **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
+- **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
+- **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
+- **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
+- **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
+- **2024** [A Multimodal Automated Interpretability Agent](http://arxiv.org/abs/2404.14394) — Tamar Rott Shaham et al. · arXiv:2404.14394 `{Shaham2024Multimodal}`
+- **2024** [From Sora What We Can See: A Survey of Text-to-Video Generation](http://arxiv.org/abs/2405.10674) — Rui Sun et al. · arXiv:2405.10674 `{Sun2024Sora}`
+- **2024** [Chameleon: Mixed-Modal Early-Fusion Foundation Models](http://arxiv.org/abs/2405.09818) — Chameleon Team et al. · arXiv:2405.09818 `{Team2024Chameleon}`
+- **2024** The Llama 3 Herd of Models — Llama Team et al. `{Team2024Llama}`
+- **2024** [Video Occupancy Models](http://arxiv.org/abs/2407.09533) — Manan Tomar et al. · arXiv:2407.09533 `{Tomar2024Video}`
+- **2024** [Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs](http://arxiv.org/abs/2406.16860) — Shengbang Tong et al. · arXiv:2406.16860 `{Tong2024Cambrian}`
+- **2024** [The Evolution of Multimodal Model Architectures](http://arxiv.org/abs/2405.17927) — Shakti N. Wadekar et al. · arXiv:2405.17927 `{Wadekar2024Evolution}`
+- **2024** [Boximator: Generating Rich and Controllable Motions for Video Synthesis](http://arxiv.org/abs/2402.01566) — Jiawei Wang et al. · arXiv:2402.01566 `{Wang2024Boximator}`
+- **2024** [CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs](http://arxiv.org/abs/2406.18521) — Zirui Wang et al. · arXiv:2406.18521 `{Wang2024Charxiv}`
+- **2024** [Diffusion Feedback Helps CLIP See Better](http://arxiv.org/abs/2407.20171) — Wenxuan Wang et al. · arXiv:2407.20171 `{Wang2024Diffusion}`
+- **2024** [Phased Consistency Model](http://arxiv.org/abs/2405.18407) — Fu-Yun Wang et al. · arXiv:2405.18407 `{Wang2024Phased}`
+- **2024** [A Comprehensive Review of Multimodal Large Language Models: Performance and Challenges Across Different Tasks](http://arxiv.org/abs/2408.01319) — Jiaqi Wang et al. · arXiv:2408.01319 `{WangndComprehensive}`
+- **2024** [DragAnything: Motion Control for Anything using Entity Representation](http://arxiv.org/abs/2403.07420) — Weijia Wu et al. · arXiv:2403.07420 `{Wu2024Draganything}`
+- **2024** [Towards Visual Grounding: A Survey](http://arxiv.org/abs/2412.20206) — Linhui Xiao et al. · arXiv:2412.20206 `{Xiao2024Towards}`
+- **2024** [Hallo: Hierarchical Audio-Driven Visual Synthesis for Portrait Image Animation](http://arxiv.org/abs/2406.08801) — Mingwang Xu et al. · arXiv:2406.08801 `{Xu2024Hallo}`
+- **2024** [Item-Language Model for Conversational Recommendation](http://arxiv.org/abs/2406.02844) — Li Yang et al. · arXiv:2406.02844 `{Yang2024Item}`
+- **2024** [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](http://arxiv.org/abs/2408.01800) — Yuan Yao et al. · arXiv:2408.01800 `{Yao2024Minicpm}`
+- **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
+- **2024** [Explore the Limits of Omni-modal Pretraining at Scale](http://arxiv.org/abs/2406.09412) — Yiyuan Zhang et al. · arXiv:2406.09412 `{Zhang2024Explore}`
+- **2024** [Large Language Model-Brained GUI Agents: A Survey](http://arxiv.org/abs/2411.18279) — Chaoyun Zhang et al. · arXiv:2411.18279 `{Zhang2024Large}`
+- **2024** [Long Context Transfer from Language to Vision](http://arxiv.org/abs/2406.16852) — Peiyuan Zhang et al. · arXiv:2406.16852 `{Zhang2024Long}`
+- **2024** [MimicMotion: High-Quality Human Motion Video Generation with Confidence-aware Pose Guidance](http://arxiv.org/abs/2406.19680) — Yuang Zhang et al. · arXiv:2406.19680 `{Zhang2024Mimicmotion}`
+- **2024** [MM-LLMs: Recent Advances in MultiModal Large Language Models](http://arxiv.org/abs/2401.13601) — Duzhen Zhang et al. · arXiv:2401.13601 `{Zhang2024Mm}`
+- **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
+- **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
+- **2024** [VISTA: Visualized Text Embedding For Universal Multi-Modal Retrieval](http://arxiv.org/abs/2406.04292) — Junjie Zhou et al. · arXiv:2406.04292 `{Zhou2024Vista}`
+- **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
+- **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
+- **2023** [Language Is Not All You Need: Aligning Perception with Language Models](http://arxiv.org/abs/2302.14045) — Shaohan Huang et al. · arXiv:2302.14045 `{Huang2023Language}`
+- **2023** [DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion](http://arxiv.org/abs/2304.06025) — Johanna Karras et al. · arXiv:2304.06025 `{Karras2023Dreampose}`
+- **2023** 3D Gaussian Splatting for Real-Time Radiance Field Rendering — Bernhard Kerbl et al. `{Kerbl20233d}`
+- **2023** [Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding](http://arxiv.org/abs/2311.16922) — Sicong Leng et al. · arXiv:2311.16922 `{Leng2023Mitigating}`
+- **2023** [Large Multimodal Models: Notes on CVPR 2023 Tutorial](http://arxiv.org/abs/2306.14895) — Chunyuan Li et al. · arXiv:2306.14895 `{Li2023Largea}`
+- **2023** [Large Multimodal Models Towards Building and Surpassing Multimodal GPT-4 Chunyuan Li Deep Learning Team Microsoft Research, Redmond](https://chunyuan.li) — Li et al. `{Li2023Largeb}`
+- **2023** [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) — Hao Liu et al. · arXiv:2310.01889 `{Liu2023Ring}`
+- **2023** [Visual Instruction Tuning](http://arxiv.org/abs/2304.08485) — Haotian Liu et al. · arXiv:2304.08485 `{Liu2023Visual}`
+- **2023** [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](http://arxiv.org/abs/2312.17172) — Jiasen Lu et al. · arXiv:2312.17172 `{Lu2023Unified}`
+- **2023** [Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis](http://arxiv.org/abs/2308.09713) — Jonathon Luiten et al. · arXiv:2308.09713 `{Luiten2023Dynamic}`
+- **2023** [Augmented Large Language Models with Parametric Knowledge Guiding](http://arxiv.org/abs/2305.04757) — Ziyang Luo et al. · arXiv:2305.04757 `{Luo2023Augmented}`
+- **2023** [Cheap and Quick: Efficient Vision-Language Instruction Tuning for Large Language Models](http://arxiv.org/abs/2305.15023) — Gen Luo et al. · arXiv:2305.15023 `{Luo2023Cheap}`
+- **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [CoDeF: Content Deformation Fields for Temporally Consistent Video Processing](http://arxiv.org/abs/2308.07926) — Hao Ouyang et al. · arXiv:2308.07926 `{Ouyang2023Codef}`
+- **2023** [Consistency Models](http://arxiv.org/abs/2303.01469) — Yang Song et al. · arXiv:2303.01469 `{Song2023Consistency}`
+- **2023** [PandaGPT: One Model To Instruction-Follow Them All](http://arxiv.org/abs/2305.16355) — Yixuan Su et al. · arXiv:2305.16355 `{Su2023Pandagpt}`
+- **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
+- **2023** [EasyEdit: An Easy-to-use Knowledge Editing Framework for Large Language Models](http://arxiv.org/abs/2308.07269) — Peng Wang et al. · arXiv:2308.07269 `{Wang2023Easyedit}`
+- **2023** [InstructionGPT-4: A 200-Instruction Paradigm for Fine-Tuning MiniGPT-4](http://arxiv.org/abs/2308.12067) — Lai Wei et al. · arXiv:2308.12067 `{Wei2023Instructiongpt}`
+- **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
+- **2023** [A Survey on Multimodal Large Language Models](http://arxiv.org/abs/2306.13549) — Shukang Yin et al. · arXiv:2306.13549 `{Yin2023Survey}`
+- **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
+- **2023** VideoDoodles: Hand-Drawn Animations on Videos with Scene-Aware Canvases — Emilie Yu et al. `{Yu2023Videodoodles}`
+- **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
+- **2023** [DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance](http://arxiv.org/abs/2304.03117) — Longwen Zhang et al. · arXiv:2304.03117 `{Zhang2023Dreamface}`
+- **2023** [Vision-Language Models for Vision Tasks: A Survey](http://arxiv.org/abs/2304.00685) — Jingyi Zhang et al. · arXiv:2304.00685 `{Zhang2023Vision}`
+- **2023** [Make-A-Protagonist: Generic Video Editing with An Ensemble of Experts](http://arxiv.org/abs/2305.08850) — Yuyang Zhao et al. · arXiv:2305.08850 `{Zhao2023Make}`
+- **2023** [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](http://arxiv.org/abs/2312.02439) — Shanshan Zhong et al. · arXiv:2312.02439 `{Zhong2023Let}`
+- **2022** [PaLI: A Jointly-Scaled Multilingual Language-Image Model](http://arxiv.org/abs/2209.06794) — Xi Chen et al. · arXiv:2209.06794 `{Chen2022Pali}`
+- **2022** [A Survey of Vision-Language Pre-Trained Models](http://arxiv.org/abs/2202.10936) — Yifan Du et al. · arXiv:2202.10936 `{Du2022Survey}`
+- **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
+- **2022** LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking — Yupan Huang et al. · arXiv:3161.35481 `{Huang2022Layoutlmv3}`
+- **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
+- **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
+- **2021** [ERNIE-VILG: UNIFIED GENERATIVE PRE-TRAINING FOR BIDIRECTIONAL VISION-LANGUAGE GENERATION](http://arxiv.org/abs/2112.15283) — Baidu et al. · arXiv:2112.15283 `{BaidundErnie}`
+- **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
+- **2020** [Scaling Laws for Autoregressive Generative Modeling](http://arxiv.org/abs/2010.14701) — Tom Henighan et al. · arXiv:2010.14701 `{Henighan2020Scaling}`
+- **2020** Graph Neural Network for Tag Ranking in Tag-enhanced Video Recommendation — Qi Liu et al. · arXiv:0531.34160 `{Liu2020Graph}`
+- **2020** [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](http://arxiv.org/abs/2003.08934) — Ben Mildenhall et al. · arXiv:2003.08934 `{Mildenhall2020Nerf}`
+- **2019** An efficient end-to-end deep learning architecture for activity classification — Amel Ben Mahjoub et al. `{Mahjoub2019Efficient}`
+- **2019** Recommending what video to watch next: A multitask ranking system — Zhe Zhao et al. · arXiv:8689.33469 `{Zhao2019Recommending}`
+- **2016** Convolutional neural networks on graphs with fast localized spectral filtering — Michaël Defferrard et al. `{Defferrard2016Convolutional}`
+- **n.d.** Gemini 1.5 - Unlocking multimodal understanding across millions of tokens of context — ? et al. `{AnonndGemini}`
+- **n.d.** [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs Microsoft](https://github.com/openai/tiktoken) — ? et al. `{AnonndPhia}`
+- **n.d.** [π 0 : A Vision-Language-Action Flow Model for General Robot Control](https://physicalintelligence.company/blog/pi0) — Kevin Black et al. `{BlackndVision}`
+- **n.d.** [Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling](https://github.com/deepseek-ai/Janus) — Xiaokang Chen et al. `{ChenndJanus}`
+- **n.d.** [Diffusion Model-Based Image Editing: A Survey](https://github.com/SiatMMLab/) — Yi Huang et al. `{HuangndDiffusion}`
+- **n.d.** [Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/) — / Kyutai et al. `{KyutaindMoshi}`
+- **n.d.** [What matters when building vision-language models?](https://huggingface.co/collections/HuggingFaceM4/idefics2-661d1971b7c50831dd3ce0fe) — Hugo Laurençon et al. `{LaurenonndWhat}`
+- **n.d.** [Imagine while Reasoning in Space: Multimodal Visualization-of-Thought Chain-of-Thought Multimodal Visualization-of-Thought](https://aka.ms/GeneralAI) — Chengzu Li et al. `{LindImagine}`
+- **n.d.** [Multimodal Graph Networks for Compositional Generalization in Visual Question Answering](https://github.com/raeidsaqur/mgn) — Raeid Saqur et al. `{SaqurndMultimodal}`
+- **n.d.** X-Sample Contrastive Loss: Improving Contrastive Learning with Sample Similarity Graphs — Vlad Sobal et al. `{SobalndSample}`
+- **n.d.** [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://github.com/THUDM/CogVideo.) — Zhuoyi Yang et al. `{YangndCogvideox}`
+- **n.d.** [Sigmoid Loss for Language Image Pre-Training](https://github.) — Xiaohua Zhai et al. `{ZhaindSigmoid}`
+- **n.d.** [Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference](https://sites.google.com/view/cobravlm.) — Han Zhao et al. `{ZhaondCobra}`
+
+## Transformer / 架构
+
+- **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
+- **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
+- **2025** [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](http://arxiv.org/abs/2502.11089) — Jingyang Yuan et al. · arXiv:2502.11089 `{Yuan2025Native}`
+- **2024** [Vision-LSTM: xLSTM as Generic Vision Backbone](http://arxiv.org/abs/2406.04303) — Benedikt Alkin et al. · arXiv:2406.04303 `{Alkin2024Vision}`
+- **2024** [Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws](https://en.wikipedia.) — Zeyuan Allen-Zhu et al. `{AllenZhu2024Physics}`
+- **2024** [Training-Free Long-Context Scaling of Large Language Models](http://arxiv.org/abs/2402.17463) — Chenxin An et al. · arXiv:2402.17463 `{An2024Training}`
+- **2024** [BlackMamba: Mixture of Experts for State-Space Models](http://arxiv.org/abs/2402.01771) — Quentin Anthony et al. · arXiv:2402.01771 `{Anthony2024Blackmamba}`
+- **2024** [LLM Augmented LLMs: Expanding Capabilities through Composition](http://arxiv.org/abs/2401.02412) — Rachit Bansal et al. · arXiv:2401.02412 `{Bansal2024Llm}`
+- **2024** [Navigation World Models](http://arxiv.org/abs/2412.03572) — Amir Bar et al. · arXiv:2412.03572 `{Bar2024Navigation}`
+- **2024** [Comprehensive Exploration of Synthetic Data Generation: A Survey](http://arxiv.org/abs/2401.02524) — André Bauer et al. · arXiv:2401.02524 `{Bauer2024Comprehensive}`
+- **2024** [xLSTM: Extended Long Short-Term Memory](http://arxiv.org/abs/2405.04517) — Maximilian Beck et al. · arXiv:2405.04517 `{Beck2024Xlstm}`
+- **2024** The Life Cycle of Knowledge in Big Language Models: A Survey — Boxi Cao et al. `{Cao2024Life}`
+- **2024** [Bailing-TTS: Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation](http://arxiv.org/abs/2408.00284) — Xinhan Di et al. · arXiv:2408.00284 `{Di2024Bailing}`
+- **2024** [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](http://arxiv.org/abs/2403.03206) — Patrick Esser et al. · arXiv:2403.03206 `{Esser2024Scaling}`
+- **2024** [Scalable Diffusion Models with State Space Backbone](http://arxiv.org/abs/2402.05608) — Zhengcong Fei et al. · arXiv:2402.05608 `{Fei2024Scalable}`
+- **2024** [Attention as an RNN](http://arxiv.org/abs/2405.13956) — Leo Feng et al. · arXiv:2405.13956 `{Feng2024Attention}`
+- **2024** [FancyVideo: Towards Dynamic and Consistent Video Generation via Cross-frame Textual Guidance](http://arxiv.org/abs/2408.08189) — Jiasong Feng et al. · arXiv:2408.08189 `{Feng2024Fancyvideo}`
+- **2024** [Transformers are Universal In-context Learners](http://arxiv.org/abs/2408.01367) — Takashi Furuya et al. · arXiv:2408.01367 `{Furuya2024Transformers}`
+- **2024** PROMPT CACHE: MODULAR ATTENTION REUSE FOR LOW-LATENCY INFERENCE — In Gim et al. `{Gim2024Prompt}`
+- **2024** [ReSyncer: Rewiring Style-based Generator for Unified Audio-Visually Synced Facial Performer](http://arxiv.org/abs/2408.03284) — Jiazhi Guan et al. · arXiv:2408.03284 `{Guan2024Resyncer}`
+- **2024** [The Unreasonable Effectiveness of Easy Training Data for Hard Tasks](http://arxiv.org/abs/2401.06751) — Peter Hase et al. · arXiv:2401.06751 `{Hase2024Unreasonable}`
+- **2024** [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](http://arxiv.org/abs/2404.06395) — Shengding Hu et al. · arXiv:2404.06395 `{Hu2024Minicpm}`
+- **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
+- **2024** [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](http://arxiv.org/abs/2407.02490) — Huiqiang Jiang et al. · arXiv:2407.02490 `{Jiang2024Minference}`
+- **2024** [Aligning Large Language Models with Representation Editing: A Control Perspective](http://arxiv.org/abs/2406.05954) — Lingkai Kong et al. · arXiv:2406.05954 `{Kong2024Aligning}`
+- **2024** [Enhancing Training Efficiency Using Packing with Flash Attention](http://arxiv.org/abs/2407.09105) — Achintya Kundu et al. · arXiv:2407.09105 `{Kundu2024Enhancing}`
+- **2024** [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](http://arxiv.org/abs/2405.17428) — Chankyu Lee et al. · arXiv:2405.17428 `{Lee2024Nv}`
+- **2024** [Multimodal Reasoning with Multimodal Knowledge Graph](http://arxiv.org/abs/2406.02030) — Junlin Lee et al. · arXiv:2406.02030 `{LeendMultimodal}`
+- **2024** [Hunyuan-DiT: A Powerful Multi-Resolution Diffusion Transformer with Fine-Grained Chinese Understanding](http://arxiv.org/abs/2405.08748) — Zhimin Li et al. · arXiv:2405.08748 `{Li2024Hunyuan}`
+- **2024** [VideoMamba: State Space Model for Efficient Video Understanding](http://arxiv.org/abs/2403.06977) — Kunchang Li et al. · arXiv:2403.06977 `{Li2024Videomamba}`
+- **2024** [AudioLCM: Text-to-Audio Generation with Latent Consistency Models](http://arxiv.org/abs/2406.00356) — Huadai Liu et al. · arXiv:2406.00356 `{Liu2024Audiolcm}`
+- **2024** [Focus Anywhere for Fine-grained Multi-page Document Understanding](http://arxiv.org/abs/2405.14295) — Chenglong Liu et al. · arXiv:2405.14295 `{Liu2024Focus}`
+- **2024** [Timer-XL: Long-Context Transformers for Unified Time Series Forecasting](http://arxiv.org/abs/2410.04803) — Yong Liu et al. · arXiv:2410.04803 `{Liu2024Timer}`
+- **2024** [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](http://arxiv.org/abs/2402.17764) — Shuming Ma et al. · arXiv:2402.17764 `{Ma2024Era}`
+- **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
+- **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
+- **2024** [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](http://arxiv.org/abs/2402.12869) — Dehai Min et al. · arXiv:2402.12869 `{Min2024Exploring}`
+- **2024** [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](http://arxiv.org/abs/2404.07143) — Tsendsuren Munkhdalai et al. · arXiv:2404.07143 `{MunkhdalaindLeave}`
+- **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
+- **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
+- **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
+- **2024** [LLM Pruning and Distillation in Practice: The Minitron Approach](http://arxiv.org/abs/2408.11796) — Sharath Turuvekere Sreenivas et al. · arXiv:2408.11796 `{Sreenivas2024Llm}`
+- **2024** [Learning to (Learn at Test Time): RNNs with Expressive Hidden States](http://arxiv.org/abs/2407.04620) — Yu Sun et al. · arXiv:2407.04620 `{Sun2024Learning}`
+- **2024** MOSS: An Open Conversational Large Language Model — Tianxiang Sun et al. `{Sun2024Moss}`
+- **2024** The Llama 3 Herd of Models — Llama Team et al. `{Team2024Llama}`
+- **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
+- **2024** [The Evolution of Multimodal Model Architectures](http://arxiv.org/abs/2405.17927) — Shakti N. Wadekar et al. · arXiv:2405.17927 `{Wadekar2024Evolution}`
+- **2024** [An Empirical Study of Mamba-based Language Models](http://arxiv.org/abs/2406.07887) — Roger Waleffe et al. · arXiv:2406.07887 `{Waleffe2024Empirical}`
+- **2024** [Dependency Structure-Enhanced Graph Attention Networks for Event Detection](www.aaai.org) — Qizhi Wan et al. `{Wan2024Dependency}`
+- **2024** [A Comprehensive Survey of LLM Alignment Techniques: RLHF, RLAIF, PPO, DPO and More](http://arxiv.org/abs/2407.16216) — Zhichao Wang et al. · arXiv:2407.16216 `{Wang2024Comprehensive}`
+- **2024** [Length Generalization of Causal Transformers without Position Encoding](http://arxiv.org/abs/2404.12224) — Jie Wang et al. · arXiv:2404.12224 `{Wang2024Length}`
+- **2024** [LLMFactor: Extracting Profitable Factors through Prompts for Explainable Stock Movement Prediction](http://arxiv.org/abs/2406.10811) — Meiyun Wang et al. · arXiv:2406.10811 `{Wang2024Llmfactor}`
+- **2024** [Model Compression and Efficient Inference for Large Language Models: A Survey](http://arxiv.org/abs/2402.09748) — Wenxiao Wang et al. · arXiv:2402.09748 `{Wang2024Model}`
+- **2024** [Direct3D: Scalable Image-to-3D Generation via 3D Latent Diffusion Transformer](http://arxiv.org/abs/2405.14832) — Shuang Wu et al. · arXiv:2405.14832 `{Wu2024Direct3d}`
+- **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
+- **2024** [Multi-Head Mixture-of-Experts](http://arxiv.org/abs/2404.15045) — Xun Wu et al. · arXiv:2404.15045 `{Wu2024Multi}`
+- **2024** [Improving Transformers with Dynamically Composable Multi-Head Attention](http://arxiv.org/abs/2405.08553) — Da Xiao et al. · arXiv:2405.08553 `{Xiao2024Improving}`
+- **2024** [OOTDiffusion: Outfitting Fusion based Latent Diffusion for Controllable Virtual Try-on](http://arxiv.org/abs/2403.01779) — Yuhao Xu et al. · arXiv:2403.01779 `{Xu2024Ootdiffusion}`
+- **2024** [Inf-DiT: Upsampling Any-Resolution Image with Memory-Efficient Diffusion Transformer](http://arxiv.org/abs/2405.04312) — Zhuoyi Yang et al. · arXiv:2405.04312 `{Yang2024Inf}`
+- **2024** [Differential Transformer](http://arxiv.org/abs/2410.05258) — Tianzhu Ye et al. · arXiv:2410.05258 `{Ye2024Differential}`
+- **2024** [When Can Transformers Count to n?](http://arxiv.org/abs/2407.15160) — Gilad Yehudai et al. · arXiv:2407.15160 `{Yehudai2024When}`
+- **2024** [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](http://arxiv.org/abs/2406.02536) — Yijiong Yu et al. · arXiv:2406.02536 `{Yu2024Mitigate}`
+- **2024** [Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think](http://arxiv.org/abs/2410.06940) — Sihyun Yu et al. · arXiv:2410.06940 `{Yu2024Representation}`
+- **2024** [xFinder: Robust and Pinpoint Answer Extraction for Large Language Models](http://arxiv.org/abs/2405.11874) — Qingchen Yu et al. · arXiv:2405.11874 `{Yu2024Xfinder}`
+- **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
+- **2024** [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](http://arxiv.org/abs/2402.17152) — Jiaqi Zhai et al. · arXiv:2402.17152 `{Zhai2024Actions}`
+- **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
+- **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
+- **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
+- **2024** [Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model](http://arxiv.org/abs/2408.11039) — Chunting Zhou et al. · arXiv:2408.11039 `{Zhou2024Transfusion}`
+- **2023** [GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](http://arxiv.org/abs/2305.13245) — Joshua Ainslie et al. · arXiv:2305.13245 `{Ainslie2023Gqa}`
+- **2023** [INDETERMINATE PROBABILITY THEORY](http://arxiv.org/abs/2303.11536) — ? et al. · arXiv:2303.11536 `{AnonndIndeterminate}`
+- **2023** [Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture](http://arxiv.org/abs/2301.08243) — Mahmoud Assran et al. · arXiv:2301.08243 `{Assran2023Self}`
+- **2023** [Nougat: Neural Optical Understanding for Academic Documents](http://arxiv.org/abs/2308.13418) — Lukas Blecher et al. · arXiv:2308.13418 `{Blecher2023Nougat}`
+- **2023** [Striped Attention: Faster Ring Attention for Causal Transformers](http://arxiv.org/abs/2311.09431) — William Brandon et al. · arXiv:2311.09431 `{Brandon2023Striped}`
+- **2023** [Scaling Transformer to 1M tokens and beyond with RMT](http://arxiv.org/abs/2304.11062) — Aydar Bulatov et al. · arXiv:2304.11062 `{Bulatov2023Scaling}`
+- **2023** [Accelerating Large Language Model Decoding with Speculative Sampling](http://arxiv.org/abs/2302.01318) — Charlie Chen et al. · arXiv:2302.01318 `{Chen2023Accelerating}`
+- **2023** [Exploring the Potential of Large Language Models (LLMs) in Learning on Graphs](http://arxiv.org/abs/2307.03393) — Zhikai Chen et al. · arXiv:2307.03393 `{Chen2023Exploringa}`
+- **2023** [Exploring the Use of Large Language Models for Reference-Free Text Quality Evaluation: An Empirical Study](http://arxiv.org/abs/2304.00723) — Yi Chen et al. · arXiv:2304.00723 `{Chen2023Exploringb}`
+- **2023** [Extending Context Window of Large Language Models via Positional Interpolation](http://arxiv.org/abs/2306.15595) — Shouyuan Chen et al. · arXiv:2306.15595 `{Chen2023Extending}`
+- **2023** [LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models](http://arxiv.org/abs/2309.12307) — Yukang Chen et al. · arXiv:2309.12307 `{Chen2023Longlora}`
+- **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
+- **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
+- **2023** [Simple and Controllable Music Generation](http://arxiv.org/abs/2306.05284) — Jade Copet et al. · arXiv:2306.05284 `{Copet2023Simple}`
+- **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
+- **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](http://arxiv.org/abs/2312.09979) — Shihan Dou et al. · arXiv:2312.09979 `{Dou2023Loramoe}`
+- **2023** [Attention Weighted Mixture of Experts with Contrastive Learning for Personalized Ranking in E-commerce](http://arxiv.org/abs/2306.05011) — Juan Gong et al. · arXiv:2306.05011 `{Gong2023Attention}`
+- **2023** [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](http://arxiv.org/abs/2312.00752) — Albert Gu et al. · arXiv:2312.00752 `{Gu2023Mamba}`
+- **2023** [Textbooks Are All You Need](http://arxiv.org/abs/2306.11644) — Suriya Gunasekar et al. · arXiv:2306.11644 `{Gunasekar2023Textbooks}`
+- **2023** [Evaluating Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2310.19736) — Zishan Guo et al. · arXiv:2310.19736 `{Guo2023Evaluating}`
+- **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
+- **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
+- **2023** [HyperAttention: Long-context Attention in Near-Linear Time](http://arxiv.org/abs/2310.05869) — Insu Han et al. · arXiv:2310.05869 `{Han2023Hyperattention}`
+- **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
+- **2023** [Transformers as Graph-to-Graph Models](http://arxiv.org/abs/2310.17936) — James Henderson et al. · arXiv:2310.17936 `{Henderson2023Transformers}`
+- **2023** [Backpack Language Models](http://arxiv.org/abs/2305.16765) — John Hewitt et al. · arXiv:2305.16765 `{Hewitt2023Backpack}`
+- **2023** [Advancing Transformer Architecture in Long-Context Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2311.12351) — Yunpeng Huang et al. · arXiv:2311.12351 `{Huang2023Advancing}`
+- **2023** [A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions](http://arxiv.org/abs/2311.05232) — Lei Huang et al. · arXiv:2311.05232 `{Huang2023Survey}`
+- **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
+- **2023** [Evidence of Meaning in Language Models Trained on Programs](http://arxiv.org/abs/2305.11169) — Charles Jin et al. · arXiv:2305.11169 `{Jin2023Evidence}`
+- **2023** [The Impact of Positional Encoding on Length Generalization in Transformers](http://arxiv.org/abs/2305.19466) — Amirhossein Kazemnejad et al. · arXiv:2305.19466 `{Kazemnejad2023Impact}`
+- **2023** [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model](http://arxiv.org/abs/2306.03341) — Kenneth Li et al. · arXiv:2306.03341 `{Li2023Inference}`
+- **2023** [Textbooks Are All You Need II: phi-1.5 technical report](http://arxiv.org/abs/2309.05463) — Yuanzhi Li et al. · arXiv:2309.05463 `{Li2023Textbooks}`
+- **2023** [Transformer-VQ: Linear-Time Transformers via Vector Quantization](http://arxiv.org/abs/2309.16354) — Lucas D. Lingle et al. · arXiv:2309.16354 `{Lingle2023Transformer}`
+- **2023** [Blockwise Parallel Transformer for Large Context Models](http://arxiv.org/abs/2305.19370) — Hao Liu et al. · arXiv:2305.19370 `{Liu2023Blockwise}`
+- **2023** [Evaluating the Logical Reasoning Ability of ChatGPT and GPT-4](http://arxiv.org/abs/2304.03439) — Hanmeng Liu et al. · arXiv:2304.03439 `{Liu2023Evaluating}`
+- **2023** [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) — Hao Liu et al. · arXiv:2310.01889 `{Liu2023Ring}`
+- **2023** [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](http://arxiv.org/abs/2312.17172) — Jiasen Lu et al. · arXiv:2312.17172 `{Lu2023Unified}`
+- **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [YaRN: Efficient Context Window Extension of Large Language Models](http://arxiv.org/abs/2309.00071) — Bowen Peng et al. · arXiv:2309.00071 `{Peng2023Yarn}`
+- **2023** EFFICIENTLY SCALING TRANSFORMER INFERENCE — Reiner Pope et al. `{Pope2023Efficiently}`
+- **2023** [Representation Learning with Large Language Models for Recommendation](http://arxiv.org/abs/2310.15950 http://dx.doi.org/10.1145/3589334.3645458) — Xubin Ren et al. · arXiv:2310.15950 `{Ren2023Representation}`
+- **2023** [Large Language Model Alignment: A Survey](http://arxiv.org/abs/2309.15025) — Tianhao Shen et al. · arXiv:2309.15025 `{Shen2023Large}`
+- **2023** [Retentive Network: A Successor to Transformer for Large Language Models](http://arxiv.org/abs/2307.08621) — Yutao Sun et al. · arXiv:2307.08621 `{Sun2023Retentive}`
+- **2023** [Schema-learning and rebinding as mechanisms of in-context learning and emergence](http://arxiv.org/abs/2307.01201) — Sivaramakrishnan Swaminathan et al. · arXiv:2307.01201 `{Swaminathan2023Schema}`
+- **2023** [CMD: a framework for Context-aware Model self-Detoxification](http://arxiv.org/abs/2308.08295) — Zecheng Tang et al. · arXiv:2308.08295 `{Tang2023Cmd}`
+- **2023** [Focused Transformer: Contrastive Training for Context Scaling](http://arxiv.org/abs/2307.03170) — Szymon Tworkowski et al. · arXiv:2307.03170 `{Tworkowski2023Focused}`
+- **2023** [Data Management For Large Language Models: A Survey](http://arxiv.org/abs/2312.01700) — Zige Wang et al. · arXiv:2312.01700 `{Wang2023Data}`
+- **2023** [Training Transformers with 4-bit Integers](http://arxiv.org/abs/2306.11987) — Haocheng Xi et al. · arXiv:2306.11987 `{Xi2023Training}`
+- **2023** [Efficient Streaming Language Models with Attention Sinks](http://arxiv.org/abs/2309.17453) — Guangxuan Xiao et al. · arXiv:2309.17453 `{Xiao2023Efficient}`
+- **2023** [ResiDual: Transformer with Dual Residual Connections](http://arxiv.org/abs/2304.14802) — Shufang Xie et al. · arXiv:2304.14802 `{Xie2023Residual}`
+- **2023** [DMV3D: Denoising Multi-View Diffusion using 3D Large Reconstruction Model](http://arxiv.org/abs/2311.09217) — Yinghao Xu et al. · arXiv:2311.09217 `{Xu2023Dmv3d}`
+- **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
+- **2023** From Online Softmax to FlashAttention UW CSE 599M Spring 2023: ML for ML Systems — Zihao Ye et al. `{Ye2023Online}`
+- **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
+- **2023** [MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers](http://arxiv.org/abs/2305.07185) — Lili Yu et al. · arXiv:2305.07185 `{Yu2023Megabyte}`
+- **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
+- **2023** [Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization](http://arxiv.org/abs/2311.09096) — Zhexin Zhang et al. · arXiv:2311.09096 `{Zhang2023Defending}`
+- **2023** [LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention](http://arxiv.org/abs/2303.16199) — Renrui Zhang et al. · arXiv:2303.16199 `{Zhang2023Llama}`
+- **2023** [Self-QA: Unsupervised Knowledge Guided Language Model Alignment](http://arxiv.org/abs/2305.11952) — Xuanyu Zhang et al. · arXiv:2305.11952 `{Zhang2023Self}`
+- **2023** [A Survey of Controllable Text Generation using Transformer-based Pre-trained Language Models](https://doi.org/xxx) — Hanqing Zhang et al. `{Zhang2023Survey}`
+- **2023** [Explainability for Large Language Models: A Survey](http://arxiv.org/abs/2309.01029) — Haiyan Zhao et al. · arXiv:2309.01029 `{Zhao2023Explainability}`
+- **2023** [Length Extrapolation of Transformers: A Survey from the Perspective of Positional Encoding](http://arxiv.org/abs/2312.17044) — Liang Zhao et al. · arXiv:2312.17044 `{Zhao2023Length}`
+- **2023** [Make-A-Protagonist: Generic Video Editing with An Ensemble of Experts](http://arxiv.org/abs/2305.08850) — Yuyang Zhao et al. · arXiv:2305.08850 `{Zhao2023Make}`
+- **2023** [Are More Layers Beneficial to Graph Transformers?](http://arxiv.org/abs/2303.00579) — Haiteng Zhao et al. · arXiv:2303.00579 `{Zhao2023More}`
+- **2023** [A Survey of Large Language Models](http://arxiv.org/abs/2303.18223) — Wayne Xin Zhao et al. · arXiv:2303.18223 `{Zhao2023Survey}`
+- **2023** [A Survey on Efficient Training of Transformers](http://arxiv.org/abs/2302.01107) — Bohan Zhuang et al. · arXiv:2302.01107 `{Zhuang2023Survey}`
+- **2022** [Pathways: Asynchronous Distributed Dataflow for ML](http://arxiv.org/abs/2203.12533) — Paul Barham et al. · arXiv:2203.12533 `{Barham2022Pathways}`
+- **2022** [PaLI: A Jointly-Scaled Multilingual Language-Image Model](http://arxiv.org/abs/2209.06794) — Xi Chen et al. · arXiv:2209.06794 `{Chen2022Pali}`
+- **2022** [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](http://arxiv.org/abs/2205.14135) — Tri Dao et al. · arXiv:2205.14135 `{Dao2022Flashattention}`
+- **2022** [A Survey of Vision-Language Pre-Trained Models](http://arxiv.org/abs/2202.10936) — Yifan Du et al. · arXiv:2202.10936 `{Du2022Survey}`
+- **2022** [Cramming: Training a Language Model on a Single GPU in One Day](http://arxiv.org/abs/2212.14034) — Jonas Geiping et al. · arXiv:2212.14034 `{Geiping2022Cramming}`
+- **2022** [FasterMoE: Modeling and Optimizing Training of Large-Scale Dynamic Pre-Trained Models](https://huggingface.co/blog/zh/moe) — Jiaao He et al. · arXiv:3221.35084 `{He2022Fastermoe}`
+- **2022** Unified Dialog Model Pre-training for Task-Oriented Dialog Understanding and Generation — Wanwei He et al. · arXiv:7495.35320 `{He2022Unified}`
+- **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
+- **2022** LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking — Yupan Huang et al. · arXiv:3161.35481 `{Huang2022Layoutlmv3}`
+- **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
+- **2022** [Exploring Plain Vision Transformer Backbones for Object Detection](http://arxiv.org/abs/2203.16527) — Yanghao Li et al. · arXiv:2203.16527 `{Li2022Exploring}`
+- **2022** [Don't Forget Me: Accurate Background Recovery for Text Removal via Modeling Local-Global Context](http://arxiv.org/abs/2207.10273) — Chongyu Liu et al. · arXiv:2207.10273 `{Liu2022Don}`
+- **2022** Mask and Reason: Pre-Training Knowledge Graph Transformers for Complex Logical Queries — Xiao Liu et al. · arXiv:4678.35394 `{Liu2022Mask}`
+- **2022** [Locating and Editing Factual Associations in GPT](http://arxiv.org/abs/2202.05262) — Kevin Meng et al. · arXiv:2202.05262 `{Meng2022Locating}`
+- **2022** [Interpretable and Generalizable Graph Learning via Stochastic Attention Mechanism](http://arxiv.org/abs/2201.12987) — Siqi Miao et al. · arXiv:2201.12987 `{Miao2022Interpretable}`
+- **2022** [Knowledge-in-Context: Towards Knowledgeable Semi-Parametric Language Models](http://arxiv.org/abs/2210.16433) — Xiaoman Pan et al. · arXiv:2210.16433 `{Pan2022Knowledge}`
+- **2022** [Scalable Diffusion Models with Transformers](http://arxiv.org/abs/2212.09748) — William Peebles et al. · arXiv:2212.09748 `{Peebles2022Scalable}`
+- **2022** [Recipe for a General, Powerful, Scalable Graph Transformer](http://arxiv.org/abs/2205.12454) — Ladislav Rampášek et al. · arXiv:2205.12454 `{Rampek2022Recipe}`
+- **2022** How Different are Pre-trained Transformers for Text Ranking? — David Rau et al. `{Rau2022How}`
+- **2022** [What the DAAM: Interpreting Stable Diffusion Using Cross Attention](http://arxiv.org/abs/2210.04885) — Raphael Tang et al. · arXiv:2210.04885 `{Tang2022What}`
+- **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
+- **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
+- **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
+- **2022** A Contrastive Framework for Learning Sentence Representations from Pairwise and Triple-wise Perspective in Angular Space — Yuhao Zhang et al. `{Zhang2022Contrastive}`
+- **2022** [Graph Masked Autoencoders with Transformers](http://arxiv.org/abs/2202.08391) — Sixiao Zhang et al. · arXiv:2202.08391 `{Zhang2022Graph}`
+- **2022** [Hierarchical Graph Transformer with Adaptive Node Sampling](http://arxiv.org/abs/2210.03930) — Zaixi Zhang et al. · arXiv:2210.03930 `{Zhang2022Hierarchical}`
+- **2022** [ST-MoE: Designing Stable and Transferable Sparse Expert Models](http://arxiv.org/abs/2202.08906) — Barret Zoph et al. · arXiv:2202.08906 `{Zoph2022St}`
+- **2022** [Efficient Long Sequence Modeling via State Space Augmented Transformer](http://arxiv.org/abs/2212.08136) — Simiao Zuo et al. · arXiv:2212.08136 `{Zuo2022Efficient}`
+- **2021** [SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing](http://arxiv.org/abs/2110.07205) — Junyi Ao et al. · arXiv:2110.07205 `{Ao2021Speecht5}`
+- **2021** [Learning Attributed Graph Representations with Communicative Message Passing Transformer](http://arxiv.org/abs/2107.08773) — Jianwen Chen et al. · arXiv:2107.08773 `{Chen2021Learning}`
+- **2021** [Efficiently Modeling Long Sequences with Structured State Spaces](http://arxiv.org/abs/2111.00396) — Albert Gu et al. · arXiv:2111.00396 `{Gu2021Efficiently}`
+- **2021** [Rethinking Graph Transformers with Spectral Attention](http://arxiv.org/abs/2106.03893) — Devin Kreuzer et al. · arXiv:2106.03893 `{Kreuzer2021Rethinking}`
+- **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
+- **2021** [CAT: Cross Attention in Vision Transformer](http://arxiv.org/abs/2106.05786) — Hezheng Lin et al. · arXiv:2106.05786 `{Lin2021Cat}`
+- **2021** Heterogeneous Information Network based Recommender Systems: a survey — Jiawei Liu et al. `{Liu2021Heterogeneous}`
+- **2021** Leverage external knowledge and self-attention for chinese semantic dependency graph parsing — Dianqing Liu et al. · arXiv:2021.01632 `{Liu2021Leverage}`
+- **2021** Pre-trained Language Model for Web-scale Retrieval in Baidu Search — Yiding Liu et al. · arXiv:7548.34671 `{Liu2021Prea}`
+- **2021** Analyzing the Anisotropy Phenomenon in Transformer-based Masked Language Models — Ziyang Luo et al. `{Luo2021Analyzing}`
+- **2021** [GraphiT: Encoding Graph Structure in Transformers](http://arxiv.org/abs/2106.05667) — Grégoire Mialon et al. · arXiv:2106.05667 `{MialonndGraphit}`
+- **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
+- **2021** [RoFormer: Enhanced Transformer with Rotary Position Embedding](http://arxiv.org/abs/2104.09864) — Jianlin Su et al. · arXiv:2104.09864 `{Su2021Roformer}`
+- **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
+- **2021** Dual Attention Network for Cross-lingual Entity Alignment — Jian Sun et al. `{Sun2021Dual}`
+- **2021** [Interpreting Deep Learning Models in Natural Language Processing: A Review](http://arxiv.org/abs/2110.10470) — Xiaofei Sun et al. · arXiv:2110.10470 `{Sun2021Interpreting}`
+- **2021** [Query and Extract: Refining Event Extraction as Type-oriented Binary Decoding](http://arxiv.org/abs/2110.07476) — Sijia Wang et al. · arXiv:2110.07476 `{Wang2021Query}`
+- **2021** Pretrained Transformers for Text Ranking: BERT and beyond — Andrew Yates et al. · arXiv:7963.34416 `{Yates2021Pretrained}`
+- **2021** [Do Transformers Really Perform Bad for Graph Representation?](http://arxiv.org/abs/2106.05234) — Chengxuan Ying et al. · arXiv:2106.05234 `{Ying2021Do}`
+- **2020** [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](http://arxiv.org/abs/2010.11929) — Alexey Dosovitskiy et al. · arXiv:2010.11929 `{Dosovitskiy2020Image}`
+- **2020** [Transformer Feed-Forward Layers Are Key-Value Memories](http://arxiv.org/abs/2012.14913) — Mor Geva et al. · arXiv:2012.14913 `{Geva2020Transformer}`
+- **2020** [DeCLUTR: Deep Contrastive Learning for Unsupervised Textual Representations](http://arxiv.org/abs/2006.03659) — John Giorgi et al. · arXiv:2006.03659 `{Giorgi2020Declutr}`
+- **2020** [Knowledge Distillation: A Survey](http://arxiv.org/abs/2006.05525 http://dx.doi.org/10.1007/s11263-021-01453-z) — Jianping Gou et al. · arXiv:2006.05525 `{Gou2020Knowledge}`
+- **2020** [Scaling Laws for Autoregressive Generative Modeling](http://arxiv.org/abs/2010.14701) — Tom Henighan et al. · arXiv:2010.14701 `{Henighan2020Scaling}`
+- **2020** Heterogeneous Graph Transformer — Ziniu Hu et al. · arXiv:6423.33800 `{Hu2020Heterogeneous}`
+- **2020** [Reformer: The Efficient Transformer](http://arxiv.org/abs/2001.04451) — Nikita Kitaev et al. · arXiv:2001.04451 `{Kitaev2020Reformer}`
+- **2020** [DeeperGCN: All You Need to Train Deeper GCNs](http://arxiv.org/abs/2006.07739) — Guohao Li et al. · arXiv:2006.07739 `{Li2020Deepergcn}`
+- **2020** Type-aware anchor link prediction across heterogeneous networks based on graph attention network — Xiaoxue Li et al. `{Li2020Type}`
+- **2020** Graph Neural Network for Tag Ranking in Tag-enhanced Video Recommendation — Qi Liu et al. · arXiv:0531.34160 `{Liu2020Graph}`
+- **2020** GCAN: Graph-aware Co-Attention Networks for Explainable Fake News Detection on Social Media — Yi-Ju Lu et al. `{Lu2020Gcan}`
+- **2020** [a Self - Attention Based Graph H Yper -Sagnn :](https://github.com/rootlu/SIAN.) — Yuanfu Lu et al. `{Lu2020Self}`
+- **2020** Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction — Qi Pi et al. · arXiv:0531.34127 `{Pi2020Search}`
+- **2020** [CoLAKE: Contextualized Language and Knowledge Embedding](http://arxiv.org/abs/2010.00309) — Tianxiang Sun et al. · arXiv:2010.00309 `{Sun2020Colake}`
+- **2020** Multi-modal Knowledge Graphs for Recommender Systems — Rui Sun et al. · arXiv:0531.34119 `{Sun2020Multi}`
+- **2020** [A Mathematical Introduction to Generative Adversarial Nets (GAN)](http://arxiv.org/abs/2009.00169) — Yang Wang et al. · arXiv:2009.00169 `{Wang2020Mathematical}`
+- **2020** TAGNN: Target Attentive Graph Neural Networks for Session-based Recommendation — Feng Yu et al. · arXiv:7271.34013 `{Yu2020Tagnn}`
+- **2019** [Graph Transformer for Graph-to-Sequence Learning](http://arxiv.org/abs/1911.07470) — Deng Cai et al. · arXiv:1911.07470 `{Cai2019Graph}`
+- **2019** [Generating Long Sequences with Sparse Transformers](http://arxiv.org/abs/1904.10509) — Rewon Child et al. · arXiv:1904.10509 `{Child2019Generating}`
+- **2019** Dynamic hypergraph neural networks — Jianwen Jiang et al. `{Jiang2019Dynamic}`
+- **2019** Understanding attention and generalization in graph neural networks — Boris Knyazev et al. `{Knyazev2019Understanding}`
+- **2019** Heterogeneous graph attention network — Xiao Wang et al. · arXiv:8558.33135 `{Wang2019Heterogeneous}`
+- **2019** KGAT: Knowledge graph attention network for recommendation — Xiang Wang et al. · arXiv:2500.33309 `{Wang2019Kgat}`
+- **2019** Session-based recommendation with graph neural networks — Shu Wu et al. `{Wu2019Session}`
+- **2019** Simplifying graph convolutional networks — Felix Wu et al. `{Wu2019Simplifying}`
+- **2019** [GraphSAINT: Graph Sampling Based Inductive Learning Method](http://arxiv.org/abs/1907.04931) — Hanqing Zeng et al. · arXiv:1907.04931 `{Zeng2019Graphsaint}`
+- **2019** [DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation](http://arxiv.org/abs/1911.00536) — Yizhe Zhang et al. · arXiv:1911.00536 `{Zhang2019Dialogpt}`
+- **2019** Robust graph convolutional networks against adversarial attacks — Dingyuan Zhu et al. · arXiv:2500.33308 `{Zhu2019Robust}`
+- **2019** Layer-dependent importance sampling for training deep and large graph convolutional networks — Difan Zou et al. `{Zou2019Layer}`
+- **2018** Adversarial attack on graph structured data — Hanjun Dai et al. `{Dai2018Adversarial}`
+- **2018** Graph classification using structural attention — John Boaz Lee et al. · arXiv:9819.32199 `{Lee2018Graph}`
+- **2018** Modeling task relationships in multi-task learning with multi-gate mixture-of-experts — Jiaqi Ma et al. · arXiv:9819.32200 `{Ma2018Modeling}`
+- **2018** [Blockwise Parallel Decoding for Deep Autoregressive Models](http://arxiv.org/abs/1811.03115) — Mitchell Stern et al. · arXiv:1811.03115 `{SternndBlockwise}`
+- **2018** Representation learning on graphs with jumping knowledge networks — Keyulu Xu et al. `{Xu2018Representation}`
+- **2017** Get to the point: Summarization with pointer-generator networks — Abigail See et al. `{See2017Get}`
+- **2016** [Dynamic Graph Neural Networks](https://doi.org/10.475/123_4) — Yao Ma et al. `{Ma2016Dynamic}`
+- **1390** [Transformer Language Models without Positional Encodings Still Learn Positional Information](https://github.com/adihaviv/NoPos) — Adi Haviv et al. `{Haviv1390Transformer}`
+- **n.d.** [A Survey on Data Selection for Language Models](https://commoncrawl.org/) — Alon Albalak et al. `{AlbalakndSurvey}`
+- **n.d.** [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs Microsoft](https://github.com/openai/tiktoken) — ? et al. `{AnonndPhia}`
+- **n.d.** What's New in Transformer Engine and FP8 — ? et al. `{AnonndWhat}`
+- **n.d.** [混合专家模型（MoE）详解](https://huggingface.co/blog/zh/moe) — ? et al. `{Anonnd混合专家模型}`
+- **n.d.** [LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders](https://github.com/McGill-NLP/) — Parishad Behnamghader et al. `{BehnamghaderndLlm2vec}`
+- **n.d.** [EXTENDING CONTEXT WINDOW OF LARGE LAN-GUAGE MODELS VIA POSITION INTERPOLATION](https://www.reddit.com/r/LocalLLaMA/comments/14fgjqj/a_simple_way_to_) — Shouyuan Chen et al. `{ChenndExtending}`
+- **n.d.** Long Sequence Modeling Efficient Transformer Variants Linear Recurrent Models Linear Time Variant Selective SSM Linear Time Invariant Long Convolution Explicit Kernel Neural Kernel SSM-Based Kernel — Gated Convolutions et al. `{ConvolutionsndLong}`
+- **n.d.** [Pre-print RETHINKING LLM LANGUAGE ADAPTATION: A CASE STUDY ON CHINESE MIXTRAL](https://github.com/ymcui/Chinese-Mixtral.) — Yiming Cui et al. `{CuindPre}`
+- **n.d.** [PLUG AND PLAY LANGUAGE MODELS: A SIMPLE APPROACH TO CONTROLLED TEXT GENERATION](https://github.com/uber-research/PPLM.) — Sumanth Dathathri et al. `{DathathrindPlug}`
+- **n.d.** [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://github.com/deepseek-ai/DeepSeek-V2.) — DeepSeek-AI et al. `{DeepSeekAIndDeepseekb}`
+- **n.d.** [CogLTX: Applying BERT to Long Texts](https://github.com/Sleepychord/CogLTX.) — Ming Ding et al. `{DingndCogltx}`
+- **n.d.** [Attention Guided Graph Convolutional Networks for Relation Extraction](http://www.statnlp.org/) — Zhijiang Guo et al. `{GuondAttention}`
+- **n.d.** [Graph Neural Networks in Practice](https://www.cs.mcgill.ca/~wlh/grl_book/) — William L. Hamilton et al. `{HamiltonndGraph}`
+- **n.d.** [Diffusion Model-Based Image Editing: A Survey](https://github.com/SiatMMLab/) — Yi Huang et al. `{HuangndDiffusion}`
+- **n.d.** [CTRL: A CONDITIONAL TRANSFORMER LANGUAGE MODEL FOR CONTROLLABLE GENERATION](https://github.com/salesforce/ctrl.) — Nitish Shirish Keskar et al. `{KeskarndCtrl}`
+- **n.d.** Hands-on graph neural networks using Python : practical techniques and architectures for building powerful graph and deep learning apps with PyTorch — Maxime Labonne et al. `{LabonnendHands}`
+- **n.d.** [What matters when building vision-language models?](https://huggingface.co/collections/HuggingFaceM4/idefics2-661d1971b7c50831dd3ce0fe) — Hugo Laurençon et al. `{LaurenonndWhat}`
+- **n.d.** [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://github.com/Dao-AILab/flash-attention) — Jay Shah et al. `{ShahndFlashattention}`
+- **n.d.** [Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models](https://github.) — Tianyi Tang et al. `{TangndLanguage}`
+- **n.d.** [A UNIFIED SEQUENCE PARALLELISM APPROACH FOR LONG CONTEXT GENERATIVE AI](https://github.com/feifeibear/long-context-attention.) — Jiarui Fang Tencent et al. `{TencentndUnified}`
+- **n.d.** [Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction](https://github.com/FoundationVision/VAR) — Keyu Tian et al. `{TianndVisual}`
+- **n.d.** [LM Transparency Tool: Interactive Tool for Analyzing Transformer Language Models](https://github.com/facebookresearch/) — Igor Tufanov et al. `{TufanovndLm}`
+- **n.d.** [Probabilistic Transformer: A Probabilistic Dependency Model for Contextual Word Representation](https://github.com/) — Haoyi Wu et al. `{WundProbabilistic}`
+- **n.d.** [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://github.com/THUDM/CogVideo.) — Zhuoyi Yang et al. `{YangndCogvideox}`
+- **n.d.** [Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference](https://sites.google.com/view/cobravlm.) — Han Zhao et al. `{ZhaondCobra}`
+- **n.d.** [Reasoning Over Semantic-Level Graph for Fact Checking](https://demo.allennlp.org/) — Wanjun Zhong et al. `{ZhongndReasoning}`
+
+## 高效训练 / 推理
+
+- **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2025** [Parallel Scaling Law for Language Models](http://arxiv.org/abs/2505.10475) — Mouxiang Chen et al. · arXiv:2505.10475 `{Chen2025Parallel}`
+- **2025** [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](http://arxiv.org/abs/2501.04519) — Xinyu Guan et al. · arXiv:2501.04519 `{Guan2025Rstar}`
+- **2025** [Synthetic Data RL: Task Definition Is All You Need](http://arxiv.org/abs/2505.17063) — Yiduo Guo et al. · arXiv:2505.17063 `{Guo2025Synthetic}`
+- **2025** [SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images](http://arxiv.org/abs/2501.04689) — Zixuan Huang et al. · arXiv:2501.04689 `{Huang2025Spar3d}`
+- **2025** [SurveyX: Academic Survey Automation via Large Language Mod-els](http://www.surveyx.cn) — Xun Liang et al. `{Liang2025Surveyx}`
+- **2025** [Inference-Time Scaling for Generalist Reward Modeling](http://arxiv.org/abs/2504.02495) — Zijun Liu et al. · arXiv:2504.02495 `{Liu2025Inference}`
+- **2025** [Reasoning Models Can Be Effective Without Thinking](http://arxiv.org/abs/2504.09858) — Wenjie Ma et al. · arXiv:2504.09858 `{Ma2025Reasoning}`
+- **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
+- **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
+- **2025** [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](http://arxiv.org/abs/2502.11089) — Jingyang Yuan et al. · arXiv:2502.11089 `{Yuan2025Native}`
+- **2024** [Vision-LSTM: xLSTM as Generic Vision Backbone](http://arxiv.org/abs/2406.04303) — Benedikt Alkin et al. · arXiv:2406.04303 `{Alkin2024Vision}`
+- **2024** [Physics of Language Models: Part 3.3, Knowledge Capacity Scaling Laws](https://en.wikipedia.) — Zeyuan Allen-Zhu et al. `{AllenZhu2024Physics}`
+- **2024** [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](http://arxiv.org/abs/2406.02430) — Philip Anastassiou et al. · arXiv:2406.02430 `{Anastassiou2024Seed}`
+- **2024** [Apple Intelligence Foundation Language Models](http://arxiv.org/abs/2407.21075) — ? et al. · arXiv:2407.21075 `{AnonndApple}`
+- **2024** [LLM Augmented LLMs: Expanding Capabilities through Composition](http://arxiv.org/abs/2401.02412) — Rachit Bansal et al. · arXiv:2401.02412 `{Bansal2024Llm}`
+- **2024** [xLSTM: Extended Long Short-Term Memory](http://arxiv.org/abs/2405.04517) — Maximilian Beck et al. · arXiv:2405.04517 `{Beck2024Xlstm}`
+- **2024** [Meta 3D Gen](http://arxiv.org/abs/2407.02599) — Raphael Bensadoun et al. · arXiv:2407.02599 `{BensadounndMeta}`
+- **2024** [Towards Effective and Efficient Continual Pre-training of Large Language Models](http://arxiv.org/abs/2407.18743) — Jie Chen et al. · arXiv:2407.18743 `{Chen2024Towards}`
+- **2024** [Unveiling the Flaws: Exploring Imperfections in Synthetic Data and Mitigation Strategies for Large Language Models](http://arxiv.org/abs/2406.12397) — Jie Chen et al. · arXiv:2406.12397 `{Chen2024Unveiling}`
+- **2024** [Sinkhorn Distance Minimization for Knowledge Distillation](http://arxiv.org/abs/2402.17110) — Xiao Cui et al. · arXiv:2402.17110 `{Cui2024Sinkhorn}`
+- **2024** [Bailing-TTS: Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation](http://arxiv.org/abs/2408.00284) — Xinhan Di et al. · arXiv:2408.00284 `{Di2024Bailing}`
+- **2024** [LLaMA-Omni: Seamless Speech Interaction with Large Language Models](http://arxiv.org/abs/2409.06666) — Qingkai Fang et al. · arXiv:2409.06666 `{Fang2024Llama}`
+- **2024** [Attention as an RNN](http://arxiv.org/abs/2405.13956) — Leo Feng et al. · arXiv:2405.13956 `{Feng2024Attention}`
+- **2024** [Parameter-Efficient Fine-Tuning with Discrete Fourier Transform](http://arxiv.org/abs/2405.03003) — Ziqi Gao et al. · arXiv:2405.03003 `{Gao2024Parameter}`
+- **2024** [Asynchronous LLM Function Calling](http://arxiv.org/abs/2412.07017) — In Gim et al. · arXiv:2412.07017 `{Gim2024Asynchronous}`
+- **2024** PROMPT CACHE: MODULAR ATTENTION REUSE FOR LOW-LATENCY INFERENCE — In Gim et al. `{Gim2024Prompt}`
+- **2024** [ReSyncer: Rewiring Style-based Generator for Unified Audio-Visually Synced Facial Performer](http://arxiv.org/abs/2408.03284) — Jiazhi Guan et al. · arXiv:2408.03284 `{Guan2024Resyncer}`
+- **2024** [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](http://arxiv.org/abs/2404.06395) — Shengding Hu et al. · arXiv:2404.06395 `{Hu2024Minicpm}`
+- **2024** [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](http://arxiv.org/abs/2407.02490) — Huiqiang Jiang et al. · arXiv:2407.02490 `{Jiang2024Minference}`
+- **2024** [Efficient Multimodal Large Language Models: A Survey](http://arxiv.org/abs/2405.10739) — Yizhang Jin et al. · arXiv:2405.10739 `{Jin2024Efficient}`
+- **2024** [Spectra: A Comprehensive Study of Ternary, Quantized, and FP16 Language Models](http://arxiv.org/abs/2407.12327) — Ayush Kaushal et al. · arXiv:2407.12327 `{Kaushal2024Spectra}`
+- **2024** [Automata-based constraints for language model decoding](http://arxiv.org/abs/2407.08103) — Terry Koo et al. · arXiv:2407.08103 `{Koo2024Automata}`
+- **2024** [Building and better understanding vision-language models: insights and future directions](http://arxiv.org/abs/2408.12637) — Hugo Laurençon et al. · arXiv:2408.12637 `{Laurenon2024Building}`
+- **2024** [GRAFX: An Open-Source Library for Audio Processing Graphs in PyTorch](http://arxiv.org/abs/2408.03204) — Sungho Lee et al. · arXiv:2408.03204 `{Lee2024Grafx}`
+- **2024** [Autoregressive Image Generation without Vector Quantization](http://arxiv.org/abs/2406.11838) — Tianhong Li et al. · arXiv:2406.11838 `{Li2024Autoregressive}`
+- **2024** [Training-free Long Video Generation with Chain of Diffusion Model Experts](http://arxiv.org/abs/2408.13423) — Wenhao Li et al. · arXiv:2408.13423 `{Li2024Training}`
+- **2024** [VideoMamba: State Space Model for Efficient Video Understanding](http://arxiv.org/abs/2403.06977) — Kunchang Li et al. · arXiv:2403.06977 `{Li2024Videomamba}`
+- **2024** [AudioLCM: Text-to-Audio Generation with Latent Consistency Models](http://arxiv.org/abs/2406.00356) — Huadai Liu et al. · arXiv:2406.00356 `{Liu2024Audiolcm}`
+- **2024** [Class-Imbalanced Graph Learning without Class Rebalancing](https://github.) — Zhining Liu et al. `{Liu2024Class}`
+- **2024** [Efficient Detection of Toxic Prompts in Large Language Models](http://arxiv.org/abs/2408.11727) — Yi Liu et al. · arXiv:2408.11727 `{Liu2024Efficient}`
+- **2024** [Focus Anywhere for Fine-grained Multi-page Document Understanding](http://arxiv.org/abs/2405.14295) — Chenglong Liu et al. · arXiv:2405.14295 `{Liu2024Focus}`
+- **2024** [An Embarrassingly Simple Approach for LLM with Strong ASR Capacity](http://arxiv.org/abs/2402.08846) — Ziyang Ma et al. · arXiv:2402.08846 `{Ma2024Embarrassingly}`
+- **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
+- **2024** [PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](http://arxiv.org/abs/2404.02948) — Fanxu Meng et al. · arXiv:2404.02948 `{Meng2024Pissa}`
+- **2024** [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](http://arxiv.org/abs/2404.07143) — Tsendsuren Munkhdalai et al. · arXiv:2404.07143 `{MunkhdalaindLeave}`
+- **2024** [Better Alignment with Instruction Back-and-Forth Translation](http://arxiv.org/abs/2408.04614) — Thao Nguyen et al. · arXiv:2408.04614 `{Nguyen2024Better}`
+- **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
+- **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
+- **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [LLM Pruning and Distillation in Practice: The Minitron Approach](http://arxiv.org/abs/2408.11796) — Sharath Turuvekere Sreenivas et al. · arXiv:2408.11796 `{Sreenivas2024Llm}`
+- **2024** [Inverse-RLignment: Inverse Reinforcement Learning from Demonstrations for LLM Alignment](http://arxiv.org/abs/2405.15624) — Hao Sun et al. · arXiv:2405.15624 `{Sun2024Inverse}`
+- **2024** [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](http://arxiv.org/abs/2407.13623) — Chaofan Tao et al. · arXiv:2407.13623 `{Tao2024Scaling}`
+- **2024** [Length Generalization of Causal Transformers without Position Encoding](http://arxiv.org/abs/2404.12224) — Jie Wang et al. · arXiv:2404.12224 `{Wang2024Length}`
+- **2024** [Model Compression and Efficient Inference for Large Language Models: A Survey](http://arxiv.org/abs/2402.09748) — Wenxiao Wang et al. · arXiv:2402.09748 `{Wang2024Model}`
+- **2024** [Direct3D: Scalable Image-to-3D Generation via 3D Latent Diffusion Transformer](http://arxiv.org/abs/2405.14832) — Shuang Wu et al. · arXiv:2405.14832 `{Wu2024Direct3d}`
+- **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
+- **2024** [Multi-Head Mixture-of-Experts](http://arxiv.org/abs/2404.15045) — Xun Wu et al. · arXiv:2404.15045 `{Wu2024Multi}`
+- **2024** [Mixture-of-Subspaces in Low-Rank Adaptation](http://arxiv.org/abs/2406.11909) — Taiqiang Wu et al. · arXiv:2406.11909 `{WundMixture}`
+- **2024** [Improving Transformers with Dynamically Composable Multi-Head Attention](http://arxiv.org/abs/2405.08553) — Da Xiao et al. · arXiv:2405.08553 `{Xiao2024Improving}`
+- **2024** [OOTDiffusion: Outfitting Fusion based Latent Diffusion for Controllable Virtual Try-on](http://arxiv.org/abs/2403.01779) — Yuhao Xu et al. · arXiv:2403.01779 `{Xu2024Ootdiffusion}`
+- **2024** [Inf-DiT: Upsampling Any-Resolution Image with Memory-Efficient Diffusion Transformer](http://arxiv.org/abs/2405.04312) — Zhuoyi Yang et al. · arXiv:2405.04312 `{Yang2024Inf}`
+- **2024** [Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning](http://arxiv.org/abs/2402.13669) — Zhaorui Yang et al. · arXiv:2402.13669 `{Yang2024Self}`
+- **2024** [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](http://arxiv.org/abs/2408.01800) — Yuan Yao et al. · arXiv:2408.01800 `{Yao2024Minicpm}`
+- **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
+- **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
+- **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
+- **2023** [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](http://arxiv.org/abs/2312.11514) — Keivan Alizadeh et al. · arXiv:2312.11514 `{AlizadehndLlm}`
+- **2023** [A General Theoretical Paradigm to Understand Learning from Human Preferences](http://arxiv.org/abs/2310.12036) — Mohammad Gheshlaghi Azar et al. · arXiv:2310.12036 `{AzarndGeneral}`
+- **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [Accelerating Large Language Model Decoding with Speculative Sampling](http://arxiv.org/abs/2302.01318) — Charlie Chen et al. · arXiv:2302.01318 `{Chen2023Accelerating}`
+- **2023** [AutoAgents: A Framework for Automatic Agent Generation](http://arxiv.org/abs/2309.17288) — Guangyao Chen et al. · arXiv:2309.17288 `{Chen2023Autoagents}`
+- **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`
+- **2023** [LongLoRA: Efficient Fine-tuning of Long-Context Large Language Models](http://arxiv.org/abs/2309.12307) — Yukang Chen et al. · arXiv:2309.12307 `{Chen2023Longlora}`
+- **2023** [Adversarial Preference Optimization](http://arxiv.org/abs/2311.08045) — Pengyu Cheng et al. · arXiv:2311.08045 `{Cheng2023Adversarial}`
+- **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
+- **2023** [Simple and Controllable Music Generation](http://arxiv.org/abs/2306.05284) — Jade Copet et al. · arXiv:2306.05284 `{Copet2023Simple}`
+- **2023** [QLoRA: Efficient Finetuning of Quantized LLMs](http://arxiv.org/abs/2305.14314) — Tim Dettmers et al. · arXiv:2305.14314 `{Dettmers2023Qlora}`
+- **2023** [LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](http://arxiv.org/abs/2312.09979) — Shihan Dou et al. · arXiv:2312.09979 `{Dou2023Loramoe}`
+- **2023** [Language acquisition: do children and language models follow similar learning stages?](http://arxiv.org/abs/2306.03586) — Linnea Evanson et al. · arXiv:2306.03586 `{Evanson2023Language}`
+- **2023** [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](http://arxiv.org/abs/2312.00752) — Albert Gu et al. · arXiv:2312.00752 `{Gu2023Mamba}`
+- **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
+- **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
+- **2023** [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework](http://arxiv.org/abs/2308.00352) — Sirui Hong et al. · arXiv:2308.00352 `{Hong2023Metagpt}`
+- **2023** [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](http://arxiv.org/abs/2305.02301) — Cheng-Yu Hsieh et al. · arXiv:2305.02301 `{Hsieh2023Distilling}`
+- **2023** [LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models](http://arxiv.org/abs/2304.01933) — Zhiqiang Hu et al. · arXiv:2304.01933 `{Hu2023Llm}`
+- **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
+- **2023** [Segment Anything](http://arxiv.org/abs/2304.02643) — Alexander Kirillov et al. · arXiv:2304.02643 `{Kirillov2023Segment}`
+- **2023** [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model](http://arxiv.org/abs/2306.03341) — Kenneth Li et al. · arXiv:2306.03341 `{Li2023Inference}`
+- **2023** [Self-Alignment with Instruction Backtranslation](http://arxiv.org/abs/2308.06259) — Xian Li et al. · arXiv:2308.06259 `{Li2023Self}`
+- **2023** [Symbolic Chain-of-Thought Distillation: Small Models Can Also "Think" Step-by-Step](http://arxiv.org/abs/2306.14050) — Liunian Harold Li et al. · arXiv:2306.14050 `{Li2023Symbolic}`
+- **2023** [Turning Dust into Gold: Distilling Complex Reasoning Capabilities from LLMs by Leveraging Negative Data](http://arxiv.org/abs/2312.12832) — Yiwei Li et al. · arXiv:2312.12832 `{Li2023Turning}`
+- **2023** [Transformer-VQ: Linear-Time Transformers via Vector Quantization](http://arxiv.org/abs/2309.16354) — Lucas D. Lingle et al. · arXiv:2309.16354 `{Lingle2023Transformer}`
+- **2023** [Aligning Large Language Models with Human Preferences through Representation Engineering](http://arxiv.org/abs/2312.15997) — Wenhao Liu et al. · arXiv:2312.15997 `{Liu2023Aligning}`
+- **2023** [Blockwise Parallel Transformer for Large Context Models](http://arxiv.org/abs/2305.19370) — Hao Liu et al. · arXiv:2305.19370 `{Liu2023Blockwise}`
+- **2023** [Goat: Fine-tuned LLaMA Outperforms GPT-4 on Arithmetic Tasks](http://arxiv.org/abs/2305.14201) — Tiedong Liu et al. · arXiv:2305.14201 `{Liu2023Goat}`
+- **2023** [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) — Hao Liu et al. · arXiv:2310.01889 `{Liu2023Ring}`
+- **2023** [Training Socially Aligned Language Models on Simulated Social Interactions](http://arxiv.org/abs/2305.16960) — Ruibo Liu et al. · arXiv:2305.16960 `{Liu2023Training}`
+- **2023** [Cheap and Quick: Efficient Vision-Language Instruction Tuning for Large Language Models](http://arxiv.org/abs/2305.15023) — Gen Luo et al. · arXiv:2305.15023 `{Luo2023Cheap}`
+- **2023** [Full Parameter Fine-tuning for Large Language Models with Limited Resources](http://arxiv.org/abs/2306.09782) — Kai Lv et al. · arXiv:2306.09782 `{Lv2023Full}`
+- **2023** [OTAvatar: One-shot Talking Face Avatar with Controllable Tri-plane Rendering](http://arxiv.org/abs/2303.14662) — Zhiyuan Ma et al. · arXiv:2303.14662 `{Ma2023Otavatar}`
+- **2023** [Fine-Tuning Language Models with Just Forward Passes](http://arxiv.org/abs/2305.17333) — Sadhika Malladi et al. · arXiv:2305.17333 `{Malladi2023Fine}`
+- **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [YaRN: Efficient Context Window Extension of Large Language Models](http://arxiv.org/abs/2309.00071) — Bowen Peng et al. · arXiv:2309.00071 `{Peng2023Yarn}`
+- **2023** EFFICIENTLY SCALING TRANSFORMER INFERENCE — Reiner Pope et al. `{Pope2023Efficiently}`
+- **2023** [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](http://arxiv.org/abs/2311.03285) — Ying Sheng et al. · arXiv:2311.03285 `{Sheng2023Lora}`
+- **2023** [Consistency Models](http://arxiv.org/abs/2303.01469) — Yang Song et al. · arXiv:2303.01469 `{Song2023Consistency}`
+- **2023** [Improved Techniques for Training Consistency Models](http://arxiv.org/abs/2310.14189) — Yang Song et al. · arXiv:2310.14189 `{Song2023Improved}`
+- **2023** [A Comparative Study between Full-Parameter and LoRA-based Fine-Tuning on Chinese Instruction Data for Instruction Following Large Language Model](http://arxiv.org/abs/2304.08109) — Xianghui Sun et al. · arXiv:2304.08109 `{Sun2023Comparative}`
+- **2023** [Retentive Network: A Successor to Transformer for Large Language Models](http://arxiv.org/abs/2307.08621) — Yutao Sun et al. · arXiv:2307.08621 `{Sun2023Retentive}`
+- **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
+- **2023** [Improving and generalizing flow-based generative models with minibatch optimal transport](http://arxiv.org/abs/2302.00482) — Alexander Tong et al. · arXiv:2302.00482 `{Tong2023Improving}`
+- **2023** [Zephyr: Direct Distillation of LM Alignment](http://arxiv.org/abs/2310.16944) — Lewis Tunstall et al. · arXiv:2310.16944 `{Tunstall2023Zephyr}`
+- **2023** [InstructionGPT-4: A 200-Instruction Paradigm for Fine-Tuning MiniGPT-4](http://arxiv.org/abs/2308.12067) — Lai Wei et al. · arXiv:2308.12067 `{Wei2023Instructiongpt}`
+- **2023** [Sheared LLaMA: Accelerating Language Model Pre-training via Structured Pruning](http://arxiv.org/abs/2310.06694) — Mengzhou Xia et al. · arXiv:2310.06694 `{Xia2023Sheared}`
+- **2023** [Efficient Streaming Language Models with Attention Sinks](http://arxiv.org/abs/2309.17453) — Guangxuan Xiao et al. · arXiv:2309.17453 `{Xiao2023Efficient}`
+- **2023** [Effective Long-Context Scaling of Foundation Models](http://arxiv.org/abs/2309.16039) — Wenhan Xiong et al. · arXiv:2309.16039 `{Xiong2023Effective}`
+- **2023** [ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models](http://arxiv.org/abs/2305.18323) — Binfeng Xu et al. · arXiv:2305.18323 `{Xu2023Rewoo}`
+- **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
+- **2023** [Inference with Reference: Lossless Acceleration of Large Language Models](http://arxiv.org/abs/2304.04487) — Nan Yang et al. · arXiv:2304.04487 `{Yang2023Inference}`
+- **2023** [Editing Large Language Models: Problems, Methods, and Opportunities](http://arxiv.org/abs/2305.13172) — Yunzhi Yao et al. · arXiv:2305.13172 `{Yao2023Editing}`
+- **2023** From Online Softmax to FlashAttention UW CSE 599M Spring 2023: ML for ML Systems — Zihao Ye et al. `{Ye2023Online}`
+- **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
+- **2023** [MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers](http://arxiv.org/abs/2305.07185) — Lili Yu et al. · arXiv:2305.07185 `{Yu2023Megabyte}`
+- **2023** [AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning](http://arxiv.org/abs/2303.10512) — Qingru Zhang et al. · arXiv:2303.10512 `{Zhang2023Adalora}`
+- **2023** [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](http://arxiv.org/abs/2311.03687) — Longteng Zhang et al. · arXiv:2311.03687 `{Zhang2023Dissecting}`
+- **2023** [DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance](http://arxiv.org/abs/2304.03117) — Longwen Zhang et al. · arXiv:2304.03117 `{Zhang2023Dreamface}`
+- **2023** [LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention](http://arxiv.org/abs/2303.16199) — Renrui Zhang et al. · arXiv:2303.16199 `{Zhang2023Llama}`
+- **2023** [Retrieve Anything To Augment Large Language Models](http://arxiv.org/abs/2310.07554) — Peitian Zhang et al. · arXiv:2310.07554 `{Zhang2023Retrieve}`
+- **2023** [Vision-Language Models for Vision Tasks: A Survey](http://arxiv.org/abs/2304.00685) — Jingyi Zhang et al. · arXiv:2304.00685 `{Zhang2023Vision}`
+- **2023** [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](http://arxiv.org/abs/2312.02439) — Shanshan Zhong et al. · arXiv:2312.02439 `{Zhong2023Let}`
+- **2023** [A Survey on Model Compression for Large Language Models](http://arxiv.org/abs/2308.07633) — Xunyu Zhu et al. · arXiv:2308.07633 `{Zhu2023Survey}`
+- **2023** [A Survey on Efficient Training of Transformers](http://arxiv.org/abs/2302.01107) — Bohan Zhuang et al. · arXiv:2302.01107 `{Zhuang2023Survey}`
+- **2022** [Pathways: Asynchronous Distributed Dataflow for ML](http://arxiv.org/abs/2203.12533) — Paul Barham et al. · arXiv:2203.12533 `{Barham2022Pathways}`
+- **2022** [OneEE: A One-Stage Framework for Fast Overlapping and Nested Event Extraction](http://arxiv.org/abs/2209.02693) — Hu Cao et al. · arXiv:2209.02693 `{Cao2022Oneee}`
+- **2022** [Decoder Tuning: Efficient Language Understanding as Decoding](http://arxiv.org/abs/2212.08408) — Ganqu Cui et al. · arXiv:2212.08408 `{Cui2022Decoder}`
+- **2022** [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](http://arxiv.org/abs/2205.14135) — Tri Dao et al. · arXiv:2205.14135 `{Dao2022Flashattention}`
+- **2022** [RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning](http://arxiv.org/abs/2205.12548) — Mingkai Deng et al. · arXiv:2205.12548 `{Deng2022Rlprompt}`
+- **2022** [FasterMoE: Modeling and Optimizing Training of Large-Scale Dynamic Pre-Trained Models](https://huggingface.co/blog/zh/moe) — Jiaao He et al. · arXiv:3221.35084 `{He2022Fastermoe}`
+- **2022** [Going Deeper into Permutation-Sensitive Graph Neural Networks](http://arxiv.org/abs/2205.14368) — Zhongyu Huang et al. · arXiv:2205.14368 `{Huang2022Going}`
+- **2022** Knowledge Distillation: A Survey知识蒸馏研究综述 — Chinese Journal et al. `{Journal2022Knowledge}`
+- **2022** [Flow Matching for Generative Modeling](http://arxiv.org/abs/2210.02747) — Yaron Lipman et al. · arXiv:2210.02747 `{Lipman2022Flow}`
+- **2022** [Prompt for Extraction? PAIE: Prompting Argument Interaction for Event Argument Extraction](http://arxiv.org/abs/2202.12109) — Yubo Ma et al. · arXiv:2202.12109 `{Ma2022Prompt}`
+- **2022** [Progressive Distillation for Fast Sampling of Diffusion Models](http://arxiv.org/abs/2202.00512) — Tim Salimans et al. · arXiv:2202.00512 `{Salimans2022Progressive}`
+- **2022** [Graph Masked Autoencoders with Transformers](http://arxiv.org/abs/2202.08391) — Sixiao Zhang et al. · arXiv:2202.08391 `{Zhang2022Graph}`
+- **2022** [ST-MoE: Designing Stable and Transferable Sparse Expert Models](http://arxiv.org/abs/2202.08906) — Barret Zoph et al. · arXiv:2202.08906 `{Zoph2022St}`
+- **2022** [Efficient Long Sequence Modeling via State Space Augmented Transformer](http://arxiv.org/abs/2212.08136) — Simiao Zuo et al. · arXiv:2212.08136 `{Zuo2022Efficient}`
+- **2021** [SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing](http://arxiv.org/abs/2110.07205) — Junyi Ao et al. · arXiv:2110.07205 `{Ao2021Speecht5}`
+- **2021** [Diffusion Models Beat GANs on Image Synthesis](http://arxiv.org/abs/2105.05233) — Prafulla Dhariwal et al. · arXiv:2105.05233 `{Dhariwal2021Diffusion}`
+- **2021** [GNNAutoScale: Scalable and Expressive Graph Neural Networks via Historical Embeddings](http://arxiv.org/abs/2106.05609) — Matthias Fey et al. · arXiv:2106.05609 `{Fey2021Gnnautoscale}`
+- **2021** [Efficiently Identifying Task Groupings for Multi-Task Learning](http://arxiv.org/abs/2109.04617) — Christopher Fifty et al. · arXiv:2109.04617 `{Fifty2021Efficiently}`
+- **2021** [Efficiently Modeling Long Sequences with Structured State Spaces](http://arxiv.org/abs/2111.00396) — Albert Gu et al. · arXiv:2111.00396 `{Gu2021Efficiently}`
+- **2021** [Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech](http://arxiv.org/abs/2106.06103) — Jaehyeon Kim et al. · arXiv:2106.06103 `{Kim2021Conditional}`
+- **2021** [The Power of Scale for Parameter-Efficient Prompt Tuning](http://arxiv.org/abs/2104.08691) — Brian Lester et al. · arXiv:2104.08691 `{Lester2021Power}`
+- **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
+- **2021** TEXT2EVENT: Controllable sequence-to-structure generation for end-to-end event extraction — Yaojie Lu et al. `{Lu2021Text2event}`
+- **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
+- **2021** Vocabulary Learning via Optimal Transport for Neural Machine Translation — Jingjing Xu et al. `{Xu2021Vocabulary}`
+- **2021** [Decoupled Contrastive Learning](http://arxiv.org/abs/2110.06848) — Chun-Hsiao Yeh et al. · arXiv:2110.06848 `{Yeh2021Decoupled}`
+- **2021** [On Explainability of Graph Neural Networks via Subgraph Explorations](http://arxiv.org/abs/2102.05152) — Hao Yuan et al. · arXiv:2102.05152 `{Yuan2021Explainability}`
+- **2021** [Distilling Holistic Knowledge with Graph Neural Networks](http://arxiv.org/abs/2108.05507) — Sheng Zhou et al. · arXiv:2108.05507 `{Zhou2021Distilling}`
+- **2020** Scaling Graph Neural Networks with Approximate PageRank — Aleksandar Bojchevski et al. · arXiv:4486.34032 `{Bojchevski2020Scaling}`
+- **2020** [SIGN: Scalable Inception Graph Neural Networks](http://arxiv.org/abs/2004.11198) — Fabrizio Frasca et al. · arXiv:2004.11198 `{Frasca2020Sign}`
+- **2020** [Knowledge Distillation: A Survey](http://arxiv.org/abs/2006.05525 http://dx.doi.org/10.1007/s11263-021-01453-z) — Jianping Gou et al. · arXiv:2006.05525 `{Gou2020Knowledge}`
+- **2020** Heterogeneous Graph Transformer — Ziniu Hu et al. · arXiv:6423.33800 `{Hu2020Heterogeneous}`
+- **2020** Graph-based dependency parsing with graph neural networks — Tao Ji et al. `{Ji2020Graph}`
+- **2020** [Scaling Laws for Neural Language Models](http://arxiv.org/abs/2001.08361) — Jared Kaplan et al. · arXiv:2001.08361 `{Kaplan2020Scaling}`
+- **2020** Dense passage retrieval for open-domain question answering — Vladimir Karpukhin et al. `{Karpukhin2020Dense}`
+- **2020** [Reformer: The Efficient Transformer](http://arxiv.org/abs/2001.04451) — Nikita Kitaev et al. · arXiv:2001.04451 `{Kitaev2020Reformer}`
+- **2020** Iterative Edit-Based Unsupervised Sentence Simplification — Dhruv Kumar et al. `{Kumar2020Iterative}`
+- **2020** [PyTorch Distributed: Experiences on Accelerating Data Parallel Training](http://arxiv.org/abs/2006.15704) — Shen Li et al. · arXiv:2006.15704 `{Li2020Pytorch}`
+- **2020** [Hydra: Preserving Ensemble Diversity for Model Distillation](http://arxiv.org/abs/2001.04694) — Linh Tran et al. · arXiv:2001.04694 `{Tran2020Hydra}`
+- **2019** Adversarial attacks on node embeddings via graph poisoning — Aleksandar Bojchevski et al. `{Bojchevski2019Adversarial}`
+- **2019** [Graph Transformer for Graph-to-Sequence Learning](http://arxiv.org/abs/1911.07470) — Deng Cai et al. · arXiv:1911.07470 `{Cai2019Graph}`
+- **2019** Cluster-GCN: An efficient algorithm for training deep and large graph convolutional networks — Wei Lin Chiang et al. · arXiv:2500.33309 `{Chiang2019Cluster}`
+- **2019** Hypergraph neural networks — Yifan Feng et al. `{Feng2019Hypergraph}`
+- **2019** An efficient end-to-end deep learning architecture for activity classification — Amel Ben Mahjoub et al. `{Mahjoub2019Efficient}`
+- **2019** Cross-lingual Joint Entity and Word Embedding to Improve Entity Linking and Parallel Sentence Mining — Xiaoman Pan et al. `{Pan2019Cross}`
+- **2019** [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](http://arxiv.org/abs/1910.02054) — Samyam Rajbhandari et al. · arXiv:1910.02054 `{Rajbhandari2019Zero}`
+- **2019** [RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space](http://arxiv.org/abs/1902.10197) — Zhiqing Sun et al. · arXiv:1902.10197 `{Sun2019Rotate}`
+- **2019** Adversarial examples for graph data: Deep insights into attack and defense — Huijun Wu et al. `{Wu2019Adversarial}`
+- **2018** FastGCN: Fast learning with graph convolu-tional networks via importance sampling — Jie Chen et al. `{Chen2018Fastgcn}`
+- **2018** Unsupervised learning of sentence embeddings using compositional n-gram features — Matteo Pagliardini et al. `{Pagliardini2018Unsupervised}`
+- **2018** [Blockwise Parallel Decoding for Deep Autoregressive Models](http://arxiv.org/abs/1811.03115) — Mitchell Stern et al. · arXiv:1811.03115 `{SternndBlockwise}`
+- **2018** Adversarial attacks on neural networks for graph data — Daniel Zügner et al. · arXiv:9819.32200 `{Zgner2018Adversarial}`
+- **2017** Semi-supervised classification with graph convolutional networks — Thomas N. Kipf et al. `{Kipf2017Semi}`
+- **2017** [Hierarchical and Interpretable Skill Acquisition in Multi-task Reinforcement Learning](http://arxiv.org/abs/1712.07294) — Tianmin Shu et al. · arXiv:1712.07294 `{Shu2017Hierarchical}`
+- **2016** [Training Deep Nets with Sublinear Memory Cost](http://arxiv.org/abs/1604.06174) — Tianqi Chen et al. · arXiv:1604.06174 `{Chen2016Training}`
+- **2016** Convolutional neural networks on graphs with fast localized spectral filtering — Michaël Defferrard et al. `{Defferrard2016Convolutional}`
+- **2014** Large-scale kernel rankSVM — Tzu Ming Kuo et al. `{Kuo2014Large}`
+- **2014** Large-scale linear rankSVM — Ching Pei Lee et al. `{Lee2014Large}`
+- **2013** Real time event detection in twitter — Xun Wang et al. `{Wang2013Real}`
+- **2012** Twevent: Segment-based event detection from tweets — Chenliang Li et al. · arXiv:6761.23967 `{Li2012Twevent}`
+- **n.d.** Post-Training Distillation for LLMs — Rishabh Agarwal et al. `{AgarwalndPost}`
+- **n.d.** [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs Microsoft](https://github.com/openai/tiktoken) — ? et al. `{AnonndPhia}`
+- **n.d.** Long Sequence Modeling Efficient Transformer Variants Linear Recurrent Models Linear Time Variant Selective SSM Linear Time Invariant Long Convolution Explicit Kernel Neural Kernel SSM-Based Kernel — Gated Convolutions et al. `{ConvolutionsndLong}`
+- **n.d.** [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://github.com/deepseek-ai/DeepSeek-V2.) — DeepSeek-AI et al. `{DeepSeekAIndDeepseekb}`
+- **n.d.** [Precise Zero-Shot Dense Retrieval without Relevance Labels](https://github.) — Luyu Gao et al. `{GaondPrecise}`
+- **n.d.** [Attention Guided Graph Convolutional Networks for Relation Extraction](http://www.statnlp.org/) — Zhijiang Guo et al. `{GuondAttention}`
+- **n.d.** Optimize Generative AI Inference with Quantization in TensorRT-LLM and TensorRT — Asma Beevi Kt et al. `{KtndOptimize}`
+- **n.d.** [Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue Moshi: a speech-text foundation model for real-time dialogue](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/) — / Kyutai et al. `{KyutaindMoshi}`
+- **n.d.** [What matters when building vision-language models?](https://huggingface.co/collections/HuggingFaceM4/idefics2-661d1971b7c50831dd3ce0fe) — Hugo Laurençon et al. `{LaurenonndWhat}`
+- **n.d.** [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://github.com/Dao-AILab/flash-attention) — Jay Shah et al. `{ShahndFlashattention}`
+- **n.d.** [Language-Specific Neurons: The Key to Multilingual Capabilities in Large Language Models](https://github.) — Tianyi Tang et al. `{TangndLanguage}`
+- **n.d.** [A UNIFIED SEQUENCE PARALLELISM APPROACH FOR LONG CONTEXT GENERATIVE AI](https://github.com/feifeibear/long-context-attention.) — Jiarui Fang Tencent et al. `{TencentndUnified}`
+- **n.d.** [Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction](https://github.com/FoundationVision/VAR) — Keyu Tian et al. `{TianndVisual}`
+- **n.d.** [SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models](https://github.com/DeepGraphLearning/) — Liang Wang et al. `{WangndSimkgc}`
+- **n.d.** [FP6-LLM: Efficiently Serving Large Language Models Through FP6-Centric Algorithm-System Co-Design](https://github.com/usyd-fsalab/fp6_llm.) — Haojun Xia et al. `{XiandFp6}`
+- **n.d.** [Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://chat.openai.com) — Heming Xia et al. `{XiandUnlocking}`
+- **n.d.** [A Method for Parsing and Vectorization of Semi-structured Data used in Retrieval Augmented Generation](https://github.com/linancn/TianGong-AI-Unstructure.git.) — Hang Yang et al. `{YangndMethod}`
+- **n.d.** [Cobra: Extending Mamba to Multi-Modal Large Language Model for Efficient Inference](https://sites.google.com/view/cobravlm.) — Han Zhao et al. `{ZhaondCobra}`
+- **n.d.** [Secrets of RLHF in Large Language Models Part I: PPO](https://github.com/OpenLMLab/MOSS-RLHF) — Rui Zheng et al. `{ZhengndSecrets}`
+
+## 综述 / Survey
+
+- **2025** [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](http://arxiv.org/abs/2502.21321) — Komal Kumar et al. · arXiv:2502.21321 `{Kumar2025Llm}`
+- **2025** [SurveyX: Academic Survey Automation via Large Language Mod-els](http://www.surveyx.cn) — Xun Liang et al. `{Liang2025Surveyx}`
+- **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
+- **2024** [A Comprehensive Survey on Diffusion Models and Their Applications](http://arxiv.org/abs/2408.10207) — Md Manjurul Ahsan et al. · arXiv:2408.10207 `{Ahsan2024Comprehensive}`
+- **2024** [Comprehensive Exploration of Synthetic Data Generation: A Survey](http://arxiv.org/abs/2401.02524) — André Bauer et al. · arXiv:2401.02524 `{Bauer2024Comprehensive}`
+- **2024** The Life Cycle of Knowledge in Big Language Models: A Survey — Boxi Cao et al. `{Cao2024Life}`
+- **2024** [Survey on Large Language Model-Enhanced Reinforcement Learning: Concept, Taxonomy, and Methods](http://arxiv.org/abs/2404.00282 http://dx.doi.org/10.1109/TNNLS.2024.3497992) — Yuji Cao et al. · arXiv:2404.00282 `{Cao2024Survey}`
+- **2024** [A Survey of Data Synthesis Approaches](http://arxiv.org/abs/2407.03672) — Hsin-Yu Chang et al. · arXiv:2407.03672 `{Chang2024Survey}`
+- **2024** [Knowledge Graphs Meet Multi-Modal Learning: A Comprehensive Survey](http://arxiv.org/abs/2402.05391) — Zhuo Chen et al. · arXiv:2402.05391 `{Chen2024Knowledge}`
+- **2024** [An overview of domain-specific foundation model: key technologies, applications and challenges](http://arxiv.org/abs/2409.04267) — Haolong Chen et al. · arXiv:2409.04267 `{Chen2024Overview}`
+- **2024** [A Survey on 3D Gaussian Splatting](http://arxiv.org/abs/2401.03890) — Guikun Chen et al. · arXiv:2401.03890 `{Chen2024Survey}`
+- **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
+- **2024** [The Platonic Representation Hypothesis](http://arxiv.org/abs/2405.07987) — Minyoung Huh et al. · arXiv:2405.07987 `{Huh2024Platonic}`
+- **2024** [Efficient Multimodal Large Language Models: A Survey](http://arxiv.org/abs/2405.10739) — Yizhang Jin et al. · arXiv:2405.10739 `{Jin2024Efficient}`
+- **2024** [Building and better understanding vision-language models: insights and future directions](http://arxiv.org/abs/2408.12637) — Hugo Laurençon et al. · arXiv:2408.12637 `{Laurenon2024Building}`
+- **2024** [Advances in 3D Generation: A Survey](http://arxiv.org/abs/2401.17807) — Xiaoyu Li et al. · arXiv:2401.17807 `{Li2024Advances}`
+- **2024** [Graph Neural Networks for Tabular Data Learning: A Survey with Taxonomy and Directions](http://arxiv.org/abs/2401.02143) — Cheng-Te Li et al. · arXiv:2401.02143 `{Li2024Graph}`
+- **2024** [Internal Consistency and Self-Feedback in Large Language Models: A Survey](http://arxiv.org/abs/2407.14507) — Xun Liang et al. · arXiv:2407.14507 `{Liang2024Internal}`
+- **2024** [Datasets for Large Language Models: A Comprehensive Survey Large Language Model Datasets Pre-training Corpora (Sec 2.)](https://github.com/lmmlzn/Awesome-LLMs-Datasets.) — Yang Liu et al. `{Liu2024Datasets}`
+- **2024** [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://github.com/lichao-sun/SoraReview) — Yixin Liu et al. `{Liu2024Sora}`
+- **2024** [On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey](http://arxiv.org/abs/2406.15126) — Lin Long et al. · arXiv:2406.15126 `{Long2024Llms}`
+- **2024** [HOLMES: Hyper-Relational Knowledge Graphs for Multi-hop Question Answering using LLMs](http://arxiv.org/abs/2406.06027) — Pranoy Panda et al. · arXiv:2406.06027 `{PandandHolmes}`
+- **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
+- **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
+- **2024** [The Prompt Report: A Systematic Survey of Prompting Techniques](http://arxiv.org/abs/2406.06608) — Sander Schulhoff et al. · arXiv:2406.06608 `{Schulhoff2024Prompt}`
+- **2024** [Temporal Knowledge Graph Question Answering: A Survey](http://arxiv.org/abs/2406.14191) — Miao Su et al. · arXiv:2406.14191 `{Su2024Temporal}`
+- **2024** [From Sora What We Can See: A Survey of Text-to-Video Generation](http://arxiv.org/abs/2405.10674) — Rui Sun et al. · arXiv:2405.10674 `{Sun2024Sora}`
+- **2024** [Large Language Models for Data Annotation: A Survey](http://arxiv.org/abs/2402.13446) — Zhen Tan et al. · arXiv:2402.13446 `{Tan2024Large}`
+- **2024** [The Evolution of Multimodal Model Architectures](http://arxiv.org/abs/2405.17927) — Shakti N. Wadekar et al. · arXiv:2405.17927 `{Wadekar2024Evolution}`
+- **2024** [A Comprehensive Survey of LLM Alignment Techniques: RLHF, RLAIF, PPO, DPO and More](http://arxiv.org/abs/2407.16216) — Zhichao Wang et al. · arXiv:2407.16216 `{Wang2024Comprehensive}`
+- **2024** [Model Compression and Efficient Inference for Large Language Models: A Survey](http://arxiv.org/abs/2402.09748) — Wenxiao Wang et al. · arXiv:2402.09748 `{Wang2024Model}`
+- **2024** [Reinforcement Learning Enhanced LLMs: A Survey](http://arxiv.org/abs/2412.10400) — Shuhe Wang et al. · arXiv:2412.10400 `{Wang2024Reinforcement}`
+- **2024** [A Comprehensive Review of Multimodal Large Language Models: Performance and Challenges Across Different Tasks](http://arxiv.org/abs/2408.01319) — Jiaqi Wang et al. · arXiv:2408.01319 `{WangndComprehensive}`
+- **2024** [Knowledge Mechanisms in Large Language Models: A Survey and Perspective](http://arxiv.org/abs/2407.15017) — Mengru Wang et al. · arXiv:2407.15017 `{WangndKnowledge}`
+- **2024** [Towards Visual Grounding: A Survey](http://arxiv.org/abs/2412.20206) — Linhui Xiao et al. · arXiv:2412.20206 `{Xiao2024Towards}`
+- **2024** [Large Language Model-Brained GUI Agents: A Survey](http://arxiv.org/abs/2411.18279) — Chaoyun Zhang et al. · arXiv:2411.18279 `{Zhang2024Large}`
+- **2024** [MM-LLMs: Recent Advances in MultiModal Large Language Models](http://arxiv.org/abs/2401.13601) — Duzhen Zhang et al. · arXiv:2401.13601 `{Zhang2024Mm}`
+- **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
+- **2023** [A Survey of Meta-Reinforcement Learning](http://arxiv.org/abs/2301.08028) — Jacob Beck et al. · arXiv:2301.08028 `{Beck2023Survey}`
+- **2023** [Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback](http://arxiv.org/abs/2307.15217) — Stephen Casper et al. · arXiv:2307.15217 `{Casper2023Open}`
+- **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
+- **2023** [Trends in Integration of Knowledge and Large Language Models: A Survey and Taxonomy of Methods, Benchmarks, and Applications](http://arxiv.org/abs/2311.05876) — Zhangyin Feng et al. · arXiv:2311.05876 `{Feng2023Trends}`
+- **2023** [Evaluating Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2310.19736) — Zishan Guo et al. · arXiv:2310.19736 `{Guo2023Evaluating}`
+- **2023** [Advancing Transformer Architecture in Long-Context Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2311.12351) — Yunpeng Huang et al. · arXiv:2311.12351 `{Huang2023Advancing}`
+- **2023** [A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions](http://arxiv.org/abs/2311.05232) — Lei Huang et al. · arXiv:2311.05232 `{Huang2023Survey}`
+- **2023** [AI Alignment: A Comprehensive Survey](http://arxiv.org/abs/2310.19852) — Jiaming Ji et al. · arXiv:2310.19852 `{Ji2023Ai}`
+- **2023** [A Comprehensive Survey on Deep Graph Representation Learning](http://arxiv.org/abs/2304.05055 http://dx.doi.org/10.1016/j.neunet.2024.106207) — Wei Ju et al. · arXiv:2304.05055 `{Ju2023Comprehensive}`
+- **2023** [Deep Image Matting: A Comprehensive Survey](http://arxiv.org/abs/2304.04672) — Jizhizi Li et al. · arXiv:2304.04672 `{Li2023Deep}`
+- **2023** [A Survey of Graph Meets Large Language Model: Progress and Future Directions](http://arxiv.org/abs/2311.12399) — Yuhan Li et al. · arXiv:2311.12399 `{Li2023Survey}`
+- **2023** [How Can Recommender Systems Benefit from Large Language Models: A Survey](http://arxiv.org/abs/2306.05817) — Jianghao Lin et al. · arXiv:2306.05817 `{Lin2023How}`
+- **2023** [A Survey of Imbalanced Learning on Graphs: Problems, Techniques, and Future Directions](http://arxiv.org/abs/2308.13821) — Zemin Liu et al. · arXiv:2308.13821 `{Liu2023Survey}`
+- **2023** [Towards Graph Foundation Models: A Survey and Beyond](http://arxiv.org/abs/2310.11829) — Jiawei Liu et al. · arXiv:2310.11829 `{Liu2023Towards}`
+- **2023** [Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment](http://arxiv.org/abs/2308.05374) — Yang Liu et al. · arXiv:2308.05374 `{Liu2023Trustworthy}`
+- **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [Large Language Model Alignment: A Survey](http://arxiv.org/abs/2309.15025) — Tianhao Shen et al. · arXiv:2309.15025 `{Shen2023Large}`
+- **2023** [Data Management For Large Language Models: A Survey](http://arxiv.org/abs/2312.01700) — Zige Wang et al. · arXiv:2312.01700 `{Wang2023Data}`
+- **2023** [Survey on Factuality in Large Language Models: Knowledge, Retrieval and Domain-Specificity](http://arxiv.org/abs/2310.07521) — Cunxiang Wang et al. · arXiv:2310.07521 `{Wang2023Surveya}`
+- **2023** [A Survey on Large Language Model based Autonomous Agents](http://arxiv.org/abs/2308.11432 http://dx.doi.org/10.1007/s11704-024-40231-1) — Lei Wang et al. · arXiv:2308.11432 `{Wang2023Surveyb}`
+- **2023** [The Rise and Potential of Large Language Model Based Agents: A Survey](http://arxiv.org/abs/2309.07864) — Zhiheng Xi et al. · arXiv:2309.07864 `{Xi2023Rise}`
+- **2023** [Large Language Models for Generative Information Extraction: A Survey](http://arxiv.org/abs/2312.17617) — Derong Xu et al. · arXiv:2312.17617 `{Xu2023Large}`
+- **2023** [Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond](http://arxiv.org/abs/2304.13712) — Jingfeng Yang et al. · arXiv:2304.13712 `{Yang2023Harnessing}`
+- **2023** [Editing Large Language Models: Problems, Methods, and Opportunities](http://arxiv.org/abs/2305.13172) — Yunzhi Yao et al. · arXiv:2305.13172 `{Yao2023Editing}`
+- **2023** [A Survey on Multimodal Large Language Models](http://arxiv.org/abs/2306.13549) — Shukang Yin et al. · arXiv:2306.13549 `{Yin2023Survey}`
+- **2023** [Igniting Language Intelligence: The Hitchhiker's Guide From Chain-of-Thought Reasoning to Language Agents](http://arxiv.org/abs/2311.11797) — Zhuosheng Zhang et al. · arXiv:2311.11797 `{Zhang2023Igniting}`
+- **2023** [Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models](http://arxiv.org/abs/2309.01219) — Yue Zhang et al. · arXiv:2309.01219 `{Zhang2023Siren}`
+- **2023** [A Survey of Controllable Text Generation using Transformer-based Pre-trained Language Models](https://doi.org/xxx) — Hanqing Zhang et al. `{Zhang2023Survey}`
+- **2023** [Vision-Language Models for Vision Tasks: A Survey](http://arxiv.org/abs/2304.00685) — Jingyi Zhang et al. · arXiv:2304.00685 `{Zhang2023Vision}`
+- **2023** [Explainability for Large Language Models: A Survey](http://arxiv.org/abs/2309.01029) — Haiyan Zhao et al. · arXiv:2309.01029 `{Zhao2023Explainability}`
+- **2023** [Length Extrapolation of Transformers: A Survey from the Perspective of Positional Encoding](http://arxiv.org/abs/2312.17044) — Liang Zhao et al. · arXiv:2312.17044 `{Zhao2023Length}`
+- **2023** [A Survey of Large Language Models](http://arxiv.org/abs/2303.18223) — Wayne Xin Zhao et al. · arXiv:2303.18223 `{Zhao2023Survey}`
+- **2023** [A Survey on Model Compression for Large Language Models](http://arxiv.org/abs/2308.07633) — Xunyu Zhu et al. · arXiv:2308.07633 `{Zhu2023Survey}`
+- **2023** [A Survey on Efficient Training of Transformers](http://arxiv.org/abs/2302.01107) — Bohan Zhuang et al. · arXiv:2302.01107 `{Zhuang2023Survey}`
+- **2022** [A Survey of Vision-Language Pre-Trained Models](http://arxiv.org/abs/2202.10936) — Yifan Du et al. · arXiv:2202.10936 `{Du2022Survey}`
+- **2022** What is Event Knowledge Graph: A Survey — Saiping Guan et al. · arXiv:2022.31803 `{Guan2022What}`
+- **2022** [Towards Reasoning in Large Language Models: A Survey](http://arxiv.org/abs/2212.10403) — Jie Huang et al. · arXiv:2212.10403 `{Huang2022Towards}`
+- **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
+- **2022** Algorithms for decision making — Mykel J.. Kochenderfer et al. `{Kochenderfer2022Algorithms}`
+- **2022** [Reasoning with Language Model Prompting: A Survey](http://arxiv.org/abs/2212.09597) — Shuofei Qiao et al. · arXiv:2212.09597 `{Qiao2022Reasoning}`
+- **2022** [A Survey of Pretraining on Graphs: Taxonomy, Methods, and Applications](http://arxiv.org/abs/2202.07893) — Jun Xia et al. · arXiv:2202.07893 `{Xia2022Survey}`
+- **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
+- **2022** [Diffusion Models: A Comprehensive Survey of Methods and Applications](http://arxiv.org/abs/2209.00796) — Ling Yang et al. · arXiv:2209.00796 `{Yang2022Diffusion}`
+- **2022** [Large Language Models Meet NL2Code: A Survey](http://arxiv.org/abs/2212.09420) — Daoguang Zan et al. · arXiv:2212.09420 `{Zan2022Large}`
+- **2022** [A Survey on Knowledge-Enhanced Pre-trained Language Models](http://arxiv.org/abs/2212.13428) — Chaoqi Zhen et al. · arXiv:2212.13428 `{Zhen2022Survey}`
+- **2021** [Pre-training Methods in Information Retrieval](http://arxiv.org/abs/2111.13853) — Yixing Fan et al. · arXiv:2111.13853 `{Fan2021Pre}`
+- **2021** Dynamical variational autoencoders: A comprehensive review — Laurent Girin et al. `{Girin2021Dynamical}`
+- **2021** Meta-Learning in Neural Networks: A Survey — Timothy M. Hospedales et al. · arXiv:2021.30792 `{Hospedales2021Meta}`
+- **2021** [Data Augmentation Approaches in Natural Language Processing: A Survey](http://arxiv.org/abs/2110.01852) — Bohan Li et al. · arXiv:2110.01852 `{Li2021Data}`
+- **2021** [Deep Learning Schema-based Event Extraction: Literature Review and Current Trends](http://arxiv.org/abs/2107.02126) — Qian Li et al. · arXiv:2107.02126 `{Li2021Deep}`
+- **2021** Pretrained Language Model for Text Generation: A Survey — Junyi Li et al. `{Li2021Pretrained}`
+- **2021** Heterogeneous Information Network based Recommender Systems: a survey — Jiawei Liu et al. `{Liu2021Heterogeneous}`
+- **2021** [Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing](http://arxiv.org/abs/2107.13586) — Pengfei Liu et al. · arXiv:2107.13586 `{Liu2021Preb}`
+- **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
+- **2021** [Interpreting Deep Learning Models in Natural Language Processing: A Review](http://arxiv.org/abs/2110.10470) — Xiaofei Sun et al. · arXiv:2110.10470 `{Sun2021Interpreting}`
+- **2021** [A Survey on Neural Speech Synthesis](http://arxiv.org/abs/2106.15561) — Xu Tan et al. · arXiv:2106.15561 `{Tan2021Survey}`
+- **2021** [Graph Neural Networks for Natural Language Processing: A Survey](http://arxiv.org/abs/2106.06090) — Lingfei Wu et al. · arXiv:2106.06090 `{Wu2021Graph}`
+- **2021** Pretrained Transformers for Text Ranking: BERT and beyond — Andrew Yates et al. · arXiv:7963.34416 `{Yates2021Pretrained}`
+- **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
+- **2021** [A Survey on Graph Structure Learning: Progress and Opportunities](http://arxiv.org/abs/2103.03036) — Yanqiao Zhu et al. · arXiv:2103.03036 `{Zhu2021Survey}`
+- **2020** [Bridging the Gap between Spatial and Spectral Domains: A Survey on Graph Neural Networks](http://arxiv.org/abs/2002.11867) — Zhiqian Chen et al. · arXiv:2002.11867 `{Chen2020Bridging}`
+- **2020** [Knowledge Distillation: A Survey](http://arxiv.org/abs/2006.05525 http://dx.doi.org/10.1007/s11263-021-01453-z) — Jianping Gou et al. · arXiv:2006.05525 `{Gou2020Knowledge}`
+- **2020** Graph Representation Learning Hamilton — William L. Hamilton et al. `{Hamilton2020Graph}`
+- **2020** [A Survey of Unsupervised Dependency Parsing](http://arxiv.org/abs/2010.01535) — Wenjuan Han et al. · arXiv:2010.01535 `{HanndSurvey}`
+- **2020** [A Survey of Deep Meta-Learning](http://arxiv.org/abs/2010.03522 http://dx.doi.org/10.1007/s10462-021-10004-4) — Mike Huisman et al. · arXiv:2010.03522 `{Huisman2020Survey}`
+- **2020** [Self-supervised Learning: Generative or Contrastive](http://arxiv.org/abs/2006.08218) — Xiao Liu et al. · arXiv:2006.08218 `{Liu2020Self}`
+- **2020** Graph-Based Text Representation and Matching: A Review of the State of the Art and Future Challenges — Ahmed Hamza Osman et al. · arXiv:2020.29931 `{Osman2020Graph}`
+- **2020** [An Overview of Voice Conversion and its Challenges: From Statistical Modeling to Deep Learning](http://arxiv.org/abs/2008.03648) — Berrak Sisman et al. · arXiv:2008.03648 `{Sisman2020Overview}`
+- **2020** Generalizing from a Few Examples: A Survey on Few-shot Learning — Yaqing Wang et al. `{Wang2020Generalizing}`
+- **2020** [A Mathematical Introduction to Generative Adversarial Nets (GAN)](http://arxiv.org/abs/2009.00169) — Yang Wang et al. · arXiv:2009.00169 `{Wang2020Mathematical}`
+- **2020** [Graph Neural Networks in Recommender Systems: A Survey](http://arxiv.org/abs/2011.02260) — Shiwen Wu et al. · arXiv:2011.02260 `{Wu2020Graphb}`
+- **2020** [Explainability in Graph Neural Networks: A Taxonomic Survey](http://arxiv.org/abs/2012.15445) — Hao Yuan et al. · arXiv:2012.15445 `{Yuan2020Explainability}`
+- **2020** [Graph Neural Networks: Taxonomy, Advances and Trends](http://arxiv.org/abs/2012.08752) — Yu Zhou et al. · arXiv:2012.08752 `{Zhou2020Graph}`
+- **2020** [Transfer Learning in Deep Reinforcement Learning: A Survey](http://arxiv.org/abs/2009.07888) — Zhuangdi Zhu et al. · arXiv:2009.07888 `{Zhu2020Transfer}`
+- **2018** [Adversarial Attack and Defense on Graph Data: A Survey](http://arxiv.org/abs/1812.10528) — Lichao Sun et al. · arXiv:1812.10528 `{Sun2018Adversarial}`
+- **2018** [Deep Learning on Graphs: A Survey](http://arxiv.org/abs/1812.04202) — Ziwei Zhang et al. · arXiv:1812.04202 `{Zhang2018Deep}`
+- **2010** [From RankNet to LambdaRank to LambdaMART: An Overview.pdf](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.180.634&rep=rep1&type=pdf%0Apapers3://publication/uuid/0B8C568E-291D-431D-8873-EF4B0A31E356) — Christopher J C Burges et al. `{Burges2010Ranknet}`
+- **n.d.** [A Survey on Data Selection for Language Models](https://commoncrawl.org/) — Alon Albalak et al. `{AlbalakndSurvey}`
+- **n.d.** From RankNet to LambdaRank to LambdaMART: An Overview — Christopher J C Burges et al. `{BurgesndRanknet}`
+- **n.d.** A Survey on Generative Diffusion Models — Hanqun Cao et al. `{CaondSurvey}`
+- **n.d.** [Diffusion Model-Based Image Editing: A Survey](https://github.com/SiatMMLab/) — Yi Huang et al. `{HuangndDiffusion}`
+- **n.d.** [Test-time Computing: from System-1 Thinking to System-2 Thinking](https://github.com/Dereck0602/) — Yixin Ji et al. `{JindTest}`
+- **n.d.** [Large Language Models in Finance: A Survey](https://openai.com/product) — Yinheng Li et al. `{LindLarge}`
+- **n.d.** A Survey on Voice Conversion using Deep Learning — Benjamin Meier et al. `{MeierndSurvey}`
+- **n.d.** [Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding](https://chat.openai.com) — Heming Xia et al. `{XiandUnlocking}`
+- **n.d.** [A Survey on Diffusion Models for Time Series and Spatio-Temporal Data](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model) — Yiyuan Yang et al. `{YangndSurvey}`
+
+## 检索增强 / RAG
+
+- **2025** [SurveyX: Academic Survey Automation via Large Language Mod-els](http://www.surveyx.cn) — Xun Liang et al. `{Liang2025Surveyx}`
+- **2024** [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](http://arxiv.org/abs/2404.16130) — Darren Edge et al. · arXiv:2404.16130 `{Edge2024Local}`
+- **2024** [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](http://arxiv.org/abs/2405.17428) — Chankyu Lee et al. · arXiv:2405.17428 `{Lee2024Nv}`
+- **2024** [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](http://arxiv.org/abs/2402.12869) — Dehai Min et al. · arXiv:2402.12869 `{Min2024Exploring}`
+- **2024** [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](http://arxiv.org/abs/2404.07143) — Tsendsuren Munkhdalai et al. · arXiv:2404.07143 `{MunkhdalaindLeave}`
+- **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
+- **2024** [Chain-of-Discussion: A Multi-Model Framework for Complex Evidence-Based Question Answering](http://arxiv.org/abs/2402.16313) — Mingxu Tao et al. · arXiv:2402.16313 `{TaondChain}`
+- **2024** [Diffusion Feedback Helps CLIP See Better](http://arxiv.org/abs/2407.20171) — Wenxuan Wang et al. · arXiv:2407.20171 `{Wang2024Diffusion}`
+- **2024** [Length Generalization of Causal Transformers without Position Encoding](http://arxiv.org/abs/2404.12224) — Jie Wang et al. · arXiv:2404.12224 `{Wang2024Length}`
+- **2024** [Retriever-and-Memory: Towards Adaptive Note-Enhanced Retrieval-Augmented Generation](http://arxiv.org/abs/2410.08821) — Ruobing Wang et al. · arXiv:2410.08821 `{Wang2024Retriever}`
+- **2024** [ChatQA 2: Bridging the Gap to Proprietary LLMs in Long Context and RAG Capabilities](http://arxiv.org/abs/2407.14482) — Peng Xu et al. · arXiv:2407.14482 `{Xu2024Chatqa}`
+- **2024** [Differential Transformer](http://arxiv.org/abs/2410.05258) — Tianzhu Ye et al. · arXiv:2410.05258 `{Ye2024Differential}`
+- **2024** [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](http://arxiv.org/abs/2406.02536) — Yijiong Yu et al. · arXiv:2406.02536 `{Yu2024Mitigate}`
+- **2024** [Accelerating Retrieval-Augmented Language Model Serving with Speculation](http://arxiv.org/abs/2401.14021) — Zhihao Zhang et al. · arXiv:2401.14021 `{Zhang2024Accelerating}`
+- **2024** [VISTA: Visualized Text Embedding For Universal Multi-Modal Retrieval](http://arxiv.org/abs/2406.04292) — Junjie Zhou et al. · arXiv:2406.04292 `{Zhou2024Vista}`
+- **2023** [Scaling Transformer to 1M tokens and beyond with RMT](http://arxiv.org/abs/2304.11062) — Aydar Bulatov et al. · arXiv:2304.11062 `{Bulatov2023Scaling}`
+- **2023** [Extending Context Window of Large Language Models via Positional Interpolation](http://arxiv.org/abs/2306.15595) — Shouyuan Chen et al. · arXiv:2306.15595 `{Chen2023Extending}`
+- **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
+- **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
+- **2023** [Trends in Integration of Knowledge and Large Language Models: A Survey and Taxonomy of Methods, Benchmarks, and Applications](http://arxiv.org/abs/2311.05876) — Zhangyin Feng et al. · arXiv:2311.05876 `{Feng2023Trends}`
+- **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
+- **2023** [LooGLE: Can Long-Context Language Models Understand Long Contexts?](http://arxiv.org/abs/2311.04939) — Jiaqi Li et al. · arXiv:2311.04939 `{Li2023Loogle}`
+- **2023** [ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models](http://arxiv.org/abs/2310.08975) — Haoran Luo et al. · arXiv:2310.08975 `{Luo2023Chatkbqa}`
+- **2023** [WebCPM: Interactive Web Search for Chinese Long-form Question Answering](http://arxiv.org/abs/2305.06849) — Yujia Qin et al. · arXiv:2305.06849 `{Qin2023Webcpm}`
+- **2023** [Focused Transformer: Contrastive Training for Context Scaling](http://arxiv.org/abs/2307.03170) — Szymon Tworkowski et al. · arXiv:2307.03170 `{Tworkowski2023Focused}`
+- **2023** [KnowledGPT: Enhancing Large Language Models with Retrieval and Storage Access on Knowledge Bases](http://arxiv.org/abs/2308.11761) — Xintao Wang et al. · arXiv:2308.11761 `{Wang2023Knowledgpt}`
+- **2023** [Query2doc: Query Expansion with Large Language Models](http://arxiv.org/abs/2303.07678) — Liang Wang et al. · arXiv:2303.07678 `{Wang2023Query2doc}`
+- **2023** [Survey on Factuality in Large Language Models: Knowledge, Retrieval and Domain-Specificity](http://arxiv.org/abs/2310.07521) — Cunxiang Wang et al. · arXiv:2310.07521 `{Wang2023Surveya}`
+- **2023** [ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models](http://arxiv.org/abs/2305.18323) — Binfeng Xu et al. · arXiv:2305.18323 `{Xu2023Rewoo}`
+- **2023** [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](http://arxiv.org/abs/2306.15626) — Kaiyu Yang et al. · arXiv:2306.15626 `{Yang2023Leandojo}`
+- **2023** [Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models](http://arxiv.org/abs/2311.09210) — Wenhao Yu et al. · arXiv:2311.09210 `{Yu2023Chain}`
+- **2023** [Retrieve Anything To Augment Large Language Models](http://arxiv.org/abs/2310.07554) — Peitian Zhang et al. · arXiv:2310.07554 `{Zhang2023Retrieve}`
+- **2022** How Different are Pre-trained Transformers for Text Ranking? — David Rau et al. `{Rau2022How}`
+- **2022** [Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions](http://arxiv.org/abs/2212.10509) — Harsh Trivedi et al. · arXiv:2212.10509 `{TrivedindInterleaving}`
+- **2021** [Pre-training Methods in Information Retrieval](http://arxiv.org/abs/2111.13853) — Yixing Fan et al. · arXiv:2111.13853 `{Fan2021Pre}`
+- **2021** Pre-trained Language Model for Web-scale Retrieval in Baidu Search — Yiding Liu et al. · arXiv:7548.34671 `{Liu2021Prea}`
+- **2021** Improving Document Representations by Generating Pseudo Query Embeddings for Dense Retrieval — Hongyin Tang et al. `{Tang2021Improving}`
+- **2021** Pretrained Transformers for Text Ranking: BERT and beyond — Andrew Yates et al. · arXiv:7963.34416 `{Yates2021Pretrained}`
+- **2020** [DeCLUTR: Deep Contrastive Learning for Unsupervised Textual Representations](http://arxiv.org/abs/2006.03659) — John Giorgi et al. · arXiv:2006.03659 `{Giorgi2020Declutr}`
+- **2020** Dense passage retrieval for open-domain question answering — Vladimir Karpukhin et al. `{Karpukhin2020Dense}`
+- **2020** [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](http://arxiv.org/abs/2005.11401) — Patrick Lewis et al. · arXiv:2005.11401 `{Lewis2020Retrieval}`
+- **2020** Graph-Based Text Representation and Matching: A Review of the State of the Art and Future Challenges — Ahmed Hamza Osman et al. · arXiv:2020.29931 `{Osman2020Graph}`
+- **2010** Breaking news detection and tracking in Twitter — Swit Phuvipadawat et al. `{Phuvipadawat2010Breaking}`
+- **2007** Learning to rank with nonsmooth cost functions — Christopher J.C. Burges et al. `{Burges2007Learning}`
+- **n.d.** Retrieval based Voice Conversion — ? et al. `{AnonndRetrieval}`
+- **n.d.** [EXTENDING CONTEXT WINDOW OF LARGE LAN-GUAGE MODELS VIA POSITION INTERPOLATION](https://www.reddit.com/r/LocalLLaMA/comments/14fgjqj/a_simple_way_to_) — Shouyuan Chen et al. `{ChenndExtending}`
+- **n.d.** Dependency Graph based Chinese Semantic Parsing — Yu Ding et al. `{DingndDependency}`
+- **n.d.** [Precise Zero-Shot Dense Retrieval without Relevance Labels](https://github.) — Luyu Gao et al. `{GaondPrecise}`
+- **n.d.** [RA-ISF: Learning to Answer and Understand from Retrieval Augmentation via Iterative Self-Feedback](https://github.com/OceannTwT/) — Yanming Liu et al. `{LiundRa}`
+- **n.d.** [A Method for Parsing and Vectorization of Semi-structured Data used in Retrieval Augmented Generation](https://github.com/linancn/TianGong-AI-Unstructure.git.) — Hang Yang et al. `{YangndMethod}`
+
+## 未分类
+
+- **2024** [Flow Matching Guide and Code](http://arxiv.org/abs/2412.06264) — ? et al. · arXiv:2412.06264 `{AnonndFlow}`
+- **2024** [OpenAI o1 System Card](http://arxiv.org/abs/2412.16720) — ? et al. · arXiv:2412.16720 `{AnonndOpenai}`
+- **2024** Log-Concave Sampling (unfinished draft) — Sinho Chewi et al. `{Chewi2024Log}`
+- **2024** [Understanding Emergent Abilities of Language Models from the Loss Perspective](http://arxiv.org/abs/2403.15796) — Zhengxiao Du et al. · arXiv:2403.15796 `{DundUnderstanding}`
+- **2024** [Gemma - Open Models Based on Gemini Research and Technology](http://arxiv.org/abs/2403.08295) — Google DeepMind Gemma Team et al. · arXiv:2403.08295 `{TeamndGemma}`
+- **2024** Matting by Generation — Zhixiang Wang et al. · arXiv:1519.36575 `{Wang2024Matting}`
+- **2023** [XrayGLM：基于VisualGLM-6B微 调训练对X光胸片进行医学诊断](https://github.com/Vision-CAIR/MiniGPT-4) — ? et al. `{Anon2023Xrayglm}`
+- **2023** [A Cookbook of Self-Supervised Learning](http://arxiv.org/abs/2304.12210) — Randall Balestriero et al. · arXiv:2304.12210 `{Balestriero2023Cookbook}`
+- **2023** [Introduction to Latent Variable Energy-Based Models: A Path Towards Autonomous Machine Intelligence](http://arxiv.org/abs/2306.02572) — Anna Dawid et al. · arXiv:2306.02572 `{Dawid2023Introduction}`
+- **2023** [Word Embeddings Are Steers for Language Models](http://arxiv.org/abs/2305.12798) — Chi Han et al. · arXiv:2305.12798 `{Han2023Word}`
+- **2023** [DINOv2: Learning Robust Visual Features without Supervision](http://arxiv.org/abs/2304.07193) — Maxime Oquab et al. · arXiv:2304.07193 `{Oquab2023Dinov2}`
+- **2023** [Toolformer: Language Models Can Teach Themselves to Use Tools](http://arxiv.org/abs/2302.04761) — Timo Schick et al. · arXiv:2302.04761 `{Schick2023Toolformer}`
+- **2023** [XuanYuan 2.0: A Large Chinese Financial Chat Model with Hundreds of Billions Parameters](http://arxiv.org/abs/2305.12002) — Xuanyu Zhang et al. · arXiv:2305.12002 `{Zhang2023Xuanyuan}`
+- **2022** KnowPrompt: Knowledge-aware Prompt-tuning with Synergistic Optimization for Relation Extraction — Xiang Chen et al. · arXiv:5447.35119 `{Chen2022Knowprompt}`
+- **2022** [PaLM : Scaling Language Modeling with Pathways](http://arxiv.org/abs/2204.02311) — Aakanksha Chowdhery et al. · arXiv:2204.02311 `{ChowdheryndPalm}`
+- **2022** PTR: Prompt Tuning with Rules for Text Classification — Xu Han et al. `{Han2022Ptr}`
+- **2022** Semantic Similarity Metrics for Evaluating Source Code Summarization — Sakib Haque et al. `{Haque2022Semantic}`
+- **2022** [MTEB: Massive Text Embedding Benchmark](http://arxiv.org/abs/2210.07316) — Niklas Muennighoff et al. · arXiv:2210.07316 `{Muennighoff2022Mteb}`
+- **2022** Accepted papers - ACL 2022 — Qiang Ning et al. `{Ning2022Accepted}`
+- **2022** [Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets](http://arxiv.org/abs/2201.02177) — Alethea Power et al. · arXiv:2201.02177 `{Power2022Grokking}`
+- **2022** [Robust Speech Recognition via Large-Scale Weak Supervision](http://arxiv.org/abs/2212.04356) — Alec Radford et al. · arXiv:2212.04356 `{Radford2022Robust}`
+- **2022** [Self-Adaptive In-Context Learning: An Information Compression Perspective for In-Context Example Selection and Ordering](http://arxiv.org/abs/2212.10375) — Zhiyong Wu et al. · arXiv:2212.10375 `{WundSelf}`
+- **2021** Reconstructing Implicit Knowledge with Language Models — Maria Becker et al. `{Becker2021Reconstructing}`
+- **2021** Relation Extraction with Type-aware Map Memories of Word Dependencies — Guimin Chen et al. `{Chen2021Relation}`
+- **2021** [Speech and Language Processing: An introduction to natural language processing](http://www.cs.colorado.edu/~martin/slp.html) — Christopher D.Manning et al. `{DManning2021Speech}`
+- **2021** Time Horizon-aware Modeling of Financial Texts for Stock Price Prediction Time Horizon-aware Modeling of Financial Texts for Stock Price Prediction — Fuli Feng et al. `{Feng2021Time}`
+- **2021** P-A DAPTERS : R OBUSTLY E XTRACTING F ACTUAL I N - FORMATION FROM L ANGUAGE M ODELS WITH D I - VERSE P ROMPTS — Formation From et al. `{From2021Dapters}`
+- **2021** [SimCSE: Simple Contrastive Learning of Sentence Embeddings](http://arxiv.org/abs/2104.08821) — Tianyu Gao et al. · arXiv:2104.08821 `{Gao2021Simcse}`
+- **2021** [Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification](http://arxiv.org/abs/2108.02035) — Shengding Hu et al. · arXiv:2108.02035 `{Hu2021Knowledgeable}`
+- **2021** No Stock is an Island : Learning Internal and Relational Attributes of Stocks with Contrastive Learning — Shicheng Li et al. `{Li2021No}`
+- **2021** [How to avoid machine learning pitfalls: a guide for academic researchers](http://arxiv.org/abs/2108.02497) — Michael A. Lones et al. · arXiv:2108.02497 `{Lones2021How}`
+- **2021** Slot Transferability for Cross-domain Slot Filling — Hengtong Lu et al. `{Lu2021Slot}`
+- **2021** [COCO-LM: Correcting and Contrasting Text Sequences for Language Model Pretraining](http://arxiv.org/abs/2102.08473) — Yu Meng et al. · arXiv:2102.08473 `{Meng2021Coco}`
+- **2021** [Noisy Channel Language Model Prompting for Few-Shot Text Classification](http://arxiv.org/abs/2108.04106) — Sewon Min et al. · arXiv:2108.04106 `{Min2021Noisy}`
+- **2021** [A Comparison of Discrete and Soft Speech Units for Improved Voice Conversion](http://arxiv.org/abs/2111.02392 http://dx.doi.org/10.1109/ICASSP43922.2022.9746484) — Benjamin van Niekerk et al. · arXiv:2111.02392 `{Niekerk2021Comparison}`
+- **2021** [Exploring the Equivalence of Siamese Self-Supervised Learning via A Unified Gradient Framework](http://arxiv.org/abs/2112.05141) — Chenxin Tao et al. · arXiv:2112.05141 `{Tao2021Exploring}`
+- **2021** [Phrase-BERT: Improved Phrase Embeddings from BERT with an Application to Corpus Exploration](http://arxiv.org/abs/2109.06304) — Shufan Wang et al. · arXiv:2109.06304 `{Wang2021Phrase}`
+- **2021** Novel Slot Detection: A Benchmark for Discovering Unknown Slot Types in the Task-Oriented Dialogue System — Yanan Wu et al. `{Wu2021Novel}`
+- **2021** From Paraphrasing to Semantic Parsing: Unsupervised Semantic Parsing via Synchronous Semantic Decoding — Shan Wu et al. `{Wu2021Paraphrasing}`
+- **2021** Capturing Event Argument Interaction via A Bi-Directional Entity-Level Recurrent Decoder — Xi Xiangyu et al. `{Xiangyu2021Capturing}`
+- **2021** [ConSERT: A Contrastive Framework for Self-Supervised Sentence Representation Transfer](http://arxiv.org/abs/2105.11741) — Yuanmeng Yan et al. · arXiv:2105.11741 `{Yan2021Consert}`
+- **2021** Automatic intent-slot induction for dialogue systems — Zengfeng Zeng et al. · arXiv:2381.34500 `{Zeng2021Automatic}`
+- **2021** Modeling Discriminative Representations for Out-of-Domain Detection with Supervised Contrastive Learning — Zhiyuan Zeng et al. `{Zeng2021Modeling}`
+- **2021** 图神经网络在自然语言处理中的应用 — 张 岳 陈雨龙,付乾坤 et al. `{张岳陈雨龙2021图神经网络在自然语言处理中的应用}`
+- **2021** [自然语言生成综述](http://www.joca.cn/CN/abstract/article_24496.shtml) — 王朱君 朱俊武 李雪晴 王石 et al. `{王石2021自然语言生成综述}`
+- **2021** 模仿学习简洁教程 — 天 许 et al. `{许2021模仿学习简洁教程}`
+- **2020** [Improved Baselines with Momentum Contrastive Learning](http://arxiv.org/abs/2003.04297) — Xinlei Chen et al. · arXiv:2003.04297 `{Chen2020Improved}`
+- **2020** A simple framework for contrastive learning of visual representations — Ting Chen et al. `{Chen2020Simpleb}`
+- **2020** Editnts: An neural programmer-interpreter model for sentence simplification through explicit editing — Yue Dong et al. `{Dong2020Editnts}`
+- **2020** Sample Optimization for Display Advertising — Hongliang Fei et al. · arXiv:0531.34121 `{Fei2020Sample}`
+- **2020** S Trategies for P Re - Training G Raph N Eural — Etworks For et al. `{For2020Trategies}`
+- **2020** [Embracing Change: Continual Learning in Deep Neural Networks](https://doi.org/10.1016/j.tics.2020.09.004) — Raia Hadsell et al. `{Hadsell2020Embracing}`
+- **2020** Momentum Contrast for Unsupervised Visual Representation Learning — Kaiming He et al. · arXiv:2600.2020 `{He2020Momentum}`
+- **2020** Cold-Start and Interpretability: Turning Regular Expressions into Trainable Recurrent Neural Networks — Chengyue Jiang et al. `{Jiang2020Cold}`
+- **2020** [On the Sentence Embeddings from Pre-trained Language Models](http://arxiv.org/abs/2011.05864) — Bohan Li et al. · arXiv:2011.05864 `{Li2020Sentence}`
+- **2020** FinBERT: A pre-trained financial language representation model for financial text mining — Zhuang Liu et al. `{Liu2020Finbert}`
+- **2020** Simplify the Usage of Lexicon in Chinese NER — Ruotian Ma et al. `{Ma2020Simplify}`
+- **2020** Towards zero-shot language modeling — Edoardo M. Ponti et al. `{Ponti2020Towards}`
+- **2020** Sentence-BERT: Sentence embeddings using siamese BERT-networks — Nils Reimers et al. `{Reimers2020Sentence}`
+- **2020** [AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts](http://arxiv.org/abs/2010.15980) — Taylor Shin et al. · arXiv:2010.15980 `{Shin2020Autoprompt}`
+- **2020** Seq2Edits: Sequence transduction using span-level edit operations — Felix Stahlberg et al. `{Stahlberg2020Seq2edits}`
+- **2020** Cognitive Representation Learning of Self-Media Online Article Quality — Yiru Wang et al. · arXiv:4171.34137 `{Wang2020Cognitive}`
+- **2020** [Understanding the Behaviour of Contrastive Loss](http://arxiv.org/abs/2012.09740) — Feng Wang et al. · arXiv:2012.09740 `{Wang2020Understanding}`
+- **2020** Rethinking the value of labels for improving class-imbalanced learning — Yuzhe Yang et al. `{Yang2020Rethinking}`
+- **2020** M-SQL: Multi-Task Representation Learning for Single-Table Text2sql Generation — Xiaoyu Zhang et al. · arXiv:2020.29776 `{Zhang2020Sql}`
+- **2020** PairNorm — Lingxiao Zhao et al. `{Zhao2020Pairnorm}`
+- **2019** Better word embeddings by disentangling contextual n-gram information — Prakhar Gupta et al. `{Gupta2019Better}`
+- **2018** Data augmentation via dependency tree morphing for low-resource languages — Gözde Gül Şahin et al. `{ahin2018Data}`
+- **2018** [The expressive power of neural networks](arxiv:1709.02540v3) — David Brandfonbrener et al. · arXiv:1709.02540 `{Brandfonbrener2018Expressive}`
+- **2018** 异质信息网络分析与应用综述 — Jump Hashing-based Data et al. `{Data2018异质信息网络分析与应用综述}`
+- **2018** Entire space multi-task model: An effective approach for estimating post-click conversion rate — Xiao Ma et al. · arXiv:9978.32101 `{Ma2018Entire}`
+- **2018** Towards deep learning models resistant to adversarial attacks — Aleksander Madry et al. `{Madry2018Towards}`
+- **2018** Raph ttention etworks — Adriana Romero et al. `{Romero2018Raph}`
+- **2018** Improving the adversarial robustness and interpretability of deep neural networks by regularizing their input gradients — Andrew Slavin Ros et al. `{Ros2018Improving}`
+- **2018** Neural cross-lingual entity linking — Avirup Sil et al. `{Sil2018Neural}`
+- **2018** MoleculeNet: A benchmark for molecular machine learning — Zhenqin Wu et al. `{Wu2018Moleculenet}`
+- **2017** Supervised learning of universal sentence representations from natural language inference data — Alexis Conneau et al. `{Conneau2017Supervised}`
+- **2017** [Deep Interest Network for Click-Through Rate Prediction](http://arxiv.org/abs/1706.06978) — Guorui Zhou et al. · arXiv:1706.06978 `{Zhou2017Deep}`
+- **2016** [CONNECTING IMAGES AND NATURAL LANGUAGE A DISSERTATION SUBMITTED TO THE DEPARTMENT OF COMPUTER SCIENCE AND THE COMMITTEE ON GRADUATE STUDIES OF STANFORD UNIVERSITY IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE OF DOCTOR OF PHILOSOPHY](http://purl.stanford.edu/wf528qt3314) — Andrej Karpathy et al. `{Karpathy2016Connecting}`
+- **2016** Twitter topic modeling for breaking news detection — Henning M. Wold et al. `{Wold2016Twitter}`
+- **2016** [Street View www.twosigma.com](www.twosigma.com) — New York et al. `{York2016Street}`
+- **2015** Representation learning — David Forsyth et al. `{Forsyth2015Representation}`
+- **2014** Event detection in Twitter using aggressive filtering and hierarchical tweet clustering — Georgiana Ifrim et al. `{Ifrim2014Event}`
+- **2012** Edm ： 高效的微博事件检测算法 * — An Efficient Algorithm et al. · arXiv:9418.2012 `{Algorithm2012Edm}`
+- **2010** TwitterMonitor: Trend detection over the twitter stream — Michael Mathioudakis et al. · arXiv:7167.18073 `{Mathioudakis2010Twittermonitor}`
+- **2009** Noise-contrastive estimation : A new estimation principle for unnormalized statistical models — Michael Gutmann et al. `{Gutmann2009Noise}`
+- **1949** Communication Theory of Secrecy Systems — Shannon，C.E. et al. `{ShannonCE1949Communication}`
+- **1948** A Mathematical Theory of Communication — C. E. Shannon et al. · arXiv:7305.1948 `{Shannon1948Mathematical}`
+- **n.d.** 2408.10207v1 — ? et al. `{Anonnd2408}`
+- **n.d.** [ACL 2024 | InstructGraph：改进大语言模型的图数据理解与生成](https://mp.weixin.qq.com/s/Xj8vYrzxo-nBZ0vX_tZJBg) — ? et al. `{AnonndAcl}`
+- **n.d.** [Amazon Bedrock Claude 3 多模态使用指南 | 亚马逊AWS官方博客](https://aws.amazon.com/cn/blogs/china/amazon-bedrock-claude-3-multimodal-usage-guide/) — ? et al. `{AnonndAmazon}`
+- **n.d.** Approaching (Almost) Any Machine Learning Problem — ? et al. `{AnonndApproaching}`
+- **n.d.** The_Art_Of_DPM — ? et al. `{AnonndArt}`
+- **n.d.** [Authors' Guide to OpenReview Subject to change](https://openreview.net/login) — ? et al. `{AnonndAuthors}`
+- **n.d.** [AWS | Community | AI-Powered Database Intelligence: Remote MCP Server for Amazon Q CLI](https://community.aws/content/2eeJZdwNQoUbT4ndQqEmdQveIMT/ai-powered-database-intelligence-remote-mcp-server-for-amazon-q-cli) — ? et al. `{AnonndAwsa}`
+- **n.d.** [AWS | Community | Deploying the DeepSeek-V3 Model (full version) in Amazon EKS Using vLLM and LWS](https://community.aws/content/2w2T9a1HOICvNCVKVRyVXUxuKff/deploying-the-deepseek-v3-model-full-version-in-amazon-eks-using-vllm-and-lws) — ? et al. `{AnonndAwsb}`
+- **n.d.** BM25 算法浅析 — ? et al. `{AnonndBm25}`
+- **n.d.** [Building Real-time GenAI API’s](https://catalog.us-east-1.prod.workshops.aws/workshops/2fc0fd60-6cb8-48ba-b339-df6046826ced/en-US/002-apigateway/002-websocketasyncapi) — ? et al. `{AnonndBuilding}`
+- **n.d.** A Connection Between DPM Object Function and Cross Entropy — ? et al. `{AnonndConnection}`
+- **n.d.** DeepSeek图解10页PDF — ? et al. `{AnonndDeepseek图解10页pdf}`
+- **n.d.** Google 官方提示工程 (Prompt Engineering)白皮书-baoyu.io — ? et al. `{AnonndGoogle}`
+- **n.d.** Model Card and Evaluations for Claude Models Anthropic — ? et al. `{AnonndModel}`
+- **n.d.** Position-Based Focal Loss for Diverse and Relevant Response Generation Anonymous EMNLP submission — ? et al. `{AnonndPosition}`
+- **n.d.** State of AI: China — ? et al. `{AnonndStateb}`
+- **n.d.** TTS_Tutorial_ICASSP — ? et al. `{AnonndTts}`
+- **n.d.** Understanding Diusion Probability Model Interactively — ? et al. `{AnonndUnderstanding}`
+- **n.d.** [依存分析（Dependency Parsing) - 知乎](https://zhuanlan.zhihu.com/p/414241465) — ? et al. `{Anonnd依存分析}`
+- **n.d.** [依存句法分析 - 李理的博客](https://fancyerii.github.io/books/depparser/) — ? et al. `{Anonnd依存句法分析}`
+- **n.d.** 图对比学习综述 — ? et al. `{Anonnd图对比学习综述}`
+- **n.d.** 新一代知识图谱关键技术综述 — ? et al. `{Anonnd新一代知识图谱关键技术综述}`
+- **n.d.** [视觉语言模型（更好、更快、更强） --- Vision Language Models (Better, faster, stronger)](https://huggingface.co/blog/vlms-2025) — ? et al. `{Anonnd视觉语言模型}`
+- **n.d.** 语音技术数据集汇总 — ? et al. `{Anonnd语音技术数据集汇总}`
+- **n.d.** Undergraduate Texts in Mathematics Linear Algebra Done Right — Sheldon Axler et al. `{AxlerndUndergraduate}`
+- **n.d.** [线性代数应该这样学（第四版） Linear Algebra Done Right (Fourth Edition)](https://linear.axler.net) — Sheldon Axler et al. `{Axlernd线性代数应该这样学}`
+- **n.d.** [The Most Common Habits from more than 200 English Papers written by Graduate Chinese Engineering Students](http://www.SciEI.com) — Felicia Brittman et al. `{BrittmanndMost}`
+- **n.d.** [FULL ARCHIVE](https://bit.ly/DS-assessment) — Avi Chawla et al. `{ChawlandFull}`
+- **n.d.** [CSE586, PSU Intro to Sampling Methods CSE586 Computer Vision II Penn State Univ](http://videolectures.net/mlss08au_freitas_asm/) — Robert Collins et al. `{CollinsndCse586}`
+- **n.d.** [DuNST: Dual Noisy Self Training for Semi-Supervised Controllable Text Generation](https://github.com/peter) — Yuxi Feng et al. `{FengndDunst}`
+- **n.d.** [HiPPO: Recurrent Memory with Optimal Polynomial Projections](https://github.com/HazyResearch/hippo-code.) — Albert Gu et al. `{GundHippo}`
+- **n.d.** Towards Unsupervised Text Classification Leveraging Experts and Word Embeddings — Zied Haj-Yahia et al. `{HajYahiandTowards}`
+- **n.d.** Algorithms for Non-negative Matrix Factorization — Daniel D Lee et al. `{LeendAlgorithms}`
+- **n.d.** [KAN: Kolmogorov-Arnold Networks](https://github.com/KindXiaoming/pykan) — Ziming Liu et al. `{LiundKan}`
+- **n.d.** [Do dependency parsing metrics correlate with human judgments?](http://www.tsarfaty.com/unipar/) — Barbara Plank et al. `{PlankndDo}`
+- **n.d.** [O1 Replication Journey: A Strategic Progress Report-Part 1](https://github.com/GAIR-NLP/O1-Journey.) — Yiwei Qin et al. `{QinndO1}`
+- **n.d.** [Multi-Stage Pre-training for Automated Chinese Essay Scoring](http://www.leleketang.com/zuowen/) — Wei Song et al. `{SongndMulti}`
+- **n.d.** [DOMAIN-INDEXING VARIATIONAL BAYES: INTER-PRETABLE DOMAIN INDEX FOR DOMAIN ADAPTATION](https://github.com/Wang-ML-Lab/VDI.) — Zihao Xu et al. `{XundDomain}`
+- **n.d.** Gradient Flow and Its Applications in Statistical Learning — Rui-Yang Zhang et al. `{ZhangndGradient}`
+
