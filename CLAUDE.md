@@ -89,6 +89,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-05-15-hf-daily-papers-may8-15.md` | 05/08-15 (275 papers, 22 精选, 4 deep dives, 12 figures) |
 | `2026-05-28-hf-daily-papers-may16-28.md` | 05/16-28 (394 papers, 25 精选, 4 deep dives, 11 figures) |
 | `2026-06-12-hf-daily-papers-may29-jun12.md` | 05/29-06/12 (521 papers, 25 精选, 4 deep dives, 5 figures) |
+| `2026-06-16-hf-daily-papers-jun13-16.md` | 06/13-06/16 (51 papers; 周末空档, 25 精选, 2 deep dives: APPO/OmniDirector, 8 figures) |
 
 ## WeChat Publishing
 

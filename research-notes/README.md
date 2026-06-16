@@ -29,3 +29,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Two 2026-05 Harness Surveys: ETCLOVG vs Code-as-Substrate](/research-notes/2026-05-26-two-harness-surveys-comparison.md)
 - [HF Daily Papers Digest · 2026-05-16 ~ 05-28](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
 - [HF Daily Papers Digest · 2026-05-29 ~ 06-12](/research-notes/2026-06-12-hf-daily-papers-may29-jun12.md)
+- [HF Daily Papers 摘要 · 2026/06/13–06/16](/research-notes/2026-06-16-hf-daily-papers-jun13-16.md)
