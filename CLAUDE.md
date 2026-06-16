@@ -182,6 +182,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | File | Coverage |
 |------|----------|
 | `2026-W24-reddit-hot.md` | W24 截至 06/12（12 子版，290 帖；RSS-only，无 score） |
+| `2026-W25-reddit-hot.md` | W25 截至 06/16（12 子版，289 帖抓取 / 270 新增；RSS-only，无 score） |
 
 ## Docsify Plugins
 
