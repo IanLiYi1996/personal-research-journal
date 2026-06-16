@@ -55,6 +55,20 @@ Reference images from the markdown with relative paths: `![caption](2025-agentic
 
 When creating notes, always copy from the template rather than writing from scratch.
 
+## Reference Library (文献库)
+
+**Rule: every time a paper is summarized, add it to the reference library.** This applies to all paper-summarizing work — paper notes in `papers/`, HF Daily Papers digests, deep dives, and any standalone paper summary.
+
+- Library lives in `references/references.bib` (cleaned, unique cite keys), browsable via the auto-generated topic index `references/README.md` (linked in `_sidebar.md` under 「📖 文献库」).
+- **To add a paper** (preferred — fetches verifiable metadata from arXiv, dedups, generates a `<LastName><Year><TitleWord>` cite key, rebuilds the index):
+  ```bash
+  uv run python3 scripts/add_paper.py <arxiv-id-or-url> [<more ids>...]
+  ```
+  Safe to re-run: it skips papers already present (by arXiv id or normalized title). For a HF digest covering many papers, pass all arXiv ids in one call.
+- Non-arXiv papers (DOI-only, venue PDFs): add the bib entry by hand to `references/references.bib` following the existing format, then run `uv run python3 scripts/bib_index.py references/references.bib --out references/README.md`.
+- **Never fabricate** arXiv ids, DOIs, or bib metadata — only register identifiers fetched from a real source (per the "引用须可验证" constraint).
+- Maintenance scripts: `scripts/clean_bib.py` (clean a fresh Mendeley `export.bib`), `scripts/enrich_bib.py` (drop junk + backfill arXiv url/year), `scripts/bib_index.py` (rebuild the topic index). See `scripts/clean_bib_report.md`.
+
 ## HF Daily Papers Digest Workflow
 
 This is a recurring task — writing weekly digests of Hugging Face Daily Papers.
@@ -66,7 +80,8 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 3. **Deep dive selection**: Pick 1-2 papers with the highest impact (upvotes + novelty + technical depth), fetch full paper via `https://huggingface.co/papers/{ID}.md`
 4. **Download figures**: From `https://arxiv.org/html/{ID}v1/x{N}.png`, save to `research-notes/{note-name}/` subfolder
 5. **Write digest**: Chinese, grouped by themes, include overview table → per-paper summaries → deep dives → trend analysis → open questions
-6. **Update indexes**: Run `bash journal.sh index`
+6. **Add to reference library**: Register every covered paper — `uv run python3 scripts/add_paper.py <id1> <id2> ...` (see Reference Library section)
+7. **Update indexes**: Run `bash journal.sh index`
 
 ### Digest Format
 
