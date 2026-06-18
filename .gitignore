@@ -3,3 +3,7 @@ node_modules/
 *.pptx
 resources/anthropic-financial-services-analysis.md
 sharing/2026-05-21-harness-and-claude-code/reference/
+.claude/projects/
+.claude/scheduled_tasks.json
+.claude/scheduled_tasks.lock
+scripts/__pycache__/
