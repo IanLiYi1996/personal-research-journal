@@ -1,15 +1,26 @@
-# tech-blogs feeds — 三层分类
-# 字段:
-#   name:      显示名
-#   url:       博客主页（用于人类访问）
-#   feed:      RSS / Atom URL；为 null 时表示无 RSS（脚本会跳过抓取并打 warning）
-#   tier:      personal | company | academia
-#   topics:    标签（freeform，用于 digest 分组）
+# tech-blogs feeds — three-tier coverage of AI/ML/CS tech blogs
+#
+# Schema:
+#   name:    Display name
+#   url:     Human-readable home page
+#   feed:    RSS / Atom URL.  null = no public feed (still tracked, but skipped
+#            by RSS pipeline; needs HTML / sitemap fallback)
+#   tier:    personal | company | academia | newsletter | conference
+#   topics:  Free-form tags (used for digest grouping)
+#   lang:    en (default) | zh
+#
+# Verified 2026-06-26.  When adding new sources, probe with:
+#   curl -sI -L -A "Mozilla/5.0" "<feed-url>"
+#   curl -sL  -A "Mozilla/5.0" "<feed-url>" | head -c 500   # must include <rss|<feed|<channel
+#
+# Many official labs (Anthropic, Mistral, xAI, Stanford HAI, AI2, MILA) have no
+# RSS; they're listed with feed:null so the inventory stays complete and shows
+# up under --list-missing.  Plan: HTML/sitemap fallback (not yet implemented).
 
 feeds:
-  # ============================================
-  # Tier 1 — 个人作者（深度长文 / 高频评论）
-  # ============================================
+  # ============================================================
+  # TIER 1A — Individual authors (deep long-form / commentary)
+  # ============================================================
   - name: Lilian Weng (Lil'Log)
     url: https://lilianweng.github.io/
     feed: https://lilianweng.github.io/index.xml
@@ -22,7 +33,13 @@ feeds:
     tier: personal
     topics: [foundation-model, education]
 
-  - name: Sebastian Raschka (Ahead of AI)
+  - name: Sebastian Raschka (Ahead of AI - Substack)
+    url: https://magazine.sebastianraschka.com/
+    feed: https://magazine.sebastianraschka.com/feed
+    tier: personal
+    topics: [llm-engineering, education, newsletter]
+
+  - name: Sebastian Raschka (blog)
     url: https://sebastianraschka.com/blog/
     feed: https://sebastianraschka.com/rss_feed.xml
     tier: personal
@@ -50,7 +67,7 @@ feeds:
     url: https://eugeneyan.com/
     feed: https://eugeneyan.com/rss/
     tier: personal
-    topics: [ml-systems, recsys]
+    topics: [ml-systems, recsys, evaluation]
 
   - name: Hamel Husain
     url: https://hamel.dev/
@@ -64,30 +81,162 @@ feeds:
     tier: personal
     topics: [long-term-research]
 
-  - name: Yannic Kilcher
-    url: https://ykilcher.com/
-    feed: https://ykilcher.com/feed.xml
+  - name: Tim Dettmers
+    url: https://timdettmers.com/
+    feed: https://timdettmers.com/feed
+    tier: personal
+    topics: [quantization, gpu-systems]
+
+  - name: Maarten Grootendorst
+    url: https://maartengrootendorst.substack.com/
+    feed: https://maartengrootendorst.substack.com/feed
+    tier: personal
+    topics: [llm, nlp, illustrated]
+
+  - name: Pramod Goyal (Goyal's blog)
+    url: https://goyalpramod.github.io/
+    feed: https://goyalpramod.github.io/feed.xml
+    tier: personal
+    topics: [ml-systems, education]
+
+  - name: Yannic Kilcher (YouTube)
+    url: https://www.youtube.com/@YannicKilcher
+    feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCZHmQk67mSJgfCCTn7xBfew
     tier: personal
     topics: [paper-review, video]
 
-  - name: Jack Clark (Import AI)
+  # No RSS — track manually
+  - name: Jeremy Howard (fast.ai)
+    url: https://www.fast.ai/
+    feed: null
+    tier: personal
+    topics: [education, fastai]
+
+  - name: François Chollet
+    url: https://fchollet.substack.com/
+    feed: null
+    tier: personal
+    topics: [intelligence, arc]
+
+  # ============================================================
+  # TIER 1B — Newsletters / commentary (high signal, opinionated)
+  # ============================================================
+  - name: Jack Clark — Import AI
     url: https://importai.substack.com/
     feed: https://importai.substack.com/feed
-    tier: personal
-    topics: [newsletter, policy]
+    tier: newsletter
+    topics: [policy, weekly]
 
   - name: Latent Space (swyx)
     url: https://www.latent.space/
     feed: https://www.latent.space/feed
-    tier: personal
-    topics: [newsletter, podcast]
+    tier: newsletter
+    topics: [ai-engineering, podcast, daily]
 
-  # ============================================
-  # Tier 2 — 科技公司研究/工程博客
-  # ============================================
+  - name: Nathan Lambert — Interconnect
+    url: https://www.interconnects.ai/
+    feed: https://www.interconnects.ai/feed
+    tier: newsletter
+    topics: [rlhf, alignment, weekly]
+
+  - name: Last Week in AI
+    url: https://lastweekin.ai/
+    feed: https://lastweekin.ai/feed
+    tier: newsletter
+    topics: [weekly-recap]
+
+  - name: Ethan Mollick — One Useful Thing
+    url: https://www.oneusefulthing.org/
+    feed: https://www.oneusefulthing.org/feed
+    tier: newsletter
+    topics: [applied-ai, education]
+
+  - name: Dwarkesh Patel
+    url: https://www.dwarkeshpatel.com/
+    feed: https://www.dwarkeshpatel.com/feed
+    tier: newsletter
+    topics: [podcast, interview]
+
+  - name: SemiAnalysis
+    url: https://semianalysis.com/
+    feed: https://semianalysis.com/feed
+    tier: newsletter
+    topics: [hardware, supply-chain, deep-dive]
+
+  - name: Ben Thompson — Stratechery
+    url: https://stratechery.com/
+    feed: https://stratechery.com/feed/
+    tier: newsletter
+    topics: [strategy, business]
+
+  # No RSS or paywall-only
+  - name: The Batch (Andrew Ng)
+    url: https://www.deeplearning.ai/the-batch/
+    feed: null
+    tier: newsletter
+    topics: [weekly-recap]
+
+  - name: Ben's Bites
+    url: https://www.bensbites.com/
+    feed: null
+    tier: newsletter
+    topics: [daily-news]
+
+  - name: TLDR AI
+    url: https://tldr.tech/ai
+    feed: null
+    tier: newsletter
+    topics: [daily-news]
+
+  # ============================================================
+  # TIER 2A — Frontier model labs (research / news)
+  # ============================================================
+  - name: OpenAI News
+    url: https://openai.com/news/
+    feed: https://openai.com/news/rss.xml
+    tier: company
+    topics: [foundation-model, frontier-lab]
+
+  - name: Google DeepMind Blog
+    url: https://deepmind.google/discover/blog/
+    feed: https://deepmind.google/blog/rss.xml
+    tier: company
+    topics: [foundation-model, agi, science]
+
+  - name: Google Research Blog (primary)
+    url: https://research.google/blog/
+    feed: https://research.google/blog/rss/
+    tier: company
+    topics: [research, ml-systems]
+
+  - name: Google Research Blog (Blogger mirror)
+    url: https://blog.research.google/
+    feed: https://blog.research.google/feeds/posts/default?alt=rss
+    tier: company
+    topics: [research]
+
+  - name: Meta FAIR / Research (research.facebook.com)
+    url: https://research.facebook.com/blog/
+    feed: https://research.facebook.com/feed/
+    tier: company
+    topics: [foundation-model, open-source]
+
+  - name: Microsoft Research Blog
+    url: https://www.microsoft.com/en-us/research/blog/
+    feed: https://www.microsoft.com/en-us/research/feed/
+    tier: company
+    topics: [research]
+
+  - name: Hugging Face Blog
+    url: https://huggingface.co/blog
+    feed: https://huggingface.co/blog/feed.xml
+    tier: company
+    topics: [open-source, ecosystem]
+
+  # No RSS — manual / sitemap fallback
   - name: Anthropic News
     url: https://www.anthropic.com/news
-    feed: null  # 无公开 RSS，使用 sitemap fallback
+    feed: null
     tier: company
     topics: [foundation-model, ai-safety]
 
@@ -97,59 +246,11 @@ feeds:
     tier: company
     topics: [foundation-model, ai-safety, interpretability]
 
-  - name: OpenAI Blog
-    url: https://openai.com/blog/
-    feed: null  # 当前无稳定 RSS
-    tier: company
-    topics: [foundation-model, applications]
-
-  - name: Google Research Blog
-    url: https://research.google/blog/
-    feed: https://research.google/blog/rss/
-    tier: company
-    topics: [research, ml-systems]
-
-  - name: Google DeepMind Blog
-    url: https://deepmind.google/discover/blog/
-    feed: null
-    tier: company
-    topics: [foundation-model, agi, science]
-
   - name: Meta AI (FAIR) Blog
     url: https://ai.meta.com/blog/
     feed: null
     tier: company
     topics: [open-source, multimodal]
-
-  - name: Microsoft Research Blog
-    url: https://www.microsoft.com/en-us/research/blog/
-    feed: https://www.microsoft.com/en-us/research/feed/
-    tier: company
-    topics: [research, ml-systems]
-
-  - name: NVIDIA Developer Blog
-    url: https://developer.nvidia.com/blog/
-    feed: https://developer.nvidia.com/blog/feed
-    tier: company
-    topics: [acceleration, ml-systems]
-
-  - name: NVIDIA Research
-    url: https://research.nvidia.com/publications
-    feed: null
-    tier: company
-    topics: [hardware, vision]
-
-  - name: Hugging Face Blog
-    url: https://huggingface.co/blog
-    feed: https://huggingface.co/blog/feed.xml
-    tier: company
-    topics: [open-source, ecosystem]
-
-  - name: Cohere Blog
-    url: https://cohere.com/blog
-    feed: null
-    tier: company
-    topics: [enterprise-llm]
 
   - name: Mistral AI News
     url: https://mistral.ai/news/
@@ -163,9 +264,63 @@ feeds:
     tier: company
     topics: [foundation-model]
 
+  - name: Cohere Blog
+    url: https://cohere.com/blog
+    feed: null
+    tier: company
+    topics: [enterprise-llm]
+
+  # ============================================================
+  # TIER 2B — Hardware / Infra companies
+  # ============================================================
+  - name: NVIDIA Developer Blog
+    url: https://developer.nvidia.com/blog/
+    feed: https://developer.nvidia.com/blog/feed
+    tier: company
+    topics: [acceleration, ml-systems]
+
+  - name: NVIDIA Research
+    url: https://research.nvidia.com/publications
+    feed: null
+    tier: company
+    topics: [hardware, vision]
+
+  - name: Cloudflare Blog
+    url: https://blog.cloudflare.com/
+    feed: https://blog.cloudflare.com/rss
+    tier: company
+    topics: [edge, networking, ai-edge]
+
+  - name: Cloudflare AI Tag
+    url: https://blog.cloudflare.com/tag/ai/
+    feed: https://blog.cloudflare.com/tag/ai/rss/
+    tier: company
+    topics: [ai-edge, agent-infra]
+
+  - name: GitHub Blog
+    url: https://github.blog/
+    feed: https://github.blog/feed/
+    tier: company
+    topics: [developer-tools, copilot]
+
+  # ============================================================
+  # TIER 2C — AI infra / agent platform companies
+  # ============================================================
+  - name: Together AI Blog
+    url: https://www.together.ai/blog
+    feed: https://www.together.ai/blog/rss.xml
+    tier: company
+    topics: [inference, fine-tuning]
+
+  - name: Anyscale Blog
+    url: https://www.anyscale.com/blog
+    feed: https://www.anyscale.com/rss.xml
+    tier: company
+    topics: [ray, distributed-training]
+
   - name: Databricks Blog
     url: https://www.databricks.com/blog
-    feed: https://www.databricks.com/blog/feed
+    feed: https://www.databricks.com/feed
     tier: company
     topics: [data, mlops]
 
@@ -187,21 +342,67 @@ feeds:
     tier: company
     topics: [bedrock, sagemaker, applied]
 
-  # ============================================
-  # Tier 3 — 学术机构 / 实验室
-  # ============================================
-  - name: Stanford HAI News
-    url: https://hai.stanford.edu/news
-    feed: null
-    tier: academia
-    topics: [human-centered-ai, policy]
+  - name: AWS Main Blog
+    url: https://aws.amazon.com/blogs/aws/
+    feed: https://aws.amazon.com/blogs/aws/feed/
+    tier: company
+    topics: [aws]
 
-  - name: Stanford CRFM
-    url: https://crfm.stanford.edu/
-    feed: null
-    tier: academia
-    topics: [foundation-model]
+  - name: AWS Developer Blog
+    url: https://aws.amazon.com/blogs/developer/
+    feed: https://aws.amazon.com/blogs/developer/feed/
+    tier: company
+    topics: [aws, developer-tools]
 
+  # No RSS
+  - name: Modal Blog
+    url: https://modal.com/blog
+    feed: null
+    tier: company
+    topics: [serverless-gpu]
+
+  - name: Replicate Blog
+    url: https://replicate.com/blog
+    feed: null
+    tier: company
+    topics: [model-hosting]
+
+  - name: Perplexity Blog
+    url: https://www.perplexity.ai/hub
+    feed: null
+    tier: company
+    topics: [search, ai-products]
+
+  # ============================================================
+  # TIER 2D — Big-tech engineering blogs (high-quality systems content)
+  # ============================================================
+  - name: Meta Engineering
+    url: https://engineering.fb.com/
+    feed: https://engineering.fb.com/feed/
+    tier: company
+    topics: [systems, infra]
+
+  - name: Netflix Tech Blog
+    url: https://netflixtechblog.com/
+    feed: https://netflixtechblog.com/feed
+    tier: company
+    topics: [systems, recsys]
+
+  - name: Airbnb Engineering
+    url: https://medium.com/airbnb-engineering
+    feed: https://medium.com/feed/airbnb-engineering
+    tier: company
+    topics: [systems, applied-ml]
+
+  - name: Lyft Engineering
+    url: https://eng.lyft.com/
+    feed: https://eng.lyft.com/feed
+    tier: company
+    topics: [systems, applied-ml]
+
+  # ============================================================
+  # TIER 3A — Academic labs / departments
+  # ============================================================
   - name: BAIR Blog (Berkeley)
     url: https://bair.berkeley.edu/blog/
     feed: https://bair.berkeley.edu/blog/feed.xml
@@ -214,23 +415,23 @@ feeds:
     tier: academia
     topics: [research]
 
-  - name: Princeton AIML
-    url: https://aiml.cs.princeton.edu/
-    feed: null
+  - name: MIT News — AI
+    url: https://news.mit.edu/topic/artificial-intelligence2
+    feed: https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml
     tier: academia
-    topics: [research]
+    topics: [research, mit]
+
+  - name: UW Allen School News
+    url: https://news.cs.washington.edu/
+    feed: https://news.cs.washington.edu/feed/
+    tier: academia
+    topics: [research, uw]
 
   - name: AI2 (Allen AI) Blog
     url: https://allenai.org/blog
-    feed: https://allenai.org/blog/rss.xml
+    feed: null  # 404 / IP-blocked; needs alt fallback
     tier: academia
     topics: [open-source, foundation-model]
-
-  - name: MILA News
-    url: https://mila.quebec/en/news
-    feed: null
-    tier: academia
-    topics: [research]
 
   - name: EleutherAI Blog
     url: https://blog.eleuther.ai/
@@ -238,15 +439,42 @@ feeds:
     tier: academia
     topics: [open-source, interpretability]
 
+  - name: Stanford HAI News
+    url: https://hai.stanford.edu/news
+    feed: null  # endpoint returns HTML
+    tier: academia
+    topics: [human-centered-ai, policy]
+
+  - name: Stanford CRFM
+    url: https://crfm.stanford.edu/
+    feed: null
+    tier: academia
+    topics: [foundation-model]
+
+  - name: MILA News
+    url: https://mila.quebec/en/news
+    feed: null
+    tier: academia
+    topics: [research]
+
+  - name: Princeton AIML
+    url: https://aiml.cs.princeton.edu/
+    feed: null
+    tier: academia
+    topics: [research]
+
+  # ============================================================
+  # TIER 3B — AI safety / evaluation orgs
+  # ============================================================
   - name: METR Blog
     url: https://metr.org/blog
-    feed: null
+    feed: https://www.metr.org/blog/rss.xml
     tier: academia
     topics: [ai-safety, evaluation]
 
   - name: Apollo Research
     url: https://www.apolloresearch.ai/blog
-    feed: null
+    feed: null  # /feed returns HTML
     tier: academia
     topics: [ai-safety, interpretability]
 
@@ -256,8 +484,85 @@ feeds:
     tier: academia
     topics: [ai-safety]
 
+  - name: AlignmentForum
+    url: https://www.alignmentforum.org/
+    feed: https://www.alignmentforum.org/feed.xml
+    tier: academia
+    topics: [alignment, ai-safety, community]
+
+  - name: LessWrong
+    url: https://www.lesswrong.com/
+    feed: https://www.lesswrong.com/feed.xml
+    tier: academia
+    topics: [rationality, ai-safety, community]
+
+  # ============================================================
+  # TIER 3C — Academic magazines / conferences
+  # ============================================================
   - name: The Gradient
     url: https://thegradient.pub/
     feed: https://thegradient.pub/rss/
     tier: academia
     topics: [magazine, research]
+
+  - name: NeurIPS Blog
+    url: https://blog.neurips.cc/
+    feed: https://blog.neurips.cc/feed
+    tier: conference
+    topics: [neurips]
+
+  - name: ICLR Blog
+    url: https://blog.iclr.cc/
+    feed: https://blog.iclr.cc/feed
+    tier: conference
+    topics: [iclr]
+
+  - name: arXiv cs.AI (RSS)
+    url: https://arxiv.org/list/cs.AI/recent
+    feed: https://arxiv.org/rss/cs.AI
+    tier: academia
+    topics: [arxiv, firehose]
+
+  - name: Nature CS subjects
+    url: https://www.nature.com/subjects/computer-science
+    feed: https://www.nature.com/subjects/computer-science.rss
+    tier: academia
+    topics: [nature, science]
+
+  # ============================================================
+  # TIER 4 — Chinese / 中文圈
+  # ============================================================
+  - name: 量子位 (QbitAI)
+    url: https://www.qbitai.com/
+    feed: https://qbitai.com/feed
+    tier: company
+    topics: [chinese, ai-news]
+    lang: zh
+
+  - name: Synced 机器之心 (English)
+    url: https://syncedreview.com/
+    feed: https://syncedreview.com/feed/
+    tier: company
+    topics: [chinese-orig, ai-news]
+
+  - name: 机器之心 (中文站)
+    url: https://www.jiqizhixin.com/
+    feed: null  # /rss returns HTML
+    tier: company
+    topics: [chinese, ai-news]
+    lang: zh
+
+  - name: 阮一峰的网络日志
+    url: https://www.ruanyifeng.com/blog/
+    feed: https://feeds.feedburner.com/ruanyifeng
+    tier: personal
+    topics: [chinese, weekly]
+    lang: zh
+
+  # No RSS — manual
+  - name: 李沐 (Mu Li)
+    url: https://github.com/mli/paper-reading
+    feed: null
+    tier: personal
+    topics: [chinese, paper-reading]
+    lang: zh

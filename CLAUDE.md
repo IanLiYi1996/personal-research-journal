@@ -153,15 +153,16 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 ### Configuration
 
-- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics)
+- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics / lang). 5 tiers: personal / newsletter / company / academia / conference. 85 sources as of W26.
 - **Slash command**: `/tech-blogs-weekly`
-- **No-RSS sources**: Anthropic / OpenAI / DeepMind / Meta AI 等 17 个无公开 RSS，需要 sitemap/HTML fallback（待开发）
+- **Fetchers**: `scripts/blog_fetch.py` (RSS/Atom, 60 sources OK) + `scripts/blog_sitemap_fallback.py` (4 sources via sitemap: Anthropic News/Research, Cohere, AI2)
+- **No-RSS sources still待开发 HTML scraper**：Meta AI (ai.meta.com), Mistral, xAI, LlamaIndex, Stanford HAI/CRFM, Princeton, MILA, Apollo, Redwood, 机器之心中文站, 李沐, fast.ai, François Chollet, The Batch, Ben's Bites, TLDR AI, Modal, Replicate, Perplexity, Adept, Character (21 个)
 
 ### Previous Digests
 
 | File | Coverage |
 |------|----------|
-| `tech-blogs/2026-W26.md` | W26 (06/19–06/26): 41 sources / 21 RSS OK / 17 no-RSS / 3 fetch-fail; 89 posts; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
+| `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 21 仍待 HTML scraper; 194 帖 (drop arXiv firehose 277 后); deep-dive: Lilian Weng "Scaling Laws, Carefully" |
 
 ### Single-post Deep Dives in research-notes/
 
