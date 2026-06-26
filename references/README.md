@@ -1,18 +1,18 @@
 # 文献库索引
 
-> 共 **1341** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1342** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （570）
+- [大语言模型 (LLM)](#-llm-) （571）
 - [智能体 / Agent](#-agent) （168）
 - [强化学习 / RLHF](#-rlhf) （238）
 - [推理 / Reasoning](#-reasoning) （265）
 - [图神经网络 / Graph](#-graph) （235）
 - [扩散 / 生成模型](#-) （212）
 - [多模态 / 视觉语言](#-) （240）
-- [Transformer / 架构](#transformer-) （303）
+- [Transformer / 架构](#transformer-) （304）
 - [高效训练 / 推理](#-) （330）
 - [综述 / Survey](#-survey) （133）
 - [检索增强 / RAG](#-rag) （81）
@@ -522,6 +522,7 @@
 - **2022** [PaLI: A Jointly-Scaled Multilingual Language-Image Model](http://arxiv.org/abs/2209.06794) — Xi Chen et al. · arXiv:2209.06794 `{Chen2022Pali}`
 - **2022** [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](http://arxiv.org/abs/2205.14135) — Tri Dao et al. · arXiv:2205.14135 `{Dao2022Flashattention}`
 - **2022** [RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning](http://arxiv.org/abs/2205.12548) — Mingkai Deng et al. · arXiv:2205.12548 `{Deng2022Rlprompt}`
+- **2022** [Training Compute-Optimal Large Language Models](http://arxiv.org/abs/2203.15556) — Jordan Hoffmann et al. · arXiv:2203.15556 `{Hoffmann2022Training}`
 - **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
 - **2022** [Towards Reasoning in Large Language Models: A Survey](http://arxiv.org/abs/2212.10403) — Jie Huang et al. · arXiv:2212.10403 `{Huang2022Towards}`
 - **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
@@ -2169,6 +2170,7 @@
 - **2022** [Cramming: Training a Language Model on a Single GPU in One Day](http://arxiv.org/abs/2212.14034) — Jonas Geiping et al. · arXiv:2212.14034 `{Geiping2022Cramming}`
 - **2022** [FasterMoE: Modeling and Optimizing Training of Large-Scale Dynamic Pre-Trained Models](https://huggingface.co/blog/zh/moe) — Jiaao He et al. · arXiv:3221.35084 `{He2022Fastermoe}`
 - **2022** Unified Dialog Model Pre-training for Task-Oriented Dialog Understanding and Generation — Wanwei He et al. · arXiv:7495.35320 `{He2022Unified}`
+- **2022** [Training Compute-Optimal Large Language Models](http://arxiv.org/abs/2203.15556) — Jordan Hoffmann et al. · arXiv:2203.15556 `{Hoffmann2022Training}`
 - **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
 - **2022** LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking — Yupan Huang et al. · arXiv:3161.35481 `{Huang2022Layoutlmv3}`
 - **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`

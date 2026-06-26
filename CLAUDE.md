@@ -132,6 +132,43 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
   ```
 - **Dependencies**: Run `cd ~/.claude/skills/baoyu-post-to-wechat/scripts && npx -y bun install` if first time
 
+## Tech Blogs Weekly Digest
+
+Track curated technical / research blogs across **3 tiers**: individual authors (Lilian Weng, Karpathy, ...), tech company research/eng blogs (Anthropic, OpenAI, NVIDIA, AWS ML, ...), and academic labs (BAIR, CMU MLD, AI2, ...). Weekly digest in Chinese; single-post deep-dives go to `research-notes/` separately.
+
+### Directory
+
+`tech-blogs/` — Weekly digests + `feeds.yaml` source list. In git, **not** linked in `_sidebar.md`.
+
+### Workflow
+
+1. **Fetch**: `uv run python3 scripts/blog_fetch.py --days 7 > /tmp/tech-blogs.json`
+   - Reads `tech-blogs/feeds.yaml`, fetches all sources with RSS, parses both RSS and Atom, filters by pubDate within last N days, dedup by link.
+   - CLI: `--days N` / `--since YYYY-MM-DD` / `--names "A,B"` / `--tier personal|company|academia` / `--list-missing` (sources without RSS).
+2. **Dedup vs prior week**: 对照上一份 `tech-blogs/YYYY-WXX.md` 按 link 去重。
+3. **Write digest** to `tech-blogs/YYYY-WXX.md` with 3 layers + cross-source theme table + deep-dive candidates list.
+4. **Deep-dive posts**: For each pick worth deep reading, write a single-post note to `research-notes/YYYY-MM-DD-blog-<slug>.md` (see `research-notes/2026-06-26-lilian-weng-scaling-laws.md` as template).
+5. **arXiv 论文入库**: Deep-dive 中引用的 arXiv 论文用 `uv run python3 scripts/add_paper.py <id>...` 加进文献库（与 HF digest 同规则）。
+6. **journal.sh index + git commit**（不推送）。
+
+### Configuration
+
+- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics)
+- **Slash command**: `/tech-blogs-weekly`
+- **No-RSS sources**: Anthropic / OpenAI / DeepMind / Meta AI 等 17 个无公开 RSS，需要 sitemap/HTML fallback（待开发）
+
+### Previous Digests
+
+| File | Coverage |
+|------|----------|
+| `tech-blogs/2026-W26.md` | W26 (06/19–06/26): 41 sources / 21 RSS OK / 17 no-RSS / 3 fetch-fail; 89 posts; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
+
+### Single-post Deep Dives in research-notes/
+
+| File | Source / Post |
+|------|--------------|
+| `research-notes/2026-06-26-lilian-weng-scaling-laws.md` | Lilian Weng (2026-06-24) "Scaling Laws, Carefully" |
+
 ## AWS What's New Tracker
 
 ### Directory

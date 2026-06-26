@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-06-26-hf-daily-papers-jun17-25" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-06-26-lilian-weng-scaling-laws" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -82,8 +82,8 @@ Datasets, tools, frameworks, and reference materials.
 | Date | Type | Title |
 |------|------|-------|
 | 2026-06-26 | Note | [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25) |
+| 2026-06-26 | Note | [Blog Deep Dive｜Lilian Weng "Scaling Laws, Carefully" (2026-06-24)](/research-notes/2026-06-26-lilian-weng-scaling-laws) |
 | 2026-06-16 | Note | [HF Daily Papers 摘要 · 2026/06/13–06/16](/research-notes/2026-06-16-hf-daily-papers-jun13-16) |
 | 2026-06-12 | Topic | [训练动态显微镜化：从经验配方到优化几何](/topics/ai-frontier-2026h1/2026-06-12-training-dynamics) |
 | 2026-06-12 | Topic | [自动科研系统演化谱系](/topics/ai-frontier-2026h1/2026-06-12-auto-research) |
-| 2026-06-12 | Topic | [世界模型与具身演化](/topics/ai-frontier-2026h1/2026-06-12-world-models) |
 <!-- AUTO:RECENT:END -->
