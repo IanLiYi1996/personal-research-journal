@@ -7,6 +7,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25.md)
   - [HF Daily Papers 摘要 · 2026/06/13–06/16](/research-notes/2026-06-16-hf-daily-papers-jun13-16.md)
   - [HF Daily Papers Digest · 2026-05-29 ~ 06-12](/research-notes/2026-06-12-hf-daily-papers-may29-jun12.md)
   - [HF Daily Papers Digest · 2026-05-16 ~ 05-28](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
@@ -65,6 +66,4 @@
     - [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 - **📅 Weekly**
 - **📚 Resources**
-- **📖 文献库**
-  - [文献库索引（1002 条）](/references/README.md)
 - <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>

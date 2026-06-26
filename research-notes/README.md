@@ -30,3 +30,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [HF Daily Papers Digest · 2026-05-16 ~ 05-28](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
 - [HF Daily Papers Digest · 2026-05-29 ~ 06-12](/research-notes/2026-06-12-hf-daily-papers-may29-jun12.md)
 - [HF Daily Papers 摘要 · 2026/06/13–06/16](/research-notes/2026-06-16-hf-daily-papers-jun13-16.md)
+- [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25.md)

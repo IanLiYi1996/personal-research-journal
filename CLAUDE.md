@@ -105,6 +105,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-05-28-hf-daily-papers-may16-28.md` | 05/16-28 (394 papers, 25 精选, 4 deep dives, 11 figures) |
 | `2026-06-12-hf-daily-papers-may29-jun12.md` | 05/29-06/12 (521 papers, 25 精选, 4 deep dives, 5 figures) |
 | `2026-06-16-hf-daily-papers-jun13-16.md` | 06/13-06/16 (51 papers; 周末空档, 25 精选, 2 deep dives: APPO/OmniDirector, 8 figures) |
+| `2026-06-26-hf-daily-papers-jun17-25.md` | 06/17-06/25 (234 papers; 6/20-21 周末空档, 25 精选, 2 deep dives: LoopWM/Qwen-AgentWorld, 7 figures) |
 
 ## WeChat Publishing
 
@@ -198,6 +199,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 |------|----------|
 | `2026-W24-reddit-hot.md` | W24 截至 06/12（12 子版，290 帖；RSS-only，无 score） |
 | `2026-W25-reddit-hot.md` | W25 截至 06/16（12 子版，289 帖抓取 / 270 新增；RSS-only，无 score） |
+| `2026-W26-reddit-hot.md` | W26 截至 06/26（12 子版，273 帖抓取 / 273 新增；RSS-only，无 score；r/datascience 仅 4 帖 RSS 截断） |
 
 ## Docsify Plugins
 
