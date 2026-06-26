@@ -4,25 +4,25 @@
 
 ## 步骤
 
-1. **抓 feed**（两路并行：RSS + sitemap fallback）：
+1. **抓 feed**（3 路：RSS + sitemap + HTML scraper）：
    ```bash
    uv run python3 scripts/blog_fetch.py --days 7 > /tmp/tech-blogs-rss.json
    uv run python3 scripts/blog_sitemap_fallback.py --days 7 > /tmp/tech-blogs-sitemap.json
+   uv run python3 scripts/blog_html_scraper.py --days 7 --keep-undated > /tmp/tech-blogs-html.json
    ```
-   - `blog_fetch.py`：处理 60 个有 RSS 的 source；输出 JSON array，每条含 `source / tier / topics / title / link / pub / summary`。stderr 显示每 feed `kept/total` 与成功/失败统计。
-   - `blog_sitemap_fallback.py`：处理 4 个**有 sitemap 但无 RSS** 的 source（Anthropic News / Anthropic Research / Cohere / AI2）。配置在 `SITEMAP_RULES` 字典。
-   - **可选过滤**：arXiv cs.AI RSS 往往有 200+ 条 firehose，digest 时建议过滤掉或仅做 topic-grep。
+   - `blog_fetch.py`：处理 60 个有 RSS 的 source；输出 JSON array，每条含 `source / tier / topics / title / link / pub / summary`。stderr 显示每 feed `kept/total` 与成功/失败统计。**已内置 title_filter 降噪**（arXiv 277→~15、LessWrong 10→8）。
+   - `blog_sitemap_fallback.py`：4 个 sitemap-only source（Anthropic News/Research, Cohere, AI2）。配置在 `SITEMAP_RULES`。
+   - `blog_html_scraper.py`：6 个 HTML-only source（Mistral, Meta AI, Apollo, MILA, LlamaIndex, fast.ai）。配置在 `HTML_RULES`。`--keep-undated` 配合 `max_undated` 允许部分无 inline date 的 source（Meta AI/MILA）保留前 N 条作为"本周最新"代理。
    - **合并 + 去重 by link**：
      ```python
      uv run python3 -c "
      import json
      rss = json.load(open('/tmp/tech-blogs-rss.json'))
      sm = json.load(open('/tmp/tech-blogs-sitemap.json'))
-     # Optional: drop arXiv firehose
-     rss = [p for p in rss if p['source'] != 'arXiv cs.AI (RSS)']
+     hm = json.load(open('/tmp/tech-blogs-html.json'))
      merged = {p['link']: p for p in rss}
-     for p in sm: merged.setdefault(p['link'], p)
-     out = sorted(merged.values(), key=lambda p: p['pub'], reverse=True)
+     for p in sm + hm: merged.setdefault(p['link'], p)
+     out = sorted(merged.values(), key=lambda p: p['pub'] or '', reverse=True)
      json.dump(out, open('/tmp/tech-blogs.json','w'), ensure_ascii=False, indent=2)
      print(len(out))
      "

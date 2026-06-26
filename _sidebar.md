@@ -66,5 +66,6 @@
     - [量子计算行业格局](/topics/quantum-computing/2026-04-15-quantum-industry-landscape.md)
     - [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 - **📅 Weekly**
+  - [Weekly Cross-Digest｜2026-W26（06/19 – 06/26）](/weekly/2026-W26.md)
 - **📚 Resources**
 - <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>

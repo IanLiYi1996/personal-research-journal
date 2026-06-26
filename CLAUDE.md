@@ -153,22 +153,44 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 ### Configuration
 
-- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics / lang). 5 tiers: personal / newsletter / company / academia / conference. 85 sources as of W26.
+- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics / lang / optional title_filter). 5 tiers: personal / newsletter / company / academia / conference. 85 sources as of W26.
 - **Slash command**: `/tech-blogs-weekly`
-- **Fetchers**: `scripts/blog_fetch.py` (RSS/Atom, 60 sources OK) + `scripts/blog_sitemap_fallback.py` (4 sources via sitemap: Anthropic News/Research, Cohere, AI2)
-- **No-RSS sources still待开发 HTML scraper**：Meta AI (ai.meta.com), Mistral, xAI, LlamaIndex, Stanford HAI/CRFM, Princeton, MILA, Apollo, Redwood, 机器之心中文站, 李沐, fast.ai, François Chollet, The Batch, Ben's Bites, TLDR AI, Modal, Replicate, Perplexity, Adept, Character (21 个)
+- **Fetchers (3 layers)**:
+  - `scripts/blog_fetch.py` — RSS/Atom (60 sources OK). Supports per-source `title_filter` regex (used to denoise arXiv firehose 277→15 and LessWrong 10→8).
+  - `scripts/blog_sitemap_fallback.py` — Sitemap.xml `<lastmod>` (4 sources: Anthropic News/Research, Cohere, AI2). Per-source allowed-path-prefixes in `SITEMAP_RULES`.
+  - `scripts/blog_html_scraper.py` — Static HTML index parsing (6 sources: Mistral, Meta AI, Apollo, MILA, LlamaIndex, fast.ai). Per-source `(index_url, item_regex, max_undated?)` in `HTML_RULES`. Modal/Replicate were found to have hidden /blog/atom feeds during probing and moved into `blog_fetch.py`.
+- **Probing a new source**: `curl -sI -L -A "Mozilla/5.0" <url>` → check 200; then `curl -sL ... | head -c 500 | grep -qE '<rss|<feed|<channel'` to confirm it's actually XML (200 ≠ RSS for SPAs).
+- **Still no useful feed/sitemap/HTML** (8 sources, all SPAs needing headless browser): xAI, Perplexity, Stanford HAI/CRFM, Princeton AIML, Redwood, 机器之心中文站, 李沐.
 
 ### Previous Digests
 
 | File | Coverage |
 |------|----------|
-| `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 21 仍待 HTML scraper; 194 帖 (drop arXiv firehose 277 后); deep-dive: Lilian Weng "Scaling Laws, Carefully" |
+| `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 6 HTML scraper / 8 SPA-blocked; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
 
 ### Single-post Deep Dives in research-notes/
 
 | File | Source / Post |
 |------|--------------|
 | `research-notes/2026-06-26-lilian-weng-scaling-laws.md` | Lilian Weng (2026-06-24) "Scaling Laws, Carefully" |
+
+## Weekly Cross-Digest
+
+每周一份手写的"主线汇总"文件 in `weekly/YYYY-WXX.md`，把 HF Papers / Reddit / Tech Blogs / AWS 四份 digest 按**主题**串起来——多 source 共振 = 信号最强。
+
+### Workflow
+
+1. 跑完当周 4 份独立 digest 后再写本文件（cross-digest 依赖它们的内容）
+2. 主线表：列出每个主题在每份 digest 的命中（✅/·/—），按信号强度排序
+3. 孤立信号区：只一个 source 发现但值得追踪的
+4. Narrative arc：把 ≥3-source 共振的主题串成完整故事线
+5. Open Questions：跨 digest 共同遗留
+
+### Previous
+
+| File | Coverage |
+|------|----------|
+| `weekly/2026-W26.md` | W26 cross-digest: 20 主线表 + Mythos 5-source 共振追踪 + 3 narrative arcs (Agent harness 元夏 / Scaling Laws → Data Wall → Looped Compute / 中美开源芯片政策) |
 
 ## AWS What's New Tracker
 

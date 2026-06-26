@@ -161,7 +161,7 @@ def main() -> int:
     parser.add_argument("--days", type=int, default=7, help="Posts within last N days (default 7)")
     parser.add_argument("--since", help="Override --days: only posts on/after YYYY-MM-DD")
     parser.add_argument("--names", help="Comma-separated subset of source names (substring match)")
-    parser.add_argument("--tier", choices=["personal", "company", "academia"], help="Only this tier")
+    parser.add_argument("--tier", choices=["personal", "company", "academia", "newsletter", "conference"], help="Only this tier")
     parser.add_argument("--delay", type=float, default=1.5, help="Seconds between feed fetches")
     parser.add_argument("--list-missing", action="store_true", help="Print sources without feed URL")
     args = parser.parse_args()
@@ -201,6 +201,18 @@ def main() -> int:
             sys.stderr.write(f"SKIP {f['name']} (no RSS)\n")
             skipped_no_feed += 1
             continue
+
+        # Optional per-source topic filter — applied against title+summary.
+        # `title_filter` in feeds.yaml: a case-insensitive regex; entries that
+        # don't match are dropped. Used to de-noise firehose feeds (arXiv,
+        # LessWrong) where most posts are irrelevant.
+        title_filter_re = None
+        if f.get("title_filter"):
+            try:
+                title_filter_re = re.compile(f["title_filter"], re.I)
+            except re.error as ex:
+                sys.stderr.write(f"  WARN bad title_filter regex on {f['name']}: {ex}\n")
+
         sys.stderr.write(f"FETCH {f['name']}: ")
         xml = fetch_feed(f["feed"])
         if not xml:
@@ -209,11 +221,15 @@ def main() -> int:
             continue
         entries = parse_entries(xml)
         kept = 0
+        dropped_filter = 0
         for e in entries:
             pub = parse_pubdate(e.get("pub_raw"))
             if not pub or pub < cutoff:
                 continue
             if not e["link"] or e["link"] in seen:
+                continue
+            if title_filter_re and not title_filter_re.search(f"{e['title']} {e['summary']}"):
+                dropped_filter += 1
                 continue
             seen.add(e["link"])
             all_posts.append({
@@ -227,7 +243,10 @@ def main() -> int:
             })
             kept += 1
         ok_feeds += 1
-        sys.stderr.write(f"{kept}/{len(entries)} kept\n")
+        msg = f"{kept}/{len(entries)} kept"
+        if dropped_filter:
+            msg += f" ({dropped_filter} filtered)"
+        sys.stderr.write(msg + "\n")
         time.sleep(args.delay)
 
     # Sort by pub desc

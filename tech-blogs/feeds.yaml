@@ -105,10 +105,9 @@ feeds:
     tier: personal
     topics: [paper-review, video]
 
-  # No RSS — track manually
-  - name: Jeremy Howard (fast.ai)
+  - name: fast.ai
     url: https://www.fast.ai/
-    feed: null
+    feed: null  # has /index.xml but 404; HTML scraper covers it. Site dormant since 2016.
     tier: personal
     topics: [education, fastai]
 
@@ -357,13 +356,13 @@ feeds:
   # No RSS
   - name: Modal Blog
     url: https://modal.com/blog
-    feed: null
+    feed: https://modal.com/blog/atom.xml
     tier: company
     topics: [serverless-gpu]
 
   - name: Replicate Blog
     url: https://replicate.com/blog
-    feed: null
+    feed: https://replicate.com/blog/atom
     tier: company
     topics: [model-hosting]
 
@@ -495,6 +494,9 @@ feeds:
     feed: https://www.lesswrong.com/feed.xml
     tier: academia
     topics: [rationality, ai-safety, community]
+    # LessWrong covers AI safety + rationality + community ops + memes. Only
+    # keep posts whose title or summary mentions AI/alignment/agent topics.
+    title_filter: '\b(AI|LLM|agent|model|alignment|safety|interpretab|RLHF|scaling|deceptive|deception|mesa|orthogonal|sleeper|reward hack|jailbreak|prompt|fine.?tun|train|chinchilla|capability|eval|red.?team|mythos|claude|gpt|gemini|anthropic|openai|deepmind|x.risk)\b'
 
   # ============================================================
   # TIER 3C — Academic magazines / conferences
@@ -522,6 +524,12 @@ feeds:
     feed: https://arxiv.org/rss/cs.AI
     tier: academia
     topics: [arxiv, firehose]
+    # arXiv cs.AI is a firehose (~40 papers/day, ~280/week). The keyword set
+    # below is narrow on purpose — we already harvest most quality work via
+    # HF Daily Papers. arXiv firehose only catches things HF missed.
+    # Targeted themes: world models, scaling/data-limited training, agent
+    # runtime/memory, alignment+interpretability, novel architectures.
+    title_filter: '\b(world model|scaling law|chinchilla|data.limited|data.constrained|over.?training|agent.native|agent runtime|agent memory|agentic harness|tool.?integrated reasoning|interpretab|mechanistic|sleeper agent|deceptive alignment|reward hack|emergent (capabilit|behavior)|sparse attention|state.space model|mamba|diffusion (language model|LM)|byte.?level|long.context|test.?time (compute|train|scaling)|self.?improve|self.?distill|model merging|grokking|phase transition|VLA|vision.language.action)\b'
 
   - name: Nature CS subjects
     url: https://www.nature.com/subjects/computer-science
