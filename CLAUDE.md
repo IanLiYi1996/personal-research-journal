@@ -106,6 +106,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-06-12-hf-daily-papers-may29-jun12.md` | 05/29-06/12 (521 papers, 25 精选, 4 deep dives, 5 figures) |
 | `2026-06-16-hf-daily-papers-jun13-16.md` | 06/13-06/16 (51 papers; 周末空档, 25 精选, 2 deep dives: APPO/OmniDirector, 8 figures) |
 | `2026-06-26-hf-daily-papers-jun17-25.md` | 06/17-06/25 (234 papers; 6/20-21 周末空档, 25 精选, 2 deep dives: LoopWM/Qwen-AgentWorld, 7 figures) |
+| `2026-06-29-hf-daily-papers-jun26-29.md` | 06/26-06/29 (36 papers; 6/27-28 周末空档, 25 精选, 2 deep dives: DanceOPD/Verification-Horizon, 10 figures) |
 
 ## WeChat Publishing
 
