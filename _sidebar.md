@@ -8,6 +8,8 @@
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
   - [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8.md)
+  - [Blog Deep Dive: Harness Engineering for Self-Improvement（Lilian Weng）](/research-notes/2026-07-08-blog-harness-engineering.md)
+  - [Blog Deep Dive: A Global Workspace in Language Models（Anthropic Research）](/research-notes/2026-07-08-blog-global-workspace.md)
   - [HF Daily Papers Digest · 06/26–06/29 (2026-W26 末尾)](/research-notes/2026-06-29-hf-daily-papers-jun26-29.md)
   - [Blog Deep Dive｜Lilian Weng "Scaling Laws, Carefully" (2026-06-24)](/research-notes/2026-06-26-lilian-weng-scaling-laws.md)
   - [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25.md)

@@ -169,12 +169,15 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | File | Coverage |
 |------|----------|
 | `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 6 HTML scraper / 8 SPA-blocked; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
+| `tech-blogs/2026-W28.md` | W28 (06/30–07/08): 175 抓取 / 174 新增（RSS 144 + sitemap 19 + HTML 12）; deep-dives: Lilian Weng "Harness Engineering for Self-Improvement" + Anthropic "A global workspace in language models" |
 
 ### Single-post Deep Dives in research-notes/
 
 | File | Source / Post |
 |------|--------------|
 | `research-notes/2026-06-26-lilian-weng-scaling-laws.md` | Lilian Weng (2026-06-24) "Scaling Laws, Carefully" |
+| `research-notes/2026-07-08-blog-harness-engineering.md` | Lilian Weng (2026-07-04) "Harness Engineering for Self-Improvement" |
+| `research-notes/2026-07-08-blog-global-workspace.md` | Anthropic Research (2026-07-06) "A global workspace in language models" |
 
 ## Weekly Cross-Digest
 

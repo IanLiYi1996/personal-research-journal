@@ -82,8 +82,8 @@ Datasets, tools, frameworks, and reference materials.
 | Date | Type | Title |
 |------|------|-------|
 | 2026-07-08 | Note | [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8) |
+| 2026-07-08 | Note | [Blog Deep Dive: Harness Engineering for Self-Improvement（Lilian Weng）](/research-notes/2026-07-08-blog-harness-engineering) |
+| 2026-07-08 | Note | [Blog Deep Dive: A Global Workspace in Language Models（Anthropic Research）](/research-notes/2026-07-08-blog-global-workspace) |
 | 2026-06-29 | Note | [HF Daily Papers Digest · 06/26–06/29 (2026-W26 末尾)](/research-notes/2026-06-29-hf-daily-papers-jun26-29) |
 | 2026-06-26 | Note | [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25) |
-| 2026-06-26 | Note | [Blog Deep Dive｜Lilian Weng "Scaling Laws, Carefully" (2026-06-24)](/research-notes/2026-06-26-lilian-weng-scaling-laws) |
-| 2026-06-16 | Note | [HF Daily Papers 摘要 · 2026/06/13–06/16](/research-notes/2026-06-16-hf-daily-papers-jun13-16) |
 <!-- AUTO:RECENT:END -->
