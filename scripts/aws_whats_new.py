@@ -44,10 +44,14 @@ CATEGORIES = [
 ]
 
 
+def _kw_matches(t: str, kw: str) -> bool:
+    return re.search(r"\b" + re.escape(kw.strip()) + r"\b", t) is not None
+
+
 def classify(title: str, summary: str) -> str:
     t = (title + " " + summary).lower()
     for cat, kws in CATEGORIES:
-        if any(kw in t for kw in kws):
+        if any(_kw_matches(t, kw) for kw in kws):
             return cat
     return "其他"
 
@@ -61,7 +65,7 @@ HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
 
 def impact(title: str, summary: str) -> str:
     t = (title + " " + summary).lower()
-    if any(kw in t for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
+    if any(_kw_matches(t, kw) for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
         return "High"
     if any(kw in t for kw in ["update to", "documentation", "now supports french",
                               "now supports japanese", "now supports german",
