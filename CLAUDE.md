@@ -262,6 +262,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `2026-W24-reddit-hot.md` | W24 截至 06/12（12 子版，290 帖；RSS-only，无 score） |
 | `2026-W25-reddit-hot.md` | W25 截至 06/16（12 子版，289 帖抓取 / 270 新增；RSS-only，无 score） |
 | `2026-W26-reddit-hot.md` | W26 截至 06/26（12 子版，273 帖抓取 / 273 新增；RSS-only，无 score；r/datascience 仅 4 帖 RSS 截断） |
+| `2026-W28-reddit-hot.md` | W28 截至 07/08（12 子版，277 帖抓取 / 277 新增，与 W26 无重叠；RSS-only，无 score；r/datascience 13 帖 / r/statistics 14 帖 RSS 截断） |
 
 ## Docsify Plugins
 
