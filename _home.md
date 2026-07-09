@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-08-hf-daily-papers-jun30-jul8" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-09-hf-daily-papers-jul09" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-09 | Note | [HF Daily Papers Digest · 07/09 (2026-W28 补充)](/research-notes/2026-07-09-hf-daily-papers-jul09) |
 | 2026-07-08 | Note | [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8) |
 | 2026-07-08 | Note | [Blog Deep Dive: Harness Engineering for Self-Improvement（Lilian Weng）](/research-notes/2026-07-08-blog-harness-engineering) |
 | 2026-07-08 | Note | [Blog Deep Dive: A Global Workspace in Language Models（Anthropic Research）](/research-notes/2026-07-08-blog-global-workspace) |
 | 2026-06-29 | Note | [HF Daily Papers Digest · 06/26–06/29 (2026-W26 末尾)](/research-notes/2026-06-29-hf-daily-papers-jun26-29) |
-| 2026-06-26 | Note | [Hugging Face Daily Papers Digest｜2026/06/17 – 06/25](/research-notes/2026-06-26-hf-daily-papers-jun17-25) |
 <!-- AUTO:RECENT:END -->
