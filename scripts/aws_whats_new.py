@@ -49,6 +49,13 @@ def _kw_matches(t: str, kw: str) -> bool:
 
 
 def classify(title: str, summary: str) -> str:
+    # Prefer matching on the title alone first: the description often name-drops
+    # unrelated services (e.g. a Redshift item mentioning "Graviton", or an Aurora
+    # DSQL item mentioning "Lambda"), which would otherwise hijack the category.
+    t_title = title.lower()
+    for cat, kws in CATEGORIES:
+        if any(_kw_matches(t_title, kw) for kw in kws):
+            return cat
     t = (title + " " + summary).lower()
     for cat, kws in CATEGORIES:
         if any(_kw_matches(t, kw) for kw in kws):
