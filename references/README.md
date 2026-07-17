@@ -1,19 +1,19 @@
 # 文献库索引
 
-> 共 **1473** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1475** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （628）
-- [智能体 / Agent](#-agent) （209）
-- [强化学习 / RLHF](#-rlhf) （270）
-- [推理 / Reasoning](#-reasoning) （308）
+- [大语言模型 (LLM)](#-llm-) （629）
+- [智能体 / Agent](#-agent) （210）
+- [强化学习 / RLHF](#-rlhf) （271）
+- [推理 / Reasoning](#-reasoning) （309）
 - [图神经网络 / Graph](#-graph) （242）
 - [扩散 / 生成模型](#-) （239）
 - [多模态 / 视觉语言](#-) （287）
-- [Transformer / 架构](#transformer-) （322）
-- [高效训练 / 推理](#-) （365）
+- [Transformer / 架构](#transformer-) （323）
+- [高效训练 / 推理](#-) （366）
 - [综述 / Survey](#-survey) （135）
 - [检索增强 / RAG](#-rag) （93）
 - 未分类（141）
@@ -23,6 +23,7 @@
 - **2026** [LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model](http://arxiv.org/abs/2604.20796) — Inclusion AI et al. · arXiv:2604.20796 `{AI2026Llada2}`
 - **2026** [JD Oxygen AI Item Center (Oxygen AIIC) V1: An Industrial-Scale LLM/VLM-Centric Solution for Item Understanding, Management, and Applications](http://arxiv.org/abs/2606.28070) — Oxygen AIIC et al. · arXiv:2606.28070 `{AIIC2026Jd}`
 - **2026** [ClawGym: A Scalable Framework for Building Effective Claw Agents](http://arxiv.org/abs/2604.26904) — Fei Bai et al. · arXiv:2604.26904 `{Bai2026Clawgym}`
+- **2026** [IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse](http://arxiv.org/abs/2603.12201) — Yushi Bai et al. · arXiv:2603.12201 `{Bai2026Indexcache}`
 - **2026** [SEVerA: Verified Synthesis of Self-Evolving Agents](http://arxiv.org/abs/2603.25111) — Debangshu Banerjee et al. · arXiv:2603.25111 `{Banerjee2026Severa}`
 - **2026** [Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation](http://arxiv.org/abs/2606.23127) — Julia Belikova et al. · arXiv:2606.23127 `{Belikova2026Managing}`
 - **2026** [Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation](http://arxiv.org/abs/2605.11739) — Yuchen Cai et al. · arXiv:2605.11739 `{Cai2026Learning}`
@@ -674,6 +675,7 @@
 - **2026** [Fast LeWorldModel](http://arxiv.org/abs/2606.26217) — Yuntian Gao et al. · arXiv:2606.26217 `{Gao2026Fast}`
 - **2026** [RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework](http://arxiv.org/abs/2604.15308) — Hao Gao et al. · arXiv:2604.15308 `{Gao2026Rad}`
 - **2026** [From AGI to ASI](http://arxiv.org/abs/2606.12683) — Tim Genewein et al. · arXiv:2606.12683 `{Genewein2026Agi}`
+- **2026** [GLM-5: from Vibe Coding to Agentic Engineering](http://arxiv.org/abs/2602.15763) — GLM-5-Team et al. · arXiv:2602.15763 `{GLMTeam2026Glm}`
 - **2026** [MemEye: A Visual-Centric Evaluation Framework for Multimodal Agent Memory](http://arxiv.org/abs/2605.15128) — Minghao Guo et al. · arXiv:2605.15128 `{Guo2026Memeye}`
 - **2026** [TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation](http://arxiv.org/abs/2605.22355) — Hanyu Guo et al. · arXiv:2605.22355 `{Guo2026Transitlm}`
 - **2026** [Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It](http://arxiv.org/abs/2606.26027) — Yupu Hao et al. · arXiv:2606.26027 `{Hao2026Why}`
@@ -883,6 +885,7 @@
 - **2026** [Lance: Unified Multimodal Modeling by Multi-Task Synergy](http://arxiv.org/abs/2605.18678) — Fengyi Fu et al. · arXiv:2605.18678 `{Fu2026Lance}`
 - **2026** [RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework](http://arxiv.org/abs/2604.15308) — Hao Gao et al. · arXiv:2604.15308 `{Gao2026Rad}`
 - **2026** [Audio Flamingo Next: Next-Generation Open Audio-Language Models for Speech, Sound, and Music](http://arxiv.org/abs/2604.10905) — Sreyan Ghosh et al. · arXiv:2604.10905 `{Ghosh2026Audio}`
+- **2026** [GLM-5: from Vibe Coding to Agentic Engineering](http://arxiv.org/abs/2602.15763) — GLM-5-Team et al. · arXiv:2602.15763 `{GLMTeam2026Glm}`
 - **2026** [Leveraging Verifier-Based Reinforcement Learning in Image Editing](http://arxiv.org/abs/2604.27505) — Hanzhong Guo et al. · arXiv:2604.27505 `{Guo2026Leveraging}`
 - **2026** [Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It](http://arxiv.org/abs/2606.26027) — Yupu Hao et al. · arXiv:2606.26027 `{Hao2026Why}`
 - **2026** [SIA: Self Improving AI with Harness &amp; Weight Updates](http://arxiv.org/abs/2605.27276) — Prannay Hebbar et al. · arXiv:2605.27276 `{Hebbar2026Sia}`
@@ -1154,6 +1157,7 @@
 - **2026** [How Post-Training Shapes Biological Reasoning Models](http://arxiv.org/abs/2606.16517) — Lukas Fesser et al. · arXiv:2606.16517 `{Fesser2026How}`
 - **2026** [Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding](http://arxiv.org/abs/2604.05015) — Chaoyou Fu et al. · arXiv:2604.05015 `{Fu2026Video}`
 - **2026** [Audio Flamingo Next: Next-Generation Open Audio-Language Models for Speech, Sound, and Music](http://arxiv.org/abs/2604.10905) — Sreyan Ghosh et al. · arXiv:2604.10905 `{Ghosh2026Audio}`
+- **2026** [GLM-5: from Vibe Coding to Agentic Engineering](http://arxiv.org/abs/2602.15763) — GLM-5-Team et al. · arXiv:2602.15763 `{GLMTeam2026Glm}`
 - **2026** [AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation](http://arxiv.org/abs/2605.13724) — Yuchao Gu et al. · arXiv:2605.13724 `{Gu2026Anyflow}`
 - **2026** [Co-Evolving Policy Distillation](http://arxiv.org/abs/2604.27083) — Naibin Gu et al. · arXiv:2604.27083 `{Gu2026Co}`
 - **2026** [Leveraging Verifier-Based Reinforcement Learning in Image Editing](http://arxiv.org/abs/2604.27505) — Hanzhong Guo et al. · arXiv:2604.27505 `{Guo2026Leveraging}`
@@ -2225,6 +2229,7 @@
 ## Transformer / 架构
 
 - **2026** [LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model](http://arxiv.org/abs/2604.20796) — Inclusion AI et al. · arXiv:2604.20796 `{AI2026Llada2}`
+- **2026** [IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse](http://arxiv.org/abs/2603.12201) — Yushi Bai et al. · arXiv:2603.12201 `{Bai2026Indexcache}`
 - **2026** [PhysiFormer: Learning to Simulate Mechanics in World Space](http://arxiv.org/abs/2606.27364) — Yiming Chen et al. · arXiv:2606.27364 `{Chen2026Physiformer}`
 - **2026** [Prompt Relay: Inference-Time Temporal Control for Multi-Event Video Generation](http://arxiv.org/abs/2604.10030) — Gordon Chen et al. · arXiv:2604.10030 `{Chen2026Prompt}`
 - **2026** [Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots](http://arxiv.org/abs/2606.28133) — Sijin Chen et al. · arXiv:2606.28133 `{Chen2026Translation}`
@@ -2552,6 +2557,7 @@
 - **2026** [LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model](http://arxiv.org/abs/2604.20796) — Inclusion AI et al. · arXiv:2604.20796 `{AI2026Llada2}`
 - **2026** [JD Oxygen AI Item Center (Oxygen AIIC) V1: An Industrial-Scale LLM/VLM-Centric Solution for Item Understanding, Management, and Applications](http://arxiv.org/abs/2606.28070) — Oxygen AIIC et al. · arXiv:2606.28070 `{AIIC2026Jd}`
 - **2026** [ClawGym: A Scalable Framework for Building Effective Claw Agents](http://arxiv.org/abs/2604.26904) — Fei Bai et al. · arXiv:2604.26904 `{Bai2026Clawgym}`
+- **2026** [IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse](http://arxiv.org/abs/2603.12201) — Yushi Bai et al. · arXiv:2603.12201 `{Bai2026Indexcache}`
 - **2026** [Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent](http://arxiv.org/abs/2606.30616) — Lei Bai et al. · arXiv:2606.30616 `{Bai2026Scaling}`
 - **2026** [Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation](http://arxiv.org/abs/2605.11739) — Yuchen Cai et al. · arXiv:2605.11739 `{Cai2026Learning}`
 - **2026** [PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects](http://arxiv.org/abs/2605.21572) — Ziang Cao et al. · arXiv:2605.21572 `{Cao2026Physx}`

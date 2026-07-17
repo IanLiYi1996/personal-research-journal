@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [Inkling / GLM-5.2 / Kimi K3 三大开放模型深度调研](/research-notes/2026-07-17-inkling-glm52-kimik3.md)
   - [Blog Deep Dive: Previewing GPT‑5.6 Sol（OpenAI）](/research-notes/2026-07-10-blog-gpt-5-6.md)
   - [HF Daily Papers Digest · 07/09 (2026-W28 补充)](/research-notes/2026-07-09-hf-daily-papers-jul09.md)
   - [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8.md)

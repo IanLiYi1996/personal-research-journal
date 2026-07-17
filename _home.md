@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-10-blog-gpt-5-6" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-17-inkling-glm52-kimik3" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-17 | Note | [Inkling / GLM-5.2 / Kimi K3 三大开放模型深度调研](/research-notes/2026-07-17-inkling-glm52-kimik3) |
 | 2026-07-10 | Note | [Blog Deep Dive: Previewing GPT‑5.6 Sol（OpenAI）](/research-notes/2026-07-10-blog-gpt-5-6) |
 | 2026-07-09 | Note | [HF Daily Papers Digest · 07/09 (2026-W28 补充)](/research-notes/2026-07-09-hf-daily-papers-jul09) |
 | 2026-07-08 | Note | [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8) |
 | 2026-07-08 | Note | [Blog Deep Dive: Harness Engineering for Self-Improvement（Lilian Weng）](/research-notes/2026-07-08-blog-harness-engineering) |
-| 2026-07-08 | Note | [Blog Deep Dive: A Global Workspace in Language Models（Anthropic Research）](/research-notes/2026-07-08-blog-global-workspace) |
 <!-- AUTO:RECENT:END -->
