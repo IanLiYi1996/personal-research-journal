@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="600" viewBox="0 0 1080 600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1c"/><stop offset="1" stop-color="#101a2c"/>
+    </linearGradient>
+    <linearGradient id="line1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="line2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="glow2"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1080" height="600" fill="url(#bg2)"/>
+  <text x="70" y="88" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="26" fill="#64748b" letter-spacing="4">2026 最新论文 · 两条主线</text>
+  <text x="68" y="172" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="66" font-weight="800" fill="#f1f5f9">AI 的两条隐藏主线</text>
+
+  <!-- Line 1 -->
+  <g filter="url(#glow2)">
+    <path d="M70 300 C 300 300, 360 260, 620 260 L 1010 260" stroke="url(#line1)" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+  <circle cx="70" cy="300" r="11" fill="#22d3ee"/>
+  <circle cx="360" cy="270" r="9" fill="#38bdf8"/>
+  <circle cx="620" cy="260" r="9" fill="#3b82f6"/>
+  <circle cx="1010" cy="260" r="11" fill="#3b82f6"/>
+  <text x="70" y="250" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="700" fill="#67e8f9">① Agentic RL 信用分配</text>
+  <text x="70" y="345" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="23" fill="#94a3b8">TRACE · SAO · TRIAGE</text>
+
+  <!-- Line 2 -->
+  <g filter="url(#glow2)">
+    <path d="M70 470 C 320 470, 380 430, 640 430 L 1010 430" stroke="url(#line2)" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+  <circle cx="70" cy="470" r="11" fill="#f472b6"/>
+  <circle cx="380" cy="440" r="9" fill="#c084fc"/>
+  <circle cx="640" cy="430" r="9" fill="#a78bfa"/>
+  <circle cx="1010" cy="430" r="11" fill="#a78bfa"/>
+  <text x="70" y="420" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="700" fill="#f9a8d4">② 统一多模态 · 去编码器化</text>
+  <text x="70" y="515" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="23" fill="#94a3b8">LLaDA2.0-Uni · Tuna-2</text>
+
+  <text x="70" y="565" font-family="'Noto Sans CJK SC', Arial, sans-serif" font-size="22" fill="#475569">含训练 GLM-5.2 的那套异步 RL 算法</text>
+</svg>
