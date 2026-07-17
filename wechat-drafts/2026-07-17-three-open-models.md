@@ -60,7 +60,11 @@ Thinking Machines Lab（就是 Mira Murati 那家）7 月 15 日放出了他们�
 
 它没有单独的技术报告——架构依据是同系的 GLM-5 报告（arXiv:2602.15763），可以理解为 GLM-5（744B/40B、80 层、256 专家）的同系放大。两个技术亮点值得记住：
 
+![GLM-5 在主流基准上对比 DeepSeek-V3.2 / Claude Opus 4.5 / Gemini 3 Pro / GPT-5.2](../research-notes/2026-07-17-inkling-glm52-kimik3/glm5-fig1.png)
+
 **IndexShare / IndexCache**：稀疏注意力（DSA）的 indexer 每层都要算 top-k，本身是 O(L²)，很贵。但相邻层的 top-k 选择高度相似——于是把层分成"自己算索引"和"复用最近层索引"两类。官方说法是**每 4 个稀疏注意力层复用同一个 indexer，1M 上下文下 per-token FLOPs 降 2.9×**。
+
+![IndexCache 在生产级 GLM-5 上：保留 1/2 indexer 即得 1.2× 端到端加速，长上下文与推理基准质量几乎无损](../research-notes/2026-07-17-inkling-glm52-kimik3/indexcache-fig1.png)
 
 **异步 RL 后训练**：基于 slime 框架，把生成和训练解耦。这块下面 Kimi 会有个呼应，先按下不表。
 

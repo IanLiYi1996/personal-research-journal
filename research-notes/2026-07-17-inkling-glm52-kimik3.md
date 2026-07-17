@@ -114,6 +114,8 @@ TML 首个开放权重模型,2026-07-15 发布。从零训练的 MoE Transformer
 | MTP | 3 层 MTP 训练时共享参数,accept length 2.76(vs DeepSeek-V3.2 的 2.55) |
 
 - **DSA**:用"动态、细粒度选择"替代传统 dense O(L²) 注意力——不像滑窗那样固定,而是**"看内容"决定哪些 token 重要**,长序列注意力计算减约 1.5–2×,号称 "lossless by construction"。
+
+![GLM-5 在主流基准上对比 DeepSeek-V3.2 / Claude Opus 4.5 / Gemini 3 Pro / GPT-5.2(GLM-5 技术报告)](2026-07-17-inkling-glm52-kimik3/glm5-fig1.png)
 - **预训练**:基座 28.5T token;数据含 Web(DCLM + World Knowledge 分类器)、Code(去重后独特 token +28%)、Math & Science。中训练把上下文 4K→200K 分阶段拉伸(32K@1T → 128K@500B → 200K@50B);SWE 数据约 1000 万 issue–PR 对、约 160B 独特 token。
 
 ### 技术亮点 1 —— IndexShare / IndexCache(arXiv:2603.12201)
@@ -124,6 +126,8 @@ TML 首个开放权重模型,2026-07-15 发布。从零训练的 MoE Transformer
 - 把层分成 **Full layers**(少数,跑自己的 indexer)和 **Shared layers**(多数,直接复用最近 Full layer 的 top-k 索引)。GLM-5.2 卡描述其 IndexShare **"每 4 个稀疏注意力层复用同一 indexer,在 1M 上下文下 per-token FLOPs 降低 2.9×"**。
 - 两种配置:**训练无关**(greedy search 按校准集 LM loss 选保留层)与**训练感知**(多层蒸馏 loss,让简单交错模式也能匹配 full-indexer 精度)。
 - 效果(30B DSA 模型):削减 **75% indexer 计算**、prefill 最高 **1.82×**、decode **1.48×** 加速,质量损失可忽略。⚠️ 零损失需配合 greedy 搜出的层模式,均匀交错在 Long Avg 上损失约 7.2 分。已在生产级 GLM-5 上做过初步验证(Figure 1)。
+
+![IndexCache 在生产级 GLM-5 上:保留 1/2 indexer 即得 1.2× 端到端加速,长上下文与推理基准质量几乎无损](2026-07-17-inkling-glm52-kimik3/indexcache-fig1.png)
 
 ### 技术亮点 2 —— 异步 RL 后训练(GLM-5 报告)
 

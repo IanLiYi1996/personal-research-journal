@@ -35,6 +35,8 @@ RLVR(可验证奖励 RL)在数学/代码等**单轮**任务上很成功:一个�
 
 **核心洞见**:不训 critic、不要 step 标注、不用强 judge,而是把**冻结的参考模型**(策略初始化的副本)当作一个稳定的"探针",衡量**每个轨迹前缀是否让 gold answer 更可预测**。
 
+![TRACE 在 tool-call 边界构造奖励:每个前缀经冻结参考模型打分→log-ratio 状态值→相邻差分做 turn 级 TD 信用](2026-07-17-agentic-rl-credit-and-unified-multimodal/trace-fig2-reward-construction.png)
+
 **机制**(见 §3):
 1. 在 tool-call 边界把 rollout 切成状态转移 $S_k \to S_{k+1}$。
 2. 每个前缀 $S_k$ 用参考模型算 gold answer 的平均对数概率 $\bar\ell_k$,转成 log-ratio 状态值 $V(S_k)$。
@@ -55,6 +57,8 @@ RLVR(可验证奖励 RL)在数学/代码等**单轮**任务上很成功:一个�
 且收敛更早更快;学到的行为跨语言/跨语料迁移(开放 web 上 GAIA 52.0、中文 xbench 45.0)。**局限**:依赖"答案短、可精确匹配 gold",对代码补丁/开放式长输出这类任务,gold-output 对数概率是否还是可靠 value 代理尚不清楚。
 
 ### 标杆 2:SAO —— 单 rollout 异步优化(清华 + Z.AI;GLM-5.2 实际所用)
+
+![SAO 单 rollout 异步设计:每条轨迹生成完立即进训练,不必像 GRPO 那样等整个 group](2026-07-17-agentic-rl-credit-and-unified-multimodal/sao-fig2-single-rollout.png)
 
 **问题**:主流 RL 是**同步 batch-interleaved**——策略生成一整批 rollout,全收齐才开始优化。agent/代码任务 rollout 长度差异极大,短的早完、长的拖尾,GPU 大面积空转。异步 RL 能缓解,但引入两个难题:(1) 一条轨迹可能由多个旧版本 rollout 模型生成,off-policy 更严重、训练不稳;(2) **GRPO 的 group 采样与异步天然不匹配**——group 得等最慢的那条,且在线环境常常每 prompt 只有一条反馈。
 
@@ -79,6 +83,8 @@ RLVR(可验证奖励 RL)在数学/代码等**单轮**任务上很成功:一个�
 **核心思路**:给 outcome 信用**加一根语义「角色」轴**。一个结构化 judge 把每个 segment 分成四类——**决定性进展 / 有用探索 / 无进展基础设施 / 倒退**,再用**固定的角色→有界过程奖励**规则映射。保留 verifier outcome 作为优化方向,只修正 outcome-only 的两个盲区(惩罚失败轨迹里的有用探索、奖励成功轨迹里的冗余/倒退)。
 
 **理论**:证明了 role-conditioned 信用是"仅凭角色标签可表达的最优 segment 级修正"——即 per-segment advantage 残差在角色变量上的投影,judge 可靠时降低 advantage 估计误差、连接到更低方差的策略梯度。
+
+![TRIAGE 核心结果:两个策略模型、三个 agent 基准上一致超过 GRPO 基线(虚线)](2026-07-17-agentic-rl-credit-and-unified-multimodal/triage-fig1-core-results.png)
 
 **结果**:在 ALFWorld / Search-QA / WebShop 上,两个策略模型均超 GRPO,且优于"标量 judge 过程奖励"和"outcome-supervised 共享 backbone value"两个 baseline。消融显示**增益主要来自角色分型本身**(而非单纯加密集奖励):可靠识别成功轨迹里的**倒退**是最大贡献,探索信用是稳定的次要增益。附加收益:完成的 ALFWorld/WebShop rollout 里,**环境交互轮数分别再降 10.4% / 14.8%**(学会少做冗余动作)。
 
@@ -108,11 +114,13 @@ RLVR(可验证奖励 RL)在数学/代码等**单轮**任务上很成功:一个�
 
 **效率**:训练无关加速框架 **SPRINT**(稀疏前缀保留 + 非均匀 token 去掩码),生成 24.3→39.8 TPS(1.6×),均分仅掉 0.6。
 
-**结果**:理解上**追平专用 VLM**(MMStar 64.1 vs Qwen2.5-VL-7B 63.9;逼近甚至个别反超);生成上 GenEval **0.89**、DPG 87.76、UniGenBench 79.63 均为**统一模型 SOTA**;WISE(推理型生成)0.68,开 thinking 再 +10% 到 0.78。原生支持**交错生成+推理**(下棋、物理题分步解)。**局限**:SigLIP-VQ 保语义但细节保真弱;RL 优化仍待完善。
+**结果**:理解上**追平专用 VLM**(MMStar 64.1 vs Qwen2.5-VL-7B 63.9;逼近甚至个别反超);生成上 GenEval **0.89**、DPG 87.76、UniGenBench 79.63 均为**统一模型 SOTA**;WISE(推理型生成)0.68,开 thinking 再 +10% 到 0.78。原生支持**交错生成+推理**(下棋、物理题分步解)。**局限**:SigLIP-VQ 保语义但细节保真弱;RL 优化仍待完善。(注:该论文 arXiv HTML 未提供可直接抓取的插图,故本节以数据为主。)
 
 ### 标杆 5:Tuna-2 —— 「像素 embedding 打败 vision encoder」(Meta AI + HKU + Waterloo)
 
 **大胆主张**:**预训练 vision encoder 不是必需的**。直接用简单 patch embedding 层编码原始像素,**完全丢弃 VAE 和 representation encoder**,理解与生成都在**像素空间**端到端做。
+
+![Tuna-2 架构演进:从 Tuna(VAE+encoder)逐步剥离到 Tuna-R(仅 representation encoder)再到 Tuna-2(纯 patchify)](2026-07-17-agentic-rl-credit-and-unified-multimodal/tuna2-fig1-architecture.png)
 
 **演进三步**(消融即架构):Tuna(VAE+encoder)→ **Tuna-R**(去 VAE,留 representation encoder)→ **Tuna-2**(全去掉,纯 patchify + 单 transformer decoder)。生成用 JiT 的 **像素空间 flow matching**(x-prediction + v-loss)。为稳住高维像素空间训练,引入 **masking-based 特征学习**(生成时预测被掩码 patch、理解时在部分可见下做多模态推理,当正则)。
 
