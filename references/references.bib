@@ -2293,6 +2293,14 @@
   url = {https://github.com/google-research/}
 }
 
+@article{Fedus2021Switch,
+  title = {Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity},
+  author = {William Fedus and Barret Zoph and Noam Shazeer},
+  year = {2021},
+  url = {http://arxiv.org/abs/2101.03961},
+  abstract = {In deep learning, models typically reuse the same parameters for all inputs. Mixture of Experts (MoE) defies this and instead selects different parameters for each incoming example. The result is a sparsely-activated model -- with outrageous numbers of parameters -- but a constant computational cost. However, despite several notable successes of MoE, widespread adoption has been hindered by complexity, communication costs and training instability -- we address these with the Switch Transformer. We simplify the MoE routing algorithm and design intuitive improved models with reduced communication and computational costs. Our proposed training techniques help wrangle the instabilities and we show large sparse models may be trained, for the first time, with lower precision (bfloat16) formats. We design models based off T5-Base and T5-Large to obtain up to 7x increases in pre-training speed with the same computational resources. These improvements extend into multilingual settings where we measure gains over the mT5-Base version across all 101 languages. Finally, we advance the current scale of language models by pre-training up to trillion parameter models on the "Colossal Clean Crawled Corpus" and achieve a 4x speedup over the T5-XXL model.}
+}
+
 @article{Fei2020Sample,
   abstract = {Sample optimization, which involves sample augmentation and sample refinement, is an essential but often neglected component in modern display advertising platforms. Due to the massive number of ad candidates, industrial ad service usually leverages a multi-layer funnel-shaped structure involving at least two stages: candidate generation and re-ranking. In the candidate generation step, an offline neural network matching model is often trained based on past click/conversion data to obtain the user feature vector and ad feature vector. However, there is a covariate shift problem between the user observed ads and all possible ones. As a result, the candidate generation model trained from the click/conversion history cannot fully capture users' potential intentions or generalize well to unseen ads. In this paper, we utilize several sample optimization strategies to alleviate the covariate shift problem for training candidate generation models. We have launched these strategies in Baidu display ad platform and achieved considerable improvements in offline metrics, including both offline click-recall, cost-recall, as well as online metric cost per mille (CPM).},
   author = {Hongliang Fei and Shulong Tan and Pengju Guo and Wenbo Zhang and Hongfang Zhang and Ping Li},
@@ -12928,3 +12936,59 @@
   year = {2021}
 }
 
+
+@article{Shoeybi2019Megatron,
+  title = {Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism},
+  author = {Mohammad Shoeybi and Mostofa Patwary and Raul Puri and Patrick LeGresley and Jared Casper and Bryan Catanzaro},
+  year = {2019},
+  url = {http://arxiv.org/abs/1909.08053},
+  abstract = {Introduces intra-layer (tensor) model parallelism for transformers, splitting MLP and self-attention weight matrices column/row-wise with only a few all-reduce operations in native PyTorch. Trains an 8.3B-parameter GPT-2 on 512 V100 GPUs at 76% scaling efficiency and identifies the layernorm placement fix needed to scale BERT.}
+}
+
+@article{Huang2018Gpipe,
+  title = {GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism},
+  author = {Yanping Huang and Youlong Cheng and Ankur Bapna and Orhan Firat and Mia Xu Chen and Dehao Chen and HyoukJoong Lee and Jiquan Ngiam and Quoc V. Le and Yonghui Wu and Zhifeng Chen},
+  year = {2018},
+  url = {http://arxiv.org/abs/1811.06965},
+  abstract = {Introduces micro-batch pipeline parallelism: a mini-batch is split into M micro-batches pipelined across K stages with synchronous gradient updates, reducing the pipeline bubble to a negligible level when M >= 4K, combined with re-materialization (activation checkpointing). Scales a Transformer to 83.9B parameters across 128 partitions.}
+}
+
+@article{Narayanan2021Efficient,
+  title = {Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM},
+  author = {Deepak Narayanan and Mohammad Shoeybi and Jared Casper and Patrick LeGresley and Mostofa Patwary and Vijay Korthikanti and Dmitri Vainbrand and Prethvi Kashinkunti and Julie Bernauer and Bryan Catanzaro and Amar Phanishayee and Matei Zaharia},
+  year = {2021},
+  url = {http://arxiv.org/abs/2104.04473},
+  abstract = {Presents PTD-P: the optimal composition of pipeline, tensor, and data parallelism to train trillion-parameter models on thousands of GPUs. Key principles: tensor parallelism within a node (NVLink), pipeline parallelism across nodes (IB), plus an interleaved pipeline schedule and scatter/gather comm optimization. Trains a 1T-parameter GPT on 3072 A100s at 502 petaFLOP/s (52% of peak).}
+}
+
+@article{Korthikanti2022Reducing,
+  title = {Reducing Activation Recomputation in Large Transformer Models},
+  author = {Vijay Korthikanti and Jared Casper and Sangkug Lym and Lawrence McAfee and Michael Andersch and Mohammad Shoeybi and Bryan Catanzaro},
+  year = {2022},
+  url = {http://arxiv.org/abs/2205.05198},
+  abstract = {Introduces sequence parallelism (partitioning layernorm/dropout activations along the sequence dimension, complementing tensor parallelism) and selective activation recomputation (recomputing only the cheap-but-memory-heavy attention block). Cuts activation memory ~5x and recomputation overhead from >30% to ~3%, reaching 54.2% MFU on a 530B model over 2240 A100s.}
+}
+
+@article{Zhao2023Pytorch,
+  title = {PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel},
+  author = {Yanli Zhao and Andrew Gu and Rohan Varma and Liang Luo and Chien-Chin Huang and Min Xu and Less Wright and Hamid Shojanazeri and Myle Ott and Sam Shleifer and Alban Desmaison and Can Balioglu and Pritam Damania and Bernard Nguyen and Geeta Chauhan and Yuchen Hao and Ajit Mathews and Shen Li},
+  year = {2023},
+  url = {http://arxiv.org/abs/2304.11277},
+  abstract = {Native PyTorch implementation of ZeRO-3-style fully sharded data parallelism: parameters/gradients/optimizer states are flattened into FlatParameters and sharded across ranks, all-gathered on demand per FSDP unit and discarded after use, with reduce-scatter for gradients. Adds backward/forward prefetching, comm-compute overlap, hybrid sharding, and a rate limiter. Scales GPT-175B to 512 A100s at ~55-60% peak.}
+}
+
+@article{Micikevicius2017Mixed,
+  title = {Mixed Precision Training},
+  author = {Paulius Micikevicius and Sharan Narang and Jonah Alben and Gregory Diamos and Erich Elsen and David Garcia and Boris Ginsburg and Michael Houston and Oleksii Kuchaiev and Ganesh Venkatesh and Hao Wu},
+  year = {2017},
+  url = {http://arxiv.org/abs/1710.03740},
+  abstract = {Trains DNNs in FP16 for weights/activations/gradients while matching FP32 accuracy via three techniques: an FP32 master copy of weights, loss scaling to keep small gradients representable, and FP32 accumulation for dot-products/reductions. Foundational for modern mixed-precision training on Tensor Cores; halves memory and gives 2-6x speedups.}
+}
+
+@article{Lepikhin2020Gshard,
+  title = {GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding},
+  author = {Dmitry Lepikhin and HyoukJoong Lee and Yuanzhong Xu and Dehao Chen and Orhan Firat and Yanping Huang and Maxim Krikun and Noam Shazeer and Zhifeng Chen},
+  year = {2020},
+  url = {http://arxiv.org/abs/2006.16668},
+  abstract = {Combines Sparsely-Gated Mixture-of-Experts (top-2 gating) with lightweight tensor-sharding annotations compiled by XLA into SPMD partitioned code (inserting all-reduce/all-to-all). Trains a 600B-parameter multilingual MT model on 2048 TPU v3 cores in ~4 days; 16x model size for only 3.6x compute -- expert parallelism via all-to-all.}
+}

@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-17-inkling-glm52-kimik3" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-20-blog-collective-operations" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-20 | Note | [分布式训练系统全景：从并行策略到集合通信与集群拓扑](/research-notes/2026-07-20-blog-collective-operations) |
 | 2026-07-17 | Note | [两条最新主线深读:Agentic RL 信用分配 & 统一多模态的扩散/去编码器化](/research-notes/2026-07-17-agentic-rl-credit-and-unified-multimodal) |
 | 2026-07-17 | Note | [Inkling / GLM-5.2 / Kimi K3 三大开放模型深度调研](/research-notes/2026-07-17-inkling-glm52-kimik3) |
 | 2026-07-10 | Note | [Blog Deep Dive: Previewing GPT‑5.6 Sol（OpenAI）](/research-notes/2026-07-10-blog-gpt-5-6) |
 | 2026-07-09 | Note | [HF Daily Papers Digest · 07/09 (2026-W28 补充)](/research-notes/2026-07-09-hf-daily-papers-jul09) |
-| 2026-07-08 | Note | [HF Daily Papers Digest · 06/30–07/08 (2026-W27)](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8) |
 <!-- AUTO:RECENT:END -->

@@ -40,3 +40,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Blog Deep Dive: Previewing GPT‑5.6 Sol（OpenAI）](/research-notes/2026-07-10-blog-gpt-5-6.md)
 - [两条最新主线深读:Agentic RL 信用分配 & 统一多模态的扩散/去编码器化](/research-notes/2026-07-17-agentic-rl-credit-and-unified-multimodal.md)
 - [Inkling / GLM-5.2 / Kimi K3 三大开放模型深度调研](/research-notes/2026-07-17-inkling-glm52-kimik3.md)
+- [分布式训练系统全景：从并行策略到集合通信与集群拓扑](/research-notes/2026-07-20-blog-collective-operations.md)

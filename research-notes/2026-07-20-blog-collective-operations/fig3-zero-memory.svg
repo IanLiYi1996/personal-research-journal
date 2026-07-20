@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+  <rect width="900" height="500" fill="#ffffff"/>
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2b4a">ZeRO / FSDP 显存分片 (N=4，Adam + 混合精度)</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#666">单卡显存 = 模型状态(参数+梯度+优化器) + 激活 + 临时缓冲。ZeRO 逐级分片"模型状态"</text>
+
+  <!-- baseline -->
+  <text x="60" y="98" font-size="14" font-weight="700" fill="#1a2b4a">基线 (DDP)：每卡全量复制 = 2Ψ+2Ψ+12Ψ = 16Ψ 字节</text>
+  <rect x="60" y="110" width="120" height="34" fill="#c9dcff" stroke="#3b6fd4"/><text x="120" y="132" text-anchor="middle" font-size="12">参数 2Ψ</text>
+  <rect x="180" y="110" width="120" height="34" fill="#bfe8cd" stroke="#2f9e5a"/><text x="240" y="132" text-anchor="middle" font-size="12">梯度 2Ψ</text>
+  <rect x="300" y="110" width="360" height="34" fill="#ffd4bf" stroke="#d4763b"/><text x="480" y="132" text-anchor="middle" font-size="12">优化器状态 12Ψ (fp32 参数/动量/方差)</text>
+
+  <!-- ZeRO-1 -->
+  <text x="60" y="188" font-size="14" font-weight="700" fill="#1a2b4a">ZeRO-1：分片优化器状态 → 4Ψ + 12Ψ/N</text>
+  <rect x="60" y="200" width="120" height="34" fill="#c9dcff" stroke="#3b6fd4"/><text x="120" y="222" text-anchor="middle" font-size="12">参数 2Ψ</text>
+  <rect x="180" y="200" width="120" height="34" fill="#bfe8cd" stroke="#2f9e5a"/><text x="240" y="222" text-anchor="middle" font-size="12">梯度 2Ψ</text>
+  <rect x="300" y="200" width="90" height="34" fill="#ffd4bf" stroke="#d4763b"/><text x="345" y="222" text-anchor="middle" font-size="11">Os 3Ψ</text>
+  <rect x="392" y="200" width="264" height="34" fill="#f0f0f0" stroke="#ccc" stroke-dasharray="4"/><text x="524" y="222" text-anchor="middle" font-size="11" fill="#999">其他卡持有 (已分片)</text>
+
+  <!-- ZeRO-2 -->
+  <text x="60" y="278" font-size="14" font-weight="700" fill="#1a2b4a">ZeRO-2：+ 分片梯度 → 2Ψ + 14Ψ/N</text>
+  <rect x="60" y="290" width="120" height="34" fill="#c9dcff" stroke="#3b6fd4"/><text x="120" y="312" text-anchor="middle" font-size="12">参数 2Ψ</text>
+  <rect x="180" y="290" width="52" height="34" fill="#bfe8cd" stroke="#2f9e5a"/><text x="206" y="312" text-anchor="middle" font-size="11">G .5Ψ</text>
+  <rect x="234" y="290" width="90" height="34" fill="#ffd4bf" stroke="#d4763b"/><text x="279" y="312" text-anchor="middle" font-size="11">Os 3Ψ</text>
+  <rect x="326" y="290" width="330" height="34" fill="#f0f0f0" stroke="#ccc" stroke-dasharray="4"/><text x="491" y="312" text-anchor="middle" font-size="11" fill="#999">其他卡持有</text>
+
+  <!-- ZeRO-3 / FSDP -->
+  <text x="60" y="368" font-size="14" font-weight="700" fill="#1a2b4a">ZeRO-3 = FSDP：+ 分片参数 → 16Ψ/N (随 N 线性下降)</text>
+  <rect x="60" y="380" width="30" height="34" fill="#c9dcff" stroke="#3b6fd4"/><text x="75" y="402" text-anchor="middle" font-size="10">P</text>
+  <rect x="90" y="380" width="30" height="34" fill="#bfe8cd" stroke="#2f9e5a"/><text x="105" y="402" text-anchor="middle" font-size="10">G</text>
+  <rect x="120" y="380" width="90" height="34" fill="#ffd4bf" stroke="#d4763b"/><text x="165" y="402" text-anchor="middle" font-size="11">Os 3Ψ</text>
+  <rect x="210" y="380" width="446" height="34" fill="#f0f0f0" stroke="#ccc" stroke-dasharray="4"/><text x="433" y="402" text-anchor="middle" font-size="11" fill="#999">其他卡持有；用到时 All-Gather 临时重建，用完丢弃</text>
+
+  <text x="60" y="455" font-size="12.5" fill="#7a3a20">代价：ZeRO-3/FSDP 每次前向/反向需 All-Gather 参数、Reduce-Scatter 梯度 → 通信量约为 DDP 的 1.5×</text>
+  <text x="60" y="478" font-size="12" fill="#999">Ψ = 参数量；假设 bf16 参数/梯度(2 字节)，fp32 Adam 优化器状态(参数+动量+方差, 12 字节)</text>
+</svg>

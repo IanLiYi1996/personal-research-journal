@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+  <rect width="880" height="440" fill="#ffffff"/>
+  <text x="440" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2b4a">Ring All-Reduce = Reduce-Scatter → All-Gather (N=4)</text>
+
+  <!-- ring nodes helper -->
+  <!-- Phase 1 -->
+  <text x="220" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="#2f9e5a">阶段 1：Reduce-Scatter (N−1=3 步)</text>
+  <g>
+    <circle cx="120" cy="150" r="34" fill="#eef4ff" stroke="#3b6fd4" stroke-width="2"/><text x="120" y="155" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU0</text>
+    <circle cx="320" cy="150" r="34" fill="#eef4ff" stroke="#3b6fd4" stroke-width="2"/><text x="320" y="155" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU1</text>
+    <circle cx="320" cy="300" r="34" fill="#eef4ff" stroke="#3b6fd4" stroke-width="2"/><text x="320" y="305" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU2</text>
+    <circle cx="120" cy="300" r="34" fill="#eef4ff" stroke="#3b6fd4" stroke-width="2"/><text x="120" y="305" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU3</text>
+    <path d="M154 150 H286" stroke="#2f9e5a" stroke-width="2.5" marker-end="url(#g)"/>
+    <path d="M320 184 V266" stroke="#2f9e5a" stroke-width="2.5" marker-end="url(#g)"/>
+    <path d="M286 300 H154" stroke="#2f9e5a" stroke-width="2.5" marker-end="url(#g)"/>
+    <path d="M120 266 V184" stroke="#2f9e5a" stroke-width="2.5" marker-end="url(#g)"/>
+    <text x="220" y="140" text-anchor="middle" font-size="12" fill="#2f9e5a">每步传 1 块并累加</text>
+  </g>
+  <text x="220" y="360" text-anchor="middle" font-size="12" fill="#555">结束：每个 GPU 各持 1 块的全局和</text>
+
+  <!-- Phase 2 -->
+  <text x="660" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="#d4763b">阶段 2：All-Gather (N−1=3 步)</text>
+  <g>
+    <circle cx="560" cy="150" r="34" fill="#fff3f0" stroke="#d4763b" stroke-width="2"/><text x="560" y="155" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU0</text>
+    <circle cx="760" cy="150" r="34" fill="#fff3f0" stroke="#d4763b" stroke-width="2"/><text x="760" y="155" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU1</text>
+    <circle cx="760" cy="300" r="34" fill="#fff3f0" stroke="#d4763b" stroke-width="2"/><text x="760" y="305" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU2</text>
+    <circle cx="560" cy="300" r="34" fill="#fff3f0" stroke="#d4763b" stroke-width="2"/><text x="560" y="305" text-anchor="middle" font-size="14" fill="#1a2b4a">GPU3</text>
+    <path d="M594 150 H726" stroke="#d4763b" stroke-width="2.5" marker-end="url(#o)"/>
+    <path d="M760 184 V266" stroke="#d4763b" stroke-width="2.5" marker-end="url(#o)"/>
+    <path d="M726 300 H594" stroke="#d4763b" stroke-width="2.5" marker-end="url(#o)"/>
+    <path d="M560 266 V184" stroke="#d4763b" stroke-width="2.5" marker-end="url(#o)"/>
+    <text x="660" y="140" text-anchor="middle" font-size="12" fill="#d4763b">每步传 1 块并覆盖</text>
+  </g>
+  <text x="660" y="360" text-anchor="middle" font-size="12" fill="#555">结束：每个 GPU 都有完整全局和</text>
+
+  <text x="440" y="410" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2b4a">总传输 ≈ 2·(N−1)/N · D，与 GPU 数 N 无关 → 带宽最优</text>
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#2f9e5a"/></marker>
+    <marker id="o" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#d4763b"/></marker>
+  </defs>
+</svg>
