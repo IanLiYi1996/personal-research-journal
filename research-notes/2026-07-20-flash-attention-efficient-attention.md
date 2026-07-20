@@ -37,6 +37,10 @@ graph TD
 
 FlashAttention 的核心洞察（Dao et al. 2022, `Dao2022Flashattention`）：**让注意力算法 IO-aware**——显式地减少 HBM↔SRAM 之间的读写次数，哪怕多做一些重复计算也值得。
 
+下面这张 FlashAttention 论文的标志性 Figure 1，一图讲清了三件事——**左**：GPU 存储层级（SRAM 19 TB/s 但仅 20 MB，HBM 1.5 TB/s 有 40 GB）；**中**：tiling 的外/内循环如何把 $K/V/Q$ 分块搬进 SRAM 计算、只把输出写回 HBM；**右**：GPT-2 上注意力各环节耗时，融合 kernel（FlashAttention）把 PyTorch 里 Matmul/Dropout/Softmax/Mask 的多次 HBM 往返压成一次：
+
+![FlashAttention Figure 1：左=GPU 存储层级金字塔（SRAM/HBM/DRAM 的带宽与容量）；中=tiling 外内循环把 K/V/Q 块搬入 SRAM，在片上完成 QKᵀ→softmax→×V 并只将输出写回 HBM；右=GPT-2 注意力耗时分解，融合 kernel 相对 PyTorch 大幅缩短（来源：Dao-AILab/flash-attention 官方仓库 assets）](2026-07-20-flash-attention-efficient-attention/fa1-banner-memory-tiling.jpg)
+
 ### 2｜数值基础：Online Softmax
 
 要在**不物化整行** $S$ 的前提下算 softmax，需要**增量式（online）softmax**。softmax 为数值稳定要减去行最大值 $m$：$\mathrm{softmax}(x)_i = e^{x_i-m}/\sum_j e^{x_j-m}$。
@@ -67,6 +71,10 @@ graph LR
 
 **效果**：BERT-large 端到端加速 15%（超 MLPerf 1.1 记录）、GPT-2 加速 3×、long-range arena 2.4×；显存从二次降到线性，首次让 Transformer 在 Path-X（序列 16K）上取得优于随机的成绩。
 
+显存节省随序列长度**线性放大**——正因为省掉了 $O(N^2)$ 的 $S/P$ 物化，序列越长收益越大：
+
+![FlashAttention 相对标准注意力的显存节省随序列长度增长：序列 2K 时省约 10×、4K 时约 20×（来源：Dao-AILab/flash-attention 官方仓库 assets）](2026-07-20-flash-attention-efficient-attention/fa1-memory-savings.jpg)
+
 ### 4｜FlashAttention-2：把 GPU 喂饱
 
 论文 *FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning*（Dao 2023, `Dao2023Flashattention`，arXiv:2307.08691）。v1 虽省显存，但 GPU 利用率仍不高（A100 上约 25–40%）。v2 从**并行度与工作划分**下手：
@@ -76,6 +84,10 @@ graph LR
 3. **更好的 warp 间工作划分**：调整 $Q$ 与 $K/V$ 在 warp 间的分配，减少共享内存的读写与同步。
 
 **效果**：比 v1 再快约 **2×**，A100 上达到约 **50–73%** 的理论峰值利用率，接近 GEMM 效率。
+
+下图（A100 前向+反向）里紫色的 FlashAttention-2 明显高出橙色的 v1 一截，且相对 PyTorch/xformers/Triton 全面领先；有因果掩码时（下排）优势更大：
+
+![FlashAttention-2 在 A100 80GB 上的前向+反向吞吐（4 个子图：无/有因果掩码 × head dim 64/128）。FA2（紫）相对 FA1（橙）约 2×，长序列达 170–200 TFLOPs/s，标准 PyTorch（蓝）常年垫底且 16K 时 OOM（来源：Dao-AILab/flash-attention 官方仓库 assets）](2026-07-20-flash-attention-efficient-attention/fa2-a100-benchmark.png)
 
 ### 5｜FlashAttention-3：拥抱 Hopper 的异步与低精度
 
@@ -131,6 +143,14 @@ FlashAttention 主要优化**单次注意力算子**（训练 + prefill 都受�
 > | 128K | ~64 GB | ~8 GB |
 >
 > （粗略量级，说明为何长上下文高并发下 KV cache 成为第一显存瓶颈——这正是 GQA 减头数、PagedAttention 减碎片各自攻击的对象。）
+
+![PagedAttention 的分页机制：每个序列有一份**逻辑 KV block** 视图，通过 **block table**（记录物理块号 + 已填槽位）映射到**非连续的物理 KV block**——就像操作系统用页表把虚拟地址映射到物理内存（来源：vLLM 官方博客）](2026-07-20-flash-attention-efficient-attention/paged-block-table.gif)
+
+![Copy-on-Write 内存共享：并行采样 / beam search 的多个输出共享同一份 prompt 的物理 KV 块，只有在某个分支要写入时才复制该块——大幅省显存（来源：vLLM 官方博客）](2026-07-20-flash-attention-efficient-attention/paged-cow-sharing.gif)
+
+真实吞吐对比（LLaMA-13B, A100-40GB，三路并行采样）——vLLM 相对 HuggingFace Transformers 快约 **15×**、相对 TGI 快约 **3.5×**：
+
+![服务吞吐对比（LLaMA-13B, A100-40GB）：HuggingFace 4.5 req/min、TGI 19.2、vLLM 67.2 req/min（来源：vLLM 官方博客）](2026-07-20-flash-attention-efficient-attention/vllm-throughput-a100-n3.png)
 
 **(c) 序列并行：Ring Attention**
 - **Ring Attention with Blockwise Transformers**（Liu et al. 2023, `Liu2023Ring`，arXiv:2310.01889）：把长序列的 $K,V$ 块**分散到多张设备**，各设备算本地块，同时把 KV 块沿"环形"拓扑传给下一张卡，**用计算掩盖通信**。理论上上下文长度随设备数线性扩展，达到"近乎无限上下文"。与 FlashAttention 正交、可叠加（每张卡内部仍用 Flash 算子）。
@@ -206,3 +226,9 @@ FlashAttention 的历史意义正在于：它证明了**不必牺牲精确性**�
 - Differential Transformer — Ye et al. 2024，arXiv:2410.05258（`Ye2024Differential`）
 
 > Online softmax 的原始出处 Milakov & Gimelshein (2018, *Online normalizer calculation for softmax*, arXiv:1805.02867) 为数值技巧短文；如需引用可另行 `add_paper.py` 收录。
+
+**配图来源**（论文 PDF 为图片式、arXiv 无 HTML 版的部分，图取自官方仓库/博客）：
+- FlashAttention Figure 1（存储层级+tiling）、显存节省图、FA2 A100 基准图 — [Dao-AILab/flash-attention 官方仓库 assets](https://github.com/Dao-AILab/flash-attention/tree/main/assets)
+- FA3 吞吐/ping-pong 图 — arXiv:2407.08608 HTML 版
+- GQA 头共享图 — arXiv:2305.13245 HTML 版；Ring Attention 图 — arXiv:2310.01889 HTML 版
+- PagedAttention 分页/CoW 动图、vLLM 吞吐图 — [vLLM 官方博客](https://blog.vllm.ai/2023/06/20/vllm.html)
