@@ -83,9 +83,29 @@ graph LR
 
 1. **Warp-specialization（生产者/消费者 + TMA）**：用 Hopper 的 Tensor Memory Accelerator 异步搬数据，让"搬数据"和"算"的 warp 分工重叠，**overlap 计算与数据移动**。
 2. **交错 matmul 与 softmax**：块级 GEMM 与 softmax 交替流水，用 Tensor Core 的异步性把 softmax 的延迟藏进 matmul。
+
+![FA3 的 "ping-pong" 调度：两个 warpgroup 错位流水，当 Warpgroup 1 做 GEMM（Tensor Core）时 Warpgroup 2 做 Softmax（多功能单元），反之亦然——让"慢"的 softmax 延迟被藏进"快"的 matmul 里（arXiv:2407.08608 Fig.）](2026-07-20-flash-attention-efficient-attention/fa3-pingpong.png)
 3. **FP8 低精度 + block quantization + incoherent processing**：借硬件 FP8 支持提吞吐，用分块量化和"非相干处理"（对 $Q,K$ 乘随机正交矩阵，摊平离群值）压低量化误差。
 
 **效果**：H100 上比 FA2 快 **1.5–2.0×**，FP16 达 **740 TFLOPs/s（75% 利用率）**，FP8 接近 **1.2 PFLOPs/s**，且 FP8 数值误差比基线 FP8 注意力低 **2.6×**。
+
+下图给出 H100（head dim 64）上前向速度的真实对比——注意 **standard attention（蓝）常年趴在底部、16K 直接 OOM**，而 FA3（紫）在长序列上稳定领先 FA2、Triton、cuDNN：
+
+![非因果注意力前向速度（H100 80GB SXM5, head dim 64）：Standard attention 仅 52–73 TFLOPs/s 且 16K 时 OOM；FlashAttention-2 约 282–324；FlashAttention-3 达 333–497 TFLOPs/s，长序列领先显著（arXiv:2407.08608 Fig.）](2026-07-20-flash-attention-efficient-attention/fa3-x1.png)
+
+![因果注意力（causal）前向速度：因果掩码下计算量减半，FA3 在 4K–16K 达 420–473 TFLOPs/s，相对 FA2（284–299）优势更明显（arXiv:2407.08608 Fig.）](2026-07-20-flash-attention-efficient-attention/fa3-x2.png)
+
+**三代前向吞吐速览（H100, head dim 64, 非因果, 长序列区间）**：
+
+| 实现 | 512 | 2k | 8k | 16k |
+|---|---|---|---|---|
+| Standard attention | 52 | 67 | 73 | **OOM** |
+| FlashAttention-2 | 282 | 318 | 322 | 324 |
+| Triton | 340 | 396 | 401 | 403 |
+| cuDNN | 335 | 395 | 412 | 413 |
+| **FlashAttention-3** | 333 | **460** | **496** | **497** |
+
+（单位 TFLOPs/s，读自论文 Fig.；数字依赖 GPU/dtype/序列长度，引用时须带硬件条件。）
 
 > 三代主线可总结为：**v1 解决"要不要物化"（省显存、减 IO）→ v2 解决"并行够不够"（喂饱 SM）→ v3 解决"用没用上新硬件"（异步 + FP8）**。三者都是**精确注意力**，不改变模型输出分布（FP8 除量化误差外）。
 
@@ -97,11 +117,27 @@ FlashAttention 主要优化**单次注意力算子**（训练 + prefill 都受�
 - **Multi-Query Attention（MQA）**（Shazeer 2019, `Shazeer2019Fast`，arXiv:1911.02150）：让所有 query 头**共享同一组** $K,V$ 头。KV cache 显存和读带宽按头数倍缩小，大幅加速解码——但质量有损、训练易不稳。
 - **Grouped-Query Attention（GQA）**（Ainslie et al. 2023, `Ainslie2023Gqa`，arXiv:2305.13245）：折中——把 query 头分成若干组，每组共享一组 KV。MQA 是"1 组"、MHA 是"$H$ 组"的两端，GQA 取中间。它以接近 MHA 的质量拿到接近 MQA 的速度，已成 Llama-2/3 等主流模型的默认配置。
 
+![MHA / GQA / MQA 三者对比：MHA 每个 query 头配独立 KV 头（8 组）；MQA 所有 query 头共享 1 组 KV；GQA 折中，query 头分组、组内共享 KV（图示 4 组）——KV 头数直接决定 KV cache 显存与读带宽（arXiv:2305.13245 Fig.1）](2026-07-20-flash-attention-efficient-attention/gqa-mha-gqa-mqa.png)
+
 **(b) 显存管理：PagedAttention**
-- **PagedAttention / vLLM**（Kwon et al. 2023, `Kwon2023Efficient`，arXiv:2309.06180）：借鉴操作系统**虚拟内存分页**思想管理 KV cache。传统做法为每个请求预留连续大块显存，导致严重的**内部/外部碎片**和无法共享。PagedAttention 把 KV cache 切成固定大小的 **block（页）**，按需分配、非连续存储、用"页表"索引，还能在 beam search / 并行采样间**共享**公共前缀的页（copy-on-write）。显存浪费从 60–80% 降到 <4%，吞吐相对此前系统提升数倍。这是 **vLLM** 的核心。
+- **PagedAttention / vLLM**（Kwon et al. 2023, `Kwon2023Efficient`，arXiv:2309.06180）：借鉴操作系统**虚拟内存分页**思想管理 KV cache。传统做法为每个请求预留连续大块显存，导致严重的**内部/外部碎片**和无法共享。PagedAttention 把 KV cache 切成固定大小的 **block（页）**，按需分配、非连续存储、用"页表"索引，还能在 beam search / 并行采样间**共享**公共前缀的页（copy-on-write）。论文报告：此前系统因碎片和预留浪费掉 **60–80%** 的 KV 显存，PagedAttention 把浪费压到 **<4%**，相同硬件下吞吐提升 **2–4×**。这是 **vLLM** 的核心。
+
+> **为什么 KV cache 这么关键**——它随 batch × 序列长度线性膨胀，很快超过权重本身。KV cache 显存的量级估算：$2 \times L_{\text{layers}} \times N_{\text{tokens}} \times H_{kv} \times d_{head} \times \text{bytes}$（2 = K 和 V）。以一个 32 层、KV 隐藏维 4096、FP16 的模型为例：
+>
+> | 上下文 tokens | 每序列 KV cache | MHA→GQA(8×) 后 |
+> |---|---|---|
+> | 2K | ~1.0 GB | ~0.13 GB |
+> | 32K | ~16 GB | ~2 GB |
+> | 128K | ~64 GB | ~8 GB |
+>
+> （粗略量级，说明为何长上下文高并发下 KV cache 成为第一显存瓶颈——这正是 GQA 减头数、PagedAttention 减碎片各自攻击的对象。）
 
 **(c) 序列并行：Ring Attention**
 - **Ring Attention with Blockwise Transformers**（Liu et al. 2023, `Liu2023Ring`，arXiv:2310.01889）：把长序列的 $K,V$ 块**分散到多张设备**，各设备算本地块，同时把 KV 块沿"环形"拓扑传给下一张卡，**用计算掩盖通信**。理论上上下文长度随设备数线性扩展，达到"近乎无限上下文"。与 FlashAttention 正交、可叠加（每张卡内部仍用 Flash 算子）。
+
+![Ring Attention：(a) 每张设备持有一个 query 块，KV 块沿环形拓扑在设备间流转；(b) query 外循环、KV 内循环——当前块算注意力的同时，把 KV 块发给下一张卡、从上一张卡接收，通信被计算掩盖（arXiv:2310.01889 Fig.1）](2026-07-20-flash-attention-efficient-attention/ring-attention-arch.png)
+
+![各方法可支持的最大上下文（对数纵轴，8×A100）：Vanilla 约 8K；Memory-Efficient Attn（≈FlashAttention 思想）提升数倍；Ring Attention 把上下文推到 **数百万至千万级** token（3B 模型达 >10M），比 vanilla 高 3 个数量级（arXiv:2310.01889 Fig.）](2026-07-20-flash-attention-efficient-attention/ring-context-len.png)
 
 ### 7｜对照组：近似注意力（approximate attention）
 
