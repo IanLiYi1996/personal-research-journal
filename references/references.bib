@@ -119,6 +119,14 @@
   year = {2024}
 }
 
+@article{Alomrani2025Reasoning,
+  title = {Reasoning on a Budget: A Survey of Adaptive and Controllable Test-Time Compute in LLMs},
+  author = {Mohammad Ali Alomrani and Yingxue Zhang and Derek Li and Qianyi Sun and Soumyasundar Pal and Zhanguang Zhang and Yaochen Hu and Rohan Deepak Ajwani and Antonios Valkanas and Raika Karimi and Peng Cheng and Yunzhou Wang and Pengyi Liao and Hanrui Huang and Bin Wang and Jianye Hao and Mark Coates},
+  year = {2025},
+  url = {http://arxiv.org/abs/2507.02076},
+  abstract = {Large language models (LLMs) have rapidly progressed into general-purpose agents capable of solving a broad spectrum of tasks. However, current models remain inefficient at reasoning: they apply fixed inference-time compute regardless of task complexity, often overthinking simple problems while underthinking hard ones. This survey presents a comprehensive review of efficient test-time compute (TTC) strategies, which aim to improve the computational efficiency of LLM reasoning. We introduce a two-tiered taxonomy that distinguishes between L1-controllability, methods that operate under fixed compute budgets, and L2-adaptiveness, methods that dynamically scale inference based on input difficulty or model confidence. We benchmark leading proprietary LLMs across diverse datasets, highlighting critical trade-offs between reasoning performance and token usage. Compared to prior surveys on efficient reasoning, our review emphasizes the practical control, adaptability, and scalability of TTC methods. Finally, we discuss emerging trends such as hybrid thinking models and identify key challenges for future work towards making LLMs more computationally efficient, robust, and responsive to user constraints.}
+}
+
 @article{An2024Training,
   abstract = {The ability of Large Language Models (LLMs) to process and generate coherent text is markedly weakened when the number of input tokens exceeds their pretraining length. Given the expensive overhead of finetuning large-scale models with longer sequences, we propose Dual Chunk Attention (DCA), which enables Llama2 70B to support context windows of more than 100k tokens without continual training. By decomposing the attention computation for long sequences into chunk-based modules, DCA manages to effectively capture the relative positional information of tokens within the same chunk (Intra-Chunk) and across distinct chunks (Inter-Chunk), as well as integrates seamlessly with Flash Attention. In addition to its impressive extrapolation capability, DCA achieves performance on practical long-context tasks that is comparable to or even better than that of finetuned models. When compared with proprietary models, our training-free 70B model attains 94% of the performance of gpt-3.5-16k, indicating it is a viable open-source alternative. All code and data used in this work are released at \url(https://github.com/HKUNLP/ChunkLlama).},
   author = {Chenxin An and Fei Huang and Jun Zhang and Shansan Gong and Xipeng Qiu and Chang Zhou and Lingpeng Kong},
@@ -1371,6 +1379,14 @@
   year = {2025}
 }
 
+@article{Chen2025Towards,
+  title = {Towards Reasoning Era: A Survey of Long Chain-of-Thought for Reasoning Large Language Models},
+  author = {Qiguang Chen and Libo Qin and Jinhao Liu and Dengyun Peng and Jiannan Guan and Peng Wang and Mengkang Hu and Yuhang Zhou and Te Gao and Wanxiang Che},
+  year = {2025},
+  url = {http://arxiv.org/abs/2503.09567},
+  abstract = {Recent advancements in reasoning with large language models (RLLMs), such as OpenAI-O1 and DeepSeek-R1, have demonstrated their impressive capabilities in complex domains like mathematics and coding. A central factor in their success lies in the application of long chain-of-thought (Long CoT) characteristics, which enhance reasoning abilities and enable the solution of intricate problems. However, despite these developments, a comprehensive survey on Long CoT is still lacking, limiting our understanding of its distinctions from traditional short chain-of-thought (Short CoT) and complicating ongoing debates on issues like "overthinking" and "inference-time scaling." This survey seeks to fill this gap by offering a unified perspective on Long CoT. (1) We first distinguish Long CoT from Short CoT and introduce a novel taxonomy to categorize current reasoning paradigms. (2) Next, we explore the key characteristics of Long CoT: deep reasoning, extensive exploration, and feasible reflection, which enable models to handle more complex tasks and produce more efficient, coherent outcomes compared to the shallower Short CoT. (3) We then investigate key phenomena such as the emergence of Long CoT with these characteristics, including overthinking, and inference-time scaling, offering insights into how these processes manifest in practice. (4) Finally, we identify significant research gaps and highlight promising future directions, including the integration of multi-modal reasoning, efficiency improvements, and enhanced knowledge frameworks. By providing a structured overview, this survey aims to inspire future research and further the development of logical reasoning in artificial intelligence.}
+}
+
 @article{Chen2026Chi,
   title = {CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?},
   author = {Haolin Chen and Deon Metelski and Leon Qi and Tao Xia and Joonyul Lee and Steve Brown and Kevin Riley and Frank Wang and T. Y. Alvin Liu and Hank Capps MD and Zeyu Tang and Xiangchen Song and Lingjing Kong and Fan Feng and Tianyi Zeng and Zhiwei Liu and Zixian Ma and Hang Jiang and Fangli Geng and Yuan Yuan and Chenyu You and Qingsong Wen and Hua Wei and Yanjie Fu and Yue Zhao and Carl Yang and Biwei Huang and Kun Zhang and Caiming Xiong and Sanmi Koyejo and Eric P. Xing and Philip S. Yu and Weiran Yao},
@@ -1939,6 +1955,14 @@
   title = {RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning},
   url = {http://arxiv.org/abs/2205.12548},
   year = {2022}
+}
+
+@article{Deng2023Implicit,
+  title = {Implicit Chain of Thought Reasoning via Knowledge Distillation},
+  author = {Yuntian Deng and Kiran Prasad and Roland Fernandez and Paul Smolensky and Vishrav Chaudhary and Stuart Shieber},
+  year = {2023},
+  url = {http://arxiv.org/abs/2311.01460},
+  abstract = {To augment language models with the ability to reason, researchers usually prompt or finetune them to produce chain of thought reasoning steps before producing the final answer. However, although people use natural language to reason effectively, it may be that LMs could reason more effectively with some intermediate computation that is not in natural language. In this work, we explore an alternative reasoning approach: instead of explicitly producing the chain of thought reasoning steps, we use the language model's internal hidden states to perform implicit reasoning. The implicit reasoning steps are distilled from a teacher model trained on explicit chain-of-thought reasoning, and instead of doing reasoning "horizontally" by producing intermediate words one-by-one, we distill it such that the reasoning happens "vertically" among the hidden states in different layers. We conduct experiments on a multi-digit multiplication task and a grade school math problem dataset and find that this approach enables solving tasks previously not solvable without explicit chain-of-thought, at a speed comparable to no chain-of-thought.}
 }
 
 @article{Denkin2026Squeeze,
@@ -3174,6 +3198,14 @@
   title = {Word Embeddings Are Steers for Language Models},
   url = {http://arxiv.org/abs/2305.12798},
   year = {2023}
+}
+
+@article{Han2024Token,
+  title = {Token-Budget-Aware LLM Reasoning},
+  author = {Tingxu Han and Zhenting Wang and Chunrong Fang and Shiyu Zhao and Shiqing Ma and Zhenyu Chen},
+  year = {2024},
+  url = {http://arxiv.org/abs/2412.18547},
+  abstract = {Reasoning is critical for large language models (LLMs) to excel in a wide range of tasks. While methods like Chain-of-Thought (CoT) reasoning and enhance LLM performance by decomposing problems into intermediate steps, they also incur significant overhead in token usage, leading to increased costs. We find that the reasoning process of current LLMs is unnecessarily lengthy and it can be compressed by including a reasonable token budget in the prompt, but the choice of token budget plays a crucial role in the actual compression effectiveness. We then propose a token-budget-aware LLM reasoning framework that dynamically adjusts the number of reasoning tokens based on the reasoning complexity of each problem. Experiments show that our method effectively reduces token costs in CoT reasoning with only a slight performance reduction, offering a practical solution to balance efficiency and accuracy in LLM reasoning. Code: https://github.com/GeniusHTX/TALE}
 }
 
 @article{Han2026Less,
@@ -5520,6 +5552,14 @@
   year = {2025}
 }
 
+@article{Lin2025Sleep,
+  title = {Sleep-time Compute: Beyond Inference Scaling at Test-time},
+  author = {Kevin Lin and Charlie Snell and Yu Wang and Charles Packer and Sarah Wooders and Ion Stoica and Joseph E. Gonzalez},
+  year = {2025},
+  url = {http://arxiv.org/abs/2504.13171},
+  abstract = {Scaling test-time compute has emerged as a key ingredient for enabling large language models (LLMs) to solve difficult problems, but comes with high latency and inference cost. We introduce sleep-time compute, which allows models to "think" offline about contexts before queries are presented: by anticipating what queries users might ask and pre-computing useful quantities, we can significantly reduce the compute requirements at test-time. To demonstrate the efficacy of our method, we create modified versions of two reasoning tasks - Stateful GSM-Symbolic and Stateful AIME. We find that sleep-time compute can reduce the amount of test-time compute needed to achieve the same accuracy by ~ 5x on Stateful GSM-Symbolic and Stateful AIME and that by scaling sleep-time compute we can further increase accuracy by up to 13% on Stateful GSM-Symbolic and 18% on Stateful AIME. Furthermore, we introduce Multi-Query GSM-Symbolic, which extends GSM-Symbolic by including multiple related queries per context. By amortizing sleep-time compute across related queries about the same context using Multi-Query GSM-Symbolic, we can decrease the average cost per query by 2.5x. We then conduct additional analysis to understand when sleep-time compute is most effective, finding the predictability of the user query to be well correlated with the efficacy of sleep-time compute. Finally, we conduct a case-study of applying sleep-time compute to a realistic agentic SWE task.}
+}
+
 @article{Lin2026Activemimic,
   title = {ActiveMimic: Egocentric Video Pretraining with Active Perception},
   author = {Xingyao Lin and Guojin Zhong and Tianyi Lu and Ziyi Ye and Yichen Zhu and Zuxuan Wu and Yu-Gang Jiang},
@@ -5947,6 +5987,14 @@
   title = {Inference-Time Scaling for Generalist Reward Modeling},
   url = {http://arxiv.org/abs/2504.02495},
   year = {2025}
+}
+
+@article{Liu2025Reinforcement,
+  title = {Reinforcement Learning Meets Large Language Models: A Survey of Advancements and Applications Across the LLM Lifecycle},
+  author = {Keliang Liu and Dingkang Yang and Ziyun Qian and Weijie Yin and Yuchi Wang and Hongsheng Li and Jun Liu and Peng Zhai and Yang Liu and Lihua Zhang},
+  year = {2025},
+  url = {http://arxiv.org/abs/2509.16679},
+  abstract = {In recent years, training methods centered on Reinforcement Learning (RL) have markedly enhanced the reasoning and alignment performance of Large Language Models (LLMs), particularly in understanding human intents, following user instructions, and bolstering inferential strength. Although existing surveys offer overviews of RL augmented LLMs, their scope is often limited, failing to provide a comprehensive summary of how RL operates across the full lifecycle of LLMs. We systematically review the theoretical and practical advancements whereby RL empowers LLMs, especially Reinforcement Learning with Verifiable Rewards (RLVR). First, we briefly introduce the basic theory of RL. Second, we thoroughly detail application strategies for RL across various phases of the LLM lifecycle, including pre-training, alignment fine-tuning, and reinforced reasoning. In particular, we emphasize that RL methods in the reinforced reasoning phase serve as a pivotal driving force for advancing model reasoning to its limits. Next, we collate existing datasets and evaluation benchmarks currently used for RL fine-tuning, spanning human-annotated datasets, AI-assisted preference data, and program-verification-style corpora. Subsequently, we review the mainstream open-source tools and training frameworks available, providing clear practical references for subsequent research. Finally, we analyse the future challenges and trends in the field of RL-enhanced LLMs. This survey aims to present researchers and practitioners with the latest developments and frontier trends at the intersection of RL and LLMs, with the goal of fostering the evolution of LLMs that are more intelligent, generalizable, and secure.}
 }
 
 @article{Liu2026Agentdog,
@@ -6536,6 +6584,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2605.12882},
   abstract = {Multimodal Large Language Models (MLLMs) have significantly advanced document understanding, yet current Doc-VQA evaluations score only the final answer and leave the supporting evidence unchecked. This answer-only approach masks a critical failure mode: a model can land on the correct answer while grounding it in the wrong passage -- a critical risk in high-stakes domains like law, finance, and medicine, where every conclusion must be traceable to a specific source region. To address this, we introduce CiteVQA, a benchmark that requires models to return element-level bounding-box citations alongside each answer, evaluating both jointly. CiteVQA comprises 1,897 questions across 711 PDFs spanning seven domains and two languages, averaging 40.6 pages per document. To ensure fidelity and scalability, the ground-truth citations are generated by an automated pipeline-which identifies crucial evidence via masking ablation-and are subsequently validated through expert review. At the core of our evaluation is Strict Attributed Accuracy (SAA), which credits a prediction only when the answer and the cited region are both correct. Auditing 20 MLLMs reveals a pervasive Attribution Hallucination: models frequently produce the right answer while citing the wrong region. The strongest system (Gemini-3.1-Pro-Preview) achieves an SAA of only 76.0, and the strongest open-source MLLM reaches just 22.5. Ultimately, towards trustworthy document intelligence, CiteVQA exposes a reliability gap that answer-only evaluations overlook, providing the instrumentation needed to close it. Our repository is available at https://github.com/opendatalab/CiteVQA.}
+}
+
+@article{Ma2026Cot2,
+  title = {CoT2-Meta: Budgeted Metacognitive Control for Test-Time Reasoning},
+  author = {Siyuan Ma and Bo Gao and Zikai Xiao and Hailong Wang and Xinlei Yu and Rui Qian and Jiayu Qian and Luqi Gong and Yang Liu},
+  year = {2026},
+  url = {http://arxiv.org/abs/2603.28135},
+  abstract = {Recent test-time reasoning methods improve performance by generating more candidate chains or searching over larger reasoning trees, but they typically lack explicit control over when to expand, what to prune, how to repair, and when to abstain. We introduce CoT2-Meta, a training-free metacognitive reasoning framework that combines object-level chain-of-thought generation with meta-level control over partial reasoning trajectories. The framework integrates four components: strategy-conditioned thought generation, tree-structured search, an online process oracle for step-level reasoning evaluation, and a meta-controller that allocates computation through expansion, pruning, repair, stopping, and fallback decisions. Under matched inference budgets, CoT2-Meta consistently outperforms strong single-path, sampling-based, and search-based baselines, including ReST-MCTS. On the default backbone, it achieves 92.8 EM on MATH, 90.4 accuracy on GPQA, 98.65 EM on GSM8K, 75.8 accuracy on BBEH, 85.6 accuracy on MMMU-Pro, and 48.8 accuracy on HLE, with gains over the strongest non-CoT2-Meta baseline of +3.6, +5.2, +1.15, +2.0, +4.3, and +4.3 points, respectively. Beyond these core results, the framework remains effective across a broader 15-benchmark suite spanning knowledge and QA, multi-hop reasoning, coding, and out-of-distribution evaluation. Additional analyses show better compute scaling, improved calibration, stronger selective prediction, targeted repair behavior, and consistent gains across backbone families. These results suggest that explicit metacognitive control is a practical design principle for reliable and compute-efficient test-time reasoning systems.}
 }
 
 @article{Ma2026Fast,
@@ -7978,6 +8034,14 @@
   year = {2023}
 }
 
+@article{Shah2026Crop,
+  title = {CROP: Token-Efficient Reasoning in Large Language Models via Regularized Prompt Optimization},
+  author = {Deep Shah and Sanket Badhe and Nehal Kathrotia and Priyanka Tiwari},
+  year = {2026},
+  url = {http://arxiv.org/abs/2604.14214},
+  abstract = {Large Language Models utilizing reasoning techniques improve task performance but incur significant latency and token costs due to verbose generation. Existing automatic prompt optimization(APO) frameworks target task accuracy exclusively at the expense of generating long reasoning traces. We propose Cost-Regularized Optimization of Prompts (CROP), an APO method that introduces regularization on response length by generating textual feedback in addition to standard accuracy feedback. This forces the optimization process to produce prompts that elicit concise responses containing only critical information and reasoning. We evaluate our approach on complex reasoning datasets, specifically GSM8K, LogiQA and BIG-Bench Hard. We achieved an 80.6\% reduction in token consumption while maintaining competitive accuracy, seeing only a nominal decline in performance. This presents a pragmatic solution for deploying token-efficient and cost-effective agentic AI systems in production pipelines.}
+}
+
 @article{Shaham2024Multimodal,
   abstract = {This paper describes MAIA, a Multimodal Automated Interpretability Agent. MAIA is a system that uses neural models to automate neural model understanding tasks like feature interpretation and failure mode discovery. It equips a pre-trained vision-language model with a set of tools that support iterative experimentation on subcomponents of other models to explain their behavior. These include tools commonly used by human interpretability researchers: for synthesizing and editing inputs, computing maximally activating exemplars from real-world datasets, and summarizing and describing experimental results. Interpretability experiments proposed by MAIA compose these tools to describe and explain system behavior. We evaluate applications of MAIA to computer vision models. We first characterize MAIA's ability to describe (neuron-level) features in learned representations of images. Across several trained models and a novel dataset of synthetic vision neurons with paired ground-truth descriptions, MAIA produces descriptions comparable to those generated by expert human experimenters. We then show that MAIA can aid in two additional interpretability tasks: reducing sensitivity to spurious features, and automatically identifying inputs likely to be mis-classified.},
   author = {Tamar Rott Shaham and Sarah Schwettmann and Franklin Wang and Achyuta Rajaram and Evan Hernandez and Jacob Andreas and Antonio Torralba},
@@ -8431,6 +8495,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2606.16613},
   abstract = {As LLM agents become capable of increasingly long-horizon tasks, evaluating their performance in economic systems is becoming increasingly important. Unlike existing benchmarks that primarily evaluate a single agent interacting with a passive environment, economic systems are inherently multi-agent, requiring autonomous agents to communicate, negotiate, and transact while pursuing their own objectives over extended periods. We introduce CoffeeBench, a benchmark for evaluating LLM agents in a long-horizon multi-agent economy composed of heterogeneous firms. In CoffeeBench, two farmers, two roasters, and two retailers autonomously operate their businesses over a 90-day simulation, each seeking to maximize cumulative net income through communication and transactions while managing cash, inventory, and pricing. The evaluated model controls one coffee roaster, while the remaining firms are controlled by fixed reference agents. Across several recent open-weight and proprietary LLMs, all models outperform a passive baseline that takes no actions, with most achieving positive net income. Analysis of agent behavior reveals substantial differences in long-horizon economic interaction: higher-performing models communicate more actively with other firms, whereas Claude~Haiku~4.5 exhibits an idle-drift failure mode, repeatedly choosing inaction despite producing coherent assessments and plans. We release our code and agent trajectories to support future research.}
+}
+
+@article{Sui2025Stop,
+  title = {Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models},
+  author = {Yang Sui and Yu-Neng Chuang and Guanchu Wang and Jiamu Zhang and Tianyi Zhang and Jiayi Yuan and Hongyi Liu and Andrew Wen and Shaochen Zhong and Na Zou and Hanjie Chen and Xia Hu},
+  year = {2025},
+  url = {http://arxiv.org/abs/2503.16419},
+  abstract = {Large Language Models (LLMs) have demonstrated remarkable capabilities in complex tasks. Recent advancements in Large Reasoning Models (LRMs), such as OpenAI o1 and DeepSeek-R1, have further improved performance in System-2 reasoning domains like mathematics and programming by harnessing supervised fine-tuning (SFT) and reinforcement learning (RL) techniques to enhance the Chain-of-Thought (CoT) reasoning. However, while longer CoT reasoning sequences improve performance, they also introduce significant computational overhead due to verbose and redundant outputs, known as the "overthinking phenomenon". In this paper, we provide the first structured survey to systematically investigate and explore the current progress toward achieving efficient reasoning in LLMs. Overall, relying on the inherent mechanism of LLMs, we categorize existing works into several key directions: (1) model-based efficient reasoning, which considers optimizing full-length reasoning models into more concise reasoning models or directly training efficient reasoning models; (2) reasoning output-based efficient reasoning, which aims to dynamically reduce reasoning steps and length during inference; (3) input prompts-based efficient reasoning, which seeks to enhance reasoning efficiency based on input prompt properties such as difficulty or length control. Additionally, we introduce the use of efficient data for training reasoning models, explore the reasoning capabilities of small language models, and discuss evaluation methods and benchmarking. Project website: https://github.com/Eclipsess/Awesome-Efficient-Reasoning-LLMs}
 }
 
 @article{Sun2018Adversarial,
@@ -9672,6 +9744,14 @@
   abstract = {Interactive driving exposes a failure mode that is easy to miss in rule-aware autonomous-driving stacks: a hard-rule margin can be negative for an ego candidate even though a small lawful accommodation by a non-priority agent would restore feasibility. Existing rulebooks, shields, and reachability filters are strong at vetoing unsafe actions, while prediction-based planners model likely responses. Neither returns a runtime proof object that states which bounded multi-agent edit repairs the maneuver, who owns the edit, whether the request is right-of-way affordable, and what ego fallback remains if the request is not observed. We formulate this missing object as *interactive repair certification* and introduce *CARVE*, a prediction-free certificate layer over a finite lattice of ego-owned and agent-owned tactical operators. Agent-owned requests are admissible only inside \(B_j(s) = β(π_j)α_j^{\max}(s)\), a cooperation envelope that separates kinematic reachability from normative priority. The resulting certificate records the binding rule, repair category, repair set, responsibility-weighted cost split, and fallback. On 589 Lanelet2-geometry-grounded INTERACTION replay episodes, CARVE-Greedy accepts 98.64% of initially vetoed maneuvers and recovers 370/378 human-resolved false vetoes, while preserving 589/589 right-of-way respect, zero priority-agent false positives, and 400/400 negative-stress vetoes. We prove certificate soundness, structural right-of-way respect, exact finite-lattice minimality, fallback contingency, and blame-consistency conditions. CARVE does not predict or require another driver's compliance; it certifies whether a proposed interaction is bounded, attributable, and normatively admissible under declared assumptions.}
 }
 
+@article{Wang2026Conformal,
+  title = {Conformal Thinking: Risk Control for Reasoning on a Compute Budget},
+  author = {Xi Wang and Anushri Suresh and Alvin Zhang and Rishi More and William Jurayj and Benjamin Van Durme and Mehrdad Farajtabar and Daniel Khashabi and Eric Nalisnick},
+  year = {2026},
+  url = {http://arxiv.org/abs/2602.03814},
+  abstract = {Reasoning Large Language Models (LLMs) enable test-time scaling, with dataset-level accuracy improving as the token budget increases, motivating adaptive reasoning -- spending tokens when they improve reliability and stopping early when additional computation is unlikely to help. However, setting the token budget, as well as the threshold for adaptive reasoning, is a practical challenge that entails a fundamental risk-accuracy trade-off. We re-frame the budget setting problem as risk control, limiting the error rate while minimizing compute. Our framework introduces an upper threshold that stops reasoning when the model is confident (risking incorrect output) and a novel parametric lower threshold that preemptively stops unsolvable instances (risking premature stoppage). Given a target risk and a validation set, we use distribution-free risk control to optimally specify these stopping mechanisms. For scenarios with multiple budget controlling criteria, we incorporate an efficiency loss to select the most computationally efficient exiting mechanism. Empirical results across diverse reasoning tasks and models demonstrate the effectiveness of our risk control approach, demonstrating computational efficiency gains from the lower threshold and ensemble stopping mechanisms while adhering to the user-specified risk target.}
+}
+
 @article{Wang2026Context,
   title = {In-Context World Modeling for Robotic Control},
   author = {Siyin Wang and Junhao Shi and Senyu Fei and Zhaoyang Fu and Li Ji and Jingjing Gong and Xipeng Qiu},
@@ -9955,6 +10035,14 @@
   year = {2021}
 }
 
+@article{Wei2022Chain,
+  title = {Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
+  author = {Jason Wei and Xuezhi Wang and Dale Schuurmans and Maarten Bosma and Brian Ichter and Fei Xia and Ed Chi and Quoc Le and Denny Zhou},
+  year = {2022},
+  url = {http://arxiv.org/abs/2201.11903},
+  abstract = {We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.}
+}
+
 @article{Wei2023Instructiongpt,
   abstract = {Multimodal large language models are typically trained in two stages: first pre-training on image-text pairs, and then fine-tuning using supervised vision-language instruction data. Recent studies have shown that large language models can achieve satisfactory results even with a limited amount of high-quality instruction-following data. In this paper, we introduce InstructionGPT-4, which is fine-tuned on a small dataset comprising only 200 examples, amounting to approximately 6\% of the instruction-following data used in the alignment dataset for MiniGPT-4. To achieve this, we first propose several metrics to access the quality of multimodal instruction data. Based on these metrics, we present an effective and trainable data selector to automatically identify and filter low-quality vision-language data. By employing this method, InstructionGPT-4 outperforms the original MiniGPT-4 on various evaluations. Overall, our findings demonstrate that less but high-quality instruction tuning data is efficient in enabling multimodal large language models to generate better output. Our code is available at https://github.com/waltonfuture/InstructionGPT-4.},
   author = {Lai Wei and Zihao Jiang and Weiran Huang and Lichao Sun},
@@ -10004,6 +10092,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2605.21468},
   abstract = {Reinforcement learning with verifiable rewards (RLVR) has become a dominant paradigm for improving reasoning in large language models (LLMs), yet the underlying geometry of the resulting parameter trajectories remains underexplored. In this work, we demonstrate that RLVR weight trajectories are extremely low-rank and highly predictable. Specifically, we find that the majority of downstream performance gains are captured by a rank-1 approximation of the parameter deltas, where the magnitude of this projection evolves near-linearly with training steps. Motivated by this, we propose a simple and compute-efficient method RELEX (REinforcement Learning EXtrapolation), which estimates the rank-1 subspace from a short observation window and extrapolates future checkpoints via linear regression, with no learned model required. Across three models (i.e., Qwen2.5-Math-1.5B, Qwen3-4B-Base, and Qwen3-8B-Base), RELEX produces checkpoints that match or exceed RLVR performance on both in-domain and out-of-domain benchmarks, requiring as few as 15% steps of full RLVR training. Remarkably, RELEX is able to extrapolate far beyond the observation window at no training cost, predicting checkpoints up to 10-20$\times$ beyond the observed prefix with continued improvement (e.g., observe only the first 50 steps and extrapolate to 1000 steps). Our ablation analysis confirms the minimalist sufficiency of RELEX: neither increasing the subspace rank nor employing non-linear modeling yields further gains in extrapolation. Finally, we show that RELEX's success stems from a "denoising" effect: by projecting updates onto the rank-1 subspace, the model discards stochastic optimization noise that would otherwise degrade performance during extrapolation. Our code is available at https://github.com/weizhepei/RELEX.}
+}
+
+@article{Wen2025Budgetthinker,
+  title = {BudgetThinker: Empowering Budget-aware LLM Reasoning with Control Tokens},
+  author = {Hao Wen and Xinrui Wu and Yi Sun and Feifei Zhang and Liye Chen and Jie Wang and Yunxin Liu and Yunhao Liu and Ya-Qin Zhang and Yuanchun Li},
+  year = {2025},
+  url = {http://arxiv.org/abs/2508.17196},
+  abstract = {Recent advancements in Large Language Models (LLMs) have leveraged increased test-time computation to enhance reasoning capabilities, a strategy that, while effective, incurs significant latency and resource costs, limiting their applicability in real-world time-constrained or cost-sensitive scenarios. This paper introduces BudgetThinker, a novel framework designed to empower LLMs with budget-aware reasoning, enabling precise control over the length of their thought processes. We propose a methodology that periodically inserts special control tokens during inference to continuously inform the model of its remaining token budget. This approach is coupled with a comprehensive two-stage training pipeline, beginning with Supervised Fine-Tuning (SFT) to familiarize the model with budget constraints, followed by a curriculum-based Reinforcement Learning (RL) phase that utilizes a length-aware reward function to optimize for both accuracy and budget adherence. We demonstrate that BudgetThinker significantly surpasses strong baselines in maintaining performance across a variety of reasoning budgets on challenging mathematical benchmarks. Our method provides a scalable and effective solution for developing efficient and controllable LLM reasoning, making advanced models more practical for deployment in resource-constrained and real-time environments.}
 }
 
 @article{Wen2026Openrath,
@@ -10413,6 +10509,14 @@
   author = {Heming Xia and Zhe Yang and Qingxiu Dong and Peiyi Wang and Yongqi Li and Tao Ge and Tianyu Liu and Wenjie Li and Zhifang Sui},
   title = {Unlocking Efficiency in Large Language Model Inference: A Comprehensive Survey of Speculative Decoding},
   url = {https://chat.openai.com}
+}
+
+@article{Xiang2025Just,
+  title = {Just Enough Thinking: Efficient Reasoning with Adaptive Length Penalties Reinforcement Learning},
+  author = {Violet Xiang and Chase Blagden and Rafael Rafailov and Nathan Lile and Sang Truong and Chelsea Finn and Nick Haber},
+  year = {2025},
+  url = {http://arxiv.org/abs/2506.05256},
+  abstract = {Large reasoning models (LRMs) achieve higher performance on challenging reasoning tasks by generating more tokens at inference time, but this verbosity often wastes computation on easy problems. Existing solutions, including supervised finetuning on shorter traces, user-controlled budgets, or RL with uniform penalties, either require data curation, manual configuration, or treat all problems alike regardless of difficulty. We introduce Adaptive Length Penalty (ALP), a reinforcement learning objective tailoring generation length to per-prompt solve rate. During training, ALP monitors each prompt's online solve rate through multiple rollouts and adds a differentiable penalty whose magnitude scales inversely with that rate, so confident (easy) prompts incur a high cost for extra tokens while hard prompts remain unhindered. Posttraining DeepScaleR-1.5B with ALP cuts average token usage by 50\% without significantly dropping performance. Relative to fixed-budget and uniform penalty baselines, ALP redistributes its reduced budget more intelligently by cutting compute on easy prompts and reallocating saved tokens to difficult ones, delivering higher accuracy on the hardest problems with higher cost.}
 }
 
 @article{Xiang2026Memsyco,
@@ -11671,6 +11775,14 @@
   year = {2023}
 }
 
+@article{Zeng2025Revisiting,
+  title = {Revisiting the Test-Time Scaling of o1-like Models: Do they Truly Possess Test-Time Scaling Capabilities?},
+  author = {Zhiyuan Zeng and Qinyuan Cheng and Zhangyue Yin and Yunhua Zhou and Xipeng Qiu},
+  year = {2025},
+  url = {http://arxiv.org/abs/2502.12215},
+  abstract = {The advent of test-time scaling in large language models (LLMs), exemplified by OpenAI's o1 series, has advanced reasoning capabilities by scaling computational resource allocation during inference. While successors like QwQ, Deepseek-R1 (R1) and LIMO replicate these advancements, whether these models truly possess test-time scaling capabilities remains underexplored. This study found that longer CoTs of these o1-like models do not consistently enhance accuracy; in fact, correct solutions are often shorter than incorrect ones for the same questions. Further investigation shows this phenomenon is closely related to models' self-revision capabilities - longer CoTs contain more self-revisions, which often lead to performance degradation. We then compare sequential and parallel scaling strategies on QwQ, R1 and LIMO, finding that parallel scaling achieves better coverage and scalability. Based on these insights, we propose Shortest Majority Vote, a method that combines parallel scaling strategies with CoT length characteristics, significantly improving models' test-time scalability compared to conventional majority voting approaches.}
+}
+
 @article{Zeng2026Dockerless,
   title = {Dockerless: Environment-Free Program Verifier for Coding Agents},
   author = {Wenhao Zeng and Yuling Shi and Xiaodong Gu and Chao Hu and Chaofan Wang and Yuhao Cui and Hongting Zhou and Mengnan Qi and Jianqiao Wangni and Zhaojian Yu and Shuzheng Gao and Kai Cai and Shilin He},
@@ -12087,6 +12199,14 @@
   title = {TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning},
   url = {http://arxiv.org/abs/2404.16635},
   year = {2024}
+}
+
+@article{Zhang2025Adaptive,
+  title = {Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning},
+  author = {Yujian Zhang and Keyu Chen and Zhifeng Shen and Ruizhi Qiao and Xing Sun},
+  year = {2025},
+  url = {http://arxiv.org/abs/2510.10207},
+  abstract = {Although Long Reasoning Models (LRMs) have achieved superior performance on various reasoning scenarios, they often suffer from increased computational costs and inference latency caused by overthinking. To address these limitations, we propose Adaptive Dual Reasoner, which supports two reasoning modes: fast thinking and slow thinking. ADR dynamically alternates between these modes based on the contextual complexity during reasoning. ADR is trained in two stages: (1) A cold-start stage using supervised fine-tuning (SFT) to equip the model with the ability to integrate both fast and slow reasoning modes, in which we construct a hybrid reasoning dataset through a dedicated pipeline to provide large-scale supervision. (2) A reinforcement learning stage for optimizing reasoning effort, where we introduce Entropy-guided Hybrid Policy Optimization EHPO, an RL training framework employing an entropy-guided dynamic rollout strategy for branching at high-entropy units and a difficulty-aware penalty to balance fast and slow reasoning. Across challenging mathematical reasoning benchmarks, ADR achieves an effective balance between reasoning performance and efficiency among state-of-the-art approaches. Specifically, ADR yields a performance gain of up to 6.1%, while reducing the reasoning output length by 49.5% to 59.3%.}
 }
 
 @article{Zhang2025Darwin,
