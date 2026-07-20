@@ -639,6 +639,14 @@
   abstract = {Procedural memory is increasingly used to improve LLM agents on recurring workplace tasks, yet its ability to produce reusable skills remains poorly understood. We introduce AFTER, a benchmark of 382 realistic enterprise tasks spanning six professional roles and 22 procedural skills, designed to evaluate how skills transfer across tasks, roles, and model backbones. The benchmark includes controlled evaluation settings for local improvement, cross-task transfer, cross-role transfer, and cross-model generalization. Experiments show that procedural memory delivers consistent gains in industrial workflows: a single refinement round improves aggregate performance by 3.7-6.7 points, while skills evolved from diverse multi-model execution traces achieve 73.1% cross-model test accuracy, outperforming all single-model trace sources. We further find that some skills generalize broadly across tasks and models, whereas others become specialized to role-specific workflows and lose effectiveness under transfer. These results provide practical guidance for building, evaluating, and deploying procedural memory systems in production agent platforms.}
 }
 
+@article{Beltagy2020Longformer,
+  title = {Longformer: The Long-Document Transformer},
+  author = {Iz Beltagy and Matthew E. Peters and Arman Cohan},
+  year = {2020},
+  url = {http://arxiv.org/abs/2004.05150},
+  abstract = {Transformer-based models are unable to process long sequences due to their self-attention operation, which scales quadratically with the sequence length. To address this limitation, we introduce the Longformer with an attention mechanism that scales linearly with sequence length, making it easy to process documents of thousands of tokens or longer. Longformer's attention mechanism is a drop-in replacement for the standard self-attention and combines a local windowed attention with a task motivated global attention. Following prior work on long-sequence transformers, we evaluate Longformer on character-level language modeling and achieve state-of-the-art results on text8 and enwik8. In contrast to most prior work, we also pretrain Longformer and finetune it on a variety of downstream tasks. Our pretrained Longformer consistently outperforms RoBERTa on long document tasks and sets new state-of-the-art results on WikiHop and TriviaQA. We finally introduce the Longformer-Encoder-Decoder (LED), a Longformer variant for supporting long document generative sequence-to-sequence tasks, and demonstrate its effectiveness on the arXiv summarization dataset.}
+}
+
 @techreport{BensadounndMeta,
   abstract = {We introduce Meta 3D Gen (3DGen), a new state-of-the-art, fast pipeline for text-to-3D asset generation. 3DGen offers 3D asset creation with high prompt fidelity and high-quality 3D shapes and textures in under a minute. It supports physically-based rendering (PBR), necessary for 3D asset relighting in real-world applications. Additionally, 3DGen supports generative retexturing of previously generated (or artist-created) 3D shapes using additional textual inputs provided by the user. 3DGen integrates key technical components, Meta 3D AssetGen and Meta 3D TextureGen, that we developed for text-to-3D and text-to-texture generation, respectively. By combining their strengths, 3DGen represents 3D objects simultaneously in three ways: in view space, in volumetric space, and in UV (or texture) space. The integration of these two techniques achieves a win rate of 68% with respect to the single-stage model. We compare 3DGen to numerous industry baselines, and show that it outperforms them in terms of prompt fidelity and visual quality for complex textual prompts, while being significantly faster. Figure 1 Meta 3D Gen integrates Meta's foundation models for text-to-3D (Meta 3D AssetGen (Siddiqui et al., 2024)) and text-to-texture (Meta 3D TextureGen (Bensadoun et al., 2024)) generation in a unified pipeline, enabling efficient, state-of-the-art creation and editing of diverse, high-quality textured 3D assets with PBR material maps.},
   author = {Raphael Bensadoun and Tom Monnier and Yanir Kleiman and Filippos Kokkinos and Yawar Siddiqui and Mahendra Kariya and Omri Harosh and Roman Shapovalov and Benjamin Graham and Emilien Garreau and Animesh Karnewar and Ang Cao and Idan Azuri and Iurii Makarov and Eric-Tuan Le and Antoine Toisoul and David Novotny and Oran Gafni and Natalia Neverova and Andrea Vedaldi},
@@ -1669,6 +1677,14 @@
   abstract = {This technical report introduces EXAONE 4.5, the first open-weight vision language model released by LG AI Research. EXAONE 4.5 is architected by integrating a dedicated visual encoder into the existing EXAONE 4.0 framework, enabling native multimodal pretraining over both visual and textual modalities. The model is trained on large-scale data with careful curation, particularly emphasizing document-centric corpora that align with LG's strategic application domains. This targeted data design enables substantial performance gains in document understanding and related tasks, while also delivering broad improvements across general language capabilities. EXAONE 4.5 extends context length up to 256K tokens, facilitating long-context reasoning and enterprise-scale use cases. Comparative evaluations demonstrate that EXAONE 4.5 achieves competitive performance in general benchmarks while outperforming state-of-the-art models of similar scale in document understanding and Korean contextual reasoning. As part of LG's ongoing effort toward practical industrial deployment, EXAONE 4.5 is designed to be continuously extended with additional domains and application scenarios to advance AI for a better life.}
 }
 
+@article{Choromanski2020Rethinking,
+  title = {Rethinking Attention with Performers},
+  author = {Krzysztof Choromanski and Valerii Likhosherstov and David Dohan and Xingyou Song and Andreea Gane and Tamas Sarlos and Peter Hawkins and Jared Davis and Afroz Mohiuddin and Lukasz Kaiser and David Belanger and Lucy Colwell and Adrian Weller},
+  year = {2020},
+  url = {http://arxiv.org/abs/2009.14794},
+  abstract = {We introduce Performers, Transformer architectures which can estimate regular (softmax) full-rank-attention Transformers with provable accuracy, but using only linear (as opposed to quadratic) space and time complexity, without relying on any priors such as sparsity or low-rankness. To approximate softmax attention-kernels, Performers use a novel Fast Attention Via positive Orthogonal Random features approach (FAVOR+), which may be of independent interest for scalable kernel methods. FAVOR+ can be also used to efficiently model kernelizable attention mechanisms beyond softmax. This representational power is crucial to accurately compare softmax with other kernels for the first time on large-scale tasks, beyond the reach of regular Transformers, and investigate optimal attention-kernels. Performers are linear architectures fully compatible with regular Transformers and with strong theoretical guarantees: unbiased or nearly-unbiased estimation of the attention matrix, uniform convergence and low estimation variance. We tested Performers on a rich set of tasks stretching from pixel-prediction through text models to protein sequence modeling. We demonstrate competitive results with other examined efficient sparse and dense attention methods, showcasing effectiveness of the novel attention-learning paradigm leveraged by Performers.}
+}
+
 @article{ChowdheryndPalm,
   author = {Aakanksha Chowdhery and Sharan Narang and Jacob Devlin and Noam Shazeer and Denny Zhou and Andrew M Dai and Nan Du and James Bradbury and Guy Gur-ari and David Luan and Kevin Robinson and Mark Diaz and Oleksandr Polozov and Katherine Lee and Jeff Dean and Michele Catasta and Jason Wei and Kathy Meier-hellstern},
   pages = {1-83},
@@ -1859,6 +1875,14 @@
   title = {FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness},
   url = {http://arxiv.org/abs/2205.14135},
   year = {2022}
+}
+
+@article{Dao2023Flashattention,
+  title = {FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning},
+  author = {Tri Dao},
+  year = {2023},
+  url = {http://arxiv.org/abs/2307.08691},
+  abstract = {Scaling Transformers to longer sequence lengths has been a major problem in the last several years, promising to improve performance in language modeling and high-resolution image understanding, as well as to unlock new applications in code, audio, and video generation. The attention layer is the main bottleneck in scaling to longer sequences, as its runtime and memory increase quadratically in the sequence length. FlashAttention exploits the asymmetric GPU memory hierarchy to bring significant memory saving (linear instead of quadratic) and runtime speedup (2-4$\times$ compared to optimized baselines), with no approximation. However, FlashAttention is still not nearly as fast as optimized matrix-multiply (GEMM) operations, reaching only 25-40\% of the theoretical maximum FLOPs/s. We observe that the inefficiency is due to suboptimal work partitioning between different thread blocks and warps on the GPU, causing either low-occupancy or unnecessary shared memory reads/writes. We propose FlashAttention-2, with better work partitioning to address these issues. In particular, we (1) tweak the algorithm to reduce the number of non-matmul FLOPs (2) parallelize the attention computation, even for a single head, across different thread blocks to increase occupancy, and (3) within each thread block, distribute the work between warps to reduce communication through shared memory. These yield around 2$\times$ speedup compared to FlashAttention, reaching 50-73\% of the theoretical maximum FLOPs/s on A100 and getting close to the efficiency of GEMM operations. We empirically validate that when used end-to-end to train GPT-style models, FlashAttention-2 reaches training speed of up to 225 TFLOPs/s per A100 GPU (72\% model FLOPs utilization).}
 }
 
 @article{Das2023Decoder,
@@ -4302,6 +4326,14 @@
   pages = {251-275},
   title = {Graph Neural Networksの 判断根拠エッジの可視化},
   year = {2021}
+}
+
+@article{Katharopoulos2020Transformers,
+  title = {Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention},
+  author = {Angelos Katharopoulos and Apoorv Vyas and Nikolaos Pappas and François Fleuret},
+  year = {2020},
+  url = {http://arxiv.org/abs/2006.16236},
+  abstract = {Transformers achieve remarkable performance in several tasks but due to their quadratic complexity, with respect to the input's length, they are prohibitively slow for very long sequences. To address this limitation, we express the self-attention as a linear dot-product of kernel feature maps and make use of the associativity property of matrix products to reduce the complexity from $\mathcal{O}\left(N^2\right)$ to $\mathcal{O}\left(N\right)$, where $N$ is the sequence length. We show that this formulation permits an iterative implementation that dramatically accelerates autoregressive transformers and reveals their relationship to recurrent neural networks. Our linear transformers achieve similar performance to vanilla transformers and they are up to 4000x faster on autoregressive prediction of very long sequences.}
 }
 
 @article{Kaushal2024Spectra,
@@ -7685,6 +7717,14 @@
   year = {2024}
 }
 
+@article{Rabe2021Self,
+  title = {Self-attention Does Not Need $O(n^2)$ Memory},
+  author = {Markus N. Rabe and Charles Staats},
+  year = {2021},
+  url = {http://arxiv.org/abs/2112.05682},
+  abstract = {We present a very simple algorithm for attention that requires $O(1)$ memory with respect to sequence length and an extension to self-attention that requires $O(\log n)$ memory. This is in contrast with the frequently stated belief that self-attention requires $O(n^2)$ memory. While the time complexity is still $O(n^2)$, device memory rather than compute capability is often the limiting factor on modern accelerators. Thus, reducing the memory requirements of attention allows processing of longer sequences than might otherwise be feasible. We provide a practical implementation for accelerators that requires $O(\sqrt{n})$ memory, is numerically stable, and is within a few percent of the runtime of the standard implementation of attention. We also demonstrate how to differentiate the function while remaining memory-efficient. For sequence length 16384, the memory overhead of self-attention is reduced by 59X for inference and by 32X for differentiation.}
+}
+
 @article{Radford2022Robust,
   abstract = {We study the capabilities of speech processing systems trained simply to predict large amounts of transcripts of audio on the internet. When scaled to 680,000 hours of multilingual and multitask supervision, the resulting models generalize well to standard benchmarks and are often competitive with prior fully supervised results but in a zero-shot transfer setting without the need for any fine-tuning. When compared to humans, the models approach their accuracy and robustness. We are releasing models and inference code to serve as a foundation for further work on robust speech processing.},
   author = {Alec Radford and Jong Wook Kim and Tao Xu and Greg Brockman and Christine McLeavey and Ilya Sutskever},
@@ -8124,6 +8164,14 @@
   title = {Spurious Rewards: Rethinking Training Signals in RLVR},
   url = {http://arxiv.org/abs/2506.10947},
   year = {2025}
+}
+
+@article{Shazeer2019Fast,
+  title = {Fast Transformer Decoding: One Write-Head is All You Need},
+  author = {Noam Shazeer},
+  year = {2019},
+  url = {http://arxiv.org/abs/1911.02150},
+  abstract = {Multi-head attention layers, as used in the Transformer neural sequence model, are a powerful alternative to RNNs for moving information across and between sequences. While training these layers is generally fast and simple, due to parallelizability across the length of the sequence, incremental inference (where such paralleization is impossible) is often slow, due to the memory-bandwidth cost of repeatedly loading the large "keys" and "values" tensors. We propose a variant called multi-query attention, where the keys and values are shared across all of the different attention "heads", greatly reducing the size of these tensors and hence the memory bandwidth requirements of incremental decoding. We verify experimentally that the resulting models can indeed be much faster to decode, and incur only minor quality degradation from the baseline.}
 }
 
 @article{Shen2023Large,
@@ -9201,6 +9249,14 @@
   title = {Teaching Transformers Causal Reasoning through Axiomatic Training},
   url = {http://arxiv.org/abs/2407.07612},
   year = {2024}
+}
+
+@article{Vaswani2017Attention,
+  title = {Attention Is All You Need},
+  author = {Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin},
+  year = {2017},
+  url = {http://arxiv.org/abs/1706.03762},
+  abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
 }
 
 @article{Verma2019Stability,

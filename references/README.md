@@ -1,19 +1,19 @@
 # 文献库索引
 
-> 共 **1505** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1512** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （649）
+- [大语言模型 (LLM)](#-llm-) （650）
 - [智能体 / Agent](#-agent) （212）
 - [强化学习 / RLHF](#-rlhf) （282）
 - [推理 / Reasoning](#-reasoning) （329）
 - [图神经网络 / Graph](#-graph) （242）
-- [扩散 / 生成模型](#-) （239）
-- [多模态 / 视觉语言](#-) （287）
-- [Transformer / 架构](#transformer-) （328）
-- [高效训练 / 推理](#-) （385）
+- [扩散 / 生成模型](#-) （240）
+- [多模态 / 视觉语言](#-) （288）
+- [Transformer / 架构](#transformer-) （335）
+- [高效训练 / 推理](#-) （390）
 - [综述 / Survey](#-survey) （139）
 - [检索增强 / RAG](#-rag) （93）
 - 未分类（142）
@@ -445,6 +445,7 @@
 - **2023** [Evaluating Hallucinations in Chinese Large Language Models](http://arxiv.org/abs/2310.03368) — Qinyuan Cheng et al. · arXiv:2310.03368 `{Cheng2023Evaluating}`
 - **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
 - **2023** [A decoder-only foundation model for time-series forecasting](http://arxiv.org/abs/2310.10688) — Abhimanyu Das et al. · arXiv:2310.10688 `{Das2023Decoder}`
 - **2023** [QLoRA: Efficient Finetuning of Quantized LLMs](http://arxiv.org/abs/2305.14314) — Tim Dettmers et al. · arXiv:2305.14314 `{Dettmers2023Qlora}`
 - **2023** [Chain-of-Verification Reduces Hallucination in Large Language Models](http://arxiv.org/abs/2309.11495) — Shehzaad Dhuliawala et al. · arXiv:2309.11495 `{Dhuliawala2023Chain}`
@@ -1964,6 +1965,7 @@
 - **2021** [Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech](http://arxiv.org/abs/2106.06103) — Jaehyeon Kim et al. · arXiv:2106.06103 `{Kim2021Conditional}`
 - **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
 - **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
+- **2020** [Longformer: The Long-Document Transformer](http://arxiv.org/abs/2004.05150) — Iz Beltagy et al. · arXiv:2004.05150 `{Beltagy2020Longformer}`
 - **2020** Scaling Graph Neural Networks with Approximate PageRank — Aleksandar Bojchevski et al. · arXiv:4486.34032 `{Bojchevski2020Scaling}`
 - **2020** [Bridging the Gap between Spatial and Spectral Domains: A Survey on Graph Neural Networks](http://arxiv.org/abs/2002.11867) — Zhiqian Chen et al. · arXiv:2002.11867 `{Chen2020Bridging}`
 - **2020** [SIGN: Scalable Inception Graph Neural Networks](http://arxiv.org/abs/2004.11198) — Fabrizio Frasca et al. · arXiv:2004.11198 `{Frasca2020Sign}`
@@ -2221,6 +2223,7 @@
 - **2024** [VISTA: Visualized Text Embedding For Universal Multi-Modal Retrieval](http://arxiv.org/abs/2406.04292) — Junjie Zhou et al. · arXiv:2406.04292 `{Zhou2024Vista}`
 - **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
 - **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
 - **2023** [Language Is Not All You Need: Aligning Perception with Language Models](http://arxiv.org/abs/2302.14045) — Shaohan Huang et al. · arXiv:2302.14045 `{Huang2023Language}`
@@ -2440,6 +2443,7 @@
 - **2023** [Simple and Controllable Music Generation](http://arxiv.org/abs/2306.05284) — Jade Copet et al. · arXiv:2306.05284 `{Copet2023Simple}`
 - **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
+- **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
 - **2023** [A decoder-only foundation model for time-series forecasting](http://arxiv.org/abs/2310.10688) — Abhimanyu Das et al. · arXiv:2310.10688 `{Das2023Decoder}`
 - **2023** [LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](http://arxiv.org/abs/2312.09979) — Shihan Dou et al. · arXiv:2312.09979 `{Dou2023Loramoe}`
 - **2023** [Attention Weighted Mixture of Experts with Contrastive Learning for Personalized Ranking in E-commerce](http://arxiv.org/abs/2306.05011) — Juan Gong et al. · arXiv:2306.05011 `{Gong2023Attention}`
@@ -2536,6 +2540,7 @@
 - **2021** Pre-trained Language Model for Web-scale Retrieval in Baidu Search — Yiding Liu et al. · arXiv:7548.34671 `{Liu2021Prea}`
 - **2021** Analyzing the Anisotropy Phenomenon in Transformer-based Masked Language Models — Ziyang Luo et al. `{Luo2021Analyzing}`
 - **2021** [GraphiT: Encoding Graph Structure in Transformers](http://arxiv.org/abs/2106.05667) — Grégoire Mialon et al. · arXiv:2106.05667 `{MialonndGraphit}`
+- **2021** [Self-attention Does Not Need $O(n^2)$ Memory](http://arxiv.org/abs/2112.05682) — Markus N. Rabe et al. · arXiv:2112.05682 `{Rabe2021Self}`
 - **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
 - **2021** [RoFormer: Enhanced Transformer with Rotary Position Embedding](http://arxiv.org/abs/2104.09864) — Jianlin Su et al. · arXiv:2104.09864 `{Su2021Roformer}`
 - **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
@@ -2544,12 +2549,15 @@
 - **2021** [Query and Extract: Refining Event Extraction as Type-oriented Binary Decoding](http://arxiv.org/abs/2110.07476) — Sijia Wang et al. · arXiv:2110.07476 `{Wang2021Query}`
 - **2021** Pretrained Transformers for Text Ranking: BERT and beyond — Andrew Yates et al. · arXiv:7963.34416 `{Yates2021Pretrained}`
 - **2021** [Do Transformers Really Perform Bad for Graph Representation?](http://arxiv.org/abs/2106.05234) — Chengxuan Ying et al. · arXiv:2106.05234 `{Ying2021Do}`
+- **2020** [Longformer: The Long-Document Transformer](http://arxiv.org/abs/2004.05150) — Iz Beltagy et al. · arXiv:2004.05150 `{Beltagy2020Longformer}`
+- **2020** [Rethinking Attention with Performers](http://arxiv.org/abs/2009.14794) — Krzysztof Choromanski et al. · arXiv:2009.14794 `{Choromanski2020Rethinking}`
 - **2020** [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](http://arxiv.org/abs/2010.11929) — Alexey Dosovitskiy et al. · arXiv:2010.11929 `{Dosovitskiy2020Image}`
 - **2020** [Transformer Feed-Forward Layers Are Key-Value Memories](http://arxiv.org/abs/2012.14913) — Mor Geva et al. · arXiv:2012.14913 `{Geva2020Transformer}`
 - **2020** [DeCLUTR: Deep Contrastive Learning for Unsupervised Textual Representations](http://arxiv.org/abs/2006.03659) — John Giorgi et al. · arXiv:2006.03659 `{Giorgi2020Declutr}`
 - **2020** [Knowledge Distillation: A Survey](http://arxiv.org/abs/2006.05525 http://dx.doi.org/10.1007/s11263-021-01453-z) — Jianping Gou et al. · arXiv:2006.05525 `{Gou2020Knowledge}`
 - **2020** [Scaling Laws for Autoregressive Generative Modeling](http://arxiv.org/abs/2010.14701) — Tom Henighan et al. · arXiv:2010.14701 `{Henighan2020Scaling}`
 - **2020** Heterogeneous Graph Transformer — Ziniu Hu et al. · arXiv:6423.33800 `{Hu2020Heterogeneous}`
+- **2020** [Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention](http://arxiv.org/abs/2006.16236) — Angelos Katharopoulos et al. · arXiv:2006.16236 `{Katharopoulos2020Transformers}`
 - **2020** [Reformer: The Efficient Transformer](http://arxiv.org/abs/2001.04451) — Nikita Kitaev et al. · arXiv:2001.04451 `{Kitaev2020Reformer}`
 - **2020** [DeeperGCN: All You Need to Train Deeper GCNs](http://arxiv.org/abs/2006.07739) — Guohao Li et al. · arXiv:2006.07739 `{Li2020Deepergcn}`
 - **2020** Type-aware anchor link prediction across heterogeneous networks based on graph attention network — Xiaoxue Li et al. `{Li2020Type}`
@@ -2565,6 +2573,7 @@
 - **2019** [Generating Long Sequences with Sparse Transformers](http://arxiv.org/abs/1904.10509) — Rewon Child et al. · arXiv:1904.10509 `{Child2019Generating}`
 - **2019** Dynamic hypergraph neural networks — Jianwen Jiang et al. `{Jiang2019Dynamic}`
 - **2019** Understanding attention and generalization in graph neural networks — Boris Knyazev et al. `{Knyazev2019Understanding}`
+- **2019** [Fast Transformer Decoding: One Write-Head is All You Need](http://arxiv.org/abs/1911.02150) — Noam Shazeer et al. · arXiv:1911.02150 `{Shazeer2019Fast}`
 - **2019** [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053) — Mohammad Shoeybi et al. · arXiv:1909.08053 `{Shoeybi2019Megatron}`
 - **2019** Heterogeneous graph attention network — Xiao Wang et al. · arXiv:8558.33135 `{Wang2019Heterogeneous}`
 - **2019** KGAT: Knowledge graph attention network for recommendation — Xiang Wang et al. · arXiv:2500.33309 `{Wang2019Kgat}`
@@ -2581,6 +2590,7 @@
 - **2018** [Blockwise Parallel Decoding for Deep Autoregressive Models](http://arxiv.org/abs/1811.03115) — Mitchell Stern et al. · arXiv:1811.03115 `{SternndBlockwise}`
 - **2018** Representation learning on graphs with jumping knowledge networks — Keyulu Xu et al. `{Xu2018Representation}`
 - **2017** Get to the point: Summarization with pointer-generator networks — Abigail See et al. `{See2017Get}`
+- **2017** [Attention Is All You Need](http://arxiv.org/abs/1706.03762) — Ashish Vaswani et al. · arXiv:1706.03762 `{Vaswani2017Attention}`
 - **2016** [Dynamic Graph Neural Networks](https://doi.org/10.475/123_4) — Yao Ma et al. `{Ma2016Dynamic}`
 - **1390** [Transformer Language Models without Positional Encodings Still Learn Positional Information](https://github.com/adihaviv/NoPos) — Adi Haviv et al. `{Haviv1390Transformer}`
 - **n.d.** [A Survey on Data Selection for Language Models](https://commoncrawl.org/) — Alon Albalak et al. `{AlbalakndSurvey}`
@@ -2852,6 +2862,7 @@
 - **2023** [Adversarial Preference Optimization](http://arxiv.org/abs/2311.08045) — Pengyu Cheng et al. · arXiv:2311.08045 `{Cheng2023Adversarial}`
 - **2023** [A Survey of Chain of Thought Reasoning: Advances, Frontiers and Future](http://arxiv.org/abs/2309.15402) — Zheng Chu et al. · arXiv:2309.15402 `{Chu2023Survey}`
 - **2023** [Simple and Controllable Music Generation](http://arxiv.org/abs/2306.05284) — Jade Copet et al. · arXiv:2306.05284 `{Copet2023Simple}`
+- **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
 - **2023** [Implicit Chain of Thought Reasoning via Knowledge Distillation](http://arxiv.org/abs/2311.01460) — Yuntian Deng et al. · arXiv:2311.01460 `{Deng2023Implicit}`
 - **2023** [QLoRA: Efficient Finetuning of Quantized LLMs](http://arxiv.org/abs/2305.14314) — Tim Dettmers et al. · arXiv:2305.14314 `{Dettmers2023Qlora}`
 - **2023** [LoRAMoE: Alleviate World Knowledge Forgetting in Large Language Models via MoE-Style Plugin](http://arxiv.org/abs/2312.09979) — Shihan Dou et al. · arXiv:2312.09979 `{Dou2023Loramoe}`
@@ -2938,12 +2949,14 @@
 - **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
 - **2021** TEXT2EVENT: Controllable sequence-to-structure generation for end-to-end event extraction — Yaojie Lu et al. `{Lu2021Text2event}`
 - **2021** [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](http://arxiv.org/abs/2104.04473) — Deepak Narayanan et al. · arXiv:2104.04473 `{Narayanan2021Efficient}`
+- **2021** [Self-attention Does Not Need $O(n^2)$ Memory](http://arxiv.org/abs/2112.05682) — Markus N. Rabe et al. · arXiv:2112.05682 `{Rabe2021Self}`
 - **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
 - **2021** Vocabulary Learning via Optimal Transport for Neural Machine Translation — Jingjing Xu et al. `{Xu2021Vocabulary}`
 - **2021** [Decoupled Contrastive Learning](http://arxiv.org/abs/2110.06848) — Chun-Hsiao Yeh et al. · arXiv:2110.06848 `{Yeh2021Decoupled}`
 - **2021** [On Explainability of Graph Neural Networks via Subgraph Explorations](http://arxiv.org/abs/2102.05152) — Hao Yuan et al. · arXiv:2102.05152 `{Yuan2021Explainability}`
 - **2021** [Distilling Holistic Knowledge with Graph Neural Networks](http://arxiv.org/abs/2108.05507) — Sheng Zhou et al. · arXiv:2108.05507 `{Zhou2021Distilling}`
 - **2020** Scaling Graph Neural Networks with Approximate PageRank — Aleksandar Bojchevski et al. · arXiv:4486.34032 `{Bojchevski2020Scaling}`
+- **2020** [Rethinking Attention with Performers](http://arxiv.org/abs/2009.14794) — Krzysztof Choromanski et al. · arXiv:2009.14794 `{Choromanski2020Rethinking}`
 - **2020** [SIGN: Scalable Inception Graph Neural Networks](http://arxiv.org/abs/2004.11198) — Fabrizio Frasca et al. · arXiv:2004.11198 `{Frasca2020Sign}`
 - **2020** [Knowledge Distillation: A Survey](http://arxiv.org/abs/2006.05525 http://dx.doi.org/10.1007/s11263-021-01453-z) — Jianping Gou et al. · arXiv:2006.05525 `{Gou2020Knowledge}`
 - **2020** Heterogeneous Graph Transformer — Ziniu Hu et al. · arXiv:6423.33800 `{Hu2020Heterogeneous}`
@@ -2962,6 +2975,7 @@
 - **2019** An efficient end-to-end deep learning architecture for activity classification — Amel Ben Mahjoub et al. `{Mahjoub2019Efficient}`
 - **2019** Cross-lingual Joint Entity and Word Embedding to Improve Entity Linking and Parallel Sentence Mining — Xiaoman Pan et al. `{Pan2019Cross}`
 - **2019** [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](http://arxiv.org/abs/1910.02054) — Samyam Rajbhandari et al. · arXiv:1910.02054 `{Rajbhandari2019Zero}`
+- **2019** [Fast Transformer Decoding: One Write-Head is All You Need](http://arxiv.org/abs/1911.02150) — Noam Shazeer et al. · arXiv:1911.02150 `{Shazeer2019Fast}`
 - **2019** [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](http://arxiv.org/abs/1909.08053) — Mohammad Shoeybi et al. · arXiv:1909.08053 `{Shoeybi2019Megatron}`
 - **2019** [RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space](http://arxiv.org/abs/1902.10197) — Zhiqing Sun et al. · arXiv:1902.10197 `{Sun2019Rotate}`
 - **2019** Adversarial examples for graph data: Deep insights into attack and defense — Huijun Wu et al. `{Wu2019Adversarial}`
@@ -2972,6 +2986,7 @@
 - **2018** Adversarial attacks on neural networks for graph data — Daniel Zügner et al. · arXiv:9819.32200 `{Zgner2018Adversarial}`
 - **2017** Semi-supervised classification with graph convolutional networks — Thomas N. Kipf et al. `{Kipf2017Semi}`
 - **2017** [Hierarchical and Interpretable Skill Acquisition in Multi-task Reinforcement Learning](http://arxiv.org/abs/1712.07294) — Tianmin Shu et al. · arXiv:1712.07294 `{Shu2017Hierarchical}`
+- **2017** [Attention Is All You Need](http://arxiv.org/abs/1706.03762) — Ashish Vaswani et al. · arXiv:1706.03762 `{Vaswani2017Attention}`
 - **2016** [Training Deep Nets with Sublinear Memory Cost](http://arxiv.org/abs/1604.06174) — Tianqi Chen et al. · arXiv:1604.06174 `{Chen2016Training}`
 - **2016** Convolutional neural networks on graphs with fast localized spectral filtering — Michaël Defferrard et al. `{Defferrard2016Convolutional}`
 - **2014** Large-scale kernel rankSVM — Tzu Ming Kuo et al. `{Kuo2014Large}`
