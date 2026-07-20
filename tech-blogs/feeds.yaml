@@ -560,6 +560,13 @@ feeds:
     topics: [chinese, ai-news]
     lang: zh
 
+  - name: AMiner 学术日报
+    url: https://www.aminer.cn/
+    feed: null  # SPA; /rss /feed /data/rss all return text/html JS shell, no public RSS (probed 2026-07-20). Needs headless.
+    tier: company
+    topics: [chinese, academic, paper-digest]
+    lang: zh
+
   - name: 阮一峰的网络日志
     url: https://www.ruanyifeng.com/blog/
     feed: https://feeds.feedburner.com/ruanyifeng

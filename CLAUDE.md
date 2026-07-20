@@ -163,7 +163,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
   - `scripts/blog_sitemap_fallback.py` — Sitemap.xml `<lastmod>` (4 sources: Anthropic News/Research, Cohere, AI2). Per-source allowed-path-prefixes in `SITEMAP_RULES`.
   - `scripts/blog_html_scraper.py` — Static HTML index parsing (6 sources: Mistral, Meta AI, Apollo, MILA, LlamaIndex, fast.ai). Per-source `(index_url, item_regex, max_undated?)` in `HTML_RULES`. Modal/Replicate were found to have hidden /blog/atom feeds during probing and moved into `blog_fetch.py`.
 - **Probing a new source**: `curl -sI -L -A "Mozilla/5.0" <url>` → check 200; then `curl -sL ... | head -c 500 | grep -qE '<rss|<feed|<channel'` to confirm it's actually XML (200 ≠ RSS for SPAs).
-- **Still no useful feed/sitemap/HTML** (8 sources, all SPAs needing headless browser): xAI, Perplexity, Stanford HAI/CRFM, Princeton AIML, Redwood, 机器之心中文站, 李沐.
+- **Still no useful feed/sitemap/HTML** (9 sources, all SPAs needing headless browser): xAI, Perplexity, Stanford HAI/CRFM, Princeton AIML, Redwood, 机器之心中文站, 李沐, AMiner 学术日报.
 
 ### Previous Digests
 
