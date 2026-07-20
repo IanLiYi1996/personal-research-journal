@@ -1,19 +1,19 @@
 # 文献库索引
 
-> 共 **1532** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1534** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （660）
+- [大语言模型 (LLM)](#-llm-) （662）
 - [智能体 / Agent](#-agent) （212）
-- [强化学习 / RLHF](#-rlhf) （283）
+- [强化学习 / RLHF](#-rlhf) （284）
 - [推理 / Reasoning](#-reasoning) （330）
-- [图神经网络 / Graph](#-graph) （242）
+- [图神经网络 / Graph](#-graph) （243）
 - [扩散 / 生成模型](#-) （241）
 - [多模态 / 视觉语言](#-) （291）
-- [Transformer / 架构](#transformer-) （346）
-- [高效训练 / 推理](#-) （396）
+- [Transformer / 架构](#transformer-) （348）
+- [高效训练 / 推理](#-) （397）
 - [综述 / Survey](#-survey) （139）
 - [检索增强 / RAG](#-rag) （99）
 - 未分类（142）
@@ -224,6 +224,7 @@
 - **2026** [COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation](http://arxiv.org/abs/2605.31264) — Tianyi Zhou et al. · arXiv:2605.31264 `{Zhou2026Colleague}`
 - **2026** [Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering](http://arxiv.org/abs/2604.08224) — Chenyu Zhou et al. · arXiv:2604.08224 `{Zhou2026Externalization}`
 - **2026** [Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps](http://arxiv.org/abs/2605.16928) — Yanke Zhou et al. · arXiv:2605.16928 `{Zhou2026Full}`
+- **2026** [LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget](http://arxiv.org/abs/2607.14952) — Changhai Zhou et al. · arXiv:2607.14952 `{Zhou2026Longstraw}`
 - **2026** [Measuring Epistemic Resilience of LLMs Under Misleading Medical Context](http://arxiv.org/abs/2606.12291) — Hongjian Zhou et al. · arXiv:2606.12291 `{Zhou2026Measuring}`
 - **2026** [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization](http://arxiv.org/abs/2605.17757) — Zhongzhu Zhou et al. · arXiv:2605.17757 `{Zhou2026Oscar}`
 - **2026** [VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images](http://arxiv.org/abs/2604.09531) — Guanyu Zhou et al. · arXiv:2604.09531 `{Zhou2026Visionfoundry}`
@@ -625,6 +626,7 @@
 - **2022** [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](http://arxiv.org/abs/2201.11903) — Jason Wei et al. · arXiv:2201.11903 `{Wei2022Chain}`
 - **2022** [ReAct: Synergizing Reasoning and Acting in Language Models](http://arxiv.org/abs/2210.03629) — Shunyu Yao et al. · arXiv:2210.03629 `{Yao2022React}`
 - **2022** [Large Language Models Meet NL2Code: A Survey](http://arxiv.org/abs/2212.09420) — Daoguang Zan et al. · arXiv:2212.09420 `{Zan2022Large}`
+- **2021** [LoRA: Low-Rank Adaptation of Large Language Models](http://arxiv.org/abs/2106.09685) — Edward J. Hu et al. · arXiv:2106.09685 `{Hu2021Lora}`
 - **2021** [The Power of Scale for Parameter-Efficient Prompt Tuning](http://arxiv.org/abs/2104.08691) — Brian Lester et al. · arXiv:2104.08691 `{Lester2021Power}`
 - **2021** [GPT Understands, Too](http://arxiv.org/abs/2103.10385) — Xiao Liu et al. · arXiv:2103.10385 `{Liu2021Gpt}`
 - **2021** [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](http://arxiv.org/abs/2104.04473) — Deepak Narayanan et al. · arXiv:2104.04473 `{Narayanan2021Efficient}`
@@ -1030,6 +1032,7 @@
 - **2026** [Qwen-Image-VAE-2.0 Technical Report](http://arxiv.org/abs/2605.13565) — Zekai Zhang et al. · arXiv:2605.13565 `{Zhang2026Qwen}`
 - **2026** [From Reasoning to Agentic: Credit Assignment in Reinforcement Learning for Large Language Models](http://arxiv.org/abs/2604.09459) — Chenchen Zhang et al. · arXiv:2604.09459 `{Zhang2026Reasoning}`
 - **2026** [AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs](http://arxiv.org/abs/2605.15565) — Haizhong Zheng et al. · arXiv:2605.15565 `{Zheng2026Astraflow}`
+- **2026** [LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget](http://arxiv.org/abs/2607.14952) — Changhai Zhou et al. · arXiv:2607.14952 `{Zhou2026Longstraw}`
 - **2026** [CanvasAgent: Enabling Complex Image Creation and Editing via Visual Tool Orchestration](http://arxiv.org/abs/2607.05465) — Hairui Zhu et al. · arXiv:2607.05465 `{Zhu2026Canvasagent}`
 - **2026** [Neural Computers](http://arxiv.org/abs/2604.06425) — Mingchen Zhuge et al. · arXiv:2604.06425 `{Zhuge2026Neural}`
 - **2026** [Qwen-AgentWorld: Language World Models for General Agents](http://arxiv.org/abs/2606.24597) — Yuxin Zuo et al. · arXiv:2606.24597 `{Zuo2026Qwen}`
@@ -1538,6 +1541,7 @@
 - **2026** [Graph-Based Chain-of-Thought Pruning for Reducing Redundant Reflections in Reasoning LLMs](http://arxiv.org/abs/2604.05643) — Hongyuan Yuan et al. · arXiv:2604.05643 `{Yuan2026Graph}`
 - **2026** [Parallelized Autoregressive Decoding for Omni-Modal Dense Video Captioning](http://arxiv.org/abs/2607.02963) — Wenzheng Zeng et al. · arXiv:2607.02963 `{Zeng2026Parallelized}`
 - **2026** [GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents](http://arxiv.org/abs/2606.24551) — Xiao Zhou et al. · arXiv:2606.24551 `{Zhou2026Gui}`
+- **2026** [LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget](http://arxiv.org/abs/2607.14952) — Changhai Zhou et al. · arXiv:2607.14952 `{Zhou2026Longstraw}`
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
 - **2025** [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](http://arxiv.org/abs/2504.19413) — Prateek Chhikara et al. · arXiv:2504.19413 `{Chhikara2025Mem0}`
 - **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
@@ -2365,6 +2369,7 @@
 - **2026** [RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation](http://arxiv.org/abs/2607.06559) — Haoyu Zhao et al. · arXiv:2607.06559 `{Zhao2026Rynnworlda}`
 - **2026** [DanceOPD: On-Policy Generative Field Distillation](http://arxiv.org/abs/2606.27377) — Wei Zhou et al. · arXiv:2606.27377 `{Zhou2026Danceopd}`
 - **2026** [Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps](http://arxiv.org/abs/2605.16928) — Yanke Zhou et al. · arXiv:2605.16928 `{Zhou2026Full}`
+- **2026** [LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget](http://arxiv.org/abs/2607.14952) — Changhai Zhou et al. · arXiv:2607.14952 `{Zhou2026Longstraw}`
 - **2026** [OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation](http://arxiv.org/abs/2604.11804) — Donghao Zhou et al. · arXiv:2604.11804 `{Zhou2026Omnishow}`
 - **2026** [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization](http://arxiv.org/abs/2605.17757) — Zhongzhu Zhou et al. · arXiv:2605.17757 `{Zhou2026Oscar}`
 - **2026** [SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer](http://arxiv.org/abs/2605.15178) — Haoyi Zhu et al. · arXiv:2605.15178 `{Zhu2026Sana}`
@@ -2555,6 +2560,7 @@
 - **2021** [Learning Attributed Graph Representations with Communicative Message Passing Transformer](http://arxiv.org/abs/2107.08773) — Jianwen Chen et al. · arXiv:2107.08773 `{Chen2021Learning}`
 - **2021** [Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity](http://arxiv.org/abs/2101.03961) — William Fedus et al. · arXiv:2101.03961 `{Fedus2021Switch}`
 - **2021** [Efficiently Modeling Long Sequences with Structured State Spaces](http://arxiv.org/abs/2111.00396) — Albert Gu et al. · arXiv:2111.00396 `{Gu2021Efficiently}`
+- **2021** [LoRA: Low-Rank Adaptation of Large Language Models](http://arxiv.org/abs/2106.09685) — Edward J. Hu et al. · arXiv:2106.09685 `{Hu2021Lora}`
 - **2021** [Rethinking Graph Transformers with Spectral Attention](http://arxiv.org/abs/2106.03893) — Devin Kreuzer et al. · arXiv:2106.03893 `{Kreuzer2021Rethinking}`
 - **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
 - **2021** [CAT: Cross Attention in Vision Transformer](http://arxiv.org/abs/2106.05786) — Hezheng Lin et al. · arXiv:2106.05786 `{Lin2021Cat}`
@@ -2976,6 +2982,7 @@
 - **2021** [GNNAutoScale: Scalable and Expressive Graph Neural Networks via Historical Embeddings](http://arxiv.org/abs/2106.05609) — Matthias Fey et al. · arXiv:2106.05609 `{Fey2021Gnnautoscale}`
 - **2021** [Efficiently Identifying Task Groupings for Multi-Task Learning](http://arxiv.org/abs/2109.04617) — Christopher Fifty et al. · arXiv:2109.04617 `{Fifty2021Efficiently}`
 - **2021** [Efficiently Modeling Long Sequences with Structured State Spaces](http://arxiv.org/abs/2111.00396) — Albert Gu et al. · arXiv:2111.00396 `{Gu2021Efficiently}`
+- **2021** [LoRA: Low-Rank Adaptation of Large Language Models](http://arxiv.org/abs/2106.09685) — Edward J. Hu et al. · arXiv:2106.09685 `{Hu2021Lora}`
 - **2021** [Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech](http://arxiv.org/abs/2106.06103) — Jaehyeon Kim et al. · arXiv:2106.06103 `{Kim2021Conditional}`
 - **2021** [The Power of Scale for Parameter-Efficient Prompt Tuning](http://arxiv.org/abs/2104.08691) — Brian Lester et al. · arXiv:2104.08691 `{Lester2021Power}`
 - **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
