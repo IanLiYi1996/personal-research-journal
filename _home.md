@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-20-flash-attention-efficient-attention" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-20-llm-long-context" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-20 | Note | [综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训练 / 评测）](/research-notes/2026-07-20-llm-long-context) |
 | 2026-07-20 | Note | [综述：LLM 推理努力度控制（Controlling Reasoning Effort in LLMs）](/research-notes/2026-07-20-blog-reasoning-effort) |
 | 2026-07-20 | Note | [综述：FlashAttention 与高效注意力机制（IO-aware / 长上下文 / 推理服务）](/research-notes/2026-07-20-flash-attention-efficient-attention) |
 | 2026-07-20 | Note | [分布式训练系统全景：从并行策略到集合通信与集群拓扑](/research-notes/2026-07-20-blog-collective-operations) |
 | 2026-07-17 | Note | [两条最新主线深读:Agentic RL 信用分配 & 统一多模态的扩散/去编码器化](/research-notes/2026-07-17-agentic-rl-credit-and-unified-multimodal) |
-| 2026-07-17 | Note | [Inkling / GLM-5.2 / Kimi K3 三大开放模型深度调研](/research-notes/2026-07-17-inkling-glm52-kimik3) |
 <!-- AUTO:RECENT:END -->

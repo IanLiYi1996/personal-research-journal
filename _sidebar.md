@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训练 / 评测）](/research-notes/2026-07-20-llm-long-context.md)
   - [综述：FlashAttention 与高效注意力机制（IO-aware / 长上下文 / 推理服务）](/research-notes/2026-07-20-flash-attention-efficient-attention.md)
   - [综述：LLM 推理努力度控制（Controlling Reasoning Effort in LLMs）](/research-notes/2026-07-20-blog-reasoning-effort.md)
   - [分布式训练系统全景：从并行策略到集合通信与集群拓扑](/research-notes/2026-07-20-blog-collective-operations.md)

@@ -1,21 +1,21 @@
 # 文献库索引
 
-> 共 **1512** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1532** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （650）
+- [大语言模型 (LLM)](#-llm-) （660）
 - [智能体 / Agent](#-agent) （212）
-- [强化学习 / RLHF](#-rlhf) （282）
-- [推理 / Reasoning](#-reasoning) （329）
+- [强化学习 / RLHF](#-rlhf) （283）
+- [推理 / Reasoning](#-reasoning) （330）
 - [图神经网络 / Graph](#-graph) （242）
-- [扩散 / 生成模型](#-) （240）
-- [多模态 / 视觉语言](#-) （288）
-- [Transformer / 架构](#transformer-) （335）
-- [高效训练 / 推理](#-) （390）
+- [扩散 / 生成模型](#-) （241）
+- [多模态 / 视觉语言](#-) （291）
+- [Transformer / 架构](#transformer-) （346）
+- [高效训练 / 推理](#-) （396）
 - [综述 / Survey](#-survey) （139）
-- [检索增强 / RAG](#-rag) （93）
+- [检索增强 / RAG](#-rag) （99）
 - 未分类（142）
 
 ## 大语言模型 (LLM)
@@ -289,10 +289,12 @@
 - **2024** [Unveiling the Flaws: Exploring Imperfections in Synthetic Data and Mitigation Strategies for Large Language Models](http://arxiv.org/abs/2406.12397) — Jie Chen et al. · arXiv:2406.12397 `{Chen2024Unveiling}`
 - **2024** [Can AI Assistants Know What They Don't Know?](http://arxiv.org/abs/2401.13275) — Qinyuan Cheng et al. · arXiv:2401.13275 `{Cheng2024Can}`
 - **2024** [Sinkhorn Distance Minimization for Knowledge Distillation](http://arxiv.org/abs/2402.17110) — Xiao Cui et al. · arXiv:2402.17110 `{Cui2024Sinkhorn}`
+- **2024** [LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens](http://arxiv.org/abs/2402.13753) — Yiran Ding et al. · arXiv:2402.13753 `{Ding2024Longrope}`
 - **2024** [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](http://arxiv.org/abs/2404.16130) — Darren Edge et al. · arXiv:2404.16130 `{Edge2024Local}`
 - **2024** [KTO: Model Alignment as Prospect Theoretic Optimization](http://arxiv.org/abs/2402.01306) — Kawin Ethayarajh et al. · arXiv:2402.01306 `{EthayarajhndKto}`
 - **2024** [LLaMA-Omni: Seamless Speech Interaction with Large Language Models](http://arxiv.org/abs/2409.06666) — Qingkai Fang et al. · arXiv:2409.06666 `{Fang2024Llama}`
 - **2024** [Improving Language Model Reasoning with Self-motivated Learning](http://arxiv.org/abs/2404.07017) — Yunlong Feng et al. · arXiv:2404.07017 `{Feng2024Improving}`
+- **2024** [Data Engineering for Scaling Language Models to 128K Context](http://arxiv.org/abs/2402.10171) — Yao Fu et al. · arXiv:2402.10171 `{Fu2024Data}`
 - **2024** [VITA: Towards Open-Source Interactive Omni Multimodal LLM](http://arxiv.org/abs/2408.05211) — Chaoyou Fu et al. · arXiv:2408.05211 `{Fu2024Vita}`
 - **2024** [Parameter-Efficient Fine-Tuning with Discrete Fourier Transform](http://arxiv.org/abs/2405.03003) — Ziqi Gao et al. · arXiv:2405.03003 `{Gao2024Parameter}`
 - **2024** [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](http://arxiv.org/abs/2406.11768) — Sreyan Ghosh et al. · arXiv:2406.11768 `{Ghosh2024Gama}`
@@ -348,6 +350,7 @@
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](http://arxiv.org/abs/2407.00079) — Ruoyu Qin et al. · arXiv:2407.00079 `{Qin2024Mooncake}`
 - **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
 - **2024** [Watermarking Makes Language Models Radioactive](http://arxiv.org/abs/2402.14904) — Tom Sander et al. · arXiv:2402.14904 `{SanderndWatermarking}`
 - **2024** [Generative Explore-Exploit: Training-free Optimization of Generative Recommender Systems using LLM Optimizers](http://arxiv.org/abs/2406.05255) — Lütfi Kerem Senel et al. · arXiv:2406.05255 `{Senel2024Generative}`
@@ -412,6 +415,7 @@
 - **2024** [Knowledge Graph Enhanced Large Language Model Editing](http://arxiv.org/abs/2402.13593) — Mengqi Zhang et al. · arXiv:2402.13593 `{Zhang2024Knowledge}`
 - **2024** [Large Language Model-Brained GUI Agents: A Survey](http://arxiv.org/abs/2411.18279) — Chaoyun Zhang et al. · arXiv:2411.18279 `{Zhang2024Large}`
 - **2024** LLM–Assisted Data Augmentation for Chinese Dialogue–Level Dependency Parsing — Meishan Zhang et al. `{Zhang2024Llm}`
+- **2024** [Long Context Compression with Activation Beacon](http://arxiv.org/abs/2401.03462) — Peitian Zhang et al. · arXiv:2401.03462 `{Zhang2024Longa}`
 - **2024** [MM-LLMs: Recent Advances in MultiModal Large Language Models](http://arxiv.org/abs/2401.13601) — Duzhen Zhang et al. · arXiv:2401.13601 `{Zhang2024Mm}`
 - **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
 - **2024** [NoteLLM: A Retrievable Large Language Model for Note Recommendation](https://dl.acm.org/doi/10.1145/3589335.3648314) — Chao Zhang et al. · arXiv:9335.36483 `{Zhang2024Notellm}`
@@ -423,6 +427,7 @@
 - **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
 - **2023** [InstructEval: Systematic Evaluation of Instruction Selection Methods](http://arxiv.org/abs/2307.00259) — Anirudh Ajith et al. · arXiv:2307.00259 `{Ajith2023Instructeval}`
 - **2023** [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](http://arxiv.org/abs/2312.11514) — Keivan Alizadeh et al. · arXiv:2312.11514 `{AlizadehndLlm}`
+- **2023** [LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding](http://arxiv.org/abs/2308.14508) — Yushi Bai et al. · arXiv:2308.14508 `{Bai2023Longbench}`
 - **2023** [QWEN TECHNICAL REPORT](http://arxiv.org/abs/2309.16609) — Jinze Bai et al. · arXiv:2309.16609 `{BaindQwen}`
 - **2023** [Graph of Thoughts: Solving Elaborate Problems with Large Language Models](http://arxiv.org/abs/2308.09687 http://dx.doi.org/10.1609/aaai.v38i16.29720) — Maciej Besta et al. · arXiv:2308.09687 `{Besta2023Graph}`
 - **2023** [WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION](http://arxiv.org/abs/2312.09390) — Collin Burns et al. · arXiv:2312.09390 `{BurnsndWeak}`
@@ -462,6 +467,7 @@
 - **2023** [Textbooks Are All You Need](http://arxiv.org/abs/2306.11644) — Suriya Gunasekar et al. · arXiv:2306.11644 `{Gunasekar2023Textbooks}`
 - **2023** [Evaluating Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2310.19736) — Zishan Guo et al. · arXiv:2310.19736 `{Guo2023Evaluating}`
 - **2023** [HyperAttention: Long-context Attention in Near-Linear Time](http://arxiv.org/abs/2310.05869) — Insu Han et al. · arXiv:2310.05869 `{Han2023Hyperattention}`
+- **2023** [LM-Infinite: Zero-Shot Extreme Length Generalization for Large Language Models](http://arxiv.org/abs/2308.16137) — Chi Han et al. · arXiv:2308.16137 `{Han2023Lm}`
 - **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
 - **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
 - **2023** [Backpack Language Models](http://arxiv.org/abs/2305.16765) — John Hewitt et al. · arXiv:2305.16765 `{Hewitt2023Backpack}`
@@ -479,6 +485,7 @@
 - **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
 - **2023** [NEFTune: Noisy Embeddings Improve Instruction Finetuning](http://arxiv.org/abs/2310.05914) — Neel Jain et al. · arXiv:2310.05914 `{Jain2023Neftune}`
 - **2023** [LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models](http://arxiv.org/abs/2310.05736) — Huiqiang Jiang et al. · arXiv:2310.05736 `{Jiang2023Llmlingua}`
+- **2023** [LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression](http://arxiv.org/abs/2310.06839) — Huiqiang Jiang et al. · arXiv:2310.06839 `{Jiang2023Longllmlingua}`
 - **2023** [StructGPT: A General Framework for Large Language Model to Reason over Structured Data](http://arxiv.org/abs/2305.09645) — Jinhao Jiang et al. · arXiv:2305.09645 `{Jiang2023Structgpt}`
 - **2023** [Challenges and Applications of Large Language Models](http://arxiv.org/abs/2307.10169) — Jean Kaddour et al. · arXiv:2307.10169 `{Kaddour2023Challenges}`
 - **2023** [Efficient Memory Management for Large Language Model Serving with PagedAttention](http://arxiv.org/abs/2309.06180) — Woosuk Kwon et al. · arXiv:2309.06180 `{Kwon2023Efficient}`
@@ -499,6 +506,7 @@
 - **2023** [Evaluating the Logical Reasoning Ability of ChatGPT and GPT-4](http://arxiv.org/abs/2304.03439) — Hanmeng Liu et al. · arXiv:2304.03439 `{Liu2023Evaluating}`
 - **2023** [Goat: Fine-tuned LLaMA Outperforms GPT-4 on Arithmetic Tasks](http://arxiv.org/abs/2305.14201) — Tiedong Liu et al. · arXiv:2305.14201 `{Liu2023Goat}`
 - **2023** [LLM360: Towards Fully Transparent Open-Source LLMs](http://arxiv.org/abs/2312.06550) — Zhengzhong Liu et al. · arXiv:2312.06550 `{Liu2023Llm360}`
+- **2023** [Scaling Laws of RoPE-based Extrapolation](http://arxiv.org/abs/2310.05209) — Xiaoran Liu et al. · arXiv:2310.05209 `{Liu2023Scaling}`
 - **2023** [Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training](http://arxiv.org/abs/2305.14342) — Hong Liu et al. · arXiv:2305.14342 `{Liu2023Sophia}`
 - **2023** [Towards Graph Foundation Models: A Survey and Beyond](http://arxiv.org/abs/2310.11829) — Jiawei Liu et al. · arXiv:2310.11829 `{Liu2023Towards}`
 - **2023** [Trustworthy LLMs: a Survey and Guideline for Evaluating Large Language Models' Alignment](http://arxiv.org/abs/2308.05374) — Yang Liu et al. · arXiv:2308.05374 `{Liu2023Trustworthy}`
@@ -511,6 +519,7 @@
 - **2023** [Brain in a Vat: On Missing Pieces Towards Artificial General Intelligence in Large Language Models](http://arxiv.org/abs/2307.03762) — Yuxi Ma et al. · arXiv:2307.03762 `{Ma2023Brain}`
 - **2023** [Large Language Model Is Not a Good Few-shot Information Extractor, but a Good Reranker for Hard Samples!](http://arxiv.org/abs/2303.08559 http://dx.doi.org/10.18653/v1/2023.findings-emnlp.710) — Yubo Ma et al. · arXiv:2303.08559 `{Ma2023Large}`
 - **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [Landmark Attention: Random-Access Infinite Context Length for Transformers](http://arxiv.org/abs/2305.16300) — Amirkeivan Mohtashami et al. · arXiv:2305.16300 `{Mohtashami2023Landmark}`
 - **2023** [MemGPT: Towards LLMs as Operating Systems](http://arxiv.org/abs/2310.08560) — Charles Packer et al. · arXiv:2310.08560 `{Packer2023Memgpt}`
 - **2023** [Unifying Large Language Models and Knowledge Graphs: A Roadmap](http://arxiv.org/abs/2306.08302 http://dx.doi.org/10.1109/TKDE.2024.3352100) — Shirui Pan et al. · arXiv:2306.08302 `{Pan2023Unifying}`
 - **2023** [ART: Automatic multi-step reasoning and tool-use for large language models](http://arxiv.org/abs/2303.09014) — Bhargavi Paranjape et al. · arXiv:2303.09014 `{Paranjape2023Art}`
@@ -570,6 +579,7 @@
 - **2023** [Chain-of-Note: Enhancing Robustness in Retrieval-Augmented Language Models](http://arxiv.org/abs/2311.09210) — Wenhao Yu et al. · arXiv:2311.09210 `{Yu2023Chain}`
 - **2023** [BatchEval: Towards Human-like Text Evaluation](http://arxiv.org/abs/2401.00437) — Peiwen Yuan et al. · arXiv:2401.00437 `{Yuan2023Batcheval}`
 - **2023** [AgentTuning: Enabling Generalized Agent Abilities for LLMs](http://arxiv.org/abs/2310.12823) — Aohan Zeng et al. · arXiv:2310.12823 `{Zeng2023Agenttuning}`
+- **2023** [H$_2$O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](http://arxiv.org/abs/2306.14048) — Zhenyu Zhang et al. · arXiv:2306.14048 `{Zhang20232o}`
 - **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
 - **2023** [CGCE: A Chinese Generative Chat Evaluation Benchmark for General and Financial Domains](http://arxiv.org/abs/2305.14471) — Xuanyu Zhang et al. · arXiv:2305.14471 `{Zhang2023Cgce}`
 - **2023** [Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization](http://arxiv.org/abs/2311.09096) — Zhexin Zhang et al. · arXiv:2311.09096 `{Zhang2023Defending}`
@@ -1072,6 +1082,7 @@
 - **2024** [Better Alignment with Instruction Back-and-Forth Translation](http://arxiv.org/abs/2408.04614) — Thao Nguyen et al. · arXiv:2408.04614 `{Nguyen2024Better}`
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [From r to Q * : Your Language Model is Secretly a Q-Function](http://arxiv.org/abs/2404.12358) — Rafael Rafailov et al. · arXiv:2404.12358 `{RafailovndYour}`
 - **2024** [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](http://arxiv.org/abs/2402.03300) — Zhihong Shao et al. · arXiv:2402.03300 `{Shao2024Deepseekmath}`
 - **2024** [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](http://arxiv.org/abs/2408.03314) — Charlie Snell et al. · arXiv:2408.03314 `{Snell2024Scaling}`
@@ -1402,6 +1413,7 @@
 - **2024** [Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems](http://arxiv.org/abs/2412.09413) — Yingqian Min et al. · arXiv:2412.09413 `{Min2024Imitate}`
 - **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
 - **2024** [Recursive Introspection: Teaching Language Model Agents How to Self-Improve](http://arxiv.org/abs/2407.18219) — Yuxiao Qu et al. · arXiv:2407.18219 `{Qu2024Recursive}`
+- **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [From r to Q * : Your Language Model is Secretly a Q-Function](http://arxiv.org/abs/2404.12358) — Rafael Rafailov et al. · arXiv:2404.12358 `{RafailovndYour}`
 - **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
 - **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
@@ -1933,6 +1945,7 @@
 - **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
 - **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
 - **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
+- **2023** [H$_2$O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](http://arxiv.org/abs/2306.14048) — Zhenyu Zhang et al. · arXiv:2306.14048 `{Zhang20232o}`
 - **2023** [Adding Conditional Control to Text-to-Image Diffusion Models](http://arxiv.org/abs/2302.05543) — Lvmin Zhang et al. · arXiv:2302.05543 `{Zhang2023Adding}`
 - **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
 - **2023** [CGCE: A Chinese Generative Chat Evaluation Benchmark for General and Financial Domains](http://arxiv.org/abs/2305.14471) — Xuanyu Zhang et al. · arXiv:2305.14471 `{Zhang2023Cgce}`
@@ -2160,6 +2173,7 @@
 - **2025** [PaddleOCR-VL: Boosting Multilingual Document Parsing via a 0.9B Ultra-Compact Vision-Language Model](http://arxiv.org/abs/2510.14528) — Cheng Cui et al. · arXiv:2510.14528 `{Cui2025Paddleocr}`
 - **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
 - **2025** [MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing](http://arxiv.org/abs/2509.22186) — Junbo Niu et al. · arXiv:2509.22186 `{Niu2025Mineru2}`
+- **2025** [Black Sheep in the Herd: Playing with Spuriously Correlated Attributes for Vision-Language Recognition](http://arxiv.org/abs/2502.15809) — Xinyu Tian et al. · arXiv:2502.15809 `{Tian2025Black}`
 - **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
 - **2025** [The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search](http://arxiv.org/abs/2504.08066) — Yutaro Yamada et al. · arXiv:2504.08066 `{Yamada2025Ai}`
 - **2025** [MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation](http://arxiv.org/abs/2512.18181) — Kaixing Yang et al. · arXiv:2512.18181 `{Yang2025Mace}`
@@ -2186,6 +2200,7 @@
 - **2024** [VideoMamba: State Space Model for Efficient Video Understanding](http://arxiv.org/abs/2403.06977) — Kunchang Li et al. · arXiv:2403.06977 `{Li2024Videomamba}`
 - **2024** [ECHO-GL: Earnings Calls-Driven Heterogeneous Graph Learning for Stock Movement Prediction](www.aaai.org) — Mengpu Liu et al. `{Liu2024Echo}`
 - **2024** [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://github.com/lichao-sun/SoraReview) — Yixin Liu et al. `{Liu2024Sora}`
+- **2024** [World Model on Million-Length Video And Language With Blockwise RingAttention](http://arxiv.org/abs/2402.08268) — Hao Liu et al. · arXiv:2402.08268 `{Liu2024World}`
 - **2024** 3D Gaussian Blendshapes for Head Avatar Animation — Shengjie Ma et al. · arXiv:1519.36574 `{Ma20243d}`
 - **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
 - **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
@@ -2193,6 +2208,7 @@
 - **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
+- **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
 - **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
 - **2024** [A Multimodal Automated Interpretability Agent](http://arxiv.org/abs/2404.14394) — Tamar Rott Shaham et al. · arXiv:2404.14394 `{Shaham2024Multimodal}`
@@ -2396,6 +2412,7 @@
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
 - **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
 - **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
 - **2024** [LLM Pruning and Distillation in Practice: The Minitron Approach](http://arxiv.org/abs/2408.11796) — Sharath Turuvekere Sreenivas et al. · arXiv:2408.11796 `{Sreenivas2024Llm}`
@@ -2423,6 +2440,7 @@
 - **2024** [xFinder: Robust and Pinpoint Answer Extraction for Large Language Models](http://arxiv.org/abs/2405.11874) — Qingchen Yu et al. · arXiv:2405.11874 `{Yu2024Xfinder}`
 - **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
 - **2024** [Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations](http://arxiv.org/abs/2402.17152) — Jiaqi Zhai et al. · arXiv:2402.17152 `{Zhai2024Actions}`
+- **2024** [Long Context Compression with Activation Beacon](http://arxiv.org/abs/2401.03462) — Peitian Zhang et al. · arXiv:2401.03462 `{Zhang2024Longa}`
 - **2024** [MM1.5: Methods, Analysis \& Insights from Multimodal LLM Fine-tuning](http://arxiv.org/abs/2409.20566) — Haotian Zhang et al. · arXiv:2409.20566 `{Zhang2024Mm1}`
 - **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
 - **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
@@ -2453,6 +2471,7 @@
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
 - **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
 - **2023** [HyperAttention: Long-context Attention in Near-Linear Time](http://arxiv.org/abs/2310.05869) — Insu Han et al. · arXiv:2310.05869 `{Han2023Hyperattention}`
+- **2023** [LM-Infinite: Zero-Shot Extreme Length Generalization for Large Language Models](http://arxiv.org/abs/2308.16137) — Chi Han et al. · arXiv:2308.16137 `{Han2023Lm}`
 - **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
 - **2023** [Transformers as Graph-to-Graph Models](http://arxiv.org/abs/2310.17936) — James Henderson et al. · arXiv:2310.17936 `{Henderson2023Transformers}`
 - **2023** [Backpack Language Models](http://arxiv.org/abs/2305.16765) — John Hewitt et al. · arXiv:2305.16765 `{Hewitt2023Backpack}`
@@ -2470,6 +2489,8 @@
 - **2023** [Ring Attention with Blockwise Transformers for Near-Infinite Context](http://arxiv.org/abs/2310.01889) — Hao Liu et al. · arXiv:2310.01889 `{Liu2023Ring}`
 - **2023** [Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action](http://arxiv.org/abs/2312.17172) — Jiasen Lu et al. · arXiv:2312.17172 `{Lu2023Unified}`
 - **2023** [From Google Gemini to OpenAI Q* (Q-Star): A Survey of Reshaping the Generative Artificial Intelligence (AI) Research Landscape](http://arxiv.org/abs/2312.10868) — Timothy R. McIntosh et al. · arXiv:2312.10868 `{McIntosh2023Google}`
+- **2023** [Landmark Attention: Random-Access Infinite Context Length for Transformers](http://arxiv.org/abs/2305.16300) — Amirkeivan Mohtashami et al. · arXiv:2305.16300 `{Mohtashami2023Landmark}`
+- **2023** [RWKV: Reinventing RNNs for the Transformer Era](http://arxiv.org/abs/2305.13048) — Bo Peng et al. · arXiv:2305.13048 `{Peng2023Rwkv}`
 - **2023** [YaRN: Efficient Context Window Extension of Large Language Models](http://arxiv.org/abs/2309.00071) — Bowen Peng et al. · arXiv:2309.00071 `{Peng2023Yarn}`
 - **2023** EFFICIENTLY SCALING TRANSFORMER INFERENCE — Reiner Pope et al. `{Pope2023Efficiently}`
 - **2023** [Representation Learning with Large Language Models for Recommendation](http://arxiv.org/abs/2310.15950 http://dx.doi.org/10.1145/3589334.3645458) — Xubin Ren et al. · arXiv:2310.15950 `{Ren2023Representation}`
@@ -2487,6 +2508,7 @@
 - **2023** From Online Softmax to FlashAttention UW CSE 599M Spring 2023: ML for ML Systems — Zihao Ye et al. `{Ye2023Online}`
 - **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
 - **2023** [MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers](http://arxiv.org/abs/2305.07185) — Lili Yu et al. · arXiv:2305.07185 `{Yu2023Megabyte}`
+- **2023** [H$_2$O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](http://arxiv.org/abs/2306.14048) — Zhenyu Zhang et al. · arXiv:2306.14048 `{Zhang20232o}`
 - **2023** [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](http://arxiv.org/abs/2305.17100) — Kai Zhang et al. · arXiv:2305.17100 `{Zhang2023Biomedgpt}`
 - **2023** [Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization](http://arxiv.org/abs/2311.09096) — Zhexin Zhang et al. · arXiv:2311.09096 `{Zhang2023Defending}`
 - **2023** [LLaMA-Adapter: Efficient Fine-tuning of Language Models with Zero-init Attention](http://arxiv.org/abs/2303.16199) — Renrui Zhang et al. · arXiv:2303.16199 `{Zhang2023Llama}`
@@ -2522,6 +2544,7 @@
 - **2022** [What the DAAM: Interpreting Stable Diffusion Using Cross Attention](http://arxiv.org/abs/2210.04885) — Raphael Tang et al. · arXiv:2210.04885 `{Tang2022What}`
 - **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
+- **2022** [Memorizing Transformers](http://arxiv.org/abs/2203.08913) — Yuhuai Wu et al. · arXiv:2203.08913 `{Wu2022Memorizing}`
 - **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
 - **2022** A Contrastive Framework for Learning Sentence Representations from Pairwise and Triple-wise Perspective in Angular Space — Yuhao Zhang et al. `{Zhang2022Contrastive}`
 - **2022** [Graph Masked Autoencoders with Transformers](http://arxiv.org/abs/2202.08391) — Sixiao Zhang et al. · arXiv:2202.08391 `{Zhang2022Graph}`
@@ -2540,6 +2563,7 @@
 - **2021** Pre-trained Language Model for Web-scale Retrieval in Baidu Search — Yiding Liu et al. · arXiv:7548.34671 `{Liu2021Prea}`
 - **2021** Analyzing the Anisotropy Phenomenon in Transformer-based Masked Language Models — Ziyang Luo et al. `{Luo2021Analyzing}`
 - **2021** [GraphiT: Encoding Graph Structure in Transformers](http://arxiv.org/abs/2106.05667) — Grégoire Mialon et al. · arXiv:2106.05667 `{MialonndGraphit}`
+- **2021** [Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](http://arxiv.org/abs/2108.12409) — Ofir Press et al. · arXiv:2108.12409 `{Press2021Train}`
 - **2021** [Self-attention Does Not Need $O(n^2)$ Memory](http://arxiv.org/abs/2112.05682) — Markus N. Rabe et al. · arXiv:2112.05682 `{Rabe2021Self}`
 - **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
 - **2021** [RoFormer: Enhanced Transformer with Rotary Position Embedding](http://arxiv.org/abs/2104.09864) — Jianlin Su et al. · arXiv:2104.09864 `{Su2021Roformer}`
@@ -2566,11 +2590,14 @@
 - **2020** [a Self - Attention Based Graph H Yper -Sagnn :](https://github.com/rootlu/SIAN.) — Yuanfu Lu et al. `{Lu2020Self}`
 - **2020** Search-based User Interest Modeling with Lifelong Sequential Behavior Data for Click-Through Rate Prediction — Qi Pi et al. · arXiv:0531.34127 `{Pi2020Search}`
 - **2020** [CoLAKE: Contextualized Language and Knowledge Embedding](http://arxiv.org/abs/2010.00309) — Tianxiang Sun et al. · arXiv:2010.00309 `{Sun2020Colake}`
+- **2020** [MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices](http://arxiv.org/abs/2004.02984) — Zhiqing Sun et al. · arXiv:2004.02984 `{Sun2020Mobilebert}`
 - **2020** Multi-modal Knowledge Graphs for Recommender Systems — Rui Sun et al. · arXiv:0531.34119 `{Sun2020Multi}`
 - **2020** [A Mathematical Introduction to Generative Adversarial Nets (GAN)](http://arxiv.org/abs/2009.00169) — Yang Wang et al. · arXiv:2009.00169 `{Wang2020Mathematical}`
 - **2020** TAGNN: Target Attentive Graph Neural Networks for Session-based Recommendation — Feng Yu et al. · arXiv:7271.34013 `{Yu2020Tagnn}`
+- **2020** [Big Bird: Transformers for Longer Sequences](http://arxiv.org/abs/2007.14062) — Manzil Zaheer et al. · arXiv:2007.14062 `{Zaheer2020Big}`
 - **2019** [Graph Transformer for Graph-to-Sequence Learning](http://arxiv.org/abs/1911.07470) — Deng Cai et al. · arXiv:1911.07470 `{Cai2019Graph}`
 - **2019** [Generating Long Sequences with Sparse Transformers](http://arxiv.org/abs/1904.10509) — Rewon Child et al. · arXiv:1904.10509 `{Child2019Generating}`
+- **2019** [Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context](http://arxiv.org/abs/1901.02860) — Zihang Dai et al. · arXiv:1901.02860 `{Dai2019Transformer}`
 - **2019** Dynamic hypergraph neural networks — Jianwen Jiang et al. `{Jiang2019Dynamic}`
 - **2019** Understanding attention and generalization in graph neural networks — Boris Knyazev et al. `{Knyazev2019Understanding}`
 - **2019** [Fast Transformer Decoding: One Write-Head is All You Need](http://arxiv.org/abs/1911.02150) — Noam Shazeer et al. · arXiv:1911.02150 `{Shazeer2019Fast}`
@@ -2805,6 +2832,7 @@
 - **2024** [Unveiling the Flaws: Exploring Imperfections in Synthetic Data and Mitigation Strategies for Large Language Models](http://arxiv.org/abs/2406.12397) — Jie Chen et al. · arXiv:2406.12397 `{Chen2024Unveiling}`
 - **2024** [Sinkhorn Distance Minimization for Knowledge Distillation](http://arxiv.org/abs/2402.17110) — Xiao Cui et al. · arXiv:2402.17110 `{Cui2024Sinkhorn}`
 - **2024** [Bailing-TTS: Chinese Dialectal Speech Synthesis Towards Human-like Spontaneous Representation](http://arxiv.org/abs/2408.00284) — Xinhan Di et al. · arXiv:2408.00284 `{Di2024Bailing}`
+- **2024** [LongRoPE: Extending LLM Context Window Beyond 2 Million Tokens](http://arxiv.org/abs/2402.13753) — Yiran Ding et al. · arXiv:2402.13753 `{Ding2024Longrope}`
 - **2024** [LLaMA-Omni: Seamless Speech Interaction with Large Language Models](http://arxiv.org/abs/2409.06666) — Qingkai Fang et al. · arXiv:2409.06666 `{Fang2024Llama}`
 - **2024** [Attention as an RNN](http://arxiv.org/abs/2405.13956) — Leo Feng et al. · arXiv:2405.13956 `{Feng2024Attention}`
 - **2024** [Parameter-Efficient Fine-Tuning with Discrete Fourier Transform](http://arxiv.org/abs/2405.03003) — Ziqi Gao et al. · arXiv:2405.03003 `{Gao2024Parameter}`
@@ -2826,6 +2854,7 @@
 - **2024** [Class-Imbalanced Graph Learning without Class Rebalancing](https://github.) — Zhining Liu et al. `{Liu2024Class}`
 - **2024** [Efficient Detection of Toxic Prompts in Large Language Models](http://arxiv.org/abs/2408.11727) — Yi Liu et al. · arXiv:2408.11727 `{Liu2024Efficient}`
 - **2024** [Focus Anywhere for Fine-grained Multi-page Document Understanding](http://arxiv.org/abs/2405.14295) — Chenglong Liu et al. · arXiv:2405.14295 `{Liu2024Focus}`
+- **2024** [World Model on Million-Length Video And Language With Blockwise RingAttention](http://arxiv.org/abs/2402.08268) — Hao Liu et al. · arXiv:2402.08268 `{Liu2024World}`
 - **2024** [An Embarrassingly Simple Approach for LLM with Strong ASR Capacity](http://arxiv.org/abs/2402.08846) — Ziyang Ma et al. · arXiv:2402.08846 `{Ma2024Embarrassingly}`
 - **2024** [Latte: Latent Diffusion Transformer for Video Generation](http://arxiv.org/abs/2401.03048) — Xin Ma et al. · arXiv:2401.03048 `{Ma2024Latte}`
 - **2024** [PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](http://arxiv.org/abs/2404.02948) — Fanxu Meng et al. · arXiv:2404.02948 `{Meng2024Pissa}`
@@ -2850,6 +2879,7 @@
 - **2024** [Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning](http://arxiv.org/abs/2402.13669) — Zhaorui Yang et al. · arXiv:2402.13669 `{Yang2024Self}`
 - **2024** [MiniCPM-V: A GPT-4V Level MLLM on Your Phone](http://arxiv.org/abs/2408.01800) — Yuan Yao et al. · arXiv:2408.01800 `{Yao2024Minicpm}`
 - **2024** [Mora: Enabling Generalist Video Generation via A Multi-Agent Framework](https://github.com/lichao-sun/Mora) — Zhengqing Yuan et al. `{Yuan2024Mora}`
+- **2024** [Long Context Compression with Activation Beacon](http://arxiv.org/abs/2401.03462) — Peitian Zhang et al. · arXiv:2401.03462 `{Zhang2024Longa}`
 - **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
 - **2024** [A Survey on Efficient Inference for Large Language Models](http://arxiv.org/abs/2404.14294) — Zixuan Zhou et al. · arXiv:2404.14294 `{Zhou2024Survey}`
 - **2023** [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](http://arxiv.org/abs/2312.11514) — Keivan Alizadeh et al. · arXiv:2312.11514 `{AlizadehndLlm}`
@@ -2892,6 +2922,7 @@
 - **2023** [OTAvatar: One-shot Talking Face Avatar with Controllable Tri-plane Rendering](http://arxiv.org/abs/2303.14662) — Zhiyuan Ma et al. · arXiv:2303.14662 `{Ma2023Otavatar}`
 - **2023** [Fine-Tuning Language Models with Just Forward Passes](http://arxiv.org/abs/2305.17333) — Sadhika Malladi et al. · arXiv:2305.17333 `{Malladi2023Fine}`
 - **2023** [Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems](http://arxiv.org/abs/2312.15234) — Xupeng Miao et al. · arXiv:2312.15234 `{Miao2023Towards}`
+- **2023** [RWKV: Reinventing RNNs for the Transformer Era](http://arxiv.org/abs/2305.13048) — Bo Peng et al. · arXiv:2305.13048 `{Peng2023Rwkv}`
 - **2023** [YaRN: Efficient Context Window Extension of Large Language Models](http://arxiv.org/abs/2309.00071) — Bowen Peng et al. · arXiv:2309.00071 `{Peng2023Yarn}`
 - **2023** EFFICIENTLY SCALING TRANSFORMER INFERENCE — Reiner Pope et al. `{Pope2023Efficiently}`
 - **2023** [S-LoRA: Serving Thousands of Concurrent LoRA Adapters](http://arxiv.org/abs/2311.03285) — Ying Sheng et al. · arXiv:2311.03285 `{Sheng2023Lora}`
@@ -2913,6 +2944,7 @@
 - **2023** From Online Softmax to FlashAttention UW CSE 599M Spring 2023: ML for ML Systems — Zihao Ye et al. `{Ye2023Online}`
 - **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
 - **2023** [MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers](http://arxiv.org/abs/2305.07185) — Lili Yu et al. · arXiv:2305.07185 `{Yu2023Megabyte}`
+- **2023** [H$_2$O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models](http://arxiv.org/abs/2306.14048) — Zhenyu Zhang et al. · arXiv:2306.14048 `{Zhang20232o}`
 - **2023** [AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning](http://arxiv.org/abs/2303.10512) — Qingru Zhang et al. · arXiv:2303.10512 `{Zhang2023Adalora}`
 - **2023** [Dissecting the Runtime Performance of the Training, Fine-tuning, and Inference of Large Language Models](http://arxiv.org/abs/2311.03687) — Longteng Zhang et al. · arXiv:2311.03687 `{Zhang2023Dissecting}`
 - **2023** [DreamFace: Progressive Generation of Animatable 3D Faces under Text Guidance](http://arxiv.org/abs/2304.03117) — Longwen Zhang et al. · arXiv:2304.03117 `{Zhang2023Dreamface}`
@@ -2949,6 +2981,7 @@
 - **2021** [Sequence Parallelism: Long Sequence Training from System Perspective](http://arxiv.org/abs/2105.13120) — Shenggui Li et al. · arXiv:2105.13120 `{Li2021Sequence}`
 - **2021** TEXT2EVENT: Controllable sequence-to-structure generation for end-to-end event extraction — Yaojie Lu et al. `{Lu2021Text2event}`
 - **2021** [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](http://arxiv.org/abs/2104.04473) — Deepak Narayanan et al. · arXiv:2104.04473 `{Narayanan2021Efficient}`
+- **2021** [Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](http://arxiv.org/abs/2108.12409) — Ofir Press et al. · arXiv:2108.12409 `{Press2021Train}`
 - **2021** [Self-attention Does Not Need $O(n^2)$ Memory](http://arxiv.org/abs/2112.05682) — Markus N. Rabe et al. · arXiv:2112.05682 `{Rabe2021Self}`
 - **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
 - **2021** Vocabulary Learning via Optimal Transport for Neural Machine Translation — Jingjing Xu et al. `{Xu2021Vocabulary}`
@@ -3202,7 +3235,9 @@
 - **2025** [Agent Lightning: Train ANY AI Agents with Reinforcement Learning](http://arxiv.org/abs/2508.03680) — Xufang Luo et al. · arXiv:2508.03680 `{Luo2025Agent}`
 - **2024** [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](http://arxiv.org/abs/2404.16130) — Darren Edge et al. · arXiv:2404.16130 `{Edge2024Local}`
 - **2024** [LightRAG: Simple and Fast Retrieval-Augmented Generation](http://arxiv.org/abs/2410.05779) — Zirui Guo et al. · arXiv:2410.05779 `{Guo2024Lightrag}`
+- **2024** [RULER: What's the Real Context Size of Your Long-Context Language Models?](http://arxiv.org/abs/2404.06654) — Cheng-Ping Hsieh et al. · arXiv:2404.06654 `{Hsieh2024Ruler}`
 - **2024** [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](http://arxiv.org/abs/2405.17428) — Chankyu Lee et al. · arXiv:2405.17428 `{Lee2024Nv}`
+- **2024** [World Model on Million-Length Video And Language With Blockwise RingAttention](http://arxiv.org/abs/2402.08268) — Hao Liu et al. · arXiv:2402.08268 `{Liu2024World}`
 - **2024** [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](http://arxiv.org/abs/2402.12869) — Dehai Min et al. · arXiv:2402.12869 `{Min2024Exploring}`
 - **2024** [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](http://arxiv.org/abs/2404.07143) — Tsendsuren Munkhdalai et al. · arXiv:2404.07143 `{MunkhdalaindLeave}`
 - **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
@@ -3215,14 +3250,18 @@
 - **2024** [Mitigate Position Bias in Large Language Models via Scaling a Single Dimension](http://arxiv.org/abs/2406.02536) — Yijiong Yu et al. · arXiv:2406.02536 `{Yu2024Mitigate}`
 - **2024** [Accelerating Retrieval-Augmented Language Model Serving with Speculation](http://arxiv.org/abs/2401.14021) — Zhihao Zhang et al. · arXiv:2401.14021 `{Zhang2024Accelerating}`
 - **2024** [VISTA: Visualized Text Embedding For Universal Multi-Modal Retrieval](http://arxiv.org/abs/2406.04292) — Junjie Zhou et al. · arXiv:2406.04292 `{Zhou2024Vista}`
+- **2023** [LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding](http://arxiv.org/abs/2308.14508) — Yushi Bai et al. · arXiv:2308.14508 `{Bai2023Longbench}`
 - **2023** [Scaling Transformer to 1M tokens and beyond with RMT](http://arxiv.org/abs/2304.11062) — Aydar Bulatov et al. · arXiv:2304.11062 `{Bulatov2023Scaling}`
 - **2023** [Extending Context Window of Large Language Models via Positional Interpolation](http://arxiv.org/abs/2306.15595) — Shouyuan Chen et al. · arXiv:2306.15595 `{Chen2023Extending}`
 - **2023** [Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading](http://arxiv.org/abs/2310.05029) — Howard Chen et al. · arXiv:2310.05029 `{Chen2023Walking}`
 - **2023** [ChatLaw: Open-Source Legal Large Language Model with Integrated External Knowledge Bases](http://arxiv.org/abs/2306.16092) — Jiaxi Cui et al. · arXiv:2306.16092 `{Cui2023Chatlaw}`
 - **2023** [Trends in Integration of Knowledge and Large Language Models: A Survey and Taxonomy of Methods, Benchmarks, and Applications](http://arxiv.org/abs/2311.05876) — Zhangyin Feng et al. · arXiv:2311.05876 `{Feng2023Trends}`
+- **2023** [LM-Infinite: Zero-Shot Extreme Length Generalization for Large Language Models](http://arxiv.org/abs/2308.16137) — Chi Han et al. · arXiv:2308.16137 `{Han2023Lm}`
 - **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
 - **2023** [LooGLE: Can Long-Context Language Models Understand Long Contexts?](http://arxiv.org/abs/2311.04939) — Jiaqi Li et al. · arXiv:2311.04939 `{Li2023Loogle}`
+- **2023** [Lost in the Middle: How Language Models Use Long Contexts](http://arxiv.org/abs/2307.03172) — Nelson F. Liu et al. · arXiv:2307.03172 `{Liu2023Lost}`
 - **2023** [ChatKBQA: A Generate-then-Retrieve Framework for Knowledge Base Question Answering with Fine-tuned Large Language Models](http://arxiv.org/abs/2310.08975) — Haoran Luo et al. · arXiv:2310.08975 `{Luo2023Chatkbqa}`
+- **2023** [Landmark Attention: Random-Access Infinite Context Length for Transformers](http://arxiv.org/abs/2305.16300) — Amirkeivan Mohtashami et al. · arXiv:2305.16300 `{Mohtashami2023Landmark}`
 - **2023** [WebCPM: Interactive Web Search for Chinese Long-form Question Answering](http://arxiv.org/abs/2305.06849) — Yujia Qin et al. · arXiv:2305.06849 `{Qin2023Webcpm}`
 - **2023** [Focused Transformer: Contrastive Training for Context Scaling](http://arxiv.org/abs/2307.03170) — Szymon Tworkowski et al. · arXiv:2307.03170 `{Tworkowski2023Focused}`
 - **2023** [KnowledGPT: Enhancing Large Language Models with Retrieval and Storage Access on Knowledge Bases](http://arxiv.org/abs/2308.11761) — Xintao Wang et al. · arXiv:2308.11761 `{Wang2023Knowledgpt}`
