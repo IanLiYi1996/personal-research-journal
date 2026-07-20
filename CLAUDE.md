@@ -109,6 +109,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-06-29-hf-daily-papers-jun26-29.md` | 06/26-06/29 (36 papers; 6/27-28 周末空档, 25 精选, 2 deep dives: DanceOPD/Verification-Horizon, 10 figures) |
 | `2026-07-08-hf-daily-papers-jun30-jul8.md` | 06/30-07/08 (225 papers; 7/4-5 周末空档, 25 精选, 2 deep dives: Orca/MIPU, 5 figures) |
 | `2026-07-09-hf-daily-papers-jul09.md` | 07/09 补充抓取窗口 (40 papers; 07/08 桶滞后补录, 25 精选, 2 deep dives: RynnWorld-4D/Gemma4, 4 figures) |
+| `2026-07-20-hf-daily-papers-jul10-20.md` | 07/10-07/20 (141 papers; 7/11-12+7/18-19 周末空档, 25 精选, 2 deep dives: Harness-Handbook/Direct-OPD, 2 figures) |
 
 ## WeChat Publishing
 
