@@ -44,6 +44,10 @@
 
 > 关键区分：**模型状态**随参数量固定，可被 ZeRO/FSDP **分片**消除冗余；**激活**随 batch 与序列长度增长，靠**激活重计算(gradient checkpointing, Chen et al. 2016)**、序列并行、FlashAttention(Dao et al. 2022) 压缩。
 
+下图来自序列并行论文(Korthikanti et al. 2022)：蓝色是参数+优化器状态显存(固定)，绿色是激活显存。可见 530B/1T 模型的**激活显存占了大头**，且 baseline 远超单卡 80 GB(红线)——序列并行 + 选择性重计算(present work)把激活压掉约 5×。
+
+![激活显存 vs 参数/优化器显存(序列并行论文 Fig.1)：模型越大激活占比越高，红线为单卡 80GB](2026-07-20-blog-collective-operations/paper-seqparallel-mem.jpg)
+
 ## 1.2 三条降显存的正交手段
 
 | 手段 | 省什么 | 代价 | 代表 |
@@ -77,6 +81,10 @@
 
 ![ZeRO/FSDP 显存分片：逐级消除模型状态冗余](2026-07-20-blog-collective-operations/fig3-zero-memory.svg)
 
+FSDP 论文(Zhao et al. 2023)的实际执行流程：模型被 wrap 成若干 FSDP unit 并分片；前向到某 unit 时 **gather full params** → 算完 **free peer shards**(丢弃他卡的分片)；反向再 gather、算完 **synchronize gradients**(reduce-scatter)。
+
+![FSDP 执行流程(论文 Fig.1)：wrap&shard → 前向 gather/free → 反向 gather/同步梯度](2026-07-20-blog-collective-operations/paper-fsdp-workflow.jpg)
+
 ## 2.2 张量并行 (Tensor Parallelism, TP)
 
 **切什么**：把**单层内部的权重矩阵**按行/列切到多卡（Megatron-LM, Shoeybi et al. 2019）。同一份数据在所有 TP 卡上，但每卡只算矩阵的一部分。
@@ -89,7 +97,9 @@
 
 **特点**：通信频繁且在关键路径上（激活等着规约完才能继续）→ **必须放在带宽最高、延迟最低的节点内 NVLink**，TP 度数通常 ≤ 单节点 GPU 数(8)。
 
-**序列并行 (Sequence Parallelism, Korthikanti et al. 2022)**：TP 未切分的 LayerNorm/Dropout 部分沿**序列维**再切一刀，把这部分激活也分摊，进一步降显存；它把 TP 的 All-Reduce 拆成 All-Gather + Reduce-Scatter 的组合，通信量不变。
+**序列并行 (Sequence Parallelism, Korthikanti et al. 2022)**：TP 未切分的 LayerNorm/Dropout 部分沿**序列维**再切一刀，把这部分激活也分摊，进一步降显存；它把 TP 的 All-Reduce 拆成 All-Gather + Reduce-Scatter 的组合，通信量不变。下图中 `g`/`ḡ` 就是在序列并行区(sequence-parallel region)与张量并行区(tensor-parallel region)之间转换的集合通信原语。
+
+![序列并行 + 张量并行的混合层(论文 Fig.4)：g/ḡ 在两种分布间转换](2026-07-20-blog-collective-operations/paper-seqparallel-layer.jpg)
 
 ## 2.3 流水线并行 (Pipeline Parallelism, PP)
 
@@ -102,6 +112,10 @@ $$\text{bubble} = \frac{P-1}{m + P - 1}\quad(P=\text{stage 数})$$
 增大 m 摊薄气泡；**1F1B / interleaved**(Narayanan et al. 2021, PipeDream/Megatron) 调度进一步压缩气泡并降激活显存峰值。
 
 ![Pipeline 气泡与 microbatch 填充](2026-07-20-blog-collective-operations/fig4-pipeline-bubble.svg)
+
+GPipe 原论文的经典示意(Fig.2)：(a) 模型按层切到 4 个设备；(b) 朴素流水线同一时刻只有一个设备在工作；(c) 把 batch 切成 micro-batch 填充流水线，中间的 "Bubble" 即空转区，随 micro-batch 数增多而摊薄。
+
+![GPipe 流水线气泡(论文 Fig.2)：(a)分层 (b)朴素串行 (c)micro-batch 填充后的 Bubble](2026-07-20-blog-collective-operations/paper-gpipe-bubble.jpg)
 
 ## 2.4 专家并行 (Expert Parallelism, EP)
 
@@ -176,12 +190,23 @@ TPU 采用**近邻直连(nearest-neighbor)**,没有交换机:每个芯片直接�
 
 **Torus = mesh + wraparound(环绕/周期性边界)**。环绕连接把最边缘的芯片首尾相接,使每个轴成为一个环。一旦某个轴太小丢失环绕(如 2×2×2 退化成 mesh/path),沿该轴的环形集合操作会付出约 **2× 惩罚**——因为数据不能沿环双向流动,只能在链上折返。
 
+<!-- 以下拓扑图来自 Aleksa Gordić 博客 -->
+![TPU 各代连接方式(博客 Fig.1)：2D torus(4 邻居) vs 3D torus(6 邻居)](2026-07-20-blog-collective-operations/blog-tpu_classes.png)
+
+![2D torus 直觉(博客 Fig.2)：网格 + 环绕边界，每个轴首尾相连成环](2026-07-20-blog-collective-operations/blog-torus.jpg)
+
+![3D torus 连接(博客 Fig.3)：每芯片 6 邻居](2026-07-20-blog-collective-operations/blog-topo_3d.png)
+
 ### 带宽层级
 
 数据离计算 die 越远越慢,形成清晰的带宽金字塔:
 
 - **ICI(Inter-Chip Interconnect,片间互联)**:连接同一 Pod 内的芯片。最大的 ICI 连通孤岛就是一个 **Pod / superpod**。
 - **DCN(Data Center Networking)**:连接不同 Pod,慢得多,且数据需经 **PCIe** 才能到达 DCN。
+
+![v5e 16×16 superpod 拓扑(博客 Fig.4)](2026-07-20-blog-collective-operations/blog-tpu_topology1.png)
+
+![v5e 集群带宽金字塔(博客 Fig.6)：离计算 die 越远越慢，ICI > PCIe > DCN](2026-07-20-blog-collective-operations/blog-pyramid.png)
 
 ### 关键规格
 
@@ -210,11 +235,21 @@ TPU 采用**近邻直连(nearest-neighbor)**,没有交换机:每个芯片直接�
 
 Ring 的优势是**完美流水线化(pipelining)**:大张量被切成许多小块,块在环上连续流动,任一时刻所有链路都在满负荷传输。因此 ring 能逼近链路的峰值有效带宽。
 
+![在 16×16 v5e torus 上构造 1D 双向环(博客 Fig.10)](2026-07-20-blog-collective-operations/blog-ring.png)
+
+![All-Gather 在双向 1D 环上的执行(博客 Fig.12)](2026-07-20-blog-collective-operations/blog-all_gather1.png)
+
+![All-Gather 在双向 2D 环上：用满 4 条 ICI 链路(博客 Fig.15)](2026-07-20-blog-collective-operations/blog-all_gather4.png)
+
 ### Tree(树形)—— 小消息 / 延迟敏感首选
 
 - 用 **log₂(N) 步**代替 ring 的 N−1 步。
 - **All-Gather** 用 **recursive doubling(递归倍增)**:第 k 步与距离 2^k 的伙伴交换,数据量每步翻倍。
 - **Reduce-Scatter** 用 **recursive halving(递归减半)**:对偶过程,数据量每步减半。
+
+![Tree All-Gather：递归倍增(博客 Fig.29)](2026-07-20-blog-collective-operations/blog-ag_tree.png)
+
+![Tree Reduce-Scatter：递归减半(博客 Fig.30)](2026-07-20-blog-collective-operations/blog-rs_tree.png)
 
 ### Ring vs Tree 权衡
 
@@ -231,12 +266,24 @@ Ring 的优势是**完美流水线化(pipelining)**:大张量被切成许多小�
 
 这类"矩阵尺寸 → 跳数 → 微秒"的手算,是估算通信开销最实用的技能。
 
+Reduce-Scatter 与 All-Reduce 在双向 1D 环上的执行(All-Reduce = RS + AG，故图中步数约为单个的两倍):
+
+![Reduce-Scatter 在双向 1D 环上(博客 Fig.17)](2026-07-20-blog-collective-operations/blog-rs1.png)
+
+![All-Reduce 在双向 1D 环上(博客 Fig.18)= Reduce-Scatter + All-Gather](2026-07-20-blog-collective-operations/blog-all_reduce.png)
+
+TPU 各集合操作在不同环形拓扑下的开销汇总(博客 Fig.24):
+
+![TPU 集合通信开销汇总表(博客 Fig.24)](2026-07-20-blog-collective-operations/blog-totaltime.png)
+
 ## 四、All-to-All:分片转置
 
 All-to-All 是 MoE 专家并行的核心:token 需要按路由结果发到持有对应专家的芯片,再把计算结果发回。它相当于一个**分布式矩阵转置**——每个芯片把自己的第 j 块发给芯片 j。
 
 - 在 torus 上,All-to-All 的通信量比 All-Reduce 更重,因为它没有"规约"带来的数据缩减,而是全量重分发。
 - 后文会看到,**稀疏 MoE 路由**会打破"稠密均衡"的理想模型(见 NVL72 部分)。
+
+![All-to-All 在双向 1D 环上(博客 Fig.21)：分片转置](2026-07-20-blog-collective-operations/blog-ata1.png)
 
 ## 五、NVIDIA GPU 集群拓扑:节点、SU、胖树
 
@@ -247,6 +294,8 @@ GPU 集群与 TPU 截然不同:不是无交换机的 torus,而是**基于交换�
 1. **Node(节点)**:8 张 H100,通过 **NVLink / NVSwitch** 全互联(all-to-all),**任意两 GPU 一跳可达**。
 2. **Scalable Unit(SU)**:**32 个 node**,通过 InfiniBand(IB)leaf 交换机连接。
 3. **Spine 交换机**:连接各 SU,构成胖树的树根。
+
+![DGX H100 SuperPod(1024 GPU)参考架构(博客 Fig.25)：Node → SU → Spine 三级胖树](2026-07-20-blog-collective-operations/blog-gpu_topology.png)
 
 ### 胖树与全对分带宽
 
@@ -269,6 +318,8 @@ GPU 集群与 TPU 截然不同:不是无交换机的 torus,而是**基于交换�
 
 由于节点内 8 GPU 经 NVSwitch **全互联**,这里的 "ring" 不再是物理路径,而是 **NVSwitch 交换结构上的逻辑排序**——软件在全互联 fabric 上模拟一个环。
 
+![在 GPU 节点内的全互联 fabric 上构造逻辑环(博客 Fig.26)](2026-07-20-blog-collective-operations/blog-gpu_ring.png)
+
 ### SHARP:网内规约(In-Network Reduction)
 
 **SHARP(Scalable Hierarchical Aggregation and Reduction Protocol)** 让**交换机在数据传输途中直接做规约**,而不是把数据搬到 GPU 上算完再搬回。
@@ -278,6 +329,8 @@ GPU 集群与 TPU 截然不同:不是无交换机的 torus,而是**基于交换�
 - **理论 All-Reduce 加速**:大 N 时逼近 **2×**;8-GPU node 上约 **1.75×**。
 - SHARP 还能靠**硬件 multicast** 加速 All-Gather。
 - **缺陷**:multicast 会把源 GPU 也算进去,H100 node 上因此**浪费 1/8 带宽**。
+
+![SHARP 网内规约计算单元(博客 Fig.27)：交换机在传输途中直接做 reduce](2026-07-20-blog-collective-operations/blog-sharp.png)
 
 ### 理论 vs 实际(重要现实检验)
 
@@ -294,7 +347,11 @@ GPU 集群与 TPU 截然不同:不是无交换机的 torus,而是**基于交换�
 - **一阶(粗略)**:`T_total ≈ D / BW_node = D / 400e9`
 - **更精确**:`T_total ≈ max(D / BW_gpu, D / BW_node)`
 
-即总时间由 GPU 本地带宽与节点注入带宽中的**瓶颈**决定。
+即总时间由 GPU 本地带宽与节点注入带宽中的**瓶颈**决定。分层 All-Gather / All-Reduce 把 SU 内的 IB 流量与节点内 NVLink 流量重叠:
+
+![分层 All-Gather over scalable-unit(博客 Fig.31)](2026-07-20-blog-collective-operations/blog-ag_hierarchy.png)
+
+![分层 All-Reduce over scalable-unit(博客 Fig.32)](2026-07-20-blog-collective-operations/blog-ar_hierarchy.png)
 
 ### Rail Optimization(轨道优化)
 
@@ -303,6 +360,12 @@ GPU 集群与 TPU 截然不同:不是无交换机的 torus,而是**基于交换�
 ### NVL72 上的 All-to-All:稠密模型的失效
 
 GB200 NVL72 有 72 GPU。当运行**稀疏 MoE**(如 8 个专家分布在 72 GPU 上)时,任一时刻只有约 **11% 的 GPU** 参与,"稠密均衡带宽"的理想模型直接失效。稀疏、不均衡的路由是当前 MoE 服务系统通信优化的前沿难题。
+
+![8-GPU 节点内稠密 All-to-All over 逻辑单向环(博客 Fig.28)](2026-07-20-blog-collective-operations/blog-gpu_ata.png)
+
+GPU 各集合操作的开销汇总(博客 Fig.35),与 TPU 的 Fig.24 对照可见胖树 vs 环面的根本差异:
+
+![GPU 集合通信开销汇总表(博客 Fig.35)](2026-07-20-blog-collective-operations/blog-totaltime_gpu.png)
 
 ---
 
@@ -355,6 +418,10 @@ GB200 NVL72 有 72 GPU。当运行**稀疏 MoE**(如 8 个专家分布在 72 GPU
 
 一个反直觉的结论:**TPU 在小得多的消息(~10 MB)上就能打满带宽,而 GPU 要多 GB 大消息才逼近峰值,低于 ~100 MB 明显下降**。这对"该用多大的通信桶(bucket size)"有直接工程含义。
 
+FSDP 论文的实测印证了这一点:(a) 分片不均会拉高单次 All-Gather 时延;(b) 随着单次 All-Gather 的元素数从 1073M 降到 4M,**总通信时间反而飙升**——小消息严重掉速,正是"尽量用大 bucket"的经验来源。
+
+![FSDP 通信时间 vs 消息尺寸(论文 Fig.)：消息越小总通信时间越高](2026-07-20-blog-collective-operations/paper-fsdp-msgsize.jpg)
+
 ---
 
 # 全局 Takeaways
@@ -382,6 +449,13 @@ GB200 NVL72 有 72 GPU。当运行**稀疏 MoE**(如 8 个专家分布在 72 GPU
 
 **触发博客**
 - Aleksa Gordić, *Inside TPU and GPU Clusters*(2026-07): https://www.aleksagordic.com/blog/collective-operations
+  - 本报告中 `blog-*` 前缀的 21 张拓扑/算法图均来自该博客(标注了原文 Fig. 编号),版权归原作者;此处仅作学习引用。
+
+**论文配图来源**
+- `paper-gpipe-bubble.jpg` — GPipe(arXiv:1811.06965)Fig.2 流水线气泡
+- `paper-fsdp-workflow.jpg` / `paper-fsdp-msgsize.jpg` — PyTorch FSDP(arXiv:2304.11277)
+- `paper-seqparallel-mem.jpg` / `paper-seqparallel-layer.jpg` — 序列并行(arXiv:2205.05198)
+- `fig1`~`fig5` 为本报告手绘 SVG(并行总览/Ring AllReduce/ZeRO/流水线气泡/mesh 映射)
 
 **并行策略与显存(经典论文，均已入库 `references/references.bib`)**
 - Shoeybi et al., *Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism*(2019, arXiv:1909.08053) — 张量并行
