@@ -218,7 +218,7 @@ Gemma 4 报告里最值得记住的数字不是任何一个基准分数，而是
 
 ### 上一份 digest（去重对照）
 
-[`2026-07-08-hf-daily-papers-jun30-jul8.md`](2026-07-08-hf-daily-papers-jun30-jul8.md) — 覆盖 06/30–07/08（225 篇），本期与其 arXiv ID 集合去重后剔除 1 篇重叠（2607.06291 AlayaWorld）
+[`2026-07-08-hf-daily-papers-jun30-jul8.md`](/research-notes/2026-07-08-hf-daily-papers-jun30-jul8.md) — 覆盖 06/30–07/08（225 篇），本期与其 arXiv ID 集合去重后剔除 1 篇重叠（2607.06291 AlayaWorld）
 
 ### 数据获取记录
 

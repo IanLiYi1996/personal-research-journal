@@ -13,7 +13,7 @@
 | 作者 | Junjie Li, Xi Xiao, Yunbei Zhang, Chen Liu et al. (CMU / Yale / JHU / Tulane / UAB / OSU / Virginia Tech / Amazon · 19 人) | Xuying Ning, Katherine Tieu, Dongqi Fu et al. (UIUC + 多个工业界 · 42 人) |
 | 平台 | TMLR under review | arXiv 2605.18747 |
 | 提交 | 2026-05 | 2026-05-18 |
-| 我的笔记 | [深度解读](./2026-05-25-agent-harness-engineering-survey.md) | （本文 + references.md） |
+| 我的笔记 | [深度解读](/research-notes/2026-05-25-agent-harness-engineering-survey.md) | （本文 + references.md） |
 
 两份综述 6 个月前都还不存在；现在同月撞车。**这本身就是个数据点**——说明 harness engineering 已经从工业 buzzword 跨过了"学术追认"的门槛，进入"两个流派同时竞争 taxonomy" 的阶段。
 
@@ -221,6 +221,6 @@ Ning 没有声明"harness 比模型重要"——只是说 code 是 substrate，�
 
 ### 我之前的相关笔记
 
-- [Agent Harness Engineering: A Survey 深度解读](./2026-05-25-agent-harness-engineering-survey.md) — Li et al. 的 350 行深读
-- [Harness 工程：让 AI Agent 从"能用"到"好用"的系统设计](./2026-04-14-harness-engineering-analysis.md) — 4 篇博客综合
-- [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](./2026-05-07-aidlc-deep-dive.md) — AWS AIDLC 方法论
+- [Agent Harness Engineering: A Survey 深度解读](/research-notes/2026-05-25-agent-harness-engineering-survey.md) — Li et al. 的 350 行深读
+- [Harness 工程：让 AI Agent 从"能用"到"好用"的系统设计](/research-notes/2026-04-14-harness-engineering-analysis.md) — 4 篇博客综合
+- [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](/research-notes/2026-05-07-aidlc-deep-dive.md) — AWS AIDLC 方法论

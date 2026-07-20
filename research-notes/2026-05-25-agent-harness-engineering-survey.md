@@ -343,5 +343,5 @@ Survey 第 11 章讨论"当 7 层组合后产生的系统级效果"，这是<u>�
 
 ### 我之前的相关笔记
 
-- [Harness 工程：让 AI Agent 从"能用"到"好用"的系统设计](2026-04-14-harness-engineering-analysis.md) — 综合 Anthropic + OpenAI 4 篇博客
-- [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](2026-05-07-aidlc-deep-dive.md) — AWS AIDLC 方法论
+- [Harness 工程：让 AI Agent 从"能用"到"好用"的系统设计](/research-notes/2026-04-14-harness-engineering-analysis.md) — 综合 Anthropic + OpenAI 4 篇博客
+- [AI-DLC 深度研究：把 SDLC 重写成 AI 可执行的 Markdown](/research-notes/2026-05-07-aidlc-deep-dive.md) — AWS AIDLC 方法论

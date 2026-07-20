@@ -9,7 +9,7 @@
 
 - **新增论文**: 225 篇（去重后）— 06/30(48) / 07/01(38) / 07/02(33) / 07/03(27) / 07/04(0) / 07/05(0) / 07/06(13) / 07/07(40) / 07/08(26)
 - **周末空档**: 07/04、07/05（周六周日）HF API 返回空数组，与此前观察到的周末投稿低谷一致
-- **去重**: 与上一份 digest [`2026-06-29-hf-daily-papers-jun26-29.md`](2026-06-29-hf-daily-papers-jun26-29.md) 按 arXiv ID 去重，无重叠
+- **去重**: 与上一份 digest [`2026-06-29-hf-daily-papers-jun26-29.md`](/research-notes/2026-06-29-hf-daily-papers-jun26-29.md) 按 arXiv ID 去重，无重叠
 - **本期精选**: 25 篇按 HF 社区 upvotes 排名
 - **Deep dive (2 篇)**: ① **Orca**（智源 FlagScale 团队，通用世界基础模型，本期热度断层第一 306 票）② **The Mirage of Optimizing Training Policies**（天津大学 × 阿里，揭示 LLM RL 中"训练策略"和"推理策略"目标不一致的问题，156 票）
 - **主线**: 本期最强信号是**世界模型进入"统一基础模型"阶段**（Orca 领衔，多篇 world-model/video-generation 论文跟进）；第二强信号是**LLM RL 训练稳定性的系统性反思**（training-inference mismatch、agentic abstention、on-policy distillation 变体集中出现）；agent 类论文（终端使用、GUI、长程记忆）持续保持高产出
@@ -290,7 +290,7 @@ Agentic Abstention（何时该停手）、AgenticSTS（有界内存下该看多�
 
 ### 上一份 digest（去重对照）
 
-[`2026-06-29-hf-daily-papers-jun26-29.md`](2026-06-29-hf-daily-papers-jun26-29.md) — 覆盖 06/26–06/29（36 篇）
+[`2026-06-29-hf-daily-papers-jun26-29.md`](/research-notes/2026-06-29-hf-daily-papers-jun26-29.md) — 覆盖 06/26–06/29（36 篇）
 
 ### 数据获取记录
 

@@ -96,6 +96,6 @@ STOP 论文的警示值得记住：**递归结构本身不构成自我改进的�
 
 ## 跟进阅读路径
 
-- Lilian Weng 的前一篇文章 [Scaling Laws, Carefully](2026-06-26-lilian-weng-scaling-laws.md)（本项目已有笔记）—— 两篇文章共同勾勒出"预训练规模化收益递减 + 后训练/harness 层承接更多优化压力"的叙事
+- Lilian Weng 的前一篇文章 [Scaling Laws, Carefully](/research-notes/2026-06-26-lilian-weng-scaling-laws.md)（本项目已有笔记）—— 两篇文章共同勾勒出"预训练规模化收益递减 + 后训练/harness 层承接更多优化压力"的叙事
 - Darwin Gödel Machine（2505.22954）与 Hyperagents（2603.19461）——如果要深入理解"harness 自我演化"的具体实现，这两篇是核心起点
 - AlphaEvolve（2506.13131）——演化搜索在真实工程问题（矩阵乘法、GPU kernel）上的落地案例，与 harness 演化的方法论高度相关

@@ -3,7 +3,7 @@
 > **Date**: 2026-06-12
 > **Tags**: #digest #huggingface #weekly #agent-benchmark #peft #world-model #on-policy-distillation
 > **Coverage**: 2026-05-29 ~ 2026-06-12（覆盖 11 个发布日，去重后共 **521 篇**论文，精选 **25 篇**，4 篇 deep dive）
-> **上一份 digest**: [2026-05-28 (May 16-28)](2026-05-28-hf-daily-papers-may16-28.md)
+> **上一份 digest**: [2026-05-28 (May 16-28)](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
 
 ## Context
 
@@ -276,6 +276,6 @@ ALE 的核心论点是"benchmark-成功 与 GDP-相关影响 之间的鸿沟本�
 **数据来源**
 - Hugging Face Daily Papers API: `GET /api/daily_papers?date=YYYY-MM-DD`（2026-05-29 ~ 06-12，11 个发布日）
 - 全文与图表: `https://huggingface.co/papers/{id}.md` 及 `https://arxiv.org/html/{id}v1/`
-- 去重基准: 上一份 digest [2026-05-28 (May 16-28)](2026-05-28-hf-daily-papers-may16-28.md)
+- 去重基准: 上一份 digest [2026-05-28 (May 16-28)](/research-notes/2026-05-28-hf-daily-papers-may16-28.md)
 
 

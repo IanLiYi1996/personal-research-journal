@@ -7,7 +7,7 @@
 
 "上下文窗口"从 GPT-3 的 2K 一路涨到今天的 128K、1M 甚至 10M token。但把窗口做长有两道**本质障碍**：
 
-1. **计算/显存墙**——自注意力对序列长度 $N$ 是 $O(N^2)$，且自回归解码的 KV cache 随 $N$ 线性膨胀（见姊妹篇 [`2026-07-20-flash-attention-efficient-attention.md`](2026-07-20-flash-attention-efficient-attention.md)，本篇不重复算子层面）。
+1. **计算/显存墙**——自注意力对序列长度 $N$ 是 $O(N^2)$，且自回归解码的 KV cache 随 $N$ 线性膨胀（见姊妹篇 [`2026-07-20-flash-attention-efficient-attention.md`](/research-notes/2026-07-20-flash-attention-efficient-attention.md)，本篇不重复算子层面）。
 2. **长度外推墙**——模型在短序列上训练，直接喂更长序列时**位置编码失效、注意力被稀释**，性能崩塌。
 
 本综述聚焦"**怎么让模型真的用得了长上下文**"，把方法组织成六条技术线 + 一条评测线。所有 arXiv 引用均经 `scripts/add_paper.py` 从 arXiv 核验入库（遵循「引用须可验证」）。
@@ -155,7 +155,7 @@
 **跨阵营的共同趋势**：
 1. **RoPE + 频率缩放外推**已是事实标准（开源确证、闭源高度疑似）。
 2. **训练侧靠长短数据混合的继续预训练**把窗口"坐实"，而非纯靠架构。
-3. **KV cache 压缩**（GQA/MLA/MQA）是长上下文能落地服务的必要条件——几乎所有旗舰都用了某种 KV 头共享（见 [FlashAttention 篇](2026-07-20-flash-attention-efficient-attention.md)）。
+3. **KV cache 压缩**（GQA/MLA/MQA）是长上下文能落地服务的必要条件——几乎所有旗舰都用了某种 KV 头共享（见 [FlashAttention 篇](/research-notes/2026-07-20-flash-attention-efficient-attention.md)）。
 4. **评测与宣称脱节**：无论开源闭源，RULER 类测试普遍显示**真实有效长度 < 名义窗口**。
 
 ### 9｜技术线之间的关系
@@ -238,6 +238,6 @@ graph TD
 - LongBench — Bai et al. 2023，arXiv:2308.14508（`Bai2023Longbench`）
 
 **姊妹篇**
-- [`2026-07-20-flash-attention-efficient-attention.md`](2026-07-20-flash-attention-efficient-attention.md) —— 算子/系统层（FlashAttention、KV cache、Ring Attention、PagedAttention）
+- [`2026-07-20-flash-attention-efficient-attention.md`](/research-notes/2026-07-20-flash-attention-efficient-attention.md) —— 算子/系统层（FlashAttention、KV cache、Ring Attention、PagedAttention）
 
 > 说明：NTK-aware scaling 最初源于社区帖子，本篇引用其理论化论文；闭源旗舰（GPT/Claude/Gemini）的长上下文具体配方未公开，本篇据开源论文与技术报告叙述。

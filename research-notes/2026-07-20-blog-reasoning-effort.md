@@ -3,7 +3,7 @@
 **日期**: 2026-07-20
 **Tags**: #survey #blog-deep-dive #reasoning #rlvr #inference-scaling #test-time-compute #efficient-reasoning #reasoning-effort
 **起点**: [Sebastian Raschka — Controlling Reasoning Effort in LLMs](https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms)（*Ahead of AI*，2026-07-18）
-**关联**: [`research-notes/2026-07-08-blog-harness-engineering.md`](2026-07-08-blog-harness-engineering.md)（推理模型 + agent harness 视角）
+**关联**: [`research-notes/2026-07-08-blog-harness-engineering.md`](/research-notes/2026-07-08-blog-harness-engineering.md)（推理模型 + agent harness 视角）
 
 > **说明**：本文以 Raschka 博客的**工业实践骨架**（RLVR → 两种扩展轴 → 6 家开源模型配方）为主线，向上叠加一层**学术文献综述**（§8–§12），把"推理努力度如何被控制"组织成一个可长期维护的分类法。所有 arXiv 引用均已核对并录入本项目 `references.bib`（遵循「引用须可验证」约束）。
 
@@ -208,13 +208,13 @@ effort 控制之所以成为一个独立课题，根源是 **overthinking phenom
 
 ## 12｜相邻方向：表征层与调度层
 
-- **表征层（把推理藏进隐状态）** — *Implicit Chain of Thought*（Deng et al., arXiv:2311.01460）：从显式 CoT 教师蒸馏出"垂直"发生在各层隐状态间的隐式推理，无需吐出中间 token 就能解题、速度接近 no-CoT。这是 effort 控制的极端形态——把"想"的成本从输出 token 挪进前向计算，与本项目 [`2026-07-08-blog-global-workspace.md`](2026-07-08-blog-global-workspace.md) 里"模型没说出口的内部想法"呼应。
+- **表征层（把推理藏进隐状态）** — *Implicit Chain of Thought*（Deng et al., arXiv:2311.01460）：从显式 CoT 教师蒸馏出"垂直"发生在各层隐状态间的隐式推理，无需吐出中间 token 就能解题、速度接近 no-CoT。这是 effort 控制的极端形态——把"想"的成本从输出 token 挪进前向计算，与本项目 [`2026-07-08-blog-global-workspace.md`](/research-notes/2026-07-08-blog-global-workspace.md) 里"模型没说出口的内部想法"呼应。
 - **调度层（在会话/系统层面省 effort）** — *Sleep-time Compute*（Lin et al., arXiv:2504.13171）：让模型在 query 到来**之前**离线"预想"上下文、预计算有用量，把 test-time 算力需求降约 5×；对同一上下文的多个相关 query 摊薄成本再降 2.5×。这把"省 effort"从单次调用推广到了 agent/会话调度层。
 - **宏观脉络** — RLVR 作为推理能力的驱动力，其在 LLM 全生命周期中的位置见 Liu et al. 的综述 *Reinforcement Learning Meets LLMs*（arXiv:2509.16679）；CoT 的开山之作是 Wei et al.（arXiv:2201.11903）。
 
 ## 综述作者视角 + 我的评述
 
-- **最有工程价值的一点**是 effort 的经济学曲线（Fig 19 / 24）：高档 effort 边际收益递减，意味着"默认拉满"往往是浪费——真正省钱的做法是按任务难度**分档路由**。这与本项目上一篇 [`2026-07-08-blog-harness-engineering.md`](2026-07-08-blog-harness-engineering.md) 里"harness 承担越来越多决策"的趋势一致：effort 选择正在从"用户手动旋钮"往"harness/router 自动推断"迁移。
+- **最有工程价值的一点**是 effort 的经济学曲线（Fig 19 / 24）：高档 effort 边际收益递减，意味着"默认拉满"往往是浪费——真正省钱的做法是按任务难度**分档路由**。这与本项目上一篇 [`2026-07-08-blog-harness-engineering.md`](/research-notes/2026-07-08-blog-harness-engineering.md) 里"harness 承担越来越多决策"的趋势一致：effort 选择正在从"用户手动旋钮"往"harness/router 自动推断"迁移。
 - **Kimi K2.5 的 Toggle 结果**（token −25~30% 而性能持平）值得单独关注——它说明当前推理模型在默认档位下存在大量"过度思考"的冗余 token，交替预算 RL 是一条可复现的压缩路径。
 - 一个方法论提醒：文章里 effort-conditioned RLVR/SFT 的示意图（Fig 21）作者**明确标注是"可能的实现，非 OpenAI 官方确认"**——闭源模型的 effort 机制多为推测，只有开源权重模型（第 7 节 6 家）的机制是有技术报告背书的。引用时要区分这两类可信度。
 - 文章使用了 2026 年的前瞻性命名（GPT-5.6、DeepSeek V4、Inkling 等），部分为作者的框架化叙述而非全部已发布产品——转述时需注明。
@@ -265,5 +265,5 @@ effort 控制之所以成为一个独立课题，根源是 **overthinking phenom
 ## 延伸阅读
 
 - 起点原文：[Controlling Reasoning Effort in LLMs](https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms)（含全部 33 张配图与作者 *Build a Reasoning Model (From Scratch)* 一书链接）
-- [`2026-07-08-blog-harness-engineering.md`](2026-07-08-blog-harness-engineering.md)（Lilian Weng，推理模型 + self-improvement harness）——"如何调度推理能力"
-- [`2026-07-08-blog-global-workspace.md`](2026-07-08-blog-global-workspace.md)（Anthropic，模型未说出口的内部想法）——与 §12 隐式推理 / 安全监控张力相关
+- [`2026-07-08-blog-harness-engineering.md`](/research-notes/2026-07-08-blog-harness-engineering.md)（Lilian Weng，推理模型 + self-improvement harness）——"如何调度推理能力"
+- [`2026-07-08-blog-global-workspace.md`](/research-notes/2026-07-08-blog-global-workspace.md)（Anthropic，模型未说出口的内部想法）——与 §12 隐式推理 / 安全监控张力相关

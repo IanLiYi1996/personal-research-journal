@@ -9,7 +9,7 @@
 
 **它解决的痛点**：推理系统已逼近百万 token 上下文，但 **RL 后训练（RL post-training）却普遍卡在 256K 甚至更低**——训练时用短上下文，部署时靠"长度泛化"硬撑。对需要处理超长轨迹（工具输出、文档、历史决策累积）的 **AI agent**，这个训练-推理鸿沟尤其致命。LongStraw 的目标是：**在一组固定、有限的 GPU 上（不靠堆卡）**，把 RL 后训练的上下文推到 2M+ token。
 
-> **与本项目已有综述的关系**：这是长上下文系列的自然延伸。[`2026-07-20-llm-long-context.md`](2026-07-20-llm-long-context.md) 讲"模型怎么把上下文做长"（建模视角），[`2026-07-20-flash-attention-efficient-attention.md`](2026-07-20-flash-attention-efficient-attention.md) 讲"注意力算子怎么快省"（推理/前向系统视角）。**本篇补上第三块拼图：训练（尤其 RL 后训练）阶段的长上下文系统工程**——这是前两篇都没覆盖、也是最难的一块（训练要保留反向图）。
+> **与本项目已有综述的关系**：这是长上下文系列的自然延伸。[`2026-07-20-llm-long-context.md`](/research-notes/2026-07-20-llm-long-context.md) 讲"模型怎么把上下文做长"（建模视角），[`2026-07-20-flash-attention-efficient-attention.md`](/research-notes/2026-07-20-flash-attention-efficient-attention.md) 讲"注意力算子怎么快省"（推理/前向系统视角）。**本篇补上第三块拼图：训练（尤其 RL 后训练）阶段的长上下文系统工程**——这是前两篇都没覆盖、也是最难的一块（训练要保留反向图）。
 
 ## TL;DR
 
@@ -150,7 +150,7 @@ LongStraw 的关键论点：固定预算的容量，**来自对张量生命周�
 - Mamba（GDN/SSM 接点）— Gu & Dao 2023，arXiv:2312.00752（`Gu2023Mamba`）
 
 **姊妹综述**
-- [`2026-07-20-llm-long-context.md`](2026-07-20-llm-long-context.md) —— 长上下文建模（位置外推/稀疏/记忆/架构/训练/评测）
-- [`2026-07-20-flash-attention-efficient-attention.md`](2026-07-20-flash-attention-efficient-attention.md) —— 高效注意力算子/系统层
+- [`2026-07-20-llm-long-context.md`](/research-notes/2026-07-20-llm-long-context.md) —— 长上下文建模（位置外推/稀疏/记忆/架构/训练/评测）
+- [`2026-07-20-flash-attention-efficient-attention.md`](/research-notes/2026-07-20-flash-attention-efficient-attention.md) —— 高效注意力算子/系统层
 
 > 说明：本篇基于 alphaXiv 结构化报告转写；论文为 2026-07 新作、暂无 arXiv HTML 版，机制图为 mermaid 自绘（非论文原图）。核心数字来自报告，引用时建议回查原文。

@@ -5,7 +5,7 @@
 
 ## Context
 
-整理一篇围绕 [KisMATH (Saha et al. 2025)](../papers/2025-kismath-causal-cot-graph.md) 的同期/上下游工作小综述。KisMATH 用因果图工具论证 LLM 在数学推理中"真的在做某种推理"，但这个结论必须放进当前学界的整体辩论里看 — 否则容易被同期的反向证据动摇。
+整理一篇围绕 [KisMATH (Saha et al. 2025)](/papers/2025-kismath-causal-cot-graph.md) 的同期/上下游工作小综述。KisMATH 用因果图工具论证 LLM 在数学推理中"真的在做某种推理"，但这个结论必须放进当前学界的整体辩论里看 — 否则容易被同期的反向证据动摇。
 
 本 survey 覆盖 **3 个主题、12 篇论文**，按主题自顶向下组织。每个主题先给"故事线"，再做单篇评析。
 
@@ -65,7 +65,7 @@ CoT 提示自 Wei et al. 2022 起被广泛认为是"激发推理能力"的关键
 
 #### 5. [KisMATH (Saha et al. 2025)](https://arxiv.org/abs/2507.11408)
 
-- 详见 [独立笔记](../papers/2025-kismath-causal-cot-graph.md)
+- 详见 [独立笔记](/papers/2025-kismath-causal-cot-graph.md)
 - **关键回应**: 在数学领域用表达式级 attention suppression（p<10⁻³⁰⁰）证明：(1) CoT 中间 token 是答案的真因果中介；(2) 模型偏好 CCG 抽出的路径
 - **整体定位**: 把"CoT 有用"的辩论从行为层面（performance 变化）提到机制层面（信息流）
 
@@ -191,7 +191,7 @@ RLVR (Reinforcement Learning with Verifiable Rewards) 是 DeepSeek-R1、OpenAI o
 
 #### 14. [KisMATH (Saha et al. 2025)](https://arxiv.org/abs/2507.11408)
 
-- 详见 [独立笔记](../papers/2025-kismath-causal-cot-graph.md)
+- 详见 [独立笔记](/papers/2025-kismath-causal-cot-graph.md)
 - **末尾发现的几何化诊断**:
   - **DeepSeek R1 32B**（蒸馏自 R1 671B）: 钟形分布，log P(ℛ) 方差 0.92 → 保留 fork tokens → pass@10 达 **90%**
   - **Qwen3 32B** (RLVR 训练): 指数型分布，方差仅 0.0002 → fork 被压平 → pass@10 仅 **87%**
@@ -257,7 +257,7 @@ RLVR (Reinforcement Learning with Verifiable Rewards) 是 DeepSeek-R1、OpenAI o
 - Saha et al. 2025 [KisMATH](https://arxiv.org/abs/2507.11408)
 
 ### 本笔记库内交叉引用
-- [Paper: 2025 KisMATH Causal CoT Graph](../papers/2025-kismath-causal-cot-graph.md)
-- [Paper: 2025 Agentic RL Survey](../papers/2025-agentic-rl-survey.md)
-- [Paper: 2026 Model Spec Midtraining](../papers/2026-model-spec-midtraining.md)
-- [Paper: 2026 Ouro Looped LM](../papers/2026-ouro-looped-lm.md)
+- [Paper: 2025 KisMATH Causal CoT Graph](/papers/2025-kismath-causal-cot-graph.md)
+- [Paper: 2025 Agentic RL Survey](/papers/2025-agentic-rl-survey.md)
+- [Paper: 2026 Model Spec Midtraining](/papers/2026-model-spec-midtraining.md)
+- [Paper: 2026 Ouro Looped LM](/papers/2026-ouro-looped-lm.md)

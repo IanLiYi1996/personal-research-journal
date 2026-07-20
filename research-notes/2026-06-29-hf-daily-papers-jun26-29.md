@@ -8,7 +8,7 @@
 本期覆盖 06/26 至 06/29 共 4 天的 HF Daily Papers（其中 06/27、06/28 因 HF API 返回空集，实际有效投稿集中在 06/26 和 06/29 两天）。
 
 - **新增论文**: 36 篇 — 06/26 共 26 篇，06/29 共 10 篇
-- **去重**: 与上一份 digest [`2026-06-26-hf-daily-papers-jun17-25.md`](2026-06-26-hf-daily-papers-jun17-25.md) 按 arXiv ID 去重，无重叠
+- **去重**: 与上一份 digest [`2026-06-26-hf-daily-papers-jun17-25.md`](/research-notes/2026-06-26-hf-daily-papers-jun17-25.md) 按 arXiv ID 去重，无重叠
 - **本期精选**: 25 篇按 HF 社区 upvotes 排名
 - **Deep dive (2 篇)**: ① **DanceOPD**（ByteDance Seed，On-Policy 生成场蒸馏，本周热度榜首 71 票）② **The Verification Horizon**（Qwen 团队系统研究 coding agent 奖励设计，41 票）
 - **主线**: 本期信号高度集中在 **on-policy 蒸馏 / 后训练**（5+ 篇）和 **world model / 机器人控制**（5+ 篇），加上少量 agent / 图像 / 推理加速分支

@@ -3,7 +3,7 @@
 > **Date**: 2026-05-28
 > **Tags**: #digest #huggingface #weekly #agent-harness #rlvr #document-vqa #auto-research
 > **Coverage**: 2026-05-16 ~ 2026-05-28 (覆盖 9 个发布日，去重后共 **394 篇**论文，精选 **25 篇**，4 篇 deep dive)
-> **上一份 digest**: [2026-05-15 (May 8-15)](2026-05-15-hf-daily-papers-may8-15.md)
+> **上一份 digest**: [2026-05-15 (May 8-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15.md)
 
 ## Context
 
@@ -610,6 +610,6 @@ Full Attention Strikes Back 提出"100 步训练就能把 full attention 转成 
 - **AutoResearchClaw**: <https://huggingface.co/papers/2605.20025>
 
 ### 相关阅读
-- 上一期 digest: [2026-05-15 (May 8-15)](2026-05-15-hf-daily-papers-may8-15.md)
+- 上一期 digest: [2026-05-15 (May 8-15)](/research-notes/2026-05-15-hf-daily-papers-may8-15.md)
 - Anthropic Agent Skills 设计: <https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills>
 - ARC-Bench: 见 AutoResearchClaw 论文 Appendix

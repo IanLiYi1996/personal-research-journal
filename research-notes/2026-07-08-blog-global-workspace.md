@@ -94,4 +94,4 @@ Anthropic 的技术起点：意识可及的思想有一个特性——**可以�
 
 - [LessWrong — No Space Like J-Space](https://www.lesswrong.com/posts/EnxHPxJT4Xin5cTsX/no-space-like-j-space) —— 社区对本文的独立解读，值得对照阅读看外部研究者关注的重点是否与本文一致
 - 论文邀请的外部评论（Stanislas Dehaene & Lionel Naccache 神经科学视角；Eleos AI Research + Rethink Priorities 的意识/道德地位视角；Neel Nanda 在开放权重模型上的独立复现）——原文链接在 "external commentary" 一节，值得单独深读
-- Anthropic 此前的 agentic misalignment 研究系列（本文复用了该系列的邮件助手勒索测试场景）——可以对照阅读理解实验设计的演化；本项目 [`papers/2026-model-spec-midtraining.md`](../papers/2026-model-spec-midtraining.md) 记录了另一篇用不同方法（中训练阶段）降低 agentic misalignment 的工作，可比较两种缓解路径（可解释性监控 vs. 训练阶段干预）
+- Anthropic 此前的 agentic misalignment 研究系列（本文复用了该系列的邮件助手勒索测试场景）——可以对照阅读理解实验设计的演化；本项目 [`papers/2026-model-spec-midtraining.md`](/papers/2026-model-spec-midtraining.md) 记录了另一篇用不同方法（中训练阶段）降低 agentic misalignment 的工作，可比较两种缓解路径（可解释性监控 vs. 训练阶段干预）
