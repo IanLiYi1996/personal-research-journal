@@ -35,9 +35,16 @@
 **RoPE（旋转位置编码）**（Su et al. 2021, `Su2021Roformer`，arXiv:2104.09864）是当今主流 LLM（Llama、Qwen、GLM…）的默认方案：把位置信息编码成**对 query/key 向量的旋转**，相对位置天然体现在两个向量的夹角里。RoPE 的问题是**外推能力差**——超出训练长度后注意力分数剧烈波动。围绕 RoPE 的外推衍生出一整个家族：
 
 - **位置插值 PI（Position Interpolation）**（Chen et al. 2023, `Chen2023Extending`，arXiv:2306.15595）：不外推，而是把超长位置**线性压缩**回训练见过的范围（如把 8K 位置除以 4 映射到 2K），只需少量微调即可把 2K 窗口扩到 8K+。简单有效，是后续方法的基线。
+
+![位置插值原理：上图直接外推(extrapolation)到训练没见过的 2048–4096 区间(红色)，RoPE 落在未知区域导致注意力崩溃；下图位置插值把 0–4096 的位置除以 2 压回 0–2048 的已训练范围内(f'(x,m)=f(x,m/2))，让模型只在"见过"的位置区间工作（arXiv:2306.15595 Fig.）](2026-07-20-llm-long-context/pi-position-interpolation.png)
 - **NTK-aware / RoPE 缩放**（社区提出，理论见 `Liu2023Scaling` arXiv:2310.05209 *Scaling Laws of RoPE-based Extrapolation*）：PI 对所有频率均匀缩放会损失高频（局部）信息；NTK 思路按频率**非均匀**缩放——高频少动、低频多插，兼顾局部细节与长程覆盖。
 - **YaRN**（Peng et al. 2023, `Peng2023Yarn`，arXiv:2309.00071）：在 NTK 基础上分频段处理 + 引入注意力温度校正，用极少的继续训练（约 0.1% token）就把窗口扩到 128K，是开源社区扩窗的常用配方。
+
+![YaRN 扩窗后困惑度随上下文长度变化：Yarn-Llama-2-13b-128k(绿)在整个 128K 区间 PPL 持续走低且平稳，而未扩窗的 CodeLlama/together-32K 等在超出训练长度后 PPL 急剧飙升(红/紫竖直上冲)——说明 YaRN 真正把有效长度扩到了 128K（arXiv:2309.00071 Fig.）](2026-07-20-llm-long-context/yarn-ppl.png)
+
 - **LongRoPE**（Ding et al. 2024, `Ding2024Longrope`，arXiv:2402.13753）：用进化搜索找最优的**非均匀 RoPE 缩放**，配合渐进扩展，首次把 LLM 上下文推到 **2M+ token**。
+
+![passkey 检索准确率(大海捞针)对比：LLaMA2-7B 在 8K 后即归零、Mistral 16K 归零、YaRN-128k 在 128–160K 崩溃；而 **LongRoPE-2048k(蓝/靛)在 4K 一直到 2048K 全程保持 ~90–100%** ——直观展示各外推方法的真实上限（arXiv:2402.13753 Fig.）](2026-07-20-llm-long-context/longrope-passkey.png)
 
 **ALiBi（Attention with Linear Biases）**（Press et al. 2021, `Press2021Train`，arXiv:2108.12409）是另一条路线：干脆不用位置嵌入，而是给注意力分数加一个**随距离线性衰减的偏置**——离得越远惩罚越大。它天生具备外推性（train short, test long），但长程建模能力弱于 RoPE 系，现较少用于旗舰模型。
 
@@ -92,6 +99,8 @@
 
 - **位置插值 + 继续训练**（Chen et al. 2023, `Chen2023Extending`）：PI 之后用少量长序列微调，是最早的实用扩窗配方。
 - **LongLoRA**（Chen et al. 2023, `Chen2023Longlora`，arXiv:2309.12307）：用 **shifted sparse attention（S²-Attn）** 做高效微调 + LoRA，在单机上把 Llama 扩到 100K，训练成本大幅下降。
+
+![LongLoRA(黄) vs 全量微调(蓝) vs 普通 LoRA(橙)：困惑度上 LongLoRA 与全量微调相当且在 64K 不崩；GPU 显存与训练时长显著更低（如 32K 时显存 46 vs 68.8 GB、时长 24.6 vs 39.8 h），全量微调在 64K 直接 OOM（arXiv:2309.12307 Fig.）](2026-07-20-llm-long-context/longlora-s2attn.png)
 - **数据工程**（Fu et al. 2024, `Fu2024Data`，arXiv:2402.10171 *Data Engineering for Scaling to 128K*）：关键发现——扩窗**不需要海量长数据**，而需要**长短混合、领域均衡**的数据配比；用约 5 亿 token 精心配比的继续预训练即可稳定扩到 128K。强调"**数据配比 > 数据量**"。
 - **训练-free 扩展**（An et al. 2024, `An2024Training`，arXiv:2402.17463）：完全不训练，靠推理时的位置重映射/分块也能扩窗，作为低成本基线。
 - **旗舰实践**：如 **Qwen2.5**（`Qwen2024Qwen2`，arXiv:2412.15115）等技术报告披露了 YaRN/双块注意力等组合把原生窗口扩到 128K–1M 的工程细节。
@@ -102,6 +111,8 @@
 
 - **提示压缩 LLMLingua 系列**（Jiang et al. 2023, `Jiang2023Longllmlingua`，arXiv:2310.06839）：用小模型识别并**删除 prompt 中低信息量的 token**，把长 prompt 压缩数倍再喂给大模型，在长上下文 QA 上几乎不掉分还降本提速。
 - **Activation Beacon**（Zhang et al. 2024, `Zhang2024Longa`，arXiv:2401.03462）：训练特殊的"beacon token"把一段上下文的激活**压缩成少量摘要状态**，滚动累积以扩展有效上下文。
+
+![Activation Beacon 机制：把上下文切成 chunk，每个 chunk 末尾插入少量特殊 beacon token ⟨b⟩，让它们通过注意力(绿色)"吸收"该 chunk 的信息、压缩成摘要状态；处理下一 chunk 时只需带上前面各 chunk 的 beacon 而非全部原始 token，从而滚动扩展有效上下文（arXiv:2401.03462 Fig.）](2026-07-20-llm-long-context/activation-beacon-x1.png)
 - **KV cache 压缩**：H₂O（§2）、量化 KV、GQA（见 FlashAttention 篇）等，都是在**推理侧**把 KV 显存压下来，等效支持更长上下文/更大 batch。
 
 ### 7｜评测：名义窗口 ≠ 真实可用长度
@@ -114,7 +125,40 @@
 
 > **方法论提醒**：评估长上下文模型必须**同时看合成压力测试（RULER）和真实任务（LongBench）**，并检查位置敏感性（Lost-in-the-Middle）。只报名义窗口长度是误导。
 
-### 8｜技术线之间的关系
+### 8｜主流大模型实际用了什么？（开源 vs 闭源）
+
+把上面的技术线落到真实模型上——**开源模型有技术报告可查，闭源旗舰的具体配方大多未公开**，只能从官方文档、少量博客和第三方评测推断。下表**明确区分可验证程度**：
+
+**开源 / 开放权重（有技术报告，方法基本可查）**
+
+| 模型 | 上下文 | 已披露的长上下文做法 |
+|---|---|---|
+| **Llama 2** | 4K | RoPE，原生短窗；社区用 PI/YaRN/LongLoRA 扩窗 |
+| **Llama 3.1** | 128K | RoPE + 分阶段继续预训练扩窗；长短数据混合 |
+| **Qwen2.5**（`Qwen2024Qwen2`, arXiv:2412.15115）| 128K（1M 变体）| RoPE + **YaRN + Dual Chunk Attention (DCA)** 做推理时外推；长数据继续训练 |
+| **Mistral / Mixtral** | 32K | RoPE + **滑动窗口注意力（SWA）** |
+| **DeepSeek-V3** | 128K | RoPE + YaRN 式扩窗；**MLA（多头潜在注意力）** 压 KV cache |
+| **GLM-4** | 128K–1M | RoPE 扩窗 + 长数据继续训练 |
+
+> 共性：**开源阵营几乎清一色 RoPE + (YaRN/PI 类频率缩放) + 长数据继续训练**；差异主要在注意力变体（Mistral 走 SWA、DeepSeek 走 MLA 压 KV、Qwen 走 DCA）。
+
+**闭源旗舰（具体机制未公开，以下为官方声明的能力 + 合理推断，非确证配方）**
+
+| 模型 | 声称上下文 | 公开信息 / 推断 |
+|---|---|---|
+| **GPT-4 Turbo / GPT-4o** | 128K | 机制未公开；业界普遍推测 RoPE 类外推 + 大规模长数据训练 |
+| **Claude 3/3.5** | 200K（企业更长）| 机制未公开；Anthropic 未披露位置编码/注意力细节 |
+| **Gemini 1.5** | **1M–10M** | 官方技术报告强调是 **MoE + 长上下文架构创新**，但**未披露**具体注意力/位置编码方案；10M 为已展示上限 |
+
+> **可信度红线**：闭源模型这一栏我**只列官方声明的窗口长度**，不声称知道它们的内部方法——任何"GPT-4 用了 XX"的具体断言，除非有官方来源，都应视为推测。这与本项目「引用须可验证」一致。
+
+**跨阵营的共同趋势**：
+1. **RoPE + 频率缩放外推**已是事实标准（开源确证、闭源高度疑似）。
+2. **训练侧靠长短数据混合的继续预训练**把窗口"坐实"，而非纯靠架构。
+3. **KV cache 压缩**（GQA/MLA/MQA）是长上下文能落地服务的必要条件——几乎所有旗舰都用了某种 KV 头共享（见 [FlashAttention 篇](2026-07-20-flash-attention-efficient-attention.md)）。
+4. **评测与宣称脱节**：无论开源闭源，RULER 类测试普遍显示**真实有效长度 < 名义窗口**。
+
+### 9｜技术线之间的关系
 
 ```mermaid
 graph TD
