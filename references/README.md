@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **1655** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1656** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -8,12 +8,12 @@
 - [大语言模型 (LLM)](#-llm-) （723）
 - [智能体 / Agent](#-agent) （247）
 - [强化学习 / RLHF](#-rlhf) （321）
-- [推理 / Reasoning](#-reasoning) （378）
+- [推理 / Reasoning](#-reasoning) （379）
 - [图神经网络 / Graph](#-graph) （251）
 - [扩散 / 生成模型](#-) （266）
 - [多模态 / 视觉语言](#-) （332）
-- [Transformer / 架构](#transformer-) （364）
-- [高效训练 / 推理](#-) （432）
+- [Transformer / 架构](#transformer-) （365）
+- [高效训练 / 推理](#-) （433）
 - [综述 / Survey](#-survey) （144）
 - [检索增强 / RAG](#-rag) （106）
 - 未分类（147）
@@ -1335,6 +1335,7 @@
 - **2026** [EXAONE 4.5 Technical Report](http://arxiv.org/abs/2604.08644) — Eunbi Choi et al. · arXiv:2604.08644 `{Choi2026Exaone}`
 - **2026** [LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning](http://arxiv.org/abs/2605.22012) — Yifan Dai et al. · arXiv:2605.22012 `{Dai2026Latentomni}`
 - **2026** [Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning](http://arxiv.org/abs/2607.08393) — Lu Dai et al. · arXiv:2607.08393 `{Dai2026Towards}`
+- **2026** [DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence](http://arxiv.org/abs/2606.19348) — DeepSeek-AI et al. · arXiv:2606.19348 `{DeepSeekAI2026Deepseek}`
 - **2026** [PluraMath: Extending Mathematical Reasoning Evaluation Beyond High-Resource Languages](http://arxiv.org/abs/2607.05992) — Daryna Dementieva et al. · arXiv:2607.05992 `{Dementieva2026Pluramath}`
 - **2026** [SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture](http://arxiv.org/abs/2605.12500) — Haiwen Diao et al. · arXiv:2605.12500 `{Diao2026Sensenova}`
 - **2026** [DeonticBench: A Benchmark for Reasoning over Rules](http://arxiv.org/abs/2604.04443) — Guangyao Dou et al. · arXiv:2604.04443 `{Dou2026Deonticbench}`
@@ -2569,6 +2570,7 @@
 - **2026** [WanSong v1.0 Technical Report](http://arxiv.org/abs/2607.14749) — Binghui Chen et al. · arXiv:2607.14749 `{Chen2026Wansong}`
 - **2026** [RhymeFlow: Training-Free Acceleration for Video Generation with Asynchronous Denoising Flow Scheduling](http://arxiv.org/abs/2606.06309) — Chensheng Dai et al. · arXiv:2606.06309 `{Dai2026Rhymeflow}`
 - **2026** [WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis](http://arxiv.org/abs/2606.08670) — Danilo Danese et al. · arXiv:2606.08670 `{Danese2026Wavedit}`
+- **2026** [DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence](http://arxiv.org/abs/2606.19348) — DeepSeek-AI et al. · arXiv:2606.19348 `{DeepSeekAI2026Deepseek}`
 - **2026** [Squeeze-Release: Iterative Pruning with Exact Structural Minimization](http://arxiv.org/abs/2606.14346) — Roman Denkin et al. · arXiv:2606.14346 `{Denkin2026Squeeze}`
 - **2026** [Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance](http://arxiv.org/abs/2606.19195) — Kangsheng Duan et al. · arXiv:2606.19195 `{Duan2026Moebius}`
 - **2026** [Loop the Loopies!](http://arxiv.org/abs/2607.16051) — Zitian Gao et al. · arXiv:2607.16051 `{Gao2026Loop}`
@@ -2943,6 +2945,7 @@
 - **2026** [WanSong v1.0 Technical Report](http://arxiv.org/abs/2607.14749) — Binghui Chen et al. · arXiv:2607.14749 `{Chen2026Wansong}`
 - **2026** [DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation](http://arxiv.org/abs/2607.05147) — Xin Cheng et al. · arXiv:2607.05147 `{Cheng2026Dspark}`
 - **2026** [WaveDiT: Distribution-Aware Wavelet Flow Matching for Efficient 3D Brain MRI Synthesis](http://arxiv.org/abs/2606.08670) — Danilo Danese et al. · arXiv:2606.08670 `{Danese2026Wavedit}`
+- **2026** [DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence](http://arxiv.org/abs/2606.19348) — DeepSeek-AI et al. · arXiv:2606.19348 `{DeepSeekAI2026Deepseek}`
 - **2026** [Squeeze-Release: Iterative Pruning with Exact Structural Minimization](http://arxiv.org/abs/2606.14346) — Roman Denkin et al. · arXiv:2606.14346 `{Denkin2026Squeeze}`
 - **2026** [Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance](http://arxiv.org/abs/2606.19195) — Kangsheng Duan et al. · arXiv:2606.19195 `{Duan2026Moebius}`
 - **2026** [Backdoor Attacks on Decentralised Post-Training](http://arxiv.org/abs/2604.02372) — Oğuzhan Ersoy et al. · arXiv:2604.02372 `{Ersoy2026Backdoor}`

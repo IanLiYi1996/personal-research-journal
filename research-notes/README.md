@@ -48,3 +48,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训练 / 评测）](/research-notes/2026-07-20-llm-long-context.md)
 - [深度整理：Long-Horizon Agents（长程智能体）研究路径全景](/research-notes/2026-07-20-long-horizon-agents.md)
 - [论文深读：LongStraw —— 固定 GPU 预算下突破 2M token 的长上下文 RL 后训练](/research-notes/2026-07-20-longstraw-longcontext-rl.md)
+- [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison.md)
