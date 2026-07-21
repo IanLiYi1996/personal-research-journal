@@ -172,6 +172,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 |------|----------|
 | `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 6 HTML scraper / 8 SPA-blocked; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
 | `tech-blogs/2026-W28.md` | W28 (06/30–07/08): 175 抓取 / 174 新增（RSS 144 + sitemap 19 + HTML 12）; deep-dives: Lilian Weng "Harness Engineering for Self-Improvement" + Anthropic "A global workspace in language models" |
+| `tech-blogs/2026-W30.md` | W30 (07/14–07/20): 201 抓取 / 199 新增（RSS 62/86 feed OK + sitemap 11 + HTML 16）; 主线 开源 MoE 发布潮(Inkling/Kimi K3/Cosmos3) + 长程模型安全 + "中国模型论"; deep-dive: Raschka "Inkling 975B MoE"（OpenAI 长程安全文 403 未抓取） |
 
 ### Single-post Deep Dives in research-notes/
 
@@ -180,6 +181,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `research-notes/2026-06-26-lilian-weng-scaling-laws.md` | Lilian Weng (2026-06-24) "Scaling Laws, Carefully" |
 | `research-notes/2026-07-08-blog-harness-engineering.md` | Lilian Weng (2026-07-04) "Harness Engineering for Self-Improvement" |
 | `research-notes/2026-07-08-blog-global-workspace.md` | Anthropic Research (2026-07-06) "A global workspace in language models" |
+| `research-notes/2026-07-20-blog-inkling-moe.md` | Sebastian Raschka (2026-07-16) "Inkling: A New Open-Weight 975B MoE with a Few Surprises" |
 
 ## Weekly Cross-Digest
 
