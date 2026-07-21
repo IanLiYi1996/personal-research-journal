@@ -200,6 +200,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | File | Coverage |
 |------|----------|
 | `weekly/2026-W26.md` | W26 cross-digest: 20 主线表 + Mythos 5-source 共振追踪 + 3 narrative arcs (Agent harness 元夏 / Scaling Laws → Data Wall → Looped Compute / 中美开源芯片政策) |
+| `weekly/2026-W30.md` | W30 cross-digest: 8 主线表 + 开源 MoE 屠榜周(Kimi K3/Inkling 3-source 共振) + 3 narrative arcs (长程能力三段式内化 / 后训练成本重构 / 成本焦虑两端); AWS 周末空档 |
 
 ## AWS What's New Tracker
 
