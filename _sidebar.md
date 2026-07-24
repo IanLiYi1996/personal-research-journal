@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24.md)
   - [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison.md)
   - [论文深读：LongStraw —— 固定 GPU 预算下突破 2M token 的长上下文 RL 后训练](/research-notes/2026-07-20-longstraw-longcontext-rl.md)
   - [深度整理：Long-Horizon Agents（长程智能体）研究路径全景](/research-notes/2026-07-20-long-horizon-agents.md)
