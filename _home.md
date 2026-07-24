@@ -82,8 +82,8 @@ Datasets, tools, frameworks, and reference materials.
 | Date | Type | Title |
 |------|------|-------|
 | 2026-07-24 | Note | [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24) |
+| 2026-07-24 | Note | [FLUX.3 与 Self-Flow:BFL 的多模态统一基础模型](/research-notes/2026-07-24-flux-3-self-flow) |
 | 2026-07-21 | Note | [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison) |
 | 2026-07-20 | Note | [论文深读：LongStraw —— 固定 GPU 预算下突破 2M token 的长上下文 RL 后训练](/research-notes/2026-07-20-longstraw-longcontext-rl) |
 | 2026-07-20 | Note | [综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训练 / 评测）](/research-notes/2026-07-20-llm-long-context) |
-| 2026-07-20 | Note | [综述：LLM 推理努力度控制（Controlling Reasoning Effort in LLMs）](/research-notes/2026-07-20-blog-reasoning-effort) |
 <!-- AUTO:RECENT:END -->
