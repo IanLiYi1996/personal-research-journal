@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **1681** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1682** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -10,8 +10,8 @@
 - [强化学习 / RLHF](#-rlhf) （326）
 - [推理 / Reasoning](#-reasoning) （383）
 - [图神经网络 / Graph](#-graph) （253）
-- [扩散 / 生成模型](#-) （274）
-- [多模态 / 视觉语言](#-) （342）
+- [扩散 / 生成模型](#-) （275）
+- [多模态 / 视觉语言](#-) （343）
 - [Transformer / 架构](#transformer-) （373）
 - [高效训练 / 推理](#-) （442）
 - [综述 / Survey](#-survey) （144）
@@ -1990,6 +1990,7 @@
 - **2026** [HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement](http://arxiv.org/abs/2607.18217) — Yiyang Cai et al. · arXiv:2607.18217 `{Cai2026Homie}`
 - **2026** [MetaView: Monocular Novel View Synthesis with Scale-Aware Implicit Geometry Priors](http://arxiv.org/abs/2607.12000) — Yufei Cai et al. · arXiv:2607.12000 `{Cai2026Metaview}`
 - **2026** [PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects](http://arxiv.org/abs/2605.21572) — Ziang Cao et al. · arXiv:2605.21572 `{Cao2026Physx}`
+- **2026** [Self-Supervised Flow Matching for Scalable Multi-Modal Synthesis](http://arxiv.org/abs/2603.06507) — Hila Chefer et al. · arXiv:2603.06507 `{Chefer2026Self}`
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
 - **2026** [DMax: Aggressive Parallel Decoding for dLLMs](http://arxiv.org/abs/2604.08302) — Zigeng Chen et al. · arXiv:2604.08302 `{Chen2026Dmax}`
 - **2026** [DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation](http://arxiv.org/abs/2606.26058) — Nan Chen et al. · arXiv:2606.26058 `{Chen2026Domainshuttle}`
@@ -2269,6 +2270,7 @@
 - **2026** [HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement](http://arxiv.org/abs/2607.18217) — Yiyang Cai et al. · arXiv:2607.18217 `{Cai2026Homie}`
 - **2026** [OmniVideo-100K: A Dataset for Audio-Visual Reasoning through Structured Scripts and Evidence Chains](http://arxiv.org/abs/2606.14702) — Xinyue Cai et al. · arXiv:2606.14702 `{Cai2026Omnivideo}`
 - **2026** [PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects](http://arxiv.org/abs/2605.21572) — Ziang Cao et al. · arXiv:2605.21572 `{Cao2026Physx}`
+- **2026** [Self-Supervised Flow Matching for Scalable Multi-Modal Synthesis](http://arxiv.org/abs/2603.06507) — Hila Chefer et al. · arXiv:2603.06507 `{Chefer2026Self}`
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
 - **2026** [DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation](http://arxiv.org/abs/2606.26058) — Nan Chen et al. · arXiv:2606.26058 `{Chen2026Domainshuttle}`
 - **2026** [ECHO: Efficient Chest X-ray Report Generation with One-step Block Diffusion](http://arxiv.org/abs/2604.09450) — Lifeng Chen et al. · arXiv:2604.09450 `{Chen2026Echo}`
