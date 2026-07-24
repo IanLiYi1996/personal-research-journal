@@ -174,6 +174,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `tech-blogs/2026-W26.md` | W26 (06/19–06/26) v1: 41 sources / 21 RSS OK; **v2 扩展**: 85 sources / 60 RSS + 4 sitemap + 6 HTML scraper / 8 SPA-blocked; deep-dive: Lilian Weng "Scaling Laws, Carefully" |
 | `tech-blogs/2026-W28.md` | W28 (06/30–07/08): 175 抓取 / 174 新增（RSS 144 + sitemap 19 + HTML 12）; deep-dives: Lilian Weng "Harness Engineering for Self-Improvement" + Anthropic "A global workspace in language models" |
 | `tech-blogs/2026-W30.md` | W30 (07/14–07/20): 201 抓取 / 199 新增（RSS 62/86 feed OK + sitemap 11 + HTML 16）; 主线 开源 MoE 发布潮(Inkling/Kimi K3/Cosmos3) + 长程模型安全 + "中国模型论"; deep-dive: Raschka "Inkling 975B MoE"（OpenAI 长程安全文 403 未抓取） |
+| `tech-blogs/2026-W30b.md` | W30 周中补抓 (07/17–07/24): 251 抓取 / 248 新增（RSS 61/86 + sitemap 43 + HTML 15）; 主线 Agentic 基础设施生产化 + NVIDIA Rubin/Vera + Gemini 3.6 Flash + 中国具身落地; deep-dive: OpenAI×HuggingFace 安全事故 |
 
 ### Single-post Deep Dives in research-notes/
 
