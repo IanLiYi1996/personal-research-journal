@@ -196,6 +196,28 @@ feeds:
     tier: company
     topics: [foundation-model, frontier-lab]
 
+  # Qwen (阿里) — 当前最主流的开源基座，衍生模型生态最大。
+  # ⚠️ 2026-07-27 探测：qwenlm.github.io/blog/index.xml 返回 200 且可解析(44 条)，
+  # 但最新一条 pubDate 为 2025-09-23，已停更约 10 个月——发布已迁往别处
+  # (qwen.ai/blog 返回 405，无公开 feed)。保留条目以便日后接上，暂不参与 RSS 抓取。
+  # 当前 Qwen 动态主要靠 HF 模型页 + 量子位/机器之心覆盖。
+  - name: Qwen Blog
+    url: https://qwen.ai/blog
+    feed: null
+    tier: company
+    topics: [foundation-model, frontier-lab, open-weights]
+    lang: en
+
+  # blog.google 的 AI 频道混入大量消费产品新闻(Galaxy Unpacked / Google Vids /
+  # visual search 等)，用 title_filter 只保留模型与研究相关条目。
+  - name: Google AI Blog
+    url: https://blog.google/technology/ai/
+    feed: https://blog.google/technology/ai/rss/
+    tier: company
+    topics: [foundation-model, frontier-lab]
+    lang: en
+    title_filter: '\b(Gemini|Gemma|model|LLM|agent|agentic|research|reasoning|multimodal|AI Studio|Vertex|API|benchmark|open.weight|training|inference|TPU|DeepMind|safety|alignment|frontier)\b'
+
   - name: Google DeepMind Blog
     url: https://deepmind.google/discover/blog/
     feed: https://deepmind.google/blog/rss.xml
@@ -572,6 +594,14 @@ feeds:
     feed: https://feeds.feedburner.com/ruanyifeng
     tier: personal
     topics: [chinese, weekly]
+    lang: zh
+
+  # 苏剑林(bojone)—— 深度技术推导，注意力/位置编码/优化器等，质量极高
+  - name: 科学空间 (苏剑林)
+    url: https://spaces.ac.cn/
+    feed: https://spaces.ac.cn/feed
+    tier: personal
+    topics: [chinese, attention, math, llm-theory]
     lang: zh
 
   # No RSS — manual

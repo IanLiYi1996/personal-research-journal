@@ -159,10 +159,11 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 ### Configuration
 
-- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics / lang / optional title_filter). 5 tiers: personal / newsletter / company / academia / conference. 85 sources as of W26.
+- **Sources**: `tech-blogs/feeds.yaml` (YAML; name / url / feed / tier / topics / lang / optional title_filter). 5 tiers: personal / newsletter / company / academia / conference. **89 sources as of W31** (64 有 RSS / 25 无 RSS)。W31 新增：科学空间(苏剑林,深度技术推导)、Google AI Blog(带 title_filter 去消费产品噪音)、Qwen Blog(feed 已停更 10 个月，暂 null 待接)。
+  - ⚠️ **Anthropic 无公开 RSS**（`/news/rss.xml`、`/rss.xml`、`/feed.xml` 均 404，页面亦未声明 feed），继续走 sitemap fallback。
 - **Slash command**: `/tech-blogs-weekly`
 - **Fetchers (3 layers)**:
-  - `scripts/blog_fetch.py` — RSS/Atom (60 sources OK). Supports per-source `title_filter` regex (used to denoise arXiv firehose 277→15 and LessWrong 10→8).
+  - `scripts/blog_fetch.py` — RSS/Atom (64 sources OK as of W31). Supports per-source `title_filter` regex (匹配 title 或 summary；用于降噪 arXiv firehose 277→15、LessWrong 10→8、Google AI Blog 9→2).
   - `scripts/blog_sitemap_fallback.py` — Sitemap.xml `<lastmod>` (4 sources: Anthropic News/Research, Cohere, AI2). Per-source allowed-path-prefixes in `SITEMAP_RULES`.
   - `scripts/blog_html_scraper.py` — Static HTML index parsing (6 sources: Mistral, Meta AI, Apollo, MILA, LlamaIndex, fast.ai). Per-source `(index_url, item_regex, max_undated?)` in `HTML_RULES`. Modal/Replicate were found to have hidden /blog/atom feeds during probing and moved into `blog_fetch.py`.
 - **Probing a new source**: `curl -sI -L -A "Mozilla/5.0" <url>` → check 200; then `curl -sL ... | head -c 500 | grep -qE '<rss|<feed|<channel'` to confirm it's actually XML (200 ≠ RSS for SPAs).
