@@ -176,6 +176,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `tech-blogs/2026-W28.md` | W28 (06/30–07/08): 175 抓取 / 174 新增（RSS 144 + sitemap 19 + HTML 12）; deep-dives: Lilian Weng "Harness Engineering for Self-Improvement" + Anthropic "A global workspace in language models" |
 | `tech-blogs/2026-W30.md` | W30 (07/14–07/20): 201 抓取 / 199 新增（RSS 62/86 feed OK + sitemap 11 + HTML 16）; 主线 开源 MoE 发布潮(Inkling/Kimi K3/Cosmos3) + 长程模型安全 + "中国模型论"; deep-dive: Raschka "Inkling 975B MoE"（OpenAI 长程安全文 403 未抓取） |
 | `tech-blogs/2026-W30b.md` | W30 周中补抓 (07/17–07/24): 251 抓取 / 248 新增（RSS 61/86 + sitemap 43 + HTML 15）; 主线 Agentic 基础设施生产化 + NVIDIA Rubin/Vera + Gemini 3.6 Flash + 中国具身落地; deep-dive: OpenAI×HuggingFace 安全事故 |
+| `tech-blogs/2026-W31.md` | W31 (07/20–07/27): 204 抓取 / 203 新增（RSS 62/86 OK 0 失败 + sitemap 21 + HTML 14）; 主线 Claude Opus 5 + 20+ 大厂开放权重联署(OpenAI 拒签) + OpenAI×HF 余波 + Meta Muse 系列 + 长程模型安全; deep-dive: Raschka「本周值得注意的几个开放权重模型」 |
 
 ### Single-post Deep Dives in research-notes/
 
@@ -185,6 +186,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `research-notes/2026-07-08-blog-harness-engineering.md` | Lilian Weng (2026-07-04) "Harness Engineering for Self-Improvement" |
 | `research-notes/2026-07-08-blog-global-workspace.md` | Anthropic Research (2026-07-06) "A global workspace in language models" |
 | `research-notes/2026-07-20-blog-inkling-moe.md` | Sebastian Raschka (2026-07-16) "Inkling: A New Open-Weight 975B MoE with a Few Surprises" |
+| `research-notes/2026-07-27-blog-raschka-open-weight-roundup.md` | Sebastian Raschka (2026-07-26) "A Few Notable Open-Weight Models This Week"（6 模型架构速览：Nanbeige 4.2 / Laguna S 2.1 / Motif-3-Beta GDLA / Solar Open 2 / Antares 1B / BTL-3） |
 
 ## Weekly Cross-Digest
 

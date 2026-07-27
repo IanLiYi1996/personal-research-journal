@@ -9,6 +9,7 @@
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
   - [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27.md)
+  - [Raschka「本周值得注意的几个开放权重模型」精读(2026-07-26)](/research-notes/2026-07-27-blog-raschka-open-weight-roundup.md)
   - [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24.md)
   - [FLUX.3 与 Self-Flow:BFL 的多模态统一基础模型](/research-notes/2026-07-24-flux-3-self-flow.md)
   - [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison.md)

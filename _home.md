@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-27 | Note | [Raschka「本周值得注意的几个开放权重模型」精读(2026-07-26)](/research-notes/2026-07-27-blog-raschka-open-weight-roundup) |
 | 2026-07-27 | Note | [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27) |
 | 2026-07-24 | Note | [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24) |
 | 2026-07-24 | Note | [FLUX.3 与 Self-Flow:BFL 的多模态统一基础模型](/research-notes/2026-07-24-flux-3-self-flow) |
 | 2026-07-21 | Note | [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison) |
-| 2026-07-20 | Note | [论文深读：LongStraw —— 固定 GPU 预算下突破 2M token 的长上下文 RL 后训练](/research-notes/2026-07-20-longstraw-longcontext-rl) |
 <!-- AUTO:RECENT:END -->
