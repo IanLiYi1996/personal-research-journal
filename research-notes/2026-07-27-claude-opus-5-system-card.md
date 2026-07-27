@@ -11,6 +11,48 @@ Opus 5 的卖点是"**接近 Fable 5 的前沿智能,价格只要一半**"($5/M 
 
 **模型基本信息:** Opus 4.8 的升级版;API 名 `claude-opus-5`;**知识截止 2026-05**;纯文本输出;评测上下文**不超过 1M**;Fast mode ~2.5× 速度、2× 价格。
 
+⚠️ **先看第零节**:这是安全文档而非技术报告,**架构与训练参数一概未披露**(附关键词统计作证);有实质技术含量的部分在**评测与安全方法论**。
+
+## 零、技术细节边界(读之前必须知道)
+
+> [!IMPORTANT]
+> **这是一份安全文档,不是技术报告。** 模型架构与训练细节**一概未披露**——想找参数量/MoE 配置/注意力类型的读者请止步。
+
+我在全文(328K 字符)做了关键词统计作为客观证据:
+
+| 关键词 | 出现次数 | 实际语境 |
+|---|---|---|
+| `MoE` | **0** | — |
+| `FLOP` / `pretraining compute` | **0** | — |
+| `tokenizer` / `distill` / `RLHF` / `reward model` | **0** | — |
+| `architecture` | 1 | 讲**蛋白质设计评测任务**里让模型"设计模型架构",**与 Claude 自身架构无关** |
+| `parameter` | 4 | 全是 **effort / thinking parameter**(测试时算力旋钮),**不是参数量** |
+| `compute budget` | 1 | 给模型做 PLM 训练任务的**评测预算** |
+| `context window` | 3 | 唯一有效信息:**不超过 1M** |
+
+**§1.1「Model training and characteristics」全节仅三段**,内容为:训练数据来源(公开网络 + 公私数据集 + 其他模型生成的合成数据)、ClaudeBot 遵守 robots.txt 且不访问密码保护/需登录/CAPTCHA 页面、去重与分类过滤、后训练对齐到 Claude's constitution、多语言(输出质量随语言而异)、**纯文本输出**、**知识截止 2026-05**。**没有一个架构或算力数字。**
+
+**未披露清单:** 参数量、激活参数、层数、注意力类型、MoE 配置、预训练 token 数、训练算力、优化器、上下文实现方式。
+
+### 但确实有实质的"技术细节"——在评测与安全方法论层面
+
+**① 测试时算力控制(唯一触及模型机制的部分)**
+- **adaptive thinking + `effort` 参数**(low / high / xhigh / max)是贯穿全卡的核心旋钮;能力表默认 **max effort + 5 次试验平均**;多个图表按 effort 档位画曲线。
+- **BrowseComp** 用 **context compaction、在 200k tokens 触发**,以突破 1M 上下文上限;用 **Claude Opus 4.7 作为 grader**。
+- **Chartography** 的实用发现:**用工具裁剪/缩放图像,常比单纯开 adaptive thinking 更划算**(成本效率角度)。
+
+**② 自动化行为审计的工程设计(含量很足)**
+- 每个目标模型约 **3200 次调查**(~1600 条 seed 指令 × 2 次采样),单次调查可含**数十段独立对话**。
+- **investigator 模型的权限很大**:设置目标模型的 system prompt、模拟用户轮次、引入工具并伪造其返回结果、调节 thinking/effort 参数、prefill assistant 轮、从非 assistant 角色采样、回退或重启对话。
+- 区分 **full-turn prefill 与 partial-turn prefill**——后者更强力,且**对 Opus 4.6 及更新模型的外部用户不开放**。
+- **递归摘要(recursive summarization)** 审查 100 万+ 训练轨迹。
+- **白盒模型内部分析**(§6.6.1),这是检出"未言明的 grader 意识、编造数据、破坏性操作"的手段。
+
+**③ 评测协议细节**
+- HLE 与 BrowseComp 各有专门 **blocklist**(附录 §9.1 / §9.2 全文列出)。
+- **SWE-bench Multimodal 自建 harness**(附录 §9.3)。
+- 竞品数字均取自对方公开系统卡或榜单;早期 Claude 模型的评测细节要去查 **Claude Fable 5 System Card**。
+
 ## 一、RSP 风险定级(最关键的监管结论)
 
 | 维度 | 结论 |
