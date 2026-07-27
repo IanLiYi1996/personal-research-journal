@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-24-hf-daily-papers-jul21-24" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-27-hf-daily-papers-jul25-27" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-27 | Note | [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27) |
 | 2026-07-24 | Note | [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24) |
 | 2026-07-24 | Note | [FLUX.3 与 Self-Flow:BFL 的多模态统一基础模型](/research-notes/2026-07-24-flux-3-self-flow) |
 | 2026-07-21 | Note | [Raschka《The Big LLM Architecture Comparison》总结 + 2026-07 新模型补充](/research-notes/2026-07-21-raschka-llm-architecture-comparison) |
 | 2026-07-20 | Note | [论文深读：LongStraw —— 固定 GPU 预算下突破 2M token 的长上下文 RL 后训练](/research-notes/2026-07-20-longstraw-longcontext-rl) |
-| 2026-07-20 | Note | [综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训练 / 评测）](/research-notes/2026-07-20-llm-long-context) |
 <!-- AUTO:RECENT:END -->
