@@ -1,19 +1,19 @@
 # 文献库索引
 
-> 共 **1693** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1696** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
 - [大语言模型 (LLM)](#-llm-) （739）
 - [智能体 / Agent](#-agent) （262）
-- [强化学习 / RLHF](#-rlhf) （330）
-- [推理 / Reasoning](#-reasoning) （387）
+- [强化学习 / RLHF](#-rlhf) （331）
+- [推理 / Reasoning](#-reasoning) （388）
 - [图神经网络 / Graph](#-graph) （253）
-- [扩散 / 生成模型](#-) （276）
-- [多模态 / 视觉语言](#-) （349）
+- [扩散 / 生成模型](#-) （278）
+- [多模态 / 视觉语言](#-) （350）
 - [Transformer / 架构](#transformer-) （375）
-- [高效训练 / 推理](#-) （445）
+- [高效训练 / 推理](#-) （446）
 - [综述 / Survey](#-survey) （144）
 - [检索增强 / RAG](#-rag) （108）
 - 未分类（148）
@@ -1072,6 +1072,7 @@
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
 - **2026** [On the limits and opportunities of AI reviewers: Reviewing the reviews of Nature-family papers with 45 expert scientists](http://arxiv.org/abs/2605.20668) — Seungone Kim et al. · arXiv:2605.20668 `{Kim2026Limits}`
 - **2026** [LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL](http://arxiv.org/abs/2607.04412) — Yujin Kim et al. · arXiv:2607.04412 `{Kim2026Llm}`
+- **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [Macaron-A2UI: A Model for Generative UI in Personal Agents](http://arxiv.org/abs/2605.24830) — Fancy Kong et al. · arXiv:2605.24830 `{Kong2026Macaron}`
 - **2026** [MinT: Managed Infrastructure for Training and Serving Millions of LLMs](http://arxiv.org/abs/2605.13779) — Mind Lab et al. · arXiv:2605.13779 `{Lab2026Mint}`
 - **2026** [Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients](http://arxiv.org/abs/2606.18216) — Byung-Kwan Lee et al. · arXiv:2606.18216 `{Lee2026Zone}`
@@ -1416,6 +1417,7 @@
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
 - **2026** [Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?](http://arxiv.org/abs/2605.22109) — Caixin Kang et al. · arXiv:2605.22109 `{Kang2026Perception}`
 - **2026** [CollabVR: Collaborative Video Reasoning with Vision-Language and Video Generation Models](http://arxiv.org/abs/2605.08735) — Joowon Kim et al. · arXiv:2605.08735 `{Kim2026Collabvr}`
+- **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM](http://arxiv.org/abs/2607.11683) — Mikhail Komarov et al. · arXiv:2607.11683 `{Komarov2026Ragu}`
 - **2026** [AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification](http://arxiv.org/abs/2607.11849) — Lingkai Kong et al. · arXiv:2607.11849 `{Kong2026Advancedmathbench}`
 - **2026** [Autodata: An agentic data scientist to create high quality synthetic data](http://arxiv.org/abs/2606.25996) — Ilia Kulikov et al. · arXiv:2606.25996 `{Kulikov2026Autodata}`
@@ -2047,6 +2049,7 @@
 - **2026** [4D Human-Scene Reconstruction from Low-Overlap Captures](http://arxiv.org/abs/2607.09125) — Minhyuk Hwang et al. · arXiv:2607.09125 `{Hwang20264d}`
 - **2026** [ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU](http://arxiv.org/abs/2607.19191) — Fan Jiang et al. · arXiv:2607.19191 `{Jiang2026Abot}`
 - **2026** [Multi-Block Diffusion Language Models](http://arxiv.org/abs/2606.29215) — Yijie Jin et al. · arXiv:2606.29215 `{Jin2026Multi}`
+- **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [Macaron-A2UI: A Model for Generative UI in Personal Agents](http://arxiv.org/abs/2605.24830) — Fancy Kong et al. · arXiv:2605.24830 `{Kong2026Macaron}`
 - **2026** [Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes](http://arxiv.org/abs/2607.13188) — Minh-Quan Le et al. · arXiv:2607.13188 `{Le2026Concurrent}`
 - **2026** [Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation](http://arxiv.org/abs/2606.12594) — Joshua Ong Jun Leang et al. · arXiv:2606.12594 `{Leang2026Pythagoras}`
@@ -2081,6 +2084,7 @@
 - **2026** [Registers Matter for Pixel-Space Diffusion Transformers](http://arxiv.org/abs/2605.16147) — Nikita Starodubcev et al. · arXiv:2605.16147 `{Starodubcev2026Registers}`
 - **2026** [CGGS: Consistency-Augmented Geometric Gaussian Splatting for Ego-centric 3D Scene Generation](http://arxiv.org/abs/2607.03819) — Zhenyu Sun et al. · arXiv:2607.03819 `{Sun2026Cggs}`
 - **2026** [PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models](http://arxiv.org/abs/2606.19534) — Yueyi Sun et al. · arXiv:2606.19534 `{Sun2026Perceptiondlm}`
+- **2026** [Three-Body Scattering for Generative Modeling](http://arxiv.org/abs/2607.18198) — Peng Sun et al. · arXiv:2607.18198 `{Sun2026Three}`
 - **2026** [When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models](http://arxiv.org/abs/2604.08546) — Zhengyang Sun et al. · arXiv:2604.08546 `{Sun2026When}`
 - **2026** [AlayaWorld: Long-Horizon and Playable Video World Generation](http://arxiv.org/abs/2607.06291) — AlayaWorld Team et al. · arXiv:2607.06291 `{Team2026Alayaworld}`
 - **2026** [AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report](http://arxiv.org/abs/2607.18367) — AlayaWorld Team et al. · arXiv:2607.18367 `{Team2026Alayaworlda}`
@@ -2320,6 +2324,7 @@
 - **2026** [Nemotron-Labs-Diffusion: A Tri-Mode Language Model Unifying Autoregressive, Diffusion, and Self-Speculation Decoding](http://arxiv.org/abs/2607.05722) — Yonggan Fu et al. · arXiv:2607.05722 `{Fu2026Nemotron}`
 - **2026** [Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding](http://arxiv.org/abs/2604.05015) — Chaoyou Fu et al. · arXiv:2604.05015 `{Fu2026Video}`
 - **2026** [RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework](http://arxiv.org/abs/2604.15308) — Hao Gao et al. · arXiv:2604.15308 `{Gao2026Rad}`
+- **2026** [Multimodal Speaker Verification as a Threat to Speaker Anonymization](http://arxiv.org/abs/2607.19636) — Ashi Garg et al. · arXiv:2607.19636 `{Garg2026Multimodal}`
 - **2026** [Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making](http://arxiv.org/abs/2607.14277) — Amirhosein Ghasemabadi et al. · arXiv:2607.14277 `{Ghasemabadi2026Multi}`
 - **2026** [Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos](http://arxiv.org/abs/2607.16107) — Sreyan Ghosh et al. · arXiv:2607.16107 `{Ghosh2026Audioa}`
 - **2026** [ABot-N1: Toward a General Visual Language Navigation Foundation Model](http://arxiv.org/abs/2607.10383) — Ruiyan Gong et al. · arXiv:2607.10383 `{Gong2026Abot}`
@@ -3064,6 +3069,7 @@
 - **2026** [DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning](http://arxiv.org/abs/2605.25604) — Guochao Jiang et al. · arXiv:2605.25604 `{Jiang2026Dvao}`
 - **2026** [Multi-Block Diffusion Language Models](http://arxiv.org/abs/2606.29215) — Yijie Jin et al. · arXiv:2606.29215 `{Jin2026Multi}`
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
+- **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [Macaron-A2UI: A Model for Generative UI in Personal Agents](http://arxiv.org/abs/2605.24830) — Fancy Kong et al. · arXiv:2605.24830 `{Kong2026Macaron}`
 - **2026** [MinT: Managed Infrastructure for Training and Serving Millions of LLMs](http://arxiv.org/abs/2605.13779) — Mind Lab et al. · arXiv:2605.13779 `{Lab2026Mint}`
 - **2026** [On the Scaling of PEFT: Towards Million Personal Models of Trillion Parameters](http://arxiv.org/abs/2606.02437) — Mind Lab et al. · arXiv:2606.02437 `{Lab2026Scaling}`
