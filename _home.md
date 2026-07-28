@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-27-hf-daily-papers-jul25-27" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-27-kimi-k3-report" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-27 | Note | [技术报告精读：Kimi K3 —— Open Frontier Intelligence（2.8T MoE / 1M 上下文 / NoPE）](/research-notes/2026-07-27-kimi-k3-report) |
 | 2026-07-27 | Note | [Raschka「本周值得注意的几个开放权重模型」精读(2026-07-26)](/research-notes/2026-07-27-blog-raschka-open-weight-roundup) |
 | 2026-07-27 | Note | [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27) |
 | 2026-07-27 | Note | [Claude Opus 5 System Card 精读(194 页全文)](/research-notes/2026-07-27-claude-opus-5-system-card) |
 | 2026-07-24 | Note | [HF Daily Papers 周报 · 2026-07-21 ~ 07-24](/research-notes/2026-07-24-hf-daily-papers-jul21-24) |
-| 2026-07-24 | Note | [FLUX.3 与 Self-Flow:BFL 的多模态统一基础模型](/research-notes/2026-07-24-flux-3-self-flow) |
 <!-- AUTO:RECENT:END -->

@@ -64,6 +64,43 @@
 - [向 PI 坦白抑郁后我后悔了](https://www.reddit.com/r/AskAcademia/comments/1v5fidh/i_made_the_mistake_of_opening_up_to_pi_about/) —— 学术心理健康的高共鸣帖
 - [做了个交互式 Transformer 架构学习站](https://www.reddit.com/r/statistics/comments/1v42s6j/i_have_built_an_interactive_site_to_study/)[已见 W30b]
 
+## 🔄 当日二次抓取补录(07-27 晚)
+
+本 digest 首版于 07-27 早间生成。当日晚间重抓 12 子版(280 帖),发现**一件大事 + 一条被首版遗漏的主线**,补录如下。
+
+### 🚨 头条:Kimi K3 权重正式释出
+
+- **[Kimi K3 weights now released.](https://www.reddit.com/r/LocalLLaMA/comments/1v8364f/kimi_k3_weights_now_released/)**(r/LocalLLaMA)
+
+这是我在多篇笔记里标注"计划 07-27 释出、待确认"的那个节点——**现已落地**。相关讨论:
+- [Kimi K3 修掉了 15 个 Codex 与 Fable 拒接的严重安全漏洞](https://www.reddit.com/r/LocalLLaMA/comments/1v3ba1z/solve_the_cybergym_benchmark/)(CyberGym 相关讨论)
+- 社区评价趋于克制:"K3 还没真的比 Fable 更好,但确实已经很接近"
+
+> 待跟进:技术报告是否随权重发布?若已发,应补进 [[2026-07-17-inkling-glm52-kimik3]] 笔记里 Kimi K3 那节的"未披露"清单(层数/tokenizer/激活参数)。
+
+### 🏛️ 被首版遗漏的主线:开源 AI 的**政策游说战**
+
+首版只抓到"20+ 大厂联署支持开放权重"这一面(阳),但 r/LocalLLaMA 深层排名里还有**另一面(阴)**——大厂在华盛顿的反向游说:
+
+- [消息源:OpenAI 与 Anthropic 正在悄悄游说华盛顿监管者](https://www.reddit.com/r/LocalLLaMA/comments/1v74j62/sources_openai_and_anthropic_quietly_lobby/)
+- [被美国主要实验室游说的美国政府即将封禁开源…](https://www.reddit.com/r/LocalLLaMA/comments/1v3v75j/sanctions_on_open_source_hope_they_dont_do/)(「Sanctions on Open Source」)
+- [看起来反开源 AI 的游说方在火力上远被压制](https://www.reddit.com/r/LocalLLaMA/comments/1v5g4tl/it_appears_that_the_anti_opensource_ai_lobby_is/)
+- [Anthropic 声称本地模型在窃取它的成果](https://www.reddit.com/r/LocalLLaMA/comments/1v2ky1e/anthropic_claims_local_models_are_stealing_from/)
+- [Karpathy 把 Anthropic 从他的 bio 里删掉了](https://www.reddit.com/r/LocalLLaMA/comments/1v6pkji/karparthy_removed_anthropic_from_his_bio/)
+
+**这条线补全了本周主线的完整图景:公开联署信是台面上的表态,而台面下是游说与规则制定之争。** 这也让"OpenAI 拒签"这件事有了更强的解释力——它与 Anthropic 被指同时在做监管游说,方向一致。
+
+### 其它新增值得一提
+
+- **r/OpenAI**:[OpenAI 模型逃出隔离并入侵了 HuggingFace](https://www.reddit.com/r/OpenAI/comments/1v2ybnw/openai_models_escaped_containment_and_hacked/)(事故的耸动版叙述)、[2026 年前沿实验室 PR 策略](https://www.reddit.com/r/OpenAI/comments/1v3t50w/frontier_lab_pr_strategy_2026/)、[Sam Altman 就 GPT-6 向美国政府做 briefing](https://www.reddit.com/r/OpenAI/comments/1v2wu0u/sam_altman_briefing_us_gov_on_gpt6_speculation_on/)
+- **r/singularity**:[AI 公司在收购古董书籍并摄取其内容](https://www.reddit.com/r/singularity/comments/1v7birc/ai_companies_are_buying_antique_books_ingesting/)(训练数据来源的新前线)、[Opus 5 做出带风力响应草地的程序化绘画世界](https://www.reddit.com/r/singularity/comments/1v6o465/opus_5_built_a_procedural_painterly_world_with/)
+- **r/StableDiffusion**:[**FLUX 3 看起来疯了,这只用了 1 个 prompt**](https://www.reddit.com/r/StableDiffusion/comments/1v7ca3z/flux_3_looks_insane_this_was_1_prompt/)(呼应我的 [[2026-07-24-flux-3-self-flow]] 笔记)、[SDXL 三周年](https://www.reddit.com/r/StableDiffusion/comments/1v6wx2d/new_model_release_it_was_3_years_ago_happy/)
+- **r/ClaudeAI**:[Claude 帮我做模拟面试,真实面试…](https://www.reddit.com/r/ClaudeAI/comments/1v7fo9i/claude_ran_mock_interviews_for_a_job_i_badly/)(又一个"生活实用性"帖)
+- **r/devops**:[Agentic AI devops 一年后的总结](https://www.reddit.com/r/devops/comments/1v7u28r/agentic_ai_devops_after_a_year/)——一年实战复盘,比厂商宣传更有参考价值
+- **r/MachineLearning**:[我写了个把计算图编译成权重的编译器](https://www.reddit.com/r/MachineLearning/comments/1v5fxbe/i_built_a_compiler_that_turns_computation_graphs/)
+- **r/datascience**:[传统组织/政府的 AI 人才是否比 AI 公司更多?](https://www.reddit.com/r/datascience/comments/1v7qkk0/do_legacy_organizationsgovernment_have_more_ai/)
+- **r/aws**:[Current Outage?](https://www.reddit.com/r/aws/comments/1v58e4n/current_outage/)(当日疑似故障讨论)
+
 ## 趋势分析
 
 1. **"开放权重"从技术议题升级为产业政治。** 20+ 大厂联署、Google 明确站队、**OpenAI 拒签**、黄仁勋专门开号支持——这是本周三子版共振的最强信号。上周还是社区情绪("Google 跌出 top 15"、HF CEO 喊话),本周变成了**有组织的行业表态**。OpenAI 成了孤立的一方,这个位置很值得追踪。

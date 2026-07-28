@@ -54,3 +54,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Raschka「本周值得注意的几个开放权重模型」精读(2026-07-26)](/research-notes/2026-07-27-blog-raschka-open-weight-roundup.md)
 - [Claude Opus 5 System Card 精读(194 页全文)](/research-notes/2026-07-27-claude-opus-5-system-card.md)
 - [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27.md)
+- [技术报告精读：Kimi K3 —— Open Frontier Intelligence（2.8T MoE / 1M 上下文 / NoPE）](/research-notes/2026-07-27-kimi-k3-report.md)
