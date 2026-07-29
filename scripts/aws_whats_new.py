@@ -17,7 +17,7 @@ CATEGORIES = [
                "agentcore", "polly", "transcribe", "translate", "kendra", "personalize",
                "lex ", "textract", "forecast", "augmented ai", "ai/ml", "model", "llm",
                "generative", "nova", "claude", "gpt-", "anthropic", "openai", "gemma",
-               "mistral", "jurassic", "titan ", "guardrail", "agent ", "ai agent"]),
+               "mistral", "jurassic", "titan ", "guardrail", "ai agent", "agentic"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
                  "graviton", "auto scaling", "wavelength", "lightsail", "app runner",
                  "compute "]),
