@@ -8,6 +8,7 @@
 
 - **数据获取:** HF `daily_papers` API 逐日抓取——07-28: **31 篇**、07-29: **15 篇**;另 07-27 桶再次增长(14→17),3 篇迟到条目一并纳入。
 - **去重:** 对照上一份 digest 的 14 个 arXiv ID 剔除,**共 49 篇新增**,按 upvotes 降序取 **Top 25**。
+- **🔄 当日二次抓取(07-29 晚):** 07-29 桶从 15 增至 18 篇,连同迟到条目共 **12 篇新增**,已补入下方「当日二次抓取补录」一节。**全期合计 61 篇。**
 - **主线信号:** **Kimi K3 技术报告以 301▲ 断层第一**——这是我在 [[2026-07-17-inkling-glm52-kimik3]] 与 [[2026-07-21-raschka-llm-architecture-comparison]] 里反复标注"未披露/待技术报告"的那份文档,**今天终于拿到了**。次线是 **agent harness 与长时域执行**(JarvisHub / StateAct / 多教师 on-policy 蒸馏)和**具身奖励建模**(Progress Reward 综述 / HiFi-UMI / Data Pyramid)。
 
 > [!IMPORTANT]
@@ -155,6 +156,27 @@
 
 **我的看法:** 综述类工作的价值在于"把混乱变成坐标系",这篇的三层划分(接口/机制/验证)是可直接拿来用的分析工具。**更有意思的是跨领域共振**:LLM agent 侧(TRACE/TRIAGE/SAO)与机器人侧(本篇)在同一个月里,对"terminal reward 不够用"给出了几乎相同的诊断。这暗示**信用分配可能是当前所有长时域学习系统的公共瓶颈**,而非某个领域的特有问题。⚠️ 局限:摘要页未列出三层下的具体子类目与评测建议细节,需读 PDF 或项目页。
 
+## 🔄 当日二次抓取补录(07-29 晚,12 篇)
+
+本 digest 首版于 07-29 白天生成(49 篇新增)。当日晚间 07-29 桶从 15 增至 18 篇,连同其它迟到条目共 **12 篇新增**。均为增量工作(最高 13▲,无破圈事件),按主题归入下方,不改动上文 Top 25 排序。
+
+| 论文 | ▲ | 主题 | 一句话 |
+|---|---|---|---|
+| [Pass the Baton: 轨迹接力式 on-policy 蒸馏](https://hf.co/papers/2607.26057) | 13 | 蒸馏 | **"接力"式轨迹蒸馏**——与本期 #4/#13 的 agentic 蒸馏同线 |
+| [PerceptionBench: 评测多模态 LLM 的原子视觉感知](https://hf.co/papers/2607.24957) | 6 | 多模态评测 | 把视觉感知拆到"原子"粒度评测 |
+| [Shieldstral](https://hf.co/papers/2607.25857) | 5 | 安全 | Mistral 系安全模型(名字暗示) |
+| [视频模型的视觉提示工程](https://hf.co/papers/2607.25537) | 4 | 视频生成 | prompt engineering 延伸到视频 |
+| [新主张还是既视感?重思"无污染"动态评测](https://hf.co/papers/2607.23514) | 4 | 评测方法论 | ⭐ **质疑"contamination-free"动态评测本身是否成立** |
+| [OmniDelta: 技能驱动的 token 压缩预算分配](https://hf.co/papers/2607.25669) | 3 | 效率 | 按技能分配压缩预算 |
+| [面向小规模语言模型 Agent 的鲁棒 RL](https://hf.co/papers/2607.25091) | 3 | Agentic RL | 小模型 agent 的 RL 稳定性 |
+| [并行解码蒸馏加速图像/视频生成](https://hf.co/papers/2607.26004) | 2 | 生成效率 | |
+| [MODUS: 纯解码器的任意模态到任意模态建模](https://hf.co/papers/2607.25948) | 2 | 统一多模态 | 又一个 decoder-only any-to-any |
+| [把 CVE 映射到 MITRE ATT&CK 技术](https://hf.co/papers/2607.25572) | 2 | 安全 | 安全运营的实用分类器 |
+| [Temporal-Distance JEPA: 计划感知的表征学习](https://hf.co/papers/2607.25337) | 0 | 表征/规划 | JEPA 变体(呼应本周 LeCun 世界模型讨论) |
+| [VisualPatchWorld: 代码世界模型作为潜结构表征](https://hf.co/papers/2607.25236) | 0 | 世界模型 | **代码作为世界模型**的表征形式 |
+
+**值得单独一提的是「Novel Claim or Déjà Vu?」**——它质疑的是当前很流行的"动态评测=无污染"这个假设本身。结合本周 Reddit 上 NeurIPS「AI 生成 rebuttal 和论文」的讨论,以及 Kimi K3 报告里"cosine vs WSD 需各自独立搜超参才公平"的方法论提醒,**本周有三条独立线索都指向同一件事:评测与比较的有效性正在被系统性重审。**
+
 ## 趋势分析
 
 1. **Kimi K3 完成了"权重 → 报告"的完整交付,且把 KDA 推到 2.8T 验证。** 线性/delta 注意力从 Kimi Linear(48B)一路到 2.8T 主力模型,加上 Solar Open 2 等第三方采用(见 [[2026-07-27-blog-raschka-open-weight-roundup]]),**delta 类注意力已成为可复用标准组件**。
@@ -202,5 +224,17 @@
 - Wonder: Video World Model Done Better — https://hf.co/papers/2607.26037
 - ID-V2V — https://hf.co/papers/2607.22830
 - Reasoning Denoiser — https://hf.co/papers/2607.22098
+- Pass the Baton — https://hf.co/papers/2607.26057
+- PerceptionBench — https://hf.co/papers/2607.24957
+- Shieldstral — https://hf.co/papers/2607.25857
+- Visual prompt engineering for video models — https://hf.co/papers/2607.25537
+- Novel Claim or Déjà Vu? — https://hf.co/papers/2607.23514
+- OmniDelta — https://hf.co/papers/2607.25669
+- Robust RL for Small-Scale LM Agents — https://hf.co/papers/2607.25091
+- Parallel Decoding Distillation — https://hf.co/papers/2607.26004
+- MODUS — https://hf.co/papers/2607.25948
+- Mapping CVEs to MITRE ATT&CK — https://hf.co/papers/2607.25572
+- Temporal-Distance JEPA — https://hf.co/papers/2607.25337
+- VisualPatchWorld — https://hf.co/papers/2607.25236
 
 > 引用须可验证:以上均为 HF Daily Papers 真实链接;Kimi K3 架构表与训练细节引自技术报告 PDF 全文(47 页,已精读),配图从 PDF 渲染;Progress Reward 综述数据引自 arXiv 摘要页(PDF 未逐节精读,已标注局限)。K3 基准为第一方自报,待第三方复现。
