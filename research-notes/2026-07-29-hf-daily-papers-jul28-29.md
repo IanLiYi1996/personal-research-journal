@@ -115,6 +115,8 @@
 2. **深度维度 — Attention Residuals(AttnRes)**:用**学习到的伪查询 $w$** 对 embedding 与所有前序 block 输出计算注意力权重 $\alpha$,让每层能**选择性检索任意先前层的表征**——突破了传统顺序残差累积。
 3. **宽度维度 — Stable LatentMoE**:896 路由专家、每 token 激活 16,配合 normalization、**SiTU-GLU** 与 **Quantile Balancing** 在极端稀疏下稳住优化。
 - 另有 **Per-Head Muon** 优化器、**MoonViT-V2** 原生视觉塔(图像/视频→轻量 projector→共享 embedding 空间)。
+- ⭐ **位置编码:全面弃用 RoPE(NoPE everywhere)** —— 这点我初读时漏掉,由 Raschka 的架构笔记补上(见 [[tech-blogs/2026-W31d]])。此前惯例是**局部/滑窗层用 RoPE、全局层用 NoPE**;虽有模型走过全 NoPE,但据 Raschka **这是第一个前沿级别的**。架构表未单列此项,值得注意。
+- 另据 Raschka 交叉验证:**LatentMoE 与 Nemotron 3 Ultra 的 LatentMoE 一致**;**AttnRes 是唯一非效率导向的改动**,代价约 **+4% 训练 / +2% 推理成本**,收益为验证 loss 改善 + 下游略好(与 DeepSeek V4 的 mHC 区别:mHC 加宽残差路径,AttnRes 跨层连接并用注意力分数加权)。
 
 ### 训练与效率
 

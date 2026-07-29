@@ -179,6 +179,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `tech-blogs/2026-W30.md` | W30 (07/14–07/20): 201 抓取 / 199 新增（RSS 62/86 feed OK + sitemap 11 + HTML 16）; 主线 开源 MoE 发布潮(Inkling/Kimi K3/Cosmos3) + 长程模型安全 + "中国模型论"; deep-dive: Raschka "Inkling 975B MoE"（OpenAI 长程安全文 403 未抓取） |
 | `tech-blogs/2026-W30b.md` | W30 周中补抓 (07/17–07/24): 251 抓取 / 248 新增（RSS 61/86 + sitemap 43 + HTML 15）; 主线 Agentic 基础设施生产化 + NVIDIA Rubin/Vera + Gemini 3.6 Flash + 中国具身落地; deep-dive: OpenAI×HuggingFace 安全事故 |
 | `tech-blogs/2026-W31.md` | W31 (07/20–07/27): 204 抓取 / 203 新增（RSS 62/86 OK 0 失败 + sitemap 21 + HTML 14）; 主线 Claude Opus 5 + 20+ 大厂开放权重联署(OpenAI 拒签) + OpenAI×HF 余波 + Meta Muse 系列 + 长程模型安全; deep-dive: Raschka「本周值得注意的几个开放权重模型」 |
+| `tech-blogs/2026-W31d.md` | W31 周末补抓 (07/22–07/29): 208 抓取（RSS 64/89 OK 0 失败 + sitemap 12 + HTML 11），聚焦 pub≥07-28 的 **63 篇**; 主线 **Anthropic 用 Claude 发现密码学弱点**(HAWK 有效密钥减半、60h vs 两年专家评审) + Raschka K3 架构笔记(补上"全面弃用 RoPE") + 五家同谈 RSI + HF agent 事故技术复盘; deep-dive: Anthropic 密码学(内嵌) |
 | `tech-blogs/2026-W31b.md` | W31 周中补抓 (07/21–07/28): 201 抓取（RSS 63/89 OK 1 失败 + sitemap 21 + HTML 11），聚焦 pub≥07-27 的 **48 篇新增**; 主线 **Anthropic CEO 亲撰开放权重立场文** + Kimi K3 权重落地生态响应 + LessWrong 三篇拆解 Opus 5 系统卡 + Harness 工程成显学 + 翁荔离职 TML; deep-dive: Dario Amodei《Position on Open Weights Models》（内嵌，非独立笔记） |
 
 ### Single-post Deep Dives in research-notes/
