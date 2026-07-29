@@ -246,7 +246,14 @@ TML 首个开放权重模型,2026-07-15 发布。从零训练的 MoE Transformer
 - 但在 **FrontierSWE、GDPval-AA、HLE、多数 Agentic 工具项**上仍**落后 Claude Fable 5**,官方自己也承认整体不及 Fable 5 / GPT 5.6 Sol;
 - **K3 vs GLM-5.2**:在双方都有数的项上 **K3 基本全面领先**(如 DeepSWE 67.5 vs 46.2、Toolathlon 73.2 vs 59.9、Automation 30.8 vs 12.9),仅个别接近——这是本笔记里唯一一组"同口径"的国产双雄直接对比。
 
-> ⚠️ **技术报告尚未发布**:页面明确写完整细节"will be released alongside the Kimi K3 technical report",目前**无 arXiv/PDF/HF 链接**(仅 GitHub org 主页 `github.com/MoonshotAI`)。层数、tokenizer、预训练 token 数、具体 RL 方法官方均未披露,待技术报告 + 07-27 权重释出。
+> ~~⚠️ **技术报告尚未发布**~~ → ✅ **已发布(2026-07-28)**:权重 07-27 释出,技术报告 [arXiv:2607.24653](https://arxiv.org/abs/2607.24653)《Kimi K3: Open Frontier Intelligence》(47 页)07-28 公开。此前未披露的字段全部补齐:
+> - **93 层**、**总参 2.78T / 激活 104.2B**、**词表 160K**、hidden 7168、96 注意力头
+> - **注意力构成:69 KDA + 24 MLA**(每 block 3 KDA + 1 Gated MLA)、激活函数 **SiTU-GLU**
+> - **896 路由专家 / 每 token 激活 16 / 2 共享专家**;Latent MoE 维度 3584(0.5×)
+> - 原生视觉塔 **MoonViT-V2**:401M / 27 层 / patch 14 / 12 heads
+> - 训练上下文 **1M**(K2 为 128K);scaling 效率比 K2 提升约 **2.5×**
+>
+> 完整解读与 K2→K3 对比表见 [[2026-07-29-hf-daily-papers-jul28-29]] 的 Deep Dive 1。
 
 ### 可用性
 

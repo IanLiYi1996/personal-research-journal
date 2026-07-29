@@ -137,7 +137,7 @@ Raschka 更新到 **Gemma 4(2026-04,第 23 节)**,而 **7 月中旬两周内又�
 
 ### 待补
 
-- Kimi K3 技术报告(计划随 07-27 权重发布)出后,补齐层数/tokenizer/KDA 完整设计;
+- ~~Kimi K3 技术报告出后补齐层数/tokenizer/KDA 设计~~ → ✅ **已补齐**([arXiv:2607.24653](https://arxiv.org/abs/2607.24653),2026-07-28):**93 层、2.78T/104.2B、69 KDA + 24 MLA、896 专家激活 16、SiTU-GLU、词表 160K、MoonViT-V2 401M 视觉塔、1M 训练上下文**。另有 **AttnRes**(用学习到的伪查询对所有前序 block 输出算注意力,重构深度方向信息流)——与 DeepSeek-V4 的 mHC、Motif-3 的 Modified mHC 同属"重构残差连接"这条新主线。详见 [[2026-07-29-hf-daily-papers-jul28-29]];**KDA 由此完成 48B → 2.8T 的跨两个数量级验证**;
 - ~~DeepSeek-V4(Raschka 明确在等)~~ → **已发布 DeepSeek-V4-Pro**(见补充二),待读其技术报告 arXiv:2606.19348 补 CSA/HCA/mHC 细节;
 - Motif-3 正式版(现为 beta)、Hunyuan Hy3 完整技术报告发布后更新。
 

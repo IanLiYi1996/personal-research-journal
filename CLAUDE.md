@@ -112,6 +112,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-07-20-hf-daily-papers-jul10-20.md` | 07/10-07/20 (141 papers; 7/11-12+7/18-19 周末空档, 25 精选, 2 deep dives: Harness-Handbook/Direct-OPD, 2 figures) |
 | `2026-07-24-hf-daily-papers-jul21-24.md` | 07/21-07/24 (96 papers, 25 精选, 2 deep dives: ABot-World-0/RynnBrain-1.1, 3 figures; 主线 世界模型×具身爆发) |
 | `2026-07-27-hf-daily-papers-jul25-27.md` | 07/25-07/27 (**14 papers** 全收录; 7/25-26 周末空档，仅周一单日窗口; 首轮 11 篇 + 当日二次抓取补录 3 篇（TBSM/Spectral Prior/语音匿名化威胁）, 2 deep dives: Skill-Self-Play/Molt, 2 figures 从 PDF 渲染; 主线 Agent 自进化 + Agentic RL 框架) |
+| `2026-07-29-hf-daily-papers-jul28-29.md` | 07/28-07/29 + 07-27 迟到补录 (49 papers, 25 精选, 2 deep dives: **Kimi K3 技术报告**(301▲，补齐此前所有未披露字段：93 层/104.2B 激活/69 KDA+24 MLA/MoonViT-V2)+ 机器人进度奖励综述, 1 figure 从 PDF 渲染; 主线 Kimi K3 交付 + 信用分配跨领域共振 + agent harness 进论文) |
 
 ## WeChat Publishing
 
