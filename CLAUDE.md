@@ -283,6 +283,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `2026-W30-reddit-hot.md` | W30 截至 07/20（12 子版，286 帖抓取 / 286 新增，与 W28 无重叠；RSS-only，无 score；4 子版首轮 429 补抓；r/datascience 14 / r/statistics 22 RSS 截断；主线 Kimi K3 屠榜 + AWS 十亿级计费事故） |
 | `2026-W30b-reddit-hot.md` | W30 周中补抓 截至 07/24（12 子版，279 帖；RSS-only，无 score；4 子版首轮 429 delay25 补抓；r/datascience 10 / r/statistics 19 截断；主线 OpenAI×HF 攻击 + NeurIPS 2026 放榜 + 开源格局之争 + Krea2/LTX-2.3） |
 | `2026-W31-reddit-hot.md` | W31 截至 07/27（12 子版；早间首版 281 帖 + **当日晚二次抓取 280 帖补录**；RSS-only，无 score；两轮各有 4 子版 429 后 delay25 补抓成功；r/datascience 14 / r/statistics 16-17 截断；主线 20+ 大厂开放权重联署信(OpenAI 拒签) + **补录：Kimi K3 权重释出 + 开源政策游说战(明暗两面)** + Claude Opus 5 + TRELLIS.2 3D + Agent 生产化安全张力） |
+| `2026-W31e-reddit-hot.md` | W31 周末夜间补抓 截至 07/30（12 子版，279 帖；RSS-only；4 子版 429 后 delay25 补抓；仅收 W31/W31c 未引用条目；主线 **HF 事故新证词**(黄仁勋表态 + 匿名 OpenAI 员工内部视角 + 技术时间线扩散到 r/datascience) + FLUX 3/Qwen-Image-Flash 生图生态 + ML 会议制度压力(ICLR 2027 截稿早于 NeurIPS 2026 放榜) + 漏洞治理三层次） |
 | `2026-W31c-reddit-hot.md` | W31 周末补抓 截至 07/29（12 子版，280 帖；RSS-only；3 子版 429 后 delay25 补抓；r/statistics 17 / r/datascience 13 截断；**头条：OpenAI 立场反转——最终签署开放权重联署信**，本周主线五阶段闭环留痕；另有 NeurIPS 评审 AI 污染升级(AI 生成 rebuttal/论文)、Elsevier 抄袭指控、Claude ADHD skill） |
 
 ## Docsify Plugins
