@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **1734** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1744** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -10,10 +10,10 @@
 - [强化学习 / RLHF](#-rlhf) （338）
 - [推理 / Reasoning](#-reasoning) （401）
 - [图神经网络 / Graph](#-graph) （255）
-- [扩散 / 生成模型](#-) （287）
-- [多模态 / 视觉语言](#-) （369）
-- [Transformer / 架构](#transformer-) （379）
-- [高效训练 / 推理](#-) （461）
+- [扩散 / 生成模型](#-) （294）
+- [多模态 / 视觉语言](#-) （378）
+- [Transformer / 架构](#transformer-) （385）
+- [高效训练 / 推理](#-) （465）
 - [综述 / Survey](#-survey) （145）
 - [检索增强 / RAG](#-rag) （113）
 - 未分类（148）
@@ -2257,8 +2257,10 @@
 - **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
 - **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
 - **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](http://arxiv.org/abs/2307.04725) — Yuwei Guo et al. · arXiv:2307.04725 `{Guo2023Animatediff}`
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
 - **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
+- **2023** [Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation](http://arxiv.org/abs/2311.17117) — Li Hu et al. · arXiv:2311.17117 `{Hu2023Animate}`
 - **2023** [Has It All Been Solved? Open NLP Research Questions Not Solved by Large Language Models](http://arxiv.org/abs/2305.12544) — Oana Ignat et al. · arXiv:2305.12544 `{Ignat2023Has}`
 - **2023** [DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion](http://arxiv.org/abs/2304.06025) — Johanna Karras et al. · arXiv:2304.06025 `{Karras2023Dreampose}`
 - **2023** [DiffuRec: A Diffusion Model for Sequential Recommendation](http://arxiv.org/abs/2304.00686) — Zihao Li et al. · arXiv:2304.00686 `{Li2023Diffurec}`
@@ -2279,8 +2281,10 @@
 - **2023** [Improved Techniques for Training Consistency Models](http://arxiv.org/abs/2310.14189) — Yang Song et al. · arXiv:2310.14189 `{Song2023Improved}`
 - **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
 - **2023** [Improving and generalizing flow-based generative models with minibatch optimal transport](http://arxiv.org/abs/2302.00482) — Alexander Tong et al. · arXiv:2302.00482 `{Tong2023Improving}`
+- **2023** [DynamiCrafter: Animating Open-domain Images with Video Diffusion Priors](http://arxiv.org/abs/2310.12190) — Jinbo Xing et al. · arXiv:2310.12190 `{Xing2023Dynamicrafter}`
 - **2023** [DMV3D: Denoising Multi-View Diffusion using 3D Large Reconstruction Model](http://arxiv.org/abs/2311.09217) — Yinghao Xu et al. · arXiv:2311.09217 `{Xu2023Dmv3d}`
 - **2023** [Large Language Models for Generative Information Extraction: A Survey](http://arxiv.org/abs/2312.17617) — Derong Xu et al. · arXiv:2312.17617 `{Xu2023Large}`
+- **2023** [MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model](http://arxiv.org/abs/2311.16498) — Zhongcong Xu et al. · arXiv:2311.16498 `{Xu2023Magicanimate}`
 - **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
 - **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
 - **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
@@ -2298,6 +2302,7 @@
 - **2022** [Optimization-Induced Graph Implicit Nonlinear Diffusion](http://arxiv.org/abs/2206.14418) — Qi Chen et al. · arXiv:2206.14418 `{Chen2022Optimization}`
 - **2022** [An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion](http://arxiv.org/abs/2208.01618) — Rinon Gal et al. · arXiv:2208.01618 `{Gal2022Image}`
 - **2022** GALAXY: A Generative Pre-trained Model for Task-Oriented Dialog with Semi-supervised Learning and Explicit Policy Injection — Wanwei He et al. `{He2022Galaxy}`
+- **2022** [Imagen Video: High Definition Video Generation with Diffusion Models](http://arxiv.org/abs/2210.02303) — Jonathan Ho et al. · arXiv:2210.02303 `{Ho2022Imagen}`
 - **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
 - **2022** [Survey of Hallucination in Natural Language Generation](http://arxiv.org/abs/2202.03629 http://dx.doi.org/10.1145/3571730) — Ziwei Ji et al. · arXiv:2202.03629 `{Ji2022Survey}`
 - **2022** [Elucidating the Design Space of Diffusion-Based Generative Models](http://arxiv.org/abs/2206.00364) — Tero Karras et al. · arXiv:2206.00364 `{Karras2022Elucidating}`
@@ -2306,6 +2311,7 @@
 - **2022** [Dynamic Prefix-Tuning for Generative Template-based Event Extraction](http://arxiv.org/abs/2205.06166 http://dx.doi.org/10.18653/v1/2022.acl-long.358) — Xiao Liu et al. · arXiv:2205.06166 `{Liu2022Dynamic}`
 - **2022** [Scalable Diffusion Models with Transformers](http://arxiv.org/abs/2212.09748) — William Peebles et al. · arXiv:2212.09748 `{Peebles2022Scalable}`
 - **2022** [Progressive Distillation for Fast Sampling of Diffusion Models](http://arxiv.org/abs/2202.00512) — Tim Salimans et al. · arXiv:2202.00512 `{Salimans2022Progressive}`
+- **2022** [Make-A-Video: Text-to-Video Generation without Text-Video Data](http://arxiv.org/abs/2209.14792) — Uriel Singer et al. · arXiv:2209.14792 `{Singer2022Make}`
 - **2022** [What the DAAM: Interpreting Stable Diffusion Using Cross Attention](http://arxiv.org/abs/2210.04885) — Raphael Tang et al. · arXiv:2210.04885 `{Tang2022What}`
 - **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
@@ -2316,6 +2322,7 @@
 - **2021** [Diffusion Models Beat GANs on Image Synthesis](http://arxiv.org/abs/2105.05233) — Prafulla Dhariwal et al. · arXiv:2105.05233 `{Dhariwal2021Diffusion}`
 - **2021** Dynamical variational autoencoders: A comprehensive review — Laurent Girin et al. `{Girin2021Dynamical}`
 - **2021** [Conditional Variational Autoencoder with Adversarial Learning for End-to-End Text-to-Speech](http://arxiv.org/abs/2106.06103) — Jaehyeon Kim et al. · arXiv:2106.06103 `{Kim2021Conditional}`
+- **2021** [High-Resolution Image Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2112.10752) — Robin Rombach et al. · arXiv:2112.10752 `{Rombach2021High}`
 - **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
 - **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
 - **2020** [Longformer: The Long-Document Transformer](http://arxiv.org/abs/2004.05150) — Iz Beltagy et al. · arXiv:2004.05150 `{Beltagy2020Longformer}`
@@ -2624,6 +2631,7 @@
 - **2024** [SSM Meets Video Diffusion Models: Efficient Video Generation with Structured State Spaces](http://arxiv.org/abs/2403.07711) — Yuta Oshima et al. · arXiv:2403.07711 `{Oshima2024Ssm}`
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
+- **2024** [Movie Gen: A Cast of Media Foundation Models](http://arxiv.org/abs/2410.13720) — Adam Polyak et al. · arXiv:2410.13720 `{Polyak2024Movie}`
 - **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
 - **2024** [A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications](http://arxiv.org/abs/2402.07927) — Pranab Sahoo et al. · arXiv:2402.07927 `{Sahoo2024Systematic}`
@@ -2658,8 +2666,10 @@
 - **2023** [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](http://arxiv.org/abs/2311.15127) — Andreas Blattmann et al. · arXiv:2311.15127 `{Blattmann2023Stable}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
 - **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
+- **2023** [AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](http://arxiv.org/abs/2307.04725) — Yuwei Guo et al. · arXiv:2307.04725 `{Guo2023Animatediff}`
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
 - **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
+- **2023** [Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation](http://arxiv.org/abs/2311.17117) — Li Hu et al. · arXiv:2311.17117 `{Hu2023Animate}`
 - **2023** [Language Is Not All You Need: Aligning Perception with Language Models](http://arxiv.org/abs/2302.14045) — Shaohan Huang et al. · arXiv:2302.14045 `{Huang2023Language}`
 - **2023** [DreamPose: Fashion Image-to-Video Synthesis via Stable Diffusion](http://arxiv.org/abs/2304.06025) — Johanna Karras et al. · arXiv:2304.06025 `{Karras2023Dreampose}`
 - **2023** 3D Gaussian Splatting for Real-Time Radiance Field Rendering — Bernhard Kerbl et al. `{Kerbl20233d}`
@@ -2678,7 +2688,10 @@
 - **2023** [PandaGPT: One Model To Instruction-Follow Them All](http://arxiv.org/abs/2305.16355) — Yixuan Su et al. · arXiv:2305.16355 `{Su2023Pandagpt}`
 - **2023** [Any-to-Any Generation via Composable Diffusion](http://arxiv.org/abs/2305.11846) — Zineng Tang et al. · arXiv:2305.11846 `{Tang2023Any}`
 - **2023** [EasyEdit: An Easy-to-use Knowledge Editing Framework for Large Language Models](http://arxiv.org/abs/2308.07269) — Peng Wang et al. · arXiv:2308.07269 `{Wang2023Easyedit}`
+- **2023** [MotionCtrl: A Unified and Flexible Motion Controller for Video Generation](http://arxiv.org/abs/2312.03641) — Zhouxia Wang et al. · arXiv:2312.03641 `{Wang2023Motionctrl}`
 - **2023** [InstructionGPT-4: A 200-Instruction Paradigm for Fine-Tuning MiniGPT-4](http://arxiv.org/abs/2308.12067) — Lai Wei et al. · arXiv:2308.12067 `{Wei2023Instructiongpt}`
+- **2023** [DynamiCrafter: Animating Open-domain Images with Video Diffusion Priors](http://arxiv.org/abs/2310.12190) — Jinbo Xing et al. · arXiv:2310.12190 `{Xing2023Dynamicrafter}`
+- **2023** [MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model](http://arxiv.org/abs/2311.16498) — Zhongcong Xu et al. · arXiv:2311.16498 `{Xu2023Magicanimate}`
 - **2023** [DragNUWA: Fine-grained Control in Video Generation by Integrating Text, Image, and Trajectory](http://arxiv.org/abs/2308.08089) — Shengming Yin et al. · arXiv:2308.08089 `{Yin2023Dragnuwa}`
 - **2023** [A Survey on Multimodal Large Language Models](http://arxiv.org/abs/2306.13549) — Shukang Yin et al. · arXiv:2306.13549 `{Yin2023Survey}`
 - **2023** [Multimodal Graph Learning for Generative Tasks](http://arxiv.org/abs/2310.07478) — Minji Yoon et al. · arXiv:2310.07478 `{Yoon2023Multimodal}`
@@ -2690,8 +2703,11 @@
 - **2023** [Let's Think Outside the Box: Exploring Leap-of-Thought in Large Language Models with Creative Humor Generation](http://arxiv.org/abs/2312.02439) — Shanshan Zhong et al. · arXiv:2312.02439 `{Zhong2023Let}`
 - **2022** [PaLI: A Jointly-Scaled Multilingual Language-Image Model](http://arxiv.org/abs/2209.06794) — Xi Chen et al. · arXiv:2209.06794 `{Chen2022Pali}`
 - **2022** [A Survey of Vision-Language Pre-Trained Models](http://arxiv.org/abs/2202.10936) — Yifan Du et al. · arXiv:2202.10936 `{Du2022Survey}`
+- **2022** [Imagen Video: High Definition Video Generation with Diffusion Models](http://arxiv.org/abs/2210.02303) — Jonathan Ho et al. · arXiv:2210.02303 `{Ho2022Imagen}`
 - **2022** [CogVideo: Large-scale Pretraining for Text-to-Video Generation via Transformers](http://arxiv.org/abs/2205.15868) — Wenyi Hong et al. · arXiv:2205.15868 `{Hong2022Cogvideo}`
 - **2022** LayoutLMv3: Pre-training for Document AI with Unified Text and Image Masking — Yupan Huang et al. · arXiv:3161.35481 `{Huang2022Layoutlmv3}`
+- **2022** [Make-A-Video: Text-to-Video Generation without Text-Video Data](http://arxiv.org/abs/2209.14792) — Uriel Singer et al. · arXiv:2209.14792 `{Singer2022Make}`
+- **2022** [Phenaki: Variable Length Video Generation From Open Domain Textual Description](http://arxiv.org/abs/2210.02399) — Ruben Villegas et al. · arXiv:2210.02399 `{Villegas2022Phenaki}`
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
 - **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
 - **2021** [ERNIE-VILG: UNIFIED GENERATIVE PRE-TRAINING FOR BIDIRECTIONAL VISION-LANGUAGE GENERATION](http://arxiv.org/abs/2112.15283) — Baidu et al. · arXiv:2112.15283 `{BaidundErnie}`
@@ -2862,6 +2878,7 @@
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** [Mamba-360: Survey of State Space Models as Transformer Alternative for Long Sequence Modelling: Methods, Applications, and Challenges](http://arxiv.org/abs/2404.16112) — Badri Narayana Patro et al. · arXiv:2404.16112 `{Patro2024Mamba}`
 - **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [Movie Gen: A Cast of Media Foundation Models](http://arxiv.org/abs/2410.13720) — Adam Polyak et al. · arXiv:2410.13720 `{Polyak2024Movie}`
 - **2024** [Qwen2.5 Technical Report](http://arxiv.org/abs/2412.15115) — Qwen et al. · arXiv:2412.15115 `{Qwen2024Qwen2}`
 - **2024** [SAM 2: Segment Anything in Images and Videos](http://arxiv.org/abs/2408.00714) — Nikhila Ravi et al. · arXiv:2408.00714 `{RavindSam}`
 - **2024** [Understanding Transformer Reasoning Capabilities via Graph Algorithms](http://arxiv.org/abs/2405.18512) — Clayton Sanford et al. · arXiv:2405.18512 `{Sanford2024Understanding}`
@@ -2925,6 +2942,7 @@
 - **2023** [Never Lost in the Middle: Improving Large Language Models via Attention Strengthening Question Answering](http://arxiv.org/abs/2311.09198) — Junqing He et al. · arXiv:2311.09198 `{He2023Never}`
 - **2023** [Transformers as Graph-to-Graph Models](http://arxiv.org/abs/2310.17936) — James Henderson et al. · arXiv:2310.17936 `{Henderson2023Transformers}`
 - **2023** [Backpack Language Models](http://arxiv.org/abs/2305.16765) — John Hewitt et al. · arXiv:2305.16765 `{Hewitt2023Backpack}`
+- **2023** [Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation](http://arxiv.org/abs/2311.17117) — Li Hu et al. · arXiv:2311.17117 `{Hu2023Animate}`
 - **2023** [Advancing Transformer Architecture in Long-Context Large Language Models: A Comprehensive Survey](http://arxiv.org/abs/2311.12351) — Yunpeng Huang et al. · arXiv:2311.12351 `{Huang2023Advancing}`
 - **2023** [A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions](http://arxiv.org/abs/2311.05232) — Lei Huang et al. · arXiv:2311.05232 `{Huang2023Survey}`
 - **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
@@ -2953,6 +2971,7 @@
 - **2023** [Training Transformers with 4-bit Integers](http://arxiv.org/abs/2306.11987) — Haocheng Xi et al. · arXiv:2306.11987 `{Xi2023Training}`
 - **2023** [Efficient Streaming Language Models with Attention Sinks](http://arxiv.org/abs/2309.17453) — Guangxuan Xiao et al. · arXiv:2309.17453 `{Xiao2023Efficient}`
 - **2023** [ResiDual: Transformer with Dual Residual Connections](http://arxiv.org/abs/2304.14802) — Shufang Xie et al. · arXiv:2304.14802 `{Xie2023Residual}`
+- **2023** [DynamiCrafter: Animating Open-domain Images with Video Diffusion Priors](http://arxiv.org/abs/2310.12190) — Jinbo Xing et al. · arXiv:2310.12190 `{Xing2023Dynamicrafter}`
 - **2023** [DMV3D: Denoising Multi-View Diffusion using 3D Large Reconstruction Model](http://arxiv.org/abs/2311.09217) — Yinghao Xu et al. · arXiv:2311.09217 `{Xu2023Dmv3d}`
 - **2023** [Diffusion Models Without Attention](http://arxiv.org/abs/2311.18257) — Jing Nathan Yan et al. · arXiv:2311.18257 `{Yan2023Diffusion}`
 - **2023** From Online Softmax to FlashAttention UW CSE 599M Spring 2023: ML for ML Systems — Zihao Ye et al. `{Ye2023Online}`
@@ -2991,8 +3010,10 @@
 - **2022** [Scalable Diffusion Models with Transformers](http://arxiv.org/abs/2212.09748) — William Peebles et al. · arXiv:2212.09748 `{Peebles2022Scalable}`
 - **2022** [Recipe for a General, Powerful, Scalable Graph Transformer](http://arxiv.org/abs/2205.12454) — Ladislav Rampášek et al. · arXiv:2205.12454 `{Rampek2022Recipe}`
 - **2022** How Different are Pre-trained Transformers for Text Ranking? — David Rau et al. `{Rau2022How}`
+- **2022** [Make-A-Video: Text-to-Video Generation without Text-Video Data](http://arxiv.org/abs/2209.14792) — Uriel Singer et al. · arXiv:2209.14792 `{Singer2022Make}`
 - **2022** [What the DAAM: Interpreting Stable Diffusion Using Cross Attention](http://arxiv.org/abs/2210.04885) — Raphael Tang et al. · arXiv:2210.04885 `{Tang2022What}`
 - **2022** [DiGress: Discrete Denoising diffusion for graph generation](http://arxiv.org/abs/2209.14734) — Clement Vignac et al. · arXiv:2209.14734 `{Vignac2022Digress}`
+- **2022** [Phenaki: Variable Length Video Generation From Open Domain Textual Description](http://arxiv.org/abs/2210.02399) — Ruben Villegas et al. · arXiv:2210.02399 `{Villegas2022Phenaki}`
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
 - **2022** [Memorizing Transformers](http://arxiv.org/abs/2203.08913) — Yuhuai Wu et al. · arXiv:2203.08913 `{Wu2022Memorizing}`
 - **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
@@ -3017,6 +3038,7 @@
 - **2021** [Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](http://arxiv.org/abs/2108.12409) — Ofir Press et al. · arXiv:2108.12409 `{Press2021Train}`
 - **2021** [Self-attention Does Not Need $O(n^2)$ Memory](http://arxiv.org/abs/2112.05682) — Markus N. Rabe et al. · arXiv:2112.05682 `{Rabe2021Self}`
 - **2021** LEWIS: Levenshtein Editing for Unsupervised Text Style Transfer — Machel Reid et al. `{Reid2021Lewis}`
+- **2021** [High-Resolution Image Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2112.10752) — Robin Rombach et al. · arXiv:2112.10752 `{Rombach2021High}`
 - **2021** [RoFormer: Enhanced Transformer with Rotary Position Embedding](http://arxiv.org/abs/2104.09864) — Jianlin Su et al. · arXiv:2104.09864 `{Su2021Roformer}`
 - **2021** [Adversarial Attacks Against Deep Generative Models on Data: A Survey](http://arxiv.org/abs/2112.00247%0Ahttp://dx.doi.org/10.1109/TKDE.2021.3130903) — Hui Sun et al. · arXiv:2112.00247 `{Sun2021Adversarial}`
 - **2021** Dual Attention Network for Cross-lingual Entity Alignment — Jian Sun et al. `{Sun2021Dual}`
@@ -3375,6 +3397,7 @@
 - **2024** [Very Large-Scale Multi-Agent Simulation in AgentScope](http://arxiv.org/abs/2407.17789) — Xuchen Pan et al. · arXiv:2407.17789 `{Pan2024Very}`
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
 - **2024** CharacterGen: Efficient 3D Character Generation from Single Images with Multi-View Pose Canonicalization — Hao Yang Peng et al. `{Peng2024Charactergen}`
+- **2024** [Movie Gen: A Cast of Media Foundation Models](http://arxiv.org/abs/2410.13720) — Adam Polyak et al. · arXiv:2410.13720 `{Polyak2024Movie}`
 - **2024** [LLM Pruning and Distillation in Practice: The Minitron Approach](http://arxiv.org/abs/2408.11796) — Sharath Turuvekere Sreenivas et al. · arXiv:2408.11796 `{Sreenivas2024Llm}`
 - **2024** [Inverse-RLignment: Inverse Reinforcement Learning from Demonstrations for LLM Alignment](http://arxiv.org/abs/2405.15624) — Hao Sun et al. · arXiv:2405.15624 `{Sun2024Inverse}`
 - **2024** [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](http://arxiv.org/abs/2407.13623) — Chaofan Tao et al. · arXiv:2407.13623 `{Tao2024Scaling}`
@@ -3414,9 +3437,11 @@
 - **2023** [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](http://arxiv.org/abs/2312.00752) — Albert Gu et al. · arXiv:2312.00752 `{Gu2023Mamba}`
 - **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
 - **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
+- **2023** [AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](http://arxiv.org/abs/2307.04725) — Yuwei Guo et al. · arXiv:2307.04725 `{Guo2023Animatediff}`
 - **2023** [PiVe: Prompting with Iterative Verification Improving Graph-based Generative Capability of LLMs](http://arxiv.org/abs/2305.12392) — Jiuzhou Han et al. · arXiv:2305.12392 `{Han2023Pive}`
 - **2023** [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework](http://arxiv.org/abs/2308.00352) — Sirui Hong et al. · arXiv:2308.00352 `{Hong2023Metagpt}`
 - **2023** [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](http://arxiv.org/abs/2305.02301) — Cheng-Yu Hsieh et al. · arXiv:2305.02301 `{Hsieh2023Distilling}`
+- **2023** [Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation](http://arxiv.org/abs/2311.17117) — Li Hu et al. · arXiv:2311.17117 `{Hu2023Animate}`
 - **2023** [LLM-Adapters: An Adapter Family for Parameter-Efficient Fine-Tuning of Large Language Models](http://arxiv.org/abs/2304.01933) — Zhiqiang Hu et al. · arXiv:2304.01933 `{Hu2023Llm}`
 - **2023** [DEEPSPEED ULYSSES: SYSTEM OPTIMIZATIONS FOR ENABLING TRAINING OF EXTREME LONG SEQUENCE TRANSFORMER MODELS](http://arxiv.org/abs/2309.14509) — Sam Ade Jacobs et al. · arXiv:2309.14509 `{JacobsndDeepspeed}`
 - **2023** [Segment Anything](http://arxiv.org/abs/2304.02643) — Alexander Kirillov et al. · arXiv:2304.02643 `{Kirillov2023Segment}`
@@ -3476,6 +3501,7 @@
 - **2022** [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](http://arxiv.org/abs/2205.14135) — Tri Dao et al. · arXiv:2205.14135 `{Dao2022Flashattention}`
 - **2022** [RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning](http://arxiv.org/abs/2205.12548) — Mingkai Deng et al. · arXiv:2205.12548 `{Deng2022Rlprompt}`
 - **2022** [FasterMoE: Modeling and Optimizing Training of Large-Scale Dynamic Pre-Trained Models](https://huggingface.co/blog/zh/moe) — Jiaao He et al. · arXiv:3221.35084 `{He2022Fastermoe}`
+- **2022** [Imagen Video: High Definition Video Generation with Diffusion Models](http://arxiv.org/abs/2210.02303) — Jonathan Ho et al. · arXiv:2210.02303 `{Ho2022Imagen}`
 - **2022** [Going Deeper into Permutation-Sensitive Graph Neural Networks](http://arxiv.org/abs/2205.14368) — Zhongyu Huang et al. · arXiv:2205.14368 `{Huang2022Going}`
 - **2022** Knowledge Distillation: A Survey知识蒸馏研究综述 — Chinese Journal et al. `{Journal2022Knowledge}`
 - **2022** [Reducing Activation Recomputation in Large Transformer Models](http://arxiv.org/abs/2205.05198) — Vijay Korthikanti et al. · arXiv:2205.05198 `{Korthikanti2022Reducing}`

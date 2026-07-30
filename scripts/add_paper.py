@@ -22,6 +22,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -39,14 +40,69 @@ def extract_arxiv_id(token: str) -> str | None:
     return m.group(1) if m else None
 
 
-def fetch_arxiv(aid: str) -> dict | None:
-    """Fetch one arXiv entry and map it to a bib dict (no cite key yet)."""
+UA = "research-journal-bib/1.0 (personal research notes; contact via repo)"
+OPENALEX = "https://api.openalex.org/works/doi:10.48550/arXiv."
+
+
+def _get(url: str, timeout: int = 25) -> str | None:
+    """HTTP GET with a real User-Agent (arXiv rate-limits the default urllib UA)."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def fetch_openalex(aid: str) -> dict | None:
+    """Fallback metadata source when arXiv API is rate-limiting (429)."""
+    import json as _json
     try:
-        with urllib.request.urlopen(f"{API}?id_list={aid}", timeout=25) as r:
-            xml = r.read().decode("utf-8", "replace")
-    except Exception as exc:
-        print(f"  ! fetch failed for {aid}: {exc}", file=sys.stderr)
+        data = _json.loads(_get(f"{OPENALEX}{aid}") or "{}")
+    except Exception:
         return None
+    title = (data.get("title") or "").strip()
+    if not title:
+        return None
+    authors = [
+        (a.get("author") or {}).get("display_name", "").strip()
+        for a in (data.get("authorships") or [])
+    ]
+    return {
+        "ENTRYTYPE": "article",
+        "ID": "",
+        "title": title,
+        "author": " and ".join(a for a in authors if a),
+        "year": str(data.get("publication_year") or ""),
+        "abstract": "",
+        "archiveprefix": "arXiv",
+        "eprint": aid,
+        "url": f"http://arxiv.org/abs/{aid}",
+    }
+
+
+def fetch_arxiv(aid: str) -> dict | None:
+    """Fetch one arXiv entry and map it to a bib dict (no cite key yet).
+
+    Retries with exponential backoff on transient failures (arXiv API 429s
+    readily), then falls back to OpenAlex so a rate-limited run still works.
+    """
+    xml = None
+    for attempt, delay in enumerate((0, 5, 15, 40)):
+        if delay:
+            time.sleep(delay)
+        try:
+            xml = _get(f"{API}?id_list={aid}")
+            if xml and "<entry>" in xml:
+                break
+            xml = None
+        except Exception as exc:
+            print(f"  ! attempt {attempt + 1} failed for {aid}: {exc}", file=sys.stderr)
+            xml = None
+    if not xml:
+        alt = fetch_openalex(aid)
+        if alt:
+            print(f"  ~ {aid}: arXiv API unavailable, used OpenAlex fallback", file=sys.stderr)
+        else:
+            print(f"  ! fetch failed for {aid} (arXiv + OpenAlex both failed)", file=sys.stderr)
+        return alt
     m = re.search(r"<entry>(.*?)</entry>", xml, re.S)
     if not m:
         return None

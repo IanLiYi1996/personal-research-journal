@@ -169,7 +169,7 @@ SVD 论文（arXiv:2311.15127）的核心贡献是把"视频数据怎么洗"系�
 
 - **优势**：与 LLM 完全同构，天然统一多模态（文本/图像/视频/音频同一词表），可复用 LLM 全套基础设施；
 - **劣势**：逐 token 解码 → 长视频推理慢；离散化有量化损失上限；误差沿序列累积。
-- 相关基础工作：**Phenaki**（arXiv:2210.02399 系列工作，可变长视频 + token 化）、**MAGVIT**（arXiv:2212.05199 系）。这条线近期与"扩散 + 自回归混合"方向交汇，值得单独追踪。
+- 相关基础工作：**Phenaki**（arXiv:2210.02399, `Villegas2022Phenaki`，可变长视频 + token 化）、**MAGVIT**（arXiv:2212.05199 系）。这条线近期与"扩散 + 自回归混合"方向交汇，值得单独追踪。
 
 > 说明：VideoPoet 的官方论文/技术报告细节请以 Google 官方发布为准；本版不对其内部规格做推测。
 
@@ -252,29 +252,32 @@ SVD 论文（arXiv:2311.15127）的核心贡献是把"视频数据怎么洗"系�
 
 ## References
 
-> 以下为本版所有技术断言的来源（均为 arXiv，可验证）。核心事实我逐篇核对了摘要/正文原文。
+> 以下为本版所有技术断言的来源（均为 arXiv，可验证）。核心事实我逐篇核对了摘要/正文原文，**并已全部录入 `references/references.bib`**（cite key 见括号）。
 
 **基础与骨干**
-- Latent Diffusion (LDM) — arXiv:2112.10752
-- DiT: Scalable Diffusion Models with Transformers — arXiv:2212.09748
-- Align your Latents (Video LDM) — arXiv:2304.08818
+- Latent Diffusion (LDM) — arXiv:2112.10752（`Rombach2021High`）
+- DiT: Scalable Diffusion Models with Transformers — arXiv:2212.09748（`Peebles2022Scalable`）
+- Align your Latents (Video LDM) — arXiv:2304.08818（`Blattmann2023Align`）
 
 **T2V 代表**
-- CogVideoX: Text-to-Video Diffusion Models with An **Expert Transformer** — arXiv:2408.06072
-- Movie Gen: A Cast of Media Foundation Models — arXiv:2410.13720
-- Imagen Video — arXiv:2210.02303
-- Make-A-Video — arXiv:2209.14792
-- Sora 2024 技术报告（OpenAI 官方，非 arXiv）
+- CogVideoX: Text-to-Video Diffusion Models with An **Expert Transformer** — arXiv:2408.06072（`YangndCogvideox`）
+- Movie Gen: A Cast of Media Foundation Models — arXiv:2410.13720（`Polyak2024Movie`）
+- Imagen Video — arXiv:2210.02303（`Ho2022Imagen`）
+- Make-A-Video — arXiv:2209.14792（`Singer2022Make`）
+- Sora 2024 技术报告（OpenAI 官方，非 arXiv，故未入库）
 
 **I2V / 参考图条件**
-- Stable Video Diffusion — arXiv:2311.15127
-- DynamiCrafter — arXiv:2310.12190
+- Stable Video Diffusion — arXiv:2311.15127（`Blattmann2023Stable`）
+- DynamiCrafter — arXiv:2310.12190（`Xing2023Dynamicrafter`）
 
 **T2I 底座动画 / 可控性**
-- AnimateDiff — arXiv:2307.04725
-- Animate Anyone — arXiv:2311.17117
-- MagicAnimate — arXiv:2311.16498
-- MotionCtrl — arXiv:2312.03641
+- AnimateDiff — arXiv:2307.04725（`Guo2023Animatediff`）
+- Animate Anyone — arXiv:2311.17117（`Hu2023Animate`）
+- MagicAnimate — arXiv:2311.16498（`Xu2023Magicanimate`）
+- MotionCtrl — arXiv:2312.03641（`Wang2023Motionctrl`）
+
+**自回归 / token 化**
+- Phenaki: Variable Length Video Generation — arXiv:2210.02399（`Villegas2022Phenaki`）
 
 **开放权重**
 - Wan / 万相 — 官方 GitHub 仓库与技术报告（Apache-2.0）
