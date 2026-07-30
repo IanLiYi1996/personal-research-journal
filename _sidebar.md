@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [Parallel Decoding Distillation (PDD) 精读 —— 用"回归"取代对抗式蒸馏](/research-notes/2026-07-30-paper-parallel-decoding-distillation.md)
   - [苏剑林《解构 Scaling Law:优化、架构、数据的三重奏》精读](/research-notes/2026-07-30-blog-suejianlin-scaling-law.md)
   - [HF Daily Papers 周报 · 2026-07-28 ~ 07-29](/research-notes/2026-07-29-hf-daily-papers-jul28-29.md)
   - [Text2Video / Image2Video 技术深度调研（第六版：技术机制扩充）](/research-notes/2026-07-28-video-generation-survey.md)
