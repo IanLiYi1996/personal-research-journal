@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** #multimodal #LMM #CLIP #Flamingo #vision-language #多模态
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[LLM Architecture](2026-02-09-llm-intro-architecture.md)（视觉编码器+连接器仍建立在同一套架构上）
+
 ## Context
 
 本文全面介绍多模态大模型（Large Multimodal Models, LMM）的核心概念、基础原理和最新进展。内容涵盖多模态数据类型与任务、CLIP 和 Flamingo 两大基础模型的详细解析、多模态大模型的通用架构与训练流程，以及未来发展趋势。基于 llm-intro 大模型技术总结系列笔记。

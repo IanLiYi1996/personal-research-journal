@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** LLM, 受控生成, CTG, RLHF, SFT, 知识编辑, 角色定制, 指令遵循
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[Post-training 101: 从预训练到指令调优](2026-02-09-llm-intro-post-training.md)（与对齐/SFT 是互补的控制手段）；[LLM 幻觉问题：检测与缓解方法综述](2026-02-09-llm-intro-hallucination.md)（约束解码也用于抑制幻觉）
+
 ## Context
 
 本笔记整合了大模型受控生成（Controlled Text Generation）和角色定制与指令遵循两部分内容，来源于 llm-intro 大模型技术总结系列。受控生成部分涵盖CTG背景、ICL、SFT+RLHF、知识编辑和后处理等核心技术；角色定制部分涵盖角色定制的意义、数据方法、训练维度和评估标准。

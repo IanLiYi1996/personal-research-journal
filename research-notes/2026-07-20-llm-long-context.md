@@ -244,6 +244,9 @@ graph TD
 - RULER — Hsieh et al. 2024，arXiv:2404.06654（`Hsieh2024Ruler`）
 - LongBench — Bai et al. 2023，arXiv:2308.14508（`Bai2023Longbench`）
 
+**本项目相关（较早的单点笔记）**
+- [DeepSeek-V4 深度解读](/research-notes/2026-04-24-deepseek-v4-analysis.md) —— 百万 token 上下文 + 稀疏注意力的一个具体实现
+
 **姊妹篇**
 - [`2026-07-20-flash-attention-efficient-attention.md`](/research-notes/2026-07-20-flash-attention-efficient-attention.md) —— 算子/系统层（FlashAttention、KV cache、Ring Attention、PagedAttention）
 

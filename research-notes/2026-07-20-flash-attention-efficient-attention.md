@@ -232,3 +232,7 @@ FlashAttention 的历史意义正在于：它证明了**不必牺牲精确性**�
 - FA3 吞吐/ping-pong 图 — arXiv:2407.08608 HTML 版
 - GQA 头共享图 — arXiv:2305.13245 HTML 版；Ring Attention 图 — arXiv:2310.01889 HTML 版
 - PagedAttention 分页/CoW 动图、vLLM 吞吐图 — [vLLM 官方博客](https://blog.vllm.ai/2023/06/20/vllm.html)
+
+**本项目相关（较早的单点笔记）**
+- [从 Attention 到异步连续批处理](/research-notes/2026-05-18-hf-continuous-batching-deep-dive.md) —— KV cache 与批处理调度的工程视角
+- [GPU Infra Benchmark 知识总结](/research-notes/2026-05-19-gpu-infra-benchmark-knowledge.md) —— Blackwell/Hopper 推理与训练实践

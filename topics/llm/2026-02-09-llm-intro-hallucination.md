@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** #hallucination #LLM #factuality #幻觉 #事实性 #RAG #RLHF
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[大模型推理 Reasoning](2026-02-09-llm-intro-reasoning.md)（推理链中的错误累积是幻觉来源之一）；[大模型受控生成与角色定制](2026-02-09-llm-intro-controlled-gen.md)（受控生成可作为缓解手段）
+
 ## Context
 
 本文系统总结大语言模型（LLM）中的幻觉问题，涵盖幻觉的定义与分类、成因分析、检测方法和缓解策略。内容基于 Lilian Weng 的幻觉综述以及 llm-intro 大模型技术总结系列。幻觉问题是当前 LLM 部署中最关键的可靠性挑战之一。

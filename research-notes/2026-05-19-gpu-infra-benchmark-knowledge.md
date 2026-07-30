@@ -3,6 +3,8 @@
 - **Date:** 2026-05-19
 - **Tags:** #GPU基础设施 #推理优化 #分布式训练 #SGLang #Megatron #NCCL #PD分离 #MoE #DeepEP
 
+> **相关**：本篇的推理/训练基础设施要点，与 [FlashAttention 与高效注意力机制综述](/research-notes/2026-07-20-flash-attention-efficient-attention.md)（算子与 KV cache）、[LongStraw 深读](/research-notes/2026-07-20-longstraw-longcontext-rl.md)（固定 GPU 预算下的长上下文 RL 训练）互补。
+
 ## Context
 
 整理一份 GPU Infra benchmark 实践合集的**知识性结论**——剔除日志、客户场景、内部链接等业务细节，只留可复用的工程经验：

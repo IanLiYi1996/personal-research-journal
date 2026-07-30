@@ -37,6 +37,8 @@ W_LINK, W_SOURCE, W_AA, W_TYPE = 3.0, 4.0, 1.5, 1.0
 ARXIV_RE = re.compile(r"\b(\d{4}\.\d{4,5})\b")
 CITEKEY_RE = re.compile(r"`([A-Z][A-Za-z0-9]*\d{4}[A-Za-z][A-Za-z0-9]*)`")
 MDLINK_RE = re.compile(r"\]\(\s*/?((?:research-notes|papers|topics|tech-blogs|weekly|reddit-digests)/[^)\s#]+?\.md)")
+# any markdown link ending in .md (resolved relative to the citing note's folder)
+ANYLINK_RE = re.compile(r"\]\(\s*([^)\s#]+?\.md)")
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)")
 
 
@@ -72,13 +74,24 @@ def collect_notes() -> dict[str, dict]:
                     "citekeys": set(CITEKEY_RE.findall(text)),
                     "links": set(),
                 }
-    # resolve outgoing links (markdown paths + wikilinks by stem)
+    # resolve outgoing links: repo-absolute paths, same-dir/relative paths, wikilinks
     by_stem = {n["stem"]: rel for rel, n in notes.items()}
     for rel, n in notes.items():
+        here = os.path.dirname(rel)
+        # (a) paths rooted at a known note dir, e.g. ](/research-notes/x.md)
         for tgt in MDLINK_RE.findall(n["text"]):
             tgt = os.path.normpath(tgt)
             if tgt in notes and tgt != rel:
                 n["links"].add(tgt)
+        # (b) any other .md link resolved relative to this note's own folder,
+        #     e.g. ](2026-02-09-llm-intro-architecture.md) or ](../papers/x.md)
+        for raw in ANYLINK_RE.findall(n["text"]):
+            if raw.startswith(("http://", "https://", "#")):
+                continue
+            cand = os.path.normpath(os.path.join(here, raw.lstrip("/")) if not raw.startswith("/")
+                                    else raw.lstrip("/"))
+            if cand in notes and cand != rel:
+                n["links"].add(cand)
         for wl in WIKILINK_RE.findall(n["text"]):
             stem = os.path.splitext(wl.strip())[0]
             tgt = by_stem.get(stem)

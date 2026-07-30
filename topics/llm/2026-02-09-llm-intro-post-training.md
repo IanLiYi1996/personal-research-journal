@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** LLM, post-training, SFT, RLHF, RLVR, DPO, PPO, GRPO, evaluation, reward-model
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[大模型推理 Reasoning](2026-02-09-llm-intro-reasoning.md)（RL 后训练如何催化推理能力）；[大模型受控生成与角色定制](2026-02-09-llm-intro-controlled-gen.md)（对齐之外的可控生成手段）；[LLM Architecture](2026-02-09-llm-intro-architecture.md)（后训练所依托的架构与 LoRA/量化）
+
 ## Context
 
 Post-training 是将预训练语言模型从"知识库"转变为"有用助手"的关键阶段。本文整理了 SFT、RL（RLHF/RLAIF/RLVR）、评估方法的核心概念、公式、数据格式与代码示例，作为个人学习与回顾的参考笔记。

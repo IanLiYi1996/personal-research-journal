@@ -3,6 +3,8 @@
 - **Date:** 2026-04-24
 - **Tags:** #deepseek #MoE #long-context #sparse-attention #muon-optimizer #post-training #technical-report
 
+> **相关**：本篇的百万 token 上下文与稀疏注意力，在 [LLM 长上下文综述](/research-notes/2026-07-20-llm-long-context.md) 里被归入位置编码外推与稀疏/流式注意力两条技术线；MLA 压 KV 的做法见 [FlashAttention 篇](/research-notes/2026-07-20-flash-attention-efficient-attention.md) 的 KV cache 一节。
+
 ## Context
 
 2026 年 4 月 22 日，DeepSeek 发布了 DeepSeek-V4 系列的预览版本，包含两个模型：

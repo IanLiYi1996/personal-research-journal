@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** LLM, build-from-scratch, GPT, tokenizer, training, SFT, RLHF, PPO, pretraining, transformer, attention, embedding
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[LLM Architecture](2026-02-09-llm-intro-architecture.md)（本篇代码对应的架构原理）；[Post-training 101: 从预训练到指令调优](2026-02-09-llm-intro-post-training.md)（预训练之后怎么做后训练）
+
 ## Context
 
 Comprehensive notes on understanding and building Large Language Models (LLMs) from scratch. Covers the full pipeline from neural network fundamentals, through tokenization, model architecture (GPT), pretraining with Causal Language Modeling (CLM), Supervised Fine-Tuning (SFT), Reinforcement Learning from Human Feedback (RLHF) with PPO, and model inference/decoding strategies. Based on the "llm-intro 语言模型解释与训练" knowledge base.

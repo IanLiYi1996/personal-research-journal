@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** LLM, Transformer, attention, RoPE, normalization, activation, scaling-law, LoRA, quantization
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[LLM Intro: 语言模型解释与训练 - Build LLM from Scratch](2026-02-09-llm-intro-build-from-scratch.md)（把本篇的模块用代码实现一遍）；[Post-training 101: 从预训练到指令调优](2026-02-09-llm-intro-post-training.md)（架构定型后的对齐与 RL 阶段）
+
 ## Context
 
 Comprehensive notes on large language model architecture fundamentals, covering attention mechanisms, normalization techniques, positional encoding, activation functions, loss functions, model variants, fine-tuning methods, quantization, scaling laws, training practices, evaluation, and related topics.

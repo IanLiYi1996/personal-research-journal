@@ -3,6 +3,10 @@
 - **Date:** 2026-02-09
 - **Tags:** LLM, 推理, reasoning, 因果推理, 公理化训练, Axiomatic Training, Transformer
 
+> **📚 本篇属于「LLM 大模型技术全景」系列** — 返回 [总索引](2026-02-09-llm-intro-comprehensive.md)。
+>
+> **相关篇目**：[Post-training 101: 从预训练到指令调优](2026-02-09-llm-intro-post-training.md)（推理能力主要靠 RL 后训练获得）；[LLM 幻觉问题：检测与缓解方法综述](2026-02-09-llm-intro-hallucination.md)（推理链越长越要防幻觉累积）
+
 ## Context
 
 本笔记整理了大模型推理（reasoning）相关内容，来源于 llm-intro 大模型技术总结系列。内容涵盖推理的基本类型分类，以及重点介绍了训练大模型新范式——公理化训练（Axiomatic Training）的完整研究，包括研究背景、训练数据构建、数据扰动、损失函数、位置编码选择、实现细节和完整的实验结果分析。

@@ -267,3 +267,5 @@ effort 控制之所以成为一个独立课题，根源是 **overthinking phenom
 - 起点原文：[Controlling Reasoning Effort in LLMs](https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms)（含全部 33 张配图与作者 *Build a Reasoning Model (From Scratch)* 一书链接）
 - [`2026-07-08-blog-harness-engineering.md`](/research-notes/2026-07-08-blog-harness-engineering.md)（Lilian Weng，推理模型 + self-improvement harness）——"如何调度推理能力"
 - [`2026-07-08-blog-global-workspace.md`](/research-notes/2026-07-08-blog-global-workspace.md)（Anthropic，模型未说出口的内部想法）——与 §12 隐式推理 / 安全监控张力相关
+
+- [GPT-5.6 Sol 预览深读](/research-notes/2026-07-10-blog-gpt-5-6.md) —— 本文多次引用的 GPT-5.6 六档 effort 的产品侧背景

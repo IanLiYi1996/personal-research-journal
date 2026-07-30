@@ -7,6 +7,8 @@
   - [Unlocking asynchronicity in continuous batching](https://huggingface.co/blog/continuous_async) (2026-05-14)
 - **Authors:** Rémi Ouazan Reboul, Arthur Zucker, Luc Georges, Pedro Cuenca, Aritra Roy Gosthipaty (HuggingFace)
 
+> **相关**：本篇的 KV cache 与批处理调度，在 [FlashAttention 与高效注意力机制综述](/research-notes/2026-07-20-flash-attention-efficient-attention.md) 里从算子层（PagedAttention / GQA）继续展开；长上下文侧见 [LLM 长上下文综述](/research-notes/2026-07-20-llm-long-context.md)。
+
 ## Context
 
 HuggingFace 推出了一个高效 LLM 推理博客系列。两篇文章构成一条**完整推理优化路径**：
