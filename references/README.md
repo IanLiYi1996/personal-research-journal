@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **1733** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1734** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -10,10 +10,10 @@
 - [强化学习 / RLHF](#-rlhf) （338）
 - [推理 / Reasoning](#-reasoning) （401）
 - [图神经网络 / Graph](#-graph) （255）
-- [扩散 / 生成模型](#-) （286）
-- [多模态 / 视觉语言](#-) （368）
+- [扩散 / 生成模型](#-) （287）
+- [多模态 / 视觉语言](#-) （369）
 - [Transformer / 架构](#transformer-) （379）
-- [高效训练 / 推理](#-) （460）
+- [高效训练 / 推理](#-) （461）
 - [综述 / Survey](#-survey) （145）
 - [检索增强 / RAG](#-rag) （113）
 - 未分类（148）
@@ -2251,6 +2251,7 @@
 - **2024** [Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model](http://arxiv.org/abs/2408.11039) — Chunting Zhou et al. · arXiv:2408.11039 `{Zhou2024Transfusion}`
 - **2023** [Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture](http://arxiv.org/abs/2301.08243) — Mahmoud Assran et al. · arXiv:2301.08243 `{Assran2023Self}`
 - **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](http://arxiv.org/abs/2311.15127) — Andreas Blattmann et al. · arXiv:2311.15127 `{Blattmann2023Stable}`
 - **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`
 - **2023** [TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](http://arxiv.org/abs/2311.16465) — Jingye Chen et al. · arXiv:2311.16465 `{Chen2023Textdiffuser}`
 - **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
@@ -2654,6 +2655,7 @@
 - **2024** [TinyChart: Efficient Chart Understanding with Visual Token Merging and Program-of-Thoughts Learning](http://arxiv.org/abs/2404.16635) — Liang Zhang et al. · arXiv:2404.16635 `{Zhang2024Tinychart}`
 - **2024** [VISTA: Visualized Text Embedding For Universal Multi-Modal Retrieval](http://arxiv.org/abs/2406.04292) — Junjie Zhou et al. · arXiv:2406.04292 `{Zhou2024Vista}`
 - **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](http://arxiv.org/abs/2311.15127) — Andreas Blattmann et al. · arXiv:2311.15127 `{Blattmann2023Stable}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
 - **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
@@ -3396,6 +3398,7 @@
 - **2023** [LLM in a flash: Efficient Large Language Model Inference with Limited Memory](http://arxiv.org/abs/2312.11514) — Keivan Alizadeh et al. · arXiv:2312.11514 `{AlizadehndLlm}`
 - **2023** [A General Theoretical Paradigm to Understand Learning from Human Preferences](http://arxiv.org/abs/2310.12036) — Mohammad Gheshlaghi Azar et al. · arXiv:2310.12036 `{AzarndGeneral}`
 - **2023** [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](http://arxiv.org/abs/2304.08818) — Andreas Blattmann et al. · arXiv:2304.08818 `{Blattmann2023Align}`
+- **2023** [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](http://arxiv.org/abs/2311.15127) — Andreas Blattmann et al. · arXiv:2311.15127 `{Blattmann2023Stable}`
 - **2023** [Accelerating Large Language Model Decoding with Speculative Sampling](http://arxiv.org/abs/2302.01318) — Charlie Chen et al. · arXiv:2302.01318 `{Chen2023Accelerating}`
 - **2023** [AutoAgents: A Framework for Automatic Agent Generation](http://arxiv.org/abs/2309.17288) — Guangyao Chen et al. · arXiv:2309.17288 `{Chen2023Autoagents}`
 - **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`

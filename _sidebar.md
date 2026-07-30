@@ -10,6 +10,7 @@
 - **🔬 Research Notes**
   - [苏剑林《解构 Scaling Law:优化、架构、数据的三重奏》精读](/research-notes/2026-07-30-blog-suejianlin-scaling-law.md)
   - [HF Daily Papers 周报 · 2026-07-28 ~ 07-29](/research-notes/2026-07-29-hf-daily-papers-jul28-29.md)
+  - [Text2Video / Image2Video 技术深度调研（第六版：技术机制扩充）](/research-notes/2026-07-28-video-generation-survey.md)
   - [技术报告精读：Kimi K3 —— Open Frontier Intelligence（2.8T MoE / 1M 上下文 / NoPE）](/research-notes/2026-07-27-kimi-k3-report.md)
   - [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27.md)
   - [Claude Opus 5 System Card 精读(194 页全文)](/research-notes/2026-07-27-claude-opus-5-system-card.md)

@@ -83,7 +83,7 @@ Datasets, tools, frameworks, and reference materials.
 |------|------|-------|
 | 2026-07-30 | Note | [苏剑林《解构 Scaling Law:优化、架构、数据的三重奏》精读](/research-notes/2026-07-30-blog-suejianlin-scaling-law) |
 | 2026-07-29 | Note | [HF Daily Papers 周报 · 2026-07-28 ~ 07-29](/research-notes/2026-07-29-hf-daily-papers-jul28-29) |
+| 2026-07-28 | Note | [Text2Video / Image2Video 技术深度调研（第六版：技术机制扩充）](/research-notes/2026-07-28-video-generation-survey) |
 | 2026-07-27 | Note | [技术报告精读：Kimi K3 —— Open Frontier Intelligence（2.8T MoE / 1M 上下文 / NoPE）](/research-notes/2026-07-27-kimi-k3-report) |
 | 2026-07-27 | Note | [Raschka「本周值得注意的几个开放权重模型」精读(2026-07-26)](/research-notes/2026-07-27-blog-raschka-open-weight-roundup) |
-| 2026-07-27 | Note | [HF Daily Papers 周报 · 2026-07-25 ~ 07-27](/research-notes/2026-07-27-hf-daily-papers-jul25-27) |
 <!-- AUTO:RECENT:END -->
