@@ -320,6 +320,23 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `2026-W31e-reddit-hot.md` | W31 周末夜间补抓 截至 07/30（12 子版，279 帖；RSS-only；4 子版 429 后 delay25 补抓；仅收 W31/W31c 未引用条目；主线 **HF 事故新证词**(黄仁勋表态 + 匿名 OpenAI 员工内部视角 + 技术时间线扩散到 r/datascience) + FLUX 3/Qwen-Image-Flash 生图生态 + ML 会议制度压力(ICLR 2027 截稿早于 NeurIPS 2026 放榜) + 漏洞治理三层次） |
 | `2026-W31c-reddit-hot.md` | W31 周末补抓 截至 07/29（12 子版，280 帖；RSS-only；3 子版 429 后 delay25 补抓；r/statistics 17 / r/datascience 13 截断；**头条：OpenAI 立场反转——最终签署开放权重联署信**，本周主线五阶段闭环留痕；另有 NeurIPS 评审 AI 污染升级(AI 生成 rebuttal/论文)、Elsevier 抄袭指控、Claude ADHD skill） |
 
+## Knowledge Graph (in-site, clickable)
+
+Analysis method borrowed from [nashsu/llm_wiki](https://github.com/nashsu/llm_wiki) (an implementation of Karpathy's LLM Wiki pattern): **4-signal relevance model** + **Louvain community detection** + **Graph Insights**. The desktop app itself is *not* used — the method is reimplemented over this repo's existing markdown, so nothing about the Docsify workflow changes.
+
+```bash
+uv run --with networkx python3 scripts/wiki_graph.py   # writes report + graph JSON
+bash journal.sh index                                  # sidebar entries
+```
+
+- `scripts/wiki_graph.py` — scans all note dirs + `references.bib`; signals: direct link ×3.0, **shared citation ×4.0**, Adamic-Adar ×1.5, same-type ×1.0. Outputs:
+  - `weekly/knowledge-graph.md` — auto report (communities / bridges / surprising connections / gaps)
+  - `assets/knowledge-graph.json` — data for the interactive viewer (each node carries its Docsify `route`)
+- `graph.md` + `assets/kg.js` — canvas viewer: pan/zoom, hover-highlight neighbours, color by type *or* community, min-weight filter, search, **click a node → navigates to that note**.
+- `weekly/knowledge-map.md` — hand-written interpretation of the graph data.
+- ⚠️ `index.html` needs **`executeScript: true`** plus the `kg.js`-loading plugin (Docsify does not run inline `<script>` in markdown by default; the JS lives in `assets/kg.js` and is injected by a `doneEach` hook so it re-boots on route changes).
+- Re-run the script after adding notes; the graph is a snapshot.
+
 ## Docsify Plugins
 
 The site uses these plugins (configured in `index.html`):

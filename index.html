@@ -48,6 +48,7 @@
       subMaxLevel: 3,
       auto2top: true,
       relativePath: true,
+      executeScript: true,   // needed by graph.md's interactive knowledge graph
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -81,6 +82,16 @@
         sync: true
       },
       plugins: [
+        // Knowledge graph page: load assets/kg.js once, (re)boot on each route into /graph
+        function(hook) {
+          hook.doneEach(function() {
+            if (!document.getElementById('kg-canvas')) return;
+            if (window.__kgBoot) { window.__kgBoot(); return; }
+            var s = document.createElement('script');
+            s.src = 'assets/kg.js?_=' + Date.now();
+            document.body.appendChild(s);
+          });
+        },
         // Kill sidebar arrows + back-to-top + reading progress + theme toggle
         function(hook) {
           hook.ready(function() {

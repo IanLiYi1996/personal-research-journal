@@ -96,4 +96,7 @@
   - [Weekly Cross-Digest｜2026-W30（07/14 – 07/20）](/weekly/2026-W30.md)
   - [Weekly Cross-Digest｜2026-W26（06/19 – 06/26）](/weekly/2026-W26.md)
 - **📚 Resources**
+  - [🕸️ 知识图谱（交互）](/graph.md)
+  - [🕸️ 知识图谱洞察报告](/weekly/knowledge-graph.md)
+  - [🗺️ 知识地图（人工解读）](/weekly/knowledge-map.md)
 - <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>

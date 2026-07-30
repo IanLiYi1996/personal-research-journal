@@ -260,6 +260,9 @@ cmd_index() {
         done
 
         echo "- **📚 Resources**"
+        echo "  - [🕸️ 知识图谱（交互）](/graph.md)"
+        echo "  - [🕸️ 知识图谱洞察报告](/weekly/knowledge-graph.md)"
+        echo "  - [🗺️ 知识地图（人工解读）](/weekly/knowledge-map.md)"
         echo '- <div class="sidebar-footer"><a href="https://github.com/IanLiYi1996/personal-research-journal" target="_blank">⚙️ GitHub</a><a href="/#/?id=li-yis-research-journal">❓ About</a></div>'
     } > _sidebar.md
     echo "Updated: _sidebar.md"
