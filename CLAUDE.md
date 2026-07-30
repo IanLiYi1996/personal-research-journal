@@ -78,6 +78,19 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 1. **Fetch papers**: Call HF API `GET /api/daily_papers?date=YYYY-MM-DD&limit=50&sort=publishedAt` for each date
 2. **Deduplicate**: Cross-check against the previous digest to exclude already-covered papers (match by arXiv ID)
 3. **Deep dive selection**: Pick 1-2 papers with the highest impact (upvotes + novelty + technical depth), fetch full paper via `https://huggingface.co/papers/{ID}.md`
+   - **取全文的降级链(按序尝试,不要停在第一次失败)**:`papers/{ID}.md` → `arxiv.org/html/{ID}`(新论文常 404,HTML 版未发布)→ **下载 PDF 用 pymupdf 抽文本**(最可靠,见下)→ **agent-browser 渲染**(站点反爬时)。
+   ```bash
+   # PDF 兜底：新论文只有 PDF 时用这条（含渲染配图）
+   curl -sL -A "Mozilla/5.0" -o p.pdf "https://arxiv.org/pdf/{ID}"
+   uv run --with pymupdf python3 -c "
+   import fitz; d=fitz.open('p.pdf')
+   open('p.txt','w').write('\n'.join(pg.get_text() for pg in d))
+   # 渲染指定页/裁剪区域为配图：
+   pg=d[3]; r=pg.rect
+   clip=fitz.Rect(r.x0, r.y0, r.x1, r.y0+r.height*0.37)
+   pg.get_pixmap(dpi=150, clip=clip).save('fig.png')"
+   ```
+   - **已验证**:Kimi K3 技术报告(47 页)、Self-Flow(37 页)、Skill-SP/Molt 均靠 PDF 兜底完成精读并渲染出配图。
 4. **Download figures**: From `https://arxiv.org/html/{ID}v1/x{N}.png`, save to `research-notes/{note-name}/` subfolder
 5. **Write digest**: Chinese, grouped by themes, include overview table → per-paper summaries → deep dives → trend analysis → open questions
 6. **Add to reference library**: Register every covered paper — `uv run python3 scripts/add_paper.py <id1> <id2> ...` (see Reference Library section)
@@ -168,6 +181,23 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
   - `scripts/blog_sitemap_fallback.py` — Sitemap.xml `<lastmod>` (4 sources: Anthropic News/Research, Cohere, AI2). Per-source allowed-path-prefixes in `SITEMAP_RULES`.
   - `scripts/blog_html_scraper.py` — Static HTML index parsing (6 sources: Mistral, Meta AI, Apollo, MILA, LlamaIndex, fast.ai). Per-source `(index_url, item_regex, max_undated?)` in `HTML_RULES`. Modal/Replicate were found to have hidden /blog/atom feeds during probing and moved into `blog_fetch.py`.
 - **Probing a new source**: `curl -sI -L -A "Mozilla/5.0" <url>` → check 200; then `curl -sL ... | head -c 500 | grep -qE '<rss|<feed|<channel'` to confirm it's actually XML (200 ≠ RSS for SPAs).
+- **⚠️ 取正文失败时的兜底:用 agent-browser 渲染(headless Chromium)**。有些站点对 `curl`/WebFetch 返回 **403 或近乎空 body**(反爬/SPA),但 RSS 只给一两句摘要——此时**不要放弃深读、也不要凭摘要硬写**,改用 agent-browser 取全文:
+  ```bash
+  # 1) 起 headless chromium（端口任选，避开已占用端口）
+  BIN=~/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome
+  nohup "$BIN" --headless --no-sandbox --remote-debugging-port=9251 \
+        --user-data-dir=$CLAUDE_JOB_DIR/tmp/cprof about:blank >/dev/null 2>&1 &
+  sleep 6 && curl -s http://localhost:9251/json/version | head -c 60   # 确认 CDP 起来
+  # 2) 连接并打开目标页
+  agent-browser connect 9251
+  agent-browser open "<url>"
+  # 3) 取正文（优先 .entry-content / article，回退 body）
+  agent-browser eval "JSON.stringify((document.querySelector('.entry-content')||document.querySelector('article')||document.body).innerText)"
+  ```
+  - 输出是 JSON 字符串,用 `json.loads` 解开后落盘再精读。
+  - **已验证适用**:科学空间(spaces.ac.cn,curl 返回 124 字节 / WebFetch 403 → agent-browser 取到 28405 字符全文)、Substack 超长文(WebFetch 会截断,如 Raschka 架构横评 16→23 节)。
+  - 注意:`pkill -f "remote-debugging-port"` 会连带杀掉当前 shell(exit 144),换端口新起实例更安全;用完 `agent-browser close`。
+  - KaTeX 页面的 innerText 会把公式重复渲染两遍(源码 + 排版),精读时按行长过滤噪音即可。
 - **Still no useful feed/sitemap/HTML** (9 sources, all SPAs needing headless browser): xAI, Perplexity, Stanford HAI/CRFM, Princeton AIML, Redwood, 机器之心中文站, 李沐, AMiner 学术日报.
 
 ### Previous Digests
@@ -191,6 +221,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `research-notes/2026-07-08-blog-harness-engineering.md` | Lilian Weng (2026-07-04) "Harness Engineering for Self-Improvement" |
 | `research-notes/2026-07-08-blog-global-workspace.md` | Anthropic Research (2026-07-06) "A global workspace in language models" |
 | `research-notes/2026-07-20-blog-inkling-moe.md` | Sebastian Raschka (2026-07-16) "Inkling: A New Open-Weight 975B MoE with a Few Surprises" |
+| `research-notes/2026-07-30-blog-suejianlin-scaling-law.md` | 科学空间/苏剑林 (2026-07-29) 《解构 Scaling Law：优化、架构、数据的三重奏》（三重分解 + 异幂不等式/最优配比率；正文 403，用 agent-browser 取全文） |
 | `research-notes/2026-07-27-blog-raschka-open-weight-roundup.md` | Sebastian Raschka (2026-07-26) "A Few Notable Open-Weight Models This Week"（6 模型架构速览：Nanbeige 4.2 / Laguna S 2.1 / Motif-3-Beta GDLA / Solar Open 2 / Antares 1B / BTL-3） |
 
 ## Weekly Cross-Digest
