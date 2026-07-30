@@ -231,7 +231,7 @@ SVD 论文（arXiv:2311.15127）的核心贡献是把"视频数据怎么洗"系�
 3. **可控性的机制共识：全局条件与局部条件分开注入**。MotionCtrl 的 CMCM（相机→时间注意力）vs OMCM（轨迹→空间特征）是清晰范例；Animate Anyone 的 ReferenceNet（外观→逐层空间拼接）vs Pose Guider（姿态→轻量注入）同理。
 4. **数据管线可能比架构更决定质量**（SVD 的实证：切镜检测使片段数 2.65→11.09、光流过滤剔除静止片段）。这也解释了架构公开但质量仍有差距的现象。
 5. **"世界模型"仍是产品定位表述**。第五版判断准确——Sora/Veo 宣传材料里的"隐式学习世界模型"**无公开基准验证**，本版继续只作趋势提及。
-6. **许可证必须逐模型核实**：Wan2.2 仓库/权重 **Apache-2.0**；CogVideoX-5B 为**自定义 CogVideoX License**（商用需登记、有月访问量上限）；SVD 为 **Stability AI Community License**（商用另查条款）。三者开放程度不同。
+6. **许可证必须逐模型、且区分"代码 vs 权重"核实**：Wan2.2 代码与权重均 **Apache-2.0**；**CogVideoX 同族不同证**（2b 为 Apache-2.0，**5b 为自定义 CogVideoX License**：商用须注册 + 月访问量上限 100 万）；SVD **代码 MIT 但权重是 community license**。→ 实测明细与核验命令见 **§6.5**。
 
 ---
 
@@ -242,6 +242,35 @@ SVD 论文（arXiv:2311.15127）的核心贡献是把"视频数据怎么洗"系�
 - 〔未披露/推测〕标注**仅表示找不到可核验来源**，不代表该模型技术路线一定如此或一定不同。
 - 本版新增的机制细节均来自论文；**商用模型的架构一律未补**（见 §4 说明）。
 - Seaweed 与 Seedance/即梦 的对应关系、以及各产品的原生时长/分辨率/价格仍**待逐一核验**。
+
+## 6.5 开放权重的 License 实测核实（2026-07-30 核验）
+
+报告 §5.6 与 §7.2 都强调"License 必须逐模型核实"。这一节把它做实——**用 GitHub API 与 HuggingFace API 直接查**，而非引用二手描述。
+
+> ⚠️ **本节最重要的发现：代码仓库 License ≠ 模型权重 License**。二者经常不同，选型时**必须分开确认**。
+
+| 模型 | 代码仓库 License | **权重 License** | 商用约束 |
+|---|---|---|---|
+| **Wan2.2**（T2V-A14B / I2V-A14B） | Apache-2.0（`Wan-Video/Wan2.2`，`LICENSE.txt`） | **Apache-2.0** | 最宽松，商用无附加限制 |
+| **CogVideoX-2b** | Apache-2.0（`THUDM/CogVideo`） | **Apache-2.0** | 宽松 |
+| **CogVideoX-5b** | 同上 Apache-2.0 | **自定义「The CogVideoX License」** | **学术研究免费**；商用须先在 `open.bigmodel.cn` **注册取得 basic commercial license**；基础商用授权**月访问量上限 100 万次**，超出需另联系商务；禁止军事/非法用途 |
+| **Stable Video Diffusion (img2vid-xt)** | **MIT**（`Stability-AI/generative-models`，文件名 `LICENSE-CODE`，明示只管代码） | **`stable-video-diffusion-community`**（`license: other`，见仓库 `LICENSE.md`） | 社区许可，商用须另读条款 |
+| **AnimateDiff** | Apache-2.0（`guoyww/AnimateDiff`） | 以各 motion module 发布页为准 | — |
+| **DynamiCrafter** | Apache-2.0（`Doubiiu/DynamiCrafter`） | 以发布页为准 | — |
+| **MotionCtrl** | Apache-2.0（`TencentARC/MotionCtrl`） | 以发布页为准 | — |
+
+**两处对第五版的精确性修正**：
+1. **CogVideoX 不能整族一概而论**：第五版（及很多二手资料）只提"CogVideoX-5B 为自定义 License"，容易让人误以为整个系列都受限。实测 **CogVideoX-2b 是 Apache-2.0**——若项目只需 2b 规模，约束比想象中宽松得多。
+2. **SVD 的 MIT 只覆盖代码**：`Stability-AI/generative-models` 仓库 License 文件名就叫 `LICENSE-CODE`，权重另有 community license。看到"SVD 是 MIT"的说法要警惕，那是代码侧。
+
+**另一个核实中发现的事实**：CogVideoX 的 HF 仓库已从 `THUDM/*` **迁移到 `zai-org/*`**（智谱主体改名），旧路径目前会 307 重定向。写脚本拉取时建议直接用新路径。
+
+> **核验方法（可复现）**：
+> ```bash
+> gh api repos/<owner>/<repo>/license --jq '{spdx:.license.spdx_id, path:.path}'
+> curl -sL "https://huggingface.co/api/models/<org>/<model>" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('cardData',{}))"
+> ```
+> 本节数据为 **2026-07-30** 核验结果。License 条款会变更，正式签约前请重新打开原文。
 
 ## 7. 若要用于正式选型（建议的下一步）
 
