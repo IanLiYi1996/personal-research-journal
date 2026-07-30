@@ -148,6 +148,9 @@ def main() -> int:
     ap.add_argument("ids", nargs="+", help="arXiv id(s) or URL(s)")
     ap.add_argument("--no-index", action="store_true",
                     help="don't rebuild references/README.md")
+    ap.add_argument("--delay", type=float, default=3.0, metavar="SEC",
+                    help="seconds to wait between arXiv fetches (default 3, "
+                         "matching arXiv's recommended rate; raise for big batches)")
     args = ap.parse_args()
 
     bib_path = os.path.normpath(BIB)
@@ -157,6 +160,7 @@ def main() -> int:
     existing_titles = {normalize_title(e.get("title", "")) for e in entries}
 
     added, skipped = [], []
+    fetched = 0  # count only real network fetches, so skips cost no delay
     for token in args.ids:
         aid = extract_arxiv_id(token)
         if not aid:
@@ -165,6 +169,9 @@ def main() -> int:
         if aid in existing_arxiv:
             skipped.append((aid, "already in library (arXiv id)"))
             continue
+        if fetched and args.delay > 0:
+            time.sleep(args.delay)
+        fetched += 1
         entry = fetch_arxiv(aid)
         if not entry:
             skipped.append((aid, "arXiv fetch returned nothing"))

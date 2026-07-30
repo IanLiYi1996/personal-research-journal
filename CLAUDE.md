@@ -65,6 +65,8 @@ When creating notes, always copy from the template rather than writing from scra
   uv run python3 scripts/add_paper.py <arxiv-id-or-url> [<more ids>...]
   ```
   Safe to re-run: it skips papers already present (by arXiv id or normalized title). For a HF digest covering many papers, pass all arXiv ids in one call.
+  - **Rate limiting**: the script sends a real User-Agent (urllib's default UA is what actually triggers arXiv 429s), retries with backoff (0/5/15/40s), and falls back to **OpenAlex** if the arXiv API stays unavailable (fallback entries have no abstract and print a `~ used OpenAlex fallback` notice — worth re-fetching later).
+  - `--delay SEC` (default **3**, arXiv's recommended rate) waits between *actual* fetches; already-in-library ids are skipped for free. For large batches (≳40 ids) raise it: `--delay 6`. Use `--delay 0` only for single-id calls.
 - Non-arXiv papers (DOI-only, venue PDFs): add the bib entry by hand to `references/references.bib` following the existing format, then run `uv run python3 scripts/bib_index.py references/references.bib --out references/README.md`.
 - **Never fabricate** arXiv ids, DOIs, or bib metadata — only register identifiers fetched from a real source (per the "引用须可验证" constraint).
 - Maintenance scripts: `scripts/clean_bib.py` (clean a fresh Mendeley `export.bib`), `scripts/enrich_bib.py` (drop junk + backfill arXiv url/year), `scripts/bib_index.py` (rebuild the topic index). See `scripts/clean_bib_report.md`.

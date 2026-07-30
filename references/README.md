@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **1744** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1746** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -10,9 +10,9 @@
 - [强化学习 / RLHF](#-rlhf) （338）
 - [推理 / Reasoning](#-reasoning) （401）
 - [图神经网络 / Graph](#-graph) （255）
-- [扩散 / 生成模型](#-) （294）
-- [多模态 / 视觉语言](#-) （378）
-- [Transformer / 架构](#transformer-) （385）
+- [扩散 / 生成模型](#-) （296）
+- [多模态 / 视觉语言](#-) （380）
+- [Transformer / 架构](#transformer-) （386）
 - [高效训练 / 推理](#-) （465）
 - [综述 / Survey](#-survey) （145）
 - [检索增强 / RAG](#-rag) （113）
@@ -2255,6 +2255,7 @@
 - **2023** [FactCHD: Benchmarking Fact-Conflicting Hallucination Detection](http://arxiv.org/abs/2310.12086) — Xiang Chen et al. · arXiv:2310.12086 `{Chen2023Factchd}`
 - **2023** [TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](http://arxiv.org/abs/2311.16465) — Jingye Chen et al. · arXiv:2311.16465 `{Chen2023Textdiffuser}`
 - **2023** [RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment](http://arxiv.org/abs/2304.06767) — Hanze Dong et al. · arXiv:2304.06767 `{Dong2023Raft}`
+- **2023** [Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning](http://arxiv.org/abs/2311.10709) — Rohit Girdhar et al. · arXiv:2311.10709 `{Girdhar2023Emu}`
 - **2023** [MiniLLM: Knowledge Distillation of Large Language Models](http://arxiv.org/abs/2306.08543) — Yuxian Gu et al. · arXiv:2306.08543 `{Gu2023Minillm}`
 - **2023** [Reinforced Self-Training (ReST) for Language Modeling](http://arxiv.org/abs/2308.08998) — Caglar Gulcehre et al. · arXiv:2308.08998 `{Gulcehre2023Reinforced}`
 - **2023** [AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](http://arxiv.org/abs/2307.04725) — Yuwei Guo et al. · arXiv:2307.04725 `{Guo2023Animatediff}`
@@ -2317,6 +2318,7 @@
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
 - **2022** [Poisson Flow Generative Models](http://arxiv.org/abs/2209.11178) — Yilun Xu et al. · arXiv:2209.11178 `{Xu2022Poisson}`
 - **2022** [Diffusion Models: A Comprehensive Survey of Methods and Applications](http://arxiv.org/abs/2209.00796) — Ling Yang et al. · arXiv:2209.00796 `{Yang2022Diffusion}`
+- **2022** [MAGVIT: Masked Generative Video Transformer](http://arxiv.org/abs/2212.05199) — Lijun Yu et al. · arXiv:2212.05199 `{Yu2022Magvit}`
 - **2021** [ERNIE-VILG: UNIFIED GENERATIVE PRE-TRAINING FOR BIDIRECTIONAL VISION-LANGUAGE GENERATION](http://arxiv.org/abs/2112.15283) — Baidu et al. · arXiv:2112.15283 `{BaidundErnie}`
 - **2021** [Learning Attributed Graph Representations with Communicative Message Passing Transformer](http://arxiv.org/abs/2107.08773) — Jianwen Chen et al. · arXiv:2107.08773 `{Chen2021Learning}`
 - **2021** [Diffusion Models Beat GANs on Image Synthesis](http://arxiv.org/abs/2105.05233) — Prafulla Dhariwal et al. · arXiv:2105.05233 `{Dhariwal2021Diffusion}`
@@ -2666,6 +2668,7 @@
 - **2023** [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](http://arxiv.org/abs/2311.15127) — Andreas Blattmann et al. · arXiv:2311.15127 `{Blattmann2023Stable}`
 - **2023** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](http://arxiv.org/abs/2305.06500) — Wenliang Dai et al. · arXiv:2305.06500 `{Dai2023Instructblip}`
 - **2023** [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](http://arxiv.org/abs/2307.08691) — Tri Dao et al. · arXiv:2307.08691 `{Dao2023Flashattention}`
+- **2023** [Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning](http://arxiv.org/abs/2311.10709) — Rohit Girdhar et al. · arXiv:2311.10709 `{Girdhar2023Emu}`
 - **2023** [AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](http://arxiv.org/abs/2307.04725) — Yuwei Guo et al. · arXiv:2307.04725 `{Guo2023Animatediff}`
 - **2023** [Photorealistic Video Generation with Diffusion Models](http://arxiv.org/abs/2312.06662) — Agrim Gupta et al. · arXiv:2312.06662 `{GuptandPhotorealistic}`
 - **2023** [Siamese Masked Autoencoders](http://arxiv.org/abs/2305.14344) — Agrim Gupta et al. · arXiv:2305.14344 `{GuptandSiamese}`
@@ -2710,6 +2713,7 @@
 - **2022** [Phenaki: Variable Length Video Generation From Open Domain Textual Description](http://arxiv.org/abs/2210.02399) — Ruben Villegas et al. · arXiv:2210.02399 `{Villegas2022Phenaki}`
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
 - **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
+- **2022** [MAGVIT: Masked Generative Video Transformer](http://arxiv.org/abs/2212.05199) — Lijun Yu et al. · arXiv:2212.05199 `{Yu2022Magvit}`
 - **2021** [ERNIE-VILG: UNIFIED GENERATIVE PRE-TRAINING FOR BIDIRECTIONAL VISION-LANGUAGE GENERATION](http://arxiv.org/abs/2112.15283) — Baidu et al. · arXiv:2112.15283 `{BaidundErnie}`
 - **2021** [Multimodal Image Synthesis and Editing: The Generative AI Era](http://arxiv.org/abs/2112.13592) — Fangneng Zhan et al. · arXiv:2112.13592 `{Zhan2021Multimodal}`
 - **2020** [Scaling Laws for Autoregressive Generative Modeling](http://arxiv.org/abs/2010.14701) — Tom Henighan et al. · arXiv:2010.14701 `{Henighan2020Scaling}`
@@ -3017,6 +3021,7 @@
 - **2022** [GIT: A Generative Image-to-text Transformer for Vision and Language](http://arxiv.org/abs/2205.14100) — Jianfeng Wang et al. · arXiv:2205.14100 `{WangndGit}`
 - **2022** [Memorizing Transformers](http://arxiv.org/abs/2203.08913) — Yuhuai Wu et al. · arXiv:2203.08913 `{Wu2022Memorizing}`
 - **2022** [Multimodal Learning with Transformers: A Survey](http://arxiv.org/abs/2206.06488) — Peng Xu et al. · arXiv:2206.06488 `{Xu2022Multimodal}`
+- **2022** [MAGVIT: Masked Generative Video Transformer](http://arxiv.org/abs/2212.05199) — Lijun Yu et al. · arXiv:2212.05199 `{Yu2022Magvit}`
 - **2022** A Contrastive Framework for Learning Sentence Representations from Pairwise and Triple-wise Perspective in Angular Space — Yuhao Zhang et al. `{Zhang2022Contrastive}`
 - **2022** [Graph Masked Autoencoders with Transformers](http://arxiv.org/abs/2202.08391) — Sixiao Zhang et al. · arXiv:2202.08391 `{Zhang2022Graph}`
 - **2022** [Hierarchical Graph Transformer with Adaptive Node Sampling](http://arxiv.org/abs/2210.03930) — Zaixi Zhang et al. · arXiv:2210.03930 `{Zhang2022Hierarchical}`

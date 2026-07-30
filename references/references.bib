@@ -3182,6 +3182,14 @@
   year = {2020}
 }
 
+@article{Girdhar2023Emu,
+  title = {Emu Video: Factorizing Text-to-Video Generation by Explicit Image Conditioning},
+  author = {Rohit Girdhar and Mannat Singh and Andrew Brown and Quentin Duval and Samaneh Azadi and Sai Saketh Rambhatla and Akbar Shah and Xi Yin and Devi Parikh and Ishan Misra},
+  year = {2023},
+  url = {http://arxiv.org/abs/2311.10709},
+  abstract = {We present Emu Video, a text-to-video generation model that factorizes the generation into two steps: first generating an image conditioned on the text, and then generating a video conditioned on the text and the generated image. We identify critical design decisions--adjusted noise schedules for diffusion, and multi-stage training that enable us to directly generate high quality and high resolution videos, without requiring a deep cascade of models as in prior work. In human evaluations, our generated videos are strongly preferred in quality compared to all prior work--81% vs. Google's Imagen Video, 90% vs. Nvidia's PYOCO, and 96% vs. Meta's Make-A-Video. Our model outperforms commercial solutions such as RunwayML's Gen2 and Pika Labs. Finally, our factorizing approach naturally lends itself to animating images based on a user's text prompt, where our generations are preferred 96% over prior work.}
+}
+
 @misc{Girin2021Dynamical,
   abstract = {Variational autoencoders (VAEs) are powerful deep generative models widely used to represent high-dimensional complex data through a low-dimensional latent space learned in an unsupervised manner. In the original VAE model, the input data vectors are processed independently. Recently, a series of papers have presented different extensions of the VAE to process sequential data, which model not only the latent space but also the temporal dependencies within a sequence of data vectors and corresponding latent vectors, relying on recurrent neural networks or state-space models. In this monograph, we perform a literature review of these models. We introduce and discuss a general class of models, called dynamical variational autoencoders (DVAEs), which encompasses a large subset of these temporal VAE extensions. Then, we present in detail seven recently proposed DVAE models, with an aim to homogenize the notations and presentation lines, as well as to relate these models with existing classical temporal models. We have reimplemented those seven DVAE models and present the results of an experimental benchmark conducted on the speech analysis-resynthesis task (the PyTorch code is made publicly available). The monograph concludes with a discussion on important issues concerning the DVAE class of models and future research guidelines.},
   author = {Laurent Girin and Simon Leglaive and Xiaoyu Bie and Julien Diard and Thomas Hueber and Xavier Alameda-Pineda},
@@ -13127,6 +13135,14 @@
   pages = {1921-1924},
   title = {TAGNN: Target Attentive Graph Neural Networks for Session-based Recommendation},
   year = {2020}
+}
+
+@article{Yu2022Magvit,
+  title = {MAGVIT: Masked Generative Video Transformer},
+  author = {Lijun Yu and Yong Cheng and Kihyuk Sohn and José Lezama and Han Zhang and Huiwen Chang and Alexander G. Hauptmann and Ming-Hsuan Yang and Yuan Hao and Irfan Essa and Lu Jiang},
+  year = {2022},
+  url = {http://arxiv.org/abs/2212.05199},
+  abstract = {We introduce the MAsked Generative VIdeo Transformer, MAGVIT, to tackle various video synthesis tasks with a single model. We introduce a 3D tokenizer to quantize a video into spatial-temporal visual tokens and propose an embedding method for masked video token modeling to facilitate multi-task learning. We conduct extensive experiments to demonstrate the quality, efficiency, and flexibility of MAGVIT. Our experiments show that (i) MAGVIT performs favorably against state-of-the-art approaches and establishes the best-published FVD on three video generation benchmarks, including the challenging Kinetics-600. (ii) MAGVIT outperforms existing methods in inference time by two orders of magnitude against diffusion models and by 60x against autoregressive models. (iii) A single MAGVIT model supports ten diverse generation tasks and generalizes across videos from different visual domains. The source code and trained models will be released to the public at https://magvit.cs.cmu.edu.}
 }
 
 @article{Yu2023Chain,
