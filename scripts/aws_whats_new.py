@@ -26,8 +26,12 @@ CATEGORIES = [
     ("Database", ["rds", "aurora", "dynamodb", "elasticache", "redshift", "neptune",
                   "documentdb", "timestream", "qldb", "memorydb", "keyspaces", "aurora dsql"]),
     ("Networking", ["vpc", "cloudfront", "route 53", "route53", "api gateway", "elb",
-                    "load balanc", "direct connect", "global accelerator", "transit gateway",
-                    "private link", "privatelink", "app mesh", "cloud map"]),
+                    # "load balanc" could never match: _kw_matches appends \b, and
+                    # "balancer" has no word boundary after the "c".
+                    "load balancer", "load balancing", "direct connect",
+                    "global accelerator", "transit gateway",
+                    "private link", "privatelink", "app mesh", "cloud map",
+                    "interconnect", "cloud wan", "network firewall", "vpn"]),
     ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
@@ -48,35 +52,65 @@ def _kw_matches(t: str, kw: str) -> bool:
     return re.search(r"\b" + re.escape(kw.strip()) + r"\b", t) is not None
 
 
+# Keywords that are real service names but also show up as generic feature words in
+# other services' announcements ("VPC support for the Glue connector", "flexible
+# batch execution" on Redshift, "via the CLI"). They only decide a category when no
+# strong (unambiguous) service keyword matched anywhere.
+WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
+            "health ", "model", " q ", "firewall", "artifact ", "load balanc",
+            "auto scaling", "generative", "preview"}
+
+
 def classify(title: str, summary: str) -> str:
     # Prefer matching on the title alone first: the description often name-drops
     # unrelated services (e.g. a Redshift item mentioning "Graviton", or an Aurora
     # DSQL item mentioning "Lambda"), which would otherwise hijack the category.
     t_title = title.lower()
-    for cat, kws in CATEGORIES:
-        if any(_kw_matches(t_title, kw) for kw in kws):
-            return cat
-    t = (title + " " + summary).lower()
-    for cat, kws in CATEGORIES:
-        if any(_kw_matches(t, kw) for kw in kws):
-            return cat
+    t_full = (title + " " + summary).lower()
+    for strong_only in (True, False):
+        for text in (t_title, t_full):
+            for cat, kws in CATEGORIES:
+                for kw in kws:
+                    if strong_only and kw in WEAK_KWS:
+                        continue
+                    if _kw_matches(text, kw):
+                        return cat
     return "其他"
 
 
 HIGH_KWS = ["generally available", "now available", "ga release", "ga in", "announces ",
             "announces support", "launches ", "introduces ", "new ", "expands to",
-            "adds support", "preview"]
+            "adds support", "adds ", "now supports", "now offers", "preview"]
 HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
              "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore"]
 
 
+GA_KWS = ["general availability", "(ga)", " in ga", "generally available"]
+REGIONAL_KWS = ["now available in", "expands to", "additional regions", "govcloud",
+                "region is now", "now open", "region expansion", "additional aws region",
+                "in the aws ", "new aws region", "local zone"]
+
+
 def impact(title: str, summary: str) -> str:
+    t_title = title.lower()
     t = (title + " " + summary).lower()
+    regional = any(kw in t_title for kw in REGIONAL_KWS)
+    # Region/partition rollouts are graded Low regardless of the service involved —
+    # check this BEFORE the HIGH_HARD promotion, or every "Bedrock now in <region>"
+    # and "region expansion of G7e on SageMaker" item claims a Top Highlight slot.
+    if regional:
+        return "Low"
     if any(_kw_matches(t, kw) for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
         return "High"
-    if any(kw in t for kw in ["update to", "documentation", "now supports french",
-                              "now supports japanese", "now supports german",
-                              "available in price", "minor"]):
+    # GA of a service/capability is High (region rollouts already returned above).
+    if any(kw in t_title for kw in GA_KWS):
+        return "High"
+    # Low signals are matched on the TITLE only: a long description almost always
+    # contains the word "documentation" (the "see the docs" boilerplate), which
+    # would otherwise force every verbose announcement down to Low.
+    if any(kw in t_title for kw in ["update to", "documentation", "now supports french",
+                                    "now supports japanese", "now supports german",
+                                    "available in price", "minor"]):
         return "Low"
     if any(kw in t for kw in HIGH_KWS):
         return "Medium"
