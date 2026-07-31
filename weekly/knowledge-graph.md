@@ -1,7 +1,7 @@
 # 知识图谱洞察报告（自动生成）
 
 - **生成方式**: `scripts/wiki_graph.py`（方法参考 [nashsu/llm_wiki](https://github.com/nashsu/llm_wiki) 的 4 信号相关性模型 + Louvain 社区发现 + Graph Insights）
-- **节点**: 111 篇笔记　**边**: 235　**社区**: 16
+- **节点**: 112 篇笔记　**边**: 256　**社区**: 16
 - **信号权重**: 直接链接 ×3.0 / 共享文献来源 ×4.0 / Adamic-Adar ×1.5 / 同类型 ×1.0
 
 > 本报告由脚本读取仓库现有 md 与 `references.bib` 生成，不修改任何笔记。
@@ -10,13 +10,13 @@
 
 | # | 规模 | 内聚度 | 构成 | 核心笔记（按连接数） |
 |---|---|---|---|---|
-| 14 | 23 | 0.202 | research-notes×18, weekly×3, tech-blogs×2 | `2026-07-20-long-horizon-agents.md`<br>`2026-07-20-blog-reasoning-effort.md`<br>`2026-07-20-llm-long-context.md` |
-| 7 | 22 | 0.19 | research-notes×11, reddit-digests×6, tech-blogs×5 | `2026-W31-reddit-hot.md`<br>`2026-07-21-raschka-llm-architecture-comparison.md`<br>`2026-07-29-hf-daily-papers-jul28-29.md` |
+| 15 | 24 | 0.214 | research-notes×11, reddit-digests×6, tech-blogs×6, weekly×1 | `2026-W31.md`<br>`2026-W31-reddit-hot.md`<br>`2026-07-29-hf-daily-papers-jul28-29.md` |
+| 7 | 22 | 0.212 | research-notes×18, weekly×3, tech-blogs×1 | `2026-07-20-long-horizon-agents.md`<br>`2026-07-20-blog-reasoning-effort.md`<br>`2026-07-20-llm-long-context.md` |
 | 13 | 19 | 0.333 | research-notes×12, topics×6, reddit-digests×1 | `2026-06-12-agent-evolution.md`<br>`2026-06-12-ai-frontier-comprehensive.md`<br>`2026-06-12-trends.md` |
-| 6 | 11 | 0.218 | research-notes×6, reddit-digests×2, tech-blogs×2, weekly×1 | `2026-W26-reddit-hot.md`<br>`2026-W26.md`<br>`2026-06-26-hf-daily-papers-jun17-25.md` |
+| 6 | 11 | 0.218 | research-notes×6, reddit-digests×2, tech-blogs×2, weekly×1 | `2026-06-26-hf-daily-papers-jun17-25.md`<br>`2026-W26.md`<br>`2026-W26-reddit-hot.md` |
 | 10 | 9 | 0.472 | topics×9 | `2026-02-09-llm-intro-comprehensive.md`<br>`2026-02-09-llm-intro-architecture.md`<br>`2026-02-09-llm-intro-post-training.md` |
 | 12 | 9 | 0.5 | topics×9 | `2026-04-15-quantum-intro-for-everyone.md`<br>`2026-04-15-quantum-computing-comprehensive.md`<br>`2026-04-15-quantum-frontiers.md` |
-| 3 | 8 | 0.429 | papers×5, research-notes×2, topics×1 | `2025-agentic-rl-survey.md`<br>`2026-05-08-cot-mechanism-mini-survey.md`<br>`2026-05-08-graph-structures-meet-llms.md` |
+| 3 | 8 | 0.429 | papers×5, research-notes×2, topics×1 | `2026-05-08-cot-mechanism-mini-survey.md`<br>`2025-agentic-rl-survey.md`<br>`2025-kismath-causal-cot-graph.md` |
 | 2 | 2 | 1.0 | research-notes×1, papers×1 | `2026-04-13-agentic-rl-infrastructure-comparison.md`<br>`2026-openclaw-rl.md` |
 | 0 | 1 | 0.0 | research-notes×1 | `2026-04-07-hf-weekly-papers-apr4.md` |
 | 1 | 1 | 0.0 | research-notes×1 | `2026-04-08-hf-daily-papers-apr7-8.md` |
@@ -25,16 +25,17 @@
 | 8 | 1 | 0.0 | research-notes×1 | `2026-07-28-video-generation-survey.md` |
 | 9 | 1 | 0.0 | papers×1 | `2026-cafm-constraint-aware-flow-matching.md` |
 | 11 | 1 | 0.0 | topics×1 | `2026-02-09-3d-generation-survey.md` |
-| 15 | 1 | 0.0 | reddit-digests×1 | `2026-W25-reddit-hot.md` |
+| 14 | 1 | 0.0 | reddit-digests×1 | `2026-W25-reddit-hot.md` |
 
 ## 2. 桥节点（连接 ≥3 个社区的枢纽笔记）
 
 | 笔记 | 跨社区数 | 连接数 | 标题 |
 |---|---|---|---|
-| `research-notes/2026-07-20-long-horizon-agents.md` | 4 | 18 | 深度整理：Long-Horizon Agents（长程智能体）研究路径全景 |
+| `research-notes/2026-07-20-blog-reasoning-effort.md` | 4 | 14 | 综述：LLM 推理努力度控制（Controlling Reasoning Effort  |
+| `research-notes/2026-07-20-long-horizon-agents.md` | 4 | 19 | 深度整理：Long-Horizon Agents（长程智能体）研究路径全景 |
 | `research-notes/2026-07-08-blog-harness-engineering.md` | 3 | 7 | Blog Deep Dive: Harness Engineering for Self |
 | `research-notes/2026-07-08-blog-global-workspace.md` | 3 | 3 | Blog Deep Dive: A Global Workspace in Langua |
-| `research-notes/2026-07-20-blog-reasoning-effort.md` | 3 | 13 | 综述：LLM 推理努力度控制（Controlling Reasoning Effort  |
+| `research-notes/2026-07-20-llm-long-context.md` | 3 | 11 | 综述：LLM 长上下文是如何做到的（位置外推 / 稀疏注意力 / 记忆 / 架构 / 训 |
 | `papers/2025-agentic-rl-survey.md` | 3 | 6 | The Landscape of Agentic Reinforcement Learn |
 | `topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md` | 3 | 12 | Agent 体系演化谱系 · 2026 上半年 |
 
@@ -44,19 +45,19 @@
 |---|---|---|---|---|---|
 | 4.9 | `2026-07-20-llm-long-context.md` | `2026-02-09-llm-long-context-training.md` | 4.0 | 6 | 跨社区+跨类型 |
 | 4.8 | `2026-W30.md` | `2026-W30-reddit-hot.md` | 3.0 | 0 | 跨社区+跨类型 |
-| 3.46 | `2026-07-20-long-horizon-agents.md` | `2025-agentic-rl-survey.md` | 4.57 | 2 | 跨社区+跨类型 |
+| 3.75 | `2026-07-20-long-horizon-agents.md` | `2026-W31.md` | 7.5 | 0 | 跨社区+跨类型 |
+| 3.73 | `2026-07-20-blog-reasoning-effort.md` | `2026-W31.md` | 7.33 | 0 | 跨社区+跨类型 |
+| 3.52 | `2026-07-31-blog-harness-shelf-life.md` | `2026-W31.md` | 5.16 | 0 | 跨社区+跨类型 |
+| 3.5 | `2026-07-20-llm-long-context.md` | `2026-W31.md` | 5.03 | 0 | 跨社区+跨类型 |
+| 3.47 | `2026-07-27-kimi-k3-report.md` | `2026-W31.md` | 4.7 | 0 | 跨社区+跨类型 |
+| 3.46 | `2026-07-20-long-horizon-agents.md` | `2025-agentic-rl-survey.md` | 4.56 | 2 | 跨社区+跨类型 |
+| 3.44 | `2026-07-20-long-horizon-agents.md` | `2026-W31h.md` | 4.42 | 0 | 跨社区+跨类型 |
+| 3.41 | `2026-07-31-hf-daily-papers-jul30-31.md` | `2026-W31.md` | 4.08 | 0 | 跨社区+跨类型 |
+| 3.4 | `2026-07-31-blog-harness-shelf-life.md` | `2026-W31h.md` | 4.0 | 0 | 跨社区+跨类型 |
+| 3.35 | `2026-07-20-long-horizon-agents.md` | `2026-W31g-reddit-hot.md` | 3.49 | 0 | 跨社区+跨类型 |
 | 3.3 | `2026-07-08-blog-harness-engineering.md` | `2026-W28.md` | 3.0 | 0 | 跨社区+跨类型 |
 | 3.3 | `2026-07-08-blog-harness-engineering.md` | `2026-W31b.md` | 3.0 | 0 | 跨社区+跨类型 |
 | 3.3 | `2026-07-08-blog-global-workspace.md` | `2026-model-spec-midtraining.md` | 3.0 | 0 | 跨社区+跨类型 |
-| 3.3 | `2026-07-20-long-horizon-agents.md` | `2026-W31g-reddit-hot.md` | 3.0 | 0 | 跨社区+跨类型 |
-| 3.29 | `2026-07-20-blog-reasoning-effort.md` | `2025-agentic-rl-survey.md` | 2.9 | 1 | 跨社区+跨类型 |
-| 3.26 | `2026-07-21-raschka-llm-architecture-comparison.md` | `2026-W26-reddit-hot.md` | 2.63 | 1 | 跨社区+跨类型 |
-| 3.24 | `2026-07-20-long-horizon-agents.md` | `2026-06-12-agent-evolution.md` | 2.38 | 1 | 跨社区+跨类型 |
-| 3.24 | `2026-07-20-long-horizon-agents.md` | `2026-05-08-graph-structures-meet-llms.md` | 2.38 | 1 | 跨社区+跨类型 |
-| 3.21 | `2025-agentic-rl-survey.md` | `2026-06-12-agent-evolution.md` | 2.07 | 1 | 跨社区+跨类型 |
-| 3.15 | `2026-04-03-huggingface-daily-papers-digest.md` | `2026-06-12-auto-research.md` | 1.55 | 1 | 跨社区+跨类型 |
-| 2.4 | `2026-05-25-agent-harness-engineering-survey.md` | `2026-07-20-long-horizon-agents.md` | 4.0 | 0 | 跨社区 |
-| 2.4 | `2026-06-26-lilian-weng-scaling-laws.md` | `2026-07-08-blog-harness-engineering.md` | 4.0 | 0 | 跨社区 |
 
 ## 4. 知识缺口
 
