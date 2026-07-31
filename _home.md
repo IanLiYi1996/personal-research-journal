@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-07-30-paper-parallel-decoding-distillation" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-07-31-hf-daily-papers-jul30-31" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/ai-frontier-2026h1/2026-06-12-world-models" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-07-31 | Note | [HF Daily Papers 中文摘要：2026-07-30 ~ 07-31（含前期未覆盖补录）](/research-notes/2026-07-31-hf-daily-papers-jul30-31) |
 | 2026-07-30 | Note | [苏剑林《解构 Scaling Law:优化、架构、数据的三重奏》精读](/research-notes/2026-07-30-blog-suejianlin-scaling-law) |
 | 2026-07-30 | Note | [Parallel Decoding Distillation (PDD) 精读 —— 用"回归"取代对抗式蒸馏](/research-notes/2026-07-30-paper-parallel-decoding-distillation) |
 | 2026-07-29 | Note | [HF Daily Papers 周报 · 2026-07-28 ~ 07-29](/research-notes/2026-07-29-hf-daily-papers-jul28-29) |
 | 2026-07-28 | Note | [Text2Video / Image2Video 技术深度调研（第六版：技术机制扩充）](/research-notes/2026-07-28-video-generation-survey) |
-| 2026-07-27 | Note | [技术报告精读：Kimi K3 —— Open Frontier Intelligence（2.8T MoE / 1M 上下文 / NoPE）](/research-notes/2026-07-27-kimi-k3-report) |
 <!-- AUTO:RECENT:END -->
