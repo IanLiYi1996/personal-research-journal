@@ -52,6 +52,11 @@ def _kw_matches(t: str, kw: str) -> bool:
     return re.search(r"\b" + re.escape(kw.strip()) + r"\b", t) is not None
 
 
+def _kw_pos(t: str, kw: str) -> int | None:
+    m = re.search(r"\b" + re.escape(kw.strip()) + r"\b", t)
+    return m.start() if m else None
+
+
 # Keywords that are real service names but also show up as generic feature words in
 # other services' announcements ("VPC support for the Glue connector", "flexible
 # batch execution" on Redshift, "via the CLI"). They only decide a category when no
@@ -69,12 +74,29 @@ def classify(title: str, summary: str) -> str:
     t_full = (title + " " + summary).lower()
     for strong_only in (True, False):
         for text in (t_title, t_full):
+            # In the TITLE passes the earliest-matching keyword wins rather than the
+            # first category in CATEGORIES order: AWS titles lead with their subject
+            # ("Amazon MSK Express brokers now delivers ... to Amazon S3" is an MSK
+            # announcement, not a Storage one), so position tracks the real service
+            # while list order just encodes the order this table happens to be in.
+            # In the full-text fallback, position carries no such meaning — a
+            # description name-drops services in arbitrary order — so keep the
+            # category-order precedence there.
+            by_position = text is t_title
+            best: tuple[int, str] | None = None
             for cat, kws in CATEGORIES:
                 for kw in kws:
                     if strong_only and kw in WEAK_KWS:
                         continue
-                    if _kw_matches(text, kw):
+                    pos = _kw_pos(text, kw)
+                    if pos is None:
+                        continue
+                    if not by_position:
                         return cat
+                    if best is None or pos < best[0]:
+                        best = (pos, cat)
+            if best is not None:
+                return best[1]
     return "其他"
 
 
@@ -84,6 +106,12 @@ HIGH_KWS = ["generally available", "now available", "ga release", "ga in", "anno
 HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
              "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore"]
 
+
+# "X now <verb>s Y" is AWS's standard headline for a new capability. Spelling out
+# every verb in HIGH_KWS ("now supports"/"now offers"/...) made the Medium-vs-Low
+# call hinge on whether the body text happened to contain a listed phrase — two
+# sibling MSK launches on 07-30 split Medium/Low for exactly that reason.
+NEW_CAPABILITY_RE = re.compile(r"\bnow \w+s\b")
 
 GA_KWS = ["general availability", "(ga)", " in ga", "generally available"]
 REGIONAL_KWS = ["now available in", "expands to", "additional regions", "govcloud",
@@ -112,7 +140,7 @@ def impact(title: str, summary: str) -> str:
                                     "now supports japanese", "now supports german",
                                     "available in price", "minor"]):
         return "Low"
-    if any(kw in t for kw in HIGH_KWS):
+    if any(kw in t for kw in HIGH_KWS) or NEW_CAPABILITY_RE.search(t_title):
         return "Medium"
     return "Low"
 
