@@ -9,6 +9,7 @@
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
   - [HF Daily Papers 中文摘要：2026-07-30 ~ 07-31（含前期未覆盖补录）](/research-notes/2026-07-31-hf-daily-papers-jul30-31.md)
+  - [Blog Deep Dive：Harness 保质期只有半年 —— Claude Code 之父 Boris Cherny 的反直觉主张](/research-notes/2026-07-31-blog-harness-shelf-life.md)
   - [Parallel Decoding Distillation (PDD) 精读 —— 用"回归"取代对抗式蒸馏](/research-notes/2026-07-30-paper-parallel-decoding-distillation.md)
   - [苏剑林《解构 Scaling Law:优化、架构、数据的三重奏》精读](/research-notes/2026-07-30-blog-suejianlin-scaling-law.md)
   - [HF Daily Papers 周报 · 2026-07-28 ~ 07-29](/research-notes/2026-07-29-hf-daily-papers-jul28-29.md)
