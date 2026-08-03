@@ -251,6 +251,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `weekly/2026-W26.md` | W26 cross-digest: 20 主线表 + Mythos 5-source 共振追踪 + 3 narrative arcs (Agent harness 元夏 / Scaling Laws → Data Wall → Looped Compute / 中美开源芯片政策) |
 | `weekly/2026-W30.md` | W30 cross-digest: 8 主线表 + 开源 MoE 屠榜周(Kimi K3/Inkling 3-source 共振) + 3 narrative arcs (长程能力三段式内化 / 后训练成本重构 / 成本焦虑两端); AWS 周末空档 |
 | `weekly/2026-W31.md` | W31 cross-digest（**串 18 份 digest**：4 Reddit + 5 Tech Blogs + 3 HF + 6 AWS）: 12 主线表 + 5 孤立信号 + **开放权重之争六阶段完整留痕** + 4 narrative arcs（Harness 生命周期从显学到"半年该删" / 评测有效性三源发难 / 两起 agent 事故推治理上台面 / Kimi K3 五环节 5 天闭环）|
+| `weekly/2026-W32.md` | W32 cross-digest（串 7 份：1 HF + 1 Reddit + 1 Tech Blogs + 4 AWS，回归常态节奏）: 12 主线表 + 6 孤立信号 + 3 narrative arcs。主线**换轨**——不再是治理之争，而是 **①推理成本崩塌（4-source 全命中**：Bedrock 降 80% / GPT-5.6 降 20–80% / Luna 比 4.1 mini 便宜）+ **②记忆从外挂走向原生**（HF 5 篇同期，Metis 258▲ memory foundation model）+ **③agent 破坏从厂商侧下沉到用户侧**（Fable 5 删 220 万文件）。核心张力：OpenAI 十项数学成果 vs 同周 Nature"用 LLM 的科学家做得更多但更差"=**能力上限 vs 平均实践的鸿沟** |
 
 ## AWS What's New Tracker
 
