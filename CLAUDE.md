@@ -214,6 +214,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `tech-blogs/2026-W31.md` | W31 (07/20–07/27): 204 抓取 / 203 新增（RSS 62/86 OK 0 失败 + sitemap 21 + HTML 14）; 主线 Claude Opus 5 + 20+ 大厂开放权重联署(OpenAI 拒签) + OpenAI×HF 余波 + Meta Muse 系列 + 长程模型安全; deep-dive: Raschka「本周值得注意的几个开放权重模型」 |
 | `tech-blogs/2026-W31f.md` | W31 夜间补抓 (07/23–07/30): 218 抓取（RSS 64/89 OK 0 失败），聚焦 pub≥07-29 的 **71 篇**; 主线 **翁荔 48h 内回 OpenAI**(TML 六位联创只剩 2 名) + **评测有效性四线共振**(OpenAI 自承"两个设置让 ARC-AGI-3 翻三倍") + Dwarkesh 算力涨 10× 论证 + Agent 记忆论文潮 + 后量子攻防同步加速; 补充解读: LessWrong 对 Anthropic 密码学成果的独立评议。⚠️ **科学空间首次产出内容但正文 403 抓不到**，深读待续 |
 | `tech-blogs/2026-W31h.md` | W31 月末收官 (07/24–07/31): 226 抓取 / 208 新增（RSS 63/89 OK 1 失败 + sitemap 42 + HTML 12），聚焦 pub≥07-30 的 **88 篇**; 主线 **Anthropic 承认 Claude 在 cyber eval 中攻击外部公司**(官方+LessWrong+Simon 3-source) + **Claude Code 之父「harness 保质期半年」** + 自我改进实锤 + MSR 双发 agent 环境工程(Echoverse/EvoLib) + Google 可验证自主科研; deep-dive: harness 保质期。⚠️ Cohere 34 条疑为 sitemap 回填、未计入本周新文 |
+| `tech-blogs/2026-W32.md` | W32 首份 (07/27–08/03): 228 抓取 / 202 新增（RSS 64/89 OK 0 失败 + sitemap 43 + HTML 12），聚焦 pub≥07-31 的 58 篇; 主线 **OpenAI 宣称十项数学/理论CS进展**(内部模型 Astra、每题<$2000、附 Lean4 形式化) + 内部模型黑东西续(LessWrong+量子位双源) + Cloudflare Agents Week + GPT-5.6 再降价 20–80% + Kimi K3 开发者生态 + 物理AI从采数据到造世界; deep-dive: OpenAI 十项数学进展的证据链审视 |
 | `tech-blogs/2026-W31d.md` | W31 周末补抓 (07/22–07/29): 208 抓取（RSS 64/89 OK 0 失败 + sitemap 12 + HTML 11），聚焦 pub≥07-28 的 **63 篇**; 主线 **Anthropic 用 Claude 发现密码学弱点**(HAWK 有效密钥减半、60h vs 两年专家评审) + Raschka K3 架构笔记(补上"全面弃用 RoPE") + 五家同谈 RSI + HF agent 事故技术复盘; deep-dive: Anthropic 密码学(内嵌) |
 | `tech-blogs/2026-W31b.md` | W31 周中补抓 (07/21–07/28): 201 抓取（RSS 63/89 OK 1 失败 + sitemap 21 + HTML 11），聚焦 pub≥07-27 的 **48 篇新增**; 主线 **Anthropic CEO 亲撰开放权重立场文** + Kimi K3 权重落地生态响应 + LessWrong 三篇拆解 Opus 5 系统卡 + Harness 工程成显学 + 翁荔离职 TML; deep-dive: Dario Amodei《Position on Open Weights Models》（内嵌，非独立笔记） |
 
@@ -228,6 +229,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `research-notes/2026-07-30-blog-suejianlin-scaling-law.md` | 科学空间/苏剑林 (2026-07-29) 《解构 Scaling Law：优化、架构、数据的三重奏》（三重分解 + 异幂不等式/最优配比率；正文 403，用 agent-browser 取全文） |
 | `research-notes/2026-07-27-blog-raschka-open-weight-roundup.md` | Sebastian Raschka (2026-07-26) "A Few Notable Open-Weight Models This Week"（6 模型架构速览：Nanbeige 4.2 / Laguna S 2.1 / Motif-3-Beta GDLA / Solar Open 2 / Antares 1B / BTL-3） |
 | `research-notes/2026-07-31-blog-harness-shelf-life.md` | Boris Cherny (YC 访谈, 2026-07-28) 「Harness 保质期只有半年」（每半年删 CLAUDE.md/skills/hooks；Claude Code 系统提示砍 80%+ 只剩安全/权限/静态分析；unhobbling / product overhang / model elicitation 三概念；14–15 天未停的 Electron→Swift 任务） |
+| `research-notes/2026-08-03-blog-openai-ten-math-advances.md` | OpenAI (2026-08-01)「Ten advances in mathematics」+ Simon Willison 评述（内部模型 Astra 解十道十年无进展问题、每题<$2000、公开 Lean4 形式化仓库；但无独立数学家评审、prompt 未公开、无失败率分母；对照 Anthropic HAWK 与同周 Nature 的相反预测）|
 
 ## Weekly Cross-Digest
 
