@@ -62,3 +62,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [Blog Deep Dive：Harness 保质期只有半年 —— Claude Code 之父 Boris Cherny 的反直觉主张](/research-notes/2026-07-31-blog-harness-shelf-life.md)
 - [HF Daily Papers 中文摘要：2026-07-30 ~ 07-31（含前期未覆盖补录）](/research-notes/2026-07-31-hf-daily-papers-jul30-31.md)
 - [Blog Deep Dive：OpenAI 宣称十项数学进展 —— 证据链有多硬？](/research-notes/2026-08-03-blog-openai-ten-math-advances.md)
+- [HF Daily Papers 中文摘要：2026-08-01 ~ 08-03（含 07/30–31 迟到补录）](/research-notes/2026-08-03-hf-daily-papers-aug01-03.md)

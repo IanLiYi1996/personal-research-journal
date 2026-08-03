@@ -129,6 +129,7 @@ This is a recurring task — writing weekly digests of Hugging Face Daily Papers
 | `2026-07-27-hf-daily-papers-jul25-27.md` | 07/25-07/27 (**14 papers** 全收录; 7/25-26 周末空档，仅周一单日窗口; 首轮 11 篇 + 当日二次抓取补录 3 篇（TBSM/Spectral Prior/语音匿名化威胁）, 2 deep dives: Skill-Self-Play/Molt, 2 figures 从 PDF 渲染; 主线 Agent 自进化 + Agentic RL 框架) |
 | `2026-07-29-hf-daily-papers-jul28-29.md` | 07/28-07/29 + 07-27 迟到补录 (**61 papers**：首版 49 + 当日二次抓取补录 12, 25 精选, 2 deep dives: **Kimi K3 技术报告**(301▲，补齐此前所有未披露字段：93 层/104.2B 激活/69 KDA+24 MLA/MoonViT-V2)+ 机器人进度奖励综述, 1 figure 从 PDF 渲染; 主线 Kimi K3 交付 + 信用分配跨领域共振 + agent harness 进论文) |
 | `2026-07-31-hf-daily-papers-jul30-31.md` | 07/30-07/31 + 前期未覆盖补录 (窗口 203 篇 / **新增 160**, 25 精选, 2 deep dives: TurboVLA(122▲, 0.2B/32Hz/0.9GB 打平 8.3B)/CoRT(77▲, 反事实重放做 token 级信用), 2 figures; 主线 具身复杂度下移 + 奖励从标量走向可演化结构 + 评测转向测失效模式。⚠️ **去重方式修正**：HF 日期桶会回溯含旧论文，改为对照最近 8 份 digest 累计 241 个 id 去重) |
+| `2026-08-03-hf-daily-papers-aug01-03.md` | 08/01-08/03 + 07/30-31 迟到补录（08/01-02 周末空档各 0 篇、08/03 仅 8 篇；07/31 桶复查涨到 38 篇）；窗口唯一 46 / **新增 46**，因总量小**全收录**而非取 Top 25；2 deep dives: **Metis 记忆基础模型**(258▲，把记忆做进 backbone：架构耦合/端到端梯度/并行) + **Frontis-MA1**(168▲，AI4AI 递归自我改进，35B 在单张 4090 上 39.39%→71.21% 逼近 2.8T Kimi K3，双向消融证明模型与框架各自有效)，2 figures（Frontis 无 HTML 版、从 PDF 渲染）；主线 **记忆从外挂走向原生**(5 篇同期) + RSI 从表态走向可复现栈 + 自我验证成独立研究对象 + 可验证/可溯源成科学类系统前提。⚠️ 入库遇 arXiv 429，靠退避重试+OpenAlex fallback 分批完成 |
 
 ## WeChat Publishing
 
