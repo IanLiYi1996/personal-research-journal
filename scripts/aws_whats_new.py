@@ -72,8 +72,13 @@ def classify(title: str, summary: str) -> str:
     # DSQL item mentioning "Lambda"), which would otherwise hijack the category.
     t_title = title.lower()
     t_full = (title + " " + summary).lower()
-    for strong_only in (True, False):
-        for text in (t_title, t_full):
+    # Title exhausts BOTH its strong and weak keywords before the description gets a
+    # vote: with the loops nested the other way, a title whose only keyword is weak
+    # ("AWS Config now supports 15 new resource types") loses to a strong service name
+    # merely name-dropped in the body ("...across Bedrock, OpenSearch, SageMaker") and
+    # a Config item lands in AI/ML.
+    for text in (t_title, t_full):
+        for strong_only in (True, False):
             # In the TITLE passes the earliest-matching keyword wins rather than the
             # first category in CATEGORIES order: AWS titles lead with their subject
             # ("Amazon MSK Express brokers now delivers ... to Amazon S3" is an MSK
@@ -102,7 +107,8 @@ def classify(title: str, summary: str) -> str:
 
 HIGH_KWS = ["generally available", "now available", "ga release", "ga in", "announces ",
             "announces support", "launches ", "introduces ", "new ", "expands to",
-            "adds support", "adds ", "now supports", "now offers", "preview"]
+            "adds support", "adds ", "now supports", "now support ", "now offers",
+            "preview"]
 HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
              "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore"]
 
