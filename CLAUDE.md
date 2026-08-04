@@ -202,6 +202,18 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
   - **已验证适用**:科学空间(spaces.ac.cn,curl 返回 124 字节 / WebFetch 403 → agent-browser 取到 28405 字符全文)、Substack 超长文(WebFetch 会截断,如 Raschka 架构横评 16→23 节)。
   - 注意:`pkill -f "remote-debugging-port"` 会连带杀掉当前 shell(exit 144),换端口新起实例更安全;用完 `agent-browser close`。
   - KaTeX 页面的 innerText 会把公式重复渲染两遍(源码 + 排版),精读时按行长过滤噪音即可。
+- **⚠️⚠️ 本地 headless 也过不去时(Cloudflare bot challenge):用 AgentCore 云浏览器**。`openai.com/index/*` 这类站点有 **Cloudflare 挑战**,curl/WebFetch 403、**本地 headless Chromium 会卡在 "Just a moment..." 且 innerText 为 0**(等待+reload 无效,r.jina.ai 文本代理同样被拦)。云浏览器有真实浏览器指纹,可拿到 **HTTP 200**:
+  ```
+  ToolSearch "select:mcp__agentcore__start_browser_session,mcp__agentcore__browser_navigate,
+              mcp__agentcore__browser_evaluate,mcp__agentcore__stop_browser_session"
+  start_browser_session → browser_navigate(url) → browser_evaluate 取正文 → stop_browser_session
+  ```
+  - **取正文**(注意 accessibility tree 里段落常为空,必须用 evaluate):
+    `(() => { const a=document.querySelector('article')||document.body; return JSON.stringify(a.innerText.slice(0,6000)); })()`
+    长文分段取(slice 6000-14000、14000-…),单次返回有上限。
+  - **取配图**:`[...document.querySelectorAll('img')].map(i=>({alt:i.alt, src:i.currentSrc||i.src}))` → 拿到 CDN 原图 URL(OpenAI 用 images.ctfassets.net 的 SVG)→ 本地 `curl` 下载 → **cairosvg 转 PNG**(见 wechat 封面那节的转换代码)。**比截图清晰得多。**
+  - **已验证**:OpenAI GPT-Live 工程博客(curl 403 + 本地 headless 0 字符 → 云浏览器 200 + 18517 字符全文 + 3 张原始 SVG 配图)。
+  - 用完记得 `stop_browser_session` 释放 microVM。
 - **Still no useful feed/sitemap/HTML** (9 sources, all SPAs needing headless browser): xAI, Perplexity, Stanford HAI/CRFM, Princeton AIML, Redwood, 机器之心中文站, 李沐, AMiner 学术日报.
 
 ### Previous Digests
@@ -227,6 +239,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 | `research-notes/2026-07-08-blog-harness-engineering.md` | Lilian Weng (2026-07-04) "Harness Engineering for Self-Improvement" |
 | `research-notes/2026-07-08-blog-global-workspace.md` | Anthropic Research (2026-07-06) "A global workspace in language models" |
 | `research-notes/2026-07-20-blog-inkling-moe.md` | Sebastian Raschka (2026-07-16) "Inkling: A New Open-Weight 975B MoE with a Few Surprises" |
+| `research-notes/2026-08-04-blog-openai-gpt-live.md` | OpenAI Engineering (2026-08-03)「六个月内建成响应式语音 AI 实时系统」（GPT-Live：移除 turn detector / full-duplex、异步委派、压缩当实例切换、WARP 6→1 RTT；Cloudflare 挑战，用 AgentCore 云浏览器取全文+原图） |
 | `research-notes/2026-07-30-blog-suejianlin-scaling-law.md` | 科学空间/苏剑林 (2026-07-29) 《解构 Scaling Law：优化、架构、数据的三重奏》（三重分解 + 异幂不等式/最优配比率；正文 403，用 agent-browser 取全文） |
 | `research-notes/2026-07-27-blog-raschka-open-weight-roundup.md` | Sebastian Raschka (2026-07-26) "A Few Notable Open-Weight Models This Week"（6 模型架构速览：Nanbeige 4.2 / Laguna S 2.1 / Motif-3-Beta GDLA / Solar Open 2 / Antares 1B / BTL-3） |
 | `research-notes/2026-07-31-blog-harness-shelf-life.md` | Boris Cherny (YC 访谈, 2026-07-28) 「Harness 保质期只有半年」（每半年删 CLAUDE.md/skills/hooks；Claude Code 系统提示砍 80%+ 只剩安全/权限/静态分析；unhobbling / product overhang / model elicitation 三概念；14–15 天未停的 Electron→Swift 任务） |

@@ -1,11 +1,11 @@
 # 文献库索引
 
-> 共 **1870** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **1874** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （811）
+- [大语言模型 (LLM)](#-llm-) （813）
 - [智能体 / Agent](#-agent) （311）
 - [强化学习 / RLHF](#-rlhf) （365）
 - [推理 / Reasoning](#-reasoning) （437）
@@ -13,10 +13,10 @@
 - [扩散 / 生成模型](#-) （314）
 - [多模态 / 视觉语言](#-) （415）
 - [Transformer / 架构](#transformer-) （397）
-- [高效训练 / 推理](#-) （492）
+- [高效训练 / 推理](#-) （493）
 - [综述 / Survey](#-survey) （147）
 - [检索增强 / RAG](#-rag) （128）
-- 未分类（159）
+- 未分类（160）
 
 ## 大语言模型 (LLM)
 
@@ -175,6 +175,7 @@
 - **2026** [Evaluation-Verification Reward for Consistent Multi-Reference Image Editing](http://arxiv.org/abs/2607.29025) — Yingmao Miao et al. · arXiv:2607.29025 `{Miao2026Evaluation}`
 - **2026** [Generative Compilation: On-the-Fly Compiler Feedback as AI Generates Code](http://arxiv.org/abs/2607.13921) — Niels Mündler-Sasahara et al. · arXiv:2607.13921 `{MndlerSasahara2026Generative}`
 - **2026** [DrugGen 2: A disease-aware language model for enhancing drug discovery](http://arxiv.org/abs/2607.08404) — Ali Motahharynia et al. · arXiv:2607.08404 `{Motahharynia2026Druggen}`
+- **2026** [Chunky Post-Training: Data Driven Failures of Generalization](http://arxiv.org/abs/2602.05910) — Seoirse Murray et al. · arXiv:2602.05910 `{Murray2026Chunky}`
 - **2026** [PersonaVLM: Long-Term Personalized Multimodal LLMs](http://arxiv.org/abs/2604.13074) — Chang Nie et al. · arXiv:2604.13074 `{Nie2026Personavlm}`
 - **2026** [Code as Agent Harness](http://arxiv.org/abs/2605.18747) — Xuying Ning et al. · arXiv:2605.18747 `{Ning2026Code}`
 - **2026** [Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents](http://arxiv.org/abs/2606.26080) — Changdae Oh et al. · arXiv:2606.26080 `{Oh2026Neglected}`
@@ -391,6 +392,7 @@
 - **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2025** [DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning](http://arxiv.org/abs/2511.22570) — Zhihong Shao et al. · arXiv:2511.22570 `{Shao2025Deepseekmath}`
 - **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
+- **2025** [Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples](http://arxiv.org/abs/2510.07192) — Alexandra Souly et al. · arXiv:2510.07192 `{Souly2025Poisoning}`
 - **2025** [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](http://arxiv.org/abs/2503.16419) — Yang Sui et al. · arXiv:2503.16419 `{Sui2025Stop}`
 - **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
@@ -3362,6 +3364,7 @@
 - **2026** [IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse](http://arxiv.org/abs/2603.12201) — Yushi Bai et al. · arXiv:2603.12201 `{Bai2026Indexcache}`
 - **2026** [Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent](http://arxiv.org/abs/2606.30616) — Lei Bai et al. · arXiv:2606.30616 `{Bai2026Scaling}`
 - **2026** [Token Time Continuous Diffusion for Language Modeling](http://arxiv.org/abs/2607.14106) — Parikshit Bansal et al. · arXiv:2607.14106 `{Bansal2026Token}`
+- **2026** [Subliminal Learning Is Steering Vector Distillation](http://arxiv.org/abs/2606.00995) — Camila Blank et al. · arXiv:2606.00995 `{Blank2026Subliminal}`
 - **2026** [Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation](http://arxiv.org/abs/2605.11739) — Yuchen Cai et al. · arXiv:2605.11739 `{Cai2026Learning}`
 - **2026** [PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects](http://arxiv.org/abs/2605.21572) — Ziang Cao et al. · arXiv:2605.21572 `{Cao2026Physx}`
 - **2026** [DMax: Aggressive Parallel Decoding for dLLMs](http://arxiv.org/abs/2604.08302) — Zigeng Chen et al. · arXiv:2604.08302 `{Chen2026Dmax}`
@@ -4136,6 +4139,7 @@
 - **2026** [Phone Segmentation and Recognition through Phonological Activation Mapping](http://arxiv.org/abs/2607.09020) — Shikhar Bharadwaj et al. · arXiv:2607.09020 `{Bharadwaj2026Phone}`
 - **2026** [DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space](http://arxiv.org/abs/2607.25675) — Jiangwang Chen et al. · arXiv:2607.25675 `{Chen2026Decoevo}`
 - **2026** [Edge-Aware Thermal Infrared UAV Swarm Tracking](http://arxiv.org/abs/2607.12544) — Yu-Hsi Chen et al. · arXiv:2607.12544 `{Chen2026Edge}`
+- **2026** [Phantom Transfer: Data Poisoning can Survive Data-Level Defences](http://arxiv.org/abs/2602.04899) — Andrew Draganov et al. · arXiv:2602.04899 `{Draganov2026Phantom}`
 - **2026** [A Sparse and Truncated State Vector Simulator for Peaked Circuits](http://arxiv.org/abs/2607.07816) — Diogo R. Ferreira et al. · arXiv:2607.07816 `{Ferreira2026Sparse}`
 - **2026** [Where to cut, how deep: BPE and Unigram-LM on chemistry SMILES](http://arxiv.org/abs/2607.05691) — Hunter Heidenreich et al. · arXiv:2607.05691 `{Heidenreich2026Where}`
 - **2026** [WildDet3D: Scaling Promptable 3D Detection in the Wild](http://arxiv.org/abs/2604.08626) — Weikai Huang et al. · arXiv:2604.08626 `{Huang2026Wilddet3d}`

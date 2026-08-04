@@ -783,6 +783,14 @@
   year = {2024}
 }
 
+@article{Blank2026Subliminal,
+  title = {Subliminal Learning Is Steering Vector Distillation},
+  author = {Camila Blank and Agam Bhatia and Senthooran Rajamanoharan and Arthur Conmy and Neel Nanda},
+  year = {2026},
+  url = {http://arxiv.org/abs/2606.00995},
+  abstract = {Subliminal learning refers to a student language model acquiring a teacher's traits (e.g. a system-prompted preference for owls) when fine-tuned on the teacher's outputs, despite the outputs being semantically unrelated to those traits. It remains poorly understood how data without semantic meaning can transfer specific semantic traits. In this work, we show that subliminal learning is mediated by a single steering vector, i.e. a vector added to the model's activations. Across two open-source models, we find that the teacher's system prompt is well approximated by a steering vector, and that the student's behavior is driven by learning an aligned vector over fine-tuning. System prompts that are not well approximated by steering vectors are not subliminally learned. This is a special case of steering vector distillation, in which a student trained on the outputs of a steered teacher learns to imitate that steering. We demonstrate steering vector distillation on a range of semantic and random vectors. Adding a semantic vector to a model's activations can have both model-independent and model-specific (i.e. non-semantic) effects on its behavior, so generated data that is non-semantic can transmit a vector with semantic effects, enabling subliminal learning. This also explains why subliminal learning does not transfer between models. We find that adaptive optimizers are necessary for subliminal learning in language models: activation gradients on steered data carry a small but consistent component along the steering direction, and non-adaptive optimizers impede this by allowing outlier gradients to dominate.}
+}
+
 @article{Blattmann2023Align,
   abstract = {Latent Diffusion Models (LDMs) enable high-quality image synthesis while avoiding excessive compute demands by training a diffusion model in a compressed lower-dimensional latent space. Here, we apply the LDM paradigm to high-resolution video generation, a particularly resource-intensive task. We first pre-train an LDM on images only; then, we turn the image generator into a video generator by introducing a temporal dimension to the latent space diffusion model and fine-tuning on encoded image sequences, i.e., videos. Similarly, we temporally align diffusion model upsamplers, turning them into temporally consistent video super resolution models. We focus on two relevant real-world applications: Simulation of in-the-wild driving data and creative content creation with text-to-video modeling. In particular, we validate our Video LDM on real driving videos of resolution 512 x 1024, achieving state-of-the-art performance. Furthermore, our approach can easily leverage off-the-shelf pre-trained image LDMs, as we only need to train a temporal alignment model in that case. Doing so, we turn the publicly available, state-of-the-art text-to-image LDM Stable Diffusion into an efficient and expressive text-to-video model with resolution up to 1280 x 2048. We show that the temporal layers trained in this way generalize to different fine-tuned text-to-image LDMs. Utilizing this property, we show the first results for personalized text-to-video generation, opening exciting directions for future content creation. Project page: https://research.nvidia.com/labs/toronto-ai/VideoLDM/},
   author = {Andreas Blattmann and Robin Rombach and Huan Ling and Tim Dockhorn and Seung Wook Kim and Sanja Fidler and Karsten Kreis},
@@ -2522,6 +2530,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2606.01008},
   abstract = {We present a benchmark for evaluating AI models and agents on real-world formal software verification tasks. We first scrape 11,039 property-based tests (PBTs) from real-world Python repositories, then automatically translate 2,772 of them (25%) into 9,415 Lean 4 specifications with sorry placeholders (about 3 formalizations/PBT; we retain multiple attempts when none dominates on quality metrics). Translating PBTs into Lean specifications is challenging: it requires modeling Python semantics in Lean, inferring the logical property encoded in an imperative PBT, and handling the inherent difficulties of dependently-typed programming in a seldom-used language. We describe a three-agent LLM pipeline for transpiling PBTs into Lean specifications, evaluate coverage and quality metrics, and provide baselines for proof generation using several automated and model based approaches. All code (scraper and agents) and data (PBTs and Lean specifications) are open source. Our benchmark aims to drive progress on the underexplored problem of AI-assisted formal verification of real-world software, which is of increasing interest as AI produces more and more of the world's code.}
+}
+
+@article{Draganov2026Phantom,
+  title = {Phantom Transfer: Data Poisoning can Survive Data-Level Defences},
+  author = {Andrew Draganov and Tolga H. Dur and Anandmayi Bhongade and Mary Phuong},
+  year = {2026},
+  url = {http://arxiv.org/abs/2602.04899},
+  abstract = {We present a data poisoning attack -- Phantom Transfer -- with the property that, even if you know precisely how the poison was placed into an otherwise benign dataset, you cannot filter it out. We achieve this by modifying subliminal learning to work in real-world contexts and demonstrate that the attack works regardless of which model produced the data, which model is trained on the data or what the attack target is. Furthermore, the attack survives 11 tested data-level defences, including one where every sample is paraphrased by another model. We characterise when this attack works best and show that it can be used to plant password-triggered behaviours into models while still beating defences. In short, we provide an existence proof that maximum-affordance defences can fail to stop sophisticated data poisoning attacks. We suggest that future defences should be supplemented with white-box methods and post-training model audits.}
 }
 
 @article{Du2022Survey,
@@ -8495,6 +8511,14 @@
   year = {2024}
 }
 
+@article{Murray2026Chunky,
+  title = {Chunky Post-Training: Data Driven Failures of Generalization},
+  author = {Seoirse Murray and Allison Qi and Timothy Qian and John Schulman and Collin Burns and Sara Price},
+  year = {2026},
+  url = {http://arxiv.org/abs/2602.05910},
+  abstract = {LLM post-training involves many diverse datasets, each targeting a specific behavior. But these datasets encode incidental patterns alongside intended ones: correlations between formatting and content, narrow phrasings across diverse problems, and implicit associations arising from the discrete data curation process. These patterns are often invisible to developers yet salient to models, producing behaviors that surprise their creators, such as rejecting true facts presented in a particular question format. We call this chunky post-training: the model learns spurious correlations as a result of distinct chunks of post-training data. We introduce SURF, a black-box pipeline which surfaces these unintended behaviors at run time, and TURF, a tool that traces these failures back to specific post-training data. Applying these tools to frontier models (Claude 4.5, GPT-5.1, Grok 4.1, Gemini 3) and open models (Tülu 3), we show that chunky post-training produces miscalibrated behaviors, which often result from imbalanced or underspecified chunks of post-training data.}
+}
+
 @article{Nair2026Do,
   title = {Do Enterprise Systems Need Learned World Models? The Importance of Context to Infer Dynamics},
   author = {Jishnu Sethumadhavan Nair and Patrice Bechard and Rishabh Maheshwary and Surajit Dasgupta and Sravan Ramachandran and Aakash Bhagat and Shruthan Radhakrishna and Pulkit Pattnaik and Johan Obando-Ceron and Shiva Krishna Reddy Malay and Sagar Davasam and Seganrasan Subramanian and Vipul Mittal and Sridhar Krishna Nemala and Christopher Pal and Srinivas Sunkara and Sai Rajeswar},
@@ -10171,6 +10195,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2607.09424},
   abstract = {We present Soofi S 30B-A3B, a sovereign, open-source Mixture-of-Experts (MoE) hybrid Mamba Transformer foundation model for German and English. Its hybrid design activates only 3B of 30B parameters per token and keeps the inference cache near-constant as context grows, giving it a decisive throughput advantage over dense models for long-context, high-concurrency deployment. Pretrained on roughly 27 trillion tokens with deliberately up-weighted German, Soofi S matches dense 14 to 27B models on aggregate English and German benchmarks while achieving the best code aggregates in both languages among 17 open base models, and outperforms every European sovereign baseline in our comparison, including ones far larger in active parameters. Among fully open models, Soofi S obtains the highest English and German evaluation scores, ahead of Olmo 3 32B and Apertus 70B. Soofi S was built end-to-end on the German Industrial AI Cloud, a sovereign HPC scale AI infrastructure operated by Deutsche Telekom in Munich. Soofi S will be released under highly permissive, open-access terms: weights, selected intermediate checkpoints, full per-source data accounting, hyperparameters, and training and evaluation code. Where source licenses permit, data-construction artifacts are released under permissive licenses; commercially licensed sources are documented with aggregate statistics and exact mixture accounting.}
+}
+
+@article{Souly2025Poisoning,
+  title = {Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples},
+  author = {Alexandra Souly and Javier Rando and Ed Chapman and Xander Davies and Burak Hasircioglu and Ezzeldin Shereen and Carlos Mougan and Vasilios Mavroudis and Erik Jones and Chris Hicks and Nicholas Carlini and Yarin Gal and Robert Kirk},
+  year = {2025},
+  url = {http://arxiv.org/abs/2510.07192},
+  abstract = {Poisoning attacks can compromise the safety of large language models (LLMs) by injecting malicious documents into their training data. Existing work has studied pretraining poisoning assuming adversaries control a percentage of the training corpus. However, for large models, even small percentages translate to impractically large amounts of data. This work demonstrates for the first time that poisoning attacks instead require a near-constant number of documents regardless of dataset size. We conduct the largest pretraining poisoning experiments to date, pretraining models from 600M to 13B parameters on chinchilla-optimal datasets (6B to 260B tokens). We find that 250 poisoned documents similarly compromise models across all model and dataset sizes, despite the largest models training on more than 20 times more clean data. We also run smaller-scale experiments to ablate factors that could influence attack success, including broader ratios of poisoned to clean data and non-random distributions of poisoned samples. Finally, we demonstrate the same dynamics for poisoning during fine-tuning. Altogether, our results suggest that injecting backdoors through data poisoning may be easier for large models than previously believed as the number of poisons required does not scale up with model size, highlighting the need for more research on defences to mitigate this risk in future models.}
 }
 
 @article{Spanio2026Quantized,
