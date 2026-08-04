@@ -4,7 +4,7 @@
 - **Tags:** 语音AI, GPT-Live, 实时系统, WebRTC, WARP, full-duplex, 上下文压缩, 系统工程, blog-deep-dive
 - **原文:** [How we built a realtime system for responsive voice AI in six months](https://openai.com/index/continuous-voice-interaction-with-gpt-live/)(OpenAI Engineering,2026-08-03)
 - **作者:** **Justin Uberti**、**Zahan Malkani**(Members of Technical Staff)—— Uberti 是 WebRTC 的创造者之一,这个署名本身就说明了文章重心
-- **抓取说明:** `openai.com/index/*` 有 **Cloudflare bot challenge**;curl / WebFetch 403,**本地 headless Chromium 也卡在 "Just a moment..."**。最终用 **AgentCore 云浏览器**(真实浏览器指纹的 Firecracker microVM)取到 **HTTP 200 + 全文 18517 字符 + 三张 CDN 原图**。
+- **抓取说明:** `openai.com/index/*` 有 **Cloudflare bot challenge**;curl / WebFetch 403,**本地 headless Chromium 也卡在 "Just a moment..."**。最终用 **Xvfb + 非 headless 本地 Chromium** 取到全文(19928 字符)与三张 CDN 原图。**根因是 UA 里的 `HeadlessChrome` 标识** —— 去掉 `--headless`、改用虚拟显示(`Xvfb :99`)即可正常通过。方法已写入 CLAUDE.md。
 
 ## TL;DR
 
@@ -186,4 +186,4 @@ GPT-Live 能调用现有前沿模型,**有效地把"talking"与更深的"thinkin
 - **原文提到的延伸:** WARP 规范(IETF TSVWG)、SPED、SNAP、DTLS 1.3、[rebuilt our voice infrastructure](https://openai.com/index/)(前作)
 - **相关前作:** ChatGPT Voice 与 Realtime API 的基础设施重建
 
-> 引用须可验证:以上所有引述、数字(p95=p50、6→1 RTT)与四节教训均出自原文全文(18517 字符,经 AgentCore 云浏览器取得);三张配图为原文 CDN 原始 SVG 转 PNG。**文中未披露绝对延迟数字与模型细节,已在 Open Questions 明确标注,未做任何补白。**
+> 引用须可验证:以上所有引述、数字(p95=p50、6→1 RTT)与四节教训均出自原文全文(19928 字符,经 Xvfb + 非 headless 本地 Chromium 取得);三张配图为原文 CDN 原始 SVG 转 PNG。**文中未披露绝对延迟数字与模型细节,已在 Open Questions 明确标注,未做任何补白。**
