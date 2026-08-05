@@ -27,8 +27,11 @@ CATEGORIES = [
                   "documentdb", "timestream", "qldb", "memorydb", "keyspaces", "aurora dsql"]),
     ("Networking", ["vpc", "cloudfront", "route 53", "route53", "api gateway", "elb",
                     # "load balanc" could never match: _kw_matches appends \b, and
-                    # "balancer" has no word boundary after the "c".
-                    "load balancer", "load balancing", "direct connect",
+                    # "balancer" has no word boundary after the "c". The plural needs
+                    # its own entry for the same reason — AWS headlines the joint
+                    # ALB+NLB announcements as "Load Balancers".
+                    "load balancer", "load balancers", "load balancing",
+                    "direct connect",
                     "global accelerator", "transit gateway",
                     "private link", "privatelink", "app mesh", "cloud map",
                     "interconnect", "cloud wan", "network firewall", "vpn"]),
@@ -62,7 +65,7 @@ def _kw_pos(t: str, kw: str) -> int | None:
 # batch execution" on Redshift, "via the CLI"). They only decide a category when no
 # strong (unambiguous) service keyword matched anywhere.
 WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
-            "health ", "model", " q ", "firewall", "artifact ", "load balanc",
+            "health ", "model", " q ", "firewall", "artifact ",
             "auto scaling", "generative", "preview"}
 
 
@@ -134,7 +137,11 @@ def impact(title: str, summary: str) -> str:
     # and "region expansion of G7e on SageMaker" item claims a Top Highlight slot.
     if regional:
         return "Low"
-    if any(_kw_matches(t, kw) for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
+    # The flagship-service promotion keys off the TITLE only. Matched on full text, a
+    # description that merely name-drops one ("...from notebooks in Amazon SageMaker
+    # Unified Studio" on an EMR Spark Connect item) promoted unrelated announcements
+    # to High and pushed them into Top Highlights.
+    if any(_kw_matches(t_title, kw) for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
         return "High"
     # GA of a service/capability is High (region rollouts already returned above).
     if any(kw in t_title for kw in GA_KWS):
