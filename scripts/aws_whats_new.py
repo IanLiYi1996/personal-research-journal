@@ -123,6 +123,13 @@ HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
 NEW_CAPABILITY_RE = re.compile(r"\bnow \w+s\b")
 
 GA_KWS = ["general availability", "(ga)", " in ga", "generally available"]
+# AWS often keeps "GA" out of the headline and states it only in the first line of the
+# body ("Today, AWS announces the general availability of vector search for DynamoDB"
+# was titled "...now supports real-time vector search" → graded Medium on 08-06).
+# Matched as a full phrase, not on "general availability" alone, which also appears in
+# unrelated boilerplate; 4/100 feed items hit it, and the regional check above still
+# wins first so "<instance> now available in <region>" stays Low.
+GA_BODY_RE = re.compile(r"announc\w* the general availability of")
 REGIONAL_KWS = ["now available in", "expands to", "additional regions", "govcloud",
                 "region is now", "now open", "region expansion", "additional aws region",
                 "in the aws ", "new aws region", "local zone"]
@@ -144,7 +151,7 @@ def impact(title: str, summary: str) -> str:
     if any(_kw_matches(t_title, kw) for kw in HIGH_HARD) and any(kw in t for kw in HIGH_KWS):
         return "High"
     # GA of a service/capability is High (region rollouts already returned above).
-    if any(kw in t_title for kw in GA_KWS):
+    if any(kw in t_title for kw in GA_KWS) or GA_BODY_RE.search(summary.lower()):
         return "High"
     # Low signals are matched on the TITLE only: a long description almost always
     # contains the word "documentation" (the "see the docs" boilerplate), which
