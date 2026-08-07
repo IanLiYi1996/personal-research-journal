@@ -65,3 +65,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [HF Daily Papers 中文摘要：2026-08-01 ~ 08-03（含 07/30–31 迟到补录）](/research-notes/2026-08-03-hf-daily-papers-aug01-03.md)
 - [OpenAI《六个月内建成响应式语音 AI 实时系统》精读(GPT-Live)](/research-notes/2026-08-04-blog-openai-gpt-live.md)
 - [Blog Deep Dive：100 条样本就能种后门 —— 且攻击者不需要控制 prompt](/research-notes/2026-08-04-blog-subliminal-backdoor.md)
+- [HF Daily Papers 摘要 · 08/04–08/07](/research-notes/2026-08-07-hf-daily-papers-aug04-07.md)
