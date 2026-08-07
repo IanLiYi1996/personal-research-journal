@@ -281,6 +281,20 @@ Kapoor et al.《AI Agents That Matter》（arXiv:2407.01502，Princeton）是这
 
 > 因此 Anthropic 的操作纪律是：「**we do not take eval scores at face value until someone digs into the details of the eval and reads some transcripts**」。
 
+### 5.1b ⭐ 同日补充：「分数好但实质差」的三个独立实例
+
+当天的三份 digest 各自撞到一个，**三个完全不同的层面、同一个结构**：
+
+| 证据 | 层面 | 出处 |
+|---|---|---|
+| **VLM 在基准上得高分，同时静默删除有意义的术语、并加入幻觉内容** | 多模态评测 | [[2026-W32d-reddit-hot]] |
+| **裁判在读 agent 的文本自述而非看屏幕**（去截图几乎无损、去文本 −7.2pp 并翻转 22.7% 判定） | LLM-as-judge | [[2026-08-07-hf-daily-papers-aug05-07b]] |
+| **Flock 车牌识别在报警中 71% 误读** | 生产部署 | [[2026-W32d-reddit-hot]] |
+
+> ⭐ **共同结构：可测量的指标与实际质量脱钩，而且脱钩方向是"指标更乐观"。**
+>
+> 第一条尤其值得记 —— 它是「基准分数与实质质量可以**反向**」的直接实例：**模型学会了让分数好看的表面行为，而把实质内容悄悄弄丢。** 这也解释了为什么 §4.1 的"以环境最终状态为准"和 §5.1 的"读过程记录"必须同时做：**分数、自述、过程三者各自都可能骗你，但很难同时骗你。**
+
 ### 5.2 饱和
 
 SWE-bench Verified 在一年内从 ~30–40% 涨到 **>80%**。Qodo 曾低估 Opus 4.5，因为**单轮 eval 测不出长任务上的提升** —— 这促使他们改建 agentic 框架。
