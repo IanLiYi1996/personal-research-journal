@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-08-07 | Topic | [附录：Agent 评估的量化方法手册](/topics/agent/2026-08-07-agent-eval-methods-appendix) |
 | 2026-08-07 | Topic | [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation) |
 | 2026-08-07 | Topic | [Agent 质量评估方案](/topics/agent/2026-08-07-agent-eval-briefing-for-sharing) |
 | 2026-08-07 | Note | [HF Daily Papers 摘要 · 08/05–08/07（当日二次抓取 / W32 第二份）](/research-notes/2026-08-07-hf-daily-papers-aug05-07b) |
 | 2026-08-07 | Note | [HF Daily Papers 摘要 · 08/04–08/07](/research-notes/2026-08-07-hf-daily-papers-aug04-07) |
-| 2026-08-04 | Note | [OpenAI《六个月内建成响应式语音 AI 实时系统》精读(GPT-Live)](/research-notes/2026-08-04-blog-openai-gpt-live) |
 <!-- AUTO:RECENT:END -->

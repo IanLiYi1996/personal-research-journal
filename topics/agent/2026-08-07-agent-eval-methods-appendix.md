@@ -1,4 +1,15 @@
-# Enterprise Agent Evaluation：量化方法手册
+# 附录：Agent 评估的量化方法手册
+
+> **定位:** 这是 [[2026-08-07-agent-eval-briefing-for-sharing]]（方案层）的**技术附录**。
+> 方案层给决策与判据，本附录给公式、估计量、检验与实现 —— **供工程团队落地与被客户追问细节时查证，不建议直接用于客户演示。**
+>
+> **协作说明:** 本附录由 Codex（GPT-5 系）撰写，我做了独立验证 ——
+> ✅ 7 段 Python 代码全部可执行；
+> ✅ `pass@k` 与 `pass^k` 两个无偏估计量经蒙特卡洛/精确期望核验，`E[估计量]` 与真值在 10 位小数内一致；
+> ✅ naive plug-in 的向下偏倚经数值确认（n=10, k=5, p=0.3 时 0.7597 vs 真值 0.8319）；
+> ✅ §4.5 的 Rogan–Gladen 校正公式与其失效条件（Youden index 趋零）陈述正确。
+>
+> **Date:** 2026-08-07
 
 - **范围:** METHODS only；评估单位为 `task`、一次执行为 `trial`、判分函数为 `grader`
 - **记号:** task 数为 \(m\)，task \(i\) 的 trial 数为 \(n_i\)，二元结果 \(Y_{ij}\in\{0,1\}\)
@@ -882,3 +893,138 @@ C_n(T,O)=\frac{|G_n(T)\cap G_n(O)|}{\min(|G_n(T)|,|G_n(O)|)}.
 当 \(MAD_h=0\) 时仅使用 \(T_i>3\tilde T_h\)。
 `3× median` 与 robust z-score `3.5` 都是工程筛查阈值，不证明 eval awareness；
 flag 后检查 tool queries 是否包含 benchmark 名称、答案库路径、canary 或 evaluator artifacts。
+
+---
+
+## §7 回归与漂移的统计控制
+
+### 7.1 Regression gate 是 hypothesis test
+
+令同一 task 上新旧系统的 paired difference 为
+\(D_i=S_{i,\text{new}}-S_{i,\text{old}}\)，目标差异为
+\(\Delta=E[D_i]\)，不可接受回归 margin 为 \(\epsilon\ge0\)。
+
+“确认发生至少 \(\epsilon\) 的回归”检验：
+
+\[
+H_0:\Delta\ge-\epsilon,\qquad H_1:\Delta<-\epsilon.
+\]
+
+若 \(\Delta\) 的 one-sided \(1-\alpha\) upper confidence bound
+\(U_\Delta<-\epsilon\)，则拒绝 \(H_0\)，判定为 real regression。
+当 \(\epsilon=0\) 时，规则退化为 \(U_\Delta<0\)。
+
+“证明新版本 non-inferior”是不同方向的检验：
+
+\[
+H_0:\Delta\le-\epsilon,\qquad H_1:\Delta>-\epsilon.
+\]
+
+只有 one-sided lower bound \(L_\Delta>-\epsilon\) 才能通过 non-inferiority gate。
+若 \(L_\Delta\le-\epsilon\le U_\Delta\)，结论是 inconclusive，应增加 tasks 或 trials；
+不能因 point estimate 高于阈值就宣布通过。
+
+binary paired outcomes 使用 McNemar / paired bootstrap；连续 partial score 使用 task-level
+paired \(t\)-interval、permutation 或 bootstrap。
+margin \(\epsilon\)、方向、\(\alpha\)、主指标与 exclusions 必须在运行前冻结。
+
+### 7.2 Sequential testing 与 alpha spending
+
+若每次 commit 都以固定 \(\alpha\) 独立测试，运行 \(T\) 次至少一次 false alarm 的概率为：
+
+\[
+FWER=1-(1-\alpha)^T\le T\alpha.
+\]
+
+无限序列可预先分配：
+
+\[
+\alpha_t=\frac{\alpha}{t(t+1)},\qquad
+\sum_{t=1}^{\infty}\alpha_t=\alpha.
+\]
+
+第 \(t\) 次 confirmatory run 仅在 \(p_t\le\alpha_t\) 时拒绝。
+同一 run 有 \(K\) 个指标时，再使用 Holm rule：排序
+\(p_{(1)}\le\cdots\le p_{(K)}\)，依次与
+\(\alpha_t/(K-j+1)\) 比较，首次不通过后停止拒绝。
+
+**Practical fix：** 每 commit 的 suite 作为 exploratory monitoring，不生成新的显著性声明；
+只对固定 release candidate 做 confirmatory test，并使用预注册 alpha spending。
+反复 rerun 到通过属于 optional stopping，不得把最后一次 \(p\)-value 当有效证据。
+
+### 7.3 Control-chart drift detection
+
+对时间窗 \(t\) 的在线成功率 \(\hat p_t=X_t/n_t\)，稳定基线为 \(\bar p\)。
+binomial p-chart 的 3-sigma limits：
+
+\[
+UCL_t=\min\!\left(1,\bar p+3\sqrt{\frac{\bar p(1-\bar p)}{n_t}}\right),
+\quad
+LCL_t=\max\!\left(0,\bar p-3\sqrt{\frac{\bar p(1-\bar p)}{n_t}}\right).
+\]
+
+若流量有 tenant/task clustering，使用 baseline residual 的 empirical variance 或
+beta-binomial variance，不能强行使用 binomial standard error。
+
+EWMA 对小而持续的 drift 更敏感：
+
+\[
+Z_t=\lambda\hat p_t+(1-\lambda)Z_{t-1},\quad Z_0=\bar p,
+\]
+
+\[
+UCL/LCL_t=\bar p\pm
+L\sigma_{\hat p}\sqrt{\frac{\lambda}{2-\lambda}
+\left[1-(1-\lambda)^{2t}\right]}.
+\]
+
+固定窗口大小时 \(\sigma_{\hat p}=\sqrt{\bar p(1-\bar p)/n}\)；
+窗口大小变化时按每窗 variance 递推。
+初始工程配置可取 \(\lambda=0.2,L=3\)，并以历史 false-alert rate 回测调参；
+这些值不是定理。
+
+告警规则可设为任一点越过 3-sigma limit，或连续 8 点位于 center line 同侧。
+告警后按 difficulty、capability、tenant、model version 与 judge version 分层定位；
+未经分层的总体稳定可能掩盖 subgroup drift。
+
+---
+
+## §8 速查表
+
+| 指标 / 方法 | 何时用 | 公式 / rule | 主要陷阱 |
+|---|---|---|---|
+| `pass@k` | \(k\) 次可择优 | \(1-\binom{n-c}k/\binom nk\) | naive plug-in 向下偏；需 i.i.d. |
+| `pass^k` | 连续可靠性 | \(\binom ck/\binom nk\) | \(\hat p^k\) 向上偏 |
+| Average score | 连续/部分分 | \(\hat\mu=N^{-1}\sum S\) | 忽略 task clustering |
+| Partial credit | 可补偿 criteria | \(\sum w_ds_d/\sum w_d\) | 事后调权；安全项不应补偿 |
+| Macro average | task 等重要 | \(m^{-1}\sum_i\bar S_i\) | 与生产 exposure 不一致 |
+| Micro average | trial/exposure 等重要 | \(\sum n_i\bar S_i/\sum n_i\) | 多跑的 task 被意外加权 |
+| Wilson CI | 二元比例 | §2.1 exact formula | 小样本使用 Wald interval |
+| Cluster CI | trials nested in tasks | \(SE=s_{\bar S}/\sqrt m\) | bootstrap trials 而非 tasks |
+| Sample size | 预先设计 power | \(n\propto1/\Delta^2\) | 把 trials 当独立 tasks |
+| McNemar | 同 tasks 比较两 agents | \((b-c)^2/(b+c)\) | 忽略 pairing；小样本不用 exact |
+| Balanced accuracy | judge 类别不均衡 | \((Se+Sp)/2\) | raw accuracy 被多数类支配 |
+| Cohen's kappa | 两 raters | \((p_o-p_e)/(1-p_e)\) | prevalence 改变 \(p_e\) |
+| Krippendorff's alpha | 多 raters/缺失 | \(1-D_o/D_e\) | disagreement distance 未定义 |
+| Corrected pass rate | judge 有已知 \(Se,Sp\) | \((p_{obs}+Sp-1)/(Se+Sp-1)\) | \(Se+Sp-1\approx0\) 时爆炸 |
+| Flip rate | stochastic judge | discordant repeat pairs / all pairs | pair comparisons 非独立 |
+| Pareto frontier | 质量-成本联合选择 | quality 高且 cost 低的 dominance | 只比较 point estimates |
+| Cost/success | 部署经济性 | \(\sum C/\sum Y\) | 对每条计算 \(C/Y\) |
+| Escalation | cheap-first baseline | \(c_L+(1-p_L)c_H\) | 用 \(p_H\) 代替条件成功率 |
+| Stratified estimate | suite 与生产 mix 不同 | \(\sum_hW_h\bar Y_h\) | balanced sample 未恢复权重 |
+| Trigger metrics | action policy | recall 与 no-trigger precision | 单边数据无法识别另一类错误 |
+| Canary / overlap | contamination 筛查 | exact hit；\(C_8>Q_3+3IQR\) | heuristic 被误当证明 |
+| Regression gate | 比较新旧版本 | \(U_\Delta<-\epsilon\) 判回归 | 看 point estimate；方向写反 |
+| Alpha spending | 重复 suite | \(\alpha_t=\alpha/[t(t+1)]\) | 每 commit 固定用 0.05 |
+| p-chart / EWMA | 在线 drift | 3-sigma / EWMA limits | 忽略 overdispersion 与 mix shift |
+
+**最小发布规则：**
+\[
+\text{Release}=
+\mathbb1[L_{\Delta}>-\epsilon]\,
+\mathbb1[L_{Se}\ge r_S]\,
+\mathbb1[L_{Sp}\ge r_F]\,
+\mathbb1[C\le C_{\max}],
+\]
+其中所有 lower bounds、margin、recall floors 与 cost ceiling 必须预注册；
+任一 critical safety grader 失败时强制令 `Release=0`。

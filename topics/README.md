@@ -11,6 +11,7 @@ Organize notes by research area. Create subdirectories for each topic.
 ### agent
 
 - [Agent 质量评估方案](/topics/agent/2026-08-07-agent-eval-briefing-for-sharing.md)
+- [附录：Agent 评估的量化方法手册](/topics/agent/2026-08-07-agent-eval-methods-appendix.md)
 - [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation.md)
 
 ### ai-frontier-2026h1
