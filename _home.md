@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-08-07-hf-daily-papers-aug04-07" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-08-07-hf-daily-papers-aug05-07b" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/agent/2026-08-07-agent-quality-evaluation" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -82,8 +82,8 @@ Datasets, tools, frameworks, and reference materials.
 | Date | Type | Title |
 |------|------|-------|
 | 2026-08-07 | Topic | [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation) |
+| 2026-08-07 | Note | [HF Daily Papers 摘要 · 08/05–08/07（当日二次抓取 / W32 第二份）](/research-notes/2026-08-07-hf-daily-papers-aug05-07b) |
 | 2026-08-07 | Note | [HF Daily Papers 摘要 · 08/04–08/07](/research-notes/2026-08-07-hf-daily-papers-aug04-07) |
 | 2026-08-04 | Note | [OpenAI《六个月内建成响应式语音 AI 实时系统》精读(GPT-Live)](/research-notes/2026-08-04-blog-openai-gpt-live) |
 | 2026-08-04 | Note | [Blog Deep Dive：100 条样本就能种后门 —— 且攻击者不需要控制 prompt](/research-notes/2026-08-04-blog-subliminal-backdoor) |
-| 2026-08-03 | Note | [HF Daily Papers 中文摘要：2026-08-01 ~ 08-03（含 07/30–31 迟到补录）](/research-notes/2026-08-03-hf-daily-papers-aug01-03) |
 <!-- AUTO:RECENT:END -->

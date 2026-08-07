@@ -85,6 +85,10 @@ Yehudai et al. 的《A Survey on Evaluation of LLM-based Agents》（arXiv:2503.
 
 ### 2.2 三类 grader 与选用原则
 
+> ⭐ **同日补充（重要）**：下表说 model-based grader「需要对照人类校准」是**规范性建议**。当天晚些时候的 HF digest 补录里，**[OSReward](https://arxiv.org/abs/2607.28609) 把"不校准会怎样"实测了出来** —— 27 个 VLM 裁判在困难样本上**最好的一个仅 69.7%，等于一个"永远输出失败"的常量裁判**；**over-accept 占全部错误的三分之二**，且是每一个裁判的首要错误模式（≥48%）；机制是**裁判主要在读 agent 的文本自述而不是看屏幕**（去掉截图几乎无损；去掉 thought/action 文本 −7.2pp 且翻转 22.7% 的判定）。开源 OS-Shepherd-9B 把训练规模的裁判成本从 $4,000 降到 $68。详见 [[2026-08-07-hf-daily-papers-aug05-07b]]。
+>
+> **这是本文 §5.3「不能靠读 CoT 判断 agent 是否诚实」之外的第二个「别信自述」证据 —— 而且发生在评估侧而非被评估侧。**
+
 | 类型 | 具体方法 | 优点 | 缺点 |
 |---|---|---|---|
 | **Code-based** | 字符串/正则/模糊匹配、**fail-to-pass + pass-to-pass 测试**、lint/类型/安全静态分析、outcome 验证、tool-call 验证、transcript 统计（轮数、token） | 快、便宜、客观、可复现 | 「**Brittle to valid variations that don't match expected patterns exactly**」、缺乏细微判断 |
