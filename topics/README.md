@@ -8,6 +8,10 @@ Organize notes by research area. Create subdirectories for each topic.
 
 - [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey.md)
 
+### agent
+
+- [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation.md)
+
 ### ai-frontier-2026h1
 
 - [Agent 体系演化谱系 · 2026 上半年](/topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md)

@@ -1,20 +1,20 @@
 # 文献库索引
 
-> 共 **2015** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2017** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （874）
-- [智能体 / Agent](#-agent) （354）
+- [大语言模型 (LLM)](#-llm-) （875）
+- [智能体 / Agent](#-agent) （356）
 - [强化学习 / RLHF](#-rlhf) （398）
 - [推理 / Reasoning](#-reasoning) （479）
 - [图神经网络 / Graph](#-graph) （268）
 - [扩散 / 生成模型](#-) （336）
 - [多模态 / 视觉语言](#-) （472）
-- [Transformer / 架构](#transformer-) （418）
+- [Transformer / 架构](#transformer-) （419）
 - [高效训练 / 推理](#-) （529）
-- [综述 / Survey](#-survey) （150）
+- [综述 / Survey](#-survey) （151）
 - [检索增强 / RAG](#-rag) （144）
 - 未分类（170）
 
@@ -463,6 +463,7 @@
 - **2025** [Qwen3 Technical Report](http://arxiv.org/abs/2505.09388) — An Yang et al. · arXiv:2505.09388 `{Yang2025Qwen3}`
 - **2025** [A Survey of AI Agent Protocols](http://arxiv.org/abs/2504.16736) — Yingxuan Yang et al. · arXiv:2504.16736 `{Yang2025Survey}`
 - **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
+- **2025** [Survey on Evaluation of LLM-based Agents](http://arxiv.org/abs/2503.16416) — Asaf Yehudai et al. · arXiv:2503.16416 `{Yehudai2025Survey}`
 - **2025** [Demystifying Long Chain-of-Thought Reasoning in LLMs](http://arxiv.org/abs/2502.03373) — Edward Yeo et al. · arXiv:2502.03373 `{Yeo2025Demystifying}`
 - **2025** [DAPO: An Open-Source LLM Reinforcement Learning System at Scale](http://arxiv.org/abs/2503.14476) — Qiying Yu et al. · arXiv:2503.14476 `{Yu2025Dapo}`
 - **2025** [Revisiting the Test-Time Scaling of o1-like Models: Do they Truly Possess Test-Time Scaling Capabilities?](http://arxiv.org/abs/2502.12215) — Zhiyuan Zeng et al. · arXiv:2502.12215 `{Zeng2025Revisiting}`
@@ -1188,6 +1189,7 @@
 - **2025** [The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search](http://arxiv.org/abs/2504.08066) — Yutaro Yamada et al. · arXiv:2504.08066 `{Yamada2025Ai}`
 - **2025** [Qwen3 Technical Report](http://arxiv.org/abs/2505.09388) — An Yang et al. · arXiv:2505.09388 `{Yang2025Qwen3}`
 - **2025** [A Survey of AI Agent Protocols](http://arxiv.org/abs/2504.16736) — Yingxuan Yang et al. · arXiv:2504.16736 `{Yang2025Survey}`
+- **2025** [Survey on Evaluation of LLM-based Agents](http://arxiv.org/abs/2503.16416) — Asaf Yehudai et al. · arXiv:2503.16416 `{Yehudai2025Survey}`
 - **2025** [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](http://arxiv.org/abs/2505.22954) — Jenny Zhang et al. · arXiv:2505.22954 `{Zhang2025Darwin}`
 - **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2024** [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](http://arxiv.org/abs/2408.07055) — Yushi Bai et al. · arXiv:2408.07055 `{Bai2024Longwriter}`
@@ -1200,6 +1202,7 @@
 - **2024** [Training Large Language Models to Reason in a Continuous Latent Space](http://arxiv.org/abs/2412.06769) — Shibo Hao et al. · arXiv:2412.06769 `{Hao2024Training}`
 - **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
 - **2024** [On the Empirical Complexity of Reasoning and Planning in LLMs](http://arxiv.org/abs/2404.11041) — Liwei Kang et al. · arXiv:2404.11041 `{Kang2024Empirical}`
+- **2024** [AI Agents That Matter](http://arxiv.org/abs/2407.01502) — Sayash Kapoor et al. · arXiv:2407.01502 `{Kapoor2024Ai}`
 - **2024** [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](http://arxiv.org/abs/2405.02957) — Junkai Li et al. · arXiv:2405.02957 `{Li2024Agent}`
 - **2024** [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](http://arxiv.org/abs/2401.02777) — Na Liu et al. · arXiv:2401.02777 `{Liu2024Llm}`
 - **2024** Orca-Math: Unlocking the potential of SLMs in Grade School Math — Arindam Mitra et al. `{Mitra2024Orca}`
@@ -3380,6 +3383,7 @@
 - **2024** [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](http://arxiv.org/abs/2404.06395) — Shengding Hu et al. · arXiv:2404.06395 `{Hu2024Minicpm}`
 - **2024** [Understanding the planning of LLM agents: A survey](http://arxiv.org/abs/2402.02716) — Xu Huang et al. · arXiv:2402.02716 `{Huang2024Understanding}`
 - **2024** [MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention](http://arxiv.org/abs/2407.02490) — Huiqiang Jiang et al. · arXiv:2407.02490 `{Jiang2024Minference}`
+- **2024** [AI Agents That Matter](http://arxiv.org/abs/2407.01502) — Sayash Kapoor et al. · arXiv:2407.01502 `{Kapoor2024Ai}`
 - **2024** [Aligning Large Language Models with Representation Editing: A Control Perspective](http://arxiv.org/abs/2406.05954) — Lingkai Kong et al. · arXiv:2406.05954 `{Kong2024Aligning}`
 - **2024** [Enhancing Training Efficiency Using Packing with Flash Attention](http://arxiv.org/abs/2407.09105) — Achintya Kundu et al. · arXiv:2407.09105 `{Kundu2024Enhancing}`
 - **2024** [NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models](http://arxiv.org/abs/2405.17428) — Chankyu Lee et al. · arXiv:2405.17428 `{Lee2024Nv}`
@@ -4202,6 +4206,7 @@
 - **2025** [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](http://arxiv.org/abs/2503.16419) — Yang Sui et al. · arXiv:2503.16419 `{Sui2025Stop}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
 - **2025** [A Survey of AI Agent Protocols](http://arxiv.org/abs/2504.16736) — Yingxuan Yang et al. · arXiv:2504.16736 `{Yang2025Survey}`
+- **2025** [Survey on Evaluation of LLM-based Agents](http://arxiv.org/abs/2503.16416) — Asaf Yehudai et al. · arXiv:2503.16416 `{Yehudai2025Survey}`
 - **2025** [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](http://arxiv.org/abs/2509.02547) — Guibin Zhang et al. · arXiv:2509.02547 `{Zhang2025Landscape}`
 - **2024** [A Comprehensive Survey on Diffusion Models and Their Applications](http://arxiv.org/abs/2408.10207) — Md Manjurul Ahsan et al. · arXiv:2408.10207 `{Ahsan2024Comprehensive}`
 - **2024** [Comprehensive Exploration of Synthetic Data Generation: A Survey](http://arxiv.org/abs/2401.02524) — André Bauer et al. · arXiv:2401.02524 `{Bauer2024Comprehensive}`
