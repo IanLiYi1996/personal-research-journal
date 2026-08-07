@@ -8,18 +8,20 @@ A personal research journal: markdown notes organized into folders, browsable vi
 
 ## ⚠️ Recurring Task Cadence（别被 slash command 名字骗了）
 
-三个 digest 的 slash command 名字里带 `weekly`，但**实际是工作日每天跑**——名字是历史遗留。真实节奏（由 git log 07-27→08-06 逐日核实）：
+三个 digest 的 slash command 名字里带 `weekly`，但**四个都是每天跑**——名字是历史遗留，别按名字猜频率。
 
-| 任务 | 频率 | 时间 (UTC) | 说明 |
-|---|---|---|---|
-| `/aws-whats-new-daily` | **每天**（含周末） | 09:04 | 唯一周末也跑的 |
-| `/hf-daily-papers-weekly` | **工作日每天** | 07:57 | 周末空档（HF 周末无论文） |
-| `/reddit-hot-weekly` | **工作日每天** | 08:13 | 周末空档 |
-| `/tech-blogs-weekly` | **工作日每天** | 08:22 | 周末空档 |
-| weekly cross-digest | **每周一份** | 周五 09:41 | 无 slash command，手写；须在当周三份 digest 都跑完后 |
+| 任务 | 频率 | 时间 (UTC) |
+|---|---|---|
+| `/hf-daily-papers-weekly` | **每天** | 07:57 |
+| `/reddit-hot-weekly` | **每天** | 08:13 |
+| `/tech-blogs-weekly` | **每天** | 08:22 |
+| `/aws-whats-new-daily` | **每天** | 09:04 |
+| weekly cross-digest | **每周额外一份** | 周五 09:41 |
 
+- **周末照跑**。HF 周末常 0 篇或极少、社区也淡，此时仍写一份注明「周末空档」，不要跳过——历史上 08-01/08-02 只有 aws 产出是漏跑，不是设计如此。
 - 同一 ISO 周内多份用后缀区分：`2026-W32.md` → `W32b` → `W32d`…（见各 digest 小节的 Previous 表）。
 - 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
+- **cross-digest 是唯一按周的**，须在当周各份 digest 都跑完后写；因其余四个每天产出，同一周往往有多份带后缀的 digest，要全部串进来（W31 那次串了 18 份）。
 - Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
 
 ## Commands
@@ -280,7 +282,7 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 每周一份手写的"主线汇总"文件 in `weekly/YYYY-WXX.md`，把 HF Papers / Reddit / Tech Blogs / AWS 四份 digest 按**主题**串起来——多 source 共振 = 信号最强。
 
-**这是唯一真正按周的任务**（其余三个 digest 是工作日每天跑，见开头的 Recurring Task Cadence 表）。因为其余三个每天产出，同一周往往有多份带后缀的 digest（W32 / W32b / …），**cross-digest 要把当周所有份都串进来**——W31 那次串了 18 份。
+**这是唯一按周的任务**（其余四份 digest 每天跑，见开头的 Recurring Task Cadence 表）。因为它们每天产出，同一周往往有多份带后缀的 digest（W32 / W32b / …），**cross-digest 要把当周所有份都串进来**——W31 那次串了 18 份。
 
 ### Workflow
 
