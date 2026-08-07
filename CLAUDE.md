@@ -6,6 +6,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A personal research journal: markdown notes organized into folders, browsable via Docsify, managed by a shell CLI.
 
+## ⚠️ Recurring Task Cadence（别被 slash command 名字骗了）
+
+三个 digest 的 slash command 名字里带 `weekly`，但**实际是工作日每天跑**——名字是历史遗留。真实节奏（由 git log 07-27→08-06 逐日核实）：
+
+| 任务 | 频率 | 时间 (UTC) | 说明 |
+|---|---|---|---|
+| `/aws-whats-new-daily` | **每天**（含周末） | 09:04 | 唯一周末也跑的 |
+| `/hf-daily-papers-weekly` | **工作日每天** | 07:57 | 周末空档（HF 周末无论文） |
+| `/reddit-hot-weekly` | **工作日每天** | 08:13 | 周末空档 |
+| `/tech-blogs-weekly` | **工作日每天** | 08:22 | 周末空档 |
+| weekly cross-digest | **每周一份** | 周五 09:41 | 无 slash command，手写；须在当周三份 digest 都跑完后 |
+
+- 同一 ISO 周内多份用后缀区分：`2026-W32.md` → `W32b` → `W32d`…（见各 digest 小节的 Previous 表）。
+- 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
+- Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
+
 ## Commands
 
 ```bash
@@ -264,9 +280,11 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 每周一份手写的"主线汇总"文件 in `weekly/YYYY-WXX.md`，把 HF Papers / Reddit / Tech Blogs / AWS 四份 digest 按**主题**串起来——多 source 共振 = 信号最强。
 
+**这是唯一真正按周的任务**（其余三个 digest 是工作日每天跑，见开头的 Recurring Task Cadence 表）。因为其余三个每天产出，同一周往往有多份带后缀的 digest（W32 / W32b / …），**cross-digest 要把当周所有份都串进来**——W31 那次串了 18 份。
+
 ### Workflow
 
-1. 跑完当周 4 份独立 digest 后再写本文件（cross-digest 依赖它们的内容）
+1. 跑完当周所有独立 digest 后再写本文件（cross-digest 依赖它们的内容）；先 `ls -lt` 看清当周实际有哪几份
 2. 主线表：列出每个主题在每份 digest 的命中（✅/·/—），按信号强度排序
 3. 孤立信号区：只一个 source 发现但值得追踪的
 4. Narrative arc：把 ≥3-source 共振的主题串成完整故事线
