@@ -20,7 +20,13 @@ CATEGORIES = [
                "mistral", "jurassic", "titan ", "guardrail", "ai agent", "agentic"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
                  "graviton", "auto scaling", "wavelength", "lightsail", "app runner",
-                 "compute "]),
+                 "compute ",
+                 # End-user computing has no category of its own, so with no entry at
+                 # all these drifted by whatever the body name-dropped: WorkSpaces
+                 # landed in Management on 07-15, AI/ML on 07-21 and Management on
+                 # 08-07. Pin them here (virtual desktops / streamed apps) so the
+                 # placement is at least stable across digests.
+                 "workspaces", "appstream"]),
     ("Storage", ["s3 ", "amazon s3", "ebs", "efs", "fsx", "aws backup", "storage gateway",
                  "snowball", "snowmobile", "snow family", "data sync", "datasync"]),
     ("Database", ["rds", "aurora", "dynamodb", "elasticache", "redshift", "neptune",
@@ -38,7 +44,12 @@ CATEGORIES = [
     ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
-                  "firewall", "certificate manager", "acm "]),
+                  "firewall", "certificate manager", "acm ",
+                  # "AWS Security Agent" (part of AWS Continuum) is a pentesting
+                  # service. Without its own entry the title matches nothing and the
+                  # item falls through to the description, where a stray "TOTP
+                  # support" put it in Management.
+                  "security agent", "continuum", "penetration testing"]),
     ("Developer Tools", ["codebuild", "codepipeline", "codeartifact", "codecommit",
                          "codedeploy", "codestar", "cloud9", "cloudshell", " cli", "sdk",
                          "x-ray", "xray", "cdk", "amplify", "appconfig"]),
