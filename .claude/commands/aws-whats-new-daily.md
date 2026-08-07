@@ -14,7 +14,7 @@ uv run python3 scripts/aws_whats_new.py
 
 下文是参考逻辑（脚本失败、需要手工兜底时按此操作）：
 
-1. **确定日期**：以 `date +%F`（today, local TZ）为文件名 `aws-whats-new/<YYYY-MM-DD>.md`。如已存在则覆盖（每天只写一份）。
+1. **确定日期**：以 `date +%F`（today, local TZ）为文件名 `aws-whats-new/<YYYY-MM-DD>.md`（每天只写一份）。**同日期已存在时是「合并写」而非覆盖**：脚本会保留 (a) 生成章节之外的手写内容（`## 小结与趋势` / `## Open Questions` 等），(b) 早前同日抓取已列出但因 24h 窗口滑动已滑出的条目 —— 后者表头会标注「本次抓取 N + 早前同日抓取保留 M」。冲突时以新 RSS 为准（分类/impact 启发式可能已修）。
 2. **拉 RSS**：
    ```bash
    curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/" > /tmp/aws-rss.xml

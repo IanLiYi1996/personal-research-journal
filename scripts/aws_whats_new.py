@@ -176,6 +176,67 @@ def impact(title: str, summary: str) -> str:
     return "Low"
 
 
+# Sections this script generates. Anything else in an existing same-date file is
+# hand-written (小结与趋势 / Open Questions / Sources ...) and must survive a re-run:
+# the file is written once per calendar date, but cron fires at 09:04 while manual
+# catch-up runs happen earlier, so a re-run used to silently wipe the prose.
+GENERATED_SECTIONS = {"Top Highlights", "按类别详情"}
+
+# Matches the table rows this script emits, so a re-run can recover what an earlier
+# run on the same date already listed. Needed because the 24h window slides: re-running
+# at 09:04 after a 02:30 run drops every item published before 09:04 the previous day,
+# which would silently shrink the day's digest.
+ROW_RE = re.compile(
+    r"^\|\s*(\d{2})-(\d{2}) (\d{2}):(\d{2})\s*\|\s*\[(.+?)\]\((\S+?)\)\s*\|\s*(\w+)\s*\|\s*$"
+)
+
+
+def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
+    """Return (rows-by-link, hand-written-prose-lines) from a previous same-date run."""
+    if not path.exists():
+        return {}, []
+    text = path.read_text(encoding="utf-8")
+    today = dt.datetime.now()
+
+    prior: dict[str, dict] = {}
+    prose: list[str] = []
+    current = None  # current "## " section title
+    cat = None      # current "### <Category> (n 项)" subsection — this is the category
+    for line in text.splitlines():
+        if line.startswith("## ") and not line.startswith("### "):
+            current = line[3:].strip()
+            cat = None
+            if current not in GENERATED_SECTIONS:
+                prose.append(line)
+            continue
+        if current is not None and current not in GENERATED_SECTIONS:
+            prose.append(line)
+            continue
+        if line.startswith("### "):
+            # Strip the " (n 项)" suffix; the category name is what precedes it.
+            cat = re.sub(r"\s*\(\d+\s*项\)\s*$", "", line[4:]).strip()
+            continue
+        m = ROW_RE.match(line)
+        if not m:
+            continue
+        mon, day, hh, mm, title, link, imp = m.groups()
+        # Rows carry only MM-DD; pick the year that puts them at or before today.
+        year = today.year
+        try:
+            pub = dt.datetime(year, int(mon), int(day), int(hh), int(mm),
+                              tzinfo=dt.timezone.utc)
+        except ValueError:
+            continue
+        if pub.date() > today.date():
+            pub = pub.replace(year=year - 1)
+        prior[link] = {"title": title.replace("\\|", "|"), "link": link, "pub": pub,
+                       "descr": "", "category": cat or "其他", "impact": imp,
+                       "carried": True}
+    while prose and not prose[-1].strip():
+        prose.pop()
+    return prior, prose
+
+
 def main() -> int:
     if not RSS.exists():
         print("RSS missing", file=sys.stderr)
@@ -212,15 +273,24 @@ def main() -> int:
             "category": classify(title, descr),
             "impact": impact(title, descr),
         })
-    rows.sort(key=lambda r: r["pub"], reverse=True)
-
     today = dt.datetime.now().strftime("%Y-%m-%d")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / f"{today}.md"
 
+    # Merge with whatever an earlier run today already wrote, so neither the prose nor
+    # items that have since slid out of the 24h window are lost. Fresh RSS wins on
+    # conflict — the classifier/impact heuristics may have been fixed since.
+    prior, prose = _parse_existing(out)
+    fresh_links = {r["link"] for r in rows}
+    carried = [r for link, r in prior.items() if link not in fresh_links]
+    rows += carried
+    rows.sort(key=lambda r: r["pub"], reverse=True)
+
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
-             f"- **过去 24h 公告数:** {len(rows)}",
+             f"- **过去 24h 公告数:** {len(rows)}"
+             + (f"（本次抓取 {len(fresh_links)} + 早前同日抓取保留 {len(carried)}）"
+                if carried else ""),
              "- **Source:** https://aws.amazon.com/about-aws/whats-new/recent/feed/",
              ""]
     if not rows:
@@ -254,8 +324,12 @@ def main() -> int:
             lines.append(f"| {t} | [{title_md}]({r['link']}) | {r['impact']} |")
         lines.append("")
 
+    if prose:
+        lines += prose + [""]
+
     out.write_text("\n".join(lines), encoding="utf-8")
-    print(f"wrote {out} ({len(rows)} items, {len(highs)} highs)")
+    note = f", kept {len(carried)} carried, {len(prose)} prose lines" if (carried or prose) else ""
+    print(f"wrote {out} ({len(rows)} items, {len(highs)} highs{note})")
     return 0
 
 
