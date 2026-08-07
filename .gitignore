@@ -7,3 +7,5 @@ sharing/2026-05-21-harness-and-claude-code/reference/
 .claude/scheduled_tasks.json
 .claude/scheduled_tasks.lock
 scripts/__pycache__/
+# Codex 协作产生的中间草稿（内容已并入正式附录）
+topics/agent/_codex-*.md
