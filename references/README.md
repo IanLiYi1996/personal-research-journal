@@ -1,12 +1,12 @@
 # 文献库索引
 
-> 共 **2041** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2042** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （881）
-- [智能体 / Agent](#-agent) （364）
+- [大语言模型 (LLM)](#-llm-) （882）
+- [智能体 / Agent](#-agent) （365）
 - [强化学习 / RLHF](#-rlhf) （402）
 - [推理 / Reasoning](#-reasoning) （485）
 - [图神经网络 / Graph](#-graph) （269）
@@ -546,6 +546,7 @@
 - **2024** [LLM Critics Help Catch LLM Bugs](http://arxiv.org/abs/2407.00215) — Nat McAleese et al. · arXiv:2407.00215 `{McAleesendLlm}`
 - **2024** [MM1: Methods, Analysis \& Insights from Multimodal LLM Pre-training](http://arxiv.org/abs/2403.09611) — Brandon McKinzie et al. · arXiv:2403.09611 `{McKinziendMm1}`
 - **2024** [PiSSA: Principal Singular Values and Singular Vectors Adaptation of Large Language Models](http://arxiv.org/abs/2404.02948) — Fanxu Meng et al. · arXiv:2404.02948 `{Meng2024Pissa}`
+- **2024** [Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations](http://arxiv.org/abs/2411.00640) — Evan Miller et al. · arXiv:2411.00640 `{Miller2024Adding}`
 - **2024** [Exploring the Impact of Table-to-Text Methods on Augmenting LLM-based Question Answering with Domain Hybrid Data](http://arxiv.org/abs/2402.12869) — Dehai Min et al. · arXiv:2402.12869 `{Min2024Exploring}`
 - **2024** Orca-Math: Unlocking the potential of SLMs in Grade School Math — Arindam Mitra et al. `{Mitra2024Orca}`
 - **2024** [KAM-CoT: Knowledge Augmented Multimodal Chain-of-Thoughts Reasoning](http://arxiv.org/abs/2401.12863) — Debjyoti Mondal et al. · arXiv:2401.12863 `{Mondal2024Kam}`
@@ -1219,6 +1220,7 @@
 - **2024** [AI Agents That Matter](http://arxiv.org/abs/2407.01502) — Sayash Kapoor et al. · arXiv:2407.01502 `{Kapoor2024Ai}`
 - **2024** [Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents](http://arxiv.org/abs/2405.02957) — Junkai Li et al. · arXiv:2405.02957 `{Li2024Agent}`
 - **2024** [From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models](http://arxiv.org/abs/2401.02777) — Na Liu et al. · arXiv:2401.02777 `{Liu2024Llm}`
+- **2024** [Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations](http://arxiv.org/abs/2411.00640) — Evan Miller et al. · arXiv:2411.00640 `{Miller2024Adding}`
 - **2024** Orca-Math: Unlocking the potential of SLMs in Grade School Math — Arindam Mitra et al. `{Mitra2024Orca}`
 - **2024** [Very Large-Scale Multi-Agent Simulation in AgentScope](http://arxiv.org/abs/2407.17789) — Xuchen Pan et al. · arXiv:2407.17789 `{Pan2024Very}`
 - **2024** [The Ultimate Guide to Fine-Tuning LLMs from Basics to Breakthroughs: An Exhaustive Review of Technologies, Research, Best Practices, Applied Research Challenges and Opportunities](http://arxiv.org/abs/2408.13296) — Venkatesh Balavadhani Parthasarathy et al. · arXiv:2408.13296 `{Parthasarathy2024Ultimate}`
