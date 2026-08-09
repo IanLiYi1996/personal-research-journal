@@ -295,8 +295,15 @@ def main() -> int:
              ""]
     if not rows:
         lines += ["", "过去 24h RSS 无新条目。", ""]
+        # Preserve hand-written sections here too. The zero-item path used to return
+        # early without appending `prose`, so a later same-day run (e.g. the 09:04
+        # cron after a manual morning run) silently wiped analysis written into a
+        # weekend/empty digest. Weekend digests are exactly where the prose is the
+        # only content, so losing it defeated the whole point of merge-write.
+        if prose:
+            lines += prose + [""]
         out.write_text("\n".join(lines), encoding="utf-8")
-        print(f"wrote {out} (0 items)")
+        print(f"wrote {out} (0 items, {len(prose)} prose lines kept)")
         return 0
 
     highs = [r for r in rows if r["impact"] == "High"][:5]
