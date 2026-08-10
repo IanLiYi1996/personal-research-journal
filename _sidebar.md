@@ -77,6 +77,8 @@
     - [Agent 质量评估方案](/topics/agent/2026-08-07-agent-eval-briefing-for-sharing.md)
     - [附录：Agent 评估的量化方法手册](/topics/agent/2026-08-07-agent-eval-methods-appendix.md)
     - [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation.md)
+    - [PPT 审核：《Agentic Trading — Agent 回测与评估体系 V0.61》](/topics/agent/2026-08-10-ppt-review-agentic-trading-eval.md)
+    - [附录：LLM Trading Agent 金融专项评估方法](/topics/agent/2026-08-10-trading-agent-eval-methods.md)
   - **AI-FRONTIER-2026H1**
     - [Agent 体系演化谱系 · 2026 上半年](/topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md)
     - [2026 上半年 AI 前沿演化谱系](/topics/ai-frontier-2026h1/2026-06-12-ai-frontier-comprehensive.md)

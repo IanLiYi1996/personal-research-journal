@@ -1,14 +1,14 @@
 # 文献库索引
 
-> 共 **2042** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2046** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （882）
-- [智能体 / Agent](#-agent) （365）
+- [大语言模型 (LLM)](#-llm-) （886）
+- [智能体 / Agent](#-agent) （369）
 - [强化学习 / RLHF](#-rlhf) （402）
-- [推理 / Reasoning](#-reasoning) （485）
+- [推理 / Reasoning](#-reasoning) （488）
 - [图神经网络 / Graph](#-graph) （269）
 - [扩散 / 生成模型](#-) （338）
 - [多模态 / 视觉语言](#-) （481）
@@ -432,6 +432,7 @@
 - **2025** [Reasoning on a Budget: A Survey of Adaptive and Controllable Test-Time Compute in LLMs](http://arxiv.org/abs/2507.02076) — Mohammad Ali Alomrani et al. · arXiv:2507.02076 `{Alomrani2025Reasoning}`
 - **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
+- **2025** [StockBench: Can LLM Agents Trade Stocks Profitably In Real-world Markets?](http://arxiv.org/abs/2510.02209) — Yanxu Chen et al. · arXiv:2510.02209 `{Chen2025Stockbench}`
 - **2025** [Towards Reasoning Era: A Survey of Long Chain-of-Thought for Reasoning Large Language Models](http://arxiv.org/abs/2503.09567) — Qiguang Chen et al. · arXiv:2503.09567 `{Chen2025Towards}`
 - **2025** [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](http://arxiv.org/abs/2504.19413) — Prateek Chhikara et al. · arXiv:2504.19413 `{Chhikara2025Mem0}`
 - **2025** [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](http://arxiv.org/abs/2501.12948) — DeepSeek-AI et al. · arXiv:2501.12948 `{DeepSeekAI2025Deepseek}`
@@ -456,6 +457,7 @@
 - **2025** [ReFreeKV: Towards Threshold-Free KV Cache Compression](http://arxiv.org/abs/2502.16886) — Xuanfan Ni et al. · arXiv:2502.16886 `{Ni2025Refreekv}`
 - **2025** [KernelBench: Can LLMs Write Efficient GPU Kernels?](http://arxiv.org/abs/2502.10517) — Anne Ouyang et al. · arXiv:2502.10517 `{Ouyang2025Kernelbench}`
 - **2025** [ToolRL: Reward is All Tool Learning Needs](http://arxiv.org/abs/2504.13958) — Cheng Qian et al. · arXiv:2504.13958 `{Qian2025Toolrl}`
+- **2025** [When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents](http://arxiv.org/abs/2510.11695) — Lingfei Qian et al. · arXiv:2510.11695 `{Qian2025When}`
 - **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2025** [DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning](http://arxiv.org/abs/2511.22570) — Zhihong Shao et al. · arXiv:2511.22570 `{Shao2025Deepseekmath}`
 - **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
@@ -466,6 +468,7 @@
 - **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
 - **2025** [BudgetThinker: Empowering Budget-aware LLM Reasoning with Control Tokens](http://arxiv.org/abs/2508.17196) — Hao Wen et al. · arXiv:2508.17196 `{Wen2025Budgetthinker}`
 - **2025** [LIMI: Less is More for Agency](http://arxiv.org/abs/2509.17567) — Yang Xiao et al. · arXiv:2509.17567 `{Xiao2025Limi}`
+- **2025** [TradeTrap: Are LLM-based Trading Agents Truly Reliable and Faithful?](http://arxiv.org/abs/2512.02261) — Lewen Yan et al. · arXiv:2512.02261 `{Yan2025Tradetrap}`
 - **2025** [Qwen3 Technical Report](http://arxiv.org/abs/2505.09388) — An Yang et al. · arXiv:2505.09388 `{Yang2025Qwen3}`
 - **2025** [A Survey of AI Agent Protocols](http://arxiv.org/abs/2504.16736) — Yingxuan Yang et al. · arXiv:2504.16736 `{Yang2025Survey}`
 - **2025** [LIMO: Less is More for Reasoning](http://arxiv.org/abs/2502.03387) — Yixin Ye et al. · arXiv:2502.03387 `{Ye2025Limo}`
@@ -591,6 +594,7 @@
 - **2024** [A Comprehensive Survey of LLM Alignment Techniques: RLHF, RLAIF, PPO, DPO and More](http://arxiv.org/abs/2407.16216) — Zhichao Wang et al. · arXiv:2407.16216 `{Wang2024Comprehensive}`
 - **2024** [Diffusion Feedback Helps CLIP See Better](http://arxiv.org/abs/2407.20171) — Wenxuan Wang et al. · arXiv:2407.20171 `{Wang2024Diffusion}`
 - **2024** [Executable Code Actions Elicit Better LLM Agents](http://arxiv.org/abs/2402.01030) — Xingyao Wang et al. · arXiv:2402.01030 `{Wang2024Executable}`
+- **2024** [Exploring LLM Cryptocurrency Trading Through Fact-Subjectivity Aware Reasoning](http://arxiv.org/abs/2410.12464) — Qian Wang et al. · arXiv:2410.12464 `{Wang2024Exploring}`
 - **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
 - **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
 - **2024** [LLMFactor: Extracting Profitable Factors through Prompts for Explainable Stock Movement Prediction](http://arxiv.org/abs/2406.10811) — Meiyun Wang et al. · arXiv:2406.10811 `{Wang2024Llmfactor}`
@@ -1192,6 +1196,7 @@
 - **2026** [EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World](http://arxiv.org/abs/2607.17250) — Qing Zong et al. · arXiv:2607.17250 `{Zong2026Evolvingworld}`
 - **2026** [Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence](http://arxiv.org/abs/2607.12477) — Zhishan Zou et al. · arXiv:2607.12477 `{Zou2026Self}`
 - **2026** [Qwen-AgentWorld: Language World Models for General Agents](http://arxiv.org/abs/2606.24597) — Yuxin Zuo et al. · arXiv:2606.24597 `{Zuo2026Qwen}`
+- **2025** [StockBench: Can LLM Agents Trade Stocks Profitably In Real-world Markets?](http://arxiv.org/abs/2510.02209) — Yanxu Chen et al. · arXiv:2510.02209 `{Chen2025Stockbench}`
 - **2025** [A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems](http://arxiv.org/abs/2508.07407) — Jinyuan Fang et al. · arXiv:2508.07407 `{Fang2025Comprehensive}`
 - **2025** [AgentScope 1.0: A Developer-Centric Framework for Building Agentic Applications](http://arxiv.org/abs/2508.16279) — Dawei Gao et al. · arXiv:2508.16279 `{Gao2025Agentscope}`
 - **2025** [Measuring AI Ability to Complete Long Software Tasks](http://arxiv.org/abs/2503.14499) — Thomas Kwa et al. · arXiv:2503.14499 `{Kwa2025Measuring}`
@@ -1199,9 +1204,11 @@
 - **2025** [MCP-Universe: Benchmarking Large Language Models with Real-World Model Context Protocol Servers](http://arxiv.org/abs/2508.14704) — Ziyang Luo et al. · arXiv:2508.14704 `{Luo2025Mcp}`
 - **2025** [A Survey of Context Engineering for Large Language Models](http://arxiv.org/abs/2507.13334) — Lingrui Mei et al. · arXiv:2507.13334 `{Mei2025Survey}`
 - **2025** [ToolRL: Reward is All Tool Learning Needs](http://arxiv.org/abs/2504.13958) — Cheng Qian et al. · arXiv:2504.13958 `{Qian2025Toolrl}`
+- **2025** [When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents](http://arxiv.org/abs/2510.11695) — Lingfei Qian et al. · arXiv:2510.11695 `{Qian2025When}`
 - **2025** [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://blogs.nvidia.com/blog/what-is-agentic-ai/) — Khanh-tung Tran et al. `{Tran2025Multi}`
 - **2025** [WebDancer: Towards Autonomous Information Seeking Agency](http://arxiv.org/abs/2505.22648) — Jialong Wu et al. · arXiv:2505.22648 `{Wu2025Webdancer}`
 - **2025** [The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search](http://arxiv.org/abs/2504.08066) — Yutaro Yamada et al. · arXiv:2504.08066 `{Yamada2025Ai}`
+- **2025** [TradeTrap: Are LLM-based Trading Agents Truly Reliable and Faithful?](http://arxiv.org/abs/2512.02261) — Lewen Yan et al. · arXiv:2512.02261 `{Yan2025Tradetrap}`
 - **2025** [Qwen3 Technical Report](http://arxiv.org/abs/2505.09388) — An Yang et al. · arXiv:2505.09388 `{Yang2025Qwen3}`
 - **2025** [A Survey of AI Agent Protocols](http://arxiv.org/abs/2504.16736) — Yingxuan Yang et al. · arXiv:2504.16736 `{Yang2025Survey}`
 - **2025** [Survey on Evaluation of LLM-based Agents](http://arxiv.org/abs/2503.16416) — Asaf Yehudai et al. · arXiv:2503.16416 `{Yehudai2025Survey}`
@@ -1229,6 +1236,7 @@
 - **2024** [Teaching Transformers Causal Reasoning through Axiomatic Training](http://arxiv.org/abs/2407.07612) — Aniket Vashishtha et al. · arXiv:2407.07612 `{Vashishtha2024Teaching}`
 - **2024** [Can Language Models Serve as Text-Based World Simulators?](http://arxiv.org/abs/2406.06485) — Ruoyao Wang et al. · arXiv:2406.06485 `{Wang2024Can}`
 - **2024** [Executable Code Actions Elicit Better LLM Agents](http://arxiv.org/abs/2402.01030) — Xingyao Wang et al. · arXiv:2402.01030 `{Wang2024Executable}`
+- **2024** [Exploring LLM Cryptocurrency Trading Through Fact-Subjectivity Aware Reasoning](http://arxiv.org/abs/2410.12464) — Qian Wang et al. · arXiv:2410.12464 `{Wang2024Exploring}`
 - **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
 - **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`
 - **2024** [TradingAgents: Multi-Agents LLM Financial Trading Framework](http://arxiv.org/abs/2412.20138) — Yijia Xiao et al. · arXiv:2412.20138 `{Xiao2024Tradingagents}`
@@ -1991,6 +1999,7 @@
 - **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
 - **2025** [LocAgent: Graph-Guided LLM Agents for Code Localization](http://arxiv.org/abs/2503.09089) — Zhaoling Chen et al. · arXiv:2503.09089 `{Chen2025Locagent}`
 - **2025** [Parallel Scaling Law for Language Models](http://arxiv.org/abs/2505.10475) — Mouxiang Chen et al. · arXiv:2505.10475 `{Chen2025Parallel}`
+- **2025** [StockBench: Can LLM Agents Trade Stocks Profitably In Real-world Markets?](http://arxiv.org/abs/2510.02209) — Yanxu Chen et al. · arXiv:2510.02209 `{Chen2025Stockbench}`
 - **2025** [Towards Reasoning Era: A Survey of Long Chain-of-Thought for Reasoning Large Language Models](http://arxiv.org/abs/2503.09567) — Qiguang Chen et al. · arXiv:2503.09567 `{Chen2025Towards}`
 - **2025** [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](http://arxiv.org/abs/2504.19413) — Prateek Chhikara et al. · arXiv:2504.19413 `{Chhikara2025Mem0}`
 - **2025** [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](http://arxiv.org/abs/2501.12948) — DeepSeek-AI et al. · arXiv:2501.12948 `{DeepSeekAI2025Deepseek}`
@@ -2009,6 +2018,7 @@
 - **2025** [s1: Simple test-time scaling](http://arxiv.org/abs/2501.19393) — Niklas Muennighoff et al. · arXiv:2501.19393 `{Muennighoff2025S1}`
 - **2025** [KernelBench: Can LLMs Write Efficient GPU Kernels?](http://arxiv.org/abs/2502.10517) — Anne Ouyang et al. · arXiv:2502.10517 `{Ouyang2025Kernelbench}`
 - **2025** [ToolRL: Reward is All Tool Learning Needs](http://arxiv.org/abs/2504.13958) — Cheng Qian et al. · arXiv:2504.13958 `{Qian2025Toolrl}`
+- **2025** [When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents](http://arxiv.org/abs/2510.11695) — Lingfei Qian et al. · arXiv:2510.11695 `{Qian2025When}`
 - **2025** [KisMATH: Do LLMs Have Knowledge of Implicit Structures in Mathematical Reasoning?](http://arxiv.org/abs/2507.11408) — Soumadeep Saha et al. · arXiv:2507.11408 `{Saha2025Kismath}`
 - **2025** [DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning](http://arxiv.org/abs/2511.22570) — Zhihong Shao et al. · arXiv:2511.22570 `{Shao2025Deepseekmath}`
 - **2025** [Spurious Rewards: Rethinking Training Signals in RLVR](http://arxiv.org/abs/2506.10947) — Rulin Shao et al. · arXiv:2506.10947 `{ShaondSpurious}`
@@ -2073,6 +2083,7 @@
 - **2024** [An Empirical Study of Mamba-based Language Models](http://arxiv.org/abs/2406.07887) — Roger Waleffe et al. · arXiv:2406.07887 `{Waleffe2024Empirical}`
 - **2024** [Knowledge Fusion of Large Language Models](http://arxiv.org/abs/2401.10491) — Fanqi Wan et al. · arXiv:2401.10491 `{Wan2024Knowledge}`
 - **2024** [CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs](http://arxiv.org/abs/2406.18521) — Zirui Wang et al. · arXiv:2406.18521 `{Wang2024Charxiv}`
+- **2024** [Exploring LLM Cryptocurrency Trading Through Fact-Subjectivity Aware Reasoning](http://arxiv.org/abs/2410.12464) — Qian Wang et al. · arXiv:2410.12464 `{Wang2024Exploring}`
 - **2024** [Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning](http://arxiv.org/abs/2406.14283) — Chaojie Wang et al. · arXiv:2406.14283 `{Wang2024Improving}`
 - **2024** [InstructGraph: Boosting Large Language Models via Graph-centric Instruction Tuning and Preference Alignment](http://arxiv.org/abs/2402.08785) — Jianing Wang et al. · arXiv:2402.08785 `{Wang2024Instructgraph}`
 - **2024** [LLaMA Pro: Progressive LLaMA with Block Expansion](http://arxiv.org/abs/2401.02415) — Chengyue Wu et al. · arXiv:2401.02415 `{Wu2024Llama}`

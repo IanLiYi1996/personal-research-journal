@@ -1659,6 +1659,14 @@
   year = {2025}
 }
 
+@article{Chen2025Stockbench,
+  title = {StockBench: Can LLM Agents Trade Stocks Profitably In Real-world Markets?},
+  author = {Yanxu Chen and Zijun Yao and Yantao Liu and Amy Xin and Jin Ye and Jianing Yu and Lei Hou and Juanzi Li},
+  year = {2025},
+  url = {http://arxiv.org/abs/2510.02209},
+  abstract = {Large language models (LLMs) demonstrate strong potential as autonomous agents, with promising capabilities in reasoning, tool use, and sequential decision-making. While prior benchmarks have evaluated LLM agents in various domains, the financial domain remains underexplored, despite its significant economic value and complex reasoning requirements. Most existing financial benchmarks focus on static question-answering, failing to capture the dynamics of real-market trading. To address this gap, we introduce STOCKBENCH, a contamination-free benchmark designed to evaluate LLM agents in realistic, multi-month stock trading environments. Agents receive daily market signals -- including prices, fundamentals, and news -- and make sequential buy, sell, or hold decisions. Performance is measured using financial metrics such as cumulative return, maximum drawdown, and the Sortino ratio, capturing both profitability and risk management. We evaluate a wide range of state-of-the-art proprietary and open-source LLMs. Surprisingly, most models struggle to outperform the simple buy-and-hold baseline, while some models demonstrate the potential to achieve higher returns and stronger risk management. These findings highlight both the challenges and opportunities of LLM-based trading agents, showing that strong performance on static financial question-answering do not necessarily translate into effective trading behavior. We release STOCKBENCH as an open-source benchmark to enable future research on LLM-driven financial agents.}
+}
+
 @article{Chen2025Towards,
   title = {Towards Reasoning Era: A Survey of Long Chain-of-Thought for Reasoning Large Language Models},
   author = {Qiguang Chen and Libo Qin and Jinhao Liu and Dengyun Peng and Jiannan Guan and Peng Wang and Mengkang Hu and Yuhang Zhou and Te Gao and Wanxiang Che},
@@ -9796,6 +9804,14 @@
   abstract = {Current Large Language Models (LLMs) often undergo supervised fine-tuning (SFT) to acquire tool use capabilities. However, SFT struggles to generalize to unfamiliar or complex tool use scenarios. Recent advancements in reinforcement learning (RL), particularly with R1-like models, have demonstrated promising reasoning and generalization abilities. Yet, reward design for tool use presents unique challenges: multiple tools may be invoked with diverse parameters, and coarse-grained reward signals, such as answer matching, fail to offer the finegrained feedback required for effective learning. In this work, we present the first comprehensive study on reward design for tool selection and application tasks within the RL paradigm. We systematically explore a wide range of reward strategies, analyzing their types, scales, granularity, and temporal dynamics. Building on these insights, we propose a principled reward design tailored for tool use tasks and apply it to train LLMs using Group Relative Policy Optimization (GRPO). Empirical evaluations across diverse benchmarks demonstrate that our approach yields robust, scalable, and stable training, achieving a 17% improvement over base models and a 15% gain over SFT models. These results highlight the critical role of thoughtful reward design in enhancing the tool use capabilities and generalization performance of LLMs. All the codes are released to facilitate future research.}
 }
 
+@article{Qian2025When,
+  title = {When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents},
+  author = {Lingfei Qian and Xueqing Peng and Yan Wang and Vincent Jim Zhang and Huan He and Hanley Smith and Yi Han and Yueru He and Haohang Li and Yupeng Cao and Yangyang Yu and Alejandro Lopez-Lira and Peng Lu and Jian-Yun Nie and Guojun Xiong and Jimin Huang and Sophia Ananiadou},
+  year = {2025},
+  url = {http://arxiv.org/abs/2510.11695},
+  abstract = {Although Large Language Model (LLM)-based agents are increasingly used in financial trading, it remains unclear whether they can reason and adapt in live markets, as most studies test models instead of agents, cover limited periods and assets, and rely on unverified data. To address these gaps, we introduce Agent Market Arena (AMA), the first lifelong, real-time benchmark for evaluating LLM-based trading agents across multiple markets. AMA integrates verified trading data, expert-checked news, and diverse agent architectures within a unified trading framework, enabling fair and continuous comparison under real conditions. It implements four agents, including InvestorAgent as a single-agent baseline, TradeAgent and HedgeFundAgent with different risk styles, and DeepFundAgent with memory-based reasoning, and evaluates them across GPT-4o, GPT-4.1, Claude-3.5-haiku, Claude-sonnet-4, and Gemini-2.0-flash. Live experiments on both cryptocurrency and stock markets demonstrate that agent frameworks display markedly distinct behavioral patterns, spanning from aggressive risk-taking to conservative decision-making, whereas model backbones contribute less to outcome variation. AMA thus establishes a foundation for rigorous, reproducible, and continuously evolving evaluation of financial reasoning and trading intelligence in LLM-based agents.}
+}
+
 @article{Qian2026Abot,
   title = {ABot-Earth 0.5: Generative 3D Earth Model},
   author = {Ming Qian and Tianjian Ouyang and Mingchao Sun and Zijian Wang and Jincheng Xiong and Jiarong Han and Yongchang Zhang and Jiawei Zhang and Xu Wang and Yu Liu and Luyang Tang and Fei Yu and Zengye Ge and Mengmeng Du and Yuan Liu and Nianfei Fan and Song Wang and Yingliang Peng and Chunxue Jia and Yang Liu and Shiying Zeng and Haozhe Shi and Junnan Lai and Hongyu Pan and Zheng Wu and Ning Guo and Mu Xu and Hang Zhang},
@@ -12565,6 +12581,14 @@
   year = {2024}
 }
 
+@article{Wang2024Exploring,
+  title = {Exploring LLM Cryptocurrency Trading Through Fact-Subjectivity Aware Reasoning},
+  author = {Qian Wang and Yuchen Gao and Zhenheng Tang and Bingqiao Luo and Nuo Chen and Bingsheng He},
+  year = {2024},
+  url = {http://arxiv.org/abs/2410.12464},
+  abstract = {While many studies show that more advanced LLMs excel in tasks such as mathematics and coding, we observe that in cryptocurrency trading, stronger LLMs sometimes underperform compared to weaker ones. To investigate this counterintuitive phenomenon, we examine how LLMs reason when making trading decisions. Our findings reveal that (1) stronger LLMs show a preference for factual information over subjectivity; (2) separating the reasoning process into factual and subjective components leads to higher profits. Building on these insights, we propose a multi-agent framework, FS-ReasoningAgent, which enables LLMs to recognize and learn from both factual and subjective reasoning. Extensive experiments demonstrate that this fine-grained reasoning approach enhances LLM trading performance in cryptocurrency markets, yielding profit improvements of 7\% in BTC, 2\% in ETH, and 10\% in SOL. Additionally, an ablation study reveals that relying on subjective news generates higher returns in bull markets, while focusing on factual information yields better results in bear markets. Code is available at https://github.com/Persdre/FS-ReasoningAgent.}
+}
+
 @article{Wang2024Improving,
   abstract = {Large Language Models (LLMs) have demonstrated impressive capability in many natural language tasks. However, the auto-regressive generation process makes LLMs prone to produce errors, hallucinations and inconsistent statements when performing multi-step reasoning. In this paper, by casting multi-step reasoning of LLMs as a heuristic search problem, we aim to alleviate the pathology by introducing Q*, a general, versatile and agile framework for guiding LLMs decoding process with deliberative planning. By learning a plug-and-play Q-value model as heuristic function for estimating expected future rewards, our Q* can effectively guide LLMs to select the most promising next reasoning step without fine-tuning LLMs for the current task, which avoids the significant computational overhead and potential risk of performance degeneration on other tasks. Extensive experiments on GSM8K, MATH and MBPP demonstrate the superiority of our method, contributing to improving the reasoning performance of existing open-source LLMs.},
   author = {Chaojie Wang and Yanchen Deng and Zhiyi Lv and Zeng Liang and Jujie He and Shuicheng Yan and An Bo},
@@ -14501,6 +14525,14 @@
   title = {Diffusion Models Without Attention},
   url = {http://arxiv.org/abs/2311.18257},
   year = {2023}
+}
+
+@article{Yan2025Tradetrap,
+  title = {TradeTrap: Are LLM-based Trading Agents Truly Reliable and Faithful?},
+  author = {Lewen Yan and Jilin Mei and Tianyi Zhou and Lige Huang and Jie Zhang and Dongrui Liu and Jing Shao},
+  year = {2025},
+  url = {http://arxiv.org/abs/2512.02261},
+  abstract = {LLM-based trading agents are increasingly deployed in real-world financial markets to perform autonomous analysis and execution. However, their reliability and robustness under adversarial or faulty conditions remain largely unexamined, despite operating in high-risk, irreversible financial environments. We propose TradeTrap, a unified evaluation framework for systematically stress-testing both adaptive and procedural autonomous trading agents. TradeTrap targets four core components of autonomous trading agents: market intelligence, strategy formulation, portfolio and ledger handling, and trade execution, and evaluates their robustness under controlled system-level perturbations. All evaluations are conducted in a closed-loop historical backtesting setting on real US equity market data with identical initial conditions, enabling fair and reproducible comparisons across agents and attacks. Extensive experiments show that small perturbations at a single component can propagate through the agent decision loop and induce extreme concentration, runaway exposure, and large portfolio drawdowns across both agent types, demonstrating that current autonomous trading agents can be systematically misled at the system level. Our code is available at https://github.com/Yanlewen/TradeTrap.}
 }
 
 @article{Yan2026Act,
