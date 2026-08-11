@@ -10,13 +10,15 @@ A personal research journal: markdown notes organized into folders, browsable vi
 
 三个 digest 的 slash command 名字里带 `weekly`，但**四个都是每天跑**——名字是历史遗留，别按名字猜频率。
 
-| 任务 | 频率 | 时间 (UTC) |
+| 任务 | 频率 | 时间 (UTC = 本机 local) |
 |---|---|---|
-| `/hf-daily-papers-weekly` | **每天** | 07:57 |
+| `/hf-daily-papers-weekly` | **每天两次** | 07:57 + ⭐ **17:41**（第二次专抓当日桶回填） |
 | `/reddit-hot-weekly` | **每天** | 08:13 |
 | `/tech-blogs-weekly` | **每天** | 08:22 |
 | `/aws-whats-new-daily` | **每天** | 09:04 |
 | weekly cross-digest | **每周额外一份** | 周五 09:41 |
+
+> ⭐⭐ **只有 HF 是一天两跑**，理由见下方 cadence 说明。第二跑的产出用同 ISO 周后缀（当天第二份用 `b`）。
 
 - ⭐⭐ **同日二次抓取只有 HF 值得**（2026-08-11 三个数据源实测）：**HF** 当日桶持续回填（14→20，+43%，且新增里 3 篇直接接主线）→ **值得一天两跑**；**Reddit** 3 小时只新增 9 帖、恰好每子版 1 帖（top-of-week 是周榜，滚动各挪一格）→ 不值得；**tech-blogs** 3 小时只新增 1 篇（RSS 是按发布时间的流、博客发布本身低频）→ 不值得。**AWS 未测，但同属「按发布时间的流」，推测同样不值得。**
 - **周末照跑**。HF 周末常 0 篇或极少、社区也淡，此时仍写一份注明「周末空档」，不要跳过——历史上 08-01/08-02 只有 aws 产出是漏跑，不是设计如此。
@@ -24,7 +26,7 @@ A personal research journal: markdown notes organized into folders, browsable vi
 - 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
 - **cross-digest 是唯一按周的**，须在当周各份 digest 都跑完后写；因其余四个每天产出，同一周往往有多份带后缀的 digest，要全部串进来（W31 那次串了 18 份）。
 - Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
-  - **最近一次重建：2026-08-11**（job id：hf `f1a1675d` / reddit `71f5688c` / tech-blogs `eed2f43f` / aws `55d24955` / cross-digest `a6fe5c14`）→ **约 2026-08-18 到期**。
+  - **最近一次重建：2026-08-11**（job id：hf 早 `f1a1675d` / ⭐ **hf 晚 `dfb271dd`** / reddit `71f5688c` / tech-blogs `eed2f43f` / aws `55d24955` / cross-digest `a6fe5c14`）→ **约 2026-08-18 到期，共 6 个任务**。
   - ⚠️ **到期是「静默停跑」**，事后很难与「当天真的没内容」区分（08-01/08-02 那次漏跑就是这个形态）。重建前先 `CronList` 确认旧任务是否还在，**别在旧任务仍存活时直接新建**，会变成双份触发。
   - 重建时用 `CronDelete` 逐个删掉旧 id 再 `CronCreate`，并把已知的踩坑提醒写进 prompt（prompt 会随任务一起过期，所以**长期性的教训要写在本文件里，不要只写在 cron prompt 里**）。
 
