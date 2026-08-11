@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-08-11-hf-daily-papers-aug10-11" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-08-11-hf-daily-papers-aug11b" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/agent/2026-08-10-trading-agent-eval-methods" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-11（当日二次抓取 b）](/research-notes/2026-08-11-hf-daily-papers-aug11b) |
 | 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11) |
 | 2026-08-10 | Topic | [附录：LLM Trading Agent 金融专项评估方法](/topics/agent/2026-08-10-trading-agent-eval-methods) |
 | 2026-08-10 | Topic | [PPT 审核：《Agentic Trading — Agent 回测与评估体系 V0.61》](/topics/agent/2026-08-10-ppt-review-agentic-trading-eval) |
 | 2026-08-09 | Note | [HF Daily Papers 摘要 · 08/08–08/09（周末空档 + 08-07 桶回填）](/research-notes/2026-08-09-hf-daily-papers-aug08-09) |
-| 2026-08-07 | Topic | [附录：Agent 评估的量化方法手册](/topics/agent/2026-08-07-agent-eval-methods-appendix) |
 <!-- AUTO:RECENT:END -->
