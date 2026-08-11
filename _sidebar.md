@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11.md)
   - [HF Daily Papers 摘要 · 08/08–08/09（周末空档 + 08-07 桶回填）](/research-notes/2026-08-09-hf-daily-papers-aug08-09.md)
   - [HF Daily Papers 摘要 · 08/05–08/07（当日二次抓取 / W32 第二份）](/research-notes/2026-08-07-hf-daily-papers-aug05-07b.md)
   - [HF Daily Papers 摘要 · 08/04–08/07](/research-notes/2026-08-07-hf-daily-papers-aug04-07.md)
