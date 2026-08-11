@@ -14,7 +14,8 @@
    - 子版列表内置在脚本里（12 个，见 CLAUDE.md 表）。
    - 限流凶（429）；失败的子版用更大 delay 单独补抓：
      ```bash
-     uv run python3 scripts/reddit_fetch.py --subs r/aws,r/datascience --time week --delay 20 >> /tmp/reddit-retry.json
+     # ⚠️ --subs 用「裸名」，不要带 r/ 前缀（脚本内部会拼 r/{sub}；带前缀会请求 r/r/aws → HTTP 404）
+     uv run python3 scripts/reddit_fetch.py --subs aws,datascience --time week --delay 25 >> /tmp/reddit-retry.json
      ```
    - 合并：把 retry 的并入 `/tmp/reddit.json`。
 3. **对照上一份 digest 去重**：从 `reddit-digests/` 最新文件 grep permalink，剔除已覆盖。
