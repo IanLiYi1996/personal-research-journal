@@ -369,6 +369,28 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 ### Workflow
 
 1. **Fetch RSS**: `curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/"` or use `mcp__aws-documentation` tools
+
+### ⭐ 发布节律（用第二数据源在 400 条 / 38 个有公告的日子上统计，2026-06-18 → 08-10）
+
+**第二数据源**（与 RSS 独立，可翻页取到远早于 RSS 100 条窗口的历史）：
+
+```bash
+curl -s -G "https://aws.amazon.com/api/dirs/items/search" \
+  --data-urlencode "item.directoryId=whats-new-v2" \
+  --data-urlencode "sort_by=item.additionalFields.postDateTime" \
+  --data-urlencode "sort_order=desc" --data-urlencode "size=100" \
+  --data-urlencode "page=0" --data-urlencode "item.locale=en_US" -A "Mozilla/5.0"
+# items[].item.additionalFields.{postDateTime,headline}
+```
+
+| 事实 | 状态 |
+|---|---|
+| ✅ **周末严格为零** | 38 个有公告的日子里**没有任何一个是周六或周日**（300 条时成立，扩到 400 条仍成立） |
+| ✅ **周一是各工作日里启动最晚的** | 当天首条公告的 UTC 时刻均值：Mon **9.8h** / Tue 5.4h / Wed 7.5h / Thu 6.2h / Fri 8.1h |
+| ⚠️⚠️ **但「09:04 抓取必然不含当天产出」是错的** | **38 天里有 25 天（约 66%）首条公告早于 09:34 UTC** —— 多数日子 09:04 的 cron 会抓到部分当天产出 |
+
+> ⚠️ **2026-08-11 踩过的一个坑，值得记:我曾从单日（08-10 首条 13:00）概括出「周一最早 13:00 才开始发」并推出「必然」结论，用第二数据源复核后发现两者都站不住。**
+> ⭐ **教训:关于「星期/时段规律」的断言不要用单日观测下，第二数据源就在手边，复核成本很低。**
 2. **Write digest**: Group by service category, tag impact (High/Medium/Low), highlight top 5
 3. **Focus areas**: AI/ML (Bedrock, SageMaker), Compute (Lambda, ECS/EKS), Data, Security, Developer Tools
 
