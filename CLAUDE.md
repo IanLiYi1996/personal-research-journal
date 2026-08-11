@@ -23,6 +23,31 @@ A personal research journal: markdown notes organized into folders, browsable vi
 - 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
 - **cross-digest 是唯一按周的**，须在当周各份 digest 都跑完后写；因其余四个每天产出，同一周往往有多份带后缀的 digest，要全部串进来（W31 那次串了 18 份）。
 - Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
+  - **最近一次重建：2026-08-11**（job id：hf `f1a1675d` / reddit `71f5688c` / tech-blogs `eed2f43f` / aws `55d24955` / cross-digest `a6fe5c14`）→ **约 2026-08-18 到期**。
+  - ⚠️ **到期是「静默停跑」**，事后很难与「当天真的没内容」区分（08-01/08-02 那次漏跑就是这个形态）。重建前先 `CronList` 确认旧任务是否还在，**别在旧任务仍存活时直接新建**，会变成双份触发。
+  - 重建时用 `CronDelete` 逐个删掉旧 id 再 `CronCreate`，并把已知的踩坑提醒写进 prompt（prompt 会随任务一起过期，所以**长期性的教训要写在本文件里，不要只写在 cron prompt 里**）。
+
+### ⚠️⚠️ 所有 digest 落盘前必做：链接核验
+
+**写完 digest、commit 之前，用脚本把正文引用的每一个外部链接逐条对回抓取数据**（`reddit_fetch.py` / `blog_fetch.py` / HF API 的 JSON 输出里就有真实链接）。
+
+```bash
+uv run python3 - <<'PY'
+import json,re,pathlib
+posts=json.load(open('<抓取产出>.json'))
+real={p['link'].rstrip('/') for p in posts}          # reddit 用 p['permalink']
+t=pathlib.Path('<digest>.md').read_text(encoding='utf-8')
+links=sorted(set(re.findall(r'\]\((https?://[^)]+)\)', t)))
+bad=[l for l in links if l.rstrip('/') not in real]
+print(f'{len(links)} 条，{len(bad)} 条不符'); [print('  ?',l) for l in bad]
+PY
+```
+
+**为什么必须做（2026-08-11 一天之内三处实测）:**
+- tech-blogs：**12 处**错误 —— 包括**把同一个 arXiv id 误用在 5 篇不同论文上**，以及若干只写到栏目根路径（`https://aws.amazon.com/blogs/machine-learning/`）的占位链接
+- reddit：2 处 —— 一处 slug 拼错，一处**把 r/statistics 的 permalink 挂在了 r/datascience 条目下**
+- ⭐ **共同点：凭记忆或按规律「推断」URL 一定会出错，而这类错误肉眼审阅极难发现**（链接看起来完全合理）。这直接违反「引用须可验证」，必须靠脚本兜住。
+- 手动抓取的页面（不在 feed 输出里，如 Anthropic 官网）单独列白名单，不要因此跳过整个核验。
 
 ## Commands
 
