@@ -6,6 +6,7 @@
 - **一手材料:** 官方 model card / `config.json`（主模型 + drafter）/ GGUF 仓库实际文件大小 / [HF 官方博文](https://huggingface.co/blog/muse-glimmer) / ⭐ **官方评测方法学报告 PDF（7 页，第二轮）** / DFlash 论文正文（第二轮）
 - **我做过的独立核算:** ⭐ 从 `config.json` 复算了 KV cache 预算与 24GB 卡的总占用（见 §4），并核实了「global 层无位置编码」这一架构主张
 - ⭐⭐ **§11 是第二轮**（读官方评测方法学报告 + DFlash 论文之后）——**其中 §11.1 更正了我第一轮的一处过头批评，§11.2 是本次调研最重要的发现**
+- ⭐⭐ **§12 是第三轮**（追 Muse Spark 安全报告）——**用对照实验证明 model card 引用的那份报告链接已失效，并整理出「Cyber 定级无法端到端核验」的完整链条**
 
 ---
 
@@ -29,7 +30,7 @@
 - ⭐⭐ **自带一个 2.56B 的 DFlash 投机解码 drafter，是「块扩散」而非自回归**:一次前向预测 16 个 token。**实测 RTX 5090 上 74.9 → 233.4 tok/s（3.1×）**
 - ⚠️ **基准上有一个清晰的分裂:它在「调工具 / 多轮 agentic」上大幅领先同级，但在「操作电脑 / 终端」上明显落后 Qwen3.6-27B**（OSWorld-Verified 65.9 vs 75.6、TerminalBench 51.7 vs 60.7）
 - ⚠️ **model card 里直接报了 prompt injection 的攻击成功率:AgentDojo ASR 28.4%** —— 对企业落地这是比任何能力分都重要的一个数
-- ⚠️ **Preparedness 里 Cyber 与 Loss-of-Control 两项被标为「推断」** —— ⭐ **但第二轮我发现 Meta 其实定义并运行了两个网络安全基准（CyberGym / CyberBench），只是结果一个数都没公布**（见 §11.1，我据此更正了自己的批评）
+- ⚠️⚠️ **Preparedness 里 Cyber 与 Loss-of-Control 被标为「推断」，而三轮追查下来这条定级在公开信息里无法端到端核验:** 第二轮发现 Meta 其实定义并运行了两个网络安全基准（CyberGym / CyberBench）**但分数在三处公开文档里全都没有**（§11.1）；第三轮发现推断所依赖的 **Muse Spark 安全报告链接已失效** —— 我用「同一浏览器会话下 `ai.meta.com/blog/` 能渲染、报告路径渲染出 0 字符」的对照实验排除了反爬（§12.1），且 **Muse Spark 权重未公开、不在 HF 上**。⭐ **这不构成「风险被低估」的证据（我没有反面证据），只说明这条公开论证链是断的**
 - ⭐⭐⭐ **第二轮最重要的发现（§11.2）:领先项与落后项的证据来源不同** —— 领先最多的 MCP-Atlas(+13.0) 与 DeepSearchQA 是 **Meta 自己跑 + LLM 判分**，落后最多的 Terminal-Bench(−9.0) 是**第三方 Artificial Analysis** 测的；而 Meta 自己写了一条免责声明说「我们的 agent 工具与 system prompt 可能未针对第三方模型调优」——**这正是 A²E/ProMax 测出的 scaffold 效应，由厂商自己承认**
 
 ---
@@ -520,3 +521,122 @@ MCP Atlas +13.0、DeepSearch QA +3.5，但 OSWorld-Verified −9.7、TerminalBen
 2. ⚠️ **11.2 表里的「Muse 相对表现」是我从 card 的分数自行计算的差值**，方法学报告本身不给差值。
 3. ⚠️ **CyberGym「proxies the Cyber 2 track」这句我按原文转述，但我不清楚 Meta AAISF 里 "Cyber 2" 的确切定义** —— 未在本轮核实。
 4. **DFlash 的 6× 与 EAGLE-3 对比来自论文摘要**，我未核实其实验细节；**块大小消融的 35.7% 数字来自论文正文，已回原文核对。**
+
+---
+
+# 12. 第三轮：追 Muse Spark 安全报告 —— 那条引用链是断的
+
+**第二轮末我把「Muse Spark 安全与 Preparedness 报告（HTTP 400 未取到）」列为第三轮首选，因为它是 Cyber/LoC 定级推断所依赖的锚点。这一轮我把它追到底了。**
+
+## 12.1 ⭐⭐⭐ 结论：model card 引用的那份报告，链接是坏的
+
+**我做了六种尝试:**
+
+| 尝试 | 结果 |
+|---|---|
+| 原 URL（curl，桌面 UA） | **HTTP 400**，1,542 字节 Meta 通用错误页「Sorry, something went wrong」 |
+| 去掉/加上尾斜杠、加 `.pdf` 后缀 | 均 **400**，同样 1,542 字节 |
+| `research.meta.ai` 上的对应路径 | **404** |
+| `ai.meta.com/research/publications/...` | **400** |
+| `llama.com` / `ai.meta.com/muse/` / `ai.meta.com/muse-spark/` | 均 **400** |
+| ⭐ **Xvfb + 非 headless 本地 Chromium**（对 openai.com 有效的那套） | ⚠️ **页面打开但 `document.body.innerText.length === 0`、title 为空** |
+
+**⭐⭐⭐ 关键是我做了一个对照实验，它把「被反爬拦」和「链接本身坏了」区分开了:**
+
+| | curl | 非 headless 浏览器 |
+|---|---|---|
+| `ai.meta.com/blog/` | **400** | ✅ **渲染成功（title "AI at Meta Blog"，1,401 字符）** |
+| `ai.meta.com/`（站点根） | **400** | —— |
+| **报告路径** | **400** | ❌ **0 字符** |
+
+> ⭐⭐⭐ **推论:curl 被整站拦截（连站点根都 400），所以不能用 curl 的 400 下任何结论。但同一个浏览器会话里 `/blog/` 正常渲染而报告路径渲染出空白 —— 这说明报告那个资源本身不可用，而不是我被挡在门外。**
+>
+> **也就是说:Muse Glimmer model card 在 Preparedness 一节里，用来支撑其风险评估方法学的官方引用，是一个失效链接。**
+
+**⚠️ 另两条相关事实:**
+- **Muse Spark 不在 HF 上**（我用 HF 检索 API 查过，`meta-models` 名下与全站均无结果）—— 与 [[2026-W33-reddit-hot]] 记的「Meta **即将**释出 Muse Spark 1.2 权重」一致：**权重尚未公开。**
+- **web.archive.org 从本机连续返回 429**，多次退避后仍然限流，**所以我无法确认这份报告是否曾被存档** —— 这一条是我的能力限制，不是证据。
+
+## 12.2 ⭐⭐ 于是「Cyber: Moderate or lower」这条定级的完整链条是这样
+
+把三轮查到的东西接起来：
+
+```
+model card: 「Cyber: Moderate or lower risk (inferred)」
+   ↓ 依据
+「Muse Glimmer 整体弱于 Muse Spark 1.0，后者在这些领域获得相同定级」
+   ↓ 那 Muse Spark 的定级依据？
+「详见 Muse Spark Safety & Preparedness Report」
+   ↓
+⛔ 链接失效（§12.1 已用对照实验确认不是反爬）
+   ↓ 那 Muse Spark 本身能被独立检视吗？
+⛔ 权重未公开（不在 HF 上）
+   ↓ 那 Muse Glimmer 自己的网络安全评测结果呢？
+⛔ CyberGym 与 CyberBench 的方法与指标在方法学报告里有定义，
+   但分数在 (a) 主 model card (b) GGUF model card
+   (c) 评测方法学报告 三处都没有出现
+```
+
+**⭐ 我这一轮特意去查了第三处** —— GGUF 仓库的 README 有 25,216 字节（比主 card 的约 17KB 更长），我读完了全文：**多出来的部分全是 llama.cpp 的部署说明，Preparedness 一节与主 card 逐字相同，同样没有 cyber 分数。**
+
+> ⭐⭐⭐ **所以第三轮的净结论是:「Cyber: Moderate or lower」这个定级在公开信息里无法被端到端核验 —— 不是因为哪一环刻意隐瞒，而是因为四条可能的核验路径同时不可用（推断链的锚点文档失效、锚点模型未开源、自身的 cyber 分数未公布、方法学报告只给方法不给数）。**
+>
+> ⚠️ **我要把这个结论的边界说清楚:** 这**不构成**「该模型网络安全风险被低估」的证据 —— 我没有任何反面证据。**它只说明这条特定的公开论证链是断的。** ⭐ 而这在本周的语境下值得记，因为同一周 OpenAI 公开承认无法排除 Astra 的 Critical 级网络能力、并公布了 GPT‑5.6‑Cyber 的 95%/1.5% 对照（[[tech-blogs/2026-W33b]]）—— **两家厂商在网络安全能力披露的颗粒度上出现了明显反差。**
+> ⭐ **公平地说 Chem/Bio 那一半是实测且给了六项分数**（还把 Kimi K3 放进来作参照），**所以问题局限在被标注 inferred 的那两项。**
+
+## 12.3 ⭐⭐ 一个意外收获：Meta 自己的内存表交叉验证了我 §4 的算术
+
+GGUF 仓库的 README 给了一张「权重加上一个工作上下文」的粗略内存表，**这是我第一轮没看到的:**
+
+| Build | 纯文本 | + 视觉 | **+ 视觉 + drafter** |
+|---|---|---|---|
+| `17gb` | ~17 GB | ~19 GB | ⭐ **~20 GB** |
+| `dynamic` | ~20 GB | ~22 GB | ~23 GB |
+
+**⭐⭐ 与我 §4 独立算出的数字对照:**
+
+| | 我的核算 | Meta 的表 |
+|---|---|---|
+| 17gb + 视觉 + drafter 的**权重** | **18.43 GiB = 19.8 GB** | ⭐ **「~20 GB」——吻合** |
+| 再加**满 131,072 上下文**的 KV | +1.70 GiB（+1.83 GB）→ 20.13 GiB = **21.6 GB** | （其表只含「一个工作上下文」） |
+
+> ⭐⭐⭐ **两个来源互相印证，而且合起来比任一方更有信息量:**
+> **Meta 的「~20 GB」基本等于权重；我的核算显示即使把上下文开到满 131,072，也只再加 1.70 GiB。**
+> ⭐ **这恰恰是我 §4 那个论点的最强形式:KV 小到「工作上下文」与「满上下文」在内存表上几乎看不出差别 —— 所以 Meta 的表可以不区分二者。** 换成朴素 MHA，这张表根本写不出来（同上下文需 104 GiB）。
+
+## 12.4 ⭐ 部署上几条硬性前提（第三轮新得，实用）
+
+GGUF 仓库的 README 前半段是 llama.cpp 部署说明，有几条是**会直接卡住人**的：
+
+- ⚠️⚠️ **必须 llama.cpp build `b10353` 或更新。** 支持于 **2026-08-10** 合入（PR **#26841**，commit `62bf73d`），首次随 release `b10353` 发布。⭐ **`b10344` 及更早的版本「根本不注册这个架构」，会直接拒绝加载。**
+  - 自检：`./llama-cli --version`（build 号 ≥ 10353）；源码检出可用 `grep -c LLM_ARCH_MUSE_GLIMMER src/llama-arch.cpp`（**期望 ≥ 1，得到 0 说明检出早于支持**）
+- ⚠️ **两个文本 build 单独都是纯文本的** —— `mmproj-kquant.gguf` 是**图像输入的必需件**，`dflash-kquant.gguf` 是可选件（+约 1.6 GB）
+- ⭐ 官方 `llama-server` 示例里直接用 **`-c 131072 -np 4`** —— 满上下文是他们自己文档的默认示范（与 §12.3 的 KV 结论一致）
+- ⭐ **思考内容走单独的 `reasoning_content` 字段**；⚠️ 若 `content` 开头出现 `to=self<|message|>`，说明你的 build 早于 chat parser
+- ⭐ 开投机解码加 `-md dflash-kquant.gguf -ngld 99`；⚠️ **启动时的 `[spec] failed to measure draft model memory` 警告是无害的**（官方明说）
+- ⭐ ExecuTorch 那个仓库是**预导出的程序，覆盖 NVIDIA CUDA 与 Apple Silicon 两者**（不只是 Apple）
+
+## 12.5 三轮之后仍未拿到的
+
+- ⛔ **CyberGym / CyberBench 的分数** —— 三处公开文档皆无（§12.2）。**这已经不是「我没找到」，而是「公开材料里没有」。**
+- ⛔ **Muse Spark 安全与 Preparedness 报告** —— 链接失效，且我无法用 wayback 确认是否曾存档（本机被 429 限流）。
+- ⭐ **1.0% 量化退化的分项分布** —— 仍只有「15 个基准的平均」。⭐ 三轮下来我倾向认为**这 15 个基准很可能就是 card 表里那批**，但没有依据，所以不写成结论。
+- ⭐ **各基准的方差/区间** —— 跑了 3–10 次却只报均值（§11.3）。
+- **Perception Encoder 论文正文** —— 三轮都没读（优先级一直低于上面几项）。若要做第四轮，这是唯一还没碰的一手来源。
+
+## 12.6 第三轮的来源与核实状态
+
+| 动作 | 结果 |
+|---|---|
+| Muse Spark 报告 6 种 URL 变体（curl） | ❌ 全 400 / 404 |
+| ⭐ **Xvfb + 非 headless Chromium 打开报告路径** | ❌ 0 字符 |
+| ⭐⭐ **同浏览器会话打开 `ai.meta.com/blog/` 作对照** | ✅ 1,401 字符 → **证明是链接坏而非反爬** |
+| HF 全站检索 Muse Spark | ❌ 无结果（权重未公开） |
+| web.archive.org（CDX + availability API，多次退避） | ⚠️ **持续 429，未能查询** |
+| ⭐ **GGUF 仓库 README 全文（25,216 字节）** | ✅ 读完 —— 补上部署前提与内存表，**Preparedness 一节与主 card 逐字相同、无 cyber 分数** |
+| 我 §4 算术 vs Meta 内存表 | ✅ **互相印证（19.8 GB vs「~20 GB」）** |
+
+⚠️ **第三轮的局限:**
+1. **「链接失效」的判定基于我的对照实验**（同会话下 `/blog/` 成功、报告路径 0 字符）。⭐ 这是我能做到的最强证据，**但不排除该资源对特定地区/登录状态可见**。
+2. ⚠️ **我未能查询 wayback**（429），所以**不能断言这份报告「从未存在过」** —— 只能说**现在从我这里取不到**。
+3. **§12.2 的流程图是我对三轮所得的整合**，其中每一环都在正文有出处，但**「链条是断的」这个整体判断是我的结论，不是任何一份官方文档的表述。**
