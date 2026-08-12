@@ -7,6 +7,7 @@
 - **我做过的独立核算:** ⭐ 从 `config.json` 复算了 KV cache 预算与 24GB 卡的总占用（见 §4），并核实了「global 层无位置编码」这一架构主张
 - ⭐⭐ **§11 是第二轮**（读官方评测方法学报告 + DFlash 论文之后）——**其中 §11.1 更正了我第一轮的一处过头批评，§11.2 是本次调研最重要的发现**
 - ⭐⭐ **§12 是第三轮**（追 Muse Spark 安全报告）——**用对照实验证明 model card 引用的那份报告链接已失效，并整理出「Cyber 定级无法端到端核验」的完整链条**
+- ⭐⭐ **§13 是第四轮**（读 Perception Encoder 论文正文）——**回答了一个我用 config 查不出答案的问题：为什么视觉塔没有「取第几层」的字段**；并发现同一个洞察在本模型里被用了两次而工程选择相反（§13.4）
 
 ---
 
@@ -105,6 +106,7 @@
 | ⭐ token 压缩 | **pixel shuffle 把相邻 2×2 的空间 token 拼接 → 图像 token 数减少 4×，且不丢弃通道** |
 
 **它源自 Meta 自己 2025 年的工作:** [Perception Encoder: The best visual embeddings are not at the output of the network](https://arxiv.org/abs/2504.13181)（arXiv:2504.13181，2025-04-17，Bolya / Huang / Sun / Cho 等）。
+> ⭐⭐ **【第四轮补充】这篇论文的正文回答了一个本节看不出来的问题:论文说好特征藏在中间层，而 Muse Glimmer 的 config 里并没有「取第几层」的字段 —— 原因是 language alignment 会把最优层搬到末层。详见 §13.2。**
 > ⭐ **注意 HF 博文特别指出「与其他 VLM 里相对较小的视觉编码器不同，这是一个相当大的 2B ViT 类模型」** —— 在一个 30B 的总预算里拿出 ~6% 给视觉塔，是个明确的取舍。
 
 **⭐⭐ 一处 card 与 config 的表面矛盾，我查清了:**
@@ -640,3 +642,101 @@ GGUF 仓库的 README 前半段是 llama.cpp 部署说明，有几条是**会直
 1. **「链接失效」的判定基于我的对照实验**（同会话下 `/blog/` 成功、报告路径 0 字符）。⭐ 这是我能做到的最强证据，**但不排除该资源对特定地区/登录状态可见**。
 2. ⚠️ **我未能查询 wayback**（429），所以**不能断言这份报告「从未存在过」** —— 只能说**现在从我这里取不到**。
 3. **§12.2 的流程图是我对三轮所得的整合**，其中每一环都在正文有出处，但**「链条是断的」这个整体判断是我的结论，不是任何一份官方文档的表述。**
+
+---
+
+# 13. 第四轮：读了 Perception Encoder 论文正文 —— 值得加，因为它回答了一个我从 config 提不出答案的问题
+
+**前三轮我一直把这篇的正文列为「优先级最低、未读」，理由是「视觉塔规格已从 config 与博文拿全了」。这个判断是错的 —— 论文回答了一个我用 config 查不出来的结构性问题。**
+
+## 13.1 论文在讲什么
+
+[Perception Encoder: The best visual embeddings are not at the output of the network](https://arxiv.org/abs/2504.13181)（Meta FAIR 等，2025-04；Bolya / Huang / Sun / Cho 等 18 人）
+
+**核心主张（摘要原文，我的翻译）:**
+> 「传统上视觉编码器依赖各种针对下游任务定制的预训练目标（分类、caption、定位）。**令人意外的是，在扩大我们精调的图像预训练配方并用稳健的视频数据引擎精炼之后，我们发现单靠对比式视觉-语言训练就能产生对所有这些下游任务都强的通用 embedding。只有一个 caveat：这些 embedding 藏在网络的中间层里。**
+> 为了把它们抽出来，我们引入两种对齐方法：**面向多模态语言建模的 language alignment，与面向密集预测的 spatial alignment。**」
+
+**⭐ 论文 Fig 8 的层分析（这是它立论的基础）:**
+- **AIMv2**（caption 类目标）：语言任务好、空间任务差
+- **DINOv2**（空间自监督）：空间好、语言差，且 ⭐ **「性能在网络中部达到峰值，然后到末端显著下降」**
+- ⭐⭐ **PE_core（对比式）:「在网络较早的层上对所有任务都表现良好，常常匹配或超过各自领域的领先模型」** —— 中间层在语言任务上接近 AIMv2、在空间任务上接近 DINOv2
+
+**头部数字（供参照）:** 零样本 ImageNet 稳健性均值 **86.6**、零样本 Kinetics-400 **76.9**；配 8B LLM 时 **DocVQA 94.6 / InfographicVQA 80.9 / PerceptionTest 82.7**；COCO **66.0 box mAP** 新 SOTA。**PE_coreG 是 2B 参数** —— ⭐ 与 Muse Glimmer 的「~1.8B / 2B 视觉塔」对得上。
+
+## 13.2 ⭐⭐⭐ 它回答了什么：为什么 Muse Glimmer 的 config 里没有「取第几层」这个字段
+
+**我这一轮先做了一件事:重新拉完整 config，专门搜所有含 `layer` / `feature` / `select` / `index` / `hidden_state` 的键。结果是 ——**
+
+> ⚠️ **`vision_config` 里根本没有 `vision_feature_layer` 这类字段。** 只有 `num_hidden_layers: 50` 与 `layer_types` 数组。**也就是说 Muse Glimmer 并不从中间层取视觉特征。**
+
+**按论文的核心主张（好特征藏在中间层），这本来应该是个矛盾。而论文自己给出了解答 —— PE_lang 的效果（§4，我的翻译）:**
+
+> 「我们对最终的 PE_lang G 模型做了与 Fig 8 相同的分析，并与它初始化所用的原始 PE_core G checkpoint 对比……**立刻可以看到 language alignment 成功了:在所有类别上，对齐后模型表现最好的层就是最后一层，无论原始 checkpoint 的表现如何。**」
+
+> ⭐⭐⭐ **这就是答案:language alignment 的作用恰恰是把最好的特征「搬到网络末端」。所以一个消费语言对齐版 PE 的多模态 LM，正常读最后一层就行，不需要中间层 tap —— Muse Glimmer 的 config 没有那个字段，与此完全一致。**
+>
+> ⚠️ **必须标明这是推断而非事实:** Muse Glimmer 的 card 只写「Perception encoder，~1.8B ViT-G/14」并引用这篇论文，**没有说用的是哪个 PE 变体**。我的论证是「config 无中间层 tap + 论文说 language alignment 把最优层移到末层」⟹ **与使用语言对齐变体一致**。**这不等于官方确认。**
+
+**⭐⭐ 论文里还有两个细节让这个推断更站得住:**
+1. ⭐ **「我们的 PE_lang 训练混合里*不*含 grounding 数据，这意味着 grounding 性能的显著提升完全来自 PE_core 中原本就强的中间层 grounding 特征被对齐到了网络末端。」** —— **对齐是搬运而非新学，这解释了为什么它便宜。**
+2. ⭐ **「用比预训练少一个数量级的样本，我们就把 PE_coreG 语言对齐成了一个对所有视觉语言建模任务都强的单一编码器。」**
+
+## 13.3 ⭐⭐ 论文还逐字确认了我从 config 里挖到的视觉位置编码方案
+
+**论文 Appendix B.1 讲 PE_core 实现（我的翻译）:**
+> 「关于位置编码，我们**用 2D RoPE 做相对位置编码，并用与模型输入分辨率同样大小的 2D 可学习绝对位置编码（abs）**。我们**插值位置编码**以支持超出默认值的各种分辨率。」
+
+**⭐ 与 Muse Glimmer 的 `vision_config` 逐项对上（本轮新取到的字段）:**
+
+| PE 论文说的 | Muse Glimmer config |
+|---|---|
+| 2D RoPE 相对位置 | ✅ `rope_parameters.rope_theta = 10000`（⭐ 注意与文本塔的 500,000 不同） |
+| 与输入分辨率同大小的 2D 可学习绝对位置表 | ✅ **`pos_emb_height: 32` / `pos_emb_width: 32`**（32×32 = 1024 = `max_position_embeddings` ✓ 自洽） |
+| 插值以支持其他分辨率 | ✅ HF 博文的「interpolated absolute position embedding from a learned position table」 |
+
+**⭐ 本轮新取到的其他 vision_config 字段（前三轮没有）:**
+
+| 字段 | 值 | 意义 |
+|---|---|---|
+| `merge_size` | **2** | ⭐ **就是 pixel shuffle 的 2×2 合并**，config 里坐实了 |
+| `patch_temporal` | **2** | ⭐ 博文说的 patchify 形状里那个「2 frames」 |
+| `num_attention_heads` | **16** | 视觉塔注意力头数（card 未给） |
+| `max_position_embeddings` | 1024 | = 32×32 |
+
+> ⭐ **一个我自己做的推导（标为推导，非官方）:** `pos_emb 32×32` + `patch_size 14` ⟹ 一个「视图」是 **448×448 像素 / 1024 个 patch**；经 `merge_size 2` 的 2×2 合并后变 **256 token**；而 card 说单图最多 **4,096 视觉 token** ⟹ **4096 / 256 = 16 个视图**。**这与常见的图像分块（tiling）方案一致，但 card 与博文都没描述分块策略，所以这只是一个自洽的推导。**
+
+## 13.4 ⭐⭐ 读完之后才看得到的一个设计对照
+
+**论文的主题是「中间层携带了输出层没有的信号」。而 Muse Glimmer 里有两个组件都建立在这个事实上 —— 但处理方式正好相反:**
+
+| 组件 | 面对「好信号在中间层」的做法 |
+|---|---|
+| **视觉塔（PE）** | ⭐ **重新训练，把信号搬到末层**（language alignment）→ 下游只读最后一层 |
+| **DFlash drafter** | ⭐ **直接去中间层取**：`target_layer_ids: [1, 13, 25, 37, 49]`，均匀抽 52 层里的 5 层 |
+
+> ⭐⭐⭐ **同一个模型里，同一个洞察被用了两次，而且两次的工程选择相反 —— 一次是改造生产者（对齐训练），一次是改造消费者（多层 tap）。**
+> **区别在于能不能重训:** 视觉塔是 Meta 自己预训练的，所以可以做对齐；而 drafter 要读的是**已经训好、要冻结使用的主模型**，所以只能去中间层取。
+> ⭐ **这个对照我认为是本轮最有价值的收获 —— 它不在任何单一来源里，是把论文正文与 drafter config 放在一起才出现的。**
+
+## 13.5 结论：值得加，但要说清它改变了什么
+
+**⭐ 回答「是否需要加上去」这个问题:值得，理由是三条实质性的，不是补全参考文献:**
+1. ⭐⭐⭐ **它解释了一个我用 config 查不出来的结构事实**（为什么没有中间层 tap）—— 前三轮我只能看到「没有这个字段」，无法解释。
+2. ⭐⭐ **它逐字确认了视觉位置编码方案**（2D RoPE + 可插值的 2D 可学习绝对位置表），把 config 字段与设计意图对上。
+3. ⭐⭐ **它使 §13.4 那个跨组件对照成为可能。**
+
+**⚠️ 但它没有改变任何主要判断:** §4 的 KV 算术、§5 的基准分裂、§11.2 的证据来源结构、§12 的 Cyber 链条断裂 —— **都不受影响。** ⭐ **所以我前三轮把它排在最后是对的排序，只是「不值得读」这个结论下错了。**
+
+## 13.6 第四轮的来源与核实状态
+
+| 来源 | 状态 |
+|---|---|
+| Perception Encoder 论文 [arXiv:2504.13181](https://arxiv.org/abs/2504.13181) | ✅ 经 `huggingface.co/papers/2504.13181.md` 取到全文（164,823 字符）；**读了摘要、§1 引言、Fig 8 层分析、§4 language alignment 的结论段、Appendix B.1 的 PE_core 实现** |
+| Muse Glimmer 完整 `config.json` 重取 | ✅ **专门搜了所有 layer/feature/select/index 键，确认无 `vision_feature_layer`**；并取到 `merge_size` / `patch_temporal` / 视觉头数 / `pos_emb_*` 四个前三轮没有的字段 |
+
+⚠️ **第四轮的局限:**
+1. ⭐ **「Muse Glimmer 用的是语言对齐版 PE」是我的推断**（依据：config 无中间层 tap + 论文说对齐把最优层移到末层）。**card 未说明变体，官方未确认。**
+2. **spatial alignment（PE_spatial，用自身冻结特征蒸馏 + SAM 2 做空间对应蒸馏）与 Muse Glimmer 无关**，我只读到机制描述、未深入 —— 因为 Muse Glimmer 是多模态 LM 而非密集预测模型。
+3. **论文的实验表（Table 9 的 language alignment 配置搜索、§4.2 与其他视觉编码器的对比表）我未逐格核对**，只读了结论性文字。
+4. **§13.3 末尾的「16 个视图」是我的推导**，card 与博文均未描述分块策略。
