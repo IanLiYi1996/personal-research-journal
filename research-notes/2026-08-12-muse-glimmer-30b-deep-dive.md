@@ -740,3 +740,47 @@ GGUF 仓库的 README 前半段是 llama.cpp 部署说明，有几条是**会直
 2. **spatial alignment（PE_spatial，用自身冻结特征蒸馏 + SAM 2 做空间对应蒸馏）与 Muse Glimmer 无关**，我只读到机制描述、未深入 —— 因为 Muse Glimmer 是多模态 LM 而非密集预测模型。
 3. **论文的实验表（Table 9 的 language alignment 配置搜索、§4.2 与其他视觉编码器的对比表）我未逐格核对**，只读了结论性文字。
 4. **§13.3 末尾的「16 个视图」是我的推导**，card 与博文均未描述分块策略。
+
+
+---
+
+## 14. ⭐⭐ 第五轮（外部检验）：Raschka 的架构笔记补上了我漏掉的四点，并独立印证了 §11.2
+
+**来源:** [Muse Glimmer 30B Architecture Notes](https://sebastianraschka.com/blog/2026/muse-glimmer-30b-architecture-notes.html)（Sebastian Raschka，2026-08-11），本仓库在 [[tech-blogs/2026-W33d]] 做了深读。**他独立读同一份 config，所以这是一次难得的对照。**
+
+### 14.1 ⭐⭐⭐ 他独立印证了本份最重要的那个保留（§11.2）
+
+**我在 §11.2 的结论是「领先项与落后项的证据来源不同」（Meta 内部 LLM 判分 vs 第三方 Artificial Analysis）。Raschka 在聚合层面说了同一件事:**
+
+> 「their own benchmarks show that it's **mostly ahead of Qwen3.6**. According to the independent composite benchmarks on the **Artificial Analysis Intelligence Index, it's slightly behind Qwen3.6.**」
+
+> ⭐⭐ **两条不同的路径（我看「哪个基准由谁测」，他看「厂商自评 vs 独立综合指数」）得到一致结论。** 这让 §11.2 从「我的推断」升级为「有独立佐证的判断」。
+
+### 14.2 ⚠️ 我漏掉的四个架构点（须补）
+
+| 他指出的 | 我的处理 |
+|---|---|
+| ⚠️⚠️ **对 GQA 与 SWA 都用了 gated attention** —— 一个 sigmoid 门决定多少注意力输出进入残差连接 | ❌ **我完全没写。这是实质遗漏**（一个影响残差流的机制，不是细节） |
+| ⭐ **Gemma 风格的 pre/post RMSNorm 放置** | ❌ 没写 |
+| ⭐ **它用的是相当标准的 GQA + SWA，而非 Nemotron/Qwen3.6 那类混合注意力** ⟹ **注意力机制上保守，激进之处全在配比** | ❌ 没做这个判断 |
+| ⭐ **131k 上下文在同侪里偏短**（Qwen3.6 与 Gemma 4 原生 2×）；他的评语「on the shorter end **in the age of agent harnesses**」 | ⚠️ 我把 131k 当既定条件，没做同侪比较 |
+
+⭐ **他还给了同侪配置，使「极端」有了参照:** Gemma 4 31B 是 **32Q/16KV（局部）+ 32Q/4KV（全局）、5:1 local:global**，而 Muse Glimmer 是 **32Q/2KV、3:1**。
+> ⭐⭐ **即 Muse Glimmer 在两个轴上都更激进，且方向相反地互相抵消:全局层占比更高（1/4 vs 1/6，本该让 KV 更大），靠把 KV head 砍到 2 个抵消。** 这个取舍结构我第一轮没看出来。
+> ⚠️ 另需更正一处口径：**我笼统写「Qwen」，但因本模型是 dense，正确的对标是 Qwen3.6 27B 而非 30B-A3B。**
+
+### 14.3 ⭐⭐⭐ 他的 KV 数字与我的 §4 差 3.8 倍，对上之后本身是个发现
+
+**他给「KV cache / token（BF16）」:Muse Glimmer 52 KiB / Qwen3.6 27B 64 KiB / Gemma 4 31B 840 KiB。**
+**而我 §4 的 1.70 GiB @ 131,072 折算是 13.6 KiB/token。对账:**
+
+```
+共同基数：每 token 每层 = 2(KV) × 128(head_dim) × 2(K,V) × 2(bf16) = 1,024 字节 = 1 KiB
+他的 52 KiB  = 52 层 × 1 KiB            ← 名义值：假装每层都缓存全上下文
+我的 13.6 KiB = 13 个全局层 × 1 KiB      ← 有效值：只有全局层随上下文增长
+               + 39 个滑窗层（窗口封顶，摊到 131k ≈ 0.64 KiB）
+```
+
+> ⭐⭐⭐ **两个数都对，测的不是同一件事。而对上之后能看出:名义 KV/token 会系统性低估滑窗架构的好处**，因为它不给「多数层不随上下文增长」记分。
+> ⭐⭐ **两者互补:我的「61× vs 假想朴素 MHA」说明机制，他的「Gemma 4 是 16×」说明在真实同侪里的实际优势** —— 后者比我构造的反事实更有说服力。
+> ⚠️ 「他用的是名义值」是我的推断（依据：52 恰等于层数 × 我算出的每层 1 KiB），**他未说明口径**；⚠️ 我也未核实他给的 Qwen3.6 与 Gemma 4 两个数字。
