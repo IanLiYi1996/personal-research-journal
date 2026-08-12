@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [深度调研：Meta Muse Glimmer 30B（开放权重、本地 agent 向）](/research-notes/2026-08-12-muse-glimmer-30b-deep-dive.md)
   - [HF Daily Papers 摘要 · 2026-08-11 回填 + 08-12](/research-notes/2026-08-12-hf-daily-papers-aug11-12.md)
   - [HF Daily Papers 摘要 · 2026-08-11（当日二次抓取 b）](/research-notes/2026-08-11-hf-daily-papers-aug11b.md)
   - [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11.md)
