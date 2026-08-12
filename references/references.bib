@@ -586,6 +586,14 @@
   abstract = {We introduce Agents-A1, a 35B Mixture-of-Experts Agentic Model that reaches trillion-parameter-level performance by scaling the agent horizon. We investigate agent-horizon scaling from two perspectives: scaling long-horizon trajectories and scaling heterogeneous agent abilities. To support this goal, we build a long-horizon knowledge-action infrastructure that connects external knowledge, actions, observations, and verifier outcomes, producing agentic trajectories with an average length of 45K tokens. Based on this, we train Agents-A1 with a three-stage recipe. First, we perform full-domain supervised fine-tuning to align the base model with broad agentic behaviors. Second, we train domain-level teacher models to capture specialized expertise in each domain. Third, we propose a multi-teacher domain-routed on-policy distillation with salient vocabulary alignment to improve knowledge transfer efficiency across different domains, unifying six heterogeneous domains into one deployable student model. Agents-A1 achieves strong and broad performance for long-horizon agent benchmarks. Compared with 1T-parameter model such as Kimi-K2.6 and DeepSeek-V4-pro, Agents-A1 achieves leading results on SEAL-0 (56.4), IFBench (80.6), HiPhO (46.4), FrontierScience-Olympiad (79.0), and MolBench-Bind (56.8), and remains highly competitive on SciCode (44.3), HLE (47.6) and BrowseComp (75.5). We hope this work provides the community with a practical path for scaling the horizon using a 35B agent that can reach or match the performance of 1T models on long-horizon tasks.}
 }
 
+@article{Bai2026Skillzip,
+  title = {SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure},
+  author = {Xiaofan Bai and Hongqiang Lin and Chao Liu and Yantao Zhang and Xuan Jin and Xipeng Cao and Yuhong Li},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.11079},
+  abstract = {Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essential even when no sampled task activates them. Evaluation-guided compression can test these behaviors, but it introduces rollouts, cost, and dependence on the compression-time evaluation set. We present SkillZip, an evaluation-free method that compresses a skill by finding its shortest faithful structural explanation. The intuition is explain once, reference many: state a repeated rule once at the scope where it applies, factor a repeated action sequence into a shared procedure, and keep only the differences as explicit exceptions. We formalize this intuition as a typed minimum description-length objective over a skill contract and a residual, subject to a hard coverage constraint for every extracted trigger, workflow edge, tool requirement, obligation, and output field. The formulation provides simple sharing thresholds, preserves unique rare rules by construction, and supports efficient local updates. SkillZip has a one-shot mode with one structured extraction call and deterministic optimization, and a continual Zip-on-Write mode that integrates each self-evolution patch without replaying tasks or reparsing the full history. Through comprehensive experimental evaluations, we demonstrate the effectiveness and superiority of SkillZip in compression performance, generalizability, and cost overhead.}
+}
+
 @article{Bai2026Temporal,
   title = {Temporal-Distance JEPA: Plan-Aware Representation Learning for Latent World Model Predictive Control},
   author = {Jiaxin Bai and Jiaxuan Xiong},
@@ -2653,6 +2661,14 @@
   abstract = {Deploying multimodal foundation models as closed-loop policies increasingly requires conditioning actions on observations that are no longer visible. However, existing benchmarks either expose the full state, conflate hidden-state reconstruction with other agent skills, or test recall only after an episode has ended. We introduce RNG-Bench (Reconstructive Non-Markov Games), a benchmark suite designed to isolate a base model's ability to reconstruct past observations and act on them during multi-step interaction. RNG-Bench includes two complementary games: Matching Pairs, where card identities briefly revealed at specific locations must later be recalled, and 3D Maze, where egocentric views must be integrated into a spatial map. Both games are evaluated under a unified harness with three controlled difficulty axes: grid size, visual pattern, and observation modality. The benchmark further introduces a head-to-head duel protocol to control for instance-level variance and a Memory Gap metric that disentangles forgetting from poor action selection. The hardest configurations require contexts of roughly 128K tokens and 350 image inputs per episode, and remain far from saturated by frontier MLLMs. Memory Gap analysis shows that most residual errors stem from forgetting earlier observations rather than from suboptimal decision making. Finally, fine-tuning Qwen3.5-9B on optimal-policy rollouts and filtered model demonstrations improves performance on RNG-Bench and transfers to existing benchmarks without degrading general multimodal capability.}
 }
 
+@article{Ding2026Combodied,
+  title = {ComBodied Agents: a New Paradigm of Human-Centric Agentic AI},
+  author = {Qianggang Ding and Xingyao Wang and Rui Feng and Zhibin Wang and Feixiang Wang and Kelong Mao and Hao Sun and Zhiyao Luo and Jiankai Tang and Lei Li and Jiadong Guo and Minheng Ni and Weicong Lin and Chenxi Yang and Hongxiang Gao and Zhenghua Chen and Yang Bai and Min Wu and Jun Cheng and Huazhu Fu and Dacheng Tao and Bang Liu},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10915},
+  abstract = {After an older adult misses a medication dose, a software agent can send another reminder and an embodied agent can bring the medication. Yet neither explains whether the person forgot, is confused, has side effects, or deliberately refused, nor what support is appropriate. This reveals a structural gap in Agentic AI: Digital Agents primarily transform software states, while Embodied Agents transform physical states; neither makes a person's evolving state and agency the primary object of modeling, intervention, and evaluation. We introduce Combodied Agents, a human-centered paradigm that perceives, models, predicts, and supports individual human-state trajectories over time, using software tools, sensors, wearables, robots, and human services as action channels rather than end goals. We unify fragmented capabilities across personal assistants, health agents, AI companions, and adaptive human--AI systems into a closed loop: event-based multimodal perception reconstructs meaningful personal events; longitudinal, correctable memory provides temporal context; Personal World Models estimate future personal states and outcomes under alternative decisions and interventions; and an admissible intervention policy selects proportionate support under consent, uncertainty, safety, reversibility, and user control. Feedback from the person and environment updates the loop. Rather than requiring an exhaustive Human Digital Twin, the framework uses purpose-bounded, uncertainty-aware, user-correctable representations. We organize the design space by human-state targets, relational contexts, and agent roles, and propose scenario-centered evaluation, agency-preservation metrics, benchmark requirements, edge-native personal models, and governance directions. Combodied Agents shift Agentic AI from external task completion toward sustained human benefit.}
+}
+
 @article{Ding2026Dreamtraj,
   title = {DreamTraj: Generating 6-DoF Object Trajectories by Reading Unrendered Video Diffusion Latents},
   author = {Tongsheng Ding and Zhen Luo and Yixuan Yang and Boyu Wang and Luyang Xie and Jinyu Yang and Feng Zheng},
@@ -3539,6 +3555,14 @@
   abstract = {Driven by rapid advancements of Large Language Models (LLMs), agents are empowered to combine intrinsic knowledge with dynamic tool use, greatly enhancing their capacity to address real-world tasks. In line with such an evolution, AgentScope introduces major improvements in a new version (1.0), towards comprehensively supporting flexible and efficient tool-based agent-environment interactions for building agentic applications. Specifically, we abstract foundational components essential for agentic applications and provide unified interfaces and extensible modules, enabling developers to easily leverage the latest progress, such as new models and MCPs. Furthermore, we ground agent behaviors in the ReAct paradigm and offer advanced agent-level infrastructure based on a systematic asynchronous design, which enriches both human-agent and agent-agent interaction patterns while improving execution efficiency. Building on this foundation, we integrate several built-in agents tailored to specific practical scenarios. AgentScope also includes robust engineering support for developer-friendly experiences. We provide a scalable evaluation module with a visual studio interface, making the development of long-trajectory agentic applications more manageable and easier to trace. In addition, AgentScope offers a runtime sandbox to ensure safe agent execution and facilitates rapid deployment in production environments. With these enhancements, AgentScope provides a practical foundation for building scalable, adaptive, and effective agentic applications.}
 }
 
+@article{Gao2026Advfd,
+  title = {AdvFD: Boosting Visual Generation via Adversarial Fr'echet Distance Loss},
+  author = {Mingju Gao and Jingkai Zhou and Kun Gai and Changqian Yu and Hao Tang},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.11205},
+  abstract = {Fréchet distance has recently emerged as an effective distribution-level objective for generator post-training, complementing the conventional sample-level diffusion and flow-matching losses. However, directly optimizing Fréchet objectives can cause Fréchet hacking. The target metrics keep improving, but visual quality and Fréchet alignment in other feature spaces may stagnate or deteriorate. We attribute this failure to the static pretrained feature spaces used by existing Fréchet losses. These feature spaces provide incomplete and fixed views of the differences between real and generated distributions. To address this limitation, we propose Adversarial Fréchet Distance (AdvFD), which complements the static representation targets in FD-Loss with a calibrated adversarially learned representation. AdvFD augments the original static Fréchet objective with a learnable representation that adversarially maximizes the Fréchet discrepancy between real and generated samples, while the generator minimizes the same discrepancy in the resulting adaptive feature space. To prevent the adversarial representation from trivially increasing the objective through feature amplification, we further introduce real-feature whitening, which normalizes its scale and covariance geometry and stabilizes the min--max optimization. Extensive experiments show that AdvFD consistently improves one-step generator post-training across both JiT and pMF backbones and across different model scales.}
+}
+
 @article{Gao2026Chat2scenic,
   title = {Chat2Scenic: An Iterative RAG-Based Framework for Scenario Generation in Autonomous Driving},
   author = {Yuan Gao and Wenting Miao and Mattia Piccinini and Haoyu Wang and Qunying Song and Johannes Betz},
@@ -4322,6 +4346,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2604.04838},
   abstract = {Recent advancements in Vision-Language Models (VLMs) have significantly pushed the boundaries of Visual Question Answering (VQA).However,high-resolution details can sometimes become noise that leads to hallucinations or reasoning errors. In this paper,we propose Degradation-Driven Prompting (DDP), a novel framework that improves VQA performance by strategically reducing image fidelity to force models to focus on essential structural information. We evaluate DDP across two distinct tasks. Physical attributes targets images prone to human misjudgment, where DDP employs a combination of 80p downsampling, structural visual aids (white background masks and orthometric lines), and In-Context Learning (ICL) to calibrate the model's focus. Perceptual phenomena addresses various machine-susceptible visual anomalies and illusions, including Visual Anomaly (VA), Color (CI), Motion(MI),Gestalt (GI), Geometric (GSI), and Visual Illusions (VI).For this task, DDP integrates a task-classification stage with specialized tools such as blur masks and contrast enhancement alongside downsampling. Our experimental results demonstrate that less is more: by intentionally degrading visual inputs and providing targeted structural prompts, DDP enables VLMs to bypass distracting textures and achieve superior reasoning accuracy on challenging visual benchmarks.}
+}
+
+@article{Han2026Reference,
+  title = {Reference-Free Post-Training of Open Large Language Models for Multilingual Machine Translation},
+  author = {Chris Han and Pengzhi Gao and Pei Fu and Jian Luan},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10812},
+  abstract = {We study reference-free post-training for multilingual machine translation with open large language models. Starting from the supervised-finetuned MiLMMT-46-v0.1 models, we apply Group Relative Policy Optimization (GRPO) with a reward that averages two reference-free quality estimation models and is gated by language identification. We then linearly interpolate the supervised fine-tuning (SFT) and reinforcement learning (RL) model checkpoints to obtain MiLMMT-46-v1.0. Across 46 languages, the resulting models consistently improve translation quality over their SFT counterparts, outperform strong recent open baselines, including Seed-X, HY-MT2, and TranslateGemma, and achieve leading reference-free scores against evaluated proprietary systems such as Google Translate, Gemini 3 Pro, and GPT-5. We further investigate on-policy distillation and find that it reaches, but does not surpass, the quality frontier achieved by RL with checkpoint interpolation. We release the models and code to facilitate future research.}
 }
 
 @article{Han2026Towards,
@@ -5207,6 +5239,14 @@
   year = {2023}
 }
 
+@article{Inc2026Vibelifebench,
+  title = {VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?},
+  author = {Xiaohongshu Inc},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10875},
+  abstract = {Large language model (LLM) agents are increasingly deployed as personal assistants. Existing evaluations, however, mostly use short, self-contained requests in static environments. Everyday life assistance is different. A task runs for weeks rather than minutes. The world keeps changing while the agent is not being prompted. Many constraints are never stated outright. An agent that merely answers the request in front of it will fail at such a task. What is needed instead is an agent that stays proactive and consistent. It decides on its own when to act, when to ask, and when to stay silent. It notices changes that nobody announced. It keeps one plan coherent from the first day to the last. No current benchmark measures this. We introduce VibeLifeBench, a benchmark of 200 long-horizon tasks across ten everyday-life domains. Each task is a scripted multi-week timeline in a simulated world of 22 mock services. The world advances on its own clock, and many of its changes are silent, so only an agent that re-inspects the world discovers them. Every task is graded by fine-grained, weighted checks that read only what the agent actually left behind, covering the end state, the timeliness of its actions, and whether it upheld the implicit constraints. We evaluate seven frontier models. All of them score low, which shows how far current agents are from assisting with real life. We will open-source all tasks, environments, and the evaluation framework.}
+}
+
 @article{Itkin2026Quickest,
   title = {Quickest Detection of Hallucination Onset: Delay Bounds and Learned CUSUM Statistics},
   author = {Igor Itkin},
@@ -5667,6 +5707,16 @@
   abstract = {Reasoning capability has advanced rapidly in large language models (LLMs), leading to an increasing size of key-value (KV) cache in both prefilling and decoding stages. Existing KV cache compression methods mainly rely on attention weights to estimate token importance. While attention effectively captures contextual relevance, it overlooks complementary information-theoretic signals related to predictive uncertainty and token informativeness. In this paper, we revisit token importance from a forward-looking perspective and introduce \textit{Forward Influence}, a metric that measures how compressed tokens affect future contexts. Our analysis reveals that tokens selected by attention scores mainly influence nearby contexts, whereas tokens associated with high predictive uncertainty exhibit substantially stronger influence on distant future contexts. Based on the observation, we propose \textbf{InfoKV}, an entropy-aware KV cache compression framework that incorporates information-theoretic signals. It combines token-level predictive uncertainty with layer-wise representation evolution and integrates the resulting entropy scores with attention scores during reasoning. Experiments on long-context reasoning benchmarks with Llama-3.1, Llama-3.2, and DeepSeek-R1 demonstrate that InfoKV consistently outperforms existing attention-based KV compression methods in both long prefilling and decoding scenarios.}
 }
 
+@article{Kamijo2026Decoding,
+  title = {Decoding-Level Taboo: A Diagnostic Stress Test for LLM Robustness},
+  author = {Tadanobu Chuyo Kamijo and Ori Rottenstreich and Javier Conde and Gonzalo Martínez and Pedro Reviriego},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.09900},
+  url = {http://arxiv.org/abs/2608.09900}
+}
+
 @article{Kang2024Empirical,
   abstract = {Chain-of-thought (CoT), tree-of-thought (ToT), and related techniques work surprisingly well in practice for some complex reasoning tasks with Large Language Models (LLMs), but why? This work seeks the underlying reasons by conducting experimental case studies and linking the performance benefits to well-established sample and computational complexity principles in machine learning. We experimented with 6 reasoning tasks, ranging from grade school math, air travel planning, ..., to Blocksworld. The results suggest that (i) both CoT and ToT benefit significantly from task decomposition, which breaks a complex reasoning task into a sequence of steps with low sample complexity and explicitly outlines the reasoning structure, and (ii) for computationally hard reasoning tasks, the more sophisticated tree structure of ToT outperforms the linear structure of CoT. These findings provide useful guidelines for the use of LLM in solving reasoning tasks in practice.},
   author = {Liwei Kang and Zirui Zhao and David Hsu and Wee Sun Lee},
@@ -6084,6 +6134,16 @@
   year = {2022}
 }
 
+@article{Kolukuluru2026Not,
+  title = {Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents},
+  author = {Harshitha Kolukuluru and Reshma Ashok and Kirat Arora and Evan William Ciccarelli and Nischal Ashok Kumar and Lunyiu Nie and Franck Dernoncourt and Samyadeep Basu and Ryan A. Rossi and Nedim Lipka},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.08389},
+  url = {http://arxiv.org/abs/2608.08389}
+}
+
 @article{Komarov2026Ragu,
   title = {RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM},
   author = {Mikhail Komarov and Ivan Bondarenko and Stanislav Shtuka and Oleg Sedukhin and Roman Shuvalov and Yana Dementyeva and Matvey Solovyov and Nikolay O. Nikitin},
@@ -6453,6 +6513,16 @@
   title = {NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models},
   url = {http://arxiv.org/abs/2405.17428},
   year = {2024}
+}
+
+@article{Lee2026Articulated,
+  title = {Articulated Object Reconstruction from Rest-State Observation},
+  author = {Daeun Lee and Jaeah Lee and Woosung Kim and Haebeom Jung and Jaesik Park},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2607.27749},
+  url = {http://arxiv.org/abs/2607.27749}
 }
 
 @article{Lee2026Ctrlvton,
@@ -7114,6 +7184,22 @@
   year = {2026},
   url = {http://arxiv.org/abs/2607.04884},
   abstract = {We present HunyuanOCR-1.5, a lightweight end-to-end OCR-specialized vision-language model. HunyuanOCR unifies document parsing, text spotting, information extraction, text-image translation, and multi-image document understanding within a single end-to-end VLM. Building upon the lightweight architecture of HunyuanOCR-1.0, HunyuanOCR-1.5 does not redesign the backbone, but systematically improves both efficiency and capability. For efficiency, we adapt DFlash to OCR decoding, significantly reducing the latency of long structured outputs such as dense documents, tables, and formulas while preserving output distribution. Powered by DFlash, HunyuanOCR-1.5 achieves a 6.37x Transformer inference speedup and a 2.14x speedup under vLLM, delivering the fastest inference among lightweight OCR VLMs. For capability, we propose Agentic Data Flow, an agent-driven data construction system that transforms model weaknesses into executable data requirements and autonomously performs material search, quality verification, and pipeline development. It substantially improves long-tail capabilities in ancient-script OCR, fine-grained chart and table parsing, multi-image text-centric QA, low-resource multilingual parsing, and document hallucination evaluation. HunyuanOCR-1.5 ranks among the top-tier end-to-end OCR solutions on OmniDocBench v1.6 while achieving new performance milestones across these long-tail tasks. Combined with an upgraded pretraining and post-training recipe, HunyuanOCR-1.5 further extends its capability in high-resolution, long-context, and multi-task scenarios. Experiments demonstrate faster inference, broader OCR capability coverage, and the deployment advantages of a lightweight end-to-end model. We will release the model weights and training code to support future research and real-world OCR applications.}
+}
+
+@article{Li2026Ifan,
+  title = {iFAN: Inference-Aware Learning for Plain Mask Transformers},
+  author = {Fang Li and Yu He and Haoyang Tong and Lichen Ma and Jingling Fu and Wenxiao Fan and Tongxuan Liu and Luohang Liu and Ke Zhang and Junshi Huang},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.03216},
+  abstract = {Query-based mask transformers assemble segmentation outputs through pixel-wise competition among query predictions of the final layer, yet this inference process is not explicitly optimized during training. We identify two key mismatches: the query with the highest probability-mask score does not necessarily produce the most accurate mask, and final-layer decoding may discard superior predictions from intermediate layers. To address these issues, we propose Inference-Aware Learning (iFAN), a general training framework for plain mask transformers. iFAN introduces Adjusted Probability-Mask Ranking (APMR), which aligns query competition with predicted mask quality and suppresses high-confidence but inaccurate competitors. We further employ Cross-Layer Self-Distillation (CLSD) to transfer stronger intermediate predictions to the final layer. The ranking and distillation objectives are training-only, while inference retains efficient final-layer decoding. Experiments on COCO, ADE20K, and Cityscapes demonstrate consistent improvements across panoptic, instance, and semantic segmentation, as well as across different architectures, backbone scales, and input resolutions. Overall, iFAN improves performance by an average of 1.20 PQ, 1.30 AP, and 0.63 mIoU, with negligible additional parameters, FLOPs and inference latency.}
+}
+
+@article{Li2026Jigshape,
+  title = {JigShape: Evaluating Visual-Geometric Reasoning in VLMs through Jigsaw Puzzles},
+  author = {Shawn Li and Wei Yang and Jike Zhong and Jiate Li and Jiawei Yang and You Qin and Ryan Rossi and Franck Dernoncourt and Roger Zimmermann and Yue Wang and Zhengzhong Tu and Vicente Ordonez and Mohit Bansal and Yue Zhao},
+  year = {2026},
+  url = {http://arxiv.org/abs/2607.27670},
+  abstract = {Jigsaw puzzle solving requires jointly reasoning about visual content and geometric constraints, yet existing benchmarks use rectangular cuts that create ambiguous ground truth in texture-repeated regions. We introduce \textit{\ours{}}, a benchmark with tab-and-blank interlocking pieces where geometric constraints provide strong local compatibility requirements that, combined with visual content, yield unambiguous ground truth. Across 95K instances at four grid densities (4$\times$4 to 16$\times$16), we find that \textbf{zero-shot VLMs largely lack geometric reasoning}: only one of five frontier models (GPT-5.5) exceeds random baseline on 4$\times$4 puzzles, while all others perform at chance level. While supervised fine-tuning achieves $&gt;$97\% on 4$\times$4, \textbf{all models collapse on larger grids}: GPT-5.5 drops from 70\% to near-random on 8$\times$8, and even fine-tuned models fall below 5\% on 12$\times$12. This ``scaling cliff'' suggests current architectures cannot maintain consistent constraint satisfaction as the number of pieces increases. \ours{} establishes scalable geometric reasoning as an open challenge for vision-language models.}
 }
 
 @article{Li2026Keep,
@@ -8189,12 +8275,28 @@
   abstract = {MLLM-based segmentation faces a core segmentation trilemma: high segmentation performance, preserved dialogue ability, and fast inference. Embedding-prediction methods may disrupt language modeling through pixel-level objectives, whereas next-token generation is inefficient for dense masks. We propose All-Mask Prediction, decoupling autoregressive dialogue from non-autoregressive mask prediction. Its binary instantiation, STAMP (Simultaneous Textual All-Mask Prediction), emits an in-vocabulary &lt;SEG&gt; trigger, fuses image-aligned mask tokens with corresponding patch features, and uses hybrid attention to classify all tokens as foreground or background in one pass. It thereby combines strong referring and reasoning segmentation with preserved multimodal ability and efficient inference. However, binary masks cannot retain multiple semantic or instance identities without repeated target-specific predictions. We therefore propose Structured All-Mask Prediction and develop STAMPlus. It generates a target list with explicit IDs and optional boxes, binds these IDs to a shared multi-class mask space, and jointly predicts all targets in one non-autoregressive pass. A single unified checkpoint retains STAMP's referring and reasoning capabilities while extending to open-vocabulary semantic, instance-aware, and remote-sensing small-target segmentation, where high-resolution mask-token scaling preserves finer spatial evidence. Across these settings, STAMPlus achieves state-of-the-art segmentation performance, preserves general multimodal instruction following, and reduces 12-category latency from 13.50s for repeated STAMP inference to 5.16s. Further analyses show that accurate target cues improve segmentation and learned spatial grounding benefits look-twice reasoning. Overall, STAMPlus resolves the trilemma beyond single-target prediction.}
 }
 
+@article{Liu2026Beyond,
+  title = {Beyond Pixels: From Video Priors to 4D Worlds},
+  author = {Zihao Liu and Xiaolong Shen and Zhenglin Zhou and Ruijie Quan and Yi Yang},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10744},
+  abstract = {4D generation synthesizes dynamic 3D scenes from conditions such as text or images. Existing methods either reconstruct generated RGB videos with a separate 4D model or adapt a particular video generator to predict geometry directly. The former suffers from distribution mismatch and error propagation, whereas the latter ties 4D prediction to a specific generator and may require retraining when the generator or conditioning regime changes. We ask whether the final denoised latents of video models that share a variational autoencoder (VAE) can instead provide a reusable interface to explicit 4D prediction. Building on this insight, we introduce direct latent-to-4D generation and instantiate it as Latent-to-4D, which bypasses RGB by aligning a video latent with the token grid of a pretrained 4D decoder and refining it through frame-wise and global spatiotemporal attention. Trained on roughly 1K existing reconstruction clips, a single checkpoint transfers unchanged across multiple video diffusion transformers within the same VAE family. On Text4D-200 and I4D-200, Latent-to-4D surpasses matched same-latent Wan+4RC cascades in projection-based DINO-F1 by 2.88--3.45 and 5.81 points, respectively, while also being preferred by human raters for geometry, temporal stability, and overall quality.}
+}
+
 @article{Liu2026Capeval,
   title = {CAPEval: A Decoupled Caption Evaluation across Understanding and Generation},
   author = {Zhipeng Liu and Haochen Wang and Zhaoxiang Zhang},
   year = {2026},
   url = {http://arxiv.org/abs/2608.02589},
   abstract = {Captions serve as a primary supervision signal for both multimodal understanding and text-to-image generation. However, previous evaluations treat the caption quality as a single scalar objective, which conflates two distinct properties: (1) how much visual information a caption covers and (2) how reliably the image supports its stated claims. To this end, we design a decoupled caption evaluation benchmark, CAPEval (Coverage And Precision Evaluation), with human-written ground-truth captions and human-verified atomic checklist items. Specifically, CAPEval decomposes caption quality into Coverage and Precision. The former quantifies how thoroughly a caption covers ground-truth factual content, while the latter reflects the factual correctness rate of all claims expressed in the caption. We select 10 captioners and further conduct controlled downstream end-to-end experiments with them from four model families, where the caption source is the only variable. Empirically, we find a consistent task-dependent dissociation: Coverage serves as the stronger correlate for understanding performance, whereas Precision acts as the dominant predictor for generation performance. This decoupled evaluation paradigm not only delivers a more fine-grained diagnosis of caption quality, but also offers actionable guidance for selecting and optimizing captioners tailored to different downstream tasks.}
+}
+
+@article{Liu2026Distilvdr,
+  title = {DistilVDR: A Compact End-to-End Visual Document Retriever via Dual-Student Distillation},
+  author = {Zhuchenyang Liu and Ziyi Wang and Yao Zhang and Yu Xiao},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10636},
+  abstract = {Visual document retrieval (VDR) is dominated by multi-billion-parameter models that are slow to index at full corpus scale and expensive to serve. Prior compression routes either train a smaller multi-vector encoder from scratch or distil only the query side; neither yields a compact single-vector retriever end-to-end. We present DistilVDR, a 524M end-to-end VDR system distilled bilaterally from a single 8B vision-language teacher under a pointwise cosine alignment loss. All supervision comes from the frozen teacher's embedding space, which was itself trained with relevance supervision, so the student objective needs no relevance labels, negative sampling, or contrastive term. We match VDR's text-query and image-document input asymmetry with an asymmetric encoder-only student that concentrates visual capacity on the document side and keeps the query side at 70M parameters. We release two variants that share the same encoders and training and differ only in the document encoder's visual-tile budget: DistilVDR-HiRes attains 61.74 average NDCG@5 on ViDoRe v1+v2+v3 (86.9% of the 8B teacher) and leads every reproduced sub-1B baseline on the high-resolution-sensitive v3 benchmark, while DistilVDR-Fast attains 59.98 at a 3 times smaller visual-token budget. Both variants store one million documents in a 15.6 times smaller index than the strongest sub-1B multi-vector baseline and index the corpus an order of magnitude faster. The code is available at https://github.com/Ryenhails/NanoVDR.}
 }
 
 @article{Liu2026Dive,
@@ -8235,6 +8337,16 @@
   year = {2026},
   url = {http://arxiv.org/abs/2604.05333},
   abstract = {Modern LLM agents increasingly rely on reusable skills, and as they interact with personal applications, web browsers, and other interfaces, skill libraries can scale to thousands of skills. Scaling to larger skill sets introduces two key challenges. First, loading the full skill set saturates the context window, driving up token costs, hallucination, and latency. Second, semantic retrieval surfaces topically relevant skills but misses their prerequisite chain of upstream and downstream skills, creating a prerequisite gap that leaves the retrieved bundle execution-incomplete. In this paper, we present Graph-of-Skills (GoS), an inference-time structural retrieval layer for large skill libraries. GoS constructs an executable skill graph offline from skill packages, then at inference time retrieves a bounded, dependency-aware skill bundle through hybrid semantic-lexical seeding, reverse-aware Personalized PageRank, and context-budgeted hydration. On SkillsBench and ALFWorld, GoS consistently delivers substantial reward improvements and token savings across three model families (Claude Sonnet 4.5, MiniMax M2.7, and GPT-5.2 Codex). On SkillsBench, GoS achieves a peak reward increase of 25.55% while reducing total tokens by 56.72% over the vanilla full skill-loading baseline using GPT-5.2 Codex. Ablations confirm this pattern across skill libraries from 200 to 2,000 skills.}
+}
+
+@article{Liu2026Mendel,
+  title = {Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution},
+  author = {Changzhi Liu and Yilun Liu and Sikuan Yan and Volker Tresp and Yunpu Ma},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.07645},
+  url = {http://arxiv.org/abs/2608.07645}
 }
 
 @article{Liu2026Metacognition,
@@ -8333,6 +8445,16 @@
   archiveprefix = {arXiv},
   eprint = {2607.10522},
   url = {http://arxiv.org/abs/2607.10522}
+}
+
+@article{Liu2026Tsds,
+  title = {TSDS-Toolbox: A Toolbox for Measuring Time-Series Dataset Similarity},
+  author = {Yen-Ku Liu and Hongjie Chen and Ryan A. Rossi and Franck Dernoncourt},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.08119},
+  url = {http://arxiv.org/abs/2608.08119}
 }
 
 @article{Liu2026Tuna,
@@ -10367,6 +10489,14 @@
   title = {From r to Q * : Your Language Model is Secretly a Q-Function},
   url = {http://arxiv.org/abs/2404.12358},
   year = {2024}
+}
+
+@article{Rahman2026Dsagentbench,
+  title = {DSAgentBench: Can Agents Automate End-to-End Data-Science Workflows in Real Computer Environments?},
+  author = {Mizanur Rahman and Mohammed Saidul Islam and Ridwan Mahbub and Md Tahmid Rahman Laskar and Shafiq Joty and Enamul Hoque Prince},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10366},
+  abstract = {Real-world data science involves long-horizon workflows that span data wrangling, exploration, modeling, visualization, and validation, and require coordinated use of tools such as notebooks, IDEs, terminals, browsers, and databases within real operating environments. Yet existing benchmarks lack real-computer interaction and do not evaluate whether agents can execute complete end-to-end data-science workflows in realistic computing environments, failing to capture the multi-stage, multi-tool nature of data-science practice. We introduce DSAgentBench, the first benchmark to evaluate whether agents can automate full data-science workflows inside real computer environments. DSAgentBench contains 275 diverse tasks covering the entire data-science life-cycle, reflecting the complexity and tool coordination required in practice. Each task requires grounding decisions in intermediate outputs and coordinated tool use, and includes a deterministic evaluator that verifies analytical correctness, visual outputs, and model performance rather than code-only execution. Our extensive experiments with 15 closed- and open-source models show that even the strongest agent, Claude-4.6-Sonnet, achieves only 56.70% task success, while all open-source agents remain below 1%, frequently failing at tool orchestration, OS grounding, and multi-step reasoning. These results reveal a substantial capability gap between current agentic systems and real data-science workflows, positioning DSAgentBench as a foundation for developing grounded, verifiable, autonomous data-science agents. We release DSAgentBench at https://github.com/vis-nlp/DSAgentBench.}
 }
 
 @article{Rai2025Uvgs,
@@ -13750,6 +13880,16 @@
   url = {https://github.com/DeepGraphLearning/}
 }
 
+@article{Watanabe2026360cityarena,
+  title = {360CityArena: A Realistic Virtual Urban Navigation Benchmark for Embodied Agents},
+  author = {Kenta Watanabe and Atsuyuki Miyai and Mizuki Takenawa and Kiyoharu Aizawa and Toshihiko Yamasaki},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.08814},
+  url = {http://arxiv.org/abs/2608.08814}
+}
+
 @article{Wei2021Finetuned,
   abstract = {This paper explores a simple method for improving the zero-shot learning abilities of language models. We show that instruction tuning -- finetuning language models on a collection of tasks described via instructions -- substantially boosts zero-shot performance on unseen tasks. We take a 137B parameter pretrained language model and instruction-tune it on over 60 NLP tasks verbalized via natural language instruction templates. We evaluate this instruction-tuned model, which we call FLAN, on unseen task types. FLAN substantially improves the performance of its unmodified counterpart and surpasses zero-shot 175B GPT-3 on 19 of 25 tasks that we evaluate. FLAN even outperforms few-shot GPT-3 by a large margin on ANLI, RTE, BoolQ, AI2-ARC, OpenbookQA, and StoryCloze. Ablation studies reveal that number of tasks and model scale are key components to the success of instruction tuning.},
   author = {Jason Wei and Maarten Bosma and Vincent Y. Zhao and Kelvin Guu and Adams Wei Yu and Brian Lester and Nan Du and Andrew M. Dai and Quoc V. Le},
@@ -14608,6 +14748,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2607.14088},
   abstract = {Video generative models commonly rely on latent spaces learned by 3D Variational Autoencoders (3D-VAEs). However, conventional 3D-VAEs are mainly optimized for pixel-level reconstruction, which can limit the semantic and spatio-temporal structure captured by their latents. Meanwhile, Video Foundation Models (VFMs) such as V-JEPA 2 and VideoMAEv2 show strong video understanding capabilities, yet whether their frozen representations can be transformed into compact, reconstruction-capable, and generation-friendly video latents remains largely unexplored. We answer this question with VideoRAE, a representation autoencoder that leverages multi-scale hierarchical features from a frozen video foundation encoder and compresses them with a lightweight 1D self-attention projector. VideoRAE supports both continuous latents for Diffusion Transformers and discrete tokens for autoregressive models via multi-codebook high-dimensional quantization. During decoding, a local-and-global representation alignment objective with the frozen VFM teacher improves semantic preservation and enables training without KL regularization. Experiments show that VideoRAE achieves strong reconstruction in both continuous and discrete regimes. On UCF-101, it obtains state-of-the-art class-to-video gFVDs of 40 and 93 with AR and DiT generators, respectively, while converging approximately 5x faster than competing autoencoder baselines. In a controlled 2B-scale text-to-video study, replacing LTX-VAE with VideoRAE leads to faster convergence under comparable settings. These results validate frozen VFM representations as versatile and generation-friendly video latents. The model and code will be released on https://zhxie0117.github.io/VideoRAE.}
+}
+
+@article{Xin2026Unimomo,
+  title = {UniMoMo: Expert Merging-Based MoE Acceleration for Large Recommendation Models},
+  author = {Lei Xin and Bin Gu and Peize Li and Zitong Wang and Jianbo Zhao and Changjiang Jiang and Yanyue Xie and Chao Huang and Xuyang Zhao and Zunhai Su and Fanhu Zeng and Zhenglun Kong},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.08627},
+  abstract = {Sparse mixture-of-experts (MoE) layers expand recommendation capacity through conditional computation, yet a trained checkpoint still stores and routes over its full expert bank. We study a deployment problem: convert that checkpoint to a smaller standard MoE under an explicit expert budget, without adding a compression-specific online module. To address this, we introduce UniMoMo, a post-training compression framework formulated as a constrained graph coarsening problem. Rather than relying on parameter distance, UniMoMo groups experts based on their functional similarity, using an unlabeled calibration set to measure how similarly experts respond to shared recommendation states. To prevent performance degradation, we introduce a layer-adaptive protection mechanism that restricts the merging of high-traffic experts based on their routing exposure. Across Amazon Beauty, KuaiRec, and TenRec with 2, 4, and 6 MoE blocks, the final four-expert checkpoints obtain source-relative five-run mean NDCG@10 ratios of 99.92%--102.30% and measured A100 speedups of 1.28$\times$--1.63$\times$. An aggressive two-expert, top-1 operating point obtains ratios of 98.36%--104.24% and speedups of 1.47$\times$--2.21$\times$. These endpoint results evaluate the complete conversion-and-adaptation workflow and show that a trained recommendation MoE can be exported at multiple serving budgets.}
 }
 
 @article{Xing2023Dynamicrafter,
@@ -15629,6 +15777,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2607.25948},
   abstract = {Any-to-any models predict any modality from any combination of others within a single network, a formulation used in multimodal vision and vision-language models, and increasingly in scientific domains such as ecology and astronomy. Existing any-to-any models are typically trained from scratch using encoder-decoder or diffusion architectures, impacting their performance and preventing them from using strong pre-trained decoder-only models as a prior. In this work, we investigate decoder-only any-to-any multimodal modeling, which treats all modalities symmetrically and supports arbitrary modalities as inputs and outputs without modality-specific heads, losses, or task pipelines. Because every modality is both an input and an output of the same model, the resulting model, named Modus, can support a range of applications, such as chained generation through intermediate modalities or cross-modal self-verification by scoring the model's own outputs with another generated modality. Modus demonstrates strong out-of-the-box performance and is competitive with specialist and multitask baselines using a single model across various benchmarks. All materials are open-sourced at https://modus-multimodal.epfl.ch/.}
+}
+
+@article{Ye2026Spieval,
+  title = {SPIEval: Evaluating Large Language Models as Mobile Assistants over Scattered Personal Information},
+  author = {Junjie Ye and Zhuohui Sheng and Shaofan Liu and Yulun Zhu and Wenjie Fu and Dingwei Zhu and Ming Zhang and Yujiong Shen and Weichao Wang and Xin Zhao and Shihan Dou and Tao Gui and Qi Zhang and Xuanjing Huang and Pluto Zhou},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10692},
+  abstract = {Large language models (LLMs) are increasingly deployed as mobile assistants, where a key challenge is leveraging personal information scattered across multiple applications (apps) to complete user instructions. However, due to the lack of dedicated benchmarks, their capabilities remain poorly understood. To address this gap, we introduce SPIEval, a human-curated benchmark grounded in five cognitive capabilities (i.e., reasoning, disambiguation, integration, preference inference, and multi-intent decomposition). SPIEval comprises 250 tasks spanning 4,335 personal records distributed across 10 apps and supports multi-turn interaction through 21 tools. Analysis shows that the benchmark exhibits diverse scenarios, challenging tasks, scattered information, controllable environments, and verifiable outcomes. We evaluate nine representative LLMs and find substantial room for improvement. The best-performing model, GPT-5.5 (xhigh), achieves only 57.3% accuracy, while the weakest achieves just 16.4%. Further analysis reveals that 79% of failures stem from inaccurate information localization, as LLMs often commit to plausible but incorrect information instead of continuing retrieval for verification. We also find that fewer than 2% of retrieval actions employ advanced search methods and observe substantial variation in search efficiency across models. These findings expose fundamental limitations of current LLM-based mobile assistants and motivate future research in this direction. Data and code are available at https://huggingface.co/datasets/Junjie-Ye/SPIEval.}
 }
 
 @article{Yeh2021Decoupled,
@@ -16760,6 +16916,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2606.15133},
   abstract = {Dexterous interaction with articulated objects is important for household, assistive, and humanoid manipulation, where multi-finger hands can provide compliant contact patterns beyond parallel-jaw grasping. However, articulated-object manipulation differs from static-object manipulation: the target part cannot be directly actuated, and its motion must emerge through sustained physical hand--handle contact. This makes the transition from object-centric articulated generation to hand-driven dexterous hand--object interaction non-trivial, since geometric trajectory replay or open-loop execution does not model the contact dynamics required to move the articulated part. Moreover, policies trained only for task completion under fixed dynamics can overfit nominal contact loads, especially without tactile or force feedback, and may degrade when the contact load changes. To address these challenges, we present DragMesh-2, a contact-driven framework for dexterous interaction with articulated objects that extends articulated interaction from object-centric generation to hand-driven dexterous hand--object interaction, where articulated motion must arise through physical contact. We further propose PICA, a physically informed contact-aware training mechanism that injects physical signals into policy learning without tactile or force feedback, improving robustness and task success under changing contact loads. Finally, we conduct systematic evaluation across multiple damping conditions and articulated-object categories to study robustness under contact-load variation, and provide a pure-geometry dexterous interaction resource to support future loco-manipulation and humanoid hand--object interaction research. Across seven GAPartNet objects, DragMesh-2 achieves stronger robustness under contact-load variation than the compared methods while maintaining high task success across damping conditions.}
+}
+
+@article{Zhang2026Ex,
+  title = {Ex-Omni-2D: Expressive Omni-Modal Dialogue Models with Native Visual Presence},
+  author = {Haoyu Zhang and Zhipeng Li and Xiaoying Tang and Tianshu Yu and Yiwen Guo},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10720},
+  abstract = {Omni-modal dialogue models can understand multimodal inputs and synthesize spoken replies, yet their responses remain visually disembodied. We introduce \textbf{Ex-Omni-2D}, an omni-modal dialogue framework that generates a coordinated response comprising text, personalized speech, and reference-conditioned video. Given a multimodal query, reference image, and reference audio, the model predicts a structured \textit{Visual Thought Plan} (VTP) describing scene, emotion, and motion, followed by response text and native multi-codebook speech units. These units form a shared acoustic-temporal interface: they are decoded into speech and aligned online with video frames. This interface enables the response and avatar pathways to be learned from heterogeneous speech, dialogue, and avatar-video data, avoiding the need for large-scale query--text--speech--video supervision. A full-sequence Video Generator serves as the primary Teacher. For efficient incremental generation, we further distill it into a few-step block-causal \emph{Streaming Student} whose Prefix Streaming mechanism carries a clean latent across consecutive chunks to reduce cumulative late-chunk degradation. With four-step inference, the complete four-GPU pipeline achieves an end-to-end RTF of 1.293 at $400\times720$/$720\times400$, providing a practical quality--efficiency operating point.}
 }
 
 @article{Zhang2026Extractbench,
@@ -18035,6 +18199,14 @@
   year = {2026},
   url = {http://arxiv.org/abs/2606.30634},
   abstract = {Modern large-scale LLM pretraining benefits from utilizing Pipeline Parallelism; however, synchronous implementations leave GPUs idle during pipeline bubbles, wasting computational resources. Asynchronous Pipeline Parallelism eliminates these bubbles, maximizing throughput at the cost of gradient staleness. Among asynchronous schedules, PipeDream-2BW is particularly appealing: unlike the original PipeDream schedule, it ensures a constant one-step gradient delay regardless of pipeline depth. However, its adoption remains limited due to the common belief that optimizing under staleness is fundamentally unstable. In this work, we challenge this assumption, demonstrating that degradation under one-step delay depends strongly on optimizer choice rather than being an intrinsic limitation. We provide the first comprehensive empirical analysis showing that while AdamW, the predominant optimizer at the time when PipeDream-2BW was introduced, indeed suffers from severe degradation, recent methods like Muon exhibit strong robustness under a one-step delay. We introduce an optimizer-agnostic Error Feedback-inspired correction to further mitigate delay effects. We provide supporting theoretical analysis demonstrating convergence for Muon with and without this correction. Extensive evaluation on models up to 10B parameters confirms that our strategies bridge the performance gap with synchronous training, highlighting the practical potential of asynchronous pipeline parallelism at scale.}
+}
+
+@article{Zong2026Co,
+  title = {Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design},
+  author = {Qing Zong and Jiayu Liu and Junhao Shen and Zecong Tang and Linsi Wu and Yuxuan Liu and Rui Wang and Zhaowei Wang and Weiqi Wang and Cheng Qian and Xiusi Chen and Yangqiu Song},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.10299},
+  abstract = {Agentic systems are increasingly expected to improve after deployment, yet single-entity self-evolution is often bounded by a static learning context, such as fixed tasks and feedback. This survey focuses on co-evolution in agentic systems, a multi-component form of self-evolution in which multiple agents and their environment impose adaptive pressure on one another. To organize existing papers, we propose a progressive three-stage taxonomy that traces how the system gradually sheds human-engineered constraints. Agent--Agent Co-Evolution studies how agents adapt through dynamic peers, including adversarial, collaborative, and organizational adaptation. Agent--Environment Co-Evolution extends this loop to adaptive tasks, feedback, and interaction spaces that change with the agents. Meta Co-Evolution further explores the possibility of making the evolution mechanism itself evolvable. We also discuss open challenges in evaluating such systems, scaling them across multiple components, and keeping increasingly autonomous evolutionary processes safe and controllable. This survey provides a unified foundation for building robust and open-ended agentic systems that can improve beyond fixed human-designed paths.}
 }
 
 @article{Zong2026Evolvingworld,
