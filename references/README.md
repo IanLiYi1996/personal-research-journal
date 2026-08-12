@@ -1,21 +1,21 @@
 # 文献库索引
 
-> 共 **2128** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2131** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （924）
+- [大语言模型 (LLM)](#-llm-) （926）
 - [智能体 / Agent](#-agent) （396）
-- [强化学习 / RLHF](#-rlhf) （419）
+- [强化学习 / RLHF](#-rlhf) （420）
 - [推理 / Reasoning](#-reasoning) （514）
 - [图神经网络 / Graph](#-graph) （272）
 - [扩散 / 生成模型](#-) （347）
 - [多模态 / 视觉语言](#-) （504）
-- [Transformer / 架构](#transformer-) （436）
-- [高效训练 / 推理](#-) （560）
+- [Transformer / 架构](#transformer-) （439）
+- [高效训练 / 推理](#-) （561）
 - [综述 / Survey](#-survey) （156）
-- [检索增强 / RAG](#-rag) （155）
+- [检索增强 / RAG](#-rag) （156）
 - 未分类（176）
 
 ## 大语言模型 (LLM)
@@ -153,6 +153,7 @@
 - **2026** [AI for Auto-Research: Roadmap &amp; User Guide](http://arxiv.org/abs/2605.18661) — Lingdong Kong et al. · arXiv:2605.18661 `{Kong2026Ai}`
 - **2026** [RuleChef: Grounding LLM Task Knowledge in Human-Editable Rules](http://arxiv.org/abs/2607.01293) — Ádám Kovács et al. · arXiv:2607.01293 `{Kovcs2026Rulechef}`
 - **2026** [GigaChat Audio: Time-aware Large Audio Language Model](http://arxiv.org/abs/2607.10387) — Aleksandr Kutsakov et al. · arXiv:2607.10387 `{Kutsakov2026Gigachat}`
+- **2026** [The Key to Going Linear: Analysis-Driven Transformer Linearization](http://arxiv.org/abs/2607.07706) — Anna Kuzina et al. · arXiv:2607.07706 `{Kuzina2026Key}`
 - **2026** [Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA](http://arxiv.org/abs/2608.09819) — Mind Lab et al. · arXiv:2608.09819 `{Lab2026Macaron}`
 - **2026** [MinT: Managed Infrastructure for Training and Serving Millions of LLMs](http://arxiv.org/abs/2605.13779) — Mind Lab et al. · arXiv:2605.13779 `{Lab2026Mint}`
 - **2026** [CausalDS: Benchmarking Causal Reasoning in Data-Science Agents](http://arxiv.org/abs/2607.08093) — Andrej Leban et al. · arXiv:2607.08093 `{Leban2026Causalds}`
@@ -288,6 +289,7 @@
 - **2026** [When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents](http://arxiv.org/abs/2608.04574) — Yushi Sun et al. · arXiv:2608.04574 `{Sun2026Whenb}`
 - **2026** [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](http://arxiv.org/abs/2607.07740) — Haozhan Tang et al. · arXiv:2607.07740 `{Tang2026Jet}`
 - **2026** [TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents](http://arxiv.org/abs/2607.13988) — Leitian Tao et al. · arXiv:2607.13988 `{Tao2026Trace}`
+- **2026** [Attention Residuals](http://arxiv.org/abs/2603.15031) — Kimi Team et al. · arXiv:2603.15031 `{Team2026Attention}`
 - **2026** [CocoaBench: Evaluating Unified Digital Agents in the Wild](http://arxiv.org/abs/2604.11201) — CocoaBench Team et al. · arXiv:2604.11201 `{Team2026Cocoabench}`
 - **2026** [DiffusionGemma Technical Report](http://arxiv.org/abs/2608.00146) — DiffusionGemma Team et al. · arXiv:2608.00146 `{Team2026Diffusiongemma}`
 - **2026** [GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation](http://arxiv.org/abs/2607.02642) — GigaWorld Team et al. · arXiv:2607.02642 `{Team2026Gigaworld}`
@@ -1623,6 +1625,7 @@
 - **2025** [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](http://arxiv.org/abs/2503.16419) — Yang Sui et al. · arXiv:2503.16419 `{Sui2025Stop}`
 - **2025** [All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning](http://arxiv.org/abs/2503.01067) — Gokul Swamy et al. · arXiv:2503.01067 `{Swamy2025All}`
 - **2025** [Kimi k1.5: Scaling Reinforcement Learning with LLMs](http://arxiv.org/abs/2501.12599) — Kimi Team et al. · arXiv:2501.12599 `{Team2025Kimi}`
+- **2025** [Kimi Linear: An Expressive, Efficient Attention Architecture](http://arxiv.org/abs/2510.26692) — Kimi Team et al. · arXiv:2510.26692 `{Team2025Kimia}`
 - **2025** [BudgetThinker: Empowering Budget-aware LLM Reasoning with Control Tokens](http://arxiv.org/abs/2508.17196) — Hao Wen et al. · arXiv:2508.17196 `{Wen2025Budgetthinker}`
 - **2025** [WebDancer: Towards Autonomous Information Seeking Agency](http://arxiv.org/abs/2505.22648) — Jialong Wu et al. · arXiv:2505.22648 `{Wu2025Webdancer}`
 - **2025** [Just Enough Thinking: Efficient Reasoning with Adaptive Length Penalties Reinforcement Learning](http://arxiv.org/abs/2506.05256) — Violet Xiang et al. · arXiv:2506.05256 `{Xiang2025Just}`
@@ -3455,6 +3458,7 @@
 - **2026** [ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU](http://arxiv.org/abs/2607.19191) — Fan Jiang et al. · arXiv:2607.19191 `{Jiang2026Abot}`
 - **2026** [Information-Aware KV Cache Compression for Long Reasoning](http://arxiv.org/abs/2606.26875) — Jushi Kai et al. · arXiv:2606.26875 `{Kai2026Information}`
 - **2026** [ARCHead: Activation-Metric Residual Correction for Large Language Model Output Heads](http://arxiv.org/abs/2608.02703) — Şuayp Talha Kocabay et al. · arXiv:2608.02703 `{Kocabay2026Archead}`
+- **2026** [The Key to Going Linear: Analysis-Driven Transformer Linearization](http://arxiv.org/abs/2607.07706) — Anna Kuzina et al. · arXiv:2607.07706 `{Kuzina2026Key}`
 - **2026** [Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA](http://arxiv.org/abs/2608.09819) — Mind Lab et al. · arXiv:2608.09819 `{Lab2026Macaron}`
 - **2026** [MinT: Managed Infrastructure for Training and Serving Millions of LLMs](http://arxiv.org/abs/2605.13779) — Mind Lab et al. · arXiv:2605.13779 `{Lab2026Mint}`
 - **2026** [Morphing into Hybrid Attention Models](http://arxiv.org/abs/2606.30562) — Disen Lan et al. · arXiv:2606.30562 `{Lan2026Morphing}`
@@ -3507,6 +3511,7 @@
 - **2026** [When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models](http://arxiv.org/abs/2604.08546) — Zhengyang Sun et al. · arXiv:2604.08546 `{Sun2026When}`
 - **2026** [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](http://arxiv.org/abs/2607.07740) — Haozhan Tang et al. · arXiv:2607.07740 `{Tang2026Jet}`
 - **2026** [AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report](http://arxiv.org/abs/2607.18367) — AlayaWorld Team et al. · arXiv:2607.18367 `{Team2026Alayaworlda}`
+- **2026** [Attention Residuals](http://arxiv.org/abs/2603.15031) — Kimi Team et al. · arXiv:2603.15031 `{Team2026Attention}`
 - **2026** [GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch](http://arxiv.org/abs/2607.13960) — GigaWorld Team et al. · arXiv:2607.13960 `{Team2026Gigaworlda}`
 - **2026** [Kimi K3: Open Frontier Intelligence](http://arxiv.org/abs/2607.24653) — Kimi Team et al. · arXiv:2607.24653 `{Team2026Kimi}`
 - **2026** [Kwai Keye-VL-2.0 Technical Report](http://arxiv.org/abs/2606.10651) — Kwai Keye Team et al. · arXiv:2606.10651 `{Team2026Kwai}`
@@ -3568,6 +3573,7 @@
 - **2026** [Self Gradient Forcing: Native Long Video Extrapolation](http://arxiv.org/abs/2607.20368) — Junhao Zhuang et al. · arXiv:2607.20368 `{Zhuang2026Self}`
 - **2025** [Qwen2.5 Technical Report Qwen Team](https://huggingface.co/Qwenhttps://modelscope.cn/organization/qwenhttps://github.com/QwenLM/Qwen2.5) — ? et al. `{Anon2025Qwen2}`
 - **2025** [OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](http://arxiv.org/abs/2502.01061) — Gaojie Lin et al. · arXiv:2502.01061 `{Lin2025Omnihuman}`
+- **2025** [Kimi Linear: An Expressive, Efficient Attention Architecture](http://arxiv.org/abs/2510.26692) — Kimi Team et al. · arXiv:2510.26692 `{Team2025Kimia}`
 - **2025** [MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation](http://arxiv.org/abs/2512.18181) — Kaixing Yang et al. · arXiv:2512.18181 `{Yang2025Mace}`
 - **2025** [Qwen3 Technical Report](http://arxiv.org/abs/2505.09388) — An Yang et al. · arXiv:2505.09388 `{Yang2025Qwen3}`
 - **2025** [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](http://arxiv.org/abs/2502.11089) — Jingyang Yuan et al. · arXiv:2502.11089 `{Yuan2025Native}`
@@ -4172,6 +4178,7 @@
 - **2025** [MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing](http://arxiv.org/abs/2509.22186) — Junbo Niu et al. · arXiv:2509.22186 `{Niu2025Mineru2}`
 - **2025** [KernelBench: Can LLMs Write Efficient GPU Kernels?](http://arxiv.org/abs/2502.10517) — Anne Ouyang et al. · arXiv:2502.10517 `{Ouyang2025Kernelbench}`
 - **2025** [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](http://arxiv.org/abs/2503.16419) — Yang Sui et al. · arXiv:2503.16419 `{Sui2025Stop}`
+- **2025** [Kimi Linear: An Expressive, Efficient Attention Architecture](http://arxiv.org/abs/2510.26692) — Kimi Team et al. · arXiv:2510.26692 `{Team2025Kimia}`
 - **2025** [SoTA with Less: MCTS-Guided Sample Selection for Data-Efficient Visual Reasoning Self-Improvement](http://arxiv.org/abs/2504.07934) — Xiyao Wang et al. · arXiv:2504.07934 `{Wang2025Sota}`
 - **2025** [BudgetThinker: Empowering Budget-aware LLM Reasoning with Control Tokens](http://arxiv.org/abs/2508.17196) — Hao Wen et al. · arXiv:2508.17196 `{Wen2025Budgetthinker}`
 - **2025** [Just Enough Thinking: Efficient Reasoning with Adaptive Length Penalties Reinforcement Learning](http://arxiv.org/abs/2506.05256) — Violet Xiang et al. · arXiv:2506.05256 `{Xiang2025Just}`
@@ -4611,6 +4618,7 @@
 - **2026** [Teaching Nemotron Greek: Mining a Corpus, Adapting Retrieval, and Grounding Generation for Modern Greek across Specialist Domains](http://arxiv.org/abs/2608.05138) — Ayoub Kirouane et al. · arXiv:2608.05138 `{Kirouane2026Teaching}`
 - **2026** [RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM](http://arxiv.org/abs/2607.11683) — Mikhail Komarov et al. · arXiv:2607.11683 `{Komarov2026Ragu}`
 - **2026** [AI for Auto-Research: Roadmap &amp; User Guide](http://arxiv.org/abs/2605.18661) — Lingdong Kong et al. · arXiv:2605.18661 `{Kong2026Ai}`
+- **2026** [The Key to Going Linear: Analysis-Driven Transformer Linearization](http://arxiv.org/abs/2607.07706) — Anna Kuzina et al. · arXiv:2607.07706 `{Kuzina2026Key}`
 - **2026** [Morphing into Hybrid Attention Models](http://arxiv.org/abs/2606.30562) — Disen Lan et al. · arXiv:2606.30562 `{Lan2026Morphing}`
 - **2026** [Meta-Harness: End-to-End Optimization of Model Harnesses](http://arxiv.org/abs/2603.28052) — Yoonho Lee et al. · arXiv:2603.28052 `{Lee2026Meta}`
 - **2026** [Rethinking RAG in Long Videos: What to Retrieve and How to Use It?](http://arxiv.org/abs/2606.13141) — Yuho Lee et al. · arXiv:2606.13141 `{Lee2026Rethinking}`

@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-08-12-muse-glimmer-30b-deep-dive" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-08-12-topic-softmax-linearization-and-k3" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/agent/2026-08-10-trading-agent-eval-methods" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -83,7 +83,7 @@ Datasets, tools, frameworks, and reference materials.
 |------|------|-------|
 | 2026-08-12 | Note | [金融行业风向扫描（2026-07 中 → 08-12）：政策 / 行业 / 公司三层](/research-notes/2026-08-12-finance-industry-direction-scan) |
 | 2026-08-12 | Note | [深度调研：Meta Muse Glimmer 30B（开放权重、本地 agent 向）](/research-notes/2026-08-12-muse-glimmer-30b-deep-dive) |
+| 2026-08-12 | Note | [专题：Softmax Attention 的线性化路线，与 K3 的实际取舍](/research-notes/2026-08-12-topic-softmax-linearization-and-k3) |
 | 2026-08-12 | Note | [HF Daily Papers 摘要 · 2026-08-11 回填 + 08-12](/research-notes/2026-08-12-hf-daily-papers-aug11-12) |
 | 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-11（当日二次抓取 b）](/research-notes/2026-08-11-hf-daily-papers-aug11b) |
-| 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11) |
 <!-- AUTO:RECENT:END -->
