@@ -55,7 +55,14 @@ CATEGORIES = [
                          "x-ray", "xray", "cdk", "amplify", "appconfig"]),
     ("Analytics", ["athena", "glue", "emr", "kinesis", "msk", "opensearch",
                    "quicksight", "lake formation", "datazone", "data zone",
-                   "managed grafana", "managed prometheus"]),
+                   "managed grafana", "managed prometheus",
+                   # Same drift story as WorkSpaces above. "Clean Rooms" matched no
+                   # keyword ("supports" doesn't match the \b-anchored "support "),
+                   # so it fell through to the description — and because its launches
+                   # almost always mention writing results "to an S3 bucket", it
+                   # landed in Storage on 08-12 after being Analytics on 08-03 and in
+                   # W17. Pin it: privacy-preserving data collaboration is analytics.
+                   "clean rooms", "entity resolution"]),
     ("Management", ["cloudformation", "systems manager", "organizations", "config",
                     "cloudtrail", "cloudwatch", "trusted advisor", "service catalog",
                     "license manager", "compute optimizer", "support ", "health "]),
