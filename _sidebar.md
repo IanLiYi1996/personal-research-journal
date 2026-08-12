@@ -10,6 +10,7 @@
 - **🔬 Research Notes**
   - [深度调研：Meta Muse Glimmer 30B（开放权重、本地 agent 向）](/research-notes/2026-08-12-muse-glimmer-30b-deep-dive.md)
   - [HF Daily Papers 摘要 · 2026-08-11 回填 + 08-12](/research-notes/2026-08-12-hf-daily-papers-aug11-12.md)
+  - [金融行业风向扫描（2026-07 中 → 08-12）：政策 / 行业 / 公司三层](/research-notes/2026-08-12-finance-industry-direction-scan.md)
   - [HF Daily Papers 摘要 · 2026-08-11（当日二次抓取 b）](/research-notes/2026-08-11-hf-daily-papers-aug11b.md)
   - [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11.md)
   - [HF Daily Papers 摘要 · 08/08–08/09（周末空档 + 08-07 桶回填）](/research-notes/2026-08-09-hf-daily-papers-aug08-09.md)

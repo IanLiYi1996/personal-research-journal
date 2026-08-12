@@ -1,0 +1,552 @@
+# 金融行业风向扫描（2026-07 中 → 08-12）：政策 / 行业 / 公司三层
+
+> **Date:** 2026-08-12
+> **目的:** 判断行业风向，用于调整我们自己的工作方向（AWS FSI × agentic trading 评估体系）
+> **范围:** 不限国内、不限券商银行 —— 覆盖央行与监管、市场结构与基础设施、支付与稳定币、保险与资管、交易所、金融科技公司；中美欧 + 中国内地/香港/新加坡
+> **配套既有文档:** [[2026-08-10-ppt-review-agentic-trading-eval]]（PPT 审核）/ [[2026-08-10-trading-agent-eval-methods]]（量化附录）/ [[2026-agentic-trading]]（综述笔记）
+> **Tags:** finance, 金融监管, agentic-ai, 行业风向, FSI, 市场结构
+
+---
+
+## 0. 一句话结论
+
+**过去四周金融行业最大的变化不是「AI 更能干了」，而是「监管把 AI agent 的运行时约束写成了可引用的文本，同时市场用两起真实事故给出了代价的量级」。**
+
+对我们的直接含义：我们手上那套评估体系**押对了方向，但坐标系需要换一次** —— 从「我们认为应该这样评」升级为「这是 MAS / BoE / FSB 已经写下来的东西，我们的方案是它的实现」。这个转换对券商风控/合规委员会的说服力，比再补十个技术指标都大。
+
+---
+
+## 1. 五条主线（按信号强度排序）
+
+| # | 主线 | 证据强度 | 对我们工作的含义 |
+|---|---|---|---|
+| **①** | ⭐⭐⭐ **agentic AI 的运行时治理从「我们的主张」变成「监管的文本」** —— MAS 出 SAFR（每个动作执行前必须「已声明、已授权、已评估」）、BoE/FCA 明确讨论 harness 与 execution boundary、FSB 12 条 10 月定稿 | **4 个独立监管辖区**（新加坡/英国/FSB/美联储），均为一手文件 | **最高优先**。把 L0–L5 与 SAFR 三问交叉成矩阵；执行层拦截从「建议」升级为「基线」 |
+| **②** | ⭐⭐⭐ **AI 集中度风险被评级机构写成信用语言** —— Moody's：「对少数基础模型与云提供商的依赖有形成系统性依赖之虞」 | Moody's 报告 + BoE 集中度 workshop + Fed/FSB 第三方风险条目，**三源同指** | 评估方案需要加一页「第三方 AI 依赖与集中度自评」——这是风控委员会听得懂的语言 |
+| **③** | ⭐⭐ **AI 交易的杠杆代价有了真实案例** —— Situational Awareness 从 $45B 峰值到约 $10B，据报杠杆高达 400%，被迫折价整体卖给 Citadel | CNBC/NYT/Economist 多源，细节一致 | PPT 风险页可直接引用的活案例；且它是「AI 判断可能长期正确但短期被清算」的干净样本 |
+| **④** | ⭐⭐ **市场结构在往 7×24 与永续合约方向动** —— SEC 9/17 开 24 小时交易圆桌、CFTC 就 24/7 标准期货与永续合约征求意见、CME 10/5 上算力期货 | 均为监管一手公告 | 回测口径要改：时段假设、隔夜风险、资金成本模型 |
+| **⑤** | ⭐⭐ **利率周期方向反转** —— FOMC 7/29 按住 3.50–3.75%，但**三票主张加息**；通胀因能源供给冲击居高 | FOMC 声明原文 | 客户的策略假设、久期与融资成本假设需要重做；「降息周期」的默认前提已不成立 |
+
+---
+
+## 2. 方法与口径（先说清局限）
+
+**数据源与时间窗**：2026-07-01 → 2026-08-12（部分政策文件回溯到 2026-03）。
+
+| 通道 | 状态 | 产出 |
+|---|---|---|
+| RSS 抓取 16 个源（Fed/SEC/CFTC/OCC/ECB/BoE/FSB + WSJ/CNBC/FT/MarketWatch + Finextra/PYMNTS/TechCrunch） | ✅ | 241 条，近 45 天 |
+| 监管一手文件（WebFetch） | ✅ | FSB / Fed / SEC / CFTC / MAS / BoE / 人民银行 / 证监会 |
+| 浏览器兜底（Xvfb + 非 headless Chromium） | ✅ | CNBC / NYT / Guardian / MAS / 亚洲监管站（这些对 curl 与 WebFetch 返 403 或空） |
+| arXiv（MCP） | ✅ | q-fin.TR / q-fin.CP / cs.AI，2026-06 起 20 篇 |
+| Longbridge 实时行情 | ❌ **token 过期** | 无实时价格数据 → **本文宏观判断来自新闻与监管文本，不含价格序列验证** |
+| 搜索引擎 | ⚠️ 部分 | DuckDuckGo/Mojeek/Bing 直连被挡；Brave 少量后上验证码；最终走浏览器内 DuckDuckGo |
+
+⚠️ **必须声明的四点局限**（详见 §9）：
+1. **无实时行情** —— 利率/板块判断未用价格数据交叉验证
+2. **FSB 12 条 sound practices 的逐条内容未读**（只读到三组分类，PDF 正文未取）
+3. **SAFR 全文未读** —— 依据是 MAS 国会答复原文 + Baker McKenzie 客户提示，白皮书本体未取
+4. **中国证监会官网新闻列表返回的是 2021 年内容**（缓存异常，非抓取失败），故中国部分以人民银行站与证监会首页为主
+
+---
+
+## 3. 政策层
+
+### 3.1 ⭐⭐⭐ 全球 AI×金融监管基线：四个辖区同时成型
+
+这是本次扫描**最重要的发现**。四条线在同一个季度内落地，且彼此引用：
+
+| 辖区 | 文件 | 状态 | 关键内容 |
+|---|---|---|---|
+| **FSB（全球）** | Sound Practices for Responsible Adoption of AI | 咨询稿 2026-06-10；意见截止 07-22；**约 125 份回复 08-06 公开**；**定稿 2026-10**，是**美国 G20 交付物** | **12 条 sound practices，分三组**：1–4 全机构 AI 治理 / 5–10 开发与部署各阶段的风险管理 / 11–12 AI 相关网络、ICT 与第三方风险 |
+| **新加坡 MAS** | Guidelines on AI Risk Management（2025-11 咨询）+ **SAFR**（2026-07-03 Information Paper） | 指引「即将定稿」；SAFR **不具约束力** | 指引**明确适用于所有 AI 用例、包括 agentic AI**；SAFR 是运行时标准 |
+| **英国 BoE/FCA** | AI Consortium 第四次会议纪要（2026-06-03 开会，**08-05 发布**） | 四个 workshop 产出将于**2026 年内**汇总成最终出版物；第二阶段待启动 | 直接讨论 **harness**、**execution boundaries**、kill switch、AI 加速传染、集中度 |
+| **美国 Fed** | Bowman 在 FSB 外联活动的开场（2026-07-07） | 讲话 | **比例原则**为核心；「**低风险 AI 用途应当受到更轻的监管触碰**」 |
+
+#### ⭐⭐⭐ SAFR：与我们 L0–L5 是同一层东西
+
+**SAFR = Safeguards for Agentic Finance at Runtime**，MAS 2026-07-03 发布的 Information Paper（行业共同制定，MAS 支持）。
+
+MAS 在 8 月 5 日的国会答复里给出的官方定性是：
+
+> SAFR「**sets out a potential approach to how agent actions are authorised, how human oversight is activated, and what is recorded at the point of every consequential decision**」
+> （规定了 agent 动作如何被授权、人工监督如何被激活、以及在每一个有后果的决策点上记录什么）
+
+Baker McKenzie 的解读补充了机制层面：
+
+> SAFR 是一个**运行时标准**——「a specification for how governance objectives are enforced at the moment an agent proposes to act」，核心控制是**在每个 agent 决策与其执行之间插入一个治理检查点（governance checkpoint）**，使得任何 agent 动作**除非先被「声明、授权、评估」（declared, authorised, assessed），否则不得执行**。
+
+⭐ **这与我们 L0–L5 成熟度分级的关系是「正交而非重复」**：
+
+| | L0–L5（我们的） | SAFR（MAS 的） |
+|---|---|---|
+| 回答的问题 | AI **总共**被允许做多少（责任归属在哪一级转移） | **每一次**动作如何被放行 |
+| 时间尺度 | 静态、架构级 | 运行时、逐动作 |
+| 对应客户提问 | 「我们该做到哪一级」 | 「L3 具体怎么控」 |
+
+→ **这正好补上 PPT 审核里我指出的那个缺口**：L0–L5 讲清了「跃迁是责任归属转移」，但没讲清某一级内部的动作级控制长什么样。SAFR 提供了可引用的外部答案。
+
+⚠️ **三点不能省的保留**：
+1. SAFR **明示不构成监管指引或监管期望**（"does not constitute regulatory guidance or supervisory expectations"），也不暗示未来指引的方向 —— 对客户介绍时必须说清这是**行业实践参考**，不是合规义务
+2. MAS 被国会议员 Mariam Jaafar 直接问「是否会从行业主导的 SAFR 转向**强制性**监管要求、时间表如何」，MAS 主席 Gan Kim Yong 的答复**没有给时间表**，只说会「持续检视监管期望并在必要时更新」→ **强制化是方向但未定时**
+3. SAFR 全文我未取到（见 §9），风险分级、人工监督触发阈值、日志的具体字段要求都还没读到
+
+#### ⭐⭐⭐ BoE/FCA AI Consortium：监管者已经在用我们的词汇
+
+这份纪要（2026-06-03 会议，08-05 发布）是本次扫描中**与我们工作重合度最高**的单一文件。四个 workshop：
+
+**Workshop 1 — 生成式 AI 的可解释性与透明度**
+- 采用**结果导向**（outcomes-focused）定义：关注能否理解决策过程、系统是否按预期行为
+- 提出转向 **AI model system perspective**：因为多数用例是把若干模型与组件串起来，**组件可被独立更新** → 治理必须覆盖组件交互与整体+部件的双重测试
+- 成员指出 GenAI 在 **SS1/23**（银行模型风险管理原则）下常被归为高风险，压缩了比例原则的空间；建议引入**缓释因素**（mitigating factors）以允许更细致的适用
+- ⭐ 一条值得记的判断：**复杂度本身可能是糟糕的风险触发器**（机构本来就在处理复杂模型），**真正新的问题是输出的不可预测性**
+- 有成员提议为 AI **开发者**与**部署者**分别写 playbook；主持方提议用 model scorecards 促一致性
+
+**Workshop 2 — AI 加速的传染（AI-accelerated contagion）**
+- ⭐⭐ 区分**可见与不可见风险**：快速传染可在提供商或基础设施中断后**数分钟内**发生；慢速传染来自**相关性错误的逐渐扩散，只能靠跨机构比对才能发现** → 有效测试很可能**必须是跨机构的**
+- ⭐⭐⭐ 两条实操要求，直接对上我们的方案：
+  - **把 agent 动作保持在清晰界定的限度内**（keep agent actions inside clearly defined limits）
+  - **把监管问题从「这家机构能否安全部署？」重构为「整个系统能否观测、测试和收容这些系统行为？」**
+- 偏好**wargaming / 仿真演练**而非预测具体结果；类比网络安全领域的标准与定义实践
+- 消费者侧传染：AI 工具大规模采用可能同向推动客户行为；**由 agent 主动驱动客户行为属更高风险用例，需要更强控制，含 kill switch**
+
+**Workshop 3 — 集中度风险**
+- 通过成员职业网络做的调查显示：集中度**源自 AI 供给本身的结构**，尤其在**模型层与算力层**，替代选择很少 —— 在支撑 **Important Business Services** 时尤为重要
+- ⭐ **人才集中度**被识别为潜在系统性问题，且需求**跨越治理与运营监督，不只是工程**
+- 自建托管 vs SaaS：**SaaS 可能加深第三方依赖并降低可替代性**，调查显示对 SaaS 的依赖更重
+
+**Workshop 4 — AI 边缘案例的演化**
+- ⭐⭐ 提出**四步法**：识别失效类型 → 通过可观测信号检测其如何显现 → 确立诊断所需的**最小证据** → 应用**预先定义的收容控制**
+- 系统级视角把风险管理从基础模型**扩展到 prompt 与检索增强**
+- 建议加强跨机构可见性，含**自愿的输出报告**（voluntary output reporting）
+
+**趋势讨论中的三条**
+- 有成员认为能力提升明显加速，主张重访既有假设，包括**对快于预期的情景做压力测试，如 agentic payments**
+- 提议**标准化的 AI 事件报告**（standardised AI incident reporting）以促成跨机构学习，且**接受事件仍会发生**
+- ⚠️ 警告：前沿模型可能**大规模生产研究与分析，从而抬高有缺陷输出的总量**，对决策与知识质量产生连带影响
+
+**关于 agentic 部署的专门问答**（co-chairs 直接提问）
+- 问的是 agentic 工具的安全部署、模型 **harness**（管理模型执行与交互的软件层）与 **execution boundaries**（把概率性 LLM 推理与确定性系统动作分离）的良好实践是否已经清楚
+- 成员回答：**"harness" 的定义各家不同**，但护栏的技术构件日趋成熟，机构**"are not starting from a blank slate"**
+- HiTL 被高度依赖但在部分场景**不切实际**；wargaming 与针对新奇/意外输入的测试被提为补充
+
+> ⭐⭐⭐ **我认为这份纪要的战略价值在于：它证明「harness / 执行边界 / kill switch / 跨机构可观测性」这套语言已经进入监管对话，而不再是工程圈的内部用语。** 我们的文档过去需要先花篇幅论证「为什么要在执行层设边界」，现在可以直接引用 BoE/FCA 的原话，把论证成本转移出去。
+
+#### ⚠️ 一处必须更正的欧盟时间表
+
+流传很广的说法是「**EU AI Act 高风险义务 2026-08-02 生效，信用评分属 Annex III 高风险**」——我在搜索结果里看到至少 5 家合规咨询/博客这样写。
+
+**但欧盟委员会官方页面（digital-strategy.ec.europa.eu）的表述是：**
+- 「Starting on **2 December 2027**, high-risk AI systems will be subject to strict obligations before they can be put on the market」
+- 「The **transparency rules** of the AI Act will come into effect in **August 2026**」
+- 另有一条：「Prohibition 9 comes into effect in **December 2026** and was introduced as a part of the **AI Omnibus**」
+
+→ **即：时间表被「AI Omnibus」修订过，高风险义务推到 2027-12-02，2026 年 8 月生效的只是透明度义务。**
+
+⚠️ **对客户材料的直接影响**：如果我们的材料里写了「2026 年 8 月高风险义务生效」，需要改。这个错误在市场上很普遍，**指出它本身就是专业性的体现**。
+⚠️ 我的保留：官方页面是概览页而非法条，`AI Omnibus` 的具体修订范围我未读法律文本；建议引用前查 Regulation (EU) 2024/1689 的 Art. 113 现行版本。
+
+---
+
+### 3.2 中国：三份文件定调「十五五」
+
+⭐ 这三份都在**四周之内**发布，构成一个相当完整的政策包。
+
+#### (1)《中国人民银行"十五五"改革发展规划》（2026-08-10 印发）
+
+**并同时配套出台 9 份细分领域行动方案**（这一点很重要——真正的执行细节在配套方案里，而不在规划本身）。
+
+五项重点任务：
+
+| 任务 | 关键表述 |
+|---|---|
+| **货币政策与宏观审慎** | 健全「中国特色现代货币政策框架」；「健全市场化利率形成、调控和传导机制」；汇率「发挥市场在汇率形成中的决定性作用」；建立「宏观审慎监测评估机制」；「稳妥化解重点领域金融风险」 |
+| **服务实体经济** | 构建「同科技创新相适应的科技金融体制」；⭐「**高质量建设债券市场'科技板'**」；「加快推进数字金融」 |
+| **现代金融市场** | 完善「多类别、多层次金融市场体系」 |
+| **高水平对外开放** | 人民币国际化、「推进人民币离岸市场发展」；金融基础设施跨境互联互通；「多层次、广覆盖的人民币跨境支付体系」；⭐「加快建设上海国际金融中心，巩固提升香港国际金融中心地位」 |
+| **金融基础设施与央行服务** | 「稳步发展数字人民币」；「强化反洗钱监管」；⭐「**全面推进法治央行和数字央行建设**」 |
+
+⚠️ **一个值得注意的「不在场」**：该规划的新闻稿中**没有出现「人工智能」的具体表述**，数字化相关表述集中在三处——数字金融、数字人民币、数字央行。**这与英美监管把 AI 单列成条的做法形成对照。**
+→ 我的推断（未证实）：AI 相关内容更可能落在 9 份配套行动方案里。**这是下一步值得追的线索** —— 如果配套方案里有 AI 专章，那是国内 FSI 客户最需要的合规依据。
+
+#### (2) 四部门《关于健全金融机构治理的实施意见》（文件日期 2026-03-16，2026-07-31 公开）
+
+**金融监管总局 + 中国人民银行 + 中国证监会 + 财政部**联合印发，九部分二十二条。
+
+- ⭐ **目标时间表：到 2029 年**「基本形成权责边界清晰、激励约束相容、风险管理严格、运转规范高效的金融机构治理机制」
+- **风险管理**：全面风险管理体系，提升「风险识别、研判、评估、计量、监测、控制和缓释能力」，**机构、业务、产品全覆盖**；独立垂直的内部审计体系，审计结果用于考评问责
+- ⭐⭐ **科技与数字化**：推动**监管数字化、智能化**，统一数据标准，加强治理风险监测预警，实现「风险**早识别、早预警、早暴露、早处置**」
+- ⭐⭐ **问责机制（这是对 agent 落地最硬的一条）**：高管与关键岗位人员**绩效薪酬延期支付、追索扣回**；长周期考核，防止短期过度激励；重大问题「依法依规实行**终身问责**」；严防违法违规人员「带病流动」；查处「靠金融吃金融」「靠监管吃监管」并强化「**对监管的监管**」
+- 独立董事应在审计、提名、薪酬与考核、关联交易等专门委员会中**占多数并任召集人**
+
+> ⭐⭐ **对我们的含义**：「终身问责」+「绩效薪酬追索扣回」+「长周期考核」这三条组合起来，意味着国内金融机构高管对 AI 决策后果承担的是**长尾个人责任**。这解释了为什么国内客户对 L3/L4（AI 有处置权）的抵触远强于技术顾虑——**这不是技术保守，是问责结构决定的**。
+> → 我们的材料应当把「审计留痕能否支撑事后多年的责任追溯」作为一条独立要求，而不是把它混在通用可观测性里。这一条在 SAFR 的「每个有后果的决策点记录什么」上再加了一个中国特有的时间维度。
+
+#### (3) 九部门《关于加强科技金融领域数据开发利用的通知》（2026-07-29）
+
+**九个部门**：人民银行、发改委、科技部、工信部、海关总署、市场监管总局、金融监管总局、国家知识产权局、**国家数据局**。
+
+- 配套《**全国科技金融领域数据开发利用目录 1.0**》：**8 大类、26 个数据指标**，覆盖企业名单与科创属性、进出口、投融资、经营、研发投入、知识产权、创新能力评价、企业需求
+- 开展「**科技金融可信数据空间创新发展试点**」；推行「信息查询、**联合建模**等模式」
+- 引导金融机构建立「**科技型企业数字信用画像**」，开发风控与投研模型
+- ⭐ 产业链资金流动分析：用「**交易集中度、交易对手分布、交易对手稳定性**」等数据绘制重点产业链图谱，「一链一策」
+
+⚠️ 新闻稿中**未出现对人工智能应用的专门要求** —— 相关表述限于联合建模、数字信用画像、风控投研模型、产业链图谱等模型化手段。
+
+#### (4) 证监会：资本市场对外开放与工具箱扩容
+
+| 日期 | 事项 |
+|---|---|
+| **2026-08-03** | ⭐ **人民币国债期货在香港交易所挂牌上市**，吴清主席出席并致辞，主题为「共创'十五五'资本市场高水平开放新局面」 |
+| 2026-07-31 | 焦炭期权注册获批 |
+| 2026-07-24 | 热轧卷板、不锈钢期权注册获批 |
+| （第234号令） | 《**衍生品交易监督管理办法（试行）**》 |
+| （2025年第7号令，人民银行+证监会） | 《金融基础设施监督管理办法》 |
+
+> 人民币国债期货在港上市 + 央行规划里的「人民币离岸市场」「跨境互联互通」是同一条线。**对我们的含义**：香港作为离岸人民币衍生品中心的功能在增强，跨境场景的 agent 应用会同时面对两地监管——这是一个尚未被任何评估框架覆盖的维度。
+
+---
+
+### 3.3 市场结构：7×24、永续合约、算力期货、预测市场
+
+⭐ 这四件事各自看是新闻，**放在一起看是同一个方向：交易时段、合约形态与标的类别同时在扩张**。
+
+| 事项 | 状态与细节 |
+|---|---|
+| **SEC 24 小时交易圆桌** | **2026-09-17** 在 SEC 总部，公开并直播，File No. 4-913。三个议题：系统如何就绪支持隔夜交易、24 小时市场下的运营与韧性、扩张的机会与挑战。主席 Atkins：「a new day – and night – in the U.S. equity markets」，同时强调「balancing round-the-clock trading with all-important investor and customer protections」。⚠️ 参与者名单尚未公布 |
+| **CFTC 24/7 期货 + 永续合约** | 就「标准期货合约扩展到全天候交易时段（到期日不变）」与「**永续合约参照可实物交割或可储存的能源商品**」征求意见；**意见截止延至 2026-08-26**（延长 30 天），docket CFTC-2026-1388，Federal Register 91 FR 47158。延期理由包括「与业界的广泛沟通」后新增了问题 |
+| ⭐⭐ **CME 算力期货** | CME Group 与 **Silicon Data** 合作，**2026-10-05** 推出**两个 compute futures 合约**（待监管批准）。标的为 **Nvidia H100 与 Blackwell B200 的租赁成本**，基于 Silicon Data 追踪**小时级 GPU 租赁价格**的指数；**每份合约代表 H100 一个月的租金**。Silicon Data CEO Carmen Li：「For years, two companies buying the exact same GPU capacity could pay wildly different prices with no way to know who got the better deal.」 |
+| **预测市场** | Polymarket 洽谈**估值超 $200 亿**的融资；Kalshi 与合规科技公司合作监控内幕交易；⚠️ **CFTC 首次动用紧急权力**（2026-08-11「CFTC Exercises Emergency Authority to Ensure Market Stability」）——据检索，背景是 Kalshi 与州法（纽约/密歇根）的管辖冲突；CFTC 8/20 首次召开 Innovation Advisory Committee |
+| **美国国债清算** | SEC 持续推进 Treasury Clearing 实施（Uyeda 08-07 更新） |
+| **美国银行准入放宽** | OCC 力推 de novo chartering 复兴，**18 个月收到 40 份新银行申请**；修订 CBLR 框架；与 Fed/FDIC 联合修订 CRA 规则；财长 Bessent 与 Comptroller Gould 共同宣传「community bank comeback」 |
+
+> ⭐⭐⭐ **CME 算力期货是本次扫描中我认为最被低估的一条。** 它把 AI 算力变成有公开参考价、可对冲的商品。三个衍生含义：
+> 1. **对 AI 服务成本的建模从「供应商报价」变成「可交易曲线」** —— 这直接影响我们评估体系里的成本模型：agent 的推理成本从此有了远期价格，可以做情景假设而不只是用当期单价
+> 2. 它与 Moody's 说的「**主导 AI 提供商可能随时间控制 AI 服务价格**」正面相关 —— 期货市场的出现本身就是对定价权风险的市场化回应
+> 3. Nvidia 正与大型资产管理机构合作、可能引导**高达 $5000 亿**投入 AI 基础设施；⚠️ CNBC 另有报道指该融资计划面临来自中国的风险（未细读）
+
+---
+
+### 3.4 宏观：利率周期方向反转（这条改变客户的所有策略假设）
+
+**FOMC 2026-07-29 会议（声明以 9–3 通过）：**
+
+| 项目 | 内容 |
+|---|---|
+| **利率决定** | 联邦基金目标区间维持 **3.50%–3.75%**，并继续维持银行体系「ample reserves」 |
+| **增长** | 「expanding at a solid pace despite elevated uncertainty」，不确定性部分归因于**中东冲突**；强调生产率增长与资本投资的强劲 |
+| **就业** | 招聘与劳动力规模同步，失业率「has changed little」 |
+| **通胀** | 「**remains elevated relative to the Committee's 2 percent goal**」，部分归因于**推高特定部门价格的供给冲击，能源在其中** |
+| ⭐⭐ **异议（3 票）** | **Beth M. Hammack、Neel Kashkari、Lorie K. Logan 三人主张本次会议即加息 25bp** |
+| ⭐ **前瞻指引** | 异常简短而断然：「**The Committee will deliver price stability.**」无日历或数据依赖的条件性语言 |
+
+**同期其他信号：**
+- Fed 理事 Cook（08-05）称自己「**prepared to act**」以加息应对通胀
+- 9 月加息的市场概率在 7 月非农大幅不及预期后回落（08-07）
+- ⚠️ 报道称 **Warsh 与 Fed 正在考虑减少会议次数**，市场担忧由此带来的波动性（08-05）→ 暗示 Fed 主席已更迭，⚠️ 我未取到一手确认
+- **英国央行 Bank Rate 维持 3.75%**（2026-07 货币政策摘要）
+- 铜价创历史新高；加州柴油价格自伊朗战争开始后跳升；⚠️ FT：「Volatility tumbles as markets shrug off Middle East risks」——**波动率与地缘风险背离**
+
+> ⭐⭐ **对我们工作的直接含义**：客户（券商）的策略回测若建立在「降息周期 / 低融资成本 / 低能源通胀」的隐含假设上，**这些假设在过去一个月里全部反转**。而 LLM agent 的一个特有问题是：**它的「市场常识」来自训练语料，而语料里的利率环境很可能是降息周期**。
+> → 这是**前视偏差之外的第二类污染：制度环境错配（regime mismatch）**。模型不是知道了未来，而是把一个已经不成立的宏观常识当成了当前常识。我们的评估文档目前没有覆盖这一类。
+
+---
+
+## 4. 行业层
+
+### 4.1 ⭐⭐⭐ AI 集中度风险被写成信用语言（Moody's）
+
+**Moody's 报告（Guardian 2026-08-09 报道）** —— 这是 Finextra「Banks facing AI concentration risk」那条的底稿。
+
+原文引述：
+
+> 「**The reliance of most financial firms on a relatively small set of foundation AI model and cloud computing providers risks creating a systemic dependency.** This is because **a model outage at one major provider could potentially spread quickly across customers and sectors.** As AI adoption deepens, **regulators may increase their focus on operational resilience and third-party concentration in the AI model stack.**」
+
+其余要点：
+
+| 论点 | 内容 |
+|---|---|
+| **收益会被竞争掉** | AI 整合最终会降本增收，但需要「substantial investments」，且因大量同业奔向同一目标，许多好处最终会被「**competed away**」 |
+| ⭐ **供应商依赖风险** | 「a set of dominant AI model and infrastructure providers could, over time, **exert control over the price of AI services**」；且这一问题很可能随着 OpenAI、Anthropic 等**尚未盈利**的生成式 AI 公司面临投资人的盈利压力而显现 |
+| **缓释因素** | 金融机构仍保有关键资产（尤其**自有专有数据**）；大型银行与保险公司在压低科技合同价格上有长期经验；可能通过**使用开源模型**与建立关键伙伴关系来抵消依赖风险 |
+| **其他风险** | 数据隐私、网络安全、欺诈，以及所谓「**deposit flight**」（存款流失） |
+| **采用率** | 据英国财政部特别委员会 2026 年 1 月报告，**超过 75% 的伦敦金融城企业已在使用 AI**，保险公司与国际银行是最大采用者；主要用于自动化行政任务乃至核心运营，含**处理保险理赔与评估客户信用状况** |
+| **投入案例** | 劳埃德银行集团 CEO Charlie Nunn 加码 AI 投资，**£130 亿战略**，含 **£20 亿成本削减** |
+
+> ⭐⭐⭐ **这条的战略意义在于「语言的转换」**：同一件事，工程侧叫「vendor lock-in」，监管侧叫「third-party concentration」，而 Moody's 把它翻译成了**信用风险与运营韧性**。券商的风险管理委员会和董事会说的正是后一种语言。
+> → **我们的评估方案应当增加一节「第三方 AI 依赖与集中度自评」**，并且措辞要用 Moody's/BoE 的词（systemic dependency / substitutability / Important Business Services），而不是工程词汇。BoE workshop 3 的两条发现可以直接引用：**集中度源自 AI 供给本身的结构（模型层与算力层）**，且 **SaaS 相比自建托管会加深依赖、降低可替代性**。
+
+### 4.2 ⭐⭐ Situational Awareness：AI 主题杠杆基金的真实代价
+
+| 项目 | 事实 |
+|---|---|
+| **基金** | Situational Awareness，创始人 Leopold Aschenbrenner（前 OpenAI 研究员，因 2024 年 6 月 165 页《Situational Awareness》宣言成名，哥大 19 岁最优毕业生，早期在 FTX 工作过） |
+| **规模变化** | 本月早前峰值 **$450 亿** → 周四后约 **$100 亿** |
+| ⭐ **杠杆** | 据报道使用**高达 400%** 的杠杆 |
+| **触发** | 半导体股下跌 + 追加保证金通知（margin calls）连环触发 |
+| **处置** | 被迫将**全部杠杆化的公开股票头寸折价卖给 Ken Griffin 的 Citadel**（含 SK Hynix、CoreWeave 等重挫标的）。Griffin 此前在 Melvin Capital / GameStop 事件中用过同一剧本 |
+| **业绩背景** | 自 2024 年 7 月成立以来累计涨幅**超过 1000%**（WSJ 报道），创始人时年 24 岁 |
+| **持仓结构** | 出售前约 **2/3 为公开股票多空头寸**，其余为私募股权，其中**以数十亿美元的 Anthropic 持股为主** |
+| **业内定性** | BofA CEO Brian Moynihan 称其为「**对杠杆市场的警告射击**（warning shot for leveraged markets）」 |
+| **历史类比** | 市场在 LTCM（1998）、Archegos 与互联网泡沫之间寻找参照。《When Genius Failed》作者 Roger Lowenstein 的判断：「**To me it feels a little more like the dot-coms — huge equity investments in a new thing that no one can value with any hope of precision.**」 |
+
+> ⭐⭐⭐ **为什么这个案例对我们的 PPT 特别有用**：它是一个**「AI 判断可能长期正确、但在公开市场被短期清算」**的干净样本。华尔街教练 Jerry Diao 的话把这一点说得最清楚：「Maybe his views on AI are correct in the long run, but in the public markets, you have to be prepared for the short-term.」
+> → 这正是我们评估体系里「**收益率不等于决策质量**」论点的现实版：一个 +1000% 的历史业绩曲线，对其未来表现几乎不含信息量。**建议把它放进 PPT 的风险页，替代抽象论证。**
+> ⚠️ 保留：杠杆倍数、持仓构成、规模数字均来自匿名信源转述（CNBC 明示 sources spoke on condition of anonymity），基金未回应置评请求。引用时应标注为「据报道」。
+
+### 4.3 支付、稳定币与 agentic payments
+
+⭐ 这一层的共同结构是：**agent 正在成为支付的发起方与收款方**，而基础设施在同步适配。
+
+| 事项 | 细节 |
+|---|---|
+| ⭐⭐ **Coinbase 让企业能被 AI agent 支付** | 「Coinbase Enables Businesses to Get Paid by AI Agents」（2026-08-11） |
+| ⭐ **Natural 融资 $3000 万** | 「reinvent payments for AI agents」，公开对标 Stripe（2026-07-20） |
+| **Amex Ventures 投资 Fazeshift** | 「autonomous finance」/ agentic AI，从应收账款向外扩张（08-11/08-12 两源） |
+| **Stripe + Advent 据报出价收购 PayPal** | 约 **$534 亿**（2026-07-15，⚠️ reportedly） |
+| **Visa 收购 BioCatch** | **$24 亿**，明确理由是**应对 AI 驱动诈骗的激增**（2026-08-03） |
+| **Cashi 选用 Thredd** | 支撑稳定币消费卡 |
+| **巴西扩展 Pix**；**印度为 UPI 找商业模式** | 即时支付网络的下一阶段 |
+| **数字欧元** | ECB：数字欧元 App 将纳入最高无障碍标准（2026-07-30） |
+| **香港稳定币** | 发行人监管制度已生效运行，据报首批发行人牌照已于 2026 年中前后发出。⚠️ **HKMA 官方页面本次未取到，牌照数量与持牌机构以二手来源为主，需另行核实** |
+| **英国：加密企业被拒开户进入议会视野** | 「UK parliamentarians question banks over refusal to provide services to crypto firms」（08-11） |
+| **BoE/FCA 的提醒** | AIC 成员建议对**快于预期的情景做压力测试，明确点名 agentic payments** |
+
+> ⭐⭐ **值得记的一个不对称**：支付侧的 agent 化（Coinbase / Natural / Fazeshift）**跑在了监管明文之前**；而交易侧（我们服务的场景）监管文本反而**先到**（SAFR / BoE / FSB）。
+> → 推论：**交易场景的合规路径其实比支付场景更清晰**。这对我们是好消息，也是差异化论点——可以对客户说明「你所在的领域已经有可对标的运行时框架」。
+
+### 4.4 保险与资管
+
+| 事项 | 细节 |
+|---|---|
+| **保险科技融资创四年新高** | Finextra（2026-08-11） |
+| **AI 原生保险清算所 Axle 融资 $1750 万** | Finextra（2026-08-11） |
+| **保险公司是 AI 采用的最大群体之一** | 英国财政部特委会数据（见 §4.1），用途含**处理理赔** |
+| **英国 PRA/FCA 提议新的自保（captive insurance）制度** | 以推动英国增长与竞争力（2026-07-14） |
+| **资管侧** | 「Astraeus launches wealth management infrastructure platform」；「Finding Finfluence: How Asset Managers Can Win with Gen Z」；⚠️ 超半数英国人因社交媒体理财建议亏钱（Finextra 08-11） |
+| **ETF 创新** | SEC 就 **Novel Exchange-Traded Funds** 公开征求意见（2026-06-30）；两只新 ETF 明确排除马斯克相关标的 |
+| **AstraZeneca $4000 亿并购被投资者否决** | FT：「How investors killed AstraZeneca's $400bn megadeal」——股东主动性的一个极端样本 |
+
+⚠️ **保险与资管是本次扫描覆盖最薄的一层**（IAIS、ESMA、各国保险监管均未抓取）。如果客户侧有保险或资管需求，这一层需要单独再跑一次。
+
+### 4.5 网络安全：AI 自主性成为新风险类别
+
+**PYMNTS「Banking's Next AI Risk Is Cyber Autonomy」（2026-08-11）** 的框架是：担忧从「AI 写更好的钓鱼邮件」转向「**模型自己行动**」——被赋予工具、凭据或网络访问权的系统可在最少人工监督下执行多步操作。
+
+- **OpenAI（08-07）**：Astra 模型的早期测试强到无法排除触及其 preparedness framework 的最高警告级「**Critical**」——即模型可能独立发现并构建可用的零日漏洞，或仅凭高层目标就执行攻击
+- **IMF note「Artificial Intelligence and Cybersecurity in the Financial Sector」**的核心论点是**相关性**：因为银行共享核心系统、支付轨道、云工作负载、开源库与身份基础设施，**更快的漏洞发现会把原本一次性的事件转化为同时发生的多机构中断**；并称先进网络 AI 是「**dual-use problem**」
+- ⭐ **分发渠道很重要**：OpenAI 的 Daybreak 防御体系通过 Accenture、IBM、Capgemini、EY、KPMG、PwC、Palo Alto Networks、CrowdStrike、Cisco、Sophos、Akamai、Fortinet、Cloudflare 间接触达银行 —— **一家银行可能从未采购该模型，但漏洞如何被发现与排序已经被它塑造**
+- 建议控制：限制成功入侵的「blast radius」；网络分段与零信任；**明确治理自主性——精确知道每个模型能触达什么，并保留切断能力**
+
+> ⭐ 这条与 BoE workshop 2 的「快速传染可在数分钟内发生」、Moody's 的「一家主要提供商的模型中断可能迅速扩散」**是同一个机制的三种表述**：共享依赖 + 高速度 = 相关性风险。三个来源性质完全不同（媒体分析 / 央行工作组 / 评级机构），这是本次扫描中**跨源共振最强的一条**。
+
+---
+
+## 5. 公司层
+
+### 5.1 ⭐⭐ JPMorgan：长时程 agent 进入生产是明确的（一手采访）
+
+CNBC 独家采访首席分析官 **Derek Waldron**（2026-06-09）：
+
+| 项目 | 原文/事实 |
+|---|---|
+| **部署计划** | 今年内部署可**自主运行数小时**的 AI agent。「We've entered now the era of long-running autonomous agents」——「agents don't just run for two or three minutes… **they can run for an hour or two**」 |
+| ⭐⭐ **关键概念** | 「**intellectual coherence**」——衡量 AI 系统在需要人工干预前能有效运行多久；受益于模型推理能力提升，使其更像「**team manager than an individual worker**」，能拆解问题并委派活动 |
+| **演进预期** | agent 保持连贯的时间将从「multiple hours, then days, then weeks」 |
+| ⭐ **业务结果** | **私人银行毛销售额增长 20%**（AI 系统隔夜筛查市场活动、客户持仓与研究）；相信最终可让单个银行家的**客户覆盖面扩大多达 50%** |
+| **规模** | 年度技术预算近 **$200 亿**；CEO Dimon 明确部分员工会被 AI 取代，公司准备再培训与再部署 |
+| ⭐⭐ **对软件供应商的判断** | 建购决策向自建倾斜：「**The moat around certain types of software companies is most certainly diminished versus where it was in the past.**」 |
+| **口径** | Waldron 同时说长时程 agent **因安全顾虑尚未准备好用于企业**，但「We will have those in 2026」 |
+
+⚠️ **未采信的数字**：多个二手博客称 JPMorgan「LLM Suite 覆盖 25 万员工、节省 $20 亿」、「IndexGPT 与 Athena agents 推给 6 万+ 交易台员工」。**我未找到一手来源，故不引用**，仅记录为待核实。
+
+> ⭐⭐⭐ **对我们最有用的三点**：
+> 1. 「**intellectual coherence**」是一个**客户侧已经在用的指标概念**，而我们的评估体系里没有对应项。它本质上是「自主运行时长上限」——建议直接吸收为一个可测指标（配合 §6 的 harness 讨论）。
+> 2. **「20% 私行毛销售额增长」是目前少见的、由机构高管具名给出的 AI 业务收益数字** —— 可作为客户 ROI 讨论的锚点。⚠️ 但注意它是**自报、无对照组**。
+> 3. 「软件公司护城河被削弱」+ Moody's 的「供应商定价权风险」是同一枚硬币的两面：**大机构自建以降低依赖，中小机构则被动承受集中度**。这对我们（作为云与 AI 供应商侧）是需要正视的客户心态。
+
+### 5.2 其他公司动向
+
+| 公司 | 事项 |
+|---|---|
+| **Anthropic** | 2026-06→08 **没有**金融服务专属发布；相关的是 **Cognizant 合作扩展**（07-27，把 Claude 带给企业客户）、**Claude Opus 5**（07-24，定位「a step change improvement for the Opus tier powering long-running agents」）、Claude Sonnet 5（06-30）。⚠️ 官网有 financial services 解决方案页，但非本窗口的公告。另：07-30 发布「Investigating three real-world incidents in our cybersecurity evaluations」 |
+| **OpenAI** | Astra 无法排除 Critical 级网络能力（08-07）；Daybreak 防御体系经 13 家服务与技术伙伴分发 |
+| **Nvidia** | 联合大型资产管理机构，可能引导**高达 $5000 亿**投入 AI 基础设施；黄仁勋称其芯片是「investable asset」；⚠️ CNBC 另称该计划面临来自中国的重大风险 |
+| **CME + Silicon Data** | 算力期货，10-05（见 §3.3） |
+| **Citadel** | 接下 Situational Awareness 的杠杆股票组合；Ken Griffin 的 Citadel 在收购这些标的后创下多年最佳单月 |
+| **Visa** | 收购 BioCatch $24 亿（反 AI 诈骗） |
+| **Nasdaq** | 收购 ATS **LeveL Markets** |
+| **RBC / BMO** | 同意以 **C$20 亿**出售 Moneris |
+| **Lloyds** | £130 亿 AI 战略，含 £20 亿成本削减 |
+| **Coreweave / Lumentum / Oracle** | AI 基础设施财报强劲（CoreWeave 营收翻倍、股价 +14%）；但 Oracle 因 **AI 支出担忧重现**而下跌 —— **AI 资本开支的多空叙事同周并存** |
+| **Berkshire** | CEO Greg Abel 开始动用巴菲特留下的巨额现金 |
+| **Apple Pay** | 自 2014 年起领导 Apple Pay 的 Jennifer Bailey 退休 |
+| **Target** | 任命首位首席 AI 官（非金融，但显示 CAIO 岗位的扩散） |
+
+---
+
+## 6. 研究层：学术界与我们撞到了同一个结论
+
+arXiv 2026-06 起的 20 篇里，**有 4 篇独立工作与我们 [[2026-08-10-ppt-review-agentic-trading-eval]] / [[2026-08-10-trading-agent-eval-methods]] 的核心论点重合**。这是本次扫描对我们最直接的确认。
+
+| 论文 | 与我们工作的关系 |
+|---|---|
+| ⭐⭐⭐ **CLQT**（[2606.29771](https://arxiv.org/abs/2606.29771)）<br>*A Closed-Loop, Cost-Aware, Strategy-Consistent Benchmark for Diagnostic Evaluation of LLM Portfolio-Management Agents* | **几乎是我们那套方案的学术版**。明确「**diagnosis before ranking**」；六根支柱含 **TimeGate**、交易成本与融资成本建模、策略一致性打分、三层记忆、MCP 工具层、mandate-aware synthesis；每轮产出 **DecisionRound 并封进可重算验证的哈希链**；五轴能力记分卡 APM-CS（Coherence / Acuity / Composure / Discipline / Reliability）；污染受控的多模型回测 + **真实券商实盘轨道（post-cutoff 未见数据）**，并对照**重复运行的噪声底**。<br>⭐⭐⭐ 三个发现值得逐条抄进我们文档：①「**能力第一名不是 Sharpe 第一名**——名义冠军是 26 轮里 5 轮的可靠性假象」②信号-动作一致性稳定高于留出裁判的 coherence 分（回测 +0.30、实盘 +0.23）③**当收益率无法区分模块价值时，能力轴上能看出来** |
+| ⭐⭐⭐ **TradeLens**（[2607.10286](https://arxiv.org/abs/2607.10286)）<br>*Can Agentic Trading Systems Pay for Their Own Intelligence?* | **补上我们缺的一根轴：agentic viability**。核心追问是「动态 LLM 决策是否把它引致的成本转化为可测的增量利润」；从交易记录、运行时 trace 与部署配置重建轨迹，把盈亏与成本归因到可解释证据。发现失效模式因模型而异（DeepSeek-V3.2 选股差、GLM-4.7 择时为负），而**资本规模、交易频率与架构只起放大或衰减作用**。<br>→ **我们的 24 项检查清单里没有「成本能否被自己挣回来」这一条，而券商一定会问。** |
+| ⭐⭐ **AI Trading's Alpha Singularity / Sealed Joint Search**（[2606.29194](https://arxiv.org/abs/2606.29194)） | 把**评分函数本身当作搜索产物**：固定评分器的搜索会过拟合评分器无法惩罚的东西。SJS 给出防止联合搜索坍缩为自我确认的结构条件（角色分解、类型化角色间通信、**provenance-sealed reads**、版本化存储、substrate-local promotion）；在**对所有 LLM 输入封闭的 91 天 2026 年留出集**上评估，holdout Sharpe +1.87 vs 最佳基线 +1.334（有利种子）/ −0.755（跨种子均值）。<br>⚠️ 作者自陈**单种子运行**、空头侧信号集中。<br>→ 「跨种子均值为负而有利种子为正」**本身就是我们该向客户展示的那张图** |
+| ⭐⭐ **AlphaSchema**（[2607.26642](https://arxiv.org/abs/2607.26642)） | LLM alpha 挖掘的结构化语义空间（Event / Context / Qualities / Direction / Output），**在中国 A 股市场实验**。一个有用的结论：**同一 schema plan 由不同 LLM 实现，预测质量相当** → 说明该框架下 alpha 质量对 LLM 选择相当鲁棒。<br>→ 对客户的含义：**「换更强的模型」不一定改善因子质量，结构设计更重要** |
+
+**另有 5 篇提供可复用的机制：**
+
+| 论文 | 可用之处 |
+|---|---|
+| ⭐⭐ **Whose Side Is Your Agent On?**（[2606.30383](https://arxiv.org/abs/2606.30383)） | **多方受托忠诚（multi-party principal loyalty）**：agent 代表委托人行动，同时与利益可能相悖的对手方在另一通道对话。PrincipalBench 75 题多轮，含泄露探针、双裁判与完整性审计闸门。13 个前沿模型分裂明显（≤20% vs 53.6–75.3% harm），**且这种分裂在单轮安全评测里完全看不见**。⭐ 关键教训：两种机制都只是**沿同一条泄露/过度拒答的权衡曲线移动，而没有跨越它**。<br>→ ⭐⭐⭐ **这直接对应投顾/资管的受托义务场景，而目前没有任何金融评估框架覆盖它。这是我们可以做出差异化的空白。** |
+| ⭐⭐ **DreamGuard**（[2608.05695](https://arxiv.org/abs/2608.05695)） | 主动式运行时护栏：风险感知世界模型维护紧凑循环潜状态，预测未来潜状态并导出**即时危害与前缀风险**证据，在**执行前**融合成干预决策；**平均端到端延迟 25ms/次调用**。<br>→ **这是 SAFR「治理检查点」的技术可行性证明：25ms 意味着逐动作前置检查在生产上是可承受的。** 回应客户「加了检查会不会拖慢」的质疑。 |
+| ⭐⭐ **Memory Reward Inflation**（[2608.00017](https://arxiv.org/abs/2608.00017)） | **Echo Gap**：自改进 agent 把 LLM 自评分当作代理奖励存进记忆，**错误 episode 得到虚高奖励，于是 agent 优先复用它最自信的那些错误**；误差通过记忆复合而非平均掉。形式化出 **Error-Independence Assumption** 为纠正膨胀的**必要**条件。<br>→ 对「agent 从历史交易中学习」这类客户需求是一条硬性警告 |
+| ⭐ **Business Arena**（[2608.08621](https://arxiv.org/abs/2608.08621)） | 真实 Alibaba.com 采购数据；**15 个前沿模型最终净值相差 9 倍，且最好的模型仍不如人工设计策略**。方法学可抄：与人工策略对比估「可得机会」、技能级指标、盈亏追溯到动作、**机制消融确认不是模拟器捷径**。（已在 [[2026-08-12-hf-daily-papers-aug11-12]] 记过） |
+| ⭐ **ToolFailBench**（[2607.04686](https://arxiv.org/abs/2607.04686)） | 1000 个任务覆盖**金融**等五领域，把工具失效分成 Tool-Skip / Result-Ignore / Output-Fabrication / Unnecessary-Tool-Use 四类。**聚合分数会掩盖失效位置**：19 个模型里最好的 Clean Tool-Use Rate 仅 86.33%。<br>→ 「模型调错工具/忽略工具返回值」在金融场景是直接的错单风险，这套四分类可以直接进我们的 trace 检查项 |
+
+> ⭐⭐⭐ **研究层的总体判断：这个子领域在过去两个月完成了从「架构创新」到「评估协议」的重心转移，而且转移方向与我们的判断一致。**
+> [[2026-agentic-trading]] 那篇综述审计出「19 篇核心样本里只有 2 篇报告时间一致的数据切分、1 篇报告交易成本模型、没有一篇达到 R3 可复现级」——**CLQT 与 TradeLens 就是对这个缺口的直接回应**。
+> → 含义：**我们不再是孤军。可以在客户材料里引用同行工作，把「这是 AWS 的方法论」升级为「这是领域共识」。** 但同时也意味着**时间窗在收窄**——如果我们不把方案做成可交付的产品化能力，这些学术框架会先被客户看到。
+
+---
+
+## 7. ⭐⭐⭐ 对我们工作方向的建议
+
+按「改动成本 × 收益」排序。前四条我认为应当在本月内做。
+
+### 优先级 1：把外部权威接进现有文档（改动小、收益最大）
+
+| 动作 | 具体怎么改 | 引用什么 |
+|---|---|---|
+| **① L0–L5 × SAFR 三问交叉成矩阵** | 在 PPT 里加一页：纵轴 L0–L5，横轴 SAFR 三问（动作如何被授权 / 人工监督何时激活 / 每个有后果决策记录什么），格内填该级别的最低配置。**这直接补上我审核时指出的「L3 具体怎么控」缺口** | MAS 国会答复原文 + MAS Information Paper（2026-07-03） |
+| **② 执行层拦截从「建议」升级为「基线要求」** | 修改量化附录 §2.3 的措辞。理由不再只是我们的工程判断，而是：BoE/FCA 明确要求「把 agent 动作保持在清晰界定的限度内」+ SAFR 的治理检查点 + DreamGuard 证明 **25ms** 延迟可行 | BoE AIC 纪要 + SAFR + arXiv 2608.05695 |
+| **③ 把「前视偏差」的三个独立外部依据列进去** | 我们的看家论点现在有三条同向证据：CLQT 的 **TimeGate + 污染受控留出**、Sealed Joint Search 的**对 LLM 输入封闭的 91 天 2026 留出集**、以及已记录的 SWE-Bench ProMax「只挖训练截止日之后的 commit」。**三个不相干领域收敛到同一个干净解法：只用训练截止日之后的数据** | 2606.29771 / 2606.29194 / [[2026-08-11-hf-daily-papers-aug10-11]] |
+| **④ 更正欧盟时间表** | 凡出现「2026-08-02 高风险义务生效」的地方全部改掉。正确表述：**透明度义务 2026 年 8 月生效；高风险义务 2027-12-02**（经 AI Omnibus 修订）。⭐ 主动指出这个市场上普遍的错误，本身是专业性展示 | 欧盟委员会官方页面 |
+
+### 优先级 2：补三根缺失的轴
+
+| 缺口 | 为什么必须补 | 建议做法 |
+|---|---|---|
+| ⭐⭐ **成本-收益轴（agentic viability）** | TradeLens 把它提成核心判据；而**券商必然会问「这套东西一年花多少、赚回来没有」**。我们现有 24 项检查清单里没有这一条 | 加三个指标：每决策 token/推理成本、成本归因到 P&L（哪些动作在烧钱）、与人工基线的净收益对比。⭐ 且现在可以用 **CME 算力期货曲线**做远期成本情景，而不只用当期单价 |
+| ⭐⭐ **第三方 AI 依赖与集中度自评** | Moody's 把它变成信用语言、BoE 单独开了一个 workshop、FSB 12 条里有 2 条专讲第三方风险。**这是风控委员会的语言** | 加一页清单：模型层/算力层供应商、可替代性评估、SaaS vs 自建的依赖深度、Important Business Service 映射、切换成本与切换演练。措辞用 systemic dependency / substitutability |
+| ⭐ **制度环境错配（regime mismatch）** | 这是我在本次扫描中新识别的一类污染，**与前视偏差并列但机制不同**：模型的「市场常识」来自训练语料（很可能是降息周期），而当前是**三票主张加息、能源供给冲击推高通胀**的环境。模型不是知道未来，是把过期常识当现状 | 在前视偏差一节后加一小节；检测手段可参照 Cultivar 的**源对比法**（配对有/无制度提示的输入，看性能差） |
+
+### 优先级 3：新增能力（差异化机会）
+
+| 机会 | 依据 | 说明 |
+|---|---|---|
+| ⭐⭐⭐ **多方受托忠诚评估** | PrincipalBench（2606.30383）+ 国内四部门治理意见的**终身问责** | agent 同时面对客户与交易对手时忠于谁——**这是投顾/资管 L3+ 场景的必然问题，且目前没有任何金融评估框架覆盖**。论文已证明这种失效**在单轮安全评测里完全看不见**，而且泄露与过度拒答的权衡**无法被现有机制跨越**。这是一个真正的空白 |
+| ⭐⭐ **「审计留痕支撑长尾责任追溯」作为独立要求** | 四部门《健全金融机构治理的实施意见》的**终身问责 + 绩效薪酬追索扣回** | 国内特有：高管责任是长尾的。因此留痕要求不只是「可观测」，而是「**多年后仍可重建当时的决策依据**」。CLQT 的**可重算验证哈希链**是现成的技术答案 |
+| ⭐ **7×24 与永续合约情形下的成本模型** | SEC 9/17 圆桌 + CFTC 永续合约征求意见（8/26 截止） | 回测的时段假设、隔夜风险、资金成本都要改。**现在做是提前，半年后做是补课** |
+| ⭐ **把「intellectual coherence」吸收为指标** | JPMorgan Waldron 的一手表述 | 客户侧已经在用这个概念（自主运行时长上限）。我们的体系里没有对应项，而它天然连接 harness 讨论 |
+
+### 优先级 4：一份可直接给客户的合规日历
+
+| 日期 | 事项 | 谁受影响 |
+|---|---|---|
+| **2026-08-26** | CFTC 24/7 期货与永续合约意见截止 | 期货/衍生品业务 |
+| **2026-09-17** | SEC 24 小时交易圆桌（File No. 4-913） | 美股交易与清算 |
+| **2026-10-05** | CME 算力期货上线（待批） | AI 成本对冲 |
+| **2026-10** | ⭐ **FSB AI Sound Practices 定稿**（美国 G20 交付物） | 全球，**最重要的一条** |
+| 「即将」 | ⭐ **MAS AI 风险管理指引定稿**（明确覆盖 agentic AI） | 新加坡持牌机构 |
+| **2026 年内** | BoE/FCA AI Consortium 最终出版物 + 第二阶段 | 英国 |
+| **2026-12** | EU AI Act Prohibition 9 生效（AI Omnibus 引入） | 欧盟 |
+| **2027-12-02** | EU AI Act 高风险义务生效 | 欧盟（信用评分等） |
+| **2029** | 中国四部门治理意见目标年 | 国内金融机构 |
+
+---
+
+## 8. 三条我认为最值得记住的判断
+
+1. ⭐⭐⭐ **「运行时治理」这个词现在有主了。** 四周之内，MAS 给出了逐动作检查点的规范（SAFR）、BoE/FCA 把 harness 与 execution boundary 写进了官方纪要、FSB 12 条要在 10 月定稿。**我们过去需要论证的东西，现在可以引用。** 这是本次扫描中唯一一条既降低我们的说服成本、又抬高我们的交付标准的变化。
+
+2. ⭐⭐⭐ **同一周里，监管说「AI 集中度是系统性依赖」，市场用一支 400% 杠杆的 AI 主题基金演示了「集中押注 AI 的代价」。** 前者是审慎风险，后者是市场风险，但共同的结构是**相关性**：大家依赖同一批模型/算力提供商，大家押同一个叙事。**我们的评估体系目前处理的是单个 agent 的质量，不处理「很多机构的 agent 都用同一个模型」这件事。** BoE 已经明确说有效测试很可能必须是跨机构的——这是一个我们暂时给不出答案的问题，但应该在客户材料里诚实地标出来。
+
+3. ⭐⭐ **学术界追上来了，而且方向一致。** CLQT 和 TradeLens 两篇独立工作都把「诊断优先于排名」当作前提，都做污染控制，都报成本。**这确认了我们押对了方向，同时意味着这套方法论的稀缺性正在下降。** 建议把重心从「论证方法论正确」转向「把它做成可交付、可复用的东西」——因为前者很快就不需要我们论证了。
+
+---
+
+## 9. 本次抓取的局限与待核实项
+
+**必须标注的局限：**
+
+| # | 局限 | 影响 |
+|---|---|---|
+| 1 | ⚠️ **Longbridge token 过期**（refresh token expired），无实时行情 | §3.4 的宏观判断**仅基于监管文本与新闻，未用价格序列交叉验证**。修复：`longbridge auth login` |
+| 2 | ⚠️ **FSB 12 条 sound practices 的逐条内容未读** | 只拿到三组分类（1–4 / 5–10 / 11–12）。咨询稿 PDF（2026-06-10，编号 9/2026）未取到正文 |
+| 3 | ⚠️ **SAFR 白皮书本体未读** | 依据是 MAS 国会答复原文 + Baker McKenzie 客户提示。**风险分级、人工监督触发阈值、日志字段要求均未知** —— 这三项恰恰是我们最需要的 |
+| 4 | ⚠️ **中国证监会官网新闻列表返回 2021 年内容**（缓存异常） | 中国部分以人民银行站 + 证监会首页为主，可能遗漏证监会近期文件 |
+| 5 | ⚠️ **人民银行「十五五」规划的 9 份配套行动方案未读** | AI 相关内容很可能在其中。**这是下一步最高优先的线索** |
+| 6 | ⚠️ **HKMA 稳定币监管页面未取到** | 牌照数量与持牌机构名单来自二手来源，未核实 |
+| 7 | ⚠️ **保险与资管层覆盖最薄** | IAIS、ESMA、各国保险监管均未抓取 |
+| 8 | ⚠️ **JPMorgan「LLM Suite 25 万员工 / $20 亿节省」未采信** | 仅见二手博客，无一手来源 |
+| 9 | ⚠️ Situational Awareness 的**杠杆倍数、持仓构成、规模数字均为匿名信源转述** | CNBC 明示 sources spoke on condition of anonymity；引用须标「据报道」 |
+| 10 | ⚠️ **Warsh 任 Fed 主席、CFTC 紧急权力的具体标的**未取一手确认 | 前者来自 CNBC 报道的侧写，后者来自检索标题 |
+| 11 | ⚠️ 搜索引擎部分受限 | DuckDuckGo/Mojeek/Bing 直连被挡、Brave 上验证码；最终走浏览器内 DuckDuckGo。**可能存在检索覆盖偏差** |
+
+**Open Questions（按优先级）：**
+
+1. ⭐⭐⭐ **人民银行「十五五」9 份配套行动方案里有没有 AI 专章？** 如果有，那是国内 FSI 客户最需要的合规依据。
+2. ⭐⭐⭐ **SAFR 的风险分级与人工监督触发阈值具体是什么？** 直接决定我们 L0–L5 矩阵怎么填。
+3. ⭐⭐ **FSB 10 月定稿相比咨询稿会改什么？** 约 125 份回复里，大量美国社区银行与全球系统重要性机构同时参与，**比例原则很可能是最大争点**（这是我的推断，非 FSB 陈述）。
+4. ⭐⭐ **「跨机构测试」在实践中怎么做？** BoE 明确说有效测试很可能必须跨机构，但没给方法。这是我们和客户共同面对的空白。
+5. ⭐ **中国监管会不会跟进 agentic AI 的运行时要求？** 目前国内文件的落点是治理结构与问责，**没有对应 SAFR 的逐动作层规范**。
+6. ⭐ CME 算力期货上线后，**GPU 租赁远期曲线能否真的用于 agent 成本建模**？需要看流动性。
+
+---
+
+## 10. References
+
+**监管一手文件**
+- FSB, 《FSB consults on sound practices for the responsible adoption of artificial intelligence (AI)》(2026-06-10) — https://www.fsb.org/2026/06/fsb-consults-on-sound-practices-for-the-responsible-adoption-of-artificial-intelligence-ai/
+- FSB, 《Public responses to consultation on Sound Practices for Responsible Adoption of AI》(2026-08-06) — https://www.fsb.org/2026/08/public-responses-to-consultation-on-sound-practices-for-responsible-adoption-of-artificial-intelligence-ai/
+- MAS, 《Written reply to Parliamentary Question on agentic AI in financial services》(2026-08-05) — https://www.mas.gov.sg/news/parliamentary-replies/2026/written-reply-to-parliamentary-question-on-agentic-ai-in-financial-services
+- MAS, 《MAS Guidelines for Artificial Intelligence (AI) Risk Management》(2025 咨询) — https://www.mas.gov.sg/news/media-releases/2025/mas-guidelines-for-artificial-intelligence-risk-management
+- Baker McKenzie, 《Singapore: MAS Publishes Agentic AI Safeguards for Financial Institutions》(2026-07-17) — https://www.bakermckenzie.com/en/insight/publications/2026/07/singapore-mas-publishes-agentic-ai-safeguards-for-financial-institutions
+- Bank of England / FCA, 《Artificial Intelligence Consortium minutes – June 2026》(发布 2026-08-05) — https://www.bankofengland.co.uk/minutes/2026/june/ai-consortium-minutes-3-june-2026
+- Federal Reserve, Bowman《Opening Remarks on Sound Practices for Artificial Intelligence》(2026-07-07) — https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm
+- Federal Reserve, Barr《Will Artificial Intelligence Broadly Raise Living Standards or Drive Income and Wealth Inequality?》(2026-07-14) — https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm
+- Federal Reserve, FOMC statement (2026-07-29) — https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm
+- SEC, 《SEC Announces Roundtable on Preparations for 24-Hour Trading》(2026-07-23) — https://www.sec.gov/newsroom/press-releases/2026-69-sec-announces-roundtable-preparations-24-hour-trading
+- SEC, 《Update on the SEC's Work Toward Treasury Clearing Implementation》(2026-08-07) — https://www.sec.gov/newsroom/speeches-statements/uyeda-statement-update-secs-work-toward-treasury-clearing-implementation-080726-update-secs-work-toward-treasury-clearing-implementation-august-2026
+- CFTC, 《CFTC Extends Public Comment Period on Proposed Rule on the Extension of Standard Futures Contracts to 24/7 Trading and on Perpetual Contracts》(2026-07-23, Release 9271-26) — https://www.cftc.gov/PressRoom/PressReleases/9271-26
+- European Commission, 《AI Act》(regulatory framework 概览页) — https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+- 中国人民银行，《中国人民银行印发〈中国人民银行"十五五"改革发展规划〉》(2026-08-10) — https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026081018132329141/index.html
+- 金融监管总局/人民银行/证监会/财政部，《关于健全金融机构治理的实施意见》(文件 2026-03-16，发布 2026-07-31) — https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026073110395678929/index.html
+- 人民银行等九部门，《关于加强科技金融领域数据开发利用的通知》(2026-07-29) — https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/2026072915223955058/index.html
+- ECB, 《Digital euro app to incorporate highest accessibility standards》(2026-07-30) — https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260730~3b3bfbb565.en.html
+- OCC, 《OCC Commends FDIC Reform, Advances Priority to Reinvigorate De Novo Chartering》(2026-08-11) — https://www.occ.gov/rss/occ_news.xml *(RSS 条目)*
+
+**行业与公司**
+- The Guardian, 《AI push is putting banks at mercy of tech firms, warns Moody's》(2026-08-09) — https://www.theguardian.com/business/2026/aug/09/ai-push-banks-tech-firms-moodys-risks-financial-sector
+- Finextra, 《Banks facing AI concentration risk》(2026-08-11) — https://www.finextra.com/newsarticle/48225/banks-facing-ai-concentration-risk
+- CNBC, 《JPMorgan Chase plans to deploy more powerful AI agents this year》(2026-06-09) — https://www.cnbc.com/2026/06/09/jpmorgan-chase-ai-agents.html
+- CNBC, 《How Leopold Aschenbrenner built a $45 billion AI hedge fund — and lost most of it in days》(2026-07-31) — https://www.cnbc.com/2026/07/31/leopold-aschenbrenner-situational-awareness-fund-fire-sale.html
+- NYT DealBook, 《What a Hedge Fund's Implosion Says About the A.I. Trade》(2026-07-31) — https://www.nytimes.com/2026/07/31/business/dealbook/situational-awareness-ai-hedge-fund.html
+- CNBC, 《Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says》(2026-08-05) — https://www.cnbc.com/2026/08/05/bofa-brian-moynihan-situational-awareness-meltdown-was-a-warning-shot.html
+- CNBC, 《AI computing power is becoming a tradable asset class as CME launches futures contracts》(2026-08-11) — https://www.cnbc.com/2026/08/11/ai-computing-power-becomes-a-tradable-asset-class-as-cme-starts-futures.html
+- CNBC, 《Nvidia lines up $500 billion in financing…》(2026-08-10) — https://www.cnbc.com/2026/08/11/nvidia-ai-funding-jensen-huang-china-risk.html
+- PYMNTS, 《Banking's Next AI Risk Is Cyber Autonomy》(2026-08-11) — https://www.pymnts.com/cybersecurity/2026/bankings-next-ai-risk-is-cyber-autonomy/
+- PYMNTS, 《Coinbase Enables Businesses to Get Paid by AI Agents》(2026-08-11) — https://www.pymnts.com/cryptocurrency/2026/coinbase-enables-businesses-to-get-paid-by-ai-agents/
+- TechCrunch, 《Natural raises $30M to reinvent payments for AI agents — and take on Stripe》(2026-07-20) — https://techcrunch.com/2026/07/20/natural-raises-30m-to-reinvent-payments-for-ai-agents-and-take-on-stripe/
+- CNBC, 《Visa to buy cybersecurity firm BioCatch for $2.4 billion amid surge in AI-powered scams》(2026-08-03) — https://www.cnbc.com/2026/08/03/visa-buys-biocatch-fraud-detection.html
+- Anthropic News — https://www.anthropic.com/news
+
+**arXiv**
+- CLQT — https://arxiv.org/abs/2606.29771
+- Can Agentic Trading Systems Pay for Their Own Intelligence? (TradeLens) — https://arxiv.org/abs/2607.10286
+- AI Trading's Alpha Singularity (Sealed Joint Search) — https://arxiv.org/abs/2606.29194
+- AlphaSchema — https://arxiv.org/abs/2607.26642
+- Whose Side Is Your Agent On? (PrincipalBench) — https://arxiv.org/abs/2606.30383
+- DreamGuard — https://arxiv.org/abs/2608.05695
+- Memory Reward Inflation in Self-Improving LLM Agents — https://arxiv.org/abs/2608.00017
+- Business Arena — https://arxiv.org/abs/2608.08621
+- ToolFailBench — https://arxiv.org/abs/2607.04686
+
+**本仓库关联**
+- [[2026-08-10-ppt-review-agentic-trading-eval]] — PPT 审核（L0–L5、前视偏差）
+- [[2026-08-10-trading-agent-eval-methods]] — 量化附录（§2.3 执行层、24 项检查清单）
+- [[2026-agentic-trading]] — 综述笔记（协议不可比性、R0–R3）
+- [[2026-08-12-hf-daily-papers-aug11-12]] — Business Arena / Gaming Without an Attacker
+- [[2026-08-11-hf-daily-papers-aug10-11]] — SWE-Bench ProMax（只用截止日后数据）

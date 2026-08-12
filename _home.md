@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-08-12 | Note | [金融行业风向扫描（2026-07 中 → 08-12）：政策 / 行业 / 公司三层](/research-notes/2026-08-12-finance-industry-direction-scan) |
 | 2026-08-12 | Note | [深度调研：Meta Muse Glimmer 30B（开放权重、本地 agent 向）](/research-notes/2026-08-12-muse-glimmer-30b-deep-dive) |
 | 2026-08-12 | Note | [HF Daily Papers 摘要 · 2026-08-11 回填 + 08-12](/research-notes/2026-08-12-hf-daily-papers-aug11-12) |
 | 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-11（当日二次抓取 b）](/research-notes/2026-08-11-hf-daily-papers-aug11b) |
 | 2026-08-11 | Note | [HF Daily Papers 摘要 · 2026-08-10 ~ 08-11](/research-notes/2026-08-11-hf-daily-papers-aug10-11) |
-| 2026-08-10 | Topic | [附录：LLM Trading Agent 金融专项评估方法](/topics/agent/2026-08-10-trading-agent-eval-methods) |
 <!-- AUTO:RECENT:END -->
