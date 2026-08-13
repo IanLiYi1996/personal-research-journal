@@ -75,3 +75,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [HF Daily Papers 摘要 · 2026-08-12（当日二次抓取 / 晚跑首份）](/research-notes/2026-08-12-hf-daily-papers-aug12b.md)
 - [深度调研：Meta Muse Glimmer 30B（开放权重、本地 agent 向）](/research-notes/2026-08-12-muse-glimmer-30b-deep-dive.md)
 - [专题：Softmax Attention 的线性化路线，与 K3 的实际取舍](/research-notes/2026-08-12-topic-softmax-linearization-and-k3.md)
+- [HF Daily Papers 摘要 · 2026-08-12 回填 + 08-13](/research-notes/2026-08-13-hf-daily-papers-aug12-13.md)
