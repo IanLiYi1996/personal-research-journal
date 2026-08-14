@@ -7282,6 +7282,16 @@
   abstract = {OpenClaw has emerged as a leading agent framework for complex task automation, yet it faces insufficient cross-platform GUI interaction support and a well-built self-evolution mechanism. These flaws limit its adaptation to diverse device ecosystems and prevent performance improvements through continuous learning from execution experience. To resolve these issues, we propose the Know Deeply, Act Perfectly paradigm for personal assistants, which holds that accumulated user interaction and task-running experience directly improve execution accuracy and efficiency, unifying cognitive comprehension and operational execution. Based on this paradigm, we introduce KnowAct-GUIClaw, a novel Know-Route-Act-Reflect framework designed to address OpenClaw's GUI manipulation deficits and break through its cross-platform and recursive self-improvement constraints. First, the host agent leverages accumulated interaction experience and task-relevant knowledge for long-horizon task decomposition and allocation (Know). Second, a pluggable GUI subagent with an experience-attributable memory system (Know) and self-evolving skill library (Act), enabling seamless cross-platform migration and fast-path integration. Especially, this framework continuously stores user profiles and feedback to improve the accuracy of task decomposition and tool calls. Extensive experiments across Android, iOS, HarmonyOS and Windows show that KnowAct-GUIClaw achieves superior efficiency, accuracy and cross-platform adaptability. Especially, the GUIClaw with open-source Kimi-2.6 models achieves the best performance (64.1%) on the long-horizon MobileWorld benchmark, beating all agentical frameworks and closed-source agentical models, e.g., Seed-2.0-Pro and GPT-5.5. Additionally, the knowledgeable memory and execution skills supported by our framework are transferable across diverse base models, improving by 8.5% with Kimi-2.6.}
 }
 
+@article{Li2026Learning,
+  title = {Learning How the World Evolves: Extrapolative Video World Models via Latent Dynamics Reasoning},
+  author = {Haodong Li and Shaoteng Liu and Tianyu Wang and Chongjian Ge and Sihui Ji and Jiahan Zhang and Xin Lin and Haolin Lu and Zhe Lin and Manmohan Chandraker},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.09926},
+  url = {http://arxiv.org/abs/2608.09926}
+}
+
 @article{Li2026Long,
   title = {Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading},
   author = {Zongxia Li and Zhongzhi Li and Yucheng Shi and Ruhan Wang and Junyao Yang and Zhichao Liu and Xiyang Wu and Anhao Li and Yue Yu and Ninghao Liu and Lichao Sun and Haotao Mi and Leowei Liang},
@@ -10895,6 +10905,16 @@
   year = {2024}
 }
 
+@article{Sakurai2026Simplex,
+  title = {Simplex Relaxation for Discrete Diffusion},
+  author = {Jinya Sakurai and Patrick Pynadath and Satoshi Hayakawa and Jaehong Yoon and Xulei Yang and Nancy F. Chen and Xun Xu},
+  year = {2026},
+  abstract = {},
+  archiveprefix = {arXiv},
+  eprint = {2608.10615},
+  url = {http://arxiv.org/abs/2608.10615}
+}
+
 @article{Salemi2026Grepseek,
   title = {GrepSeek: Training Search Agents for Direct Corpus Interaction},
   author = {Alireza Salemi and Chang Zeng and Atharva Nijasure and Jui-Hui Chung and Razieh Rahimi and Fernando Diaz and Hamed Zamani},
@@ -12224,6 +12244,14 @@
   abstract = {Despite the impressive visuomotor capabilities enabled by Vision-Language-Action (VLA) models, their performance often degrades on challenging and out-of-domain tasks. Recent test-time steering and scaling methods improve performance without extensive data collection and retraining, but action samples often remain concentrated around similar behaviors and therefore inherit correlated failure modes. Moreover, existing methods apply the same intervention strategy at every timestep, regardless of whether the base policy is already likely to succeed. To address these limitations, we introduce $RL^2$, an adaptive inference-time steering framework that leverages Reinforcement Learning on VLA Latents. First, we train a lightweight offline RL policy conditioned on expressive latents extracted from the VLA action expert and compose its flow velocity with that of the frozen VLA during inference. This compositional steering strategy combines the behavioral priors of large-scale imitation learning with the action diversity induced by offline RL beyond dominant demonstration modes. We further discover that inference-time steering follows fundamentally different scaling laws under success and failure states, revealing that action diversity is most beneficial when the base VLA is likely to fail, but can unnecessarily perturb already-accurate actions when success is likely. Building on this insight, $RL^2$ activates compositional steering only when failure is predicted. Across the SIMPLER and PolaRiS benchmarks, $RL^2$ improves success rates by up to +17.3% in out-of-domain settings, while ablations and scaling studies demonstrate the importance of latent representations and RL training. Finally, real-world experiments demonstrate that these gains transfer beyond simulation, establishing $RL^2$ as a practical and modular steering framework for VLA deployment.}
 }
 
+@article{Tan2026Skillzip,
+  title = {SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries},
+  author = {Xingyu Tan and Xiaoyang Wang and Qing Liu and Xiwei Xu and Xin Yuan and Liming Zhu and Wenjie Zhang},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.05604},
+  abstract = {Large Language Models (LLMs) increasingly act as agents whose procedural knowledge is stored in reusable skill packages and loaded at inference time. As skill libraries grow, a central challenge is to expose the smallest sufficient executable context under a limited context budget. Existing systems struggle to reuse routines below the whole-skill level, preserve procedural contracts during compression, keep compressed routines executable and expandable, and update the compressed library as skills evolve. These challenges reveal a unit mismatch: skills are retrieved as packages, compressed as text, and converted into execution graphs only after retrieval, whereas reliable reuse requires a contract-bearing procedural unit. We propose SkillZip, an execution-aware procedural abstraction framework that performs contract-preserving compression over section-level graphs. SkillZip rewrites recurring contract-valid motifs into reversible ported macros while preserving boundary signatures, dependency closure, verifier reachability, and source-level expansion. At inference time, it hydrates a compact, dependency-closed context and expands macros only when required. ReZip further integrates new skills and revises risky macros using execution evidence. Comprehensive experiments1 on technical and embodied agent benchmarks show SkillZip consistently outperforms the strongest baseline by up to 12.2 points, while achieving a 3.46x compression ratio with 99.2% dependency preservation and 98.7% verifier reachability. Scaling analyses further confirm robust retrieval across skill libraries ranging from 200 to 100K skills.}
+}
+
 @article{Tan2026Skt,
   title = {SKT: Skill-Use Training at Scale via Verified Synthetic Data Generation},
   author = {Zelin Tan and Yiqun Zhang and Hao Li and Zhiyao Cui and Hejia Geng and Shao Zhang and Hangfan Zhang and Yang Chen and Xiaosong Wang and Lilong Wang and Zhenfei Yin and Shuyue Hu and Chen Zhang and Lei Bai},
@@ -12847,6 +12875,14 @@
   year = {2017},
   url = {http://arxiv.org/abs/1706.03762},
   abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.}
+}
+
+@article{Venkatkrishna2026Parameter,
+  title = {Parameter Exploration for RLVR via Variational Learning},
+  author = {Vatsal Venkatkrishna and Nico Daheim and Iryna Gurevych},
+  year = {2026},
+  url = {http://arxiv.org/abs/2608.09805},
+  abstract = {Exploration has been a focus of reinforcement learning research for a long time. Recently, there has been growing evidence that it is also an important ingredient in LLM reinforcement learning recipes that can significantly impact downstream performance. Many existing methods control exploration in the action-space, for example, using temperature scaling. However, these methods cannot reorder tokens but only influence the variance in the output distribution. This limits exploration and can lead to divergence or stalled training. Here, we investigate parameter-space exploration, where rollouts are generated by sampling different policies from a posterior that may each explore different rollouts. Sampling less or more diverse policies is then a complementary control lever over exploration. We introduce a family of methods called Perturbed Parameter Policy Optimization (3PO) which use different sampling strategies and different rollout grouping for reward estimation. Experiments on OLMo-3-1025-7B and Qwen2.5-Math-7B across mathematical reasoning and code generation tasks show that these approaches consistently improve average downstream performance over standard GRPO at a near-identical FLOPs cost. Moreover, using multiple parameter samples consistently produces fewer zero-advantage groups and malformed or incorrect rollouts during training than GRPO and action-space baselines. Overall, our work presents evidence that parameter-space exploration can improve reinforcement learning for LLMs.}
 }
 
 @article{Verma2019Stability,
