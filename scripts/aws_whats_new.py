@@ -193,9 +193,42 @@ GENERATED_SECTIONS = {"Top Highlights", "按类别详情"}
 # run on the same date already listed. Needed because the 24h window slides: re-running
 # at 09:04 after a 02:30 run drops every item published before 09:04 the previous day,
 # which would silently shrink the day's digest.
+# The optional "ᴮ" is the backfill marker (see BACKFILL_HOURS); it also appeared as a
+# hand-written annotation in the 08-01..08-03 catch-up digests.
 ROW_RE = re.compile(
-    r"^\|\s*(\d{2})-(\d{2}) (\d{2}):(\d{2})\s*\|\s*\[(.+?)\]\((\S+?)\)\s*\|\s*(\w+)\s*\|\s*$"
+    r"^\|\s*(\d{2})-(\d{2}) (\d{2}):(\d{2})\s*ᴮ?\s*\|\s*\[(.+?)\]\((\S+?)\)\s*\|\s*(\w+)\s*\|\s*$"
 )
+
+# 2026-08-14: the feed DOES backfill — items appear carrying timestamps hours to days in
+# the past. Proven on 08-12: at 08-13 09:10 both the RSS and the dirs API reported 6 items
+# for 08-12 (first at 17:09); a day later both reported 9 (first at 14:34). The three
+# late arrivals sat *inside* the window the 08-13 run had already covered.
+#
+# Combined with a fixed 24h lookback that made the loss permanent AND silent: by the time
+# such an item shows up, the only run whose window covered it has already happened, and
+# every later run's window has slid past it. Reconciling 07-31..08-13 against the dirs API
+# found 25 of 149 announcements (16.8%) that never reached any digest this way.
+# (BACKFILL_SCAN_FILES=8 digests spans >8 calendar days, comfortably more than 96h.)
+#
+# So look back further than a day and re-admit anything the recent digests never listed.
+# This cannot double-list: items already in a recent digest are filtered out by link.
+BACKFILL_HOURS = 96
+# How many recent digests to read when deciding "have I already covered this?".
+BACKFILL_SCAN_FILES = 8
+# Any aws.amazon.com link in a digest counts as covered, not just generated table rows —
+# hand-written prose links to announcements too (the 08-01..08-03 catch-up did exactly that).
+ANY_LINK_RE = re.compile(r"\]\((https://aws\.amazon\.com[^)\s]*)\)")
+
+
+def _already_covered(out_path: Path) -> set[str]:
+    """Links listed by any recent digest, so backfilled items are only reported once."""
+    covered: set[str] = set()
+    files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
+    for p in files[:BACKFILL_SCAN_FILES]:
+        if p == out_path:
+            continue
+        covered.update(ANY_LINK_RE.findall(p.read_text(encoding="utf-8")))
+    return covered
 
 
 def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
@@ -266,8 +299,12 @@ def main() -> int:
     tree = ET.parse(RSS)
     root = tree.getroot()
     items = root.findall(".//item")
-    cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24)
+    now_utc = dt.datetime.now(dt.timezone.utc)
+    cutoff = now_utc - dt.timedelta(hours=24)
+    backfill_cutoff = now_utc - dt.timedelta(hours=BACKFILL_HOURS)
+    covered = _already_covered(OUT_DIR / dt.datetime.now().strftime("%Y-%m-%d.md"))
     rows = []
+    backfilled = 0
     seen_links = set()
     for it in items:
         title = (it.findtext("title") or "").strip()
@@ -282,11 +319,18 @@ def main() -> int:
             continue
         if pub.tzinfo is None:
             pub = pub.replace(tzinfo=dt.timezone.utc)
+        is_backfill = False
         if pub < cutoff:
-            continue
+            # Older than the normal window: keep it only if it never made it into a
+            # recent digest, i.e. it arrived after the run that should have caught it.
+            if pub < backfill_cutoff or link in covered:
+                continue
+            is_backfill = True
         if link in seen_links:
             continue
         seen_links.add(link)
+        if is_backfill:
+            backfilled += 1
         rows.append({
             "title": title,
             "link": link,
@@ -294,6 +338,7 @@ def main() -> int:
             "descr": descr,
             "category": classify(title, descr),
             "impact": impact(title, descr),
+            "backfill": is_backfill,
         })
     today = dt.datetime.now().strftime("%Y-%m-%d")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -310,9 +355,11 @@ def main() -> int:
 
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
-             f"- **过去 24h 公告数:** {len(rows)}"
-             + (f"（本次抓取 {len(fresh_links)} + 早前同日抓取保留 {len(carried)}）"
-                if carried else ""),
+             f"- **过去 24h 公告数:** {len(rows) - backfilled}"
+             + (f"（本次抓取 {len(fresh_links) - backfilled} + 早前同日抓取保留 {len(carried)}）"
+                if carried else "")
+             + (f" ＋ **补录 {backfilled} 条**（`ᴮ`，pubDate 早于 24h 窗口但从未进过任何 digest）"
+                if backfilled else ""),
              "- **Source:** https://aws.amazon.com/about-aws/whats-new/recent/feed/",
              ""]
     if not rows:
@@ -349,6 +396,8 @@ def main() -> int:
                   "|------|------|------|"]
         for r in crows:
             t = r["pub"].astimezone(dt.timezone.utc).strftime("%m-%d %H:%M")
+            if r.get("backfill"):
+                t += " ᴮ"
             title_md = r["title"].replace("|", "\\|")
             lines.append(f"| {t} | [{title_md}]({r['link']}) | {r['impact']} |")
         lines.append("")
