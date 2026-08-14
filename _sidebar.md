@@ -120,6 +120,7 @@
     - [量子计算行业格局](/topics/quantum-computing/2026-04-15-quantum-industry-landscape.md)
     - [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 - **📅 Weekly**
+  - [W33 Cross-Digest（2026-08-10 → 08-14）](/weekly/2026-W33.md)
   - [Weekly Cross-Digest｜2026-W32b（08/03 – 08/07 · 全周收官）](/weekly/2026-W32b.md)
   - [Weekly Cross-Digest｜2026-W32（07/27 – 08/03）](/weekly/2026-W32.md)
   - [Weekly Cross-Digest｜2026-W31（07/24 – 07/31）](/weekly/2026-W31.md)
