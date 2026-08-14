@@ -78,3 +78,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [HF Daily Papers 摘要 · 2026-08-12 回填 + 08-13](/research-notes/2026-08-13-hf-daily-papers-aug12-13.md)
 - [HF Daily Papers 摘要 · 2026-08-13 回填 + 08-14](/research-notes/2026-08-14-hf-daily-papers-aug13-14.md)
 - [HF Daily Papers 摘要 · 2026-08-14 当日第二跑](/research-notes/2026-08-14-hf-daily-papers-aug14b.md)
+- [HF Daily Papers 摘要 · 2026-08-14 当日第三跑](/research-notes/2026-08-14-hf-daily-papers-aug14d.md)
