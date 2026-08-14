@@ -65,7 +65,7 @@ CATEGORIES = [
                    "clean rooms", "entity resolution"]),
     ("Management", ["cloudformation", "systems manager", "organizations", "config",
                     "cloudtrail", "cloudwatch", "trusted advisor", "service catalog",
-                    "license manager", "compute optimizer", "support ", "health "]),
+                    "license manager", "compute optimizer", "support ", "health ", "cost management"]),
 ]
 
 
@@ -244,10 +244,25 @@ def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
     return prior, prose
 
 
+MAX_RSS_AGE_MIN = 60
+
+
 def main() -> int:
     if not RSS.exists():
         print("RSS missing", file=sys.stderr)
         return 1
+    # 2026-08-14: caught a silent false zero. The wrapper had curl'd the feed to a
+    # different path, so this read a day-old /tmp/aws-rss.xml and reported "0 items"
+    # — which on a quiet weekday morning is entirely plausible and would have been
+    # written up as a real publishing gap. Fail loudly instead: a stale feed is
+    # indistinguishable from a quiet day in the output, so it must not be silent.
+    age_min = (dt.datetime.now().timestamp() - RSS.stat().st_mtime) / 60
+    if age_min > MAX_RSS_AGE_MIN:
+        print(f"RSS at {RSS} is {age_min:.0f} min old (limit {MAX_RSS_AGE_MIN}). "
+              f"Re-fetch it before running:\n"
+              f'  curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/" -o {RSS}',
+              file=sys.stderr)
+        return 2
     tree = ET.parse(RSS)
     root = tree.getroot()
     items = root.findall(".//item")

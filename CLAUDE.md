@@ -392,6 +392,23 @@ Track curated technical / research blogs across **3 tiers**: individual authors 
 
 1. **Fetch RSS**: `curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/"` or use `mcp__aws-documentation` tools
 
+### 🚨🚨 运行前必查：`/tmp/aws-rss.xml` 的新鲜度（2026-08-14 踩到「静默假零」）
+
+**`scripts/aws_whats_new.py` 从固定路径 `/tmp/aws-rss.xml` 读取**（`scripts/aws_whats_new.py:12`）。2026-08-14 我把 RSS 抓到了别的路径，脚本于是解析了一份**整整一天前**的旧文件并报出 `0 items` —— ⭐⭐⭐ **而「0 条」在安静的凌晨/周末完全合理，产出里没有任何东西能区分「AWS 没发」与「读了旧文件」。重抓到正确路径后实际是 9 条。**
+
+- ⭐⭐ **这与「cron 静默停跑」是同一类失效**（CLAUDE.md 里那条：事后很难与「当天真的没内容」区分）。**原因从「任务没跑」变成「任务读了旧输入」，形态一样。**
+- ⭐ **抓到它的唯一原因是我独立核了一次 RSS 时间边界** —— 省掉这一步就会落一个假的零。
+- ✅ **已加守卫**：`MAX_RSS_AGE_MIN = 60`，超龄则打印重抓命令并 **`return 2`**（非零退出，cron 侧可见）。⭐ **它同时覆盖「curl 失败但旧文件仍在」这个 cron 侧的情形，这是该守卫最主要的价值。**
+- ⭐ **判据（可推广到其他抓取脚本）：会静默的失败必须变成硬失败。** 这与「不要随便调启发式」不冲突——**守卫不改变任何判断，只在输入明显不可用时拒绝产出。**
+
+### ⚠️ 分类器：没有关键词的服务会漂到正文恰好提到的弱词上
+
+**2026-08-14 实例:**「AWS Billing and Cost Management introduces Managed Dashboards」被分到 **Compute** —— 标题里无任何类别关键词、全文 strong 通道无命中、落到 weak 通道只命中 `compute`（描述里的 "compute costs"），而 Compute 在 `CATEGORIES` 里排在 Management 之前。⭐ **脚本自己的注释早记过同型失效（WorkSpaces 没有类别，07-15 漂到 Management、07-21 漂到 AI/ML）。**
+
+- ✅ **已修:给 Management 加 `cost management`（窄写法）。** ⭐ **改前按惯例测了影响面**：宽写法（`billing` + `cost management` + `cost explorer`）翻转 3 条、其中 1 条明确错误（Connect 的坐席绩效仪表盘 → Management）；窄写法翻转 2 条，附带那条是「Marketplace 通知订阅：其他 → Management」，可辩护。
+- ⭐⭐ **与 08-11 拒绝改 `HIGH_HARD` 的区别（判据）：不是看翻转数，而是看附带翻转是「变得更错」还是「变得没那么模糊」。** 那次是 1 对 5 且四处明确错误 → 拒绝改、用人工覆盖；这次是 1 对 2 且附带是从兜底类进更合适的类 → 采用。
+- ⚠️ **`_kw_pos` 已经用 `\b` 词边界**，所以不存在 `rds` 匹配 "dashboards" 这类子串误匹配。⭐ **2026-08-14 我用裸 `in` 做快速测试，"发现"了三个不存在的子串 bug，读了匹配函数后当场推翻** —— **测被测系统时不要用比它更粗糙的工具。**
+
 ### ⭐ 发布节律（用第二数据源在 400 条 / 38 个有公告的日子上统计，2026-06-18 → 08-10）
 
 **第二数据源**（与 RSS 独立，可翻页取到远早于 RSS 100 条窗口的历史）：
