@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [HF Daily Papers 摘要 · 2026-08-14 当日第二跑](/research-notes/2026-08-14-hf-daily-papers-aug14b.md)
   - [HF Daily Papers 摘要 · 2026-08-13 回填 + 08-14](/research-notes/2026-08-14-hf-daily-papers-aug13-14.md)
   - [HF Daily Papers 摘要 · 2026-08-12 回填 + 08-13](/research-notes/2026-08-13-hf-daily-papers-aug12-13.md)
   - [专题：Softmax Attention 的线性化路线，与 K3 的实际取舍](/research-notes/2026-08-12-topic-softmax-linearization-and-k3.md)
