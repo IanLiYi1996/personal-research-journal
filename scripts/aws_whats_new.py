@@ -65,7 +65,20 @@ CATEGORIES = [
                    "clean rooms", "entity resolution"]),
     ("Management", ["cloudformation", "systems manager", "organizations", "config",
                     "cloudtrail", "cloudwatch", "trusted advisor", "service catalog",
-                    "license manager", "compute optimizer", "support ", "health ", "cost management"]),
+                    "license manager", "compute optimizer",
+                    # "support " was meant to catch AWS Support, but _kw_matches strips
+                    # the keyword to \bsupport\b — which matches the *ordinary English
+                    # verb* in any description ("makes it easier to support mobile deep
+                    # linking" put Amazon SES here on 08-15; Amazon Connect's metrics
+                    # dashboard landed here the same way). Unlike the WorkSpaces/Clean
+                    # Rooms drift above, the culprit isn't a missing service keyword —
+                    # it's a keyword that is a common word. Narrow it to the service.
+                    # Measured before changing: 2 flips in 100 feed items, both
+                    # Management -> 其他, i.e. out of a wrong class into the honest
+                    # fallback. "health " left alone: 0 flips, so narrowing it would be
+                    # speculative.
+                    "aws support", "support plan", "support center",
+                    "health ", "cost management"]),
 ]
 
 
