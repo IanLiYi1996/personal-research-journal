@@ -233,6 +233,64 @@ BACKFILL_SCAN_FILES = 8
 ANY_LINK_RE = re.compile(r"\]\((https://aws\.amazon\.com[^)\s]*)\)")
 
 
+# BACKFILL_HOURS above is a guessed margin: every delay observed so far sits at "≤ about a
+# day", but the upper bound has never actually been measured. Printing each observation
+# would not accumulate them — this runs from cron, whose stdout is not kept — so append
+# them to a file instead. Once a few dozen points exist, 96 can be replaced by a value
+# with evidence behind it.
+DELAY_LOG = OUT_DIR / "backfill-delays.tsv"
+RUN_TS_RE = re.compile(r"^- \*\*抓取时间:\*\*\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) UTC")
+
+
+def _prior_run_times() -> list[dt.datetime]:
+    """Fetch timestamps from past digest headers, newest first.
+
+    Merge-write overwrites the header, so this sees only each day's *last* run — which is
+    the conservative direction for the bound below (a later run is a tighter one).
+    """
+    out: list[dt.datetime] = []
+    for p in sorted(OUT_DIR.glob("????-??-??.md"), reverse=True):
+        for line in p.read_text(encoding="utf-8").splitlines()[:8]:
+            m = RUN_TS_RE.match(line)
+            if m:
+                out.append(dt.datetime.strptime(m.group(1), "%Y-%m-%d %H:%M:%S")
+                           .replace(tzinfo=dt.timezone.utc))
+                break
+    return sorted(out, reverse=True)
+
+
+def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime) -> int:
+    """Record how late the feed produced each backfilled item. Returns points written.
+
+    Reported as an interval, because a single number would overstate what is known:
+      * upper = now - pubDate. This run is merely the first to *report* the item; it may
+        have entered the feed any time earlier and simply been missed.
+      * lower = r - pubDate, where r is the latest prior run whose 24h window contained
+        pubDate and which still did not list the item ⟹ at r it was demonstrably absent.
+        24h (not BACKFILL_HOURS) is used deliberately: it is the one lookback every past
+        run had, including those predating backfill, so the claim holds for all of them.
+        Empty when no such run exists — the delay then has no lower bound from this data.
+    """
+    bf = [r for r in rows if r.get("backfill")]
+    if not bf:
+        return 0
+    runs = _prior_run_times()
+    fresh = not DELAY_LOG.exists()
+    with DELAY_LOG.open("a", encoding="utf-8") as f:
+        if fresh:
+            f.write("observed_utc\tpub_utc\tdelay_lower_h\tdelay_upper_h\tlink\n")
+        for r in sorted(bf, key=lambda r: r["pub"]):
+            pub = r["pub"]
+            lower = ""
+            for t in runs:  # newest first ⟹ first match is the item's last missed chance
+                if t >= pub >= t - dt.timedelta(hours=24):
+                    lower = f"{(t - pub).total_seconds() / 3600:.1f}"
+                    break
+            f.write(f"{now_utc:%Y-%m-%d %H:%M}\t{pub:%Y-%m-%d %H:%M}\t{lower}\t"
+                    f"{(now_utc - pub).total_seconds() / 3600:.1f}\t{r['link']}\n")
+    return len(bf)
+
+
 def _already_covered(out_path: Path) -> set[str]:
     """Links listed by any recent digest, so backfilled items are only reported once."""
     covered: set[str] = set()
@@ -365,6 +423,7 @@ def main() -> int:
     carried = [r for link, r in prior.items() if link not in fresh_links]
     rows += carried
     rows.sort(key=lambda r: r["pub"], reverse=True)
+    logged = _log_backfill_delays(rows, now_utc)
 
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
@@ -420,6 +479,8 @@ def main() -> int:
 
     out.write_text("\n".join(lines), encoding="utf-8")
     note = f", kept {len(carried)} carried, {len(prose)} prose lines" if (carried or prose) else ""
+    if logged:
+        note += f", logged {logged} backfill delay(s) to {DELAY_LOG.name}"
     print(f"wrote {out} ({len(rows)} items, {len(highs)} highs{note})")
     return 0
 
