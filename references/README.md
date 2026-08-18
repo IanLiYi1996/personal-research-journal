@@ -1,17 +1,17 @@
 # 文献库索引
 
-> 共 **2231** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2233** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
 - [大语言模型 (LLM)](#-llm-) （965）
 - [智能体 / Agent](#-agent) （428）
-- [强化学习 / RLHF](#-rlhf) （438）
-- [推理 / Reasoning](#-reasoning) （545）
+- [强化学习 / RLHF](#-rlhf) （439）
+- [推理 / Reasoning](#-reasoning) （547）
 - [图神经网络 / Graph](#-graph) （281）
 - [扩散 / 生成模型](#-) （362）
-- [多模态 / 视觉语言](#-) （535）
+- [多模态 / 视觉语言](#-) （536）
 - [Transformer / 架构](#transformer-) （454）
 - [高效训练 / 推理](#-) （588）
 - [综述 / Survey](#-survey) （158）
@@ -1604,6 +1604,7 @@
 - **2026** [EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments](http://arxiv.org/abs/2607.02440) — Zhilin Wang et al. · arXiv:2607.02440 `{Wang2026Evopolicygym}`
 - **2026** [Hallo4D: Multi-Modal Hallucination Mitigation for Consistent Spatio-Temporal Generation](http://arxiv.org/abs/2607.12752) — Hongbo Wang et al. · arXiv:2607.12752 `{Wang2026Hallo4d}`
 - **2026** [Intent Speaks Louder: Controllable User Simulation Beyond Response Imitation](http://arxiv.org/abs/2608.09420) — Bo Wang et al. · arXiv:2608.09420 `{Wang2026Intent}`
+- **2026** [Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization](http://arxiv.org/abs/2608.16072) — Yixuan Wang et al. · arXiv:2608.16072 `{Wang2026Learn}`
 - **2026** [LISA: Likelihood Score Alignment for Visual-condition Controllable Generation](http://arxiv.org/abs/2606.27192) — Yanghao Wang et al. · arXiv:2606.27192 `{Wang2026Lisa}`
 - **2026** [MemSFT: Mitigating Alignment Tax with an External Parametric Memory](http://arxiv.org/abs/2607.25614) — Jiarui Wang et al. · arXiv:2607.25614 `{Wang2026Memsft}`
 - **2026** [MinerU2.5-Pro: Pushing the Limits of Data-Centric Document Parsing at Scale](http://arxiv.org/abs/2604.04771) — Bin Wang et al. · arXiv:2604.04771 `{Wang2026Mineru2}`
@@ -2081,6 +2082,7 @@
 - **2026** [Understanding Reasoning from Pretraining to Post-Training](http://arxiv.org/abs/2607.16097) — Jingyan Shen et al. · arXiv:2607.16097 `{Shen2026Understanding}`
 - **2026** [World Action Models: A Survey](http://arxiv.org/abs/2606.20781) — Qiuhong Shen et al. · arXiv:2606.20781 `{Shen2026World}`
 - **2026** [Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists](http://arxiv.org/abs/2607.11079) — Chuhan Shi et al. · arXiv:2607.11079 `{Shi2026Llms}`
+- **2026** [Prototype-Rectified Iterative Self-supervised Manifold Denoising under Severe Acoustic Shift](http://arxiv.org/abs/2608.15037) — Ashish Anand Shukla et al. · arXiv:2608.15037 `{Shukla2026Prototype}`
 - **2026** [From Context to Skills: Can Language Models Learn from Context Skillfully?](http://arxiv.org/abs/2604.27660) — Shuzheng Si et al. · arXiv:2604.27660 `{Si2026Context}`
 - **2026** [Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos](http://arxiv.org/abs/2607.11523) — Gong Sitong et al. · arXiv:2607.11523 `{Sitong2026Vinci2}`
 - **2026** [QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation](http://arxiv.org/abs/2604.08570) — Ali Slim et al. · arXiv:2604.08570 `{Slim2026Quanbench}`
@@ -2124,6 +2126,7 @@
 - **2026** [Evidence-Backed Video Question Answering](http://arxiv.org/abs/2607.11862) — Shijie Wang et al. · arXiv:2607.11862 `{Wang2026Evidence}`
 - **2026** [Full-bandwidth transformer](http://arxiv.org/abs/2608.08888) — Xi Wang et al. · arXiv:2608.08888 `{Wang2026Full}`
 - **2026** [Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models](http://arxiv.org/abs/2607.12463) — Yubo Wang et al. · arXiv:2607.12463 `{Wang2026Function}`
+- **2026** [Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization](http://arxiv.org/abs/2608.16072) — Yixuan Wang et al. · arXiv:2608.16072 `{Wang2026Learn}`
 - **2026** [Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments](http://arxiv.org/abs/2605.30280) — Qiuyue Wang et al. · arXiv:2605.30280 `{Wang2026Qwen}`
 - **2026** [RAGEN-2: Reasoning Collapse in Agentic RL](http://arxiv.org/abs/2604.06268) — Zihan Wang et al. · arXiv:2604.06268 `{Wang2026Ragen}`
 - **2026** [RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time](http://arxiv.org/abs/2604.11626) — Haozhe Wang et al. · arXiv:2604.11626 `{Wang2026Rationalrewards}`
@@ -3278,6 +3281,7 @@
 - **2026** [Lyra 2.0: Explorable Generative 3D Worlds](http://arxiv.org/abs/2604.13036) — Tianchang Shen et al. · arXiv:2604.13036 `{Shen2026Lyra}`
 - **2026** [SAM-MT: Real-Time Interactive Multi-Target Video Segmentation](http://arxiv.org/abs/2607.08688) — Ruiqi Shen et al. · arXiv:2607.08688 `{Shen2026Sam}`
 - **2026** [World Action Models: A Survey](http://arxiv.org/abs/2606.20781) — Qiuhong Shen et al. · arXiv:2606.20781 `{Shen2026World}`
+- **2026** [Prototype-Rectified Iterative Self-supervised Manifold Denoising under Severe Acoustic Shift](http://arxiv.org/abs/2608.15037) — Ashish Anand Shukla et al. · arXiv:2608.15037 `{Shukla2026Prototype}`
 - **2026** [KVAE: Family of Tokenizers for Multimodal Generative Models](http://arxiv.org/abs/2608.05798) — Andrey Shutkin et al. · arXiv:2608.05798 `{Shutkin2026Kvae}`
 - **2026** [Speed by Simplicity: A Single-Stream Architecture for Fast Audio-Video Generative Foundation Model](http://arxiv.org/abs/2603.21986) — SII-GAIR et al. · arXiv:2603.21986 `{SIIGAIR2026Speed}`
 - **2026** [Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos](http://arxiv.org/abs/2607.11523) — Gong Sitong et al. · arXiv:2607.11523 `{Sitong2026Vinci2}`
