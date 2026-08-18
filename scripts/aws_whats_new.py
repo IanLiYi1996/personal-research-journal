@@ -264,8 +264,18 @@ def _prior_run_times() -> list[dt.datetime]:
     return sorted(out, reverse=True)
 
 
-def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime) -> int:
+def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
+                         already_reported: set[str] | None = None) -> int:
     """Record how late the feed produced each backfilled item. Returns points written.
+
+    `already_reported` are links an *earlier run of the same day* already listed. They must
+    be excluded: `_already_covered()` skips today's own digest on purpose (fresh RSS should
+    win on classification), so a second run re-detects the same items as backfill. Without
+    this, 2026-08-18 wrote each of four items twice — and the duplicate's lower bound cited
+    the 07:18 run as proof of absence even though 07:18 is the run that reported it, pushing
+    the bound from a true ~60h to ~88h. One backfill event must produce one point: CLAUDE.md
+    already notes these have to be aggregated per event before any distribution analysis,
+    and silent duplicates would double-weight whichever events happen to span two runs.
 
     Reported as an interval, because a single number would overstate what is known:
       * upper = now - pubDate. This run is merely the first to *report* the item; it may
@@ -281,7 +291,8 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime) -> int:
         lowered — a too-small lower bound would make the window look safer than it is.
         Empty when no such run exists — the delay then has no lower bound from this data.
     """
-    bf = [r for r in rows if r.get("backfill")]
+    seen = already_reported or set()
+    bf = [r for r in rows if r.get("backfill") and r["link"] not in seen]
     if not bf:
         return 0
     runs = _prior_run_times()
@@ -440,7 +451,7 @@ def main() -> int:
     carried = [r for link, r in prior.items() if link not in fresh_links]
     rows += carried
     rows.sort(key=lambda r: r["pub"], reverse=True)
-    logged = _log_backfill_delays(rows, now_utc)
+    logged = _log_backfill_delays(rows, now_utc, already_reported=set(prior))
 
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
