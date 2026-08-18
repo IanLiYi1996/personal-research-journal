@@ -1,0 +1,3 @@
+ts_utc	task	phase	detail
+2026-08-18 09:44	aws	start	smoke test, 08-18 第三跑已完成
+2026-08-18 09:44	aws	done	items=14 backfill=4
