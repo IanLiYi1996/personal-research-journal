@@ -1,17 +1,17 @@
 # 文献库索引
 
-> 共 **2233** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2236** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （965）
+- [大语言模型 (LLM)](#-llm-) （966）
 - [智能体 / Agent](#-agent) （428）
 - [强化学习 / RLHF](#-rlhf) （439）
 - [推理 / Reasoning](#-reasoning) （547）
 - [图神经网络 / Graph](#-graph) （281）
-- [扩散 / 生成模型](#-) （362）
-- [多模态 / 视觉语言](#-) （536）
+- [扩散 / 生成模型](#-) （364）
+- [多模态 / 视觉语言](#-) （538）
 - [Transformer / 架构](#transformer-) （454）
 - [高效训练 / 推理](#-) （588）
 - [综述 / Survey](#-survey) （158）
@@ -432,6 +432,7 @@
 - **2026** [DOPD: Dual On-policy Distillation](http://arxiv.org/abs/2606.30626) — Xinlei Yu et al. · arXiv:2606.30626 `{Yu2026Dopd}`
 - **2026** [GradCuit: Credit-Assigned Gradient Flow Enables Robust and Interpretable Test-Time Latent Reasoning](http://arxiv.org/abs/2608.02585) — Zhaoxin Yu et al. · arXiv:2608.02585 `{Yu2026Gradcuit}`
 - **2026** [KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance](http://arxiv.org/abs/2604.12627) — Linhao Yu et al. · arXiv:2604.12627 `{Yu2026Knowrl}`
+- **2026** [Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search](http://arxiv.org/abs/2608.15669) — Zhongwei Yu et al. · arXiv:2608.15669 `{Yu2026Large}`
 - **2026** [SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction](http://arxiv.org/abs/2607.15550) — Xue Yu et al. · arXiv:2607.15550 `{Yu2026Seerguard}`
 - **2026** [ViQ: Text-Aligned Visual Quantized Representations at Any Resolution](http://arxiv.org/abs/2606.27313) — Xumin Yu et al. · arXiv:2606.27313 `{Yu2026Viq}`
 - **2026** [Weak-to-Strong On-Policy Distillation](http://arxiv.org/abs/2607.26246) — Fangxu Yu et al. · arXiv:2607.26246 `{Yu2026Weak}`
@@ -2836,6 +2837,7 @@
 - **2026** [From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models](http://arxiv.org/abs/2607.06553) — Zanyi Wang et al. · arXiv:2607.06553 `{Wang2026Rgb}`
 - **2026** [ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts](http://arxiv.org/abs/2607.28993) — Mingxin Wang et al. · arXiv:2607.28993 `{Wang2026St}`
 - **2026** [From Synthesis to Removal: Physics-Grounded Reflection Simulation and Diffusion-Based Video Dereflection](http://arxiv.org/abs/2608.11562) — Zepeng Wang et al. · arXiv:2608.11562 `{Wang2026Synthesis}`
+- **2026** [TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation](http://arxiv.org/abs/2608.16765) — Haoran Wang et al. · arXiv:2608.16765 `{Wang2026Trace}`
 - **2026** [UniDDT: Unifying Multimodal Understanding and Generation with Decoupled Diffusion Transformer](http://arxiv.org/abs/2606.16255) — Shuai Wang et al. · arXiv:2606.16255 `{Wang2026Uniddt}`
 - **2026** [Video Generation Models are General-Purpose Vision Learners](http://arxiv.org/abs/2607.09024) — Letian Wang et al. · arXiv:2607.09024 `{Wang2026Video}`
 - **2026** [Forecasting Scientific Progress with Artificial Intelligence](http://arxiv.org/abs/2605.22681) — Sean Wu et al. · arXiv:2605.22681 `{Wu2026Forecasting}`
@@ -2858,6 +2860,7 @@
 - **2026** [FlowInOne:Unifying Multimodal Generation as Image-in, Image-out Flow Matching](http://arxiv.org/abs/2604.06757) — Junchao Yi et al. · arXiv:2604.06757 `{Yi2026Flowinone}`
 - **2026** [WorldKV: Efficient World Memory with World Retrieval and Compression](http://arxiv.org/abs/2605.22718) — Jung Yi et al. · arXiv:2605.22718 `{Yi2026Worldkv}`
 - **2026** [StateFlow: Building, Evolving, and Accessing 3D World States for Previsualization](http://arxiv.org/abs/2608.12314) — Yuyang Yin et al. · arXiv:2608.12314 `{Yin2026Stateflow}`
+- **2026** [Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search](http://arxiv.org/abs/2608.15669) — Zhongwei Yu et al. · arXiv:2608.15669 `{Yu2026Large}`
 - **2026** [Discrete Diffusion Models: A Unified Framework from Tokenization to Generation](http://arxiv.org/abs/2607.13431) — Ye Yuan et al. · arXiv:2607.13431 `{Yuan2026Discrete}`
 - **2026** [COrigami: An AI Pipeline for Co-Designing Flat-Foldable Visually Recognisable Origami](http://arxiv.org/abs/2606.26299) — Tom Zahavy et al. · arXiv:2606.26299 `{Zahavy2026Corigami}`
 - **2026** [Enfold: Folding World Model Imagination into Predictive Representations for Ultra-Efficient Embodied Control](http://arxiv.org/abs/2607.26657) — Weili Zeng et al. · arXiv:2607.26657 `{Zeng2026Enfold}`
@@ -3333,6 +3336,7 @@
 - **2026** [Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges](http://arxiv.org/abs/2604.13602) — Xiaohua Wang et al. · arXiv:2604.13602 `{Wang2026Reward}`
 - **2026** [Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation](http://arxiv.org/abs/2607.05382) — Haozhe Wang et al. · arXiv:2607.05382 `{Wang2026Search}`
 - **2026** [From Synthesis to Removal: Physics-Grounded Reflection Simulation and Diffusion-Based Video Dereflection](http://arxiv.org/abs/2608.11562) — Zepeng Wang et al. · arXiv:2608.11562 `{Wang2026Synthesis}`
+- **2026** [TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation](http://arxiv.org/abs/2608.16765) — Haoran Wang et al. · arXiv:2608.16765 `{Wang2026Trace}`
 - **2026** [Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context](http://arxiv.org/abs/2605.13831) — Zhaowei Wang et al. · arXiv:2605.13831 `{Wang2026Training}`
 - **2026** [UniDDT: Unifying Multimodal Understanding and Generation with Decoupled Diffusion Transformer](http://arxiv.org/abs/2606.16255) — Shuai Wang et al. · arXiv:2606.16255 `{Wang2026Uniddt}`
 - **2026** [VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery](http://arxiv.org/abs/2607.06374) — Jiazi Wang et al. · arXiv:2607.06374 `{Wang2026Vasemuseum}`
@@ -3365,6 +3369,7 @@
 - **2026** [ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research](http://arxiv.org/abs/2606.07591) — Wanghan Xu et al. · arXiv:2606.07591 `{Xu2026Researchclawbench}`
 - **2026** [Wonder: Video World Model Done Better](http://arxiv.org/abs/2607.26037) — Jiacong Xu et al. · arXiv:2607.26037 `{Xu2026Wonder}`
 - **2026** [WorldMark: A Unified Benchmark Suite for Interactive Video World Models](http://arxiv.org/abs/2604.21686) — Xiaojie Xu et al. · arXiv:2604.21686 `{Xu2026Worldmark}`
+- **2026** [WorldRover: A Scalable Synthetic Video Data Engine for World Exploration with Rich Annotations](http://arxiv.org/abs/2608.15659) — Xiaojie Xu et al. · arXiv:2608.15659 `{Xu2026Worldrover}`
 - **2026** [Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models](http://arxiv.org/abs/2604.08545) — Shilin Yan et al. · arXiv:2604.08545 `{Yan2026Act}`
 - **2026** [See2Think: Do Multimodal Models Really Use Intermediate Visual States?](http://arxiv.org/abs/2607.26769) — Siyu Yan et al. · arXiv:2607.26769 `{Yan2026See2think}`
 - **2026** [ClinHallu: A Benchmark for Diagnosing Stage-Wise Hallucinations in Medical MLLM Reasoning](http://arxiv.org/abs/2606.14697) — Sicheng Yang et al. · arXiv:2606.14697 `{Yang2026Clinhallu}`
