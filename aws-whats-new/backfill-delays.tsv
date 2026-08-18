@@ -1,0 +1,5 @@
+observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
+2026-08-18 07:18	2026-08-14 15:00	66.2	88.3	https://aws.amazon.com/about-aws/whats-new/2025/08/amazon-quick-custom-no-data-message/
+2026-08-18 07:18	2026-08-14 21:00	60.2	82.3	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-approval-policies-sharing/
+2026-08-18 07:18	2026-08-14 21:04	60.1	82.2	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-dlp-purview/
+2026-08-18 07:18	2026-08-14 21:07	60.1	82.2	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-per-user-resource-limits/

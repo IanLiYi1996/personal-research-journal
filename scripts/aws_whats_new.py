@@ -228,6 +228,11 @@ ROW_RE = re.compile(
 BACKFILL_HOURS = 96
 # How many recent digests to read when deciding "have I already covered this?".
 BACKFILL_SCAN_FILES = 8
+# First run that applied BACKFILL_HOURS. Runs before this only looked back 24h, so the
+# absence they prove is narrower. Recorded as a date because the mechanism landed with a
+# code change, not with data we can sniff: a backfill-capable run that finds nothing looks
+# identical in its digest to a pre-backfill run.
+BACKFILL_SINCE = dt.datetime(2026, 8, 15, tzinfo=dt.timezone.utc)
 # Any aws.amazon.com link in a digest counts as covered, not just generated table rows —
 # hand-written prose links to announcements too (the 08-01..08-03 catch-up did exactly that).
 ANY_LINK_RE = re.compile(r"\]\((https://aws\.amazon\.com[^)\s]*)\)")
@@ -265,10 +270,15 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime) -> int:
     Reported as an interval, because a single number would overstate what is known:
       * upper = now - pubDate. This run is merely the first to *report* the item; it may
         have entered the feed any time earlier and simply been missed.
-      * lower = r - pubDate, where r is the latest prior run whose 24h window contained
-        pubDate and which still did not list the item ⟹ at r it was demonstrably absent.
-        24h (not BACKFILL_HOURS) is used deliberately: it is the one lookback every past
-        run had, including those predating backfill, so the claim holds for all of them.
+      * lower = r - pubDate, where r is the latest prior run whose *effective lookback*
+        contained pubDate and which still did not list the item ⟹ at r it was
+        demonstrably absent. Effective lookback is per-run, because it changed:
+        runs before BACKFILL_SINCE only looked back 24h, runs after look back
+        BACKFILL_HOURS. Using a flat 24h (as this did originally) throws away provable
+        absence: 2026-08-18 logged four items whose 96h-window runs on 08-16 and 08-17
+        found nothing, so their lower bound is ~60h, not the ~12h a 24h window yields.
+        That matters because these points exist to decide whether BACKFILL_HOURS can be
+        lowered — a too-small lower bound would make the window look safer than it is.
         Empty when no such run exists — the delay then has no lower bound from this data.
     """
     bf = [r for r in rows if r.get("backfill")]
@@ -283,7 +293,14 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime) -> int:
             pub = r["pub"]
             lower = ""
             for t in runs:  # newest first ⟹ first match is the item's last missed chance
-                if t >= pub >= t - dt.timedelta(hours=24):
+                # Skip this very run: its header may already be on disk (same-day merge
+                # write, or a re-run), and it is the run *reporting* the item, so it
+                # proves nothing about absence. Widening the window to BACKFILL_HOURS
+                # exposed this — under a flat 24h it could never match an older pubDate.
+                if t >= now_utc:
+                    continue
+                look = BACKFILL_HOURS if t >= BACKFILL_SINCE else 24
+                if t >= pub >= t - dt.timedelta(hours=look):
                     lower = f"{(t - pub).total_seconds() / 3600:.1f}"
                     break
             f.write(f"{now_utc:%Y-%m-%d %H:%M}\t{pub:%Y-%m-%d %H:%M}\t{lower}\t"
