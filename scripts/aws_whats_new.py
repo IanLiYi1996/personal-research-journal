@@ -52,7 +52,12 @@ CATEGORIES = [
                   "security agent", "continuum", "penetration testing"]),
     ("Developer Tools", ["codebuild", "codepipeline", "codeartifact", "codecommit",
                          "codedeploy", "codestar", "cloud9", "cloudshell", " cli", "sdk",
-                         "x-ray", "xray", "cdk", "amplify", "appconfig"]),
+                         "x-ray", "xray", "cdk", "amplify", "appconfig",
+                         # Same drift, but the hijacking name-drop is a plausible one:
+                         # Console-to-Code is Amazon Q-powered, so "amazon q" in the
+                         # body sent it to AI/ML. The announcement's subject is the
+                         # console-to-IaC codegen feature, not the model behind it.
+                         "console-to-code"]),
     ("Analytics", ["athena", "glue", "emr", "kinesis", "msk", "opensearch",
                    "quicksight", "lake formation", "datazone", "data zone",
                    "managed grafana", "managed prometheus",
@@ -62,7 +67,14 @@ CATEGORIES = [
                    # almost always mention writing results "to an S3 bucket", it
                    # landed in Storage on 08-12 after being Analytics on 08-03 and in
                    # W17. Pin it: privacy-preserving data collaboration is analytics.
-                   "clean rooms", "entity resolution"]),
+                   "clean rooms", "entity resolution",
+                   # Third instance of the same drift: MWAA has no keyword, and its
+                   # launches almost always mention writing to "Amazon S3", so
+                   # 08-19's PythonOperator/BashOperator item landed in Storage.
+                   # AWS itself files Managed Workflows for Apache Airflow under
+                   # Analytics. Measured before changing: 2 flips in 100 feed items,
+                   # both the intended items, no collateral.
+                   "mwaa", "managed workflows", "airflow"]),
     ("Management", ["cloudformation", "systems manager", "organizations", "config",
                     "cloudtrail", "cloudwatch", "trusted advisor", "service catalog",
                     "license manager", "compute optimizer",

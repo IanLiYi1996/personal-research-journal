@@ -1,3 +1,5 @@
 ts_utc	task	phase	detail
 2026-08-18 09:44	aws	start	smoke test, 08-18 第三跑已完成
 2026-08-18 09:44	aws	done	items=14 backfill=4
+2026-08-19 09:04	aws	start	
+2026-08-19 09:10	aws	done	13 items (10 in-window + 3 backfill), 4 highs; Tue counterexample refuted, dirs API backfill confirmed; classifier +mwaa/console-to-code

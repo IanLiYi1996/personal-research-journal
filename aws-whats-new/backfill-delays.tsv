@@ -3,3 +3,6 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-08-18 07:18	2026-08-14 21:00	60.2	82.3	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-approval-policies-sharing/
 2026-08-18 07:18	2026-08-14 21:04	60.1	82.2	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-dlp-purview/
 2026-08-18 07:18	2026-08-14 21:07	60.1	82.2	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-quick-per-user-resource-limits/
+2026-08-19 09:04	2026-08-17 15:00	18.6	42.1	https://aws.amazon.com/about-aws/whats-new/2026/08/console-to-code-adds-26-services
+2026-08-19 09:04	2026-08-18 04:00	5.6	29.1	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-s3-metadata-annotations-govcloud-regions
+2026-08-19 09:04	2026-08-18 08:00	1.6	25.1	https://aws.amazon.com/about-aws/whats-new/2026/08/nested-virtualization-workspaces/
