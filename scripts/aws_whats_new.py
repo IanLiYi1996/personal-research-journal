@@ -17,7 +17,17 @@ CATEGORIES = [
                "agentcore", "polly", "transcribe", "translate", "kendra", "personalize",
                "lex ", "textract", "forecast", "augmented ai", "ai/ml", "model", "llm",
                "generative", "nova", "claude", "gpt-", "anthropic", "openai", "gemma",
-               "mistral", "jurassic", "titan ", "guardrail", "ai agent", "agentic"]),
+               "mistral", "jurassic", "titan ", "guardrail", "ai agent", "agentic",
+               # "amazon q" cannot match "Amazon Quick" (\b fails between q and u), so
+               # Quick had no keyword and each item drifted to whatever its body
+               # name-dropped: most reached AI/ML via "agentic"/"model", but "deny by
+               # default" hit a stray " cli" and landed in Developer Tools (flagged
+               # 08-13, recurred 08-19) and "no data messages" fell through to 其他.
+               # Pinned to AI/ML — where the majority already sit, and where the
+               # product's agentic positioning points — so one product stays in one
+               # category. (Analytics is the QuickSight-lineage alternative; AI/ML wins
+               # on consistency with the digests already written.)
+               "amazon quick"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
                  "graviton", "auto scaling", "wavelength", "lightsail", "app runner",
                  "compute ",
@@ -90,7 +100,13 @@ CATEGORIES = [
                     # fallback. "health " left alone: 0 flips, so narrowing it would be
                     # speculative.
                     "aws support", "support plan", "support center",
-                    "health ", "cost management"]),
+                    "health ", "cost management",
+                    # Same family as "cost management" above: the subject has no keyword,
+                    # so "AWS Cost Anomaly Detection supports third-party models on
+                    # Amazon Bedrock" was decided by its object and filed under AI/ML.
+                    # The title's earliest-keyword rule tracks the subject once the
+                    # subject is spellable, so naming it here is enough.
+                    "cost anomaly detection"]),
 ]
 
 
@@ -249,6 +265,23 @@ BACKFILL_SINCE = dt.datetime(2026, 8, 15, tzinfo=dt.timezone.utc)
 # hand-written prose links to announcements too (the 08-01..08-03 catch-up did exactly that).
 ANY_LINK_RE = re.compile(r"\]\((https://aws\.amazon\.com[^)\s]*)\)")
 
+# The feed serves the same announcement under two URL forms — with and without the
+# /about-aws/ prefix — and every link comparison here was a raw string match, so one
+# announcement counted as two. 2026-08-20 audit: three Amazon Quick items were reported
+# twice (08-13/08-14 as `/whats-new/...`, again on 08-18 as `/about-aws/whats-new/...`),
+# and because the second sighting looked like a late arrival it also wrote three bogus
+# rows to backfill-delays.tsv claiming 60-82h delays. Those were the points that made 96h
+# look nearly exhausted; only one of that batch was ever real.
+#
+# Deliberately narrow: strip the prefix and trailing slash, keep `whats-new/YYYY/MM/slug`.
+# Collapsing to the slug alone was measured over every digest to date and merged 3 pairs
+# of *different* announcements, because AWS also publishes bare service-name URLs
+# (.../2026/08/amazon-quick/, .../amazon-connect/, and today .../amazon-sagemaker/).
+# Prefix-only: 3 correct merges, 0 false merges.
+def _canon_link(u: str) -> str:
+    return re.sub(r"^https://aws\.amazon\.com/about-aws/",
+                  "https://aws.amazon.com/", u.strip()).rstrip("/").lower()
+
 
 # BACKFILL_HOURS above is a guessed margin: every delay observed so far sits at "≤ about a
 # day", but the upper bound has never actually been measured. Printing each observation
@@ -304,7 +337,7 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
         Empty when no such run exists — the delay then has no lower bound from this data.
     """
     seen = already_reported or set()
-    bf = [r for r in rows if r.get("backfill") and r["link"] not in seen]
+    bf = [r for r in rows if r.get("backfill") and _canon_link(r["link"]) not in seen]
     if not bf:
         return 0
     runs = _prior_run_times()
@@ -332,14 +365,38 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
 
 
 def _already_covered(out_path: Path) -> set[str]:
-    """Links listed by any recent digest, so backfilled items are only reported once."""
+    """Canonical links listed by any recent digest, so backfill is only reported once."""
     covered: set[str] = set()
     files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
     for p in files[:BACKFILL_SCAN_FILES]:
         if p == out_path:
             continue
-        covered.update(ANY_LINK_RE.findall(p.read_text(encoding="utf-8")))
+        covered.update(_canon_link(u)
+                       for u in ANY_LINK_RE.findall(p.read_text(encoding="utf-8")))
     return covered
+
+
+# Title -> canonical link, from the same recent digests. Canonicalising links fixes the
+# /about-aws/ split but cannot catch a re-publication whose *slug* also changed: "Amazon
+# Quick adds deny by default for custom permissions" ran 08-12 as
+# `amazon-quick-deny-by-default-permissions` and again 08-19 as `amazon-quick-deny-by-default`.
+# Flagged rather than dropped: AWS reuses headlines for successive regional rollouts, so
+# an exact-title match is evidence for a human to check, not grounds for suppression.
+# Measured over every digest to date: 5 exact-title/different-URL pairs, all genuine
+# duplicates, so the flag is quiet enough to be worth printing.
+def _prior_titles(out_path: Path) -> dict[str, str]:
+    ROW_LINK = re.compile(r"^\|.*?\[([^\]]+)\]\((https://aws\.amazon\.com[^)\s]*)\)")
+    seen: dict[str, str] = {}
+    files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
+    for p in files[:BACKFILL_SCAN_FILES]:
+        if p == out_path:
+            continue
+        for line in p.read_text(encoding="utf-8").splitlines():
+            m = ROW_LINK.match(line)
+            if m:
+                seen.setdefault(m.group(1).strip().replace("\\|", "|"),
+                                _canon_link(m.group(2)))
+    return seen
 
 
 def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
@@ -434,12 +491,12 @@ def main() -> int:
         if pub < cutoff:
             # Older than the normal window: keep it only if it never made it into a
             # recent digest, i.e. it arrived after the run that should have caught it.
-            if pub < backfill_cutoff or link in covered:
+            if pub < backfill_cutoff or _canon_link(link) in covered:
                 continue
             is_backfill = True
-        if link in seen_links:
+        if _canon_link(link) in seen_links:
             continue
-        seen_links.add(link)
+        seen_links.add(_canon_link(link))
         if is_backfill:
             backfilled += 1
         rows.append({
@@ -459,11 +516,22 @@ def main() -> int:
     # items that have since slid out of the 24h window are lost. Fresh RSS wins on
     # conflict — the classifier/impact heuristics may have been fixed since.
     prior, prose = _parse_existing(out)
-    fresh_links = {r["link"] for r in rows}
-    carried = [r for link, r in prior.items() if link not in fresh_links]
+    fresh_links = {_canon_link(r["link"]) for r in rows}
+    carried = [r for link, r in prior.items() if _canon_link(link) not in fresh_links]
     rows += carried
     rows.sort(key=lambda r: r["pub"], reverse=True)
-    logged = _log_backfill_delays(rows, now_utc, already_reported=set(prior))
+    logged = _log_backfill_delays(rows, now_utc,
+                                 already_reported={_canon_link(l) for l in prior})
+
+    # Same headline as a recent digest under a different canonical link — see _prior_titles.
+    prior_titles = _prior_titles(out)
+    repeats = [r for r in rows
+               if r["title"] in prior_titles
+               and prior_titles[r["title"]] != _canon_link(r["link"])]
+    for r in repeats:
+        print(f"  ! 标题与最近 digest 重复但链接不同（可能是换 slug 重发，请人工确认）:"
+              f"\n      {r['title']}\n      now : {_canon_link(r['link'])}"
+              f"\n      prev: {prior_titles[r['title']]}", file=sys.stderr)
 
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
