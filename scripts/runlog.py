@@ -146,6 +146,22 @@ def check(days: int) -> int:
         if day == today:
             findings.append(f"  {day} {task}: start logged, done not yet (in progress?)")
 
+    # A task that has never logged at all cannot be flagged per-day (nothing was
+    # observed), which leaves a blind spot: one that dies *before* its first
+    # heartbeat stays invisible forever.  Escalate once the log itself has been
+    # running long enough that a daily task should plainly have appeared in it.
+    # Found by running check on real data 2026-08-20: aws had logged for two
+    # days while hf / reddit / tech-blogs had never logged once, and that is a
+    # gap, not a neutral "not wired up yet".
+    span_days = (max(r[0] for r in rows) - min(r[0] for r in rows)).days
+    for task in unobserved:
+        kind, _weekday = TASKS[task]
+        if kind == "daily" and span_days >= 2:
+            findings.append(
+                f"  {task}: never logged, while the log spans {span_days}d "
+                f"— a daily task should have appeared by now"
+            )
+
     print("RUNLOG ANOMALY" if findings else "RUNLOG OK")
     cov = ", ".join(f"{t} since {first[t]}" for t in sorted(first))
     print(f"  observed: {cov or '(nothing yet)'}  [{len(rows)} rows, window {days}d]")

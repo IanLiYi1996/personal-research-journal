@@ -3,3 +3,5 @@ ts_utc	task	phase	detail
 2026-08-18 09:44	aws	done	items=14 backfill=4
 2026-08-19 09:04	aws	start	
 2026-08-19 09:10	aws	done	13 items (10 in-window + 3 backfill), 4 highs; Tue counterexample refuted, dirs API backfill confirmed; classifier +mwaa/console-to-code
+2026-08-20 05:24	hf	start	
+2026-08-20 05:38	hf	done	window=89 new=73 top25; 2 deep dives (StateM 409▲ / Agent Skills 149▲); 4 figs; ingested 28 (2236->2264); gap catch-up 08-18~08-20
