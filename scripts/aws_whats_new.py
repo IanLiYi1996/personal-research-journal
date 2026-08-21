@@ -29,6 +29,14 @@ CATEGORIES = [
                # on consistency with the digests already written.)
                "amazon quick"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
+                # Local Zone / new-AZ items name no service in the title, so they fell
+                # through to the full-text pass, where category order hands them to
+                # AI/ML the moment the body says "model"/"generative" (08-21: a Las
+                # Vegas Local Zone GA landed in AI/ML). Same axis choice already made
+                # for new AZs on 08-20: infrastructure-footprint items go to Compute
+                # rather than getting their own category for n=1. The win here is that
+                # the title now decides, instead of whatever the description mentions.
+                "local zone", "local zones",
                  "graviton", "auto scaling", "wavelength", "lightsail", "app runner",
                  "compute ",
                  # End-user computing has no category of its own, so with no entry at
@@ -50,7 +58,18 @@ CATEGORIES = [
                     "direct connect",
                     "global accelerator", "transit gateway",
                     "private link", "privatelink", "app mesh", "cloud map",
-                    "interconnect", "cloud wan", "network firewall", "vpn"]),
+                    "interconnect", "cloud wan", "network firewall", "vpn",
+                    # AWS Elemental / Media* had no entry anywhere, so the family got
+                    # scattered by whatever its bodies name-dropped: MediaTailor to
+                    # Developer Tools on 07-28 (a stray " cli"), MediaConnect Router to
+                    # Management on 08-21 (its body mentions CloudWatch). Only 2 items
+                    # in six weeks — too thin to justify a Media category (same call as
+                    # refusing one for new AZs on 08-20) — but the scattering is real
+                    # and will recur, so pin the family. Networking is the closest
+                    # existing home: these are live video transport/delivery services,
+                    # and CloudFront already sits here.
+                    "elemental", "mediaconnect", "medialive", "mediaconvert",
+                    "mediapackage", "mediatailor"]),
     ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
@@ -249,13 +268,28 @@ ROW_RE = re.compile(
 # such an item shows up, the only run whose window covered it has already happened, and
 # every later run's window has slid past it. Reconciling 07-31..08-13 against the dirs API
 # found 25 of 149 announcements (16.8%) that never reached any digest this way.
-# (BACKFILL_SCAN_FILES=8 digests spans >8 calendar days, comfortably more than 96h.)
-#
 # So look back further than a day and re-admit anything the recent digests never listed.
 # This cannot double-list: items already in a recent digest are filtered out by link.
-BACKFILL_HOURS = 96
+#
+# 96 -> 168 on 2026-08-21, and the deciding argument is about measurement, not safety.
+# By then backfill-delays.tsv held 12 valid rows / 8 distinct events, with upper bounds
+# 88.3, 86.5, 42.1, 42.1, 34.9, 31.4, 29.1, 25.1. Two of eight events sit 8-10h under the
+# 96h ceiling, and they come from unrelated services (Amazon Quick, Amazon Location),
+# so the 88.3h reading is not the one-off it looked like on 08-18.
+#
+# The censoring is the real point: an upper bound is `now - pubDate`, so a delay longer
+# than the window is not merely unmeasured, it is *invisible* — the item never enters the
+# window at all. A cluster pressed right against the ceiling is exactly the shape a
+# truncated distribution makes. Widening therefore does two jobs: it recovers items in the
+# 96-168h band, and it tests whether that band is populated. If nothing above 88h ever
+# shows up, 96 was in fact adequate and this can go back down with evidence.
+BACKFILL_HOURS = 168
 # How many recent digests to read when deciding "have I already covered this?".
-BACKFILL_SCAN_FILES = 8
+# Must span more calendar days than BACKFILL_HOURS, or a re-admitted item could fall off
+# the far end of the scan and be reported twice. At one digest per day, 12 files covers
+# ~12 days against a 7-day window; 8 files (~8 days) was only barely enough for 96h and
+# would have been too tight here.
+BACKFILL_SCAN_FILES = 12
 # First run that applied BACKFILL_HOURS. Runs before this only looked back 24h, so the
 # absence they prove is narrower. Recorded as a date because the mechanism landed with a
 # code change, not with data we can sniff: a backfill-capable run that finds nothing looks
@@ -283,11 +317,11 @@ def _canon_link(u: str) -> str:
                   "https://aws.amazon.com/", u.strip()).rstrip("/").lower()
 
 
-# BACKFILL_HOURS above is a guessed margin: every delay observed so far sits at "≤ about a
-# day", but the upper bound has never actually been measured. Printing each observation
-# would not accumulate them — this runs from cron, whose stdout is not kept — so append
-# them to a file instead. Once a few dozen points exist, 96 can be replaced by a value
-# with evidence behind it.
+# Printing each observation would not accumulate them — this runs from cron, whose stdout
+# is not kept — so append them to a file instead. These rows are what turned BACKFILL_HOURS
+# from a guess into a decision (see the 96 -> 168 note above); keep feeding them, and read
+# the *upper-bound* distribution rather than any single value. Rows marked "# INVALID" are
+# kept on purpose: they were the evidence behind an earlier, wrong reading of the margin.
 DELAY_LOG = OUT_DIR / "backfill-delays.tsv"
 RUN_TS_RE = re.compile(r"^- \*\*抓取时间:\*\*\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) UTC")
 

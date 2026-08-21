@@ -7,3 +7,7 @@ ts_utc	task	phase	detail
 2026-08-20 05:38	hf	done	window=89 new=73 top25; 2 deep dives (StateM 409▲ / Agent Skills 149▲); 4 figs; ingested 28 (2236->2264); gap catch-up 08-18~08-20
 2026-08-20 09:04	aws	start	
 2026-08-20 09:17	aws	done	16 items (14 in-window + 2 backfill), 1 high; fixed /about-aws/ link-canonicalization defect (3 dup reports + 3 bogus delay rows marked INVALID); added changed-slug republish title warning; classifier +amazon quick/+cost anomaly detection (3 flips, 0 collateral); heartbeat caught reddit+tech-blogs never starting, same day
+2026-08-21 04:53	tech-blogs	start	
+2026-08-21 04:53	reddit	start	
+2026-08-21 04:53	aws	start	
+2026-08-21 04:59	aws	done	items=16 (10 in-window + 6 backfill), 0 highs; BACKFILL_HOURS 96->168 + SCAN_FILES 8->12 (2nd independent 86.5h event; widening recovered nothing today so truncation not confirmed, only made testable); classifier +local zone/+Elemental family (3 flips, 0 collateral); dup-report audit: 5 pairs all historical
