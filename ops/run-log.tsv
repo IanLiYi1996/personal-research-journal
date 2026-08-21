@@ -12,3 +12,4 @@ ts_utc	task	phase	detail
 2026-08-21 04:53	aws	start	
 2026-08-21 04:59	aws	done	items=16 (10 in-window + 6 backfill), 0 highs; BACKFILL_HOURS 96->168 + SCAN_FILES 8->12 (2nd independent 86.5h event; widening recovered nothing today so truncation not confirmed, only made testable); classifier +local zone/+Elemental family (3 flips, 0 collateral); dup-report audit: 5 pairs all historical
 2026-08-21 05:18	tech-blogs	done	fetched=142 new=138 focus=126; 2 deep dives (OpenAI pacing/20% monitoring overhead + Prime Intellect 18-model nanoGPT); found 3rd pubDate pathology (NVIDIA pubDate = feed build time, 29/30 within 15s) which discounts my 08-18 feed-depth finding
+2026-08-21 05:24	reddit	done	posts=322 (12/12 subs) A=152 A'=123 B=243, interval 68.3h; A/A' ratio shrinks 4.00@2h -> 1.24@68h; r/datascience only 6 = worst truncation; gap catch-up (08-19/08-20 missed)
