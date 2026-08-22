@@ -153,14 +153,34 @@ def check(days: int) -> int:
     # Found by running check on real data 2026-08-20: aws had logged for two
     # days while hf / reddit / tech-blogs had never logged once, and that is a
     # gap, not a neutral "not wired up yet".
-    span_days = (max(r[0] for r in rows) - min(r[0] for r in rows)).days
+    first_row, last_row = min(r[0] for r in rows), max(r[0] for r in rows)
+    span_days = (last_row - first_row).days
     for task in unobserved:
-        kind, _weekday = TASKS[task]
+        kind, weekday = TASKS[task]
         if kind == "daily" and span_days >= 2:
             findings.append(
                 f"  {task}: never logged, while the log spans {span_days}d "
                 f"— a daily task should have appeared by now"
             )
+        # A weekly task was originally left out of this escalation, which made it
+        # permanently invisible: never having logged skips it in the per-day loop
+        # above, and being non-daily skipped it here.  Found by running check on
+        # real data 2026-08-22 -- the W34 cross-digest was due Friday 08-21 and
+        # never ran, yet check reported nothing and merely listed it as a neutral
+        # "not yet under observation".  The right gate is not "is it daily" but
+        # "has one of its expected days actually elapsed inside the log's span":
+        # only then is absence evidence rather than a task that simply is not due
+        # yet.  Today is excluded because a run scheduled later today is not late.
+        elif kind == "weekly" and weekday:
+            due = [first_row + dt.timedelta(days=i)
+                   for i in range((last_row - first_row).days + 1)]
+            due = [d for d in due if d.isoweekday() == weekday and d != today]
+            if due:
+                findings.append(
+                    f"  {task}: never logged, and its expected day has passed "
+                    f"{len(due)}x inside the log's span (latest {max(due)}) "
+                    f"— a weekly task should have appeared by now"
+                )
 
     print("RUNLOG ANOMALY" if findings else "RUNLOG OK")
     cov = ", ".join(f"{t} since {first[t]}" for t in sorted(first))

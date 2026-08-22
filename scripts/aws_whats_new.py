@@ -44,7 +44,20 @@ CATEGORIES = [
                  # landed in Management on 07-15, AI/ML on 07-21 and Management on
                  # 08-07. Pin them here (virtual desktops / streamed apps) so the
                  # placement is at least stable across digests.
-                 "workspaces", "appstream"]),
+                 "workspaces", "appstream",
+                 # Deadline Cloud had no entry, so the two items in the 08-22 feed
+                 # split: the download-status one reached Compute only through the
+                 # weak "compute " channel matching "compute-intensive workloads"
+                 # (the same incidental-phrasing mechanism as the Billing->Compute
+                 # error on 08-14), while "EBS Persistent Volume Cost Tracking" hit
+                 # "ebs" and landed in Storage. One product, two categories — the
+                 # Amazon Quick defect again. Pinned to Compute: it is a managed
+                 # render-farm service that provisions and orchestrates worker
+                 # fleets, so classifying by subject puts it here. (AWS's own console
+                 # files it under Media Services, but there is no such category and
+                 # inventing one for n=1 is the over-fitting rejected for new AZs on
+                 # 08-20; 其他 is the other option, but it carries less information.)
+                 "deadline cloud"]),
     ("Storage", ["s3 ", "amazon s3", "ebs", "efs", "fsx", "aws backup", "storage gateway",
                  "snowball", "snowmobile", "snow family", "data sync", "datasync"]),
     ("Database", ["rds", "aurora", "dynamodb", "elasticache", "redshift", "neptune",
