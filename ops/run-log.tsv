@@ -17,3 +17,5 @@ ts_utc	task	phase	detail
 2026-08-21 09:11	aws	done	2nd same-day run (09:04, +4.1h after 04:53): 0 new, both causes independently verified 0 (a: 0 pubDate in gap, newest feed entry 11.3h old, zero items dated 08-21; b: 0 in slid band, matches kept 0 carried) = 5th data point, all zero; verified 96->168 widening recovered nothing by 2nd method (5 entries in 96-168h band, all 5 already covered); found 3rd URL year/month pathology (2026/17/ = day-of-month in month slot) -> rule strengthened to 'do not parse that segment at all'; measured month zero-padding for _canon_link = 0 additional merges over 477 URLs -> no change; refuted CLAUDE.md's 'unsolved structural weakness' re run-history loss (runlog-aware bound changes 4/12 rows by +0.1h, and from done rows which postdate the observation -> tighter but less correct)
 2026-08-22 09:04	aws	start	
 2026-08-22 09:12	aws	done	8 items (5 window + 3 backfill), 1 high; pinned deadline cloud->Compute; 96-168h band 14/14 covered
+2026-08-23 09:04	aws	start	
+2026-08-23 09:07	aws	done	0 items (weekend); 0 backfill; (96,168] 26/26 covered; full 168h 63/0 uncovered
