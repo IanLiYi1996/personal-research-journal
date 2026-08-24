@@ -21,3 +21,5 @@ ts_utc	task	phase	detail
 2026-08-23 09:07	aws	done	0 items (weekend); 0 backfill; (96,168] 26/26 covered; full 168h 63/0 uncovered
 2026-08-24 02:20	cross-digest	start	
 2026-08-24 02:28	cross-digest	done	串 17 份 (4 HF + 3 Reddit + 3 tech-blogs + 7 AWS); 15 主线 / 10 孤立信号 / 6 arcs; 补写 W34（周五那次没跑成）
+2026-08-24 09:04	aws	start	
+2026-08-24 09:09	aws	done	0 items; newest feed entry 60.9h old (08-21 20:11 Fri); Mon-late shape; (96,168] band 45/45 covered, 4th empty check
