@@ -19,3 +19,5 @@ ts_utc	task	phase	detail
 2026-08-22 09:12	aws	done	8 items (5 window + 3 backfill), 1 high; pinned deadline cloud->Compute; 96-168h band 14/14 covered
 2026-08-23 09:04	aws	start	
 2026-08-23 09:07	aws	done	0 items (weekend); 0 backfill; (96,168] 26/26 covered; full 168h 63/0 uncovered
+2026-08-24 02:20	cross-digest	start	
+2026-08-24 02:28	cross-digest	done	串 17 份 (4 HF + 3 Reddit + 3 tech-blogs + 7 AWS); 15 主线 / 10 孤立信号 / 6 arcs; 补写 W34（周五那次没跑成）
