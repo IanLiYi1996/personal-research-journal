@@ -16,7 +16,7 @@ A personal research journal: markdown notes organized into folders, browsable vi
 | `/reddit-hot-weekly` | **每天** | 08:13 |
 | `/tech-blogs-weekly` | **每天** | 08:22 |
 | `/aws-whats-new-daily` | **每天** | 09:04 |
-| weekly cross-digest | **每周额外一份** | 周五 09:41 |
+| weekly cross-digest | **每周额外一份** | ⚠️ **周一 09:41（2026-08-24 从周五改过来）** |
 
 > ⭐⭐ **只有 HF 是一天两跑**，理由见下方 cadence 说明。第二跑的产出用同 ISO 周后缀（当天第二份用 `b`）。
 
@@ -40,7 +40,11 @@ A personal research journal: markdown notes organized into folders, browsable vi
 - 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
 - **cross-digest 是唯一按周的**，须在当周各份 digest 都跑完后写；因其余四个每天产出，同一周往往有多份带后缀的 digest，要全部串进来（W31 那次串了 18 份）。
 - Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
-  - ✅ **最近一次重建：2026-08-18**（job id：**hf 早 `583e91d9` / hf 晚 `aff14d97` / reddit `f82fb2ad` / tech-blogs `fee9d93a` / aws `0db21242` / cross-digest `9704fdaa`**）→ **约 2026-08-25 到期，共 6 个任务，全部 `durable: true`**。
+  - ✅ **最近一次重建：2026-08-24**（job id：**hf 早 `f74be4e7` / hf 晚 `31a9dcdc` / reddit `62f2a527` / tech-blogs `00987263` / aws `a68ef715` / ⚠️ **cross-digest `4b359562`（周一 09:41）**）→ **约 2026-08-31 到期，共 6 个任务，全部 `durable: true`**。重建前 `CronList` 六个都还在（未到期），已逐个 `CronDelete` 后再建、确认清空过。
+    - ⚠️⚠️⚠️ **本次把 cross-digest 从周五 09:41 改到周一 09:41，这是 W34 实测出来的改动**：周五写会漏掉周末两天，周一写才覆盖完整 ISO 周（W34 那份正是在 W35 周一补写的，因此不必写「周末未覆盖」的免责）。⭐⭐ **但它引入一个必须写进 prompt 的陷阱：周一跑时 `date -u +%G-W%V` 得到的是当前周（还没有任何 digest），要写的是它减 1。**
+    - ⭐ **本次重建的原则与上次相同（短，长期教训指向 CLAUDE.md），但每个 prompt 各加了本周新测出的一条硬约束**：hf 加「以 `date -u` 为准 + 先跑 `check` 判断是否空缺补跑 + 52,630 字节判据 + 编辑替换须同步入库」；reddit 加「A/A′ 比值随间隔收缩故报真新增必须同时报间隔 + 每条引用须带 `r/子版` 标注」；tech-blogs 加「pubDate 三种病理 + 深度诊断必须先判时间戳是否可用 + Xvfb 起浏览器后先校验 UA 里无 HeadlessChrome」；aws 加「周六接收/周日空跑的不对称 + BACKFILL_HOURS 现为 168 且截断假设未被证实 + 改常量要回写正文」；cross-digest 加「主线在上半周判断不出来 + 本任务独有产出是合成弱信号 + 主动找周内自我推翻 + 产出分布本身可能就是一条主线」。
+    - 🚨⭐⭐⭐ **而必须记住的是：这次重建修不了「跑不起来」。** 08-18 那次重建后的一周里，六个任务只有 **aws（09:04）** 真的被 cron 触发过（连续 5 天恰在 09:04 起跑），其余五个 **0 次**；`CronList` 全程显示六个都在、id 与重建时逐个相同、prompt 正确。⟹ **「重建 cron」与「会话跑不起来」是两件独立的事**，重建只解决「到期消失」这一种，不解决另一种。
+    - ⭐ **顺带否掉第二个假说**：aws 的 prompt 是六个里**最长**的，所以「prompt 短更容易跑起来」也不成立（「排得晚更容易跑起来」已由 hf 17:41 否掉）。**我仍给不出机制。**
     - 🚨⭐⭐⭐ **重建时的实测状态值得记：`CronList` 只剩 2 个（hf 晚 + cross-digest），另 4 个已过期消失** —— 而 hf 早/reddit/tech-blogs/aws 那四个当天还产出过（是用户手动敲 slash command 触发的）⟹ ⭐⭐ **「今天有产出」不能推出「cron 还活着」**，两者是独立的。按「到期＝最后触发一次后删除」，若不重建则**从次日起那四个完全不会再跑**。
     - ⭐⭐ **本次重建同时做了三件修正**：①**删掉 AWS prompt 里那条我 08-11 已证伪的「周一最早 13:00 UTC 才开始发」**，换成实测结论（周一首条均值 10.2h/中位 10.0h＝最晚，但**产量并不低**，故 09:0x 报 0 是正常形态、条目落进周二那份）②每个 prompt 都加了「**以 `date -u` 为准判断今天是第几份，不要按 prompt 假设**」（此前连续三次不符）③**每个 prompt 开头写心跳 `start`、结尾写 `done` 并跑 `check`**（见下）。
     - ⭐ **重建 prompt 的原则**：短，且把长期性教训指向 CLAUDE.md 而不是抄进 prompt——**prompt 会随任务过期，且已注入的旧 prompt 无法追溯修改**（那条被证伪的周一断言就这样每天注入了一周）。
