@@ -159,6 +159,16 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
             "health ", "model", " q ", "firewall", "artifact ",
             "auto scaling", "generative", "preview"}
 
+# Services with no category of their own. Without a keyword they fall through to the
+# description, where whichever service the body happens to name-drop wins — so the same
+# service scatters. Amazon Connect is by far the worst case measured: 14 announcements
+# across six categories (其他 7, Management 3, AI/ML 2, Storage 1, and an analytics-dashboard
+# item into 医疗/生命科学), most recently 08-25 landing in Storage off a passing mention of
+# "s3 output files". There is no contact-centre category and 其他 is already where the
+# plurality land, so pin them to the fallback rather than inventing a category for one
+# service. Measured over the 100-item feed: exactly 1 flip, the target, 0 collateral.
+NO_CATEGORY = ["amazon connect"]
+
 
 def classify(title: str, summary: str) -> str:
     # Prefer matching on the title alone first: the description often name-drops
@@ -166,6 +176,23 @@ def classify(title: str, summary: str) -> str:
     # DSQL item mentioning "Lambda"), which would otherwise hijack the category.
     t_title = title.lower()
     t_full = (title + " " + summary).lower()
+    # A NO_CATEGORY service only wins if it is the *leading* subject of the title, using the
+    # same "earliest keyword in the title wins" rule as the title pass below. Short-circuiting
+    # instead would misfile announcements that merely mention it: "Amazon Bedrock now
+    # integrates with Amazon Connect" is a Bedrock item, and "AWS Config now supports Amazon
+    # Connect resource types" is a Config item. Also keeps "AWS Direct Connect" and
+    # "MediaConnect" out of it, since those never match "amazon connect".
+    pin = min((p for kw in NO_CATEGORY
+               if (p := _kw_pos(t_title, kw)) is not None), default=None)
+    if pin is not None:
+        earliest = None
+        for _cat, kws in CATEGORIES:
+            for kw in kws:
+                p = _kw_pos(t_title, kw)
+                if p is not None and (earliest is None or p < earliest):
+                    earliest = p
+        if earliest is None or pin < earliest:
+            return "其他"
     # Title exhausts BOTH its strong and weak keywords before the description gets a
     # vote: with the loops nested the other way, a title whose only keyword is weak
     # ("AWS Config now supports 15 new resource types") loses to a strong service name

@@ -23,3 +23,7 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-08-22 09:04	2026-08-20 16:00	17.2	41.1	https://aws.amazon.com/about-aws/whats-new/2026/08/aurora-dsql-cloudwatch-database-insights/
 2026-08-22 09:04	2026-08-20 20:00	13.2	37.1	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ec2-c8gd-m8gd/
 2026-08-22 09:04	2026-08-21 07:00	2.2	26.1	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-ses-adds-open-click-tracking-override/
+2026-08-25 09:04	2026-08-20 20:00	85.1	109.1	https://aws.amazon.com/about-aws/whats-new/2026/08/redshift-concurrencyscaling-for-kds-streams/
+2026-08-25 09:04	2026-08-20 20:00	85.1	109.1	https://aws.amazon.com/about-aws/whats-new/2026/08/agentcore-memory-json-payloads
+2026-08-25 09:04	2026-08-21 21:11	59.9	83.9	https://aws.amazon.com/about-aws/whats-new/2026/08/aws-announce-neuron-2-32-0
+2026-08-25 09:04	2026-08-24 08:41	0.4	24.4	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-rds-mysql-8411-available/
