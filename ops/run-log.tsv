@@ -30,3 +30,4 @@ ts_utc	task	phase	detail
 2026-08-26 03:06	tech-blogs	start	
 2026-08-26 03:06	reddit	start	
 2026-08-26 03:24	tech-blogs	done	4-day gap catch-up; fetched=187 new=183 focus=172; 2 deep dives (Latent Space 'Evolution of the Agent Harness' + OpenAI Jalapeno chip); two-step diagnostic corrected my own 08-18 record (arXiv cs.AI is timestamp-unusable not shallow) and found feed depth = item cap / publish rate (Databricks+OpenAI News newly shallow); Anthropic 21/25 items share one sitemap timestamp = backfill, excluded
+2026-08-26 03:29	reddit	done	4-day gap catch-up; posts=277 (12/12) A=203 A'=181 B=243 interval=117.7h; A/A' ratio 3rd point 1.12 (4.00@2h -> 1.24@68h -> 1.12@118h); ⚠️ corrected my W34d 'board saturation' claim — I compared raw counts across pools of different sizes (322 vs 276); as a fraction it is 38%/46%/65% = roughly linear; caught 1 fabricated URL (slug pattern-completed from title)
