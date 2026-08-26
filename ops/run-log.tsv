@@ -25,3 +25,5 @@ ts_utc	task	phase	detail
 2026-08-24 09:09	aws	done	0 items; newest feed entry 60.9h old (08-21 20:11 Fri); Mon-late shape; (96,168] band 45/45 covered, 4th empty check
 2026-08-25 09:04	aws	start	
 2026-08-25 09:13	aws	done	12 items (8 fresh + 4 backfill); (96,168] check NON-EMPTY first time: 2 items @109.1h; pinned Amazon Connect to 其他
+2026-08-26 02:36	hf	start	
+2026-08-26 02:44	hf	done	5-day gap catch-up 08-21~08-25; window=111 new=102 top25; 2 deep dives (EnvHarness 263 / Prime Agent 32 = primary source refutes the 2nd-hand framing I recorded 08-21 but confirms my discount); ingested 26 (2264->2290); 6th AWS-alive-others-dead, this time AFTER the 08-24 rebuild
