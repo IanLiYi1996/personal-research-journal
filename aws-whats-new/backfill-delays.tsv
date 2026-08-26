@@ -27,3 +27,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-08-25 09:04	2026-08-20 20:00	85.1	109.1	https://aws.amazon.com/about-aws/whats-new/2026/08/agentcore-memory-json-payloads
 2026-08-25 09:04	2026-08-21 21:11	59.9	83.9	https://aws.amazon.com/about-aws/whats-new/2026/08/aws-announce-neuron-2-32-0
 2026-08-25 09:04	2026-08-24 08:41	0.4	24.4	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-rds-mysql-8411-available/
+2026-08-26 09:04	2026-08-24 15:00	18.3	42.1	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-msk-replicator-OAuth-support
+2026-08-26 09:04	2026-08-25 00:00	9.3	33.1	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-gamelift-servers-enhanced-ddos-protection
+2026-08-26 09:04	2026-08-25 02:00	7.3	31.1	https://aws.amazon.com/about-aws/whats-new/2026/08/aws-lambda-full-iam-resource-based-policies/
+2026-08-26 09:04	2026-08-25 07:00	2.3	26.1	https://aws.amazon.com/about-aws/whats-new/2026/08/secrets-manager-cisco-netskope/
+2026-08-26 09:04	2026-08-25 07:24	1.9	25.7	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-rds-oracle-july-2026-release-update
+2026-08-26 09:04	2026-08-25 07:30	1.8	25.6	https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-rds-supports-latest-cu-microsoft-sql-server/

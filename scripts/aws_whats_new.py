@@ -167,7 +167,21 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # "s3 output files". There is no contact-centre category and 其他 is already where the
 # plurality land, so pin them to the fallback rather than inventing a category for one
 # service. Measured over the 100-item feed: exactly 1 flip, the target, 0 collateral.
-NO_CATEGORY = ["amazon connect"]
+# Services with no category of their own. Left unpinned, each announcement drifts onto
+# whatever word its body happens to contain, so the same product lands in several places.
+# Amazon Connect earned this the hard way: 14 historical items scattered across 6
+# categories (其他 7 / Management 3 / AI/ML 2 / Storage 1 / 医疗·生命科学 1 — a queue
+# analytics dashboard filed under healthcare). 其他 is the honest slot, and it was already
+# the mode; inventing a "contact centre" category for one product would be worse.
+#
+# AWS IoT joins on n=1, not n=14: "AWS IoT Core now supports native InfluxDB routing"
+# (2026-08-26) went to Database on the word "influxdb". The subject is IoT Core, which has
+# no category, so this is the subject-vs-mentioned-technology call — decide by subject. No
+# scatter to point at yet, so the rule is doing the work here, not the data; pinning now
+# keeps the next IoT item from picking a different category (IoT SiteWise → Analytics on
+# "asset model", IoT Device Defender → Security on "defender").
+# If IoT items become frequent enough to crowd 其他, add a real category instead.
+NO_CATEGORY = ["amazon connect", "aws iot"]
 
 
 def classify(title: str, summary: str) -> str:
