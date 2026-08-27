@@ -379,6 +379,85 @@ def _canon_link(u: str) -> str:
 DELAY_LOG = OUT_DIR / "backfill-delays.tsv"
 RUN_TS_RE = re.compile(r"^- \*\*抓取时间:\*\*\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) UTC")
 
+# 2026-08-27: the two window questions below had been answered by hand-running a snippet
+# after each digest — seven times. That makes the measurement depend on my remembering it,
+# which is the same silent-failure shape MAX_RSS_AGE_MIN exists to remove, only with me as
+# the component that quietly stops working. Written to a file, not just stderr, for the
+# reason DELAY_LOG exists: this runs from cron and stderr is not retained.
+WINDOW_LOG = OUT_DIR / "window-health.tsv"
+# Lower edge of the band that widening 96 -> 168 was supposed to recover. Populated band =>
+# the widening earns its keep;永久空 => 96 was adequate and 168 can come back down.
+WIDEN_FROM_HOURS = 96
+
+
+def _feed_pairs(items) -> list[tuple[dt.datetime, str]]:
+    """(pubDate, link) for every feed item, parsed exactly as the main loop does.
+
+    Same rules on purpose: a checker that is looser than the thing it checks invents
+    problems (or hides them) — this repo has burned a whole afternoon on that twice.
+    """
+    out = []
+    for it in items:
+        link = (it.findtext("link") or "").strip()
+        try:
+            pub = parsedate_to_datetime((it.findtext("pubDate") or "").strip())
+        except Exception:
+            continue
+        if pub.tzinfo is None:
+            pub = pub.replace(tzinfo=dt.timezone.utc)
+        out.append((pub, link))
+    return out
+
+
+def _log_window_health(items, now_utc, covered, reported) -> tuple[int, int]:
+    """Record whether the backfill window is still wide enough, and return the two counts.
+
+    CLAUDE.md reasons that an over-window item is structurally invisible: it cannot enter
+    the window, so its loss cannot be observed. That holds only while feed depth <= window.
+    The feed currently carries ~300h against a 168h window, so the over-window band is
+    directly checkable — an uncovered item there is an announcement being permanently lost
+    right now, which is the one failure this whole backfill mechanism exists to prevent.
+
+    `covered` and `reported` must hold _canon_link() output, matching _already_covered()'s
+    contract; passing raw URLs silently defeats the /about-aws/ merge and over-reports loss.
+    """
+    ages = []
+    for pub, link in items:
+        age = (now_utc - pub).total_seconds() / 3600
+        ages.append((age, _canon_link(link)))
+    if not ages:
+        return 0, 0
+    span = max(a for a, _ in ages)
+
+    def uncovered(lo, hi):
+        band = [(a, c) for a, c in ages if lo < a <= hi]
+        return band, [c for a, c in band if c not in covered and c not in reported]
+
+    widen_band, widen_unc = uncovered(WIDEN_FROM_HOURS, BACKFILL_HOURS)
+    over_band, over_unc = uncovered(BACKFILL_HOURS, span)
+
+    if over_unc:
+        # Hard, loud, and specific: this is real loss, not a margin question.
+        print(f"  !! {len(over_unc)} announcement(s) older than BACKFILL_HOURS="
+              f"{BACKFILL_HOURS} are in the feed but in no digest — being permanently "
+              f"lost. Raise BACKFILL_HOURS (feed carries {span:.0f}h).", file=sys.stderr)
+        for c in over_unc[:10]:
+            print(f"       {c}", file=sys.stderr)
+    if span <= BACKFILL_HOURS:
+        # The check just went blind; say so rather than reporting a reassuring zero.
+        print(f"  ! feed depth {span:.0f}h <= BACKFILL_HOURS {BACKFILL_HOURS}: "
+              f"over-window loss is not observable this run", file=sys.stderr)
+
+    new = not WINDOW_LOG.exists()
+    with WINDOW_LOG.open("a", encoding="utf-8") as fh:
+        if new:
+            fh.write("run_utc\tfeed_span_h\tbackfill_hours\twiden_band_items\t"
+                     "widen_band_uncovered\tover_window_items\tover_window_uncovered\n")
+        fh.write(f"{now_utc:%Y-%m-%d %H:%M}\t{span:.1f}\t{BACKFILL_HOURS}\t"
+                 f"{len(widen_band)}\t{len(widen_unc)}\t"
+                 f"{len(over_band)}\t{len(over_unc)}\n")
+    return len(widen_unc), len(over_unc)
+
 
 def _prior_run_times() -> list[dt.datetime]:
     """Fetch timestamps from past digest headers, newest first.
@@ -610,6 +689,13 @@ def main() -> int:
     rows.sort(key=lambda r: r["pub"], reverse=True)
     logged = _log_backfill_delays(rows, now_utc,
                                  already_reported={_canon_link(l) for l in prior})
+
+    # Deliberately after `prior` is parsed: `covered` skips today's own digest so fresh RSS
+    # can win on classification, which would make an earlier same-day run's items look
+    # uncovered and false-alarm on the second daily run. Items reported right now are not
+    # losses either, hence `rows` counts as reported too.
+    _log_window_health(_feed_pairs(items), now_utc, covered,
+                       {_canon_link(l) for l in prior} | fresh_links)
 
     # Same headline as a recent digest under a different canonical link — see _prior_titles.
     prior_titles = _prior_titles(out)
