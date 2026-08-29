@@ -448,12 +448,26 @@ def _log_window_health(items, now_utc, covered, reported) -> tuple[int, int]:
         print(f"  ! feed depth {span:.0f}h <= BACKFILL_HOURS {BACKFILL_HOURS}: "
               f"over-window loss is not observable this run", file=sys.stderr)
 
+    # Append-only + a same-minute re-run would double-count. DELAY_LOG got an equivalent
+    # guard (`already_reported`); this log was added later and inherited the same hole.
+    # Key on run_utc only, deliberately narrowly: a re-run in the *same minute* yields a
+    # byte-identical row (span is rounded to 0.1h = 6 min), so skipping loses nothing,
+    # while a later run in the same day is a genuinely new feed_span_h reading and must
+    # still be recorded — CLAUDE.md wants that column's *minimum* watched, so readings are
+    # the asset. Only the append is skipped: the counts and the stderr alarms above still
+    # fire, because a second run must still shout if announcements are being lost.
+    stamp = f"{now_utc:%Y-%m-%d %H:%M}"
     new = not WINDOW_LOG.exists()
+    if not new:
+        existing = {ln.split("\t", 1)[0]
+                    for ln in WINDOW_LOG.read_text(encoding="utf-8").splitlines()[1:]}
+        if stamp in existing:
+            return len(widen_unc), len(over_unc)
     with WINDOW_LOG.open("a", encoding="utf-8") as fh:
         if new:
             fh.write("run_utc\tfeed_span_h\tbackfill_hours\twiden_band_items\t"
                      "widen_band_uncovered\tover_window_items\tover_window_uncovered\n")
-        fh.write(f"{now_utc:%Y-%m-%d %H:%M}\t{span:.1f}\t{BACKFILL_HOURS}\t"
+        fh.write(f"{stamp}\t{span:.1f}\t{BACKFILL_HOURS}\t"
                  f"{len(widen_band)}\t{len(widen_unc)}\t"
                  f"{len(over_band)}\t{len(over_unc)}\n")
     return len(widen_unc), len(over_unc)
