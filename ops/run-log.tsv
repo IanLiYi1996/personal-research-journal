@@ -45,3 +45,5 @@ ts_utc	task	phase	detail
 2026-08-28 09:11	aws	done	13 items (12 fresh + 1 backfill), 2 High; URL month-segment pathology #4 (2026/01 vs pubDate 08-27) and first time provably the URL not pubDate; feed_span 300.0->245.1h; (96,168] empty 8th time; (168,245.1] 48/0
 2026-08-29 09:04	aws	start	
 2026-08-29 09:13	aws	done	8 items (8 fresh, 0 backfill); Sat weekend-zero confirmed (newest Fri 22:00, 11.1h); (b) 12 slid/0 uncovered (Thu interval, valid check); feed_span 253.8h; fixed window-health idempotency guard
+2026-08-30 09:03	aws	start	
+2026-08-30 09:13	aws	done	0 items (Sunday, window entirely weekend); (a) newest 35.1h old; (b) 8 slid out, 8/8 already covered; feed_span 277.8h; over-window 9th empty; fixed runlog cross-digest weekday Fri->Mon

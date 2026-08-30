@@ -61,7 +61,14 @@ TASKS: dict[str, tuple[str, int | None]] = {
     "reddit": ("daily", None),       # 08:13
     "tech-blogs": ("daily", None),   # 08:22
     "aws": ("daily", None),          # 09:04
-    "cross-digest": ("weekly", 5),   # Friday 09:41
+    # 2026-08-24 the cross-digest cron moved Friday -> Monday 09:41 (writing it on
+    # Friday misses the weekend, so the ISO week was never fully covered).  This
+    # constant was left at 5 until 2026-08-30, and being wrong in a *checker* costs
+    # twice: it invented a Friday "NO RUN" every week, and -- far worse -- it never
+    # looked at Mondays, so the one weekly task this gate exists to protect could
+    # have silently missed its actual day forever.  The 2026-08-22 fix below was
+    # therefore inert for the whole time it was pointed at the wrong day.
+    "cross-digest": ("weekly", 1),   # Monday 09:41
 }
 
 
