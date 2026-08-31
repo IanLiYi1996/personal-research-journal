@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-08-27-hf-daily-papers-aug26-27" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-08-31-hf-daily-papers-aug27-31" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/agent/2026-08-10-trading-agent-eval-methods" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-08-31 | Note | [HF Daily Papers 摘要：08/27 回填 + 08/28 + 08/31（3 天空缺补跑）](/research-notes/2026-08-31-hf-daily-papers-aug27-31) |
 | 2026-08-27 | Note | [HF Daily Papers 摘要：08/26 回填 + 08/27](/research-notes/2026-08-27-hf-daily-papers-aug26-27) |
 | 2026-08-26 | Note | [HF Daily Papers 摘要：08/20 回填 + 08/21 + 08/24–08/26](/research-notes/2026-08-26-hf-daily-papers-aug20-26) |
 | 2026-08-20 | Note | [HF Daily Papers 摘要：08/18 回填 + 08/19–08/20](/research-notes/2026-08-20-hf-daily-papers-aug18-20) |
 | 2026-08-18 | Note | [HF Daily Papers 摘要 · 2026-08-18 当日第二跑（回填量小）](/research-notes/2026-08-18-hf-daily-papers-aug18b) |
-| 2026-08-18 | Note | [HF Daily Papers 摘要 · 2026-08-18 当日第三跑](/research-notes/2026-08-18-hf-daily-papers-aug18d) |
 <!-- AUTO:RECENT:END -->
