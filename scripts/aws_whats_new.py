@@ -545,13 +545,26 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
     return len(bf)
 
 
+def _recent_digests(out_path: Path) -> list[Path]:
+    """The BACKFILL_SCAN_FILES most recent digests *other than* the one being written.
+
+    Excluding out_path before slicing is the whole point: slicing first and skipping
+    afterwards silently drops a day of coverage on the second run of any day, because
+    today's file is then counted toward the quota and then thrown away. That off-by-one-day
+    made _log_window_health() print a false "being permanently lost" alert for 5 items on
+    2026-08-31's second run -- all 5 sat in the digest that had just fallen off the far end.
+    A hard alert that fires falsely trains you to ignore it, so this is worse than a missing
+    check. Same family as _prior_run_times() and the out_path construction bug: reusing a
+    helper inherits its assumption about *when* it is called.
+    """
+    files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
+    return [p for p in files if p != out_path][:BACKFILL_SCAN_FILES]
+
+
 def _already_covered(out_path: Path) -> set[str]:
     """Canonical links listed by any recent digest, so backfill is only reported once."""
     covered: set[str] = set()
-    files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
-    for p in files[:BACKFILL_SCAN_FILES]:
-        if p == out_path:
-            continue
+    for p in _recent_digests(out_path):
         covered.update(_canon_link(u)
                        for u in ANY_LINK_RE.findall(p.read_text(encoding="utf-8")))
     return covered
@@ -568,10 +581,7 @@ def _already_covered(out_path: Path) -> set[str]:
 def _prior_titles(out_path: Path) -> dict[str, str]:
     ROW_LINK = re.compile(r"^\|.*?\[([^\]]+)\]\((https://aws\.amazon\.com[^)\s]*)\)")
     seen: dict[str, str] = {}
-    files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
-    for p in files[:BACKFILL_SCAN_FILES]:
-        if p == out_path:
-            continue
+    for p in _recent_digests(out_path):
         for line in p.read_text(encoding="utf-8").splitlines():
             m = ROW_LINK.match(line)
             if m:
