@@ -219,24 +219,44 @@ def classify(title: str, summary: str) -> str:
             # ("Amazon MSK Express brokers now delivers ... to Amazon S3" is an MSK
             # announcement, not a Storage one), so position tracks the real service
             # while list order just encodes the order this table happens to be in.
-            # In the full-text fallback, position carries no such meaning — a
-            # description name-drops services in arbitrary order — so keep the
-            # category-order precedence there.
+            #
+            # In the full-text fallback a description name-drops services in arbitrary
+            # order, so a single position carries no meaning — but the NUMBER of distinct
+            # keywords a category matches does. This used to fall back on CATEGORIES order,
+            # which is not evidence at all, only an artifact of how the table was typed, and
+            # on 2026-09-01 that threw away a clear signal twice in one feed: "Automated
+            # Security Response on AWS adds AI Toolkit" matched inspector/guardduty/macie/
+            # security hub (earliest at 371) yet lost to a lone "dynamodb" at 1312 because
+            # Database is listed before Security; "AWS Workload Credentials Provider" matched
+            # secrets manager/certificate manager/acm yet lost to "ec2". Both differ from the
+            # earlier drift cases (WorkSpaces, Clean Rooms, Billing, MWAA, Deadline Cloud):
+            # there the body genuinely lacked the right category's keywords, here it had them
+            # 3-4 times over. So rank by hit count, then earliest hit, and demote table order
+            # to a last resort. Measured over the 100-item feed: exactly 2 flips, both the
+            # targets, 0 collateral, with 22 items exposed to the full-text pass.
+            #
+            # Known bias: categories with longer keyword lists (AI/ML 33, Networking 26,
+            # Security 22) can out-count shorter ones (Storage/Database 12) on equally weak
+            # evidence. If that starts misfiling things, weight by keyword specificity rather
+            # than going back to table order.
             by_position = text is t_title
-            best: tuple[int, str] | None = None
-            for cat, kws in CATEGORIES:
+            best: tuple[int, ...] | None = None
+            for idx, (cat, kws) in enumerate(CATEGORIES):
+                hits = []
                 for kw in kws:
                     if strong_only and kw in WEAK_KWS:
                         continue
                     pos = _kw_pos(text, kw)
-                    if pos is None:
-                        continue
-                    if not by_position:
-                        return cat
-                    if best is None or pos < best[0]:
-                        best = (pos, cat)
+                    if pos is not None:
+                        hits.append(pos)
+                if not hits:
+                    continue
+                key = ((min(hits), idx) if by_position
+                       else (-len(hits), min(hits), idx))
+                if best is None or key < best[:-1]:
+                    best = (*key, cat)
             if best is not None:
-                return best[1]
+                return best[-1]
     return "其他"
 
 
