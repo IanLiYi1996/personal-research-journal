@@ -45,19 +45,10 @@ CATEGORIES = [
                  # 08-07. Pin them here (virtual desktops / streamed apps) so the
                  # placement is at least stable across digests.
                  "workspaces", "appstream",
-                 # Deadline Cloud had no entry, so the two items in the 08-22 feed
-                 # split: the download-status one reached Compute only through the
-                 # weak "compute " channel matching "compute-intensive workloads"
-                 # (the same incidental-phrasing mechanism as the Billing->Compute
-                 # error on 08-14), while "EBS Persistent Volume Cost Tracking" hit
-                 # "ebs" and landed in Storage. One product, two categories — the
-                 # Amazon Quick defect again. Pinned to Compute: it is a managed
-                 # render-farm service that provisions and orchestrates worker
-                 # fleets, so classifying by subject puts it here. (AWS's own console
-                 # files it under Media Services, but there is no such category and
-                 # inventing one for n=1 is the over-fitting rejected for new AZs on
-                 # 08-20; 其他 is the other option, but it carries less information.)
-                 "deadline cloud"]),
+                 # Deadline Cloud was pinned here on 08-22 (render farm = provisions
+                 # and orchestrates worker fleets) explicitly for want of a Media
+                 # category. Moved to 媒体服务 on 09-02 — see that category.
+                 ]),
     ("Storage", ["s3 ", "amazon s3", "ebs", "efs", "fsx", "aws backup", "storage gateway",
                  "snowball", "snowmobile", "snow family", "data sync", "datasync"]),
     ("Database", ["rds", "aurora", "dynamodb", "elasticache", "redshift", "neptune",
@@ -72,17 +63,10 @@ CATEGORIES = [
                     "global accelerator", "transit gateway",
                     "private link", "privatelink", "app mesh", "cloud map",
                     "interconnect", "cloud wan", "network firewall", "vpn",
-                    # AWS Elemental / Media* had no entry anywhere, so the family got
-                    # scattered by whatever its bodies name-dropped: MediaTailor to
-                    # Developer Tools on 07-28 (a stray " cli"), MediaConnect Router to
-                    # Management on 08-21 (its body mentions CloudWatch). Only 2 items
-                    # in six weeks — too thin to justify a Media category (same call as
-                    # refusing one for new AZs on 08-20) — but the scattering is real
-                    # and will recur, so pin the family. Networking is the closest
-                    # existing home: these are live video transport/delivery services,
-                    # and CloudFront already sits here.
-                    "elemental", "mediaconnect", "medialive", "mediaconvert",
-                    "mediapackage", "mediatailor"]),
+                    # AWS Elemental / Media* used to be pinned here (closest existing
+                    # home: live video transport, and CloudFront sits here). Moved to
+                    # 媒体服务 on 09-02 — see that category for why.
+                    ]),
     ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
@@ -139,6 +123,33 @@ CATEGORIES = [
                     # The title's earliest-keyword rule tracks the subject once the
                     # subject is spellable, so naming it here is enough.
                     "cost anomaly detection"]),
+    # Added 09-02. The two prior pins for this family each said, at the time, that a
+    # Media category was the right home but too thin to justify (Deadline Cloud at
+    # n=1 on 08-22 -> Compute; Elemental/Media* at n=2 on 08-21 -> Networking), and
+    # both noted the scattering "will recur". It did, and worse: the two pins live in
+    # DIFFERENT categories, so pinning did not stop the split — on 09-02 one feed
+    # carried Deadline Cloud (Compute) and MediaTailor (Networking) at once. Across 55
+    # daily digests the family is n=5 in 3 categories, MediaTailor alone appearing in
+    # two of them. So the trigger both comments pre-registered has fired.
+    #
+    # Note the deciding factor is the scatter, not the volume: n=5 over 55 days is
+    # thin, and by volume alone this would still be the over-fitting refused for new
+    # AZs on 08-20. What breaks the tie is that both existing homes were acknowledged
+    # as the wrong axis when chosen, and AWS's own console files all of these under
+    # Media Services — so this is the "按主体归类" answer rather than a new guess.
+    #
+    # Measured before changing: exactly 3 flips in the 100-item feed (the 2 Deadline
+    # Cloud items + MediaTailor), which is also the full exposure set (3/100 mention
+    # any of these keywords), so 0 collateral. Guards checked: MediaConnect -> here,
+    # "Direct Connect" stays Networking, "Amazon Connect" stays pinned to 其他, and
+    # "Amazon Bedrock now integrates with AWS Elemental MediaConvert" stays AI/ML
+    # (the title pass's earliest-keyword rule keeps the subject, not the mention).
+    #
+    # Deliberately only the service names actually observed: IVS / Elastic Transcoder
+    # are absent because adding untested keywords is the speculation refused for
+    # "health " on 08-15. Add them when one shows up.
+    ("媒体服务", ["elemental", "mediaconnect", "medialive", "mediaconvert",
+                  "mediapackage", "mediatailor", "deadline cloud"]),
 ]
 
 
@@ -155,6 +166,20 @@ def _kw_pos(t: str, kw: str) -> int | None:
 # other services' announcements ("VPC support for the Glue connector", "flexible
 # batch execution" on Redshift, "via the CLI"). They only decide a category when no
 # strong (unambiguous) service keyword matched anywhere.
+# Known limitation, found 09-02 while adding 媒体服务 and left alone deliberately:
+# because the title pass runs strong-only BEFORE weak, a title whose *subject* is only
+# a weak keyword loses to a strong service merely mentioned as its object. "AWS Config
+# now supports AWS Elemental MediaLive resource types" files under the MediaLive
+# category, not Management. This is structurally the mirror of the bug the nested-loop
+# order below was written to fix (there the body hijacked a weak-subject title; here the
+# title's own object does). It predates 媒体服务 — the same title went to Networking
+# under the old table — so that change altered which wrong category, not whether.
+# Not fixed because it needs a title with a weak subject AND a strong object, which has
+# not occurred in 55 days: the only real instance, "AWS Config now supports 15 new
+# resource types" (08-04), names no strong service and filed correctly. Acting on a
+# title I invented is the speculation refused for "health " on 08-15. Fix when a real
+# one appears; the fix is to let a weak title keyword win over a strong title keyword
+# that appears later, not to reorder the passes.
 WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
             "health ", "model", " q ", "firewall", "artifact ",
             "auto scaling", "generative", "preview"}
