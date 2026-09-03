@@ -76,3 +76,4 @@ ts_utc	task	phase	detail
 2026-09-03 03:27	reddit	done	subs=12/12 posts=273 A=136 A'=123 B=223 interval=66.3h A/A'-plateau-correction
 2026-09-03 03:27	tech-blogs	done	fetched=165 new=157 A'=141 interval=66.2h risk=qbitai(23.4h),databricks(54.3h) deep=path-to-astra,github-ai-lingo
 2026-09-03 03:27	aws	done	items=10+3backfill span=234.6h(new-min) weekend-zero-falsified(08-29-sat)
+2026-09-03 09:03	aws	start	
