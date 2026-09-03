@@ -71,3 +71,8 @@ ts_utc	task	phase	detail
 2026-09-01 09:14	aws	done	22 items (16 fresh + 6 backfill); classifier full-text tie-break fixed (2 flips/0 collateral); over-window 0 uncovered
 2026-09-02 09:03	aws	start	
 2026-09-02 09:13	aws	done	11 items (8 fresh + 3 backfill); (b)=19 slid out 19/19 covered; over-window 40/0; added 媒体服务 category
+2026-09-03 02:44	hf	start	
+2026-09-03 03:27	hf	done	window=110 new=106/107 buckets=08-31:31(+27),09-01:39,09-02:30,09-03:10 top25+7ed harness-titles=5 deep=EAL-Bench(4up),OPD-noise(127up)
+2026-09-03 03:27	reddit	done	subs=12/12 posts=273 A=136 A'=123 B=223 interval=66.3h A/A'-plateau-correction
+2026-09-03 03:27	tech-blogs	done	fetched=165 new=157 A'=141 interval=66.2h risk=qbitai(23.4h),databricks(54.3h) deep=path-to-astra,github-ai-lingo
+2026-09-03 03:27	aws	done	items=10+3backfill span=234.6h(new-min) weekend-zero-falsified(08-29-sat)
