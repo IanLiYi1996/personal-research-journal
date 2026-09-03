@@ -528,3 +528,23 @@ writer 侧 k=1→8：
 **其余 Top 25**
 
 - [2609.01591 StudentSim](https://huggingface.co/papers/2609.01591)（469▲）· [2609.00111 Qwen-Drive-1.0](https://huggingface.co/papers/2609.00111)（346▲）· [2608.30821 Lucida](https://huggingface.co/papers/2608.30821)（100▲）· [2608.31106 DreamX-Creator](https://huggingface.co/papers/2608.31106)（94▲）· [2608.27550 Beyond Data Scaling](https://huggingface.co/papers/2608.27550)（88▲）· [2609.01343 SMELT](https://huggingface.co/papers/2609.01343)（77▲）· [2608.29335 GenFirst](https://huggingface.co/papers/2608.29335)（61▲）· [2608.28122 Agentic Artifact Creation](https://huggingface.co/papers/2608.28122)（60▲）· [2609.00028 UI-Venus-2](https://huggingface.co/papers/2609.00028)（56▲）· [2608.31036 Normalized Low-Rank Adaptation](https://huggingface.co/papers/2608.31036)（50▲）· [2608.30320 Qwen3.8-Next 架构](https://huggingface.co/papers/2608.30320)（46▲）· [2609.01560 H3-World](https://huggingface.co/papers/2609.01560)（42▲）· [2609.00188 ZimaBlue](https://huggingface.co/papers/2609.00188)（40▲）· [2608.27370 Puro-2B](https://huggingface.co/papers/2608.27370)（35▲）· [2608.27529 Long-Horizon Streaming 3D](https://huggingface.co/papers/2608.27529)（32▲）· [2609.01572 From Production Traffic to Post-Training](https://huggingface.co/papers/2609.01572)（32▲）· [2608.27763 Fast Weight Attention](https://huggingface.co/papers/2608.27763)（30▲）· [2608.23478 Act with Intent](https://huggingface.co/papers/2608.23478)（30▲）· [2608.30968 CogEvol](https://huggingface.co/papers/2608.30968)（29▲）
+
+---
+
+## §11 入库记录
+
+⭐ **40/40 全部入库，0 次 OpenAlex fallback（文献库 2344 → 2384）。**
+
+⚠️⚠️ **而过程踩了两次「全有或全无写盘」，其中第一次是我此前没记过的触发方式**：
+
+| 尝试 | 结果 |
+|---|---|
+| 25 个 id、`--delay 3`、前台 | 🚨 **2 分钟超时被杀 ⟹ 零落盘**（⭐ **而这完全符合 CLAUDE.md 那条「≤30 个一批」的规矩**）|
+| 15 个 id、后台 | 撞 429 ⟹ 零落盘 |
+| ⭐ **逐个 id + `--no-index --delay 0` + `sleep 18~20` + 多轮重试** | ✅ **40/40** |
+
+⟹ ⭐⭐⭐ **教训是：`add_paper.py` 的「全有或全无」有两个来源（429 与超时），而 CLAUDE.md 此前只记了前者。** 算一下就知道超时必然发生：**25 × 3s 间隔 ＝ 75s 已吃掉大半，加上每次取文的 RTT 就超了**；而一旦有 429，单个 id 的退避是 0/5/15/40 ＝ 60s，**一个 id 就能把整批拖过任何固定超时** ⟹ **正确做法是「后台 + 逐个」，不是「批量小一点」。**（已写进 CLAUDE.md。）
+
+⚠️ **另一处我自己造的坑**：第一次改后台时我写了 `nohup … &` 又同时用了 `run_in_background`，**前台的 `echo` 一返回 harness 就认为命令结束并收走了子进程，于是只跑完 1 个 id** —— ⭐ 工具文档其实明说「No `&` needed」，**两者只能用一个。**
+
+⭐ **限流探测按判据用了「本会话从未取过的无关 id」**：`1409.1556`（VGG）返 429、而我此前当探针用过的 `1512.03385` 返 200 ⟹ ⭐⭐ **一个 429 一个 200 这件事本身印证了那条判据 —— 用取过的 id 探测会被缓存骗过，源站当时确实仍在限流。**
