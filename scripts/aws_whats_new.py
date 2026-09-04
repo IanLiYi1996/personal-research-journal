@@ -27,7 +27,17 @@ CATEGORIES = [
                # product's agentic positioning points — so one product stays in one
                # category. (Analytics is the QuickSight-lineage alternative; AI/ML wins
                # on consistency with the digests already written.)
-               "amazon quick"]),
+               "amazon quick",
+               # AWS Transform (agentic AI migration/modernisation service) had no keyword
+               # and its 5 historical items scattered over 4 categories: AI/ML 2 (08-03,
+               # 08-28), Database 1 (08-03, "...to Aurora PostgreSQL"), Compute 1 (08-06),
+               # Storage 1 (09-03, "...Amazon FSx for NetApp ONTAP support" — the title's
+               # object won because the subject matched nothing). Pin to AI/ML: it is the
+               # mode, and the product is literally an agentic AI service. Measured over
+               # the 100-item feed on 09-04: exactly 1 flip, the target, 0 collateral; a
+               # title whose subject is FSx and object is AWS Transform still files Storage
+               # (title earliest-keyword rule).
+               "aws transform"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
                 # Local Zone / new-AZ items name no service in the title, so they fell
                 # through to the full-text pass, where category order hands them to
@@ -45,6 +55,14 @@ CATEGORIES = [
                  # 08-07. Pin them here (virtual desktops / streamed apps) so the
                  # placement is at least stable across digests.
                  "workspaces", "appstream",
+                 # Amazon Linux had no keyword. "Amazon Linux 2027 is now available in
+                 # public preview" (09-03) fell to the full-text pass and filed under AI/ML
+                 # because the description contains the literal token "AI/ML" — which was
+                 # that keyword's only unique (deciding) hit in 100 items, i.e. the one
+                 # time it decided anything it was wrong. Subject is the OS, which AWS
+                 # lists under Compute/EC2. Measured 09-04: exactly 1 flip, the target,
+                 # 0 collateral.
+                 "amazon linux",
                  # Deadline Cloud was pinned here on 08-22 (render farm = provisions
                  # and orchestrates worker fleets) explicitly for want of a Media
                  # category. Moved to 媒体服务 on 09-02 — see that category.
@@ -206,7 +224,15 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # keeps the next IoT item from picking a different category (IoT SiteWise → Analytics on
 # "asset model", IoT Device Defender → Security on "defender").
 # If IoT items become frequent enough to crowd 其他, add a real category instead.
-NO_CATEGORY = ["amazon connect", "aws iot"]
+#
+# Amazon SES joins on n=6 with a clear mode: 5 of 6 historical items sit in 其他 (07-21,
+# 07-24, 08-06, 08-14 — the last only after narrowing "support " on 08-15 — and 08-21), and
+# the 6th, "Amazon SES now supports S/MIME email signing" (09-03), drifted to Security on a
+# body mention of "certificate manager". Email has no category; 其他 is the honest slot and
+# already the mode. Measured 09-04: exactly 1 flip, the target, 0 collateral; "AWS Config now
+# supports Amazon SES resource types" / "Amazon Bedrock now integrates with Amazon SES" keep
+# their subjects (position-aware pin).
+NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses"]
 
 
 def classify(title: str, summary: str) -> str:

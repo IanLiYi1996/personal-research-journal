@@ -49,3 +49,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-03 03:19	2026-09-01 14:00	19.2	37.3	https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws-govcloud/
 2026-09-03 03:19	2026-09-01 15:00	18.2	36.3	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-marketplace-auto-renewals-for-private-offers
 2026-09-03 03:19	2026-09-01 18:00	15.2	33.3	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-marketplace-fee-professional-services/
+2026-09-04 09:03	2026-09-01 21:29	35.6	59.6	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-agentcore/
+2026-09-04 09:03	2026-09-02 14:06	19.0	43.0	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-memorydb-privatelink/
+2026-09-04 09:03	2026-09-03 03:00	6.1	30.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-transform-fsx-netapp-ontap-support/
+2026-09-04 09:03	2026-09-03 04:00	5.1	29.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-s3-privatelink-fips-endpoints
+2026-09-04 09:03	2026-09-03 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ses-supports-smime-signing
+2026-09-04 09:03	2026-09-03 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/announcing-amazon-linux-2027/
