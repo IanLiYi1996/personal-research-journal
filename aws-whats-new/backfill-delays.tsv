@@ -55,3 +55,7 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-04 09:03	2026-09-03 04:00	5.1	29.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-s3-privatelink-fips-endpoints
 2026-09-04 09:03	2026-09-03 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ses-supports-smime-signing
 2026-09-04 09:03	2026-09-03 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/announcing-amazon-linux-2027/
+2026-09-05 09:03	2026-09-03 21:00	12.1	36.1	https://aws.amazon.com/about-aws/whats-new/2026/09/ec2-m9g-m9gd-four-regions/
+2026-09-05 09:03	2026-09-03 23:00	10.1	34.1	https://aws.amazon.com/about-aws/whats-new/2026/09/ec2-c9g-c9gd-asia-pacific-tokyo/
+2026-09-05 09:03	2026-09-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-sftp-credential-rotation/
+2026-09-05 09:03	2026-09-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-batch-transform-g6e-instances/

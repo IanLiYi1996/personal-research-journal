@@ -80,3 +80,4 @@ ts_utc	task	phase	detail
 2026-09-03 09:07	aws	done	items=7+6backfill(3 relabeled from 03:19 run) same-day-2nd-run 0-new (5th datapoint, 5.75h) span=240.4h(not min) slid=14/14 covered feed=100/100 covered
 2026-09-04 09:03	aws	start	
 2026-09-04 09:09	aws	done	18 items = 12 fresh + 6 backfill; (b) untestable (run 5s earlier than yesterday); classifier: amazon linux/aws transform/amazon ses pinned, 3 flips 0 collateral
+2026-09-05 09:03	aws	start	

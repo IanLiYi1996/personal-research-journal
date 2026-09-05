@@ -94,7 +94,13 @@ CATEGORIES = [
                   # item falls through to the description, where a stray "TOTP
                   # support" put it in Management.
                   "security agent", "continuum", "penetration testing"]),
-    ("Developer Tools", ["codebuild", "codepipeline", "codeartifact", "codecommit",
+    ("Developer Tools", [# "AWS MCP Server adds a serverless capability for AWS Lambda functions" (09-04)
+                         # went to Compute on the title object "lambda"; the subject had no
+                         # keyword. Kept narrow ("aws mcp server", not "mcp server") so the
+                         # 08-21 "AWS Partner Central agents MCP Server" item keeps AI/ML on
+                         # its earlier title hit. Measured 09-05: exactly 1 flip, 0 collateral.
+                         "aws mcp server",
+                         "codebuild", "codepipeline", "codeartifact", "codecommit",
                          "codedeploy", "codestar", "cloud9", "cloudshell", " cli", "sdk",
                          "x-ray", "xray", "cdk", "amplify", "appconfig",
                          # Same drift, but the hijacking name-drop is a plausible one:
@@ -232,7 +238,13 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # already the mode. Measured 09-04: exactly 1 flip, the target, 0 collateral; "AWS Config now
 # supports Amazon SES resource types" / "Amazon Bedrock now integrates with Amazon SES" keep
 # their subjects (position-aware pin).
-NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses"]
+# AWS Transfer Family joins on n=1 (09-05): "SFTP Connectors now support continuing file
+# transfers during credential rotation" drifted to Security on a body mention of "secrets
+# manager". AWS files the service under Migration & Transfer, which has no category here;
+# Storage was the alternative (it lands files in S3/EFS) but "closest" is not "matching".
+# Rule-bearing fix, same as IoT. Exit condition: if Transfer Family items pile up in 其他,
+# add a category rather than keep pinning.
+NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family"]
 
 
 def classify(title: str, summary: str) -> str:
