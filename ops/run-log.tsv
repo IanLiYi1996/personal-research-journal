@@ -81,3 +81,4 @@ ts_utc	task	phase	detail
 2026-09-04 09:03	aws	start	
 2026-09-04 09:09	aws	done	18 items = 12 fresh + 6 backfill; (b) untestable (run 5s earlier than yesterday); classifier: amazon linux/aws transform/amazon ses pinned, 3 flips 0 collateral
 2026-09-05 09:03	aws	start	
+2026-09-05 09:09	aws	done	11 items = 7 fresh + 4 backfill; (b) 16/16 covered; classifier #11
