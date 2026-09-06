@@ -83,3 +83,4 @@ ts_utc	task	phase	detail
 2026-09-05 09:03	aws	start	
 2026-09-05 09:09	aws	done	11 items = 7 fresh + 4 backfill; (b) 16/16 covered; classifier #11
 2026-09-06 09:03	aws	start	
+2026-09-06 09:05	aws	done	0 items (Sunday); (a) newest 35.6h; (b) 7/7 covered over Fri window; Fri 09-04 9/9 in Sat digest; span 232.1->256.1 min 232.1
