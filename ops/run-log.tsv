@@ -90,3 +90,5 @@ ts_utc	task	phase	detail
 2026-09-06 10:20	hf	done	window=67 A=56 B=65 buckets=09-03:36(+26),09-04:31,09-05:0,09-06:0 weekend-zero deep=HarnessDev(240up),WHALE(30up) 3-of-6-share-one-project
 2026-09-06 10:20	reddit	done	subs=12/12 posts=282 A=149 A'=130 B=234 interval=79.1h GPT-6-Astra-released+jailbreak-report
 2026-09-06 10:20	tech-blogs	done	fetched=115 new=101 A'=72 interval=79.3h risk=qbitai(45.5h) deep=rogue-agents-via-wikis,gpt-6-astra 48-vs-56-discrepancy
+2026-09-07 09:03	aws	start	
+2026-09-07 09:05	aws	done	0 fresh + 0 backfill (Mon); newest 09-04 21:29 age 59.6h; (b) untestable (Sat->Sun); over-window 31/0, band 46/0; span 280.1 (+24.0 clock only, min 232.1)
