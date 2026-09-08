@@ -1,19 +1,19 @@
 # 文献库索引
 
-> 共 **2444** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2446** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （1069）
-- [智能体 / Agent](#-agent) （500）
-- [强化学习 / RLHF](#-rlhf) （494）
-- [推理 / Reasoning](#-reasoning) （606）
+- [大语言模型 (LLM)](#-llm-) （1070）
+- [智能体 / Agent](#-agent) （501）
+- [强化学习 / RLHF](#-rlhf) （495）
+- [推理 / Reasoning](#-reasoning) （608）
 - [图神经网络 / Graph](#-graph) （293）
-- [扩散 / 生成模型](#-) （393）
+- [扩散 / 生成模型](#-) （394）
 - [多模态 / 视觉语言](#-) （602）
 - [Transformer / 架构](#transformer-) （484）
-- [高效训练 / 推理](#-) （658）
+- [高效训练 / 推理](#-) （660）
 - [综述 / Survey](#-survey) （160）
 - [检索增强 / RAG](#-rag) （187）
 - 未分类（192）
@@ -334,6 +334,7 @@
 - **2026** [Enoki: Efficient Multi-Level Hallucination Detection](http://arxiv.org/abs/2609.00581) — Elisei Rykov et al. · arXiv:2609.00581 `{Rykov2026Enoki}`
 - **2026** [Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss](http://arxiv.org/abs/2608.03796) — Bakbergen Ryskulov et al. · arXiv:2608.03796 `{Ryskulov2026Efficient}`
 - **2026** [EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses](http://arxiv.org/abs/2608.28363) — Tanmay Sah et al. · arXiv:2608.28363 `{Sah2026Evoundo}`
+- **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
 - **2026** [GrepSeek: Training Search Agents for Direct Corpus Interaction](http://arxiv.org/abs/2605.29307) — Alireza Salemi et al. · arXiv:2605.29307 `{Salemi2026Grepseek}`
 - **2026** [VectraYX-Vision-1B: A Sub-2B Spanish/LATAM Cybersecurity Vision-Language Model with Structured Visual Reasoning and Native Tool Use](http://arxiv.org/abs/2608.08477) — Juan S. Santillana et al. · arXiv:2608.08477 `{Santillana2026Vectrayx}`
 - **2026** [Vero: An Open RL Recipe for General Visual Reasoning](http://arxiv.org/abs/2604.04917) — Gabriel Sarch et al. · arXiv:2604.04917 `{Sarch2026Vero}`
@@ -1311,6 +1312,7 @@
 - **2026** [UniVR: Thinking in Visual Space for Unified Visual Reasoning](http://arxiv.org/abs/2607.12800) — Zhongwei Ren et al. · arXiv:2607.12800 `{Ren2026Univr}`
 - **2026** [AlloSpatial: Agentic Harness Framework for Spatial Reasoning in Foundation Models](http://arxiv.org/abs/2606.08952) — Shouwei Ruan et al. · arXiv:2606.08952 `{Ruan2026Allospatial}`
 - **2026** [EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses](http://arxiv.org/abs/2608.28363) — Tanmay Sah et al. · arXiv:2608.28363 `{Sah2026Evoundo}`
+- **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
 - **2026** [GrepSeek: Training Search Agents for Direct Corpus Interaction](http://arxiv.org/abs/2605.29307) — Alireza Salemi et al. · arXiv:2605.29307 `{Salemi2026Grepseek}`
 - **2026** [VectraYX-Vision-1B: A Sub-2B Spanish/LATAM Cybersecurity Vision-Language Model with Structured Visual Reasoning and Native Tool Use](http://arxiv.org/abs/2608.08477) — Juan S. Santillana et al. · arXiv:2608.08477 `{Santillana2026Vectrayx}`
 - **2026** [Progressive Agent Skill Generation via Reinforcement Learning](http://arxiv.org/abs/2608.01678) — Junhao Shen et al. · arXiv:2608.01678 `{Shen2026Progressive}`
@@ -1763,6 +1765,7 @@
 - **2026** [Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability](http://arxiv.org/abs/2604.06628) — Qihan Ren et al. · arXiv:2604.06628 `{Ren2026Rethinking}`
 - **2026** [UniVR: Thinking in Visual Space for Unified Visual Reasoning](http://arxiv.org/abs/2607.12800) — Zhongwei Ren et al. · arXiv:2607.12800 `{Ren2026Univr}`
 - **2026** [Epistemic Uncertainty for Test-Time Discovery](http://arxiv.org/abs/2605.11328) — Kainat Riaz et al. · arXiv:2605.11328 `{Riaz2026Epistemic}`
+- **2026** [One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation](http://arxiv.org/abs/2608.25936) — Justin Robert et al. · arXiv:2608.25936 `{Robert2026One}`
 - **2026** [MuScriptor: An Open Model for Multi-Instrument Music Transcription](http://arxiv.org/abs/2607.08168) — Simon Rouard et al. · arXiv:2607.08168 `{Rouard2026Muscriptor}`
 - **2026** [AlloSpatial: Agentic Harness Framework for Spatial Reasoning in Foundation Models](http://arxiv.org/abs/2606.08952) — Shouwei Ruan et al. · arXiv:2606.08952 `{Ruan2026Allospatial}`
 - **2026** [When Does Muon Help Agentic Reinforcement Learning?](http://arxiv.org/abs/2607.16169) — Kai Ruan et al. · arXiv:2607.16169 `{Ruan2026When}`
@@ -2329,7 +2332,9 @@
 - **2026** [Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO](http://arxiv.org/abs/2605.30789) — Yiming Ren et al. · arXiv:2605.30789 `{Ren2026Smaller}`
 - **2026** [UniVR: Thinking in Visual Space for Unified Visual Reasoning](http://arxiv.org/abs/2607.12800) — Zhongwei Ren et al. · arXiv:2607.12800 `{Ren2026Univr}`
 - **2026** [Epistemic Uncertainty for Test-Time Discovery](http://arxiv.org/abs/2605.11328) — Kainat Riaz et al. · arXiv:2605.11328 `{Riaz2026Epistemic}`
+- **2026** [One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation](http://arxiv.org/abs/2608.25936) — Justin Robert et al. · arXiv:2608.25936 `{Robert2026One}`
 - **2026** [AlloSpatial: Agentic Harness Framework for Spatial Reasoning in Foundation Models](http://arxiv.org/abs/2606.08952) — Shouwei Ruan et al. · arXiv:2606.08952 `{Ruan2026Allospatial}`
+- **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
 - **2026** [GrepSeek: Training Search Agents for Direct Corpus Interaction](http://arxiv.org/abs/2605.29307) — Alireza Salemi et al. · arXiv:2605.29307 `{Salemi2026Grepseek}`
 - **2026** [VectraYX-Vision-1B: A Sub-2B Spanish/LATAM Cybersecurity Vision-Language Model with Structured Visual Reasoning and Native Tool Use](http://arxiv.org/abs/2608.08477) — Juan S. Santillana et al. · arXiv:2608.08477 `{Santillana2026Vectrayx}`
 - **2026** [Vero: An Open RL Recipe for General Visual Reasoning](http://arxiv.org/abs/2604.04917) — Gabriel Sarch et al. · arXiv:2604.04917 `{Sarch2026Vero}`
@@ -3123,6 +3128,7 @@
 - **2026** [Hierarchical Denoising For Multi-Step Visual Reasoning](http://arxiv.org/abs/2607.15278) — Zezhong Qian et al. · arXiv:2607.15278 `{Qian2026Hierarchical}`
 - **2026** [Flash-BoN: Instant Drafts for Inference-Time Scaling in Diffusion Models](http://arxiv.org/abs/2607.04461) — Ruchit Rawal et al. · arXiv:2607.04461 `{Rawal2026Flash}`
 - **2026** [Subliminal Clocks: Latent Time Modelling in Diffusion Language Models](http://arxiv.org/abs/2607.01774) — Maximo Eduardo Rulli et al. · arXiv:2607.01774 `{Rulli2026Subliminal}`
+- **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
 - **2026** [Simplex Relaxation for Discrete Diffusion](http://arxiv.org/abs/2608.10615) — Jinya Sakurai et al. · arXiv:2608.10615 `{Sakurai2026Simplex}`
 - **2026** [Round-Trip Consistency: Bidirectional Diffusion Models Can Predict Their Own Rollout Errors](http://arxiv.org/abs/2608.00675) — Alexander Scheinker et al. · arXiv:2608.00675 `{Scheinker2026Round}`
 - **2026** [Parallel Decoding Distillation for Fast Image and Video Generation](http://arxiv.org/abs/2607.26004) — Neta Shaul et al. · arXiv:2607.26004 `{Shaul2026Parallel}`
@@ -4699,8 +4705,10 @@
 - **2026** [SPOT: Sparse Probing and Outcome Calibration for On-Policy Distillation](http://arxiv.org/abs/2608.04419) — Zikun Qu et al. · arXiv:2608.04419 `{Qu2026Spot}`
 - **2026** [TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning](http://arxiv.org/abs/2608.04007) — Changle Qu et al. · arXiv:2608.04007 `{Qu2026Turnsight}`
 - **2026** [Flash-BoN: Instant Drafts for Inference-Time Scaling in Diffusion Models](http://arxiv.org/abs/2607.04461) — Ruchit Rawal et al. · arXiv:2607.04461 `{Rawal2026Flash}`
+- **2026** [One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation](http://arxiv.org/abs/2608.25936) — Justin Robert et al. · arXiv:2608.25936 `{Robert2026One}`
 - **2026** [Enoki: Efficient Multi-Level Hallucination Detection](http://arxiv.org/abs/2609.00581) — Elisei Rykov et al. · arXiv:2609.00581 `{Rykov2026Enoki}`
 - **2026** [Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss](http://arxiv.org/abs/2608.03796) — Bakbergen Ryskulov et al. · arXiv:2608.03796 `{Ryskulov2026Efficient}`
+- **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
 - **2026** [GrepSeek: Training Search Agents for Direct Corpus Interaction](http://arxiv.org/abs/2605.29307) — Alireza Salemi et al. · arXiv:2605.29307 `{Salemi2026Grepseek}`
 - **2026** [Seedance 2.0: Advancing Video Generation for World Complexity](http://arxiv.org/abs/2604.14148) — Team Seedance et al. · arXiv:2604.14148 `{Seedance2026Seedance}`
 - **2026** [CROP: Token-Efficient Reasoning in Large Language Models via Regularized Prompt Optimization](http://arxiv.org/abs/2604.14214) — Deep Shah et al. · arXiv:2604.14214 `{Shah2026Crop}`
