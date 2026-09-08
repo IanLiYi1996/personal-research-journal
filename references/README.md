@@ -1,22 +1,22 @@
 # 文献库索引
 
-> 共 **2446** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2450** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （1070）
+- [大语言模型 (LLM)](#-llm-) （1072）
 - [智能体 / Agent](#-agent) （501）
-- [强化学习 / RLHF](#-rlhf) （495）
-- [推理 / Reasoning](#-reasoning) （608）
+- [强化学习 / RLHF](#-rlhf) （496）
+- [推理 / Reasoning](#-reasoning) （609）
 - [图神经网络 / Graph](#-graph) （293）
 - [扩散 / 生成模型](#-) （394）
-- [多模态 / 视觉语言](#-) （602）
+- [多模态 / 视觉语言](#-) （603）
 - [Transformer / 架构](#transformer-) （484）
-- [高效训练 / 推理](#-) （660）
+- [高效训练 / 推理](#-) （661）
 - [综述 / Survey](#-survey) （160）
 - [检索增强 / RAG](#-rag) （187）
-- 未分类（192）
+- 未分类（193）
 
 ## 大语言模型 (LLM)
 
@@ -162,6 +162,7 @@
 - **2026** [OmniDelta: Skill-Driven Budget Allocation for Token Compression in OmniLLMs](http://arxiv.org/abs/2607.25669) — Haoyang Huang et al. · arXiv:2607.25669 `{Huang2026Omnidelta}`
 - **2026** [OneEmo: A Unified Multimodal Reasoning Model for Emotion Perception, Understanding, and Interaction](http://arxiv.org/abs/2608.06013) — Jiahao Huang et al. · arXiv:2608.06013 `{Huang2026Oneemo}`
 - **2026** [Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills](http://arxiv.org/abs/2607.22529) — Siyuan Huang et al. · arXiv:2607.22529 `{Huang2026Skill}`
+- **2026** [Unifying Conformal Language Tasks with In-Context Ensembles](http://arxiv.org/abs/2609.03005) — Xiao Shi Huang et al. · arXiv:2609.03005 `{Huang2026Unifying}`
 - **2026** [VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?](http://arxiv.org/abs/2608.10875) — Xiaohongshu Inc et al. · arXiv:2608.10875 `{Inc2026Vibelifebench}`
 - **2026** [Poor Man's Agentic Modeling: Simulating Large LLM-Agent Societies on a Laptop](http://arxiv.org/abs/2608.11215) — Igor Itkin et al. · arXiv:2608.11215 `{Itkin2026Poor}`
 - **2026** [Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages](http://arxiv.org/abs/2606.20517) — Maria Ivanova et al. · arXiv:2606.20517 `{Ivanova2026Multi}`
@@ -272,6 +273,7 @@
 - **2026** [VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance](http://arxiv.org/abs/2607.14660) — Yunfeng Liu et al. · arXiv:2607.14660 `{Liu2026Viabench}`
 - **2026** [Video-IFBench: Evaluating Instruction Following of Multimodal LLMs in Video Understanding Scenarios](http://arxiv.org/abs/2608.25529) — Hongbo Liu et al. · arXiv:2608.25529 `{Liu2026Video}`
 - **2026** [When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents](http://arxiv.org/abs/2608.05219) — Junzhuo Liu et al. · arXiv:2608.05219 `{Liu2026When}`
+- **2026** [Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal](http://arxiv.org/abs/2609.04482) — Alejo López-Ávila et al. · arXiv:2609.04482 `{Lpezvila2026Safety}`
 - **2026** [ABSeeker: Training Long-Horizon Search Agents via Answer-Backtracked Credit Assignment](http://arxiv.org/abs/2608.05102) — Yijun Lu et al. · arXiv:2608.05102 `{Lu2026Abseeker}`
 - **2026** [Adam's Law: Textual Frequency Law on Large Language Models](http://arxiv.org/abs/2604.02176) — Hongyuan Adam Lu et al. · arXiv:2604.02176 `{Lu2026Adam}`
 - **2026** [AURA: Always-On Understanding and Real-Time Assistance via Video Streams](http://arxiv.org/abs/2604.04184) — Xudong Lu et al. · arXiv:2604.04184 `{Lu2026Aura}`
@@ -1727,6 +1729,7 @@
 - **2026** [PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment](http://arxiv.org/abs/2608.14284) — Yuyang Liu et al. · arXiv:2608.14284 `{Liu2026Prm}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
 - **2026** [SPADE: Self-Play in Adaptive Synthetic Executable Environments](http://arxiv.org/abs/2608.19197) — Bo Liu et al. · arXiv:2608.19197 `{Liu2026Spade}`
+- **2026** [Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal](http://arxiv.org/abs/2609.04482) — Alejo López-Ávila et al. · arXiv:2609.04482 `{Lpezvila2026Safety}`
 - **2026** [ABSeeker: Training Long-Horizon Search Agents via Answer-Backtracked Credit Assignment](http://arxiv.org/abs/2608.05102) — Yijun Lu et al. · arXiv:2608.05102 `{Lu2026Abseeker}`
 - **2026** [AREX: Towards a Recursively Self-Improving Agent for Deep Research](http://arxiv.org/abs/2607.21461) — Shuqi Lu et al. · arXiv:2607.21461 `{Lu2026Arex}`
 - **2026** [OvisOCR2 Technical Report](http://arxiv.org/abs/2607.13639) — Shiyin Lu et al. · arXiv:2607.13639 `{Lu2026Ovisocr2}`
@@ -2314,6 +2317,7 @@
 - **2026** [RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space](http://arxiv.org/abs/2606.14700) — Xichen Pan et al. · arXiv:2606.14700 `{Pan2026Repfusion}`
 - **2026** [World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation](http://arxiv.org/abs/2608.05369) — Yuhao Pan et al. · arXiv:2608.05369 `{Pan2026World}`
 - **2026** [Stealing Reasoning Traces from Proprietary LLM APIs](http://arxiv.org/abs/2608.09867) — Alexander Panfilov et al. · arXiv:2608.09867 `{Panfilov2026Stealing}`
+- **2026** [ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation](http://arxiv.org/abs/2609.03756) — Javier del Pino et al. · arXiv:2609.03756 `{Pino2026Eneas}`
 - **2026** [Trust-Region Behavior Blending for On-Policy Distillation](http://arxiv.org/abs/2605.31159) — Daniil Plyusov et al. · arXiv:2605.31159 `{Plyusov2026Trust}`
 - **2026** [The Attention Triangle in Audio-Video Models](http://arxiv.org/abs/2609.03586) — Sagi Polaczek et al. · arXiv:2609.03586 `{Polaczek2026Attention}`
 - **2026** [Looped Language Models Improve Compositional Tool Calling](http://arxiv.org/abs/2608.18171) — Andrei Cristian Popescu et al. · arXiv:2608.18171 `{Popescu2026Looped}`
@@ -3634,6 +3638,7 @@
 - **2026** [World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation](http://arxiv.org/abs/2608.05369) — Yuhao Pan et al. · arXiv:2608.05369 `{Pan2026World}`
 - **2026** [$π\mathbf{R}^2$: Reactive Real-time Flow Policies](http://arxiv.org/abs/2607.26055) — Sungjae Park et al. · arXiv:2607.26055 `{Park2026Mathbfr}`
 - **2026** [Ego-OSCAR: Egocentric Open source Stereo CAptuRe System](http://arxiv.org/abs/2608.08285) — Gunjan Paul et al. · arXiv:2608.08285 `{Paul2026Ego}`
+- **2026** [ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation](http://arxiv.org/abs/2609.03756) — Javier del Pino et al. · arXiv:2609.03756 `{Pino2026Eneas}`
 - **2026** [The Attention Triangle in Audio-Video Models](http://arxiv.org/abs/2609.03586) — Sagi Polaczek et al. · arXiv:2609.03586 `{Polaczek2026Attention}`
 - **2026** [PAWBench: How Far Are We from Probabilistically Aligned World Modeling?](http://arxiv.org/abs/2608.27345) — Yuandong Pu et al. · arXiv:2608.27345 `{Pu2026Pawbench}`
 - **2026** [Real-World Knowledge-Guided Change Data Synthesis for Remote Sensing](http://arxiv.org/abs/2608.24263) — Yaoyi Qi et al. · arXiv:2608.24263 `{Qi2026Real}`
@@ -4671,6 +4676,7 @@
 - **2026** [ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow](http://arxiv.org/abs/2607.27924) — Dongxiu Liu et al. · arXiv:2607.27924 `{Liu2026Odeworld}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
 - **2026** [When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents](http://arxiv.org/abs/2608.05219) — Junzhuo Liu et al. · arXiv:2608.05219 `{Liu2026When}`
+- **2026** [Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal](http://arxiv.org/abs/2609.04482) — Alejo López-Ávila et al. · arXiv:2609.04482 `{Lpezvila2026Safety}`
 - **2026** [Adam's Law: Textual Frequency Law on Large Language Models](http://arxiv.org/abs/2604.02176) — Hongyuan Adam Lu et al. · arXiv:2604.02176 `{Lu2026Adam}`
 - **2026** [OvisOCR2 Technical Report](http://arxiv.org/abs/2607.13639) — Shiyin Lu et al. · arXiv:2607.13639 `{Lu2026Ovisocr2}`
 - **2026** [Self-Distilled Agentic Reinforcement Learning](http://arxiv.org/abs/2605.15155) — Zhengxi Lu et al. · arXiv:2605.15155 `{Lu2026Self}`
@@ -5549,6 +5555,7 @@
 - **2026** [Beyond IID: How General Are Tabular Foundation Models, Really?](http://arxiv.org/abs/2606.30410) — Lennart Purucker et al. · arXiv:2606.30410 `{Purucker2026Beyond}`
 - **2026** [Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel](http://arxiv.org/abs/2607.14431) — Sietse Schelpe et al. · arXiv:2607.14431 `{Schelpe2026Smarter}`
 - **2026** [PAST-TIDE: Prototype-Anchored Statement Tuning with Topic-Invariant Normalization for Stance Detection](http://arxiv.org/abs/2607.04690) — Md. Shakhoyat Rahman Shujon et al. · arXiv:2607.04690 `{Shujon2026Past}`
+- **2026** [Causal Foundation Models](http://arxiv.org/abs/2609.03003) — Christopher Stith et al. · arXiv:2609.03003 `{Stith2026Causal}`
 - **2026** [Invisible Shortcuts: Why Vision Encoders Know Your Camera](http://arxiv.org/abs/2608.05424) — Vladan Stojnić et al. · arXiv:2608.05424 `{Stojni2026Invisible}`
 - **2026** [Agents' Last Exam](http://arxiv.org/abs/2606.05405) — Yiyou Sun et al. · arXiv:2606.05405 `{Sun2026Agents}`
 - **2026** [SWE-Touch: Benchmarking Coding Agents When Users Touch the Code](http://arxiv.org/abs/2608.02499) — Yuqiao Tan et al. · arXiv:2608.02499 `{Tan2026Swe}`

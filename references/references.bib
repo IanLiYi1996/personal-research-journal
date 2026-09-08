@@ -5755,6 +5755,14 @@
   abstract = {We introduce SolarWM, a fully open foundation for building interactive video world models from data preparation through long-horizon inference. Training across heterogeneous data sources and video backbones is challenging: datasets differ in temporal scale, camera geometry, visual quality, motion, and captioning styles, while video generators use distinct representations and architectures. Naive data mixing and model-specific implementations therefore produce inconsistent supervision and make results difficult to reproduce and compare. SolarWM addresses this coupling with a reconfigurable multi-source data engine and a backbone-native adaptation framework. The engine converts 1.43 million canonical clips from 10 datasets into a unified, frame-aligned contract covering visual observations, metric camera geometry, captions, quality metadata, selection decisions, and provenance, while decoupling source processing from mixture construction. Under shared camera-conditioning, training, and inference interfaces, we instantiate four 5B--33B models based on Wan2.2, LTX-2.5, and MiniMax-H3 while preserving their native representations and objectives. A unified three-stage recipe combines bidirectional adaptation, teacher-forced autoregressive initialization, and distribution matching distillation. The resulting causal models enable real-time interaction over rollouts ranging from minutes to hours after being trained on only 5s sequences. By releasing the resulting data, pipeline, recipes, weights, and framework, SolarWM provides a reproducible and extensible foundation for interactive world-model research.}
 }
 
+@article{Huang2026Unifying,
+  title = {Unifying Conformal Language Tasks with In-Context Ensembles},
+  author = {Xiao Shi Huang and Chen-Yuan Lin and Bruce Kuwahara and Kin Kwan Leung and Jesse C. Cresswell},
+  year = {2026},
+  url = {http://arxiv.org/abs/2609.03005},
+  abstract = {Many NLP tasks, such as summarization and extractive question answering, reduce to retrieving relevant content from documents under two constraints: coverage, retaining enough pertinent information to achieve some goal, and conciseness, removing as much irrelevant information as possible. Conformal prediction methods have been used to guarantee coverage, and must be optimized for conciseness through design of a score function. State-of-the-art scoring functions use hand-engineered LLM prompts asking the model to rate the importance of content, but manual prompt engineering is labor-intensive and task-specific. We introduce the Conformal Relevance framework which uses in-context learning example curation and ensembling to create a score function which maintains coverage while improving conciseness with minimal manual input. We demonstrate this framework's application on seven NLP tasks, and also theoretically study the impact of diversity for ensembled conformal scores, giving a complementarity condition that characterizes when ensembling improves worst-case sentence scores, and a saturation bound on ensemble improvement.}
+}
+
 @article{Huang2026Video,
   title = {Video = World + Event Stream},
   author = {Lianghua Huang and Zhi-Fan Wu and Yupeng Shi and Wei Wang and Mengyang Feng and Cheng Yu and Chen Liang and Junjie He and Chen-Wei Xie and Yu Liu and Jingren Zhou and Ang Wang and Bang Zhang and Baole Ai and Chongyang Zhong and Jinwei Qi and Kai Zhu and Pandeng Li and Peng Zhang and Wenyuan Zhang and Xinhua Cheng and Yitong Huang and Yun Zheng and Yuxiang Bao and Yuzheng Wang and Zhiwei Lin and Zoubin Bi},
@@ -9584,6 +9592,14 @@
   year = {2024}
 }
 
+@article{Lpezvila2026Safety,
+  title = {Safety for Whom? Boundary-Aware Self-Distillation for Controlled LLM Safety Refusal},
+  author = {Alejo López-Ávila and Iker García-Ferrero and Jezabel Garcia and Antonio Tiene and Román Orús},
+  year = {2026},
+  url = {http://arxiv.org/abs/2609.04482},
+  abstract = {Safety alignment is usually posed as a topic-level question: is this subject harmful? Deployments ask a narrower one. A civics tutor and a public-sector assistant may share a base model yet need different boundaries inside the same topic, refusing targeted political manipulation while still answering factual questions about the same election. We formulate this as narrow-boundary safety and introduce an offline self-generated framework combining controlled topic generation, coverage repair, in-distribution compensation data, and harmful-benign pairs for training and evaluation. Single-shot generation leaves 19.88% of prompts without accepted refusal traces, whereas escalating retries leave 0.20%. On political persuasion with Qwen3-8B, training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% and reduces the mean unsafe-response rate across three broader harmfulness benchmarks from 26.26% to 0.14%, but increases XSTest over-refusal from 2.00% to 74.00%. In a separate matched comparison, replacing external responses with verified target-model responses reduces over-refusal from 15.20% to 5.20%. Boundary-pair data reduces comply-side over-refusal on held-out pairs from 32.94% to 4.16%, while harmful-side refusal decreases only from 91.88% to 87.72%. These results show that data composition controls the safety and usability trade-off, and that safety alignment should be evaluated on both sides of the intended refusal boundary.}
+}
+
 @article{Lu2020Gcan,
   abstract = {This paper solves the fake news detection problem under a more realistic scenario on social media. Given the source short-text tweet and the corresponding sequence of retweet users without text comments, we aim at predicting whether the source tweet is fake or not, and generating explanation by highlighting the evidences on suspicious retweeters and the words they concern. We develop a novel neural network-based model, Graph-aware Co-Attention Networks (GCAN), to achieve the goal. Extensive experiments conducted on real tweet datasets exhibit that GCAN can significantly outperform state-of-the-art methods by 16% in accuracy on average. In addition, the case studies also show that GCAN can produce reasonable explanations.},
   author = {Yi-Ju Lu and Cheng-Te Li},
@@ -11341,6 +11357,14 @@
   year = {2020}
 }
 
+@article{Pino2026Eneas,
+  title = {ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation},
+  author = {Javier del Pino and Salvador Rodríguez and Alejandro Garabito and Javier Álvarez and Chema Garabito},
+  year = {2026},
+  url = {http://arxiv.org/abs/2609.03756},
+  abstract = {We present ENEAS, a unified, text-promptable method for instance tracking and semantic discovery. Text-promptable segmentation models, including the latest foundation models such as SAM 3, still suffer from temporal hallucinations, spatial fragmentation, and semantic misclassification: they fail to report target absence when an object leaves the field of view, segment local textures instead of the complete object during extreme close-ups, and prioritize visual features over ontological reality, so that visually similar artifacts such as statues, paintings, or reflections are segmented as target entities. ENEAS works two ways from a single method: precise tracking and high-quality segmentation of a unique instance, and open-concept discovery of every instance a text query names, resolved by a semantic verification layer. For tracking, we extend the geometrically robust SeC architecture, previously limited to point interactions, with a text-prompting adapter and leverage its temporal memory, so that the target is held through disappearance without drifting to distractors and kept whole even when it fills the entire view. For discovery, the verification layer combines high-speed visual embedding matching with conditional VLM refinement, invoking semantic reasoning only for ambiguous candidates, which filters out the ontological errors that visual-only models cannot distinguish while keeping latency low. Designed with 3D reconstruction in mind, where a single misclassified distractor corrupts the asset, ENEAS unlocks high-quality semantic tracking and segmentation of video, of broad libraries, and of collections of temporally or spatially unordered data, together with the discrimination to tell true instances from their doppelgangers: things that look alike but are not the same. The code and models are available at https://github.com/speridlabs/eneas}
+}
+
 @techreport{PlankndDo,
   abstract = {Using automatic measures such as labeled and unlabeled attachment scores is common practice in dependency parser evaluation. In this paper, we examine whether these measures correlate with human judgments of overall parse quality. We ask linguists with experience in dependency annotation to judge system outputs. We measure the correlation between their judgments and a range of parse evaluation met-rics across five languages. The human-metric correlation is lower for dependency parsing than for other NLP tasks. Also, inter-annotator agreement is sometimes higher than the agreement between judgments and metrics, indicating that the standard metrics fail to capture certain aspects of parse quality, such as the relevance of root attachment or the relative importance of the different parts of speech.},
   author = {Barbara Plank and Martínez Alonso and ˇ Zeljko and Agi´c Agi´c and Danijela Merkler and Anders Søgaard},
@@ -13067,6 +13091,14 @@
   title = {Blockwise Parallel Decoding for Deep Autoregressive Models},
   url = {http://arxiv.org/abs/1811.03115},
   year = {2018}
+}
+
+@article{Stith2026Causal,
+  title = {Causal Foundation Models},
+  author = {Christopher Stith and Hossein Rahmani and Jesse C. Cresswell},
+  year = {2026},
+  url = {http://arxiv.org/abs/2609.03003},
+  abstract = {Causal inference is the practice of estimating the effect of a treatment or intervention from data. It traditionally requires a bespoke pipeline for every new problem: first proposing a causal mechanism, selecting a compatible estimator, and finally training it. Meanwhile, across diverse settings and modalities, much of machine learning has shifted to the paradigm of foundation models: networks pretrained once at scale and applied to new tasks without fine-tuning. Causal foundation models (CFMs) bring this paradigm to causal inference. CFMs are pretrained neural networks that estimate causal quantities, such as the average treatment effect, on entirely new datasets using in-context learning without requiring model updates. This work provides a practical introduction to this emerging area. We summarize the necessary background in causal inference and machine learning before discussing CFMs. Throughout, we include example code and Jupyter notebooks.}
 }
 
 @article{Stojni2026Invisible,
