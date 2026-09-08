@@ -104,3 +104,5 @@ ts_utc	task	phase	detail
 2026-09-08 07:29	cross-digest	done	week=W36 digests=18 arcs=7
 2026-09-08 08:27	hf	start	
 2026-09-08 08:43	hf	done	window=34 A=2 B=2 deep=1 ingest=2 bib=2444-2446 same-day-2nd
+2026-09-08 08:43	reddit	start	
+2026-09-08 09:01	reddit	done	posts=278 A=6 A_prime=0 B=169 interval=1.6h same-day-2nd
