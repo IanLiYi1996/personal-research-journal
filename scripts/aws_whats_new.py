@@ -93,7 +93,12 @@ CATEGORIES = [
                   # service. Without its own entry the title matches nothing and the
                   # item falls through to the description, where a stray "TOTP
                   # support" put it in Management.
-                  "security agent", "continuum", "penetration testing"]),
+                  "security agent", "continuum", "penetration testing",
+                  # "AWS Builder ID adds recovery options and multi-factor authentication for
+                  # third-party logins" (09-09) went to AI/ML: the subject had no keyword and the
+                  # body name-drops "Amazon Quick" (pinned to AI/ML). Builder ID is an identity
+                  # profile, so Security. Measured 09-09: exactly 1 flip, 0 collateral.
+                  "aws builder id", "builder id"]),
     ("Developer Tools", [# "AWS MCP Server adds a serverless capability for AWS Lambda functions" (09-04)
                          # went to Compute on the title object "lambda"; the subject had no
                          # keyword. Kept narrow ("aws mcp server", not "mcp server") so the
@@ -107,7 +112,14 @@ CATEGORIES = [
                          # Console-to-Code is Amazon Q-powered, so "amazon q" in the
                          # body sent it to AI/ML. The announcement's subject is the
                          # console-to-IaC codegen feature, not the model behind it.
-                         "console-to-code"]),
+                         "console-to-code",
+                         # "AWS announces Nx Plugin for AWS for scaffolding full-stack
+                         # applications" (09-09): subject had no keyword; the full-text COUNT
+                         # rule gave AI/ML 3 hits (bedrock/agentcore/model) vs Developer Tools 2
+                         # (x-ray/cdk) because a scaffolding toolkit name-drops many services.
+                         # First observed instance of the known long-table bias noted below the
+                         # count rule. Measured 09-09: exactly 1 flip, 0 collateral.
+                         "nx plugin"]),
     ("Analytics", ["athena", "glue", "emr", "kinesis", "msk", "opensearch",
                    "quicksight", "lake formation", "datazone", "data zone",
                    "managed grafana", "managed prometheus",
