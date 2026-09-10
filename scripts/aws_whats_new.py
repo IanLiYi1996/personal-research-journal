@@ -89,6 +89,11 @@ CATEGORIES = [
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
                   "firewall", "certificate manager", "acm ",
+                  # 2026-09-10: "AWS Private CA EKS add-on and Connector for AD now available
+                  # in GovCloud" went to Compute — the subject had no keyword, so the object
+                  # `eks` in the title won (same shape as AWS Transform/FSx on 09-04 and MCP
+                  # Server/Lambda on 09-05). Full feed: exactly 1 flip, 0 collateral.
+                  "private ca", "private certificate authority",
                   # "AWS Security Agent" (part of AWS Continuum) is a pentesting
                   # service. Without its own entry the title matches nothing and the
                   # item falls through to the description, where a stray "TOTP
@@ -685,6 +690,47 @@ def _prior_titles(out_path: Path) -> dict[str, str]:
     return seen
 
 
+# (pubDate "MM-DD HH:MM", title) -> canonical link, from the same recent digests.
+#
+# 2026-09-10: a third URL-variant shape, and the first one _canon_link() cannot reach.
+# "Dynamic Image Transformation for Amazon CloudFront adds four new features" was published
+# 09-08 14:32 under the slug `dynamic-image-transfromation-…` (typo) and listed in the 09-09
+# digest. By 09-10 the feed carried the same item, same pubDate to the minute, under the
+# corrected slug `…-transformation-…`; the old URL now 301s to the new one. The link-based
+# `covered` set therefore missed it, it was re-listed as a backfill, and a bogus 18.6/42.5h
+# row went into backfill-delays.tsv. So: AWS *does* fix slugs after publication — the
+# "错填固化" observation of 08-29 held for the year/month path segment, not for the slug.
+#
+# Why this is a drop and not just a flag, unlike _prior_titles: the title-only match is
+# noisy by design (AWS reuses headlines for regional rollouts and the monthly RDS CU/GDR
+# notices — 6 title-only groups over all digests, 5 of them distinct announcements).
+# Requiring the pubDate to match to the minute as well makes it precise: measured over
+# every digest row to date, exactly one (time, title) pair maps to two links, and it is
+# this typo fix. A re-issue gets a fresh pubDate; a corrected slug keeps the old one.
+def _prior_title_times(out_path: Path) -> dict[tuple[str, str], str]:
+    ROW_TT = re.compile(
+        r"^\|\s*(\d{2}-\d{2} \d{2}:\d{2})\s*ᴮ?\s*\|\s*\[([^\]]+)\]\((https://aws\.amazon\.com[^)\s]*)\)")
+    seen: dict[tuple[str, str], str] = {}
+    for p in _recent_digests(out_path):
+        for line in p.read_text(encoding="utf-8").splitlines():
+            m = ROW_TT.match(line)
+            if m:
+                seen.setdefault((m.group(1), m.group(2).strip().replace("\\|", "|")),
+                                _canon_link(m.group(3)))
+    return seen
+
+
+def _slug_corrected(prior_tt: dict[tuple[str, str], str], pub: dt.datetime,
+                    title: str, link: str) -> str | None:
+    """Return the previously listed canonical link if this item is the same announcement
+    (same title, same pubDate to the minute) re-published under a different slug; else None.
+    Same link is not a correction — that is the ordinary window-overlap case."""
+    prev = prior_tt.get((pub.strftime("%m-%d %H:%M"), title))
+    if prev is not None and prev != _canon_link(link):
+        return prev
+    return None
+
+
 def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
     """Return (rows-by-link, hand-written-prose-lines) from a previous same-date run."""
     if not path.exists():
@@ -757,6 +803,8 @@ def main() -> int:
     cutoff = now_utc - dt.timedelta(hours=24)
     backfill_cutoff = now_utc - dt.timedelta(hours=BACKFILL_HOURS)
     covered = _already_covered(OUT_DIR / dt.datetime.now().strftime("%Y-%m-%d.md"))
+    prior_tt = _prior_title_times(OUT_DIR / dt.datetime.now().strftime("%Y-%m-%d.md"))
+    slug_fixed: list[tuple[str, str, str]] = []   # (title, new canon link, old canon link)
     rows = []
     backfilled = 0
     seen_links = set()
@@ -773,6 +821,12 @@ def main() -> int:
             continue
         if pub.tzinfo is None:
             pub = pub.replace(tzinfo=dt.timezone.utc)
+        prev = _slug_corrected(prior_tt, pub, title, link)
+        if prev is not None:
+            # Same announcement under a corrected slug: already reported, must not be
+            # re-listed, must not be logged as a backfill delay. See _prior_title_times.
+            slug_fixed.append((title, _canon_link(link), prev))
+            continue
         is_backfill = False
         if pub < cutoff:
             # Older than the normal window: keep it only if it never made it into a
@@ -813,8 +867,14 @@ def main() -> int:
     # can win on classification, which would make an earlier same-day run's items look
     # uncovered and false-alarm on the second daily run. Items reported right now are not
     # losses either, hence `rows` counts as reported too.
-    _log_window_health(_feed_pairs(items), now_utc, covered,
+    # A corrected slug is covered under its old link; count the new link as covered too, or
+    # the over-window check would report the same announcement as being lost.
+    _log_window_health(_feed_pairs(items), now_utc,
+                       covered | {new for _, new, _ in slug_fixed},
                        {_canon_link(l) for l in prior} | fresh_links)
+    for title, new, old_link in slug_fixed:
+        print(f"  ! 同标题、同 pubDate、不同链接 → 判为发布后修正的 slug，已跳过（不重列、不记延迟）:"
+              f"\n      {title}\n      now : {new}\n      prev: {old_link}", file=sys.stderr)
 
     # Same headline as a recent digest under a different canonical link — see _prior_titles.
     prior_titles = _prior_titles(out)
