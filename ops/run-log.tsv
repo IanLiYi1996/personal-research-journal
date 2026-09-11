@@ -124,3 +124,5 @@ ts_utc	task	phase	detail
 2026-09-10 09:57	hf	done	window=78 A=68 B=68 deep=2 ingest=41 backfill-1day
 2026-09-10 09:57	reddit	done	posts=278 A=NA(prior dirs lost) A_prime=78 B=191 interval=48.6h backfill-1day
 2026-09-10 09:57	tech-blogs	done	fetched=311 new=296 true_new=84 A_prime=78 risk=qbitai(22.3h) anthropic-sitemap-burst=167 backfill-1day
+2026-09-11 09:03	aws	start	
+2026-09-11 09:10	aws	done	cron 09:04; 10 fresh + 10 backfill (record, 10/10 lost-under-24h = 9th instance, ~4 events: Elemental x5 08:00, Quick x3 17-42h); (b) 17/17 covered (10 via backfill); 09-09 day+2 count 11->14 (隔天复核 is lower bound); Thu 7th 分岔 8/11 vs 6/11; span 241.6 new min + prediction ~221h next Thu; classifier #14 Amazon MQ pinned NO_CATEGORY

@@ -261,7 +261,16 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # Storage was the alternative (it lands files in S3/EFS) but "closest" is not "matching".
 # Rule-bearing fix, same as IoT. Exit condition: if Transfer Family items pile up in 其他,
 # add a category rather than keep pinning.
-NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family"]
+# Amazon MQ joins on n=2 (09-11): "Amazon MQ now supports RabbitMQ 4.3" went to Developer
+# Tools on a stray " cli" in the body (the same stray word that sent Quick's "deny by default"
+# to Developer Tools on 08-20); the only other MQ item on record (07-15, configurable storage
+# for RabbitMQ brokers) went to Storage on "storage". Two items, two categories, both wrong.
+# AWS files it under Application Integration, which has no category here. Measured on the
+# 100-item feed: exactly 1 flip (the target), 0 collateral; " cli" hits 21/100 but is the
+# *unique* hit only 1/100 — and that one was this item, so the pin removes its only decisive
+# hit. Guards: "Amazon Bedrock now integrates with Amazon MQ" stays AI/ML, "AWS Lambda now
+# supports Amazon MQ as an event source" stays Compute, MSK stays Analytics.
+NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq"]
 
 
 def classify(title: str, summary: str) -> str:

@@ -72,3 +72,13 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-10 09:03	2026-09-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/private-ca-eks-addon-ad-govcloud/
 2026-09-10 09:03	2026-09-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/entity-resolution-record-confidence/
 2026-09-10 09:03	2026-09-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/connect-customer-profiles-segment-events/
+2026-09-11 09:03	2026-09-09 15:23	17.8	41.7	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-quick-desktop-app-generally-available-macos-windows/
+2026-09-11 09:03	2026-09-09 15:39	17.5	41.4	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-quick-activity-feed-available-ios-android-mobile-devices/
+2026-09-11 09:03	2026-09-09 15:51	17.3	41.2	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-quick-always-on-agents-sharper-feed-enterprise-controls/
+2026-09-11 09:03	2026-09-10 07:00	2.2	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-evs-available-in-additional-regions/
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/elemental-inference-contextual-metadata/
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/mediatailor-yield-optimization/
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/medialive-ab-forensic-watermarking/
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-elemental-mediatailor-low-latency-hls-ad-insertion
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-elemental-dynamic-multiview-video/
+2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/storage-gateway-fips-privatelink-s3/
