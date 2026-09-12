@@ -82,3 +82,5 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-elemental-mediatailor-low-latency-hls-ad-insertion
 2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-elemental-dynamic-multiview-video/
 2026-09-11 09:03	2026-09-10 08:00	1.2	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/storage-gateway-fips-privatelink-s3/
+2026-09-12 09:03	2026-09-09 21:04	36.0	60.0	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-marketplace-demo-private-offer-requests-qualification
+2026-09-12 09:03	2026-09-11 07:12	1.9	25.9	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-rds-oracle-supports-spatial-patch-bundle-jul-2026-ru/

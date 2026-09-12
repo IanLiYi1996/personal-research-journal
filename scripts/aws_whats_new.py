@@ -28,6 +28,13 @@ CATEGORIES = [
                # category. (Analytics is the QuickSight-lineage alternative; AI/ML wins
                # on consistency with the digests already written.)
                "amazon quick",
+               # AWS DevOps Agent (09-12): "adds support for bidirectional Slack communication" fell
+               # through to 其他 with zero hits anywhere, while the only earlier item (06-17,
+               # release management preview) reached AI/ML off body words. Two items, two
+               # categories. It is one of the Frontier agents, so AI/ML by product positioning
+               # and by the one placement already on record; Developer Tools is the
+               # subject-domain alternative. Measured: exactly 1 flip, the target, 0 collateral.
+               "devops agent",
                # AWS Transform (agentic AI migration/modernisation service) had no keyword
                # and its 5 historical items scattered over 4 categories: AI/ML 2 (08-03,
                # 08-28), Database 1 (08-03, "...to Aurora PostgreSQL"), Compute 1 (08-06),
@@ -270,7 +277,21 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # *unique* hit only 1/100 — and that one was this item, so the pin removes its only decisive
 # hit. Guards: "Amazon Bedrock now integrates with Amazon MQ" stays AI/ML, "AWS Lambda now
 # supports Amazon MQ as an event source" stays Compute, MSK stays Analytics.
-NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq"]
+# AWS HealthOmics joins on n=5 (09-12): five historical items in four categories (Database on
+# "cloudwatch"-adjacent body words 06-17, 其他 08-03 and 09-09, Management 09-12 on the object
+# "cloudwatch"; the 08-03 digest that filed one under "医疗 / 生命科学" was hand-written — that
+# category never existed in this table, per `git log -S`). No health/life-sciences category
+# here; 其他 is already the mode (2/5). Exit condition: if HealthLake / HealthImaging /
+# HealthScribe items start appearing too, build a real category instead of pinning four
+# services to the fallback.
+# AWS Marketplace joins on n=9 (09-12): nine historical items in six categories (其他 4 /
+# AI/ML 2 / Management 1 / Compute 1 / 医疗 1) — the widest scatter after Connect. Today's
+# "sellers now receive qualified demo and private offer requests in minutes" went to AI/ML on a
+# lone body "agentic". Marketplace is a procurement surface, not a service category; 其他 is
+# the mode. Guards: "Amazon Bedrock models now available in AWS Marketplace" stays AI/ML
+# (position-aware pin), and the two GovCloud/Bedrock-in-Marketplace shapes keep their subject.
+NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq",
+               "healthomics", "aws marketplace"]
 
 
 def classify(title: str, summary: str) -> str:

@@ -126,3 +126,5 @@ ts_utc	task	phase	detail
 2026-09-10 09:57	tech-blogs	done	fetched=311 new=296 true_new=84 A_prime=78 risk=qbitai(22.3h) anthropic-sitemap-burst=167 backfill-1day
 2026-09-11 09:03	aws	start	
 2026-09-11 09:10	aws	done	cron 09:04; 10 fresh + 10 backfill (record, 10/10 lost-under-24h = 9th instance, ~4 events: Elemental x5 08:00, Quick x3 17-42h); (b) 17/17 covered (10 via backfill); 09-09 day+2 count 11->14 (隔天复核 is lower bound); Thu 7th 分岔 8/11 vs 6/11; span 241.6 new min + prediction ~221h next Thu; classifier #14 Amazon MQ pinned NO_CATEGORY
+2026-09-12 09:03	aws	start	
+2026-09-12 09:10	aws	done	cron 09:03 (Sat); 6 fresh + 2 backfill, 2/2 lost-under-24h = 10th instance (Marketplace 09-09 21:04 non-integer pubDate delay 36-60h, 2nd this week); (b) 11/11 covered (1 via backfill); Fri 8th 分岔 6/12 vs 5/12, 3rd consecutive day of 0 same-day items; 09-09 count day+3 11->14->15; span 255.1, Mon predicted ~303h (correcting 290); classifier #15 HealthOmics/DevOps Agent/Marketplace pinned, agentic unique-hit 1/100 wrong; runlog: 09-11 hf/reddit/tech-blogs NO RUN = AWS-alive-others-dead 12th
