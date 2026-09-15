@@ -144,3 +144,5 @@ ts_utc	task	phase	detail
 2026-09-15 08:23	cross-digest	done	week=W37 digests=17 (hf4+reddit3+tb3+aws7) arcs=6 late_by=2d start_written_late
 2026-09-15 08:27	hf	done	2 digests: sep10-sep15 (window=105 A=87 B=95 B-A=8, 2 deep dives, 4 figs) + sep15b (window=49 A=2 B=20, interval=15min shortest ever); catchup=4d; ingest 62 ids in background
 2026-09-15 08:27	aws	done	items=7 (5 fresh + 2 backfill) highs=4; (b)=2 slid/0 uncovered (coupled with backfill); Mon divergence 9th; feed_span 310.8 new high; classifier 16th case fixed
+2026-09-15 09:03	aws	start	
+2026-09-15 09:07	aws	done	items=7 unchanged (same-day 2nd run, 09:03 cron, 0 new); header backfill 2->3 is relabel not new backfill (delays.tsv +0); (b) same-day 1 slid/1 covered via backfill, carried=0 by construction (3rd condition); Tue 0 by 09:03 -> runtime-visible 10/11; span 312.1 pure clock; day+k 09-08..09-14 unchanged; new aws cron fired 40min after rebuild; same-day-2nd-cron
