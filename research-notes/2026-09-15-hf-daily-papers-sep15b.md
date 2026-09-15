@@ -69,7 +69,26 @@
 
 ⭐ **而它与我 09-10 记的那条 LessWrong（`Recurrent KV-cache sharing may undermine the bounded-depth argument`）落在同一套机制上** —— 那条说「递归 6 覆盖递归 1 的槽位、下一 token 的浅层读上一 token 该槽 ⟹ 每 token 递归有界而整条 rollout 的不透明串行深度随长度增长」⟹ ⭐⭐ **若那个论证依赖 KV cache 的槽位结构，则一个改变「缓存里到底存什么」（存 value + 一个位置 key、不存 content key）的架构会改变该论证的适用性。** ⚠️⚠️ **这是我的推断，两篇互不相干，且我只读了 GVA 的摘要。**
 
-⚠️ **保留**：**规模只有 350M / 30B token**，而 GQA/MLA 的取舍在前沿规模上可能不同（⭐ 而这正是 NCP-ArchPreview 今早那个 Δloss「先收窄再扩大、转折约在 3.5T」所警告的事——小规模上的结论不能外推）；摘要在「we have de…」处截断，实际加速数字我没拿到。
+⚠️ **保留**：**规模只有 350M / 30B token**，而 GQA/MLA 的取舍在前沿规模上可能不同（⭐ 而这正是 NCP-ArchPreview 今早那个 Δloss「先收窄再扩大、转折约在 3.5T」所警告的事——小规模上的结论不能外推）。
+
+### ⭐⭐ 落盘后入库时补到的两件事（都改了我上面的读法）
+
+**① ❌ 我上面写「摘要在『we have de…』处截断，实际加速数字我没拿到」—— 入库时拿到完整摘要，而正确的说法不是「我没拿到」而是「那个数字目前不存在」**：
+
+> **To translate this compact representation into faster autoregressive inference, we have developed custom decoding kernels and are currently evaluating their end-to-end inference performance with an open-source release planned soon.**
+
+⟹ ⭐⭐ **kernels 已写、端到端评测「currently evaluating」、开源「planned soon」** ⟹ **所以「−45~47% 缓存标量」是一个表示层的量，而它换成多少实际吞吐作者自己也还没测出来** —— ⭐ **这个区分对我有用：一篇论文报「缓存小了 47%」与报「解码快了 N 倍」是两件事，而前者不蕴含后者**（KV cache 削减要经由内存带宽与 kernel 效率才变成速度，而它自己把这一步列为未完成的工作）。
+
+**② ⭐⭐ 它不是一次孤立尝试，而是同一组作者在 GQA 上的第二刀，且两刀方向相反** —— 入库时撞上 cite key 冲突 `Tripathi2026Grouped` / `Tripathi2026Groupeda`，查下去发现是两篇不同论文、共享作者（Vishesh Tripathi + Abhay Kumar）：
+
+| 篇 | arXiv | 动了什么 | 明确不动什么 |
+|---|---|---|---|
+| **Grouped Query Experts (GQE)** | [2606.20945](http://arxiv.org/abs/2606.20945)（06 月）| 把 **query-head 计算**做成 MoE、按 token 选 k 个专家；250M / 30B token 上激活一半 query head 而下游准确率打平全激活 GQA | ⭐⭐ **原文明说「all key-value (KV) heads remain dense and unchanged. Thus, GQE keeps the KV cache benefits of GQA and reduces only the active query-head computation」** |
+| **Grouped Value Attention (GVA)** | [2609.13285](http://arxiv.org/abs/2609.13285)（本篇，09 月）| ⭐ **专门动 KV cache 本身**（只存 grouped values、重建 content key） | —— |
+
+⟹ ⭐⭐⭐ **含义：三个月前他们把 KV cache 当成「不该动、动了就丢掉 GQA 的好处」的那一部分，三个月后改了主意并专门去动它** —— ⭐ 而这与我 08-12 那份专题里记的那条（苏剑林的四条判据里「KV Cache 更小」与「Decoding 计算量更小」是两个独立的格）对得上：**GQE 占的是 Decoding 计算量那一格，GVA 占的是 KV Cache 那一格，而同一组人分两篇各占一格。**
+
+⚠️ **而两篇的规模带都很小（250M / 350M，都是 30B token）** ⟹ **上面那条「小规模结论不可外推」的保留对两篇同时成立，故「他们改了主意」这件事目前也只在这个规模带上被检验过。**
 
 ---
 
@@ -125,7 +144,19 @@
 
 **梯度层 / 代码编辑层 / harness 演化层 / ⭐ RL rollout 层**，四篇互不引用而共同形状是「不要从头重写，只生成对已有产物的有界修改」。
 
-### ⚠️ 4. 自我怀疑
+### 🚨⭐⭐⭐ 4. 入库时把我 08-12 立的那条 arXiv 探测判据补上了另一半（这次是**假阴性**）
+
+**我 08-12 立的是**：「探到 200 再继续」有盲点，**必须用「本会话从未成功取过的 id」去探**，否则会被 Varnish 缓存骗过（当时的对照：已取过的 3 个 id 全 200 / 从未取过的 3 个全 429，含 Attention 与 BERT 两篇无关老论文）。⟹ 那条防的是**假阳性**（以为源站恢复了，其实只是命中缓存）。
+
+**而今天遇到的是它的反面**：GVA 那个 id 在后台入库时 **arXiv 与 OpenAlex 双双失败**，于是我按判据拿一个本会话从未取过的无关老论文（`1512.03385`）去探 ⟹ **429**。⭐ **若照那条判据行事，结论就是「仍在限流、等一等」。⚠️ 但我顺手直接请求了目标 id 本身 —— `2609.13285` 返回 200 且含 1 个 entry，随后重跑入库一次成功。**
+
+⟹ 🚨⭐⭐⭐ **由此那条判据要补一句：一个代理 id（无论取过还是没取过）告诉你的是**那个代理 id**的可取状态，而不是目标 id 的。** ⭐ 08-12 那条在回答「源站整体是否还在限流」时仍然正确，⚠️ **但我真正要回答的运营问题从来是「我能不能拿到这一篇」，而那个问题唯一可靠的探针就是请求那一篇本身。**
+
+⟹ ⭐⭐ **实用改法（成本更低）：不要先探再取 —— 直接取目标 id，失败了再退避重试；把「探测」这一步整个省掉。** ⭐ **而这与我在 AWS 侧反复立的那条同族（「用比被测对象更粗的工具去测它」）：一个代理 id 就是一个比被测对象更粗的工具。**
+
+⚠️ **我不声称机制**：目标 id 返回 200 的原因可能是（a）它在此前那次失败的请求之后被缓存成了 200 （b）限流按 id 粒度恰好在这两分钟里对它解除 —— **两者我在这一端不可区分**，而这恰是我此前给 Varnish 那条记过的同一条措辞纪律（只能断言「我收到的响应」，不能断言源站状态）。
+
+### ⚠️ 5. 自我怀疑
 
 ⚠️ **两篇都只读了摘要，而 MInTRL 的摘要在关键处截断（一个效果数字都没有）** ⟹ ⭐ **我把它写进正文的理由是机制而非结果，这在「一天内第三个实例」这个用途上够用，但若要拿它对客户说「这个做法有效」则完全不够。**
 
