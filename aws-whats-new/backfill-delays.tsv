@@ -85,3 +85,5 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-12 09:03	2026-09-09 21:04	36.0	60.0	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-marketplace-demo-private-offer-requests-qualification
 2026-09-12 09:03	2026-09-11 07:12	1.9	25.9	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-rds-oracle-supports-spatial-patch-bundle-jul-2026-ru/
 2026-09-13 09:03	2026-09-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/medialive-pipeline-locking/
+2026-09-15 07:45	2026-09-14 07:00	2.1	24.8	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-end-user-messaging-whatsapp-dynamic-flows
+2026-09-15 07:45	2026-09-14 07:00	2.1	24.8	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-end-user-messaging-improves-deliverability

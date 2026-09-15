@@ -8,6 +8,8 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [HF Daily Papers — 09/15 当日第二跑（2026-09-15 07:4x UTC）](/research-notes/2026-09-15-hf-daily-papers-sep15b.md)
+  - [HF Daily Papers — 09/10 回填 + 09/11 ~ 09/15（2026-09-15 07:2x UTC）](/research-notes/2026-09-15-hf-daily-papers-sep10-sep15.md)
   - [HF Daily Papers 摘要：2026-09-08 回填 + 09-09 ~ 09-10](/research-notes/2026-09-10-hf-daily-papers-sep08-sep10.md)
   - [HF Daily Papers — 09/08 当日第三跑（2026-09-08 18:1x UTC）](/research-notes/2026-09-08-hf-daily-papers-sep08d.md)
   - [HF Daily Papers — 09/08 当日第二跑（2026-09-08 08:2x UTC）](/research-notes/2026-09-08-hf-daily-papers-sep08b.md)
@@ -133,6 +135,7 @@
     - [量子计算行业格局](/topics/quantum-computing/2026-04-15-quantum-industry-landscape.md)
     - [量子计算：一份写给所有人的入门指南](/topics/quantum-computing/2026-04-15-quantum-intro-for-everyone.md)
 - **📅 Weekly**
+  - [W37 Cross-Digest（2026-09-07 周一 ~ 09-13 周日）](/weekly/2026-W37.md)
   - [W36 Cross-Digest（2026-08-31 → 09-06）](/weekly/2026-W36.md)
   - [W35 Cross-Digest（2026-08-24 → 08-30）](/weekly/2026-W35.md)
   - [W34 Cross-Digest（08-17 ~ 08-23）](/weekly/2026-W34.md)

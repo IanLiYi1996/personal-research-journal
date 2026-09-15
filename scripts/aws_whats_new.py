@@ -290,8 +290,18 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # lone body "agentic". Marketplace is a procurement surface, not a service category; 其他 is
 # the mode. Guards: "Amazon Bedrock models now available in AWS Marketplace" stays AI/ML
 # (position-aware pin), and the two GovCloud/Bedrock-in-Marketplace shapes keep their subject.
+# 2026-09-15 (16th case, and a recurrence of the known "same product, two categories" shape):
+# "AWS End User Messaging" has zero keyword-table entries (no messag*/sms/whatsapp/pinpoint anywhere),
+# so its two announcements the same day split — the WhatsApp one rode a lone body hit on
+# `personalize` (pos 787) into AI/ML while the SMS-deliverability one scored nothing and fell to 其他.
+# AWS files it under Business Applications / Customer Engagement; no matching category exists here,
+# and SES (already pinned) is the same communications family, so pin for consistency. Measured on the
+# full 100-item feed: exactly 1 flip (the target), 0 collateral. Guards pass: "Amazon Bedrock now
+# integrates with AWS End User Messaging" keeps AI/ML and the AWS Config shape keeps Management via
+# the position-aware pin. Exit condition: if 其他 fills up with these, build a real
+# "business applications" category instead of pinning further.
 NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq",
-               "healthomics", "aws marketplace"]
+               "healthomics", "aws marketplace", "aws end user messaging"]
 
 
 def classify(title: str, summary: str) -> str:
