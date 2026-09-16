@@ -43,3 +43,5 @@ run_utc	feed_span_h	backfill_hours	widen_band_items	widen_band_uncovered	over_wi
 2026-09-15 07:50	310.8	168	45	0	41	0
 2026-09-15 09:03	312.1	168	42	0	44	0
 2026-09-15 09:45	312.8	168	42	0	44	0
+# INVALID 2026-09-16 09:03	327.2	168	37	0	48	1   # over_window_uncovered=1 是假阳性：feed 深度 327h (13.6 天) 超过 _recent_digests 的 12 份覆盖，09-03 那份刚掉出窗口而那条 09-02 公告就在里面；已改用 _all_digest_links()，见同分钟之后的重跑行
+2026-09-16 09:09	327.3	168	37	0	48	0

@@ -87,3 +87,6 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-13 09:03	2026-09-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/medialive-pipeline-locking/
 2026-09-15 07:45	2026-09-14 07:00	2.1	24.8	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-end-user-messaging-whatsapp-dynamic-flows
 2026-09-15 07:45	2026-09-14 07:00	2.1	24.8	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-end-user-messaging-improves-deliverability
+2026-09-16 09:03	2026-09-11 08:00	97.8	121.1	https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-unified-studio-odbc-power-bi/
+2026-09-16 09:03	2026-09-14 19:30	14.3	37.6	https://aws.amazon.com/about-aws/whats-new/2026/09/root-user-regional-resiliency/
+2026-09-16 09:03	2026-09-15 08:00	1.8	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/glue-zero-etl-archived-salesforce/

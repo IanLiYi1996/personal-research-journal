@@ -101,6 +101,10 @@ CATEGORIES = [
                   # `eks` in the title won (same shape as AWS Transform/FSx on 09-04 and MCP
                   # Server/Lambda on 09-05). Full feed: exactly 1 flip, 0 collateral.
                   "private ca", "private certificate authority",
+                  # 09-16: "AWS improves regional resiliency for root user sign-in" had no
+                  # subject keyword and landed in Management on a passing "cloudtrail"
+                  # mention. Root-user sign-in is IAM territory. 1 flip / 0 collateral.
+                  "root user",
                   # "AWS Security Agent" (part of AWS Continuum) is a pentesting
                   # service. Without its own entry the title matches nothing and the
                   # item falls through to the description, where a stray "TOTP
@@ -170,7 +174,13 @@ CATEGORIES = [
                     # Amazon Bedrock" was decided by its object and filed under AI/ML.
                     # The title's earliest-keyword rule tracks the subject once the
                     # subject is spellable, so naming it here is enough.
-                    "cost anomaly detection"]),
+                    "cost anomaly detection",
+                    # 09-16: "AWS Billing Conductor now supports custom rates..." went to
+                    # AI/ML on a single full-text hit — the *verb* "model" ("to model
+                    # commercial agreements"). `model` is a common-word keyword like
+                    # `health `/`ai/ml`/` cli`/`agentic`: 15/100 hits, 1/100 unique hit,
+                    # and the unique one was wrong. Pin the subject; keyword left alone.
+                    "billing conductor"]),
     # Added 09-02. The two prior pins for this family each said, at the time, that a
     # Media category was the right home but too thin to justify (Deadline Cloud at
     # n=1 on 08-22 -> Compute; Elemental/Media* at n=2 on 08-21 -> Networking), and
@@ -560,6 +570,10 @@ def _log_window_health(items, now_utc, covered, reported) -> tuple[int, int]:
 
     `covered` and `reported` must hold _canon_link() output, matching _already_covered()'s
     contract; passing raw URLs silently defeats the /about-aws/ merge and over-reports loss.
+    `covered` must also reach at least as far back as the feed does (_all_digest_links());
+    a 12-file set went stale on 2026-09-16 when feed depth passed 12 days and produced a
+    false loss alert. The check is blind below BACKFILL_HOURS (said aloud below) and was
+    falsely loud above the covered set's reach — two ends, two failure modes.
     """
     ages = []
     for pub, link in items:
@@ -699,6 +713,29 @@ def _recent_digests(out_path: Path) -> list[Path]:
     """
     files = sorted(OUT_DIR.glob("????-??-??.md"), reverse=True)
     return [p for p in files if p != out_path][:BACKFILL_SCAN_FILES]
+
+
+def _all_digest_links(out_path: Path) -> set[str]:
+    """Canonical links from *every* digest other than out_path.
+
+    For the over-window loss check only. That check reaches back to the feed's depth, not
+    to BACKFILL_HOURS, and feed depth is not bounded by anything I control: on 2026-09-16
+    it hit 327h (13.6 days) while _recent_digests() read 12 files, so the 09-03 digest had
+    just fallen off the far end and a 09-02 announcement it listed was reported as "being
+    permanently lost". Third false positive from this alarm (08-31 twice, off-by-one). A
+    covered set whose reach is shorter than the band it is asked about produces exactly
+    this: the alarm is valid only while feed_span_h <= scan reach, and feed_span_h is the
+    quantity we already know drifts. Reading every digest costs milliseconds and removes
+    the coupling. _already_covered() keeps its 12-file window on purpose (its band is the
+    168h backfill window, which 12 daily files comfortably span).
+    """
+    covered: set[str] = set()
+    for p in sorted(OUT_DIR.glob("????-??-??.md")):
+        if p == out_path:
+            continue
+        covered.update(_canon_link(u)
+                       for u in ANY_LINK_RE.findall(p.read_text(encoding="utf-8")))
+    return covered
 
 
 def _already_covered(out_path: Path) -> set[str]:
@@ -909,8 +946,11 @@ def main() -> int:
     # losses either, hence `rows` counts as reported too.
     # A corrected slug is covered under its old link; count the new link as covered too, or
     # the over-window check would report the same announcement as being lost.
+    # `covered` reads 12 files (enough for the 168h backfill band); the loss check below
+    # reaches the whole feed depth (327h on 09-16), so it needs every digest — see
+    # _all_digest_links().
     _log_window_health(_feed_pairs(items), now_utc,
-                       covered | {new for _, new, _ in slug_fixed},
+                       _all_digest_links(out) | {new for _, new, _ in slug_fixed},
                        {_canon_link(l) for l in prior} | fresh_links)
     for title, new, old_link in slug_fixed:
         print(f"  ! 同标题、同 pubDate、不同链接 → 判为发布后修正的 slug，已跳过（不重列、不记延迟）:"
