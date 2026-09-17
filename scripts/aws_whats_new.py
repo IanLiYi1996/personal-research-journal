@@ -121,6 +121,12 @@ CATEGORIES = [
                          # 08-21 "AWS Partner Central agents MCP Server" item keeps AI/ML on
                          # its earlier title hit. Measured 09-05: exactly 1 flip, 0 collateral.
                          "aws mcp server",
+                         # "Amazon Corretto 27 is now generally available" (09-17) had no
+                         # keyword at all and fell to 其他; the three Corretto items on
+                         # record sat in two categories (Management 07-23, 其他 08-19/09-17).
+                         # Corretto is Amazon's OpenJDK distribution — a developer tool.
+                         # Measured 09-17: exactly 1 flip, 0 collateral.
+                         "corretto",
                          "codebuild", "codepipeline", "codeartifact", "codecommit",
                          "codedeploy", "codestar", "cloud9", "cloudshell", " cli", "sdk",
                          "x-ray", "xray", "cdk", "amplify", "appconfig",
@@ -311,7 +317,14 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # the position-aware pin. Exit condition: if 其他 fills up with these, build a real
 # "business applications" category instead of pinning further.
 NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq",
-               "healthomics", "aws marketplace", "aws end user messaging"]
+               "healthomics", "aws marketplace", "aws end user messaging",
+               # "AWS Step Functions adds new AWS service integrations automatically,
+               # starting with AWS Lambda MicroVMs" (09-17) went to Compute on the title
+               # object "lambda"; the subject has no keyword (W24 had one in AI/ML). AWS
+               # files it under Application Integration, like MQ — no category here.
+               # Measured 09-17: exactly 1 flip, 0 collateral. Position-aware: "AWS Lambda
+               # now integrates with AWS Step Functions" keeps Compute.
+               "step functions"]
 
 
 def classify(title: str, summary: str) -> str:
@@ -487,13 +500,25 @@ ROW_RE = re.compile(
 # truncated distribution makes. Widening therefore does two jobs: it recovers items in the
 # 96-168h band, and it tests whether that band is populated. If nothing above 88h ever
 # shows up, 96 was in fact adequate and this can go back down with evidence.
-BACKFILL_HOURS = 168
+#
+# 168 -> 216 on 2026-09-17. The (96,168] band did fill (five times by 09-16), and the
+# quantity that matters is not the window but `window - run interval`: at daily runs a
+# 168h window only *guarantees* delays <= 144h; anything longer is recovered only if a
+# run happens to align. Two of 84 valid delay points (2%) exceeded 144h — CloudFormation
+# contract tests v2 at 161.7h (09-09, Labor-Day week, then explained as holiday backlog)
+# and AWS PCS GRES/MIG at 145.1h (09-17, an ordinary week, pubDate 09-11 08:00). The
+# second point removes the holiday explanation, and it sat 22.9h from being invisible.
+# 216 (9 days) is chosen, not 240, because the over-window loss check below is blind
+# when the feed is shallower than BACKFILL_HOURS, and the shallowest feed observed is
+# 241.6h (09-11): 216 keeps that check live on the busiest week seen while guaranteeing
+# 192h > 161.7h max. Zero of the 84 points exceed 192h.
+BACKFILL_HOURS = 216
 # How many recent digests to read when deciding "have I already covered this?".
 # Must span more calendar days than BACKFILL_HOURS, or a re-admitted item could fall off
 # the far end of the scan and be reported twice. At one digest per day, 12 files covers
 # ~12 days against a 7-day window; 8 files (~8 days) was only barely enough for 96h and
-# would have been too tight here.
-BACKFILL_SCAN_FILES = 12
+# would have been too tight here. 12 -> 14 with the 216h (9-day) window on 2026-09-17.
+BACKFILL_SCAN_FILES = 14
 # First run that applied BACKFILL_HOURS. Runs before this only looked back 24h, so the
 # absence they prove is narrower. Recorded as a date because the mechanism landed with a
 # code change, not with data we can sniff: a backfill-capable run that finds nothing looks
