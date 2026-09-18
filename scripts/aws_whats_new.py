@@ -55,6 +55,14 @@ CATEGORIES = [
                 # the title now decides, instead of whatever the description mentions.
                 "local zone", "local zones",
                  "graviton", "auto scaling", "wavelength", "lightsail", "app runner",
+                 # "AWS Elastic Beanstalk introduces Cluster Mode to run multiple applications
+                 # on shared infrastructure" (09-17) went to Security: the subject had no
+                 # keyword, and the full-text count rule gave Security 2 hits (Secrets
+                 # Manager, Certificate Manager) over Compute's 2 (EKS, "compute") on table
+                 # order — the long-table bias noted 09-01. The two Beanstalk items on record
+                 # sat in two categories (Compute 09-01, Security 09-17). AWS files Beanstalk
+                 # under Compute. Measured 09-18: exactly 1 flip, 0 collateral.
+                 "elastic beanstalk", "beanstalk",
                  "compute ",
                  # End-user computing has no category of its own, so with no entry at
                  # all these drifted by whatever the body name-dropped: WorkSpaces
@@ -127,6 +135,16 @@ CATEGORIES = [
                          # Corretto is Amazon's OpenJDK distribution — a developer tool.
                          # Measured 09-17: exactly 1 flip, 0 collateral.
                          "corretto",
+                         # "AWS Builder Center now available as mobile app on iOS and Android"
+                         # (09-17) went to Security on the body's "Builder ID" — a keyword I
+                         # added 09-09 for a sibling product. First case of one product's
+                         # keyword hijacking a related product with a shared name prefix; the
+                         # title channel fixes it because "builder center" sits earlier in the
+                         # title than "builder id" does in the body. Builder Center is the
+                         # developer community portal (07-09 fell to 其他). Measured 09-18:
+                         # exactly 1 flip, 0 collateral; "AWS Builder ID now supports passkeys"
+                         # stays Security.
+                         "builder center",
                          "codebuild", "codepipeline", "codeartifact", "codecommit",
                          "codedeploy", "codestar", "cloud9", "cloudshell", " cli", "sdk",
                          "x-ray", "xray", "cdk", "amplify", "appconfig",

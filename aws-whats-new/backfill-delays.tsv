@@ -93,3 +93,10 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-17 09:03	2026-09-11 08:00	121.2	145.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-pcs-gres-hardware-topology-mig/
 2026-09-17 09:03	2026-09-15 18:54	14.3	38.2	https://aws.amazon.com/about-aws/whats-new/2026/06/aws-step-functions-integrations/
 2026-09-17 09:03	2026-09-15 22:42	10.5	34.4	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-sts/
+2026-09-18 09:03	2026-09-16 12:22	20.8	44.7	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-connect-talent/
+2026-09-18 09:03	2026-09-16 16:00	17.1	41.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-keyspaces/
+2026-09-18 09:03	2026-09-16 22:01	11.1	35.0	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ecs-daemon-deployment-console/
+2026-09-18 09:03	2026-09-17 02:37	6.5	30.4	https://aws.amazon.com/about-aws/whats-new/2026/09/generate-sheet-and-generate-analysis-from-an-image/
+2026-09-18 09:03	2026-09-17 07:09	2.0	25.9	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-builder-center-now-available-as-mobile-app/
+2026-09-18 09:03	2026-09-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/elastic-beanstalk-cluster-mode/
+2026-09-18 09:03	2026-09-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/s3-express-one-zone-7-regions/
