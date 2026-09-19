@@ -199,6 +199,13 @@ CATEGORIES = [
                     # The title's earliest-keyword rule tracks the subject once the
                     # subject is spellable, so naming it here is enough.
                     "cost anomaly detection",
+                    # "AWS Resilience Hub adds three new capabilities" (09-18) went to Compute on a
+                    # lone body "eks" (strong-only pass; "generative"/"organizations" are weak).
+                    # Subject has no keyword; history 2 items in 2 categories (其他 / Compute).
+                    # AWS files it under Management & Governance. Measured 09-19: exactly 1 flip,
+                    # 0 collateral; "AWS Config now supports AWS Resilience Hub resource types"
+                    # keeps Management, "Amazon EKS now integrates with AWS Resilience Hub" Compute.
+                    "resilience hub",
                     # 09-16: "AWS Billing Conductor now supports custom rates..." went to
                     # AI/ML on a single full-text hit — the *verb* "model" ("to model
                     # commercial agreements"). `model` is a common-word keyword like
@@ -342,7 +349,14 @@ NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family",
                # files it under Application Integration, like MQ — no category here.
                # Measured 09-17: exactly 1 flip, 0 collateral. Position-aware: "AWS Lambda
                # now integrates with AWS Step Functions" keeps Compute.
-               "step functions"]
+               "step functions",
+               # "Amazon SNS now supports message payloads up to 1 MiB" (09-18) went to Compute on
+               # a body "lambda" at position 895 (same shape as MQ's stray " cli"). AWS files SNS
+               # under Application Integration like MQ / Step Functions — no category here.
+               # n=1, rule-bearing. Measured 09-19: exactly 1 flip, 0 collateral; "Amazon Bedrock
+               # now integrates with Amazon SNS topics" keeps AI/ML, "AWS Lambda now supports
+               # Amazon SNS filtering" keeps Compute.
+               "amazon sns"]
 
 
 def classify(title: str, summary: str) -> str:
@@ -451,7 +465,17 @@ REGIONAL_KWS = ["now available in", "expands to", "additional regions", "govclou
 def impact(title: str, summary: str) -> str:
     t_title = title.lower()
     t = (title + " " + summary).lower()
-    regional = any(kw in t_title for kw in REGIONAL_KWS)
+    # "now available in Amazon <product>" is a product/catalog context, never a region: all
+    # 8 historical titles of that shape (JumpStart model listings x4, RDS Preview Environment
+    # x2, Amazon Quick x1, "The new AgentCore Runtime is now available in Amazon Bedrock
+    # AgentCore" 09-18) are non-regional, while every "in AWS ..." title IS a region or
+    # partition (GovCloud / European Sovereign Cloud / Europe (Paris)). Without this the
+    # next-generation AgentCore Runtime graded Low and missed Top Highlights. Measured
+    # 09-19 over the 100-item feed: exactly 1 flip (the target); the JumpStart titles it
+    # also frees were already recorded High in the digests, so grading becomes consistent
+    # rather than more generous.
+    regional = (any(kw in t_title for kw in REGIONAL_KWS)
+                and "now available in amazon " not in t_title)
     # Region/partition rollouts are graded Low regardless of the service involved —
     # check this BEFORE the HIGH_HARD promotion, or every "Bedrock now in <region>"
     # and "region expansion of G7e on SageMaker" item claims a Top Highlight slot.

@@ -156,3 +156,5 @@ ts_utc	task	phase	detail
 2026-09-17 09:10	aws	done	cron 09:03; 10 new + 3 backfill; BACKFILL_HOURS 168->216; classifier ex18 (corretto, step functions)
 2026-09-18 09:03	aws	start	
 2026-09-18 09:09	aws	done	cron 09:03; 4 new + 7 backfill (7/7 fixed-24h lost, 13th); span 328.0 new max; classifier 19th (beanstalk/builder center)
+2026-09-19 09:03	aws	start	
+2026-09-19 09:11	aws	done	cron 09:03 Sat (day 5 after 09-15 rebuild; 19th 'AWS alive, rest dead'); 7 new + 2 backfill (2/2 fixed-24h lost, 14th); span 265.1: 09-18 prediction 352h falsified in 24h (Sat obs absorbs Fri output -> 'weekend no cap' only holds Sun/Mon); (b) 5 slid/5 covered; day+k 09-17 9->10 day+2, 09-08 both sources truncated to 11 (true 14); Fri divergence #3; classifier 20th (resilience hub->Mgmt, sns->NO_CATEGORY) + impact false-regional 'now available in Amazon' fixed (1 flip); 9 links verified; cron expires ~09-22, rebuild before 09-22 09:03
