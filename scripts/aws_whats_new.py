@@ -46,6 +46,11 @@ CATEGORIES = [
                # (title earliest-keyword rule).
                "aws transform"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
+                # Amazon EVS (Elastic VMware Service) had no keyword; all 4 historical
+                # items (07-24 / 08-28 / 09-11 / 09-22) landed in Compute only because
+                # the body name-drops "ec2" -- right category by accident (the
+                # Console-to-Code pattern). AWS files EVS under Compute. 09-22: 0 flips.
+                "amazon evs", "elastic vmware service",
                 # Local Zone / new-AZ items name no service in the title, so they fell
                 # through to the full-text pass, where category order hands them to
                 # AI/ML the moment the body says "model"/"generative" (08-21: a Las
@@ -474,8 +479,14 @@ def impact(title: str, summary: str) -> str:
     # 09-19 over the 100-item feed: exactly 1 flip (the target); the JumpStart titles it
     # also frees were already recorded High in the digests, so grading becomes consistent
     # rather than more generous.
+    # "in the AWS Management Console" is a product-surface context, not a region: it made
+    # "Amazon ECS now provides real-time deployment observability in the AWS Management
+    # Console" (09-22) grade Low via REGIONAL_KWS["in the aws "]. Of the 9 historical titles
+    # containing "in the AWS ", the other 8 are all Regions / GovCloud / Sovereign Cloud.
+    # Measured 09-22 over the 100-item feed: exactly 1 flip (the target, Low -> Medium).
     regional = (any(kw in t_title for kw in REGIONAL_KWS)
-                and "now available in amazon " not in t_title)
+                and "now available in amazon " not in t_title
+                and "in the aws management console" not in t_title)
     # Region/partition rollouts are graded Low regardless of the service involved —
     # check this BEFORE the HIGH_HARD promotion, or every "Bedrock now in <region>"
     # and "region expansion of G7e on SageMaker" item claims a Top Highlight slot.

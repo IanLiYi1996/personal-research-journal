@@ -162,3 +162,4 @@ ts_utc	task	phase	detail
 2026-09-20 09:07	aws	done	cron-day6; 0 new; (a) newest 38.5h; (b) 7/7 covered; span 289.1 = predicted; over-window 46/0
 2026-09-21 09:04	aws	start	
 2026-09-21 09:13	aws	done	cron-day7 (09:04:17); 0 new + 1 backfill X8i Sao Paulo (1/1 fixed-24h lost, 15th; 34.8-58.8h, entered feed over weekend); (a) newest 58.8h = Fri->Mon mode; (b) [09-19 09:04,09-20 09:04] 0 items = Monday not testable; span 313.1 = predicted (2nd pure-clock day); over-window 52/0 script=independent (added (title,pubDate) key); day+k 09-18 8->9 at day+3; Mon visible 4/12; 'AWS alive, rest dead' 21st (09-16..20); CRON REBUILT in-run: 6 present w/ 09-15 ids -> deleted -> 6 new (hf 771e3311/8729af8f reddit fda989c4 tb 8e276f8c aws aec36a8c xd 58a78c5f), expires ~09-28
+2026-09-22 09:04	aws	start	

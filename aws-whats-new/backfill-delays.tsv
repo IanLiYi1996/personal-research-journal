@@ -103,3 +103,4 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-19 09:04	2026-09-17 07:00	26.1	50.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ses-vdm-tenants/
 2026-09-19 09:04	2026-09-18 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/9/privatelink-tunnel-endpoint/
 2026-09-21 09:04	2026-09-18 22:16	34.8	58.8	https://aws.amazon.com/about-aws/whats-new/2026/09/ec2-x8i-south-america-sao-paulo/
+2026-09-22 09:04	2026-09-18 16:00	65.1	89.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-ec2-i7ie-instances-israel-telaviv-region/
