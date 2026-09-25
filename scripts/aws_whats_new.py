@@ -109,6 +109,14 @@ CATEGORIES = [
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ", "control tower",
                   "firewall", "certificate manager", "acm ",
+                  # 2026-09-25: "AWS Network Security Manager is now generally available in
+                  # US East (N. Virginia)" — a brand-new service with no keyword; the title
+                  # pass had 0 hits and the full-text pass tied Security (waf/shield/firewall)
+                  # against Networking (network firewall/load balancer/cloudfront) and let
+                  # Networking win. AWS files Network Firewall and its manager under
+                  # Security, Identity & Compliance. Measured over the 100-item feed: exactly
+                  # 1 flip (the target), 0 collateral.
+                  "network security manager",
                   # 2026-09-10: "AWS Private CA EKS add-on and Connector for AD now available
                   # in GovCloud" went to Compute — the subject had no keyword, so the object
                   # `eks` in the title won (same shape as AWS Transform/FSx on 09-04 and MCP
@@ -361,7 +369,15 @@ NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family",
                # n=1, rule-bearing. Measured 09-19: exactly 1 flip, 0 collateral; "Amazon Bedrock
                # now integrates with Amazon SNS topics" keeps AI/ML, "AWS Lambda now supports
                # Amazon SNS filtering" keeps Compute.
-               "amazon sns"]
+               "amazon sns",
+               # "Amazon EventBridge relaunches event buses for enterprise scale" (09-24 21:00,
+               # first EventBridge-subject item in the tracker) went to Management on a lone
+               # body "cloudformation" at 1628. AWS files EventBridge under Application
+               # Integration like MQ / Step Functions / SNS — no category here. n=1,
+               # rule-bearing. Measured 09-25: exactly 1 flip, 0 collateral; "AWS Secrets
+               # Manager now publishes secret update notifications to Amazon EventBridge"
+               # (07-22, the only prior mention) keeps Security via the position rule.
+               "eventbridge"]
 
 
 def classify(title: str, summary: str) -> str:
@@ -509,6 +525,16 @@ def impact(title: str, summary: str) -> str:
                                     "available in price", "minor"]):
         return "Low"
     if any(kw in t for kw in HIGH_KWS) or NEW_CAPABILITY_RE.search(t_title):
+        return "Medium"
+    # A flagship service leading a non-regional headline that carries none of the usual
+    # verbs is still a capability, not a footnote: "Amazon SageMaker HyperPod Inference
+    # Gateway for scalable LLM inference" (09-24 08:00) is a new gateway component and
+    # graded Low because AWS wrote it as a noun phrase ("X for Y"). Third recorded impact
+    # failure; unlike #1/#2 (REGIONAL_KWS false positives) this one is a missing verb.
+    # Checked AFTER the Low-signal title words above so "minor"/"documentation" items on
+    # flagship services stay Low. Measured 09-25 over the 100-item feed: exactly 1 flip
+    # (the target, Low -> Medium), 0 collateral.
+    if any(_kw_matches(t_title, kw) for kw in HIGH_HARD):
         return "Medium"
     return "Low"
 
