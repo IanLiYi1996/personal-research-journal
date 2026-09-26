@@ -88,7 +88,14 @@ CATEGORIES = [
                  # category. Moved to 媒体服务 on 09-02 — see that category.
                  ]),
     ("Storage", ["s3 ", "amazon s3", "ebs", "efs", "fsx", "aws backup", "storage gateway",
-                 "snowball", "snowmobile", "snow family", "data sync", "datasync"]),
+                 "snowball", "snowmobile", "snow family", "data sync", "datasync",
+                 # AWS Elastic Disaster Recovery had no keyword; its 5 historical items
+                 # landed in 4 categories (Storage 07-15 / 其他 08-11, 08-28 / hand-written
+                 # 迁移 08-03 / Compute 09-26 via the title object "graviton"). The AWS
+                 # console groups DRS under Storage next to AWS Backup. Measured 09-26 over
+                 # the 100-item feed: exactly 1 flip (the target), 0 collateral; "Amazon EC2
+                 # now integrates with AWS Elastic Disaster Recovery" keeps Compute.
+                 "elastic disaster recovery"]),
     ("Database", ["rds", "aurora", "dynamodb", "elasticache", "redshift", "neptune",
                   "documentdb", "timestream", "qldb", "memorydb", "keyspaces", "aurora dsql"]),
     ("Networking", ["vpc", "cloudfront", "route 53", "route53", "api gateway", "elb",
@@ -459,6 +466,17 @@ def classify(title: str, summary: str) -> str:
 HIGH_KWS = ["generally available", "now available", "ga release", "ga in", "announces ",
             "announces support", "launches ", "introduces ", "new ", "expands to",
             "adds support", "adds ", "now supports", "now support ", "now offers",
+            # Compound subjects take a plural verb and modals take the base form, so
+            # NEW_CAPABILITY_RE (r"\bnow \w+s\b") misses them: "AWS End User Messaging
+            # and Amazon SES now OFFER AI agent skills for the AWS MCP Server" (09-25 07:00)
+            # and "Amazon Connect Customer can now IMPORT evaluation form PDFs" graded Low.
+            # Fourth recorded impact failure; like #3 it is a missing-verb false negative,
+            # but the verb is present and merely inflected. The broad fix (r"\bnow \w+\b")
+            # also flips "Amazon EVS now in scope for FedRAMP Class C" Low -> Medium (a
+            # compliance-scope item, arguably Low), so two narrow phrases instead, matching
+            # the existing "now support " entry. Measured 09-26 over the 100-item feed:
+            # exactly 2 flips (both targets), 0 collateral.
+            "now offer ", "can now ",
             "preview"]
 HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
              "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore"]
