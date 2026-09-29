@@ -177,3 +177,4 @@ ts_utc	task	phase	detail
 2026-09-28 09:04	aws	start	
 2026-09-28 09:13	aws	done	items=0 backfill=0 span=421.1 over_window=60/0 cron-rebuilt-6-jobs snapshot-saved
 2026-09-29 09:04	aws	start	
+2026-09-29 09:09	aws	done	items=6 backfill=3 span=422.5 over_window=51/0 first-day-new-jobset snapshot-diff-9/9
