@@ -176,3 +176,4 @@ ts_utc	task	phase	detail
 2026-09-27 09:06	aws	done	cron aec36a8c 09:04:10 day6 (Sun); 0 new + 0 backfill; CronList 6/6 ids unchanged; check: hf/reddit/tb 09-21..09-26 NO RUN -> 'AWS alive, rest dead' 27th; (a) newest 37.8h (Fri 19:19, weekend-explained); (b) [09-25 09:04,09-26 09:04] 6 slid/6 covered two keys vs 80 digests; both sources 09-26/09-27 = 0, no 3rd weekend exception yet; Fri day+2 = 10 unchanged; span 397.1 new max = predicted exactly (pure clock, 3rd positive); over-window 51/0 = 11th; URL anomalies 6/100; 09-28 Mon 09:04 likely LAST fire of this job set -> rebuild inside that run
 2026-09-28 09:04	aws	start	
 2026-09-28 09:13	aws	done	items=0 backfill=0 span=421.1 over_window=60/0 cron-rebuilt-6-jobs snapshot-saved
+2026-09-29 09:04	aws	start	

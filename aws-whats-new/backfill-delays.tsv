@@ -120,3 +120,6 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-26 09:04	2026-09-25 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-end-user-messaging-voice-calling-whatsapp
 2026-09-26 09:04	2026-09-25 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-messaging-ses-ai-skills-mcp-server/
 2026-09-26 09:04	2026-09-25 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/elastic-disaster-recovery-graviton/
+2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-documentdb-retryable-writes/
+2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-documentdb-8-0-2/
+2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-backup-air-gapped-vault-fsx-ontap/
