@@ -123,3 +123,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-documentdb-retryable-writes/
 2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-documentdb-8-0-2/
 2026-09-29 09:04	2026-09-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-backup-air-gapped-vault-fsx-ontap/
+2026-09-30 09:04	2026-09-28 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/09/sagemaker-iceberg-rest-iam-documentdb/
+2026-09-30 09:04	2026-09-29 01:03	8.0	32.0	https://aws.amazon.com/about-aws/whats-new/2026/09/route-53-dns-firewall-panw-dns-security-generally-available
+2026-09-30 09:04	2026-09-29 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-elasticache-serverless-public-endpoints/
+2026-09-30 09:04	2026-09-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/systems-manager-sharing-documents-ram/
+2026-09-30 09:04	2026-09-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-datasync-shared-vpcs/
+2026-09-30 09:04	2026-09-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/transfer-family-web-apps-download-multiple-files-folders

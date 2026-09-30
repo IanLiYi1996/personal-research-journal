@@ -361,7 +361,13 @@ WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
 # integrates with AWS End User Messaging" keeps AI/ML and the AWS Config shape keeps Management via
 # the position-aware pin. Exit condition: if 其他 fills up with these, build a real
 # "business applications" category instead of pinning further.
-NO_CATEGORY = ["amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq",
+# "AWS Service Availability Updates" (09-29 16:21) is a product-lifecycle notice (services
+# moving to maintenance / sunset / end of support), not a service: it has no category of
+# its own and filed under Compute only because the body lists "Amazon WorkSpaces Secure
+# Browser" (WorkSpaces is pinned to Compute). First occurrence, n=1; pinned to the fallback
+# by the same rule as Connect/IoT/SES (subject with no matching category -> 其他).
+NO_CATEGORY = ["service availability updates",
+               "amazon connect", "aws iot", "amazon ses", "aws transfer family", "amazon mq",
                "healthomics", "aws marketplace", "aws end user messaging",
                # "AWS Step Functions adds new AWS service integrations automatically,
                # starting with AWS Lambda MicroVMs" (09-17) went to Compute on the title
@@ -518,9 +524,17 @@ def impact(title: str, summary: str) -> str:
     # Console" (09-22) grade Low via REGIONAL_KWS["in the aws "]. Of the 9 historical titles
     # containing "in the AWS ", the other 8 are all Regions / GovCloud / Sovereign Cloud.
     # Measured 09-22 over the 100-item feed: exactly 1 flip (the target, Low -> Medium).
+    # "is now available in preview" is a release-stage context, not a region: it made
+    # "Amazon Bedrock Managed Agents, powered by OpenAI, is now available in preview"
+    # (09-29 21:10) grade Low via REGIONAL_KWS["now available in"] and drop out of Top
+    # Highlights — the most main-line-relevant item of that batch (durable sessions, MCP,
+    # per-agent IAM role, human approval before consequential actions). Fifth recorded
+    # impact failure, same family as #1/#2. Measured 09-30 over the 100-item feed: exactly
+    # 1 flip (the target, Low -> High), 0 collateral.
     regional = (any(kw in t_title for kw in REGIONAL_KWS)
                 and "now available in amazon " not in t_title
-                and "in the aws management console" not in t_title)
+                and "in the aws management console" not in t_title
+                and "now available in preview" not in t_title)
     # Region/partition rollouts are graded Low regardless of the service involved —
     # check this BEFORE the HIGH_HARD promotion, or every "Bedrock now in <region>"
     # and "region expansion of G7e on SageMaker" item claims a Top Highlight slot.
