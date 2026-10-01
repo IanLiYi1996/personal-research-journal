@@ -51,6 +51,12 @@ CATEGORIES = [
                 # the body name-drops "ec2" -- right category by accident (the
                 # Console-to-Code pattern). AWS files EVS under Compute. 09-22: 0 flips.
                 "amazon evs", "elastic vmware service",
+                # AWS Parallel Computing Service had no keyword (10-01, example #25): the
+                # three script-era items scattered across Networking (09-17, body
+                # name-drops VPC/subnet) and Storage (10-01, scaling logs land in S3 so
+                # the full-text count hands it to Storage 2 > Compute 1). AWS files PCS
+                # under Compute (HPC). 10-01: exactly 1 flip in the live feed, 0 collateral.
+                "parallel computing service", "aws pcs",
                 # Local Zone / new-AZ items name no service in the title, so they fell
                 # through to the full-text pass, where category order hands them to
                 # AI/ML the moment the body says "model"/"generative" (08-21: a Las

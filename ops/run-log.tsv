@@ -180,3 +180,5 @@ ts_utc	task	phase	detail
 2026-09-29 09:09	aws	done	items=6 backfill=3 span=422.5 over_window=51/0 first-day-new-jobset snapshot-diff-9/9
 2026-09-30 09:04	aws	start	
 2026-09-30 09:11	aws	done	10 new + 6 backfill; 6/6 fixed-24h lost (#22); span 350.1 hit n=16 (table ended at 14); over-window 35/0 two-key; impact failure #5 (now available in preview) + classifier #24 (Service Availability Updates) fixed, 1 flip each; CronList 6 ids same as 09-28, AWS-alive-others-dead #30
+2026-10-01 09:04	aws	start	
+2026-10-01 09:11	aws	done	14 new + 9 backfill; cron 354e9094 fired 09:04:10 (3rd); 9/9 fixed-24h-loss #23; span 326.5 hit; over-window 21/0; classifier #25 PCS->Compute
