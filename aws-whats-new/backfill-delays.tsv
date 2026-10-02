@@ -138,3 +138,16 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-01 09:04	2026-09-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-accounts-phone-number-verification/
 2026-10-01 09:04	2026-09-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-transfer-family-sftp-connector-quota-1000/
 2026-10-01 09:04	2026-09-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/09/iam-identity-center-apis-arns/
+2026-10-02 09:04	2026-09-30 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/09/redshift-secure-logging-permissions/
+2026-10-02 09:04	2026-09-30 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/09/kinesis-video-streams-vpc-privatelink/
+2026-10-02 09:04	2026-09-30 15:00	18.1	42.1	https://aws.amazon.com/about-aws/whats-new/2026/09/quick-hierarchy-filter
+2026-10-02 09:04	2026-09-30 15:00	18.1	42.1	https://aws.amazon.com/about-aws/whats-new/2026/09/live-data-in-apps
+2026-10-02 09:04	2026-09-30 16:13	16.9	40.9	https://aws.amazon.com/about-aws/whats-new/2026/09/aws-continuum-penetration/
+2026-10-02 09:04	2026-09-30 21:19	11.8	35.8	https://aws.amazon.com/about-aws/whats-new/2026/10/system-managed-iceberg-materialized-views
+2026-10-02 09:04	2026-10-01 04:00	5.1	29.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-tables-table-bucket-increase
+2026-10-02 09:04	2026-10-01 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-extends-multi-region-support-to-more-aws-regions
+2026-10-02 09:04	2026-10-01 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-secrets-manager-security-posture-recommendations
+2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-glue-iceberg-v3-optimization/
+2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-budgets/
+2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/emr-serverless-terabyte-scale-shuffle/
+2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/

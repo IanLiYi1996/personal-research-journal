@@ -202,9 +202,24 @@ CATEGORIES = [
                    # AWS itself files Managed Workflows for Apache Airflow under
                    # Analytics. Measured before changing: 2 flips in 100 feed items,
                    # both the intended items, no collateral.
-                   "mwaa", "managed workflows", "airflow"]),
+                   "mwaa", "managed workflows", "airflow",
+                   # "Apache Iceberg materialized views now support system-managed write
+                   # protection" (10-01 21:19) had no title keyword and fell to the full-text
+                   # pass, where the description's two "Amazon S3" mentions beat Glue (the
+                   # service that actually owns the write path). Iceberg-as-subject items are
+                   # Glue/Athena/data-lake announcements; S3 Tables titles still win on their
+                   # own earlier "s3 tables" hit (guarded). Measured 10-02 over the 100-item
+                   # feed: exactly 1 flip (the target), 0 collateral. Classifier example #26.
+                   "apache iceberg"]),
     ("Management", ["cloudformation", "systems manager", "organizations", "config",
                     "cloudtrail", "cloudwatch", "trusted advisor", "service catalog",
+                    # "AWS Well-Architected Agent is now available in preview" (10-01 20:00)
+                    # had no title keyword and only landed here because its body name-drops
+                    # Trusted Advisor / CloudFormation — correct by luck, like EVS (09-22).
+                    # AWS files the Well-Architected Tool under Management & Governance.
+                    # Measured 10-02: 0 flips in the 100-item feed (pins what was already
+                    # drifting to the right place), guards for Bedrock/Config subjects hold.
+                    "well-architected",
                     "license manager", "compute optimizer",
                     # "support " was meant to catch AWS Support, but _kw_matches strips
                     # the keyword to \bsupport\b — which matches the *ordinary English
@@ -491,7 +506,17 @@ HIGH_KWS = ["generally available", "now available", "ga release", "ga in", "anno
             "now offer ", "can now ",
             "preview"]
 HIGH_HARD = ["fable", "claude opus", "claude sonnet", "claude haiku",
-             "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore"]
+             "gpt-5", "gpt-6", "bedrock", "sagemaker", "agentcore",
+             # Sixth recorded impact failure, and a new mechanism: #1/#2/#5 were REGIONAL_KWS
+             # false positives and #3/#4 missing/inflected verbs; this one is the flagship
+             # list not knowing a brand-new flagship. "AWS Well-Architected Agent is now
+             # available in preview" (10-01 20:00) — a first-party AI agent service billed as
+             # the successor to Trusted Advisor and the Well-Architected Tool — graded Medium
+             # and the 10-02 digest shipped with zero Top Highlights. Name-pinning is the
+             # narrow fix; a generic "announces the preview of" promotion was not measured.
+             # Measured 10-02 over the 100-item feed: exactly 1 flip (the target, Medium ->
+             # High), 0 collateral.
+             "well-architected agent"]
 
 
 # "X now <verb>s Y" is AWS's standard headline for a new capability. Spelling out

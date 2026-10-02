@@ -182,3 +182,5 @@ ts_utc	task	phase	detail
 2026-09-30 09:11	aws	done	10 new + 6 backfill; 6/6 fixed-24h lost (#22); span 350.1 hit n=16 (table ended at 14); over-window 35/0 two-key; impact failure #5 (now available in preview) + classifier #24 (Service Availability Updates) fixed, 1 flip each; CronList 6 ids same as 09-28, AWS-alive-others-dead #30
 2026-10-01 09:04	aws	start	
 2026-10-01 09:11	aws	done	14 new + 9 backfill; cron 354e9094 fired 09:04:10 (3rd); 9/9 fixed-24h-loss #23; span 326.5 hit; over-window 21/0; classifier #25 PCS->Compute
+2026-10-02 09:04	aws	start	cron 09:04 run, 10-02 Fri
+2026-10-02 09:11	aws	done	cron 354e9094 09:04:10 day4; 10 new + 13 backfill (#24 largest, 13/13 fixed-24h-lost); span 230.9 NEW MIN hit n=23 extrapolation (6th value hit); over-window 4/0 two-key = 16th but only 14.9h above 216 -> Sat likely blind; snapshot diff removed 23 = oldest 23; (b) 25/25 11 via backfill; Thu 8/14 vs 7/14; impact failure #6 (HIGH_HARD lacks new flagship, WA Agent) + classifier #26 (Iceberg MV->Analytics), 1 flip each; CronList 6 ids same as 09-28; AWS-alive-others-dead #32
