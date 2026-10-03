@@ -151,3 +151,6 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-budgets/
 2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/emr-serverless-terabyte-scale-shuffle/
 2026-10-02 09:04	2026-10-01 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-dns-analytics-insights/
+2026-10-03 09:04	2026-10-02 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-valkey-opentelemetry-metrics-detailed-monitoring
+2026-10-03 09:04	2026-10-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-mcp-server-six-additional-regions/
+2026-10-03 09:04	2026-10-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/
