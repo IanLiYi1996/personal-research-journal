@@ -154,3 +154,7 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-03 09:04	2026-10-02 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-valkey-opentelemetry-metrics-detailed-monitoring
 2026-10-03 09:04	2026-10-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-mcp-server-six-additional-regions/
 2026-10-03 09:04	2026-10-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-private-tls-vpc/
+2026-10-06 09:03	2026-10-01 08:00	97.1	121.1	https://aws.amazon.com/about-aws/whats-new/2026/10/eks-auto-mode-advanced-compute-config/
+2026-10-06 09:03	2026-10-01 17:43	87.3	111.3	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-q-developer-enhanced-visualizations-aws-management-console
+2026-10-06 09:03	2026-10-05 08:10	0.9	24.9	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-nova-2.5-sonic/
+2026-10-06 09:03	2026-10-05 09:00	0.1	24.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-private-ca-certificate-issuance-logs/
