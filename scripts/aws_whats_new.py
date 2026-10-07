@@ -120,7 +120,13 @@ CATEGORIES = [
                     ]),
     ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
-                  "security hub", "detective", "audit manager", "artifact ", "control tower",
+                  "security hub", "detective", "audit manager", "artifact ",
+                  # "control tower" lived here until 2026-10-07; moved to Management (AWS
+                  # files Control Tower under Management & Governance). First real item:
+                  # "AWS Control Tower AFT now supports plan-only customization runs"
+                  # (10-05 19:31) filed Security. Measured 10-07 over the 100-item feed:
+                  # exactly 1 flip (the target), 0 collateral; "AWS Security Hub now
+                  # integrates with AWS Control Tower" still files Security (title position).
                   "firewall", "certificate manager", "acm ",
                   # 2026-09-25: "AWS Network Security Manager is now generally available in
                   # US East (N. Virginia)" — a brand-new service with no keyword; the title
@@ -220,6 +226,8 @@ CATEGORIES = [
                     # Measured 10-02: 0 flips in the 100-item feed (pins what was already
                     # drifting to the right place), guards for Bedrock/Config subjects hold.
                     "well-architected",
+                    # Moved from Security 2026-10-07 (classifier example #27, see Security).
+                    "control tower",
                     "license manager", "compute optimizer",
                     # "support " was meant to catch AWS Support, but _kw_matches strips
                     # the keyword to \bsupport\b — which matches the *ordinary English
@@ -304,12 +312,20 @@ def _kw_pos(t: str, kw: str) -> int | None:
 # order below was written to fix (there the body hijacked a weak-subject title; here the
 # title's own object does). It predates 媒体服务 — the same title went to Networking
 # under the old table — so that change altered which wrong category, not whether.
-# Not fixed because it needs a title with a weak subject AND a strong object, which has
-# not occurred in 55 days: the only real instance, "AWS Config now supports 15 new
-# resource types" (08-04), names no strong service and filed correctly. Acting on a
-# title I invented is the speculation refused for "health " on 08-15. Fix when a real
-# one appears; the fix is to let a weak title keyword win over a strong title keyword
-# that appears later, not to reorder the passes.
+# Left alone until 2026-10-07 because it needed a title with a weak subject AND a strong
+# object, which had not occurred in 55 days: the only real instance, "AWS Config now
+# supports 15 new resource types" (08-04), names no strong service and filed correctly.
+# Acting on a title I invented is the speculation refused for "health " on 08-15.
+# FIXED 2026-10-07 when the real one appeared: "AWS Batch now publishes job metrics to
+# Amazon CloudWatch" (10-06 17:30) -- weak subject "batch" at position 4 lost to strong
+# object "cloudwatch" at 46 and filed under Management. The three earlier Batch items
+# (08-25 / 09-17 / 10-05) landed in Compute only because their objects (ECS, EKS) happened
+# to be Compute too. Fix is exactly the one predicted here: the TITLE pass now runs a
+# single round over strong+weak keywords by position, so the earliest title keyword wins
+# regardless of strength; the full-text pass keeps its strong-then-weak order (a body is
+# where weak words like "batch"/"model" hijack). Measured over the 100-item feed AND all
+# 725 historical digest titles: exactly 1 flip each, both the target, 0 collateral.
+# Classifier example #27.
 WEAK_KWS = {"vpc", "batch", "support ", " cli", "sdk", "compute ", "config",
             "health ", "model", " q ", "firewall", "artifact ",
             "auto scaling", "generative", "preview"}
@@ -442,8 +458,11 @@ def classify(title: str, summary: str) -> str:
     # ("AWS Config now supports 15 new resource types") loses to a strong service name
     # merely name-dropped in the body ("...across Bedrock, OpenSearch, SageMaker") and
     # a Config item lands in AI/ML.
-    for text in (t_title, t_full):
-        for strong_only in (True, False):
+    # Title: ONE round over strong+weak by position (see the WEAK_KWS note: a weak subject
+    # like "AWS Batch" must beat a strong object like "CloudWatch" that comes later in the
+    # same title). Full text: strong first, then weak, as before.
+    for text, rounds in ((t_title, (False,)), (t_full, (True, False))):
+        for strong_only in rounds:
             # In the TITLE passes the earliest-matching keyword wins rather than the
             # first category in CATEGORIES order: AWS titles lead with their subject
             # ("Amazon MSK Express brokers now delivers ... to Amazon S3" is an MSK
