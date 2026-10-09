@@ -260,7 +260,19 @@ CATEGORIES = [
                     # commercial agreements"). `model` is a common-word keyword like
                     # `health `/`ai/ml`/` cli`/`agentic`: 15/100 hits, 1/100 unique hit,
                     # and the unique one was wrong. Pin the subject; keyword left alone.
-                    "billing conductor"]),
+                    "billing conductor",
+                    # 10-09 (classifier example #28): "AWS Cost Explorer, Budgets, and Dashboards
+                    # now support Amazon Bedrock product attributes" went to AI/ML because the
+                    # subject had no keyword and the strong object `bedrock` won the title pass
+                    # (same shape as Transform/FSx, MCP Server/Lambda, Private CA/EKS). 08-14
+                    # rejected a wide `billing`/`cost explorer` set because `billing` dragged a
+                    # Connect dashboard in; `cost explorer` alone was never the culprit. Measured
+                    # 10-09 over the 100-item feed: exactly 1 flip (the target), and over 736
+                    # historical titles 2 flips (the target + "AWS Budgets now supports email
+                    # verification..." 其他 -> Management, i.e. out of the fallback into the right
+                    # class). Guards: "Amazon Bedrock now integrates with AWS Cost Explorer" stays
+                    # AI/ML, "AWS Config now supports AWS Cost Explorer resource types" Management.
+                    "cost explorer", "aws budgets"]),
     # Added 09-02. The two prior pins for this family each said, at the time, that a
     # Media category was the right home but too thin to justify (Deadline Cloud at
     # n=1 on 08-22 -> Compute; Elemental/Media* at n=2 on 08-21 -> Networking), and
