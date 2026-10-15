@@ -177,3 +177,13 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-14 09:03	2026-10-13 07:30	1.6	25.6	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-rds-supports-latest-cu-microsoft-sql-server/
 2026-10-14 09:03	2026-10-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/datasync-enhanced-openzfs-nfs42-metadata/
 2026-10-14 09:03	2026-10-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/route-53-premium-domains/
+2026-10-15 09:03	2026-10-09 08:00	121.1	145.1	https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-c8gd-m8gd-additional-regions/
+2026-10-15 09:03	2026-10-09 21:00	108.1	132.1	https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-m8id-asia-pacific-malaysia-sydney/
+2026-10-15 09:03	2026-10-09 21:00	108.1	132.1	https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-c9g-m9g-instances-additional-regions/
+2026-10-15 09:03	2026-10-13 22:00	11.1	35.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-durable-gen-limit-increase/
+2026-10-15 09:03	2026-10-14 04:00	5.1	29.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-s3-vercel-marketplace-v0
+2026-10-15 09:03	2026-10-14 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/rds-proxy-supports-sqlserver-2022
+2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-fsx-asia-pacific-new-zealand/
+2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/
+2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-svg-ico-favicons/
+2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-secrets-host-keys/

@@ -110,6 +110,10 @@ CATEGORIES = [
                     # its own entry for the same reason — AWS headlines the joint
                     # ALB+NLB announcements as "Load Balancers".
                     "load balancer", "load balancers", "load balancing",
+                    # ARC (Application Recovery Controller, ex-Route 53 ARC) had no
+                    # keyword, so each Region-switch post drifted to whatever it
+                    # orchestrates: RDS → Database (08-21), Lambda → Compute (10-15).
+                    "arc region switch", "application recovery controller",
                     "direct connect",
                     "global accelerator", "transit gateway",
                     "private link", "privatelink", "app mesh", "cloud map",
