@@ -187,3 +187,12 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/blockchain-snapshots-node-bootstrapping/
 2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-svg-ico-favicons/
 2026-10-15 09:03	2026-10-14 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/transfer-family-secrets-host-keys/
+# 2026-10-16 审计：下行 INVALID —— 10-14 已以旧 slug `...-latest-cu-microsoft-sql-server/`（标题 "CU"）报过，发布后标题与 slug 同时被改、pubDate 不变，(标题,pubDate) 键与 _canon_link 都接不住
+# INVALID	2026-10-16 09:03	2026-10-13 07:30	49.6	73.6	https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-rds-supports-latest-cumulative-update-microsoft-sql-server/
+2026-10-16 09:03	2026-10-14 18:00	15.1	39.1	https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-recursive-loops-eventbridge-custom
+2026-10-16 09:03	2026-10-14 21:55	11.2	35.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-healthomics-expanded-container-registry-support/
+2026-10-16 09:03	2026-10-15 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-devops-agent-test-results-aws-resilience-hub/
+2026-10-16 09:03	2026-10-15 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/security-hub-cspm-cri-profile-v22/
+2026-10-16 09:03	2026-10-15 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/ams-prometheus-collector-apac-nz/
+2026-10-16 09:03	2026-10-15 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-mwaa-ai-agent-skills/
+2026-10-16 09:03	2026-10-15 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/oracle-database-aws-aggregate-routes-odb/

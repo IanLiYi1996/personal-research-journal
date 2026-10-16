@@ -210,3 +210,5 @@ ts_utc	task	phase	detail
 2026-10-14 09:05	aws	done	10 items (7+3B), 1 high, span 329.1
 2026-10-15 09:03	aws	start	
 2026-10-15 09:06	aws	done	15 items (5+10B), 1 high, span 338.1
+2026-10-16 09:03	aws	start	manual/cron 10-16
+2026-10-16 09:04	aws	done	14+8B(1 INVALID), 3 High(1 dup), span 337.1, over-window 21/0
