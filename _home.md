@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-10-12-strands-decider-and-box-agent-building" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-10-17-rsi-readable" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/agent/2026-08-10-trading-agent-eval-methods" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
-| 2026-10-12 | Note | [Strands Decider 与 Strands Box：如何帮助客户构建 Agent](/research-notes/2026-10-12-strands-decider-and-box-agent-building) |
-| 2026-09-15 | Note | [HF Daily Papers — 09/15 当日第二跑（2026-09-15 07:4x UTC）](/research-notes/2026-09-15-hf-daily-papers-sep15b) |
-| 2026-09-15 | Note | [HF Daily Papers — 09/15 当日第三跑（2026-09-15 18:15 UTC）](/research-notes/2026-09-15-hf-daily-papers-sep15d) |
-| 2026-09-15 | Note | [HF Daily Papers — 09/10 回填 + 09/11 ~ 09/15（2026-09-15 07:2x UTC）](/research-notes/2026-09-15-hf-daily-papers-sep10-sep15) |
-| 2026-09-10 | Note | [HF Daily Papers 摘要：2026-09-08 回填 + 09-09 ~ 09-10](/research-notes/2026-09-10-hf-daily-papers-sep08-sep10) |
+| 2026-10-17 | Note | [RSI：AI 能不能学会改进自己？](/research-notes/2026-10-17-rsi-readable) |
+| 2026-10-17 | Note | [RSI（递归自我改进）研究领域深度调研](/research-notes/2026-10-17-rsi-deep-research) |
+| 2026-10-17 | Note | [RSI 深度研究：重要研究、行业进展与技术机制](/research-notes/2026-10-17-rsi-detailed) |
+| 2026-10-17 | Note | [OpenMOSS 深度调研：项目、论文与技术路线](/research-notes/2026-10-17-openmoss-deep-research) |
+| 2026-10-13 | Note | [Strands Decider 与 Box：原理与实测](/research-notes/2026-10-13-decision-models-and-agent-governance-deep-research) |
 <!-- AUTO:RECENT:END -->

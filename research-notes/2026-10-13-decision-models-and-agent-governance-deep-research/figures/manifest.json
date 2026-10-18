@@ -1,0 +1,27 @@
+[
+  {
+    "name": "01-responsibility",
+    "width": 1120,
+    "height": 648
+  },
+  {
+    "name": "02-evolution",
+    "width": 1120,
+    "height": 756
+  },
+  {
+    "name": "03-readout",
+    "width": 1120,
+    "height": 878
+  },
+  {
+    "name": "04-landscape",
+    "width": 1120,
+    "height": 760
+  },
+  {
+    "name": "05-box-boundary",
+    "width": 1120,
+    "height": 854
+  }
+]

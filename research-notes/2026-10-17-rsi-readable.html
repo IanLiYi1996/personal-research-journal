@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一份连贯的中文 RSI 研究阅读版：重要研究、行业进展、技术机制、证据边界与研究方案。">
+  <meta name="color-scheme" content="light">
+  <title>RSI：AI 能不能学会改进自己？ · 阅读版</title>
+  <style>
+    :root { --paper:#faf8f3; --ink:#292d2a; --muted:#69706a; --line:#dddcd4; --accent:#315d4b; --reading-size:19px; --sans:Inter,"Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif; --serif:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:105px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+    button, summary { font:inherit; }
+    a { color:var(--accent); text-underline-offset:4px; text-decoration-thickness:1px; }
+    a:hover { color:#183f30; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:3px; }
+    .skip { position:fixed; top:-70px; left:20px; z-index:10; background:var(--paper); padding:12px 18px; }
+    .skip:focus { top:12px; }
+    .progress { position:fixed; top:0; left:0; width:0; height:3px; background:var(--accent); z-index:5; }
+    .topbar { position:sticky; top:0; z-index:4; background:var(--paper); border-bottom:1px solid var(--line); }
+    .top-inner { max-width:1100px; padding:16px 32px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .edition { display:flex; align-items:center; gap:16px; font-size:13px; color:var(--muted); }
+    .edition strong { color:var(--ink); font-weight:650; letter-spacing:.05em; }
+    .edition .divider { height:13px; width:1px; background:var(--line); }
+    .actions { display:flex; align-items:center; gap:7px; }
+    .actions-label { font-size:12px; color:var(--muted); margin-right:3px; }
+    button { min-height:36px; min-width:36px; padding:7px 10px; color:var(--ink); border:1px solid var(--line); background:transparent; border-radius:4px; cursor:pointer; font-size:13px; }
+    button:hover { background:#eceee6; }
+    button:disabled { opacity:.4; cursor:default; }
+    .print-button { margin-left:8px; padding-inline:13px; }
+    .layout { max-width:1100px; margin:0 auto; padding:66px 32px 100px; display:grid; grid-template-columns:185px minmax(0,1fr); gap:64px; align-items:start; }
+    .sidebar { position:sticky; top:114px; }
+    .sidebar-title { margin:0 0 12px; font-size:30px; font-weight:650; letter-spacing:-1px; }
+    .sidebar-subtitle { margin:0 0 37px; font-size:12px; color:var(--muted); line-height:1.8; }
+    .toc-label { font-size:11px; color:var(--muted); letter-spacing:.12em; margin:0 0 15px; }
+    .toc { display:flex; flex-direction:column; gap:4px; }
+    .sidebar .toc { max-height:calc(100dvh - 430px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#c7ccc3 transparent; }
+    .toc a { display:flex; gap:10px; padding:9px 0 9px 10px; border-left:2px solid transparent; text-decoration:none; font-size:12px; line-height:1.65; color:var(--muted); }
+    .toc a span { font-size:10px; color:#879188; padding-top:2px; flex:0 0 17px; }
+    .toc a[aria-current="location"] { color:var(--accent); border-left-color:var(--accent); background:#eaf0e7; }
+    .sidebar-footer { font-size:11px; line-height:1.85; color:var(--muted); border-top:1px solid var(--line); margin-top:30px; padding-top:18px; }
+    main { min-width:0; max-width:720px; }
+    .kicker { font-size:12px; color:var(--accent); letter-spacing:.08em; margin:0 0 20px; }
+    h1 { font-family:var(--serif); font-size:44px; font-weight:700; line-height:1.4; letter-spacing:-.025em; margin:0 0 24px; text-wrap:balance; }
+    .title-part { display:inline-block; }
+    .deck { font-size:16px; line-height:1.9; color:var(--muted); margin:0 0 24px; max-width:40em; }
+    .byline { display:flex; flex-wrap:wrap; gap:8px 20px; padding:0 0 30px; margin-bottom:34px; border-bottom:1px solid var(--line); color:var(--muted); font-size:12px; line-height:1.8; }
+    .mobile-nav { display:none; }
+    article { font-family:var(--serif); font-size:var(--reading-size); line-height:1.95; overflow-wrap:break-word; }
+    article p { margin:0 0 23px; }
+    article .opening { color:#363d36; }
+    article h2 { display:block; font-family:var(--sans); font-size:25px; font-weight:650; line-height:1.5; margin:61px 0 27px; padding-top:24px; border-top:1px solid var(--line); letter-spacing:-.025em; }
+    article h2:focus { outline:none; }
+    .section-number { display:block; font-family:var(--sans); font-size:11px; font-weight:500; color:var(--accent); margin-bottom:9px; letter-spacing:.08em; }
+    article h3 { font-family:var(--sans); font-size:20px; line-height:1.6; font-weight:650; margin:35px 0 17px; }
+    article li { margin-bottom:10px; }
+    article code { font-family:var(--sans); font-size:.9em; }
+    .table-scroll { max-width:100%; overflow-x:auto; margin:26px 0 34px; border:1px solid var(--line); border-radius:4px; overscroll-behavior-x:contain; }
+    table { width:100%; min-width:680px; border-collapse:collapse; font-family:var(--sans); font-size:calc(var(--reading-size) * .76); line-height:1.8; }
+    caption { text-align:left; padding:11px 14px; color:var(--muted); font-size:11px; border-bottom:1px solid var(--line); }
+    th, td { text-align:left; vertical-align:top; padding:12px 14px; border-bottom:1px solid var(--line); }
+    th { color:var(--accent); font-weight:650; background:#edf1e9; }
+    tbody tr:last-child td { border-bottom:0; }
+    td:first-child { width:19%; }
+    td:nth-child(2) { width:27%; }
+    .citation { font-family:var(--sans); font-size:10px; font-weight:600; line-height:0; margin-left:4px; }
+    .citation a { text-decoration:none; padding:5px 2px; }
+    .references { font-family:var(--sans); margin-top:46px; padding:21px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .references summary { cursor:pointer; font-size:15px; font-weight:650; color:var(--accent); }
+    .references-description { font-size:12px; line-height:1.8; color:var(--muted); margin:18px 0; }
+    .references ol { padding-left:23px; font-size:13px; line-height:1.85; }
+    .references li { padding-left:5px; margin-bottom:16px; overflow-wrap:anywhere; scroll-margin-top:110px; }
+    .references li:target { background:#edf1e7; outline:8px solid #edf1e7; }
+    .backlink { text-decoration:none; padding:3px; }
+    .page-footer { font-family:var(--sans); margin-top:28px; font-size:11px; color:var(--muted); line-height:1.9; }
+    @media (max-width:1000px) {
+      .layout { display:block; max-width:780px; padding-top:43px; }
+      .sidebar { display:none; }
+      main { max-width:none; }
+      .top-inner { max-width:780px; }
+      .mobile-nav { display:block; margin:0 0 30px; padding:13px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-size:13px; }
+      .mobile-nav summary { cursor:pointer; color:var(--accent); }
+      .mobile-nav .toc { margin-top:12px; }
+      .mobile-nav .toc a { font-size:13px; }
+    }
+    @media (max-width:560px) {
+      :root { --reading-size:18px; }
+      html { scroll-padding-top:91px; }
+      .top-inner { padding:12px 20px; gap:10px; }
+      .edition { gap:8px; font-size:11px; }
+      .edition .divider, .edition .language, .actions-label { display:none; }
+      .actions { gap:5px; }
+      button { min-width:40px; min-height:40px; padding:7px; }
+      .print-button { margin-left:3px; padding-inline:10px; }
+      .layout { padding:35px 23px 65px; }
+      h1 { font-size:34px; line-height:1.45; margin-bottom:20px; }
+      .kicker { font-size:11px; margin-bottom:15px; }
+      .deck { font-size:14px; line-height:1.9; }
+      .byline { gap:5px 16px; font-size:11px; padding-bottom:23px; margin-bottom:24px; }
+      article { line-height:1.95; }
+      article p { margin-bottom:21px; }
+      article h2 { font-size:22px; margin-top:46px; }
+      article h3 { font-size:19px; }
+      .references ol { font-size:12px; }
+    }
+    @media print {
+      @page { size:A4; margin:22mm 22mm 23mm; }
+      :root { --reading-size:11pt; --paper:#fff; --ink:#111; --muted:#555; }
+      body { background:white; }
+      .skip, .progress, .topbar, .sidebar, .mobile-nav { display:none !important; }
+      .layout { display:block; max-width:none; padding:0; }
+      main { max-width:none; }
+      h1 { font-size:27pt; line-height:1.35; }
+      .kicker { font-size:9pt; }
+      .deck { font-size:11pt; }
+      .byline { font-size:8pt; margin-bottom:20pt; padding-bottom:14pt; }
+      article { line-height:1.8; }
+      article p { margin-bottom:11pt; orphans:3; widows:3; }
+      article h2 { font-size:16pt; margin-top:25pt; padding-top:13pt; break-after:avoid; }
+      article h3 { font-size:12pt; margin-top:18pt; break-after:avoid; }
+      .section-number { font-size:8pt; }
+      a { color:inherit; }
+      .references { font-size:9pt; break-before:page; }
+      .references summary { font-size:12pt; list-style:none; }
+      .references li { font-size:8.5pt; break-inside:avoid; }
+      .references-description, .page-footer { font-size:8pt; }
+      .citation { font-size:7pt; }
+      .backlinks { display:none; }
+      .table-scroll { overflow:visible; break-inside:avoid; }
+      table { min-width:0; font-size:8pt; line-height:1.6; }
+      th, td { padding:6pt; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#article">跳到正文</a>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="edition"><strong>研究阅读</strong><span class="divider"></span><span class="language">简体中文 · 阅读版</span></div>
+      <div class="actions" role="group" aria-label="阅读设置">
+        <span class="actions-label">字号</span>
+        <button type="button" id="font-smaller" aria-label="缩小正文字号">A−</button>
+        <button type="button" id="font-larger" aria-label="放大正文字号">A+</button>
+        <button type="button" class="print-button" id="print">打印</button>
+      </div>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="文章目录">
+      <p class="sidebar-title">RSI</p>
+      <p class="sidebar-subtitle">Recursive Self-Improvement<br>递归自我改进</p>
+      <p class="toc-label">阅读目录 · 8 章</p>
+      <nav class="toc"><a href="#section-1" data-toc="section-1"><span aria-hidden="true">01</span>先把“递归”讲清楚</a>
+<a href="#section-2" data-toc="section-2"><span aria-hidden="true">02</span>为什么这个问题一直被讨论</a>
+<a href="#section-3" data-toc="section-3"><span aria-hidden="true">03</span>现实系统是怎样改自己的</a>
+<a href="#section-4" data-toc="section-4"><span aria-hidden="true">04</span>2026 年：开始直接检验“更会改进”</a>
+<a href="#section-5" data-toc="section-5"><span aria-hidden="true">05</span>那些上涨的曲线，究竟说明了什么</a>
+<a href="#section-6" data-toc="section-6"><span aria-hidden="true">06</span>如果要做研究，我会选什么</a>
+<a href="#section-7" data-toc="section-7"><span aria-hidden="true">07</span>怎样继续读这个领域</a>
+<a href="#section-8" data-toc="section-8"><span aria-hidden="true">08</span>资料说明</a><a href="#references"><span aria-hidden="true">↗</span>论文与资料</a></nav>
+      <div class="sidebar-footer">资料核对：2026.10.17<br>原始研究报告另行保留<br>本页无外部加载依赖</div>
+    </aside>
+    <main>
+      <header class="article-header">
+        <p class="kicker">人工智能 · 研究领域阅读</p>
+        <h1>RSI：AI 能不能学会改进自己？</h1>
+        <p class="deck">先弄清系统改进了什么，再看实验能支持怎样的结论。<br>这份中文阅读版串起研究脉络、代表工作与尚未解决的问题。</p>
+        <div class="byline"><span>资料核对于 2026 年 10 月 17 日</span><span>约 14 分钟阅读</span><span>原文改编 · 未独立复现实验</span></div>
+      </header>
+      <details class="mobile-nav">
+        <summary>阅读目录</summary>
+        <nav class="toc" aria-label="文章章节"><a href="#section-1" data-toc="section-1"><span aria-hidden="true">01</span>先把“递归”讲清楚</a>
+<a href="#section-2" data-toc="section-2"><span aria-hidden="true">02</span>为什么这个问题一直被讨论</a>
+<a href="#section-3" data-toc="section-3"><span aria-hidden="true">03</span>现实系统是怎样改自己的</a>
+<a href="#section-4" data-toc="section-4"><span aria-hidden="true">04</span>2026 年：开始直接检验“更会改进”</a>
+<a href="#section-5" data-toc="section-5"><span aria-hidden="true">05</span>那些上涨的曲线，究竟说明了什么</a>
+<a href="#section-6" data-toc="section-6"><span aria-hidden="true">06</span>如果要做研究，我会选什么</a>
+<a href="#section-7" data-toc="section-7"><span aria-hidden="true">07</span>怎样继续读这个领域</a>
+<a href="#section-8" data-toc="section-8"><span aria-hidden="true">08</span>资料说明</a><a href="#references"><span aria-hidden="true">↗</span>论文与资料</a></nav>
+      </details>
+      <article id="article">
+        <p class="opening">讨论 AI 的递归自我改进，最容易跳到一个很远的问题：它会不会越来越聪明，最后进入“智能爆炸”？但读过具体实验之后，会发现研究者眼前的问题要小得多，也更容易检验。</p>
+<p>一个 AI 改写了自己的工具，下一次任务做得更好了。这个结果有价值。不过，如果想知道递归自我改进是否成立，还得接着问：新版本有没有更好的办法发现问题、提出修改、判断修改是否有效？换一批任务，它还能继续这样改进吗？</p>
+<p>这份阅读版围绕这些问题展开。我的判断是，局部自改进已经有可研究的实验系统。2026 年的一些工作也开始直接测量“改进能力”。持续自加速则仍缺少足够的证据，不能把它当作这些论文已经证明的结论。<sup class="citation" id="ref-1-1"><a href="#note-1" role="doc-noteref" aria-label="查看参考资料 1" title="主要依据：Hyperagents，2026；Recursive self-improvement of AI research agents（AIDE²），2026。本段是对两项研究证据的综合判断。">1</a></sup></p>
+<section aria-labelledby="section-1"><h2 id="section-1" tabindex="-1"><span class="section-number" aria-hidden="true">01</span>先把“递归”讲清楚</h2>
+<p>RSI 是 Recursive Self-Improvement 的缩写，通常译作“递归自我改进”。这里的递归，指的是系统修改自身之后，新版本又参与下一轮改进。</p>
+<p>可以用一个写程序的 AI 来理解。它第一次修复代码失败，读了报错信息后重新作答，这叫利用反馈改进答案。如果它发现自己的文件搜索工具不好用，于是改写工具，并在以后的任务中保留这个修改，改进的对象就成了系统。如果它又学会了更好的错误诊断和修改方法，下一次能用更少尝试找到有效改动，就开始触及更强的递归改进问题。</p>
+<p>这几种情况经常出现在同一套实验里，却不能用同一个分数概括。</p>
+<p>Self-Refine 和 Reflexion 让反馈、反思和记忆帮助后续尝试，是理解这个领域很好的入口。但它们的收益，不能自动当成“产生改进的方法也变强了”的证据。<sup class="citation" id="ref-2-1"><a href="#note-2" role="doc-noteref" aria-label="查看参考资料 2" title="Madaan 等，Self-Refine，2023；Shinn 等，Reflexion，2023。">2</a></sup></p>
+<p>“改自己”也不一定意味着修改神经网络参数。AI 智能体通常由基础模型、工具、记忆和控制程序组成。论文里的 agent 是这套执行任务的软件系统；harness 指围绕模型安排上下文、工具调用和执行流程的程序。修改这些程序，可能在模型参数不变时提高表现。读论文时，先确认改动发生在哪一层，会省下很多争论。</p>
+<p>本篇把“任务做得更好”和“更善于产生下一次改进”分开讨论。这是一个阅读和实验分析方法，不是学界已经统一的 RSI 定义。</p>
+</section>
+<section aria-labelledby="section-2"><h2 id="section-2" tabindex="-1"><span class="section-number" aria-hidden="true">02</span>为什么这个问题一直被讨论</h2>
+<p>1965 年，I. J. Good 提出了一个条件性的设想：如果机器的智力活动全面超过人，其中也包括设计机器，那么它就可能设计出更好的后继机器。这解释了“智能爆炸”一词为什么会和 RSI 联系在一起。但原文是推测，没有给出实际增长曲线，也没有建造这样一台机器的方法。<sup class="citation" id="ref-3-1"><a href="#note-3" role="doc-noteref" aria-label="查看参考资料 3" title="I. J. Good，Speculations Concerning the First Ultraintelligent Machine，1965，原始重印节选。此前核验范围为第 31–33 页，不冒充完整章节。">3</a></sup></p>
+<p>Schmidhuber 后来提出 Gödel machine，把自修改写进一个形式化决策模型。系统需要在给定的公理、环境假设和效用函数下，找到足以支持修改的证明，才执行自修改。这套理论值得读，尤其是它如何把继续搜索的成本也纳入决策。它的困难同样明确：有用的修改未必可证明；即使可证明，系统也未必能在可用资源内找到证明。<sup class="citation" id="ref-4-1"><a href="#note-4" role="doc-noteref" aria-label="查看参考资料 4" title="Jürgen Schmidhuber，Goedel Machines，2003 首发、2006 修订。">4</a></sup></p>
+<p>现实中的大语言模型智能体大多走另一条路。它们通常先提出修改，再运行测试，看修改有没有用。数学证明被有限实验替代，工程上更容易做，证据要求也随之改变：测试有没有泄露？筛选候选用了多少资源？效果能否迁移到没见过的问题？</p>
+<p>这个领域还有一条容易被 LLM 热潮遮住的历史。早期 learned optimizer 研究让神经网络学习参数更新规则；2022 年的自指权重矩阵和自指元学习工作，则研究权重、记忆及学习机制怎样参与自身更新。它们提醒我们，RSI 的研究对象可以在神经网络内部，也可以在外部软件中。那些实验仍有固定架构和简化任务的限制，不能直接推到长期自主学习。<sup class="citation" id="ref-5-1"><a href="#note-5" role="doc-noteref" aria-label="查看参考资料 5" title="Andrychowicz 等，Learning to learn by gradient descent by gradient descent，2016；Irie 等，A Modern Self-Referential Weight Matrix，2022；Kirsch、Schmidhuber，Self-Referential Meta Learning，2022。">5</a></sup></p>
+</section>
+<section aria-labelledby="section-3"><h2 id="section-3" tabindex="-1"><span class="section-number" aria-hidden="true">03</span>现实系统是怎样改自己的</h2>
+<h3>改提示词，也改产生提示词的方法</h3>
+<p>Promptbreeder 很适合用来理解递归发生的位置。它同时进化两类提示词：一类用于解任务，另一类告诉模型怎样修改前一类提示词。这样，“产生变化的方法”也成了可修改对象。<sup class="citation" id="ref-6-1"><a href="#note-6" role="doc-noteref" aria-label="查看参考资料 6" title="Fernando 等，Promptbreeder，2023 首发 / ICML 2024。">6</a></sup></p>
+<p>STOP 把类似思路放到代码里。先有一个调用语言模型改进代码的程序，再让这个程序改进自己的实现，得到新的代码改进器。底层语言模型没有随之训练，变化发生在调用它的程序上。<sup class="citation" id="ref-7-1"><a href="#note-7" role="doc-noteref" aria-label="查看参考资料 7" title="Zelikman 等，Self-Taught Optimizer（STOP），2023 首发 / COLM 2024。">7</a></sup></p>
+<p>这两项工作的好处是对象清楚：你可以分别冻结解题策略、修改策略，检查收益到底来自哪里。它们并没有证明改进可以无限持续，但为研究改进方法本身提供了相对可控的起点。</p>
+<h3>改智能体的工具和执行流程</h3>
+<p>ADAS 把 agent 设计变成程序搜索：元智能体提出新设计，评测后放进档案，再继续探索。SICA 则让编码智能体修改自己的源码，包括工具、代码定位和上下文管理。<sup class="citation" id="ref-8-1"><a href="#note-8" role="doc-noteref" aria-label="查看参考资料 8" title="Hu 等，Automated Design of Agentic Systems（ADAS），2024；Robeyns 等，A Self-Improving Coding Agent（SICA），2025。">8</a></sup></p>
+<p>Darwin Gödel Machine，简称 DGM，是这条路线里值得细读的系统。它让编码 agent 提出自身修改，用实际任务检验效果，并把可运行版本保存在档案里。后续搜索可以从不同分支继续，不必每次都只沿着当前最高分版本走。<sup class="citation" id="ref-9-1"><a href="#note-9" role="doc-noteref" aria-label="查看参考资料 9" title="Zhang 等，Darwin Gödel Machine，2025 首发；本篇采用更新版 v3。">9</a></sup></p>
+<p>DGM 报告的 SWE-bench 成绩从 20% 上升到 50%。读这个数字要保留设置：本篇采用的更新版论文使用分阶段评测，较强候选扩展到 200 题，不是完整 500 题排行榜口径。基础模型权重和外层进化规则也没有一起改写。</p>
+<p>这项工作支持一个具体结论：编码智能体可以通过软件修改，在限定任务中找到有用的自身改进。它还报告迁移实验，帮助判断效果是不是只记住了演化过程中的任务。要进一步讨论持续递归增长，就必须测量新版本产生后续改进的能力，不能只延长已有的任务分数曲线。</p>
+<p>SICA 的 17% 到 53% 也来自 50 题子集。两个系统的数字可以帮助理解各自实验，不适合直接拿来给 RSI 系统排强弱。<sup class="citation" id="ref-8-2"><a href="#note-8" role="doc-noteref" aria-label="查看参考资料 8" title="Hu 等，Automated Design of Agentic Systems（ADAS），2024；Robeyns 等，A Self-Improving Coding Agent（SICA），2025。">8</a></sup></p>
+<h3>改学习材料和模型参数</h3>
+<p>SEAL 研究的是另一种闭环。模型先生成适合自己微调的材料或配置，完成参数更新后，再根据下游表现，学习怎样生成更有效的更新材料。<sup class="citation" id="ref-10-1"><a href="#note-10" role="doc-noteref" aria-label="查看参考资料 10" title="Zweiger 等，Self-Adapting Language Models（SEAL），2025；本篇采用 v2。">10</a></sup></p>
+<p>它把“学习新内容”和“学习怎样准备学习材料”连在一起。这里不只有软件流程变化，也涉及模型参数适应。</p>
+<p>实验仍需要逐项解读。更新版论文里，ARC 少样本部分用了 8 道筛选题，每题尝试 5 个自适应配置，共 40 次配置试验。72.5% 是这些配置带来适应成功的比例，不能读成完整 ARC 题库的通过率。论文还测量了遗忘：新知识学进来了，不代表旧能力都保留了。</p>
+<p>Absolute Zero Reasoner，简称 AZR，让系统自己生成代码相关推理题，再用执行器检查任务并提供奖励。它降低了对人工训练示例的依赖，但仍有预训练模型和执行环境作为基础。“零数据”不能理解为没有任何知识来源或外部正确性信号。<sup class="citation" id="ref-11-1"><a href="#note-11" role="doc-noteref" aria-label="查看参考资料 11" title="Zhao 等，Absolute Zero，2025。">11</a></sup></p>
+<p>这条路线值得追问的是，系统会不会越来越擅长生成自己容易得分的题，而不是越来越擅长解决新的难题。</p>
+<h3>改支撑 AI 研发的算法</h3>
+<p>AlphaEvolve 将模型生成程序、自动验证和进化搜索组合起来，优化算法和计算程序。Google DeepMind 报告过数据中心调度和模型训练内核的实际应用。<sup class="citation" id="ref-12-1"><a href="#note-12" role="doc-noteref" aria-label="查看参考资料 12" title="Novikov 等，AlphaEvolve 技术报告，2025；Google DeepMind，官方应用介绍，2025。">12</a></sup></p>
+<p>其中一个训练内核加速 23%，对应整个模型训练时间约降低 1%。这两个数必须一起读：局部程序的加速，不能当成端到端训练的同等加速。</p>
+<p>这一方向的工程意义很直接。它还提供一个可以继续研究的反馈问题：省下来的计算，是否真的用于下一轮研发？扣掉搜索和验证成本之后，研究效率有没有净增加？AI 优化了支撑 AI 的程序，是这个问题的起点，还不是完整闭环的证明。</p>
+</section>
+<section aria-labelledby="section-4"><h2 id="section-4" tabindex="-1"><span class="section-number" aria-hidden="true">04</span>2026 年：开始直接检验“更会改进”</h2>
+<h3>Hyperagents：给改进能力单独设计一个测试</h3>
+<p>Hyperagents 让执行任务的 task agent 和产生修改的 meta agent 同处于一个可编辑程序中。这样，系统不只改任务执行代码，也能改产生下一次修改的逻辑。<sup class="citation" id="ref-13-1"><a href="#note-13" role="doc-noteref" aria-label="查看参考资料 13" title="Zhang 等，Hyperagents，2026，原始 PDF。原调研记录了 HTML/PDF 日期呈现差异，关键实验以 PDF 为核验依据。">13</a></sup></p>
+<p>它的实验引入 improvement@k，可以把它理解成：给一个固定的改进器 k 次产生候选版本的机会，用验证集选出候选，再在独立测试集上测量它带来的增益。这个指标试图测量“更会改进”，而不只是测量某个最终版本多强。</p>
+<p>论文报告了把从论文评审、机器人奖励设计中形成的机制迁移到数学解答评分的正面结果。不过，初始数学评分系统有输出格式和解析问题，零分提升不能全部归因于数学能力增强。迁移还同时带入了 task agent 和 meta agent 的代码，后续可以进一步拆开这两部分的贡献。</p>
+<p>更长的继续演化实验里，迁移初始化与原始初始化的最终差异没有达到显著水平。所以，这项工作提供了更直接的跨域改进证据，却没有证明收益会一直复合增长。</p>
+<h3>AIDE²：把“是否点火”作为实验问题</h3>
+<p>AIDE² 的研究智能体会修改自己的研究流程代码，再由外层评测决定是否接受修改。一条报告的轨迹持续 8 天，有 100 个搜索树节点，接受了 7 次修改。这里的节点是候选程序版本，不是 100 台机器。<sup class="citation" id="ref-14-1"><a href="#note-14" role="doc-noteref" aria-label="查看参考资料 14" title="Srikanth 等，Recursive self-improvement of AI research agents（AIDE²），2026。">14</a></sup></p>
+<p>论文在未参与候选选择的研究基准上检查了迁移。但它更值得注意的一步，是把改进后的研究智能体拿来做外层改进器，测试它是不是更会推动下一轮自改进。作者把这个实验称为 ignition test。</p>
+<p>结果尚不确定。每组只有三次独立运行，噪声和成本限制了判断，不能据此宣布自加速已经“点火”。</p>
+<p>我更看重它提出的可检验问题。如果一个系统号称自己越来越会做研究，那么应该让新旧版本在相同条件下继续开展研究，比较它们产生有效改进的效率。</p>
+<h3>其他进展，可以放回各自的修改对象里理解</h3>
+<p>EvoX 和 Dream-RSI 主要修改搜索或探索策略。它们研究系统怎样选择下一次尝试、怎样从已有发现中安排计算，较接近改进方法的优化，但更上层生成器和评价规则仍有固定部分。<sup class="citation" id="ref-15-1"><a href="#note-15" role="doc-noteref" aria-label="查看参考资料 15" title="Liu 等，EvoX，2026；Zheng 等，Dream-RSI，2026。">15</a></sup></p>
+<p>GEA 和 MetaShare 侧重经验共享：不同演化分支不必各自忘掉失败，修改及其成败记录可以供其他分支使用。收益可能体现为更早找到好版本，但不能只数演化代数，还要算总调用和总计算。<sup class="citation" id="ref-16-1"><a href="#note-16" role="doc-noteref" aria-label="查看参考资料 16" title="Weng 等，Group-Evolving Agents（GEA），2026；Bhutani 等，MetaShare，2026。">16</a></sup></p>
+<p>Meta-Harness 优化固定模型周围的执行程序；AREX 主要递归细化研究答案、证据与上下文；VisionHOPE 研究图像处理过程中自引用的记忆更新。它们都可以放进更宽的自改进研究地图，但不必因此假定它们证明了同一种 RSI。<sup class="citation" id="ref-17-1"><a href="#note-17" role="doc-noteref" aria-label="查看参考资料 17" title="Lee 等，Meta-Harness，2026；Lu 等，AREX，2026；Peng 等，VisionHOPE，2026。">17</a></sup></p>
+</section>
+<section aria-labelledby="section-5"><h2 id="section-5" tabindex="-1"><span class="section-number" aria-hidden="true">05</span>那些上涨的曲线，究竟说明了什么</h2>
+<p>这一领域最难的部分之一，是给上涨的分数找到正确解释。</p>
+<p>首先要检查是不是用了更多资源。如果一种方法生成更多候选，再挑出最好的结果，分数可能上升，改进策略却未必变强。DGM 报告的一个演化运行估计成本约 22,000 美元，两个消融基线各约 10,000 美元。预算差异不证明它无效，但说明同预算比较很有必要。<sup class="citation" id="ref-9-2"><a href="#note-9" role="doc-noteref" aria-label="查看参考资料 9" title="Zhang 等，Darwin Gödel Machine，2025 首发；本篇采用更新版 v3。">9</a></sup></p>
+<p>还要检查模型有没有变。Gödel Agent 的不受限设置允许修改 API 调用，部分额外收益来自使用更强模型。换模型可以是合理的系统优化，却不能全部计入递归机制的贡献。<sup class="citation" id="ref-18-1"><a href="#note-18" role="doc-noteref" aria-label="查看参考资料 18" title="Yin 等，Gödel Agent，ACL 2025 正式论文。">18</a></sup></p>
+<p>任务信息流同样重要。如果系统反复根据同一批题的反馈选择版本，它就可能逐渐适应这批题。DGM 在改进诊断中使用了私有测试补丁信息，作者报告没有发现硬编码答案，也给出了迁移结果。合理的读法是分开看演化内成绩和独立迁移成绩，而不是只凭这件事断言作弊。</p>
+<p>最后，分数本身可能不够可靠。奖励模型研究观察过代理评分继续上升，而较独立的评价开始下降。内部评分器可以参与学习，但不能同时充当唯一的终审者。<sup class="citation" id="ref-19-1"><a href="#note-19" role="doc-noteref" aria-label="查看参考资料 19" title="Gao 等，Scaling Laws for Reward Model Overoptimization，2022；Yuan 等，Self-Rewarding Language Models，2024。">19</a></sup></p>
+<p>负面论文也需要这样读。没有外部反馈的提示式自纠错，在某些设置中会把正确答案改错；后续 SCoRe 通过训练改善了自纠错，训练时仍使用正确性奖励。递归合成数据可能丢失分布信息，保留和累积原始数据又能在相应设置下缓解退化。它们限定了哪些方法容易失败，没有证明所有自改进都不可能。<sup class="citation" id="ref-20-1"><a href="#note-20" role="doc-noteref" aria-label="查看参考资料 20" title="Huang 等，Large Language Models Cannot Self-Correct Reasoning Yet，2023；Kumar 等，Training Language Models to Self-Correct via Reinforcement Learning，2024；Shumailov 等，AI models collapse when trained on recursively generated data，Nature 2024；Gerstgrasser 等，Accumulating Real and Synthetic Data，2024。">20</a></sup></p>
+<p>研究自动化基准提供了有用任务。MLE-bench 测机器学习工程，RE-Bench 测一组 AI 研发环境。但最终任务成绩、重复尝试的成功率和下一轮改进能力，仍是不同指标。若要用这些基准研究 RSI，需要增加新旧改进器的对照，而不能只报告最后一次提交的成绩。<sup class="citation" id="ref-21-1"><a href="#note-21" role="doc-noteref" aria-label="查看参考资料 21" title="Chan 等，MLE-bench，2024；Wijk 等，RE-Bench，2024。这里讨论的是原论文设置，不是当前模型排行榜。">21</a></sup></p>
+</section>
+<section aria-labelledby="section-6"><h2 id="section-6" tabindex="-1"><span class="section-number" aria-hidden="true">06</span>如果要做研究，我会选什么</h2>
+<h3>先研究改进器是否真的变强</h3>
+<p>我会从一个已经能正常执行任务的简单编码智能体开始，不急着复现完整的大规模搜索。让不同方法从相同初始版本出发，固定基础模型和预算，比较固定改进器、可修改改进器、普通进化搜索，以及多次采样后选最好的方案。</p>
+<p>真正有辨识度的实验在下一步：把这些改进器带到新的任务家族，重新开始改进。如果新版本仍能用更少资源找到有效修改，就比一条原任务上的上涨曲线多了一层证据。</p>
+<p>Hyperagents 的改进能力指标和 AIDE² 的 ignition test，可以作为设计参照。它们也暴露了值得补强的地方，例如把任务执行代码和改进器代码分开迁移，避免初始版本的格式错误主导结果。</p>
+<h3>把验证器做成一个独立研究对象</h3>
+<p>系统需要知道修改有没有用，而这个判断可能出错。一个实用课题是研究：哪些检查能拒绝无效修改，又不会错杀真正有用的修改？隐藏测试、独立反例、执行轨迹交叉检查，都可以成为实验变量。</p>
+<p>我会让系统修改工具和策略，但把最终测试、预算限制、权限边界及审计日志放在修改范围之外。这里的目标是保证能力评价可信，不是让系统获得尽可能大的自由度。</p>
+<h3>有训练资源，再研究多轮适应</h3>
+<p>如果关注模型训练，可以沿着 SEAL 研究连续适应：每轮加入新知识，同时复测早期知识和通用能力。比较自生成学习材料、固定材料和其他适应方法时，应控制训练量，而不是只看新任务收益。</p>
+<p>如果关注课程生成，可以沿着 AZR 检查任务难度、多样性和未见任务的迁移。系统自己出题并不自动保证课程质量。</p>
+<p>这些是我的选题建议，不是已经完成的实验。它们的共同目标是让结论能够归因：收益究竟来自改进方法，还是来自更多计算、记住题目、改变评分方式？</p>
+</section>
+<section aria-labelledby="section-7"><h2 id="section-7" tabindex="-1"><span class="section-number" aria-hidden="true">07</span>怎样继续读这个领域</h2>
+<p>如果只想先理解当前讨论的焦点，可以按 DGM、Hyperagents、AIDE² 的顺序读。DGM 展示自修改系统怎么运行；Hyperagents 尝试单独测改进能力；AIDE² 进一步检验改进后的研究者能不能推动下一轮自改进。</p>
+<p>如果更关注实验可控性，先读 Promptbreeder 和 STOP。它们的修改对象相对清楚，适合拆开机制做对照。关注参数学习时，再读 SEAL、AZR 和神经自指学习的论文。</p>
+<p>每读一篇，只需先记住几个问题：它修改了什么？哪个部分仍固定？谁判断修改有效？最终测试有没有参与候选选择？总共花了多少资源？新版本有没有在新任务上更会产生改进？</p>
+<p>读完这批材料，我对 RSI 的兴趣主要落在最后一个问题。现在已有系统能提出并保留有用的自身修改，也有研究尝试测量改进机制的迁移。下一步需要的是更扎实的比较，说明这种能力在什么条件下持续，在哪里停滞，哪些成本和错误会累积。关于长期自加速的判断，应建立在这些实验之上。</p>
+</section>
+<section aria-labelledby="section-8"><h2 id="section-8" tabindex="-1"><span class="section-number" aria-hidden="true">08</span>资料说明</h2>
+<p>这份短篇保留为概览。成熟方法与行业进展的完整补充，请阅读<a href="2026-10-17-rsi-detailed.html">更新后的详细阅读版</a>。</p>
+<p>本篇依据 2026 年 10 月 17 日完成的调研材料重编，保留了影响结论的实验条件，省略原始检索过程、结构化数据和大部分数值细节。引用的实验结果均为论文作者报告，本次没有独立复现；选题建议属于本文判断。新近工作多数是预印本。</p>
+<p>需要逐项查证时，可以回到<a href="2026-10-17-rsi-deep-research.md">完整调研报告</a>、<a href="2026-10-17-rsi-deep-research/recent-2026.md">2026 新进展专题</a>和<a href="2026-10-17-rsi-deep-research/theory-evaluation-safety.md">理论、评测与安全专题</a>。它们与本篇并存，原始材料没有被覆盖。</p>
+</section>
+        <details class="references" id="references">
+          <summary>论文与资料 · 21 组引用</summary>
+          <div>
+            <p class="references-description">正文上标可以展开并定位对应资料。论文链接在新窗口打开；这里保留作者、时间和影响结论的版本说明。</p>
+            <ol role="doc-endnotes"><li id="note-1" role="doc-endnote">主要依据：<a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noopener noreferrer">Hyperagents，2026</a>；<a href="https://arxiv.org/html/2609.26457v1" target="_blank" rel="noopener noreferrer">Recursive self-improvement of AI research agents（AIDE²），2026</a>。本段是对两项研究证据的综合判断。 <span class="backlinks"><a class="backlink" href="#ref-1-1" aria-label="返回正文引用 1">↩</a></span></li>
+<li id="note-2" role="doc-endnote">Madaan 等，<a href="https://arxiv.org/abs/2303.17651" target="_blank" rel="noopener noreferrer">Self-Refine，2023</a>；Shinn 等，<a href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener noreferrer">Reflexion，2023</a>。 <span class="backlinks"><a class="backlink" href="#ref-2-1" aria-label="返回正文引用 2">↩</a></span></li>
+<li id="note-3" role="doc-endnote">I. J. Good，<a href="https://vtechworks.lib.vt.edu/server/api/core/bitstreams/a5e423ee-54e0-4eec-aeca-32b73f851af5/content" target="_blank" rel="noopener noreferrer">Speculations Concerning the First Ultraintelligent Machine，1965，原始重印节选</a>。此前核验范围为第 31–33 页，不冒充完整章节。 <span class="backlinks"><a class="backlink" href="#ref-3-1" aria-label="返回正文引用 3">↩</a></span></li>
+<li id="note-4" role="doc-endnote">Jürgen Schmidhuber，<a href="https://arxiv.org/abs/cs/0309048" target="_blank" rel="noopener noreferrer">Goedel Machines，2003 首发、2006 修订</a>。 <span class="backlinks"><a class="backlink" href="#ref-4-1" aria-label="返回正文引用 4">↩</a></span></li>
+<li id="note-5" role="doc-endnote">Andrychowicz 等，<a href="https://arxiv.org/abs/1606.04474" target="_blank" rel="noopener noreferrer">Learning to learn by gradient descent by gradient descent，2016</a>；Irie 等，<a href="https://arxiv.org/abs/2202.05780" target="_blank" rel="noopener noreferrer">A Modern Self-Referential Weight Matrix，2022</a>；Kirsch、Schmidhuber，<a href="https://arxiv.org/abs/2212.14392" target="_blank" rel="noopener noreferrer">Self-Referential Meta Learning，2022</a>。 <span class="backlinks"><a class="backlink" href="#ref-5-1" aria-label="返回正文引用 5">↩</a></span></li>
+<li id="note-6" role="doc-endnote">Fernando 等，<a href="https://arxiv.org/abs/2309.16797" target="_blank" rel="noopener noreferrer">Promptbreeder，2023 首发 / ICML 2024</a>。 <span class="backlinks"><a class="backlink" href="#ref-6-1" aria-label="返回正文引用 6">↩</a></span></li>
+<li id="note-7" role="doc-endnote">Zelikman 等，<a href="https://arxiv.org/abs/2310.02304" target="_blank" rel="noopener noreferrer">Self-Taught Optimizer（STOP），2023 首发 / COLM 2024</a>。 <span class="backlinks"><a class="backlink" href="#ref-7-1" aria-label="返回正文引用 7">↩</a></span></li>
+<li id="note-8" role="doc-endnote">Hu 等，<a href="https://arxiv.org/abs/2408.08435" target="_blank" rel="noopener noreferrer">Automated Design of Agentic Systems（ADAS），2024</a>；Robeyns 等，<a href="https://arxiv.org/html/2504.15228" target="_blank" rel="noopener noreferrer">A Self-Improving Coding Agent（SICA），2025</a>。 <span class="backlinks"><a class="backlink" href="#ref-8-1" aria-label="返回正文引用 8，第 1 处">↩1</a> <a class="backlink" href="#ref-8-2" aria-label="返回正文引用 8，第 2 处">↩2</a></span></li>
+<li id="note-9" role="doc-endnote">Zhang 等，<a href="https://arxiv.org/html/2505.22954v3" target="_blank" rel="noopener noreferrer">Darwin Gödel Machine，2025 首发；本篇采用更新版 v3</a>。 <span class="backlinks"><a class="backlink" href="#ref-9-1" aria-label="返回正文引用 9，第 1 处">↩1</a> <a class="backlink" href="#ref-9-2" aria-label="返回正文引用 9，第 2 处">↩2</a></span></li>
+<li id="note-10" role="doc-endnote">Zweiger 等，<a href="https://arxiv.org/html/2506.10943v2" target="_blank" rel="noopener noreferrer">Self-Adapting Language Models（SEAL），2025；本篇采用 v2</a>。 <span class="backlinks"><a class="backlink" href="#ref-10-1" aria-label="返回正文引用 10">↩</a></span></li>
+<li id="note-11" role="doc-endnote">Zhao 等，<a href="https://arxiv.org/abs/2505.03335" target="_blank" rel="noopener noreferrer">Absolute Zero，2025</a>。 <span class="backlinks"><a class="backlink" href="#ref-11-1" aria-label="返回正文引用 11">↩</a></span></li>
+<li id="note-12" role="doc-endnote">Novikov 等，<a href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noopener noreferrer">AlphaEvolve 技术报告，2025</a>；Google DeepMind，<a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/" target="_blank" rel="noopener noreferrer">官方应用介绍，2025</a>。 <span class="backlinks"><a class="backlink" href="#ref-12-1" aria-label="返回正文引用 12">↩</a></span></li>
+<li id="note-13" role="doc-endnote">Zhang 等，<a href="https://arxiv.org/pdf/2603.19461v1" target="_blank" rel="noopener noreferrer">Hyperagents，2026，原始 PDF</a>。原调研记录了 HTML/PDF 日期呈现差异，关键实验以 PDF 为核验依据。 <span class="backlinks"><a class="backlink" href="#ref-13-1" aria-label="返回正文引用 13">↩</a></span></li>
+<li id="note-14" role="doc-endnote">Srikanth 等，<a href="https://arxiv.org/html/2609.26457v1" target="_blank" rel="noopener noreferrer">Recursive self-improvement of AI research agents（AIDE²），2026</a>。 <span class="backlinks"><a class="backlink" href="#ref-14-1" aria-label="返回正文引用 14">↩</a></span></li>
+<li id="note-15" role="doc-endnote">Liu 等，<a href="https://arxiv.org/html/2602.23413v2" target="_blank" rel="noopener noreferrer">EvoX，2026</a>；Zheng 等，<a href="https://arxiv.org/html/2609.14858v2" target="_blank" rel="noopener noreferrer">Dream-RSI，2026</a>。 <span class="backlinks"><a class="backlink" href="#ref-15-1" aria-label="返回正文引用 15">↩</a></span></li>
+<li id="note-16" role="doc-endnote">Weng 等，<a href="https://arxiv.org/html/2602.04837v1" target="_blank" rel="noopener noreferrer">Group-Evolving Agents（GEA），2026</a>；Bhutani 等，<a href="https://arxiv.org/html/2610.21887v1" target="_blank" rel="noopener noreferrer">MetaShare，2026</a>。 <span class="backlinks"><a class="backlink" href="#ref-16-1" aria-label="返回正文引用 16">↩</a></span></li>
+<li id="note-17" role="doc-endnote">Lee 等，<a href="https://arxiv.org/html/2603.28052v1" target="_blank" rel="noopener noreferrer">Meta-Harness，2026</a>；Lu 等，<a href="https://arxiv.org/html/2607.21461v3" target="_blank" rel="noopener noreferrer">AREX，2026</a>；Peng 等，<a href="https://arxiv.org/html/2609.33325v1" target="_blank" rel="noopener noreferrer">VisionHOPE，2026</a>。 <span class="backlinks"><a class="backlink" href="#ref-17-1" aria-label="返回正文引用 17">↩</a></span></li>
+<li id="note-18" role="doc-endnote">Yin 等，<a href="https://aclanthology.org/2025.acl-long.1354/" target="_blank" rel="noopener noreferrer">Gödel Agent，ACL 2025 正式论文</a>。 <span class="backlinks"><a class="backlink" href="#ref-18-1" aria-label="返回正文引用 18">↩</a></span></li>
+<li id="note-19" role="doc-endnote">Gao 等，<a href="https://arxiv.org/abs/2210.10760" target="_blank" rel="noopener noreferrer">Scaling Laws for Reward Model Overoptimization，2022</a>；Yuan 等，<a href="https://arxiv.org/abs/2401.10020" target="_blank" rel="noopener noreferrer">Self-Rewarding Language Models，2024</a>。 <span class="backlinks"><a class="backlink" href="#ref-19-1" aria-label="返回正文引用 19">↩</a></span></li>
+<li id="note-20" role="doc-endnote">Huang 等，<a href="https://arxiv.org/abs/2310.01798" target="_blank" rel="noopener noreferrer">Large Language Models Cannot Self-Correct Reasoning Yet，2023</a>；Kumar 等，<a href="https://arxiv.org/abs/2409.12917" target="_blank" rel="noopener noreferrer">Training Language Models to Self-Correct via Reinforcement Learning，2024</a>；Shumailov 等，<a href="https://www.nature.com/articles/s41586-024-07566-y" target="_blank" rel="noopener noreferrer">AI models collapse when trained on recursively generated data，Nature 2024</a>；Gerstgrasser 等，<a href="https://arxiv.org/abs/2404.01413" target="_blank" rel="noopener noreferrer">Accumulating Real and Synthetic Data，2024</a>。 <span class="backlinks"><a class="backlink" href="#ref-20-1" aria-label="返回正文引用 20">↩</a></span></li>
+<li id="note-21" role="doc-endnote">Chan 等，<a href="https://arxiv.org/abs/2410.07095" target="_blank" rel="noopener noreferrer">MLE-bench，2024</a>；Wijk 等，<a href="https://arxiv.org/abs/2411.15114" target="_blank" rel="noopener noreferrer">RE-Bench，2024</a>。这里讨论的是原论文设置，不是当前模型排行榜。 <span class="backlinks"><a class="backlink" href="#ref-21-1" aria-label="返回正文引用 21">↩</a></span></li></ol>
+          </div>
+        </details>
+      </article>
+      <footer class="page-footer">阅读版正文与 Markdown 文件内容一致。页面可以离线打开，支持字号调整和打印；原始报告及详细核验记录未被覆盖。</footer>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const smaller = document.querySelector("#font-smaller");
+      const larger = document.querySelector("#font-larger");
+      let size = parseFloat(getComputedStyle(root).getPropertyValue("--reading-size"));
+      function setSize(next) {
+        size = Math.max(16, Math.min(25, next));
+        root.style.setProperty("--reading-size", size + "px");
+        smaller.disabled = size <= 16;
+        larger.disabled = size >= 25;
+      }
+      smaller.addEventListener("click", () => setSize(size - 1));
+      larger.addEventListener("click", () => setSize(size + 1));
+      document.querySelector("#print").addEventListener("click", () => window.print());
+      const references = document.querySelector("#references");
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const id = link.getAttribute("href").slice(1);
+        if (id.startsWith("note-") || id === "references") references.open = true;
+        if (link.closest(".mobile-nav") && id.startsWith("section-")) {
+          document.querySelector(".mobile-nav").open = false;
+        }
+      });
+      function handleHash() {
+        const id = location.hash.slice(1);
+        if (id.startsWith("note-") || id === "references") {
+          references.open = true;
+          const target = document.getElementById(id);
+          if (target) requestAnimationFrame(() => target.scrollIntoView());
+        }
+      }
+      window.addEventListener("hashchange", handleHash);
+      handleHash();
+      const headings = Array.from(document.querySelectorAll("article h2[id]"));
+      let lastChapter = null;
+      function updatePosition() {
+        const height = root.scrollHeight - innerHeight;
+        document.querySelector(".progress").style.width = (height > 0 ? Math.min(100, scrollY / height * 100) : 0) + "%";
+        let current = headings[0]?.id;
+        for (const heading of headings) {
+          if (heading.getBoundingClientRect().top <= 170) current = heading.id;
+        }
+        document.querySelectorAll("[data-toc]").forEach((link) => {
+          if (link.dataset.toc === current) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
+        });
+        if (current !== lastChapter) {
+          lastChapter = current;
+          const active = document.querySelector('.sidebar [aria-current="location"]');
+          const nav = document.querySelector(".sidebar .toc");
+          if (active && getComputedStyle(document.querySelector(".sidebar")).display !== "none") {
+            const box = active.getBoundingClientRect();
+            const bounds = nav.getBoundingClientRect();
+            if (box.bottom > bounds.bottom) nav.scrollTop += box.bottom - bounds.bottom + 8;
+            else if (box.top < bounds.top) nav.scrollTop -= bounds.top - box.top + 8;
+          }
+        }
+      }
+      let pending = false;
+      window.addEventListener("scroll", () => {
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(() => { updatePosition(); pending = false; });
+      }, { passive:true });
+      window.addEventListener("resize", updatePosition);
+      let referencesWereOpen = false;
+      window.addEventListener("beforeprint", () => {
+        referencesWereOpen = references.open;
+        references.open = true;
+      });
+      window.addEventListener("afterprint", () => { references.open = referencesWereOpen; });
+      updatePosition();
+    })();
+  </script>
+</body>
+</html>

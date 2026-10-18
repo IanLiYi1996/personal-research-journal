@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title desc">
+<title id="title">图 4 · 执行环境、动作策略、业务授权是不同层</title><desc id="desc">产品可以横跨多层；分组不表示互斥，也不表示只能上下固定配对</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#111827}.muted{fill:#6b7280}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs><rect width="1120" height="760" fill="#ffffff"/>
+<text x="48" y="48" font-size="28" font-weight="600" data-available-width="1024" class="">图 4 · 执行环境、动作策略、业务授权是不同层</text>
+<text x="48" y="78" font-size="17" font-weight="400" data-available-width="1024" class="muted">产品可以横跨多层；分组不表示互斥，也不表示只能上下固定配对</text>
+<text x="48" y="126" font-size="21" font-weight="600" data-available-width="1024" class="">执行底座：代码在哪里运行，与宿主怎样隔离？</text>
+<rect x="48" y="152" width="288" height="196" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="66" y="185" font-size="22" font-weight="600" data-available-width="252" class="">复用宿主</text>
+<text x="66" y="213" font-size="17" font-weight="400" data-available-width="252" class="muted">Claude / Codex 命令沙箱</text>
+<text x="66" y="238" font-size="17" font-weight="400" data-available-width="252" class="muted">Anthropic SRT</text>
+<text x="66" y="263" font-size="17" font-weight="400" data-available-width="252" class="muted">宿主内核 + 进程 / 出站限制</text>
+<rect x="416" y="152" width="288" height="196" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="434" y="185" font-size="22" font-weight="600" data-available-width="252" class="">本地独立客体</text>
+<text x="434" y="213" font-size="17" font-weight="400" data-available-width="252" class="muted">Docker Sandboxes</text>
+<text x="434" y="238" font-size="17" font-weight="400" data-available-width="252" class="muted">microVM + 客体内核</text>
+<text x="434" y="263" font-size="17" font-weight="400" data-available-width="252" class="muted">共享目录仍需治理</text>
+<rect x="784" y="152" width="288" height="196" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="802" y="185" font-size="22" font-weight="600" data-available-width="252" class="">远程托管环境</text>
+<text x="802" y="213" font-size="17" font-weight="400" data-available-width="252" class="muted">E2B / Daytona / Modal</text>
+<text x="802" y="238" font-size="17" font-weight="400" data-available-width="252" class="muted">AgentCore 执行环境</text>
+<text x="802" y="263" font-size="17" font-weight="400" data-available-width="252" class="muted">隔离、依赖、状态合同各异</text>
+<text x="48" y="406" font-size="21" font-weight="600" data-available-width="1024" class="">动作策略：哪个请求可执行，可信历史怎样参与判断？</text>
+<rect x="48" y="432" width="288" height="156" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="66" y="465" font-size="22" font-weight="600" data-available-width="252" class="">本地事件治理</text>
+<text x="66" y="493" font-size="17" font-weight="400" data-available-width="252" class="muted">Box / Dogwood</text>
+<text x="66" y="518" font-size="17" font-weight="400" data-available-width="252" class="muted">受控文件、命令、网络与 MCP</text>
+<text x="66" y="543" font-size="17" font-weight="400" data-available-width="252" class="muted">直接访问有历史盲区</text>
+<rect x="416" y="432" width="288" height="156" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="434" y="465" font-size="22" font-weight="600" data-available-width="252" class="">工具调用治理</text>
+<text x="434" y="493" font-size="17" font-weight="400" data-available-width="252" class="muted">AgentCore Gateway Policy</text>
+<text x="434" y="518" font-size="17" font-weight="400" data-available-width="252" class="muted">Gateway 工具与 policy session</text>
+<text x="434" y="543" font-size="17" font-weight="400" data-available-width="252" class="muted">不自动观察 Runtime 文件</text>
+<rect x="784" y="432" width="288" height="156" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="802" y="465" font-size="22" font-weight="600" data-available-width="252" class="">方案内授权引擎</text>
+<text x="802" y="493" font-size="17" font-weight="400" data-available-width="252" class="muted">OPA / Cedar</text>
+<text x="802" y="518" font-size="17" font-weight="400" data-available-width="252" class="muted">可信数据输入 + 执行点</text>
+<text x="802" y="543" font-size="17" font-weight="400" data-available-width="252" class="muted">历史持久化由方案提供</text>
+<rect x="48" y="650" width="1024" height="72" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="683" font-size="22" font-weight="600" data-available-width="988" class="">业务事实与授权仍需原系统负责</text>
+<text x="66" y="711" font-size="17" font-weight="400" data-available-width="988" class="muted">用户 / session 绑定 · 审批 · 数据库权限 · 幂等与账本</text>
+</svg>

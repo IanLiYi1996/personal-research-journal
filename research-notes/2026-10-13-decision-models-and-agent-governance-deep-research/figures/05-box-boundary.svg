@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="854" viewBox="0 0 1120 854" role="img" aria-labelledby="title desc">
+<title id="title">图 5 · Box 的策略历史只覆盖进入中介的事件</title><desc id="desc">操作系统可达权限与 Dogwood 动作规则分别负责；同一 Box 目录保留历史</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#111827}.muted{fill:#6b7280}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs><rect width="1120" height="854" fill="#ffffff"/>
+<text x="48" y="48" font-size="28" font-weight="600" data-available-width="1024" class="">图 5 · Box 的策略历史只覆盖进入中介的事件</text>
+<text x="48" y="78" font-size="17" font-weight="400" data-available-width="1024" class="muted">操作系统可达权限与 Dogwood 动作规则分别负责；同一 Box 目录保留历史</text>
+<rect x="48" y="126" width="304" height="196" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="66" y="159" font-size="22" font-weight="600" data-available-width="268" class="">Agent 进程</text>
+<text x="66" y="187" font-size="17" font-weight="400" data-available-width="268" class="muted">拟议命令、文件与网络请求</text>
+<text x="66" y="212" font-size="17" font-weight="400" data-available-width="268" class="muted">在操作系统沙箱内运行</text>
+<rect x="432" y="126" width="640" height="336" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="456" y="157" font-size="20" font-weight="600" data-available-width="590" class="">Agent 之外的可信 Box 进程</text>
+<rect x="456" y="184" width="264" height="130" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="474" y="217" font-size="22" font-weight="600" data-available-width="228" class="">受控入口</text>
+<text x="474" y="245" font-size="17" font-weight="400" data-available-width="228" class="muted">Shell / Monty 文件操作</text>
+<text x="474" y="270" font-size="17" font-weight="400" data-available-width="228" class="muted">网络网关 / MCP broker</text>
+<rect x="800" y="184" width="248" height="130" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="818" y="217" font-size="22" font-weight="600" data-available-width="212" class="">Dogwood 引擎</text>
+<text x="818" y="245" font-size="17" font-weight="400" data-available-width="212" class="muted">规则 + 已记录历史</text>
+<text x="818" y="270" font-size="17" font-weight="400" data-available-width="212" class="muted">请求先记录，再判定</text>
+<rect x="800" y="382" width="248" height="62" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="818" y="415" font-size="19" font-weight="600" data-available-width="212" class="">同一 Box 的持久历史</text>
+<path d="M 352,249 L 456,249" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="368" y="236" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="404" y="253" font-size="14" text-anchor="middle">受控请求</text>
+<path d="M 720,249 L 800,249" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="724" y="236" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="760" y="253" font-size="14" text-anchor="middle">策略判定</text>
+<path d="M 924,314 L 924,382" stroke="#059669" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/>
+<rect x="888" y="335" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="924" y="352" font-size="14" text-anchor="middle">事件状态</text>
+<rect x="48" y="546" width="304" height="122" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="66" y="579" font-size="18" font-weight="600" data-available-width="268" class="">未逐次进入历史的文件 I/O</text>
+<text x="66" y="607" font-size="17" font-weight="400" data-available-width="268" class="muted">Agent 原生 Read / Write</text>
+<text x="66" y="632" font-size="17" font-weight="400" data-available-width="268" class="muted">另有原生工具内部文件访问</text>
+<rect x="432" y="546" width="640" height="122" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="450" y="579" font-size="22" font-weight="600" data-available-width="604" class="">外部工具 / 业务服务</text>
+<text x="450" y="607" font-size="17" font-weight="400" data-available-width="604" class="muted">中介持 permit 后调用；副作用仍可能发生在远端</text>
+<text x="450" y="632" font-size="17" font-weight="400" data-available-width="604" class="muted">工具自身的文件访问受其 OS grants 限制</text>
+<path d="M 200,322 L 200,546" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="110" y="419" width="180" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="200" y="436" font-size="14" text-anchor="middle">直接读写：仅 OS grants</text>
+<path d="M 588,314 L 588,546" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="545" y="475" width="86" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="588" y="492" font-size="14" text-anchor="middle">获准后执行</text>
+<path d="M 1000,546 L 1000,444" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="964" y="482" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="1000" y="499" font-size="14" text-anchor="middle">outcome</text>
+<rect x="48" y="716" width="1024" height="62" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="66" y="749" font-size="20" font-weight="600" data-available-width="988" class="">副作用已发生 ≠ outcome 已落盘；准确一次与跨会话硬额度还需要业务端机制</text>
+<path d="M 48,824 L 84,824" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<text x="96" y="829" font-size="15" font-weight="400" data-available-width="280" class="muted">受控请求 / 执行</text>
+<path d="M 388,824 L 424,824" stroke="#059669" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-green)"/>
+<text x="436" y="829" font-size="15" font-weight="400" data-available-width="280" class="muted">历史事件写入</text>
+<path d="M 728,824 L 764,824" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<text x="776" y="829" font-size="15" font-weight="400" data-available-width="280" class="muted">直接访问或结果记录</text>
+</svg>

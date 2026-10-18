@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="756" viewBox="0 0 1120 756" role="img" aria-labelledby="title desc">
+<title id="title">图 2 · 决策接口汇合的是问题，不是一条产品血缘</title><desc id="desc">左：研究路线　中：代表工作与时间　右：今天仍需回答的问题</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#111827}.muted{fill:#6b7280}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs><rect width="1120" height="756" fill="#ffffff"/>
+<text x="48" y="48" font-size="28" font-weight="600" data-available-width="1024" class="">图 2 · 决策接口汇合的是问题，不是一条产品血缘</text>
+<text x="48" y="78" font-size="17" font-weight="400" data-available-width="1024" class="muted">左：研究路线　中：代表工作与时间　右：今天仍需回答的问题</text>
+<rect x="48" y="114" width="208" height="106" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="66" y="147" font-size="21" font-weight="600" data-available-width="172" class="">理解与评分</text>
+<rect x="320" y="114" width="360" height="106" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="338" y="147" font-size="19" font-weight="600" data-available-width="324" class="">BERT / 重排 / 蕴含式分类</text>
+<text x="338" y="175" font-size="17" font-weight="400" data-available-width="324" class="muted">2018–2019；SetFit 2022</text>
+<rect x="776" y="114" width="296" height="106" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="794" y="147" font-size="19" font-weight="600" data-available-width="260" class="">理解后能直接打分吗？</text>
+<text x="794" y="175" font-size="17" font-weight="400" data-available-width="260" class="muted">固定分类与动态标签如何比较？</text>
+<path d="M 680,167 L 776,167" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="692" y="154" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="171" font-size="14" text-anchor="middle">相关问题</text>
+<rect x="48" y="246" width="208" height="106" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="66" y="279" font-size="21" font-weight="600" data-available-width="172" class="">运行时候选</text>
+<rect x="320" y="246" width="360" height="106" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="338" y="279" font-size="19" font-weight="600" data-available-width="324" class="">Pointer Networks，2015</text>
+<text x="338" y="307" font-size="17" font-weight="400" data-available-width="324" class="muted">注意力指向随输入变化的集合</text>
+<rect x="776" y="246" width="296" height="106" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="794" y="279" font-size="19" font-weight="600" data-available-width="260" class="">正确选项是否进入候选？</text>
+<text x="794" y="307" font-size="17" font-weight="400" data-available-width="260" class="muted">顺序与缺候选怎样影响输出？</text>
+<path d="M 680,299 L 776,299" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="692" y="286" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="303" font-size="14" text-anchor="middle">相关问题</text>
+<rect x="48" y="378" width="208" height="106" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="66" y="411" font-size="21" font-weight="600" data-available-width="172" class="">概率与回退</text>
+<rect x="320" y="378" width="360" height="106" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="338" y="411" font-size="19" font-weight="600" data-available-width="324" class="">神经网络校准，2017</text>
+<text x="338" y="439" font-size="17" font-weight="400" data-available-width="324" class="muted">选择性分类与风险—覆盖率研究</text>
+<rect x="776" y="378" width="296" height="106" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="794" y="411" font-size="19" font-weight="600" data-available-width="260" class="">概率是否可信？</text>
+<text x="794" y="439" font-size="17" font-weight="400" data-available-width="260" class="muted">拒绝多少，接受的错多少？</text>
+<path d="M 680,431 L 776,431" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="692" y="418" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="435" font-size="14" text-anchor="middle">相关问题</text>
+<rect x="48" y="510" width="208" height="106" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="66" y="543" font-size="21" font-weight="600" data-available-width="172" class="">Agent 的任务分工</text>
+<rect x="320" y="510" width="360" height="106" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="338" y="543" font-size="19" font-weight="600" data-available-width="324" class="">ReAct，2022；RouteLLM，2024</text>
+<text x="338" y="571" font-size="17" font-weight="400" data-available-width="324" class="muted">开放行动与模型成本—质量路由</text>
+<rect x="776" y="510" width="296" height="106" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="794" y="543" font-size="19" font-weight="600" data-available-width="260" class="">拆出的判断替换了哪次调用？</text>
+<text x="794" y="571" font-size="17" font-weight="400" data-available-width="260" class="muted">成本和全链路质量是否改善？</text>
+<path d="M 680,563 L 776,563" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<rect x="692" y="550" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="567" font-size="14" text-anchor="middle">相关问题</text>
+<rect x="48" y="654" width="1024" height="62" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="687" font-size="21" font-weight="600" data-available-width="988" class="">2026：Jev / Perplexity / Strands / OpenAI 将判断做成专门接口</text>
+<path d="M 48,736 L 84,736" stroke="#6b7280" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrow-gray)"/>
+<text x="96" y="741" font-size="15" font-weight="400" data-available-width="280" class="muted">虚线表示相关背景，非直接继承</text>
+</svg>

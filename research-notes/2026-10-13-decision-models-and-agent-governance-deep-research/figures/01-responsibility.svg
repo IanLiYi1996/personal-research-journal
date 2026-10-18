@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="648" viewBox="0 0 1120 648" role="img" aria-labelledby="title desc">
+<title id="title">图 1 · 判断、执行与业务责任分开</title><desc id="desc">可选的应用分工；不是 Strands Decider 与 Box 的自动集成</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#111827}.muted{fill:#6b7280}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs><rect width="1120" height="648" fill="#ffffff"/>
+<text x="48" y="48" font-size="28" font-weight="600" data-available-width="1024" class="">图 1 · 判断、执行与业务责任分开</text>
+<text x="48" y="78" font-size="17" font-weight="400" data-available-width="1024" class="muted">可选的应用分工；不是 Strands Decider 与 Box 的自动集成</text>
+<rect x="48" y="112" width="1024" height="98" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="145" font-size="22" font-weight="600" data-available-width="988" class="">通用生成模型 / 原 Agent</text>
+<text x="66" y="173" font-size="17" font-weight="400" data-available-width="988" class="muted">开放规划、整理材料、生成正文与完整工具参数</text>
+<rect x="48" y="296" width="256" height="126" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="329" font-size="22" font-weight="600" data-available-width="220" class="">证据与答案空间</text>
+<text x="66" y="357" font-size="17" font-weight="400" data-available-width="220" class="muted">来源 / 新鲜度 / 候选完整性</text>
+<text x="66" y="382" font-size="17" font-weight="400" data-available-width="220" class="muted">由应用或观察系统提供</text>
+<rect x="384" y="296" width="304" height="126" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="402" y="329" font-size="22" font-weight="600" data-available-width="268" class="">Decider：有限判断</text>
+<text x="402" y="357" font-size="17" font-weight="400" data-available-width="268" class="muted">真假概率 / 候选分布 / 评分</text>
+<text x="402" y="382" font-size="17" font-weight="400" data-available-width="268" class="muted">不替代开放内容生成</text>
+<rect x="768" y="296" width="304" height="126" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="786" y="329" font-size="22" font-weight="600" data-available-width="268" class="">应用采纳与检查</text>
+<text x="786" y="357" font-size="17" font-weight="400" data-available-width="268" class="muted">证据、主体、预算、审批</text>
+<text x="786" y="382" font-size="17" font-weight="400" data-available-width="268" class="muted">低置信度或缺证据则回退</text>
+<path d="M 176,210 L 176,296" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="140" y="240" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="176" y="257" font-size="14" text-anchor="middle">整理材料</text>
+<path d="M 920,210 L 920,296" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="884" y="240" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="920" y="257" font-size="14" text-anchor="middle">生成参数</text>
+<path d="M 304,359 L 384,359" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="308" y="346" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="344" y="363" font-size="14" text-anchor="middle">有限问题</text>
+<path d="M 688,359 L 768,359" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="692" y="346" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="363" font-size="14" text-anchor="middle">判断建议</text>
+<rect x="48" y="506" width="256" height="100" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="66" y="539" font-size="22" font-weight="600" data-available-width="220" class="">不自动获得权限</text>
+<text x="66" y="567" font-size="17" font-weight="400" data-available-width="220" class="muted">模型高分 ≠ 业务批准</text>
+<rect x="384" y="506" width="304" height="100" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="402" y="539" font-size="22" font-weight="600" data-available-width="268" class="">业务系统 / 原验收</text>
+<text x="402" y="567" font-size="17" font-weight="400" data-available-width="268" class="muted">权限、幂等与真实结果核验</text>
+<rect x="768" y="506" width="304" height="100" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="786" y="539" font-size="22" font-weight="600" data-available-width="268" class="">Box 或既有执行层</text>
+<text x="786" y="567" font-size="17" font-weight="400" data-available-width="268" class="muted">限制受控动作与副作用路径</text>
+<path d="M 920,422 L 920,506" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="884" y="451" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="920" y="468" font-size="14" text-anchor="middle">拟议动作</text>
+<path d="M 768,556 L 688,556" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="692" y="543" width="72" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="728" y="560" font-size="14" text-anchor="middle">受控调用</text>
+</svg>

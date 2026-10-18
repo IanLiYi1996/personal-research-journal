@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="878" viewBox="0 0 1120 878" role="img" aria-labelledby="title desc">
+<title id="title">图 3 · 相同 choice 接口，可能是不同读出</title><desc id="desc">只画公开实现；结构差异不能直接转换成业务准确率或速度排名</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;fill:#111827}.muted{fill:#6b7280}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#059669"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs><rect width="1120" height="878" fill="#ffffff"/>
+<text x="48" y="48" font-size="28" font-weight="600" data-available-width="1024" class="">图 3 · 相同 choice 接口，可能是不同读出</text>
+<text x="48" y="78" font-size="17" font-weight="400" data-available-width="1024" class="muted">只画公开实现；结构差异不能直接转换成业务准确率或速度排名</text>
+<text x="48" y="126" font-size="20" font-weight="600" data-available-width="1024" class="">生成式模型</text>
+<rect x="48" y="148" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="181" font-size="21" font-weight="600" data-available-width="252" class="">预训练主干</text>
+<text x="66" y="209" font-size="17" font-weight="400" data-available-width="252" class="muted">读入上下文</text>
+<rect x="416" y="148" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="434" y="181" font-size="21" font-weight="600" data-available-width="252" class="">词表生成头</text>
+<text x="434" y="209" font-size="17" font-weight="400" data-available-width="252" class="muted">逐 token 解码</text>
+<rect x="784" y="148" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="802" y="181" font-size="21" font-weight="600" data-available-width="252" class="">文字 / JSON</text>
+<text x="802" y="209" font-size="17" font-weight="400" data-available-width="252" class="muted">格式有效 ≠ 语义正确</text>
+<path d="M 336,199 L 416,199" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="354" y="186" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="376" y="203" font-size="14" text-anchor="middle">表示</text>
+<path d="M 704,199 L 784,199" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="722" y="186" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="744" y="203" font-size="14" text-anchor="middle">读出</text>
+<text x="48" y="306" font-size="20" font-weight="600" data-available-width="1024" class="">Strands 早期 slot head</text>
+<rect x="48" y="328" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="66" y="361" font-size="21" font-weight="600" data-available-width="252" class="">因果主干</text>
+<text x="66" y="389" font-size="17" font-weight="400" data-available-width="252" class="muted">形成答案位置表示</text>
+<rect x="416" y="328" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="434" y="361" font-size="21" font-weight="600" data-available-width="252" class="">固定槽位映射</text>
+<text x="434" y="389" font-size="17" font-weight="400" data-available-width="252" class="muted">第 0 / 1 / 2 … 槽位</text>
+<rect x="784" y="328" width="288" height="102" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="802" y="361" font-size="21" font-weight="600" data-available-width="252" class="">槽位分布</text>
+<text x="802" y="389" font-size="17" font-weight="400" data-available-width="252" class="muted">读出参数对应固定位置</text>
+<path d="M 336,379 L 416,379" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="354" y="366" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="376" y="383" font-size="14" text-anchor="middle">表示</text>
+<path d="M 704,379 L 784,379" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="722" y="366" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="744" y="383" font-size="14" text-anchor="middle">读出</text>
+<text x="48" y="486" font-size="20" font-weight="600" data-available-width="1024" class="">Strands pointer head</text>
+<rect x="48" y="508" width="288" height="102" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="66" y="541" font-size="21" font-weight="600" data-available-width="252" class="">因果主干 + LoRA</text>
+<text x="66" y="569" font-size="17" font-weight="400" data-available-width="252" class="muted">保留因果预训练结构</text>
+<rect x="416" y="508" width="288" height="102" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="434" y="541" font-size="21" font-weight="600" data-available-width="252" class="">比较候选内容</text>
+<text x="434" y="569" font-size="17" font-weight="400" data-available-width="252" class="muted">答案 query × 选项 key</text>
+<rect x="784" y="508" width="288" height="102" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="802" y="541" font-size="21" font-weight="600" data-available-width="252" class="">运行时候选分布</text>
+<text x="802" y="569" font-size="17" font-weight="400" data-available-width="252" class="muted">仍可能受选项顺序影响</text>
+<path d="M 336,559 L 416,559" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="354" y="546" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="376" y="563" font-size="14" text-anchor="middle">表示</text>
+<path d="M 704,559 L 784,559" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="722" y="546" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="744" y="563" font-size="14" text-anchor="middle">读出</text>
+<text x="48" y="666" font-size="20" font-weight="600" data-available-width="1024" class="">Perplexity v1.1</text>
+<rect x="48" y="688" width="288" height="102" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="66" y="721" font-size="21" font-weight="600" data-available-width="252" class="">混合注意力主干</text>
+<text x="66" y="749" font-size="17" font-weight="400" data-available-width="252" class="muted">full-attention 层非因果</text>
+<rect x="416" y="688" width="288" height="102" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="434" y="721" font-size="21" font-weight="600" data-available-width="252" class="">固定线性读出</text>
+<text x="434" y="749" font-size="17" font-weight="400" data-available-width="252" class="muted">取最后位置表示</text>
+<rect x="784" y="688" width="288" height="102" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="802" y="721" font-size="21" font-weight="600" data-available-width="252" class="">固定输出代码分布</text>
+<text x="802" y="749" font-size="17" font-weight="400" data-available-width="252" class="muted">公开参考实现无 KV cache</text>
+<path d="M 336,739 L 416,739" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="354" y="726" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="376" y="743" font-size="14" text-anchor="middle">表示</text>
+<path d="M 704,739 L 784,739" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+<rect x="722" y="726" width="44" height="23" rx="3" fill="#ffffff" opacity=".96"/>
+<text x="744" y="743" font-size="14" text-anchor="middle">读出</text>
+<text x="48" y="854" font-size="17" font-weight="400" data-available-width="1024" class="muted">Jev 与 OpenAI 的公开材料不足以复原内部读出；本文不替闭源实现补画结构。</text>
+</svg>

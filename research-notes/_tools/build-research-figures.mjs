@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 
 // Generated illustration assets, not factual measurements. The statements and
 // citations live next to each illustration in the editable Markdown source.
-const directory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../figures/decision-governance');
+const directory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../2026-10-13-decision-models-and-agent-governance-deep-research/figures');
 fs.mkdirSync(directory, {recursive: true});
 const palette = {
   blue: ['#eff6ff', '#93c5fd', '#2563eb'],
