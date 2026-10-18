@@ -214,3 +214,5 @@ ts_utc	task	phase	detail
 2026-10-16 09:04	aws	done	14+8B(1 INVALID), 3 High(1 dup), span 337.1, over-window 21/0
 2026-10-17 09:03	aws	start	cron 09:0x
 2026-10-17 09:04	aws	done	5+6B, 3 High, span 280.1
+2026-10-18 09:03	aws	start	manual/cron run
+2026-10-18 09:04	aws	done	0 new + 1 backfill; Braket→NO_CATEGORY

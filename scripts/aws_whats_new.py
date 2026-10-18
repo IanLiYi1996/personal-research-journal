@@ -443,7 +443,13 @@ NO_CATEGORY = ["service availability updates",
                # rule-bearing. Measured 09-25: exactly 1 flip, 0 collateral; "AWS Secrets
                # Manager now publishes secret update notifications to Amazon EventBridge"
                # (07-22, the only prior mention) keeps Security via the position rule.
-               "eventbridge"]
+               "eventbridge",
+               # "Amazon Braket now in scope for FedRAMP Class C" (10-16 08:00, backfilled 10-18;
+               # first Braket item in the tracker) went to Storage on body S3 mentions. AWS
+               # files Braket under Quantum Technologies — no category here. n=1, rule-bearing.
+               # Measured 10-18: exactly 1 flip, 0 collateral; "Amazon Bedrock now integrates
+               # with Amazon Braket" keeps AI/ML via the position rule.
+               "amazon braket"]
 
 
 def classify(title: str, summary: str) -> str:
