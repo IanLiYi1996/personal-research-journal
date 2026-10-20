@@ -203,3 +203,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-17 09:03	2026-10-16 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-end-user-messaging-adds-guided-wizard-rcs-registration-videos
 2026-10-17 09:03	2026-10-16 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-outposts-racks-mexico-central/
 2026-10-18 09:03	2026-10-16 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/10/braket-fedramp-class-c/
+2026-10-20 09:03	2026-10-16 19:20	61.7	85.7	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-emr-serverless/
+2026-10-20 09:03	2026-10-17 03:00	54.1	78.1	https://aws.amazon.com/about-aws/whats-new/2026/10/solution-matching-engine-performance
+2026-10-20 09:03	2026-10-19 07:01	2.1	26.0	https://aws.amazon.com/about-aws/whats-new/2026/10/rds-sqlserver-supports-snapshots-on-read-replicas
+2026-10-20 09:03	2026-10-19 07:30	1.6	25.6	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-rds-custom-supports-latest-cumulative-update-gdr-microsoft-sql-server/
+2026-10-20 09:03	2026-10-19 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/iam-identity-store-optimistic-locking/
+2026-10-20 09:03	2026-10-19 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/mediaconnect-router-high-bitrate/
