@@ -695,7 +695,16 @@ ROW_RE = re.compile(
 # when the feed is shallower than BACKFILL_HOURS, and the shallowest feed observed is
 # 241.6h (09-11): 216 keeps that check live on the busiest week seen while guaranteeing
 # 192h > 161.7h max. Zero of the 84 points exceed 192h.
-BACKFILL_HOURS = 216
+#
+# 216 -> 240 on 2026-10-21, on the exit condition written then ("one more point >168h").
+# AgentCore Memory long-term TTL (pubDate 10-13 16:00, ordinary week) logged 161.1-185.1h:
+# its lower bound alone is past 168's 144h guarantee, so under 168 it was lost for certain,
+# and its upper bound sits 6.9h under 216's 192h guarantee. 240 guarantees 216h. The cost
+# is the one weighed on 09-17: the loss check below goes blind whenever the feed is
+# shallower than 240h (minimum seen 218.1h on 10-03). That blindness is announced on
+# stderr and in window-health.tsv; a loss past the guarantee would not be. 206 valid
+# points then: >144h 5, >168h 1, >192h 0.
+BACKFILL_HOURS = 240
 # How many recent digests to read when deciding "have I already covered this?".
 # Must span more calendar days than BACKFILL_HOURS, or a re-admitted item could fall off
 # the far end of the scan and be reported twice. At one digest per day, 12 files covers
@@ -707,6 +716,25 @@ BACKFILL_SCAN_FILES = 14
 # code change, not with data we can sniff: a backfill-capable run that finds nothing looks
 # identical in its digest to a pre-backfill run.
 BACKFILL_SINCE = dt.datetime(2026, 8, 15, tzinfo=dt.timezone.utc)
+# Lookback each past run actually had, as (first run using it, hours). The lower bound in
+# _log_backfill_delays asks "did run r's window contain pubDate?" and must use r's own
+# window, not today's: crediting a 2026-09 run with a 240h window would claim an absence
+# it never observed. Change times are the commits that changed BACKFILL_HOURS (a same-day
+# run just before a commit is assigned the older, narrower window — the safe direction).
+LOOKBACK_HISTORY = [
+    (BACKFILL_SINCE, 96),
+    (dt.datetime(2026, 8, 21, 4, 59, tzinfo=dt.timezone.utc), 168),
+    (dt.datetime(2026, 9, 17, 9, 10, tzinfo=dt.timezone.utc), 216),
+    (dt.datetime(2026, 10, 21, 9, 30, tzinfo=dt.timezone.utc), 240),
+]
+
+
+def _lookback_at(t: dt.datetime) -> int:
+    look = 24
+    for since, hours in LOOKBACK_HISTORY:
+        if t >= since:
+            look = hours
+    return look
 # Any aws.amazon.com link in a digest counts as covered, not just generated table rows —
 # hand-written prose links to announcements too (the 08-01..08-03 catch-up did exactly that).
 ANY_LINK_RE = re.compile(r"\]\((https://aws\.amazon\.com[^)\s]*)\)")
@@ -871,8 +899,8 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
       * lower = r - pubDate, where r is the latest prior run whose *effective lookback*
         contained pubDate and which still did not list the item ⟹ at r it was
         demonstrably absent. Effective lookback is per-run, because it changed:
-        runs before BACKFILL_SINCE only looked back 24h, runs after look back
-        BACKFILL_HOURS. Using a flat 24h (as this did originally) throws away provable
+        runs before BACKFILL_SINCE only looked back 24h, later runs used whatever
+        BACKFILL_HOURS was at the time (LOOKBACK_HISTORY). Using a flat 24h (as this did originally) throws away provable
         absence: 2026-08-18 logged four items whose 96h-window runs on 08-16 and 08-17
         found nothing, so their lower bound is ~60h, not the ~12h a 24h window yields.
         That matters because these points exist to decide whether BACKFILL_HOURS can be
@@ -898,7 +926,7 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
                 # exposed this — under a flat 24h it could never match an older pubDate.
                 if t >= now_utc:
                     continue
-                look = BACKFILL_HOURS if t >= BACKFILL_SINCE else 24
+                look = _lookback_at(t)
                 if t >= pub >= t - dt.timedelta(hours=look):
                     lower = f"{(t - pub).total_seconds() / 3600:.1f}"
                     break
