@@ -64,8 +64,7 @@ DeepInfer 是 DeepSeek 线上服务所用推理框架中开源出来的**离线�
 | 14 | [核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log.md) | 来源分级、抽查与更正 |
 | 15 | [参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references.md) | 34 篇 arXiv + 一手链接 |
 
-**下载**：
-- [完整版 PDF（114 页）](topics/llm-inference/2026-10-21-deepinfer/deepinfer-report-full.pdf ':ignore')
-- [汇报 PPT（18 页）](topics/llm-inference/2026-10-21-deepinfer/deepinfer-slides.pptx ':ignore')
-- [执行摘要 PDF](topics/llm-inference/2026-10-21-deepinfer/deepinfer-executive-summary.pdf ':ignore')
+**附件**：
 - [GitHub 数据快照 CSV](topics/llm-inference/2026-10-21-deepinfer/github-stats-snapshot.csv ':ignore')
+- [arXiv 引用核验结果](topics/llm-inference/2026-10-21-deepinfer/arxiv_check.tsv ':ignore')、[链接核验结果](topics/llm-inference/2026-10-21-deepinfer/url_check.tsv ':ignore')
+- 完整版 PDF（114 页）、汇报 PPT（18 页）和执行摘要 PDF 按本仓库 `.gitignore` 的策略不入库（`*.pdf` / `*.pptx`），只保留在本地。需要 PDF 时，可用 `2026-10-21-deepinfer/build_pdf.py` 从上面的 Markdown 重新生成（依赖 pandoc + xelatex + Noto CJK 字体）。
