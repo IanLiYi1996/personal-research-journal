@@ -115,6 +115,10 @@
     - [深度总结：Agent 工作质量如何评估 —— 从学术基准到业界工程实践](/topics/agent/2026-08-07-agent-quality-evaluation.md)
     - [PPT 审核：《Agentic Trading — Agent 回测与评估体系 V0.61》](/topics/agent/2026-08-10-ppt-review-agentic-trading-eval.md)
     - [附录：LLM Trading Agent 金融专项评估方法](/topics/agent/2026-08-10-trading-agent-eval-methods.md)
+  - **AGENTIC-PAYMENT**
+    - [---](/topics/agentic-payment/2026-10-19-agentic-payment-protocols-survey.md)
+    - [Agentic Payment 协议规范与源码深挖：离线源码核查与证据缺口](/topics/agentic-payment/2026-10-19-codex-spec-deep-dive.md)
+    - [AWS Agentic Payment 解决方案：面向 Airwallex 等跨境支付 / FinTech 客户](/topics/agentic-payment/2026-10-20-aws-agentic-payment-solution-airwallex.md)
   - **AI-FRONTIER-2026H1**
     - [Agent 体系演化谱系 · 2026 上半年](/topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md)
     - [2026 上半年 AI 前沿演化谱系](/topics/ai-frontier-2026h1/2026-06-12-ai-frontier-comprehensive.md)

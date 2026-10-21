@@ -1,0 +1,16 @@
+/* theme: workbench — 参考 game-ai-qa clients/web（shadcn neutral），中性表面 + 明确语义色 */
+:root{
+  --bg:oklch(1 0 0);--bg-soft:oklch(0.985 0 0);--surface:oklch(1 0 0);--surface-2:oklch(0.97 0 0);
+  --border:oklch(0.922 0 0);--border-strong:oklch(0.85 0 0);
+  --text-1:oklch(0.145 0 0);--text-2:oklch(0.40 0 0);--text-3:oklch(0.556 0 0);
+  --accent:oklch(0.205 0 0);--accent-2:oklch(0.205 0 0);--accent-3:oklch(0.556 0 0);
+  --good:oklch(0.5 0.12 163.225);--warn:oklch(0.55 0.11 70.08);--bad:oklch(0.577 0.245 27.325);
+  --info:oklch(0.60 0.145 260);
+  --sidebar:oklch(0.985 0 0);--sidebar-accent:oklch(0.97 0 0);--sidebar-border:oklch(0.922 0 0);
+  --grad:linear-gradient(var(--text-1),var(--text-1));--grad-soft:none;
+  --radius:0.625rem;--radius-sm:calc(0.625rem - 4px);--radius-lg:0.625rem;
+  --shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-lg:0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --font-sans:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'Noto Sans CJK SC','Noto Sans SC','Source Han Sans SC','Microsoft YaHei','PingFang SC','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;
+  --font-display:var(--font-sans);
+  --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace,'Noto Sans CJK SC','PingFang SC';
+}

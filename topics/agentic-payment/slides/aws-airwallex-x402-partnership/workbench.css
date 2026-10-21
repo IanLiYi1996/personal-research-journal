@@ -1,0 +1,103 @@
+/* workbench.css — 版式与组件改为 game-ai-qa 的"工作台"风格
+ * 参考：clients/web/DESIGN.md、src/styles/theme.css、PageHeader、StatusPill、AppSidebar
+ * 原则：中性表面；颜色只表达语义（成功/警告/危险/信息）且总有文字或符号；
+ *       层级靠名称、状态、分组与留白，不用渐变、发光与大面积品牌色。 */
+
+html,body{font-family:var(--font-sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:0}
+.tpl-presenter-mode-reveal .slide,.slide{font-family:var(--font-sans)}
+
+/* ---------- 布局：左侧栏 + 内容区 ---------- */
+:root{--sb-w:232px}
+.wb-sidebar{position:absolute;top:0;left:0;bottom:0;width:var(--sb-w);z-index:15;
+  background:var(--sidebar);border-right:1px solid var(--sidebar-border);
+  display:flex;flex-direction:column;padding:12px 8px;overflow:hidden}
+.wb-brand{display:flex;align-items:center;gap:10px;padding:8px 8px 14px}
+.wb-brand .logo{width:28px;height:28px;border-radius:8px;background:var(--text-1);color:var(--bg);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.wb-brand .name{font-size:13px;font-weight:600;color:var(--text-1);line-height:1.25}
+.wb-brand .sub{font-size:11px;color:var(--text-3)}
+.wb-nav{flex:1;overflow-y:auto;scrollbar-width:none;padding-bottom:8px}
+.wb-group{margin-top:6px}
+.wb-group h2{margin:0;padding:6px 8px 2px;font-size:11px;font-weight:500;color:var(--text-3);letter-spacing:0}
+.wb-item{display:flex;align-items:center;gap:8px;width:100%;border:0;background:transparent;text-align:left;
+  padding:4px 8px;border-radius:6px;font-size:12px;line-height:1.35;color:var(--text-2);cursor:pointer;font-family:inherit}
+.wb-item:hover{background:var(--sidebar-accent);color:var(--text-1)}
+.wb-item.is-active{background:var(--sidebar-accent);color:var(--text-1);font-weight:500}
+.wb-item .no{font-family:var(--font-mono);font-size:10px;color:var(--text-3);width:16px;flex-shrink:0;text-align:right}
+.wb-foot{border-top:1px solid var(--sidebar-border);padding:8px 8px 0;font-size:11px;color:var(--text-3)}
+
+.deck .slide{left:var(--sb-w)}
+.tpl-presenter-mode-reveal .slide{padding:40px 56px 56px;justify-content:flex-start}
+.tpl-presenter-mode-reveal .slide.cover{justify-content:center}
+.deck-footer{left:calc(var(--sb-w) + 32px)!important}
+
+/* ---------- 页头（PageHeader 语义：面包屑式 kicker + 常规字重标题） ---------- */
+.tpl-presenter-mode-reveal .kicker,.kicker{font-family:var(--font-sans);font-size:12px;font-weight:400;
+  text-transform:none;letter-spacing:0;color:var(--text-3);margin:0 0 6px}
+.tpl-presenter-mode-reveal .h1,.h1{font-weight:500;letter-spacing:-0.02em;color:var(--text-1);font-size:clamp(34px,3.6vw,52px);line-height:1.15}
+.tpl-presenter-mode-reveal .h2,.h2,h2.title{font-weight:400;letter-spacing:-0.4px;color:var(--text-1);
+  font-size:clamp(24px,2.1vw,32px);line-height:1.3;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.tpl-presenter-mode-reveal .accent,.accent{color:var(--text-1);font-weight:600}
+.tpl-presenter-mode-reveal .lede,.lede{color:var(--text-2);font-weight:400}
+.tpl-presenter-mode-reveal .mono,.mono{background:var(--surface-2);color:var(--text-1);border-radius:4px;padding:1px 6px}
+code{font-family:var(--font-mono);background:var(--surface-2);border-radius:4px;padding:0 4px;font-size:.9em}
+
+/* ---------- Card（shadcn Card：细边框 + 轻阴影，不加彩色顶边） ---------- */
+.card,.tpl-presenter-mode-reveal .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card-accent,.tpl-presenter-mode-reveal .card-accent{border-top:1px solid var(--border)}
+.card.c h4{font-weight:600;color:var(--text-1)}
+.card.hot{border:1px solid var(--text-1);box-shadow:var(--shadow)}
+.kpi{border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);background:var(--surface)}
+.kpi .v{color:var(--text-1);font-weight:500;letter-spacing:-0.02em}
+.kpi .l{color:var(--text-3)}
+
+/* ---------- StatusPill：outline 徽标 + 颜色 + 符号三重冗余 ---------- */
+.tag{border-radius:6px;font-weight:500;font-size:11.5px;padding:1px 8px;background:transparent!important;
+  border:1px solid var(--border-strong)!important;color:var(--text-2)!important}
+.tag::before{margin-right:4px;font-weight:600}
+.tag.ga{color:var(--good)!important;border-color:color-mix(in oklab,var(--good) 40%,transparent)!important}
+.tag.ga::before{content:"✓"}
+.tag.pv{color:var(--text-1)!important;border-color:color-mix(in oklab,var(--warn) 45%,transparent)!important}
+.tag.pv::before{content:"△";color:var(--warn)}
+.tag.no{color:var(--bad)!important;border-color:color-mix(in oklab,var(--bad) 40%,transparent)!important}
+.tag.no::before{content:"✕"}
+.tag.build::before{content:"◒";color:var(--text-3)}
+.tag.idea::before{content:"○";color:var(--text-3)}
+.tag.chk::before{content:"?";color:var(--warn)}
+
+/* ---------- Table（DataTable 风格） ---------- */
+table.t{font-size:13.5px;border:1px solid var(--border);border-radius:var(--radius);border-collapse:separate;border-spacing:0;overflow:hidden}
+table.t th{background:var(--surface-2);color:var(--text-2);font-weight:500;border-bottom:1px solid var(--border);font-size:12.5px}
+table.t td{border-bottom:1px solid var(--border);color:var(--text-2)}
+table.t tr:last-child td{border-bottom:0}
+table.t td:first-child{color:var(--text-1);font-weight:500}
+table.t tr.hl td{background:color-mix(in oklab,var(--warn) 8%,transparent)}
+
+/* ---------- 分层图 / 流程（中性标签，语义只放在边框样式上） ---------- */
+.layer .lab{background:var(--surface-2);color:var(--text-1);border:1px solid var(--border);font-weight:600;font-size:13px}
+.box{border:1px solid var(--border);border-radius:calc(var(--radius) - 2px);background:var(--surface);color:var(--text-1)}
+.box small{color:var(--text-3)}
+.box.aws{border-color:var(--border-strong);background:var(--surface)}
+.box.aw{border:1px dashed var(--border-strong);background:var(--bg-soft)}
+.box.ext{background:var(--surface-2)}
+.legend .sw.aws{background:var(--surface);border:1px solid var(--border-strong)}
+.legend .sw.aw{background:var(--bg-soft);border:1px dashed var(--border-strong)}
+.flow .st{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+.flow .st .n{background:var(--text-1);color:var(--bg);border-radius:6px}
+.flow .ar{color:var(--text-3)}
+
+/* ---------- Notice（风险色只用于边界与淡底，正文用前景色） ---------- */
+.callout{border:1px solid var(--border);border-left:3px solid var(--text-3);background:var(--bg-soft);
+  border-radius:var(--radius);color:var(--text-1)}
+.callout.good{border-left-color:var(--good);background:color-mix(in oklab,var(--good) 5%,var(--bg))}
+.callout.warn{border-left-color:var(--warn);background:color-mix(in oklab,var(--warn) 6%,var(--bg))}
+.callout.bad{border-left-color:var(--bad);background:color-mix(in oklab,var(--bad) 5%,var(--bg))}
+
+.qrow .n{color:var(--text-3)}
+.divider-accent{background:var(--text-1)}
+.progress-bar>span{background:var(--text-1)}
+.tpl-presenter-mode-reveal .blue,.tpl-presenter-mode-reveal .green,.tpl-presenter-mode-reveal .orange,
+.tpl-presenter-mode-reveal .purple,.tpl-presenter-mode-reveal .red{color:var(--text-1)}
+
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.src{left:56px!important;right:56px!important;bottom:46px!important}

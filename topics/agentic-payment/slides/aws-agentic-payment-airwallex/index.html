@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-themes="workbench,workbench-dark,corporate-clean">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AWS Agentic Payment 解决方案 · 面向 Airwallex 类跨境支付客户（内部）</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" id="theme-link" href="assets/themes/workbench.css">
+<link rel="stylesheet" href="assets/animations/animations.css">
+<link rel="stylesheet" href="template.css">
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="workbench.css">
+</head>
+<body class="tpl-presenter-mode-reveal">
+<div class="deck">
+
+  <!-- ============ 1. COVER ============ -->
+  <section class="slide cover" data-title="封面">
+    <p class="kicker">AWS FSI · Internal · BD / SA Enablement</p>
+    <h1 class="h1" data-anim="fade-up">Agentic Payment on AWS<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">面向 Airwallex 类跨境支付客户</span></h1>
+    <p class="lede mt-m">客户关心什么 · 我们用哪些服务解决 · BD 怎么讲 · SA 怎么落地</p>
+    <div class="row mt-l" style="gap:10px">
+      <span class="tag ga">GA 已上线</span><span class="tag pv">Preview</span><span class="tag build">需自建</span><span class="tag idea">合作设想·需确认</span><span class="tag chk">需内部核实</span>
+    </div>
+    <p class="xs mt-l">AWS 金融行业解决方案架构 · 2026-10-20 · v1.0 · 仅基于公开信息 · AWS 内部使用</p>
+    <aside class="notes">
+      <p>各位好，今天这份是给 BD 和 SA 的<strong>内部赋能材料</strong>，主题是：面对 Airwallex 这类跨境支付和金融科技客户，我们怎么讲 agentic payment，怎么用 AWS 的服务去落地。</p>
+      <p>先说一个阅读约定：整份材料每一个能力都打了<strong>成熟度标签</strong>——绿色是 GA，橙色是 Preview，蓝色是需要我们自建，紫色是合作设想、需要和产品团队确认，灰色是还要内部核实的。</p>
+      <p>这个标签很重要，因为面对支付客户，<strong>说错一个能力就会丢掉技术团队的信任</strong>。紫色和灰色的内容，在客户面前请务必用"我们在探索""需要确认"的口径。</p>
+      <p>所有内容都基于公开信息，背后有一份带引用的方案文档和协议综述，有疑问可以随时去查出处。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 2. EXEC SUMMARY ============ -->
+  <section class="slide" data-title="一页结论">
+    <p class="kicker">00 · Executive Summary</p>
+    <h2 class="h2">一页结论：<span class="accent">补充而非替换</span></h2>
+    <div class="g3c">
+      <div class="card c card-accent"><h4>① 协议与能力互补</h4>
+        <p>AgentCore Payments 已 GA，但只有<b>稳定币轨（USDC on Base）</b>；Airwallex 有<b>协议兼容虚拟卡 + 85+ 牌照 + 本地清算</b>。</p>
+        <p class="mt-s">→ 探讨 Airwallex 作为卡轨 / 法币轨提供方 <span class="tag idea">合作设想</span></p></div>
+      <div class="card c card-accent"><h4>② 增量 workload</h4>
+        <ul><li>Payment Cryptography：发卡业务托管支付 HSM <span class="tag ga">GA</span></li>
+        <li>Bedrock 上的 Claude：区域内推理（已在 Databricks 用 Anthropic）<span class="tag ga">GA</span></li>
+        <li>DORA / MAS / HKMA 集中度 → 第二云 / 灾备 <span class="tag chk">需合规确认</span></li></ul></div>
+      <div class="card c card-accent"><h4>③ 生态与 co-sell</h4>
+        <p>大量商户跑在 AWS 上（推断）：<b>CloudFront + WAF Web Bot Auth + Airwallex Agent Trust SDK</b> 联合方案；Marketplace / ISV Accelerate。</p>
+        <p class="mt-s"><span class="tag idea">合作设想</span> <span class="tag chk">ISV 资质需确认</span></p></div>
+    </div>
+    <div class="callout bad mt-m"><b>不要讲"迁移"</b>：Airwallex 2022 年迁至 Google Cloud，是 GCP 旗舰 FinTech 案例（Vertex AI / Gemini / A2A），而 Google 又是 AP2 / UCP 发起方。</div>
+    <table class="t mt-m">
+      <tr><th>下一步行动</th><th>时限</th><th>Owner</th></tr>
+      <tr><td>经合作团队打通 Airwallex 产品合作负责人，探讨 AgentCore Payments 卡轨 / 法币轨合作</td><td>2 周</td><td>BD</td></tr>
+      <tr><td>准备 POC-1/2/3 自包含演示（Web Bot Auth · AgentCore Payments x402 · Policy 支出控制）</td><td>4 周</td><td>SA</td></tr>
+      <tr><td>向产品团队确认 6 个关键问题（卡轨路线图、香港 ETA、x402 版本等）</td><td>2 周</td><td>SA</td></tr>
+    </table>
+    <aside class="notes">
+      <p>这一页是整份材料的结论，<strong>只记一句话：补充而不是替换</strong>。</p>
+      <p>为什么？Airwallex 是 Google Cloud 的旗舰客户，2022 年就迁过去了，深度用 Vertex AI 和 Gemini，Google 又是 AP2、UCP 这两个协议的发起方。去推迁移，技术团队会直接把我们挡在门外。</p>
+      <p>所以我们的打法分三条线。<strong>第一，协议和能力互补</strong>：AgentCore Payments 已经 GA，但今天只有稳定币轨道；Airwallex 恰恰有卡、有牌照、有本地清算——这是天然的合作句柄，但请注意是紫色标签，合作设想。</p>
+      <p><strong>第二，增量 workload</strong>：发卡的支付 HSM、Bedrock 上的 Claude、以及监管驱动的第二云。<strong>第三，生态 co-sell</strong>：他们的商户很多在 AWS 上。</p>
+      <p>下面三个行动，两周到四周内就可以启动，而且 POC 不依赖客户配合。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 3. WHY NOW ============ -->
+  <section class="slide" data-title="为什么是现在">
+    <p class="kicker">01 · Why Now</p>
+    <h2 class="h2">AI Agent 开始"替人付钱"，支付体系的<span class="accent">四个前提</span>被打破</h2>
+    <div class="g2c">
+      <div>
+        <p class="lede sm">传统支付默认"人在受信 UI 前操作"：持卡人输卡号、收 OTP、过 3DS。Agent 在<b>用户不在场（Human Not Present）</b>时自主下单，这些机制都不再直接适用。</p>
+        <div class="stack mt-m">
+          <div class="qrow"><span class="n">01</span><div><b>谁授权了 Agent？</b> 需要不可抵赖的委托证明（Mandate / Verifiable Intent）</div></div>
+          <div class="qrow"><span class="n">02</span><div><b>Agent 能做到哪一步？</b> 金额上限、商户白名单、时间窗口</div></div>
+          <div class="qrow"><span class="n">03</span><div><b>出错谁负责？</b> 拒付（chargeback）与责任归属——卡组织尚无 agent 专属规则</div></div>
+          <div class="qrow"><span class="n">04</span><div><b>是真 Agent 还是恶意 Bot？</b> KYA（Know Your Agent）与请求签名</div></div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="kpi"><div class="v">2026-08-19</div><div class="l">AWS AgentCore Payments GA（x402 + MPP）</div></div>
+        <div class="kpi"><div class="v">2025-04</div><div class="l">Visa Intelligent Commerce（04-30）/ Mastercard Agent Pay（04-29）发布</div></div>
+        <div class="kpi"><div class="v">2026-06</div><div class="l">Airwallex Series H：资金明确投向 autonomous finance + agentic commerce</div></div>
+        <div class="kpi"><div class="v">2025-07-18</div><div class="l">美国 GENIUS Act 签署（稳定币联邦立法）</div></div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>先给 BD 同事建立一个直觉：<strong>为什么 agentic payment 是结构性变化，而不是又一个支付方式</strong>。</p>
+      <p>今天所有支付安全机制都假设有一个人在屏幕前——输卡号、收验证码、过 3DS。Agent 在用户不在场的时候自己下单，这套假设就塌了。</p>
+      <p>由此产生四个问题：<strong>谁授权、边界在哪、出错谁负责、怎么区分真 agent 和恶意 bot</strong>。后面客户关心的所有问题，基本都能归到这四类里。</p>
+      <p>右边几个时间点说明节奏：卡组织 2025 年 4 月就发布了各自方案，美国稳定币法案 2025 年 7 月签署，AWS 的 AgentCore Payments 今年 8 月 GA，Airwallex 今年 6 月的融资也明确投向 agentic commerce。<strong>客户已经在动，我们要跟上。</strong></p>
+    </aside>
+  </section>
+
+  <!-- ============ 4. PROTOCOL LANDSCAPE ============ -->
+  <section class="slide" data-title="协议格局">
+    <p class="kicker">01 · Protocol Landscape</p>
+    <h2 class="h2">协议格局：五层，<span class="accent">没有一个协议包打天下</span></h2>
+    <div class="layers">
+      <div class="layer"><div class="lab">商业编排</div><div class="boxes">
+        <div class="box ext"><b>UCP</b><small>Google/Shopify 等 20+ 方；目录·购物车·结账</small></div>
+        <div class="box ext"><b>ACP</b><small>OpenAI + Stripe；ChatGPT Instant Checkout</small></div></div></div>
+      <div class="layer"><div class="lab">授权 / 意图</div><div class="boxes">
+        <div class="box ext"><b>AP2 v0.2</b><small>Google → 捐赠 FIDO Alliance；SD-JWT Mandate</small></div>
+        <div class="box ext"><b>Verifiable Intent</b><small>Mastercard + Google；捐赠 FIDO</small></div></div></div>
+      <div class="layer"><div class="lab">Agent 身份</div><div class="boxes">
+        <div class="box ext"><b>Visa TAP</b><small>RFC 9421 HTTP 签名；agent-browser-auth / agent-payer-auth</small></div>
+        <div class="box ext"><b>Web Bot Auth</b><small>IETF WG 草案；AWS WAF / Cloudflare 支持验证</small></div></div></div>
+      <div class="layer"><div class="lab">支付执行</div><div class="boxes">
+        <div class="box ext"><b>x402 v2</b><small>Coinbase → x402 Foundation；HTTP 402 + 稳定币</small></div>
+        <div class="box ext"><b>MPP</b><small>Tempo + Stripe；HTTP "Payment" 认证方案；卡 + 多链</small></div>
+        <div class="box ext"><b>Agentic Tokens</b><small>Mastercard Agent Pay / Visa 令牌化卡</small></div></div></div>
+      <div class="layer"><div class="lab">结算轨道</div><div class="boxes">
+        <div class="box ext">卡网络<small>Visa / MC</small></div><div class="box ext">稳定币<small>USDC 等</small></div>
+        <div class="box ext">实时支付<small>UPI / Pix / FedNow / PayNow</small></div><div class="box ext">本地清算 / 钱包<small>PSP 网络</small></div></div></div>
+    </div>
+    <div class="callout mt-m">BD 一句话：<b>上层协议决定"在哪下单"，下层轨道决定"钱怎么走"</b>——PSP 的价值在于把多种协议接到多条轨道上，并承担合规与风控。</div>
+    <aside class="notes">
+      <p>这一页是协议地图，<strong>BD 不需要记细节，但要记住"分层"</strong>。</p>
+      <p>最上层是商业编排：UCP 和 ACP，决定 agent 在哪里浏览、下单、结账。第二层是授权和意图：AP2、Mastercard 的 Verifiable Intent，回答"用户到底授权了什么"——注意 AP2 已经由 Google 捐给了 FIDO Alliance。</p>
+      <p>第三层是 agent 身份：Visa TAP 和 IETF 的 Web Bot Auth，本质都是<strong>给 HTTP 请求签名</strong>，让商户知道这是一个真实、注册过的 agent。AWS WAF 已经支持 Web Bot Auth 验证。</p>
+      <p>第四层是执行：x402、Stripe 和 Tempo 的 MPP、卡组织的 agentic token。最底层是钱真正走的轨道。</p>
+      <p>结论是：<strong>没有一个协议包打天下</strong>。这恰恰是 Airwallex 这类 PSP 的机会——把多协议接到多轨道上，同时扛合规和风控。我们的机会在于提供它做这件事的基础设施。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 5. PROTOCOL × AWS ============ -->
+  <section class="slide" data-title="协议成熟度与 AWS 支持">
+    <p class="kicker">01 · Maturity × AWS</p>
+    <h2 class="h2">各协议成熟度，以及 <span class="accent">AWS 今天支持到哪</span></h2>
+    <table class="t">
+      <tr><th>协议</th><th>发起方</th><th>状态（2026-10）</th><th>主要轨道</th><th>AWS 支持</th></tr>
+      <tr><td>x402 v2</td><td>Coinbase → x402 Foundation</td><td>生产使用，多语言 SDK</td><td>链上稳定币</td><td><span class="tag ga">GA</span> AgentCore Payments（买方）· WAF Monetize（卖方，仅 CloudFront）</td></tr>
+      <tr><td>MPP</td><td>Tempo + Stripe</td><td>IETF 个人草案 -01；Stripe 支持</td><td>卡（SPT）+ 多链</td><td><span class="tag ga">GA</span> AgentCore Payments 支持</td></tr>
+      <tr><td>ACP</td><td>OpenAI + Stripe</td><td>2026-04-17 稳定版</td><td>卡</td><td><span class="tag build">需自建</span> 部署在 API Gateway / Lambda / EKS</td></tr>
+      <tr><td>AP2</td><td>Google → FIDO Alliance</td><td>v0.2 规范 + 参考实现</td><td>卡；A2A 实时支付在路线图</td><td><span class="tag build">需自建</span> 可在 AgentCore Runtime 运行</td></tr>
+      <tr><td>UCP</td><td>Google / Shopify 等</td><td>购物规范已发布</td><td>调用 AP2 / ACP</td><td><span class="tag build">需自建</span> 商户侧适配层</td></tr>
+      <tr><td>Visa TAP</td><td>Visa</td><td>部署中，非 GA；VDC 条款授权</td><td>Visa 卡</td><td><span class="tag chk">需验证</span> WAF Web Bot Auth 能否直接验 TAP 签名</td></tr>
+      <tr><td>Mastercard Agent Pay</td><td>Mastercard</td><td>全美持卡人已开通；2026-06 扩至稳定币</td><td>卡 + 稳定币</td><td><span class="tag build">需自建</span> 无 AWS 原生集成（首发云伙伴为 Microsoft）</td></tr>
+    </table>
+    <p class="xs mt-m">来源：协议综述 2026-10-19（各协议 GitHub 规范与官方公告）；AWS What's New 2026-08-19；AWS WAF Developer Guide。</p>
+    <aside class="notes">
+      <p>这张表是 SA 最常被问到的：<strong>AWS 到底原生支持哪些协议</strong>。</p>
+      <p>诚实的答案是：原生托管支持的是<strong>x402 和 MPP</strong>，都在 AgentCore Payments 里，已经 GA。卖方侧，WAF 的 Monetize 规则可以直接对 agent 请求返回 402 和 x402 支付指令，但目前只支持 CloudFront。</p>
+      <p>ACP、AP2、UCP 这三个"商业层"协议，AWS 没有托管服务，需要我们帮客户在 API Gateway、Lambda 或 EKS 上自建适配层——这本身也是 SA 的价值点。</p>
+      <p>Visa TAP 是灰色：AWS WAF 支持 Web Bot Auth 验证，而 TAP 基于同一套 HTTP 签名标准，但<strong>能不能直接验 TAP 的签名，我们还没有确认</strong>，请不要对客户承诺。Mastercard Agent Pay 没有 AWS 原生集成，它的首发云伙伴是 Microsoft。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 6. CUSTOMER PROFILE ============ -->
+  <section class="slide" data-title="客户画像">
+    <p class="kicker">02 · Customer Profile</p>
+    <h2 class="h2">Airwallex：高速增长、<span class="accent">牌照密集</span>、全面押注 agentic</h2>
+    <div class="g4c">
+      <div class="kpi"><div class="v">$11B</div><div class="l">估值（Series H $320M，2026-06）</div></div>
+      <div class="kpi"><div class="v">$1.3B</div><div class="l">年化收入（2026-03，+74% YoY）</div></div>
+      <div class="kpi"><div class="v">$287B</div><div class="l">年化交易量（+120% YoY）</div></div>
+      <div class="kpi"><div class="v">85+</div><div class="l">全球牌照（官网口径）</div></div>
+    </div>
+    <div class="g2c mt-m">
+      <div class="card c"><h4>业务与牌照</h4>
+        <ul><li>产品：全球账户、FX 与跨境付款、线上收单、发卡（Borderless Cards / Issuing API）、费用管理、嵌入式金融、Billing</li>
+        <li>关键牌照：新加坡 MAS MPI · 香港 SVF + MSO · 英国 FCA EMI · 欧盟 EMI（荷兰 / 立陶宛）· 美国 MTL · 澳洲 AFSL · 中国大陆支付牌照（云汇支付）· 日 / 韩 / 印尼 / 马来 / 巴西 / 墨西哥</li>
+        <li>欧洲：EPI 主要成员，接入 Wero</li></ul></div>
+      <div class="card c"><h4>云与 AI 现状</h4>
+        <ul><li><b>2022 年迁至 Google Cloud</b>，GCP 官方旗舰案例：Vertex AI、Gemini、Looker、Agent2Agent</li>
+        <li>数据 / AI：Databricks on GCP，同时使用 Gemini、<b>Anthropic</b>、OpenAI 模型</li>
+        <li>AWS：<b>未发现公开合作、案例或 Marketplace 上架</b></li>
+        <li>中国大陆可能使用阿里云（间接证据，推断）</li></ul></div>
+    </div>
+    <p class="xs mt-m">来源：Airwallex Newsroom（Series H）；airwallex.com 牌照页；cloud.google.com/customers/airwallex-ai；Databricks 客户案例。</p>
+    <aside class="notes">
+      <p>客户画像，记住四个数字：<strong>估值 110 亿美元、年化收入 13 亿、年化交易量 2870 亿、85 张以上牌照</strong>。增速非常快，收入同比 74%，交易量翻倍。</p>
+      <p>业务上它是全栈跨境金融平台：账户、换汇、收单、发卡、费用管理、嵌入式金融都有。<strong>发卡和牌照</strong>是我们后面合作的关键筹码。</p>
+      <p>右边是最需要 BD 记住的：<strong>它是 GCP 的旗舰客户</strong>，Google Cloud 官网有完整案例，用 Vertex AI、Gemini，还在用 Google 的 A2A 协议。目前公开渠道看不到任何 AWS 关系。</p>
+      <p>但有一个细节值得注意：他们通过 Databricks 也在用 Anthropic 的模型。这意味着 Claude on Bedrock 有一个自然的对话入口。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 7. AIRWALLEX AGENTIC + COMPETITION ============ -->
+  <section class="slide" data-title="Agentic 动作与竞争">
+    <p class="kicker">02 · Agentic Moves & Pressure</p>
+    <h2 class="h2">Airwallex 的 agentic 布局，与它<span class="accent">面临的追赶压力</span></h2>
+    <div class="g2c">
+      <div>
+        <table class="t">
+          <tr><th>产品</th><th>状态</th><th>要点</th></tr>
+          <tr><td>Agentic Commerce Suite</td><td><span class="tag pv">Waitlist</span></td><td>接收 ACP / UCP 等协议的 agent 支付；Agentic Token Vault；Agentic Payment Rails（基于 Visa / MC 最新标准）；Agent Trust &amp; Risk SDK</td></tr>
+          <tr><td>Agentic Wallet</td><td><span class="tag pv">即将推出</span></td><td>面向 AI 平台的"协议兼容虚拟卡"</td></tr>
+          <tr><td>Agentic Business Account</td><td>2026-09 公告</td><td>Agent 操作全球资金的统一账户</td></tr>
+          <tr><td>T:0 / Expense Policy Agent</td><td>私测 / 已上线</td><td>AI 原生会计；费用政策 agent</td></tr>
+          <tr><td>稳定币</td><td>建设中</td><td>与 Metal 合作做 agent 微支付结算 <span class="tag chk">需核实</span></td></tr>
+        </table>
+        <p class="xs mt-s">CEO 博文 "The Agentic Banking Era"（2026-09-30）：Observe → Decide → Act → Reconcile。</p>
+      </div>
+      <div>
+        <table class="t">
+          <tr><th>竞品</th><th>Agentic 进度（公开信息）</th></tr>
+          <tr><td>Stripe</td><td>ACP + MPP + x402 + Issuing for Agents + SPT，均已上线</td></tr>
+          <tr><td>Adyen</td><td>Adyen Agentic；ACP + UCP + AP2；已有 MCP Server</td></tr>
+          <tr><td>Ant International</td><td>Antom MCP Server（2026-01），跨境商户</td></tr>
+          <tr><td>Checkout.com</td><td>Mastercard Agent Pay 首发收单伙伴之一</td></tr>
+        </table>
+        <div class="callout warn mt-m"><b>Airwallex 的缺口</b>：Commerce Suite 仍在 waitlist；未见公开 MCP Server；未明确支持 AP2 / x402。<br>→ 这是压力，也是我们提供"加速器"的切入点。</div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>这一页讲<strong>客户自己在做什么，以及它为什么着急</strong>。</p>
+      <p>左边：Airwallex 已经把 agentic 产品线摆出来了——面向商户的 Agentic Commerce Suite，接 ACP 和 UCP，有 token vault、有基于 Visa / Mastercard 标准的支付轨道、还有一个区分真 agent 和恶意 bot 的风控 SDK。面向 AI 平台的是 Agentic Wallet，就是给 agent 用的虚拟卡。但<strong>大多还在 waitlist 或即将推出</strong>。</p>
+      <p>右边是压力：Stripe 几乎所有协议都已上线，Adyen 也是多协议加 MCP Server，蚂蚁国际的 Antom 年初就有了 MCP Server。</p>
+      <p>所以客户的核心诉求很可能是<strong>"上市速度"</strong>。我们的定位应该是：帮它更快把这些能力做出来、分发出去，而不是讨论它的主云选型。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 8. 12 QUESTIONS ============ -->
+  <section class="slide" data-title="客户关心的 12 个问题">
+    <p class="kicker">03 · Customer Concerns</p>
+    <h2 class="h2">客户关心的 12 个问题 → <span class="accent">AWS 能力映射</span></h2>
+    <div class="g4c" style="gap:10px">
+      <div class="card c"><h4>Q1 商户收 agent 支付</h4><p>CloudFront + WAF Web Bot Auth；后端 API Gateway <span class="tag ga">GA</span> + Agent Trust SDK <span class="tag idea">合作</span></p></div>
+      <div class="card c"><h4>Q2 给 agent 发卡与控支出</h4><p>Payment Cryptography；AgentCore Policy / Identity <span class="tag ga">GA</span>（香港无 Payment Crypto）</p></div>
+      <div class="card c"><h4>Q3 多协议适配成本</h4><p>AgentCore Gateway；x402/MPP 内置 <span class="tag ga">GA</span>；ACP/AP2 适配 <span class="tag build">自建</span></p></div>
+      <div class="card c"><h4>Q4 合规边界 / 审计</h4><p>AgentCore Observability、CloudTrail Lake、Nitro Enclaves <span class="tag ga">GA</span>；ARc <span class="tag pv">Preview·us-west-2</span></p></div>
+      <div class="card c"><h4>Q5 高频微支付成本</h4><p>AgentCore Payments x402 <code>upto</code>；Aurora DSQL 账本 <span class="tag ga">GA</span></p></div>
+      <div class="card c"><h4>Q6 真 agent vs 恶意 bot</h4><p>WAF Bot Control + Web Bot Auth；SageMaker 特征；Guardrails <span class="tag ga">GA</span></p></div>
+      <div class="card c"><h4>Q7 AI 平台嵌入式金融</h4><p>Gateway 暴露 MCP 工具；WAF Monetize（仅 CloudFront）<span class="tag ga">GA</span>；ISV <span class="tag chk">确认</span></p></div>
+      <div class="card c"><h4>Q8 24/7 Treasury Agent</h4><p>AgentCore Runtime + Step Functions 审批 + DSQL <span class="tag ga">GA</span>；对接账户 API <span class="tag idea">合作</span></p></div>
+      <div class="card c"><h4>Q9 数据驻留</h4><p>SCP 区域限制、Artifact（MAS/HKMA 文档）<span class="tag ga">GA</span>；<b>香港无 Bedrock</b></p></div>
+      <div class="card c"><h4>Q10 内部 AI 运营</h4><p>Bedrock 上的 Claude、Knowledge Bases <span class="tag ga">GA</span>（增量，不动 GCP 主架构）</p></div>
+      <div class="card c"><h4>Q11 稳定币 + 法币多轨</h4><p>AgentCore Payments（USDC/Base）+ Nitro Enclaves <span class="tag ga">GA</span>；卡/法币轨 <span class="tag idea">合作</span></p></div>
+      <div class="card c"><h4>Q12 多云韧性 / 集中度</h4><p>SG / SYD / FRA / LON 作第二云、灾备；LZA for FSI <span class="tag ga">GA</span>；条款 <span class="tag chk">合规确认</span></p></div>
+    </div>
+    <p class="xs mt-s">依据：Airwallex 产品线与公开表态、竞品压力（详见方案文档第 3 节）。</p>
+    <aside class="notes">
+      <p>这是整份材料的<strong>核心映射页</strong>，BD 可以把它当作对话地图。</p>
+      <p>12 个问题来自三类依据：客户的产品线、公开表态、竞争压力。每个问题我们都给了对应的 AWS 能力和成熟度。</p>
+      <p>重点挑几个讲：Q1 和 Q6 是"收款侧安全"，用 CloudFront 加 WAF 的 Web Bot Auth；Q2 是发卡，Payment Cryptography 是独立于他们 GCP 架构的切入点，但<strong>香港没有</strong>；Q5 和 Q11 是稳定币微支付，AgentCore Payments 原生支持；Q12 是监管驱动的多云韧性。</p>
+      <p>请注意 Q9 的红字：<strong>香港没有 Bedrock 和 AgentCore</strong>，这是客户核心市场，后面有专门一页讲怎么应对。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 9. AWS CAPABILITY MAP ============ -->
+  <section class="slide" data-title="AWS 能力全景">
+    <p class="kicker">04 · AWS Building Blocks</p>
+    <h2 class="h2">AWS 能力全景：<span class="accent">买方、卖方、安全、数据</span>四块拼图</h2>
+    <div class="g4c">
+      <div class="card c card-accent"><h4>买方 Agent（付钱）</h4><ul>
+        <li>AgentCore Payments <span class="tag ga">GA</span></li><li>AgentCore Runtime / Identity <span class="tag ga">GA</span></li>
+        <li>AgentCore Policy（Cedar）<span class="tag ga">GA</span></li><li>Strands Agents SDK（开源）</li></ul></div>
+      <div class="card c card-accent"><h4>卖方 / 商户（收钱）</h4><ul>
+        <li>WAF Web Bot Auth（CloudFront + Regional）<span class="tag ga">GA</span></li><li>WAF Monetize → 402 + x402（仅 CloudFront）<span class="tag ga">GA</span></li>
+        <li>API Gateway + Cognito / Lambda Authorizer</li><li>AgentCore Gateway（MCP 工具目录）</li></ul></div>
+      <div class="card c card-accent"><h4>支付安全</h4><ul>
+        <li>Payment Cryptography（PCI PIN / P2PE）<span class="tag ga">GA</span></li><li>Nitro Enclaves：签名 / 钱包密钥隔离</li>
+        <li>KMS · CloudHSM · Secrets Manager</li><li>Bedrock Guardrails（Prompt 攻击检测）</li></ul></div>
+      <div class="card c card-accent"><h4>风控 · 账本 · 审计</h4><ul>
+        <li>Kinesis / MSK / Managed Flink 实时特征</li><li>SageMaker · Neptune 图风控</li>
+        <li>Aurora DSQL（多区域强一致账本）· DynamoDB</li><li>CloudTrail Lake · Security Lake · Observability</li></ul></div>
+    </div>
+    <div class="g2c mt-m">
+      <div class="callout warn"><b>已知限制</b>：Amazon Fraud Detector 已不再接受新客户 → 用 SageMaker / Neptune 替代；QLDB 已停用 → Aurora DSQL。</div>
+      <div class="callout"><b>样例代码</b>：<code>awslabs/agentcore-samples</code> → <code>06-workshops/13-AgentCore-payments</code>、<code>01-features/08-agents-that-transact</code>、Visa B2B AP agent、shopping concierge blueprint。</div>
+    </div>
+    <aside class="notes">
+      <p>把 AWS 能力分成<strong>四块拼图</strong>，便于和客户对齐。</p>
+      <p>第一块是<strong>买方 agent</strong>，也就是"agent 替用户付钱"：AgentCore Payments 负责执行，Identity 管凭证，Policy 用 Cedar 管规则，Runtime 做隔离。</p>
+      <p>第二块是<strong>卖方</strong>，这对 PSP 最重要："商户怎么收 agent 的钱"。WAF 的 Web Bot Auth 验证 agent 身份，现在已经支持 CloudFront 和区域资源；WAF 的 Monetize 规则可以直接返回 402，不过只支持 CloudFront。</p>
+      <p>第三块是支付安全，Payment Cryptography 是托管的支付 HSM，Nitro Enclaves 做密钥隔离。第四块是风控、账本和审计。</p>
+      <p>两个坑要提前讲：<strong>Fraud Detector 已经不接新客户，QLDB 已经停用</strong>，别在方案里写它们。样例代码在 awslabs 的 agentcore-samples 仓库，有现成的 payments workshop。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 10. AGENTCORE PAYMENTS ============ -->
+  <section class="slide" data-title="AgentCore Payments">
+    <p class="kicker">04 · Deep Dive</p>
+    <h2 class="h2">AgentCore Payments：<span class="accent">能做什么、不能做什么</span></h2>
+    <div class="g2c">
+      <div>
+        <table class="t">
+          <tr><th>维度</th><th>事实（截至 2026-10）</th></tr>
+          <tr><td>时间线</td><td>2026-04 Preview → <b>2026-08-19 GA</b></td></tr>
+          <tr><td>协议</td><td>x402（含 <code>upto</code> 按上限授权）+ MPP</td></tr>
+          <tr><td>钱包</td><td>Coinbase CDP · Stripe Privy；<b>AWS 不持有私钥</b></td></tr>
+          <tr><td>币种 / 网络</td><td>USDC on Base</td></tr>
+          <tr><td>核心对象</td><td>PaymentManager · PaymentConnector · 托管钱包 · 带预算的 PaymentSession</td></tr>
+          <tr><td>限额</td><td>基础设施层强制（金额 + 币种 + 过期），不依赖模型自律</td></tr>
+          <tr><td>生态</td><td>经 Gateway 接入 Coinbase x402 Bazaar（付费端点目录）</td></tr>
+          <tr><td>费用</td><td>AWS 不额外收费，透传钱包方操作费用</td></tr>
+        </table>
+      </div>
+      <div class="stack">
+        <div class="callout good"><b>适合讲的价值</b>：agent 付费调用 API / MCP / 内容；限额在 agent 之外强制执行；全链路可观测；案例：Solv Labs、Ampersend、BlockRun。</div>
+        <div class="callout bad"><b>必须主动说明的限制</b><br>① 只有稳定币轨，<b>没有卡轨、没有多币种法币轨</b><br>② <b>没有内置事中人工审批</b> → Strands hooks + Step Functions 自建<br>③ <b>东京、香港不可用</b><br>④ x402 v1 / v2 线上格式不兼容 — <span class="tag ga">已验证：WAF Monetize 使用 x402 v2，AgentCore Payments 同样支持 v2</span></div>
+        <div class="callout"><b>这就是合作句柄</b>：Airwallex 的卡 + 法币清算 正好补 ① <span class="tag idea">合作设想</span></div>
+      </div>
+    </div>
+    <p class="xs mt-s">来源：AWS What's New（2026-04 preview / 2026-08 GA）；AWS ML Blog（Solv Labs、OpenClaw、Ampersend、BlockRun）；awslabs/agentcore-samples。</p>
+    <aside class="notes">
+      <p>AgentCore Payments 是这份方案的<strong>技术锚点</strong>，SA 要把它讲透。</p>
+      <p>它 8 月 19 号 GA，支持 x402 和 MPP 两个协议；钱包由 Coinbase CDP 或 Stripe Privy 托管，<strong>AWS 不碰私钥</strong>；目前结算是 Base 链上的 USDC。最核心的设计是：<strong>限额在基础设施层强制</strong>，不靠 prompt、不靠模型自律，多个 agent 并发也不会超额。</p>
+      <p>但右边红框的四个限制，<strong>请在客户问之前主动说</strong>：只有稳定币；没有事中人工审批，大额要自己用 Step Functions 做审批；东京和香港不可用；x402 两个版本格式不兼容。</p>
+      <p>主动说限制反而建立信任，而且第一条限制——没有卡轨和法币轨——正好就是 Airwallex 的强项，自然引出合作话题。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 11. ARCHITECTURE ============ -->
+  <section class="slide" data-title="整体架构">
+    <p class="kicker">04 · Reference Architecture</p>
+    <h2 class="h2">整体分层架构：<span class="accent">AWS 做执行与控制，Airwallex 做轨道与合规</span></h2>
+    <div class="layers">
+      <div class="layer"><div class="lab">接入 / 身份</div><div class="boxes">
+        <div class="box ext">AI Agent<small>x402 / MPP / ACP / AP2 请求</small></div>
+        <div class="box aws">CloudFront + WAF<small>Web Bot Auth · Bot Control · 限流</small></div>
+        <div class="box aws">API Gateway<small>Cognito / Lambda Authorizer（JWT）</small></div>
+        <div class="box aw">Agent Trust &amp; Risk SDK<small>Airwallex 风险评分</small></div></div></div>
+      <div class="layer"><div class="lab">授权与策略</div><div class="boxes">
+        <div class="box aws">AgentCore Identity<small>Token Vault · Consent Portal</small></div>
+        <div class="box aws">AgentCore Policy<small>Cedar：金额 / 商户 / 时间 / 累计</small></div>
+        <div class="box aws">Step Functions<small>超阈值人工审批</small></div></div></div>
+      <div class="layer"><div class="lab">Agent 运行时</div><div class="boxes">
+        <div class="box aws">AgentCore Runtime<small>microVM 会话隔离</small></div>
+        <div class="box aws">AgentCore Gateway<small>MCP / OpenAPI 工具目录</small></div>
+        <div class="box aws">Bedrock + Guardrails<small>Claude 等模型</small></div></div></div>
+      <div class="layer"><div class="lab">支付执行</div><div class="boxes">
+        <div class="box aws">AgentCore Payments<small>x402 / MPP · USDC on Base</small></div>
+        <div class="box aw">Airwallex 虚拟卡<small>Visa / MC 网络（合作设想）</small></div>
+        <div class="box aw">Airwallex 多币种账户<small>本地清算 · 85+ 牌照（合作设想）</small></div></div></div>
+      <div class="layer"><div class="lab">安全 · 账本 · 审计</div><div class="boxes">
+        <div class="box aws">Payment Cryptography · KMS · Nitro Enclaves</div>
+        <div class="box aws">Aurora DSQL · DynamoDB（幂等键）</div>
+        <div class="box aws">Observability · CloudTrail Lake · S3（Block Public Access）</div></div></div>
+    </div>
+    <div class="legend mt-m"><span class="lg"><i class="sw aws"></i>AWS 服务</span><span class="lg"><i class="sw aw"></i>Airwallex 能力（合作设想）</span><span class="lg"><i class="sw ext"></i>外部</span><span>安全约束：无公开资源；对外仅经 CloudFront / API Gateway，均带 WAF 或认证；S3 全部 BLOCK_ALL</span></div>
+    <aside class="notes">
+      <p>这张是<strong>整体参考架构</strong>，一句话概括分工：<strong>AWS 负责执行与控制，Airwallex 负责轨道与合规</strong>。</p>
+      <p>从上往下讲：接入层，agent 请求先经过 CloudFront 和 WAF，用 Web Bot Auth 验证身份，再经过带认证的 API Gateway；Airwallex 的风控 SDK 可以叠加在这一层。</p>
+      <p>授权与策略层：Identity 管凭证和用户授权，Policy 用 Cedar 写规则，超过阈值的交易走 Step Functions 人工审批——这正好补上 AgentCore Payments 没有内置审批的缺口。</p>
+      <p>运行时层是 AgentCore Runtime、Gateway 和 Bedrock。支付执行层：稳定币走 AgentCore Payments，卡和法币走 Airwallex，<strong>紫色虚线框都是合作设想</strong>。最底层是密钥、账本和审计。</p>
+      <p>安全上要强调：<strong>没有任何公开访问的资源</strong>，这在金融客户面前是基本盘。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 12. COMPLEMENTARITY ============ -->
+  <section class="slide" data-title="互补矩阵">
+    <p class="kicker">04 · Who Does What</p>
+    <h2 class="h2">互补矩阵：<span class="accent">各自做最擅长的那一层</span></h2>
+    <table class="t">
+      <tr><th>职责域</th><th>AWS 提供</th><th>Airwallex 提供</th><th>互补关系</th></tr>
+      <tr><td>Agent 接入验证</td><td>CloudFront + WAF Web Bot Auth</td><td>Agent Trust &amp; Risk SDK</td><td>AWS 验签名 → Airwallex 做风险评分</td></tr>
+      <tr><td>支付执行</td><td>AgentCore Payments（x402 / MPP，稳定币）</td><td>Agentic Payment Rails（卡 + 法币）</td><td>稳定币轨 + 卡 / 法币轨 = 多轨 <span class="tag idea">合作设想</span></td></tr>
+      <tr><td>发卡</td><td>Payment Cryptography（托管支付 HSM）</td><td>Agentic Wallet 虚拟卡、持牌发卡</td><td>AWS 保护密钥，Airwallex 是发卡主体</td></tr>
+      <tr><td>支出策略</td><td>AgentCore Policy（Cedar）、基础设施层限额</td><td>Agentic Token Vault、费用政策</td><td>基础设施层控制 + 业务层策略</td></tr>
+      <tr><td>工具分发</td><td>AgentCore Gateway、Marketplace</td><td>支付 / FX / 发卡 API</td><td>Airwallex 成为 AWS 上 agent 可调用的支付工具 <span class="tag idea">合作设想</span></td></tr>
+      <tr><td>账本与审计</td><td>Aurora DSQL、CloudTrail Lake、Observability</td><td>业务账本、85+ 牌照合规体系</td><td>技术审计证据 + 监管合规主体</td></tr>
+      <tr><td>AI 推理</td><td>Bedrock（Claude 等）+ Guardrails</td><td>Gemini / Claude（经 Databricks on GCP）</td><td>增量 workload，区域内推理</td></tr>
+    </table>
+    <div class="callout mt-m">叙事：<b>"AWS 上的 agent + Airwallex 的轨道"</b>——让 AWS 生态里的 agent 能通过 Airwallex 完成"稳定币 → 多币种法币"的全程结算。</div>
+    <aside class="notes">
+      <p>这张表回答客户一定会问的问题：<strong>"那到底谁做什么？"</strong></p>
+      <p>原则是<strong>各自做最擅长的那一层</strong>。AWS 擅长执行、隔离、密钥、审计这些基础设施能力；Airwallex 擅长轨道、牌照、合规主体和商户关系。</p>
+      <p>其中有两行是紫色合作设想，也是战略价值最高的：第一，<strong>支付执行的多轨</strong>——AWS 的稳定币轨加 Airwallex 的卡和法币轨；第二，<strong>工具分发</strong>——把 Airwallex 的支付、换汇、发卡 API 注册成 AgentCore Gateway 上的工具，让 AWS 生态里任何 agent 都能调用。</p>
+      <p>对客户的叙事就是最下面这句：AWS 上的 agent，加 Airwallex 的轨道。这让 Airwallex 在 AWS 生态里获得一个新的分发渠道，而不是要它改主云。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 13. S1 ============ -->
+  <section class="slide" data-title="S1 商户收 agent 支付">
+    <p class="kicker">05 · Scenario S1</p>
+    <h2 class="h2">S1 商户侧：安全接收 agent 发起的支付</h2>
+    <div class="flow mt-s">
+      <div class="st"><span class="n">1</span><b>Agent 请求</b>带 RFC 9421 签名（Signature-Agent / Signature-Input / Signature）</div><div class="ar">→</div>
+      <div class="st"><span class="n">2</span><b>CloudFront + WAF</b>Web Bot Auth 验签；Bot Control 拦截未注册 bot；限流</div><div class="ar">→</div>
+      <div class="st"><span class="n">3</span><b>API Gateway</b>JWT（Cognito）+ Lambda Authorizer</div><div class="ar">→</div>
+      <div class="st"><span class="n">4</span><b>风险评分</b>Lambda 调 Airwallex Agent Trust SDK <span class="tag idea">合作</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">5</span><b>结账</b>ACP / UCP 适配层 → Airwallex 收单 / Token Vault</div><div class="ar">→</div>
+      <div class="st"><span class="n">6</span><b>审计</b>Observability + CloudTrail Lake，签名与决策留痕</div>
+    </div>
+    <div class="g3c mt-m">
+      <div class="card c"><h4>服务清单</h4><p>CloudFront · WAF（Web Bot Auth / Bot Control）· API Gateway · Cognito · Lambda · CloudWatch / X-Ray · CloudTrail Lake</p></div>
+      <div class="card c"><h4>差距与风险</h4><ul>
+        <li>Visa TAP 的 tag（agent-payer-auth 等）能否被 WAF 直接验证 <span class="tag chk">需 WAF 团队确认</span>；否则用 Lambda@Edge 自建验签</li>
+        <li>Agent Trust SDK 是否有可集成的包 / 接口 <span class="tag idea">需确认</span></li>
+        <li>ACP / UCP 适配层 <span class="tag build">自建</span></li></ul></div>
+      <div class="card c hot"><h4>POC 指标（≤4 周）</h4><ul>
+        <li>1,000 次无签名请求：100% 被拦截</li><li>100 次合法签名请求：&gt;99% 通过</li><li>WAF + Authorizer 全链路 P95 &lt; 200ms</li></ul></div>
+    </div>
+    <aside class="notes">
+      <p>第一个场景：<strong>商户怎么安全地接收 agent 的支付</strong>。这是 Airwallex 商户侧最直接的痛点：既怕被 bot 刷单，又怕把合法 agent 误拦掉。</p>
+      <p>流程六步：agent 请求带 HTTP 签名；CloudFront 加 WAF 用 Web Bot Auth 验签，未注册的 bot 被 Bot Control 拦截；然后经过带 JWT 的 API Gateway；Lambda Authorizer 调用 Airwallex 的风控 SDK 打分；通过后进入 ACP 或 UCP 的结账适配层；全程留审计。</p>
+      <p>要诚实说明的差距：<strong>WAF 能不能直接验证 Visa TAP 的 tag，我们还没确认</strong>；如果不能，可以用 Lambda@Edge 自己验签。</p>
+      <p>这个 POC 完全不依赖 Airwallex，四周内可以做出来，指标就是右边三条：拦截率、合法通过率、延迟。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 14. S2 ============ -->
+  <section class="slide" data-title="S2 买方 agent 支付与多轨">
+    <p class="kicker">05 · Scenario S2</p>
+    <h2 class="h2">S2 买方侧：agent 安全付款 + <span class="accent">稳定币 / 法币多轨</span></h2>
+    <div class="flow mt-s">
+      <div class="st"><span class="n">1</span><b>用户授权</b>Identity Consent Portal；设定预算 PaymentSession</div><div class="ar">→</div>
+      <div class="st"><span class="n">2</span><b>Agent 调付费端点</b>收到 402（v1 JSON body / v2 PAYMENT-REQUIRED）</div><div class="ar">→</div>
+      <div class="st"><span class="n">3</span><b>策略检查</b>Policy（Cedar）+ 基础设施层限额；超阈值 → Step Functions 人工审批</div><div class="ar">→</div>
+      <div class="st"><span class="n">4</span><b>支付执行</b>AgentCore Payments 签名支付（Coinbase CDP / Stripe Privy）</div><div class="ar">→</div>
+      <div class="st"><span class="n">5</span><b>结算</b>USDC on Base 链上确认</div><div class="ar">→</div>
+      <div class="st" style="border-style:dashed"><span class="n">6</span><b>法币落地</b>Airwallex 多币种账户 / 本地清算 <span class="tag idea">合作设想</span></div>
+    </div>
+    <div class="g3c mt-m">
+      <div class="card c"><h4>关键设计</h4><ul>
+        <li>限额在 agent 之外强制：即使 agent 被 prompt 注入，也超不出预算</li>
+        <li>签名密钥：Nitro Enclaves + KMS（按 PCR 条件授权）参照 Solv Labs 案例</li>
+        <li>幂等键存 DynamoDB；账本用 Aurora DSQL</li></ul></div>
+      <div class="card c"><h4>差距与风险</h4><ul>
+        <li>只有 USDC on Base；无卡轨 / 法币轨</li><li>x402 v1 / v2 版本协商 <span class="tag chk">需确认</span></li>
+        <li>Airwallex 是否开放 USDC 接收与法币兑出 API <span class="tag idea">需确认</span></li>
+        <li>Nitro Enclaves 需 EC2，不支持 Fargate</li></ul></div>
+      <div class="card c hot"><h4>POC 指标（2 周）</h4><ul>
+        <li>端到端：agent → AgentCore Payments → Base 链上确认</li><li>P90 &lt; 3 秒</li><li>超限请求被阻断、不上链</li></ul></div>
+    </div>
+    <aside class="notes">
+      <p>第二个场景是<strong>买方侧</strong>：agent 替用户或企业付钱，比如按次付费调用 API、按推理付费。</p>
+      <p>六步：用户先通过 Identity 的授权门户授权，并设定预算；agent 调用付费端点收到 402；Policy 检查规则，<strong>超过阈值的走 Step Functions 人工审批</strong>；AgentCore Payments 执行签名支付；链上用 USDC 结算。</p>
+      <p>第六步是虚线框：<strong>法币落地</strong>。这是最有战略价值、也最需要确认的部分——Airwallex 能不能接收链上 USDC，再通过它的牌照网络兑成多币种法币。如果能，就是一个完整的"稳定币进、法币出"闭环。</p>
+      <p>前五步今天就能用 AWS 自己的服务做 POC，两周可交付。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 15. S3-S6 ============ -->
+  <section class="slide" data-title="S3–S6 场景摘要">
+    <p class="kicker">05 · Scenarios S3–S6</p>
+    <h2 class="h2">另外四个场景：<span class="accent">从控制、发卡、AI 运营到分发</span></h2>
+    <div class="g2c">
+      <div class="card c card-accent"><h4>S3 KYA：agent 粒度的支出控制</h4>
+        <p>AgentCore Policy（Cedar）按 agent 角色设金额 / 商户 / 时间 / 累计规则；拦截器 Lambda 在 deny 时触发 Step Functions 审批。</p>
+        <p class="mt-s"><span class="tag ga">Policy GA</span> <span class="tag build">审批流自建</span> <span class="tag pv">ARc 仅 us-west-2 / 英文</span></p>
+        <p class="xs mt-s">POC：Cedar 评估 P95 &lt; 50ms；3 类 agent × 20 条边界用例全部正确</p></div>
+      <div class="card c card-accent"><h4>S4 发卡：Payment Cryptography 托管支付 HSM</h4>
+        <p>TR-31 密钥导入；动态 CVV；为 Agentic Wallet 虚拟卡提供 PCI PIN / P2PE 级密钥保护，不改动其 GCP 架构。</p>
+        <p class="mt-s"><span class="tag ga">GA：SG / SYD / TYO / FRA / LON / IAD</span> <span class="tag no">香港不可用</span></p>
+        <p class="xs mt-s">POC：新加坡完成 TR-31 导入；dCVV P99 &lt; 50ms @1,000 并发</p></div>
+      <div class="card c card-accent"><h4>S5 内部 AI 运营：Bedrock 上的 Claude</h4>
+        <p>T:0 会计 / 对账 / 争议处理的推理层；Knowledge Bases 装载会计准则与税务规则；Guardrails 过滤违规输出。数据经私有专线进私有 S3，GCP 数据管道不动。</p>
+        <p class="mt-s"><span class="tag ga">GA</span> <span class="tag chk">跨云互联方式需确认</span></p></div>
+      <div class="card c card-accent"><h4>S6 分发：Airwallex 能力注册为 MCP 工具</h4>
+        <p>AgentCore Gateway 注册 get_fx_quote / get_balance / issue_virtual_card；Cedar 限制工具权限；API 密钥放 Secrets Manager，经 VPC Endpoint 调用；→ Marketplace co-sell 起点。</p>
+        <p class="mt-s"><span class="tag ga">Gateway GA</span> <span class="tag idea">API 接入需合作</span></p>
+        <p class="xs mt-s">POC：两个只读工具端到端；P90 &lt; 500ms；未授权调用发卡被拦截</p></div>
+    </div>
+    <aside class="notes">
+      <p>剩下四个场景快速过一下，<strong>每个都是一个独立的切入点</strong>，可以按客户兴趣挑。</p>
+      <p>S3 是<strong>KYA，也就是 agent 粒度的支出控制</strong>。Airwallex 的企业客户会问：每个 agent 能花多少、在哪花、什么时候花？Cedar 规则加 Step Functions 审批可以做到，审批流需要自建。</p>
+      <p>S4 是<strong>发卡的支付 HSM</strong>。这个切入点的好处是完全独立于他们的 GCP 架构，Google Cloud 没有第一方的支付 HSM，需要靠合作伙伴。但再次提醒：香港没有。</p>
+      <p>S5 是内部 AI 运营，他们已经在用 Claude，我们讲区域内推理和合规文件。S6 是分发，把 Airwallex 的能力注册成 MCP 工具，这是 Marketplace co-sell 的自然起点。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 16. REGIONS ============ -->
+  <section class="slide" data-title="区域可用性">
+    <p class="kicker">07 · Regions</p>
+    <h2 class="h2">区域可用性：<span class="accent">香港是最大空白</span>，必须提前设预期</h2>
+    <div class="g2c" style="grid-template-columns:1.35fr 1fr">
+      <table class="t center">
+        <tr><th>市场 / 区域</th><th>Bedrock</th><th>AgentCore Payments</th><th>Payment Crypto</th><th>WAF WBA</th></tr>
+        <tr><td>新加坡 ap-southeast-1</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr><td>悉尼 ap-southeast-2</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr><td>东京 ap-northeast-1</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td>伦敦 eu-west-2</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr><td>法兰克福 eu-central-1</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr><td>美东 us-east-1</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr class="hl"><td>香港 ap-east-1</td><td>⚠️ 规划中</td><td>⚠️ 规划中</td><td>❌ 未列入</td><td>✅</td></tr>
+        <tr><td>中国大陆（独立分区）</td><td>❌</td><td>❌</td><td>❌</td><td>—</td></tr>
+      </table>
+      <div class="stack">
+        <div class="callout bad"><b>香港是 Airwallex 核心市场</b>（SVF + MSO 牌照）。Bedrock / AgentCore 处于规划中、无公开 ETA；Payment Cryptography 端点未包含 ap-east-1。</div>
+        <div class="callout"><b>应对</b><br>① 推理与 agent 运行放新加坡，评估 HKMA 外包与数据驻留要求<br>② 香港本地用 CloudHSM + KMS 承担密钥类需求<br>③ 向区域团队申请 NDA 下的 ETA，不要口头承诺</div>
+        <div class="callout warn"><b>竞争事实</b>：Azure 与 GCP 均有香港区域，这是 AWS 在该市场的明显劣势。</div>
+      </div>
+    </div>
+    <p class="xs mt-s">来源：AWS 区域服务列表 / 各服务 endpoints 文档（截至 2026-10）；具体以 AWS Regional Services 页面为准。</p>
+    <aside class="notes">
+      <p>这一页<strong>一定要在客户问之前讲</strong>。</p>
+      <p>新加坡、悉尼、伦敦、法兰克福、美东，四项能力全部可用。东京缺 AgentCore Payments。<strong>香港是最大空白</strong>：Bedrock 和 AgentCore 处于规划中，没有公开时间；Payment Cryptography 的官方端点里也没有香港。</p>
+      <p>而香港恰恰是 Airwallex 的核心市场，有储值支付工具和货币服务牌照。</p>
+      <p>应对三条：推理和 agent 放新加坡，同时和客户的法务一起评估 HKMA 的外包和数据要求；香港本地的密钥需求用 CloudHSM 加 KMS；向区域团队申请 NDA 下的 ETA，<strong>千万不要口头承诺时间</strong>。</p>
+      <p>也要坦诚：Azure 和 GCP 在香港都有区域，这一点我们是劣势。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 17. COMPLIANCE ============ -->
+  <section class="slide" data-title="合规要点">
+    <p class="kicker">07 · Compliance</p>
+    <h2 class="h2">合规要点：<span class="accent">可以讲的</span>和<span class="accent">必须先确认的</span></h2>
+    <table class="t">
+      <tr><th>框架</th><th>市场</th><th>与方案的关系</th><th>口径</th></tr>
+      <tr><td>EU DORA（2022/2554）</td><td>欧盟</td><td>第 28(8) 条退出策略、第 29 条 ICT 集中度风险评估 → 第二云 / 灾备论据</td><td><span class="tag chk">适用性需合规团队确认</span></td></tr>
+      <tr><td>MAS TRM / 外包指引</td><td>新加坡</td><td>第三方与云风险管理、业务连续性；AWS Artifact 提供对照文档</td><td><span class="tag chk">条款需法务确认</span></td></tr>
+      <tr><td>HKMA 外包（SA-2）/ 操作风险</td><td>香港</td><td>外包控制、数据处理地点 → 新加坡路由是否可接受</td><td><span class="tag chk">条款号需法务确认</span></td></tr>
+      <tr><td>PCI DSS v4.0 / PCI PIN</td><td>全球</td><td>Payment Cryptography（PCI PIN / P2PE 合规包）、KMS、Nitro Enclaves</td><td><span class="tag ga">可讲</span></td></tr>
+      <tr><td>GENIUS Act（P.L. 119-27）</td><td>美国</td><td>2025-07-18 签署；稳定币发行方要求；AgentCore Payments 使用 USDC</td><td><span class="tag ga">可讲</span>（影响评估为推断）</td></tr>
+      <tr><td>MiCA</td><td>欧盟</td><td>过渡期 2026-07-01 结束；Airwallex 欧盟稳定币业务状态未知</td><td><span class="tag chk">客户自述为准</span></td></tr>
+      <tr><td>香港稳定币制度</td><td>香港</td><td>HKMA 发行人牌照制度；Airwallex 是否申请未知</td><td><span class="tag chk">客户自述为准</span></td></tr>
+    </table>
+    <div class="callout warn mt-m">原则：<b>不在客户合规团队面前引用未经确认的条款号</b>；监管论据只作"讨论邀请"，结论由客户法务与 AWS 合规团队给出。</div>
+    <aside class="notes">
+      <p>合规页的核心是一个原则：<strong>分清楚"可以讲的"和"必须先确认的"</strong>。</p>
+      <p>可以讲的：PCI 相关，Payment Cryptography 有 PCI PIN 和 P2PE 的合规包；美国 GENIUS Act 已经在 2025 年 7 月签署成法。</p>
+      <p>必须先确认的：DORA 我们核对过原文，<strong>集中度风险是第 29 条，退出策略是第 28 条第 8 款</strong>——之前流传的"第 30 条、第 12 条"是错的。但 DORA 怎么适用到"AWS 当第二云"上，要由合规团队给口径。MAS 和 HKMA 的具体条款号同样要法务确认。</p>
+      <p>在支付客户的合规团队面前引错一个条款号，丢掉的是整场对话的可信度。所以监管论据只作为"邀请讨论"，不要当结论讲。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 18. COMPETITION ============ -->
+  <section class="slide" data-title="竞争定位">
+    <p class="kicker">08 · Competitive Positioning</p>
+    <h2 class="h2">AWS vs GCP vs Azure：<span class="accent">诚实对比</span></h2>
+    <table class="t">
+      <tr><th>维度</th><th>AWS</th><th>Google Cloud</th><th>Azure</th></tr>
+      <tr><td>托管 agent 支付执行</td><td>✅ AgentCore Payments（GA，x402 + MPP）</td><td>未见同类托管服务（截至 2026-10）</td><td>未见同类托管服务；与 Mastercard Agent Pay 合作</td></tr>
+      <tr><td>协议话语权</td><td>x402 / MPP 原生；Amazon 参与 UCP</td><td><b>AP2 发起方</b>（已捐 FIDO）、UCP、A2A</td><td>Mastercard Agent Pay 首发合作云</td></tr>
+      <tr><td>支付 HSM</td><td>✅ Payment Cryptography（第一方托管）</td><td>Cloud HSM（FIPS 140-2 L3）；支付 HSM 依赖 Thales / Futurex 等伙伴</td><td>Dedicated / Payment HSM（认证范围需核实）</td></tr>
+      <tr><td>卖方 x402 收费</td><td>✅ WAF Monetize（CloudFront）</td><td>—</td><td>—</td></tr>
+      <tr><td>香港区域</td><td>⚠️ Bedrock / AgentCore 不可用</td><td>✅ 有区域</td><td>✅ 有区域</td></tr>
+      <tr><td>与 Airwallex 现有关系</td><td>❌ 无公开关系</td><td>✅ 旗舰案例：Vertex AI / Gemini / A2A</td><td>❌ 无公开关系</td></tr>
+    </table>
+    <div class="g2c mt-m">
+      <div class="callout warn"><b>GCP 的真实优势（不能回避）</b>：协议话语权（AP2 / UCP / A2A）、客户 4 年技术积累、香港区域完整。</div>
+      <div class="callout good"><b>AWS 的差异化论点</b>：较早 GA 的托管 agent 支付执行；第一方托管支付 HSM；基础设施层限额；买卖双侧 x402。<b>避免用"唯一""不可复制"</b>。</div>
+    </div>
+    <aside class="notes">
+      <p>竞争定位我们要<strong>诚实</strong>。客户的技术团队对 GCP 比我们熟，任何夸大都会被当场识破。</p>
+      <p>AWS 的差异化有四点：<strong>主要云厂商里较早 GA 的托管 agent 支付执行</strong>；第一方托管的支付 HSM，Google Cloud 需要靠 Thales、Futurex 这样的伙伴；限额在基础设施层强制；买方和卖方两侧都支持 x402。</p>
+      <p>GCP 的优势也要承认：它是 AP2、UCP、A2A 的发起方，有协议话语权；Airwallex 在 GCP 上有四年积累；香港区域完整。</p>
+      <p>还有一个口径要求：<strong>不要说"唯一""不可复制"</strong>，我们只能说"截至目前、据公开信息"。这个领域每个月都在变。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 19. STAKEHOLDERS & VALUE ============ -->
+  <section class="slide" data-title="干系人与价值主张">
+    <p class="kicker">09 · BD Playbook</p>
+    <h2 class="h2">干系人地图与<span class="accent">按角色的价值主张</span></h2>
+    <table class="t">
+      <tr><th>角色</th><th>关注点（依据公开表态）</th><th>我们讲什么</th><th>入口</th></tr>
+      <tr><td>CEO / 战略</td><td>"Agentic Banking Era"、增长、竞争追赶</td><td>AWS 作为 agentic 支付基础设施伙伴；扩大 Airwallex 在 AWS 生态的分发</td><td>高管对高管，需亚太 FSI 负责人介入</td></tr>
+      <tr><td>产品合作负责人</td><td>x402 / 稳定币生态、Metal 合作、协议伙伴</td><td>AgentCore Payments 卡轨 / 法币轨合作；Gateway 工具分发 <span class="tag idea">合作设想</span></td><td>合作生态团队（基于公开角色，非点名个人）</td></tr>
+      <tr><td>CTO / 工程</td><td>GCP 稳定性、迁移风险、开发效率</td><td>不迁移：Payment Cryptography 独立接入；Strands SDK；自包含 POC</td><td>SA 技术研讨</td></tr>
+      <tr><td>合规 / 风险</td><td>MAS / HKMA / DORA、数据驻留、审计</td><td>Artifact 合规文档、CloudTrail Lake、多云韧性讨论 <span class="tag chk">口径需确认</span></td><td>合规研讨</td></tr>
+      <tr><td>CFO / 财务运营</td><td>财务 AI 转型、T:0</td><td>Bedrock 上的 Claude 区域内推理、审批工作流</td><td>T:0 共建邀请</td></tr>
+      <tr><td>商户产品负责人</td><td>Commerce Suite 上市速度</td><td>S1 联合方案：CloudFront + WAF Web Bot Auth + Agent Trust SDK</td><td>产品合作 / Marketplace</td></tr>
+    </table>
+    <div class="callout mt-m"><b>开场电梯话术</b>："我们不谈迁移。AWS 上已经有托管的 agent 支付执行，但缺卡和多币种法币——这正是 Airwallex 的强项。想和您探讨，怎么让 AWS 生态里的 agent 通过 Airwallex 完成结算。"</div>
+    <aside class="notes">
+      <p>BD 作战手册第一页：<strong>见谁、讲什么</strong>。</p>
+      <p>我们按角色来写，不点名个人。最关键的入口是<strong>产品合作负责人</strong>——Airwallex 在 x402 和稳定币生态上很活跃，这和 AgentCore Payments 是天然对话。</p>
+      <p>面对 CTO 和工程团队，第一句话就要说<strong>"不迁移"</strong>，讲 Payment Cryptography 可以独立接入，讲两周就能做出来的自包含 POC。面对合规，讲审计证据和多云韧性，但口径要先和合规团队对齐。</p>
+      <p>下面这段电梯话术可以直接用：不谈迁移，AWS 有托管 agent 支付执行但缺卡和法币，这正是你们的强项，我们一起探讨结算闭环。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 20. DISCOVERY ============ -->
+  <section class="slide" data-title="发现问题清单">
+    <p class="kicker">09 · Discovery Questions</p>
+    <h2 class="h2">首次会议：<span class="accent">12 个发现问题</span></h2>
+    <div class="g2c">
+      <div>
+        <div class="qrow"><span class="n">01</span><div>Agentic Commerce Suite 预计何时 GA？商户侧 bot / agent 验证方案定了吗？</div></div>
+        <div class="qrow"><span class="n">02</span><div>Visa TAP / Mastercard Agent Pay 的接入进度？谁来验签？</div></div>
+        <div class="qrow"><span class="n">03</span><div>AP2 和 x402 在路线图里吗？优先级如何？</div></div>
+        <div class="qrow"><span class="n">04</span><div>稳定币微支付：链上 → 法币兑出走自有清算还是合作方？</div></div>
+        <div class="qrow"><span class="n">05</span><div>Agentic Wallet 虚拟卡的 HSM 是自建还是托管？PCI PIN 审计周期？</div></div>
+        <div class="qrow"><span class="n">06</span><div>给 agent 的支出控制：规则引擎延迟要求？是否需要人工审批？</div></div>
+      </div>
+      <div>
+        <div class="qrow"><span class="n">07</span><div>是否计划提供官方 MCP Server / agent 工具包？</div></div>
+        <div class="qrow"><span class="n">08</span><div>T:0 / 内部 AI 用什么模型平台？数据需留在哪个区域？</div></div>
+        <div class="qrow"><span class="n">09</span><div>香港 SVF 核心流程跑在哪？HKMA 对处理地点有无明确要求？</div></div>
+        <div class="qrow"><span class="n">10</span><div>DORA 评估中，单一云集中度是否已被列为需缓解项？</div></div>
+        <div class="qrow"><span class="n">11</span><div>商户中 AWS 客户的比例？是否有联合销售意愿？</div></div>
+        <div class="qrow"><span class="n">12</span><div>agent 交易的拒付与责任归属，目前怎么处理？</div></div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>第一次会议，<strong>多问少讲</strong>。这 12 个问题分四组。</p>
+      <p>第一组是商户侧，问题 1 到 3：Commerce Suite 什么时候 GA、卡组织协议谁来验签、AP2 和 x402 在不在路线图里。这组决定 S1 场景有没有机会。</p>
+      <p>第二组是支付执行，问题 4 到 7：稳定币怎么落地成法币、发卡 HSM 是自建还是托管、支出控制要不要人工审批、会不会做官方 MCP Server。这组决定 S2、S3、S4、S6。</p>
+      <p>第三组是 AI 和区域，问题 8 和 9。第四组是监管和商业，问题 10 到 12。</p>
+      <p>特别是第 9 题和第 10 题，<strong>答案会直接决定我们的打法</strong>：如果香港处理地点有硬性要求，短期内我们在香港就要绕开推理类 workload；如果 DORA 已把集中度列为缓解项，第二云的对话就能马上展开。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 21. OBJECTIONS ============ -->
+  <section class="slide" data-title="异议应对">
+    <p class="kicker">09 · Objection Handling</p>
+    <h2 class="h2">常见异议与<span class="accent">应对</span></h2>
+    <table class="t">
+      <tr><th>客户说</th><th>真实原因</th><th>我们怎么回应</th></tr>
+      <tr><td>"我们全在 GCP，不考虑迁移"</td><td>把对话理解成迁移提案</td><td>明确不是迁移：Payment Cryptography 独立接入；Bedrock 并行使用；AgentCore 做增量能力</td></tr>
+      <tr><td>"香港没有 Bedrock，我们的核心市场在香港"</td><td>真实的区域空白</td><td>坦白承认；评估新加坡处理是否满足 HKMA 要求；非实时 workload（对账、会计）优先；申请 NDA 下的 ETA</td></tr>
+      <tr><td>"AgentCore Payments 只有稳定币，我们要卡"</td><td>真实的产品限制</td><td>承认缺口 → 正是合作点：Airwallex 卡 / 法币轨 <span class="tag idea">合作设想</span>；短期用 Gateway 接 Airwallex 发卡 API</td></tr>
+      <tr><td>"AP2 是 Google 的，我们跟 Google 走"</td><td>协议阵营判断</td><td>AP2 已捐 FIDO，属中立标准；可在 AgentCore Runtime 运行；多协议并存是常态</td></tr>
+      <tr><td>"Stripe 什么协议都支持了"</td><td>竞争焦虑</td><td>Stripe 是 PSP，AWS 是基础设施；AgentCore Payments 也用 Stripe Privy 钱包；讨论"AWS + Airwallex"组合能给商户什么</td></tr>
+      <tr><td>"Airwallex 自己做 agentic 平台，为什么依赖 AWS？"</td><td>担心平台竞争</td><td>AWS 不做面向商户的支付产品；我们提供底座和分发渠道，让 Airwallex 更快上市</td></tr>
+    </table>
+    <aside class="notes">
+      <p>六个最常见的异议，我们按"客户说、真实原因、怎么回应"来准备。</p>
+      <p>最关键的两个是<strong>真实缺口</strong>：香港没有 Bedrock、AgentCore Payments 只有稳定币。对真实缺口，<strong>唯一正确的做法是承认</strong>，然后转化——香港问题转为"哪些 workload 不受影响"；稳定币问题直接转为合作话题。</p>
+      <p>"AP2 是 Google 的"这个异议，要提醒客户：AP2 已经捐给 FIDO Alliance，是中立标准，在 AWS 上一样能跑。</p>
+      <p>"Stripe 都支持了"这个，要把层次拉开：Stripe 是支付服务商，AWS 是基础设施，而且 AgentCore Payments 本身就接了 Stripe 的钱包。我们讨论的是组合，不是谁替代谁。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 22. POC ============ -->
+  <section class="slide" data-title="POC 序列">
+    <p class="kicker">10 · SA Playbook</p>
+    <h2 class="h2">POC 序列：<span class="accent">先自包含，再联合</span></h2>
+    <table class="t">
+      <tr><th>POC</th><th>场景</th><th>周期</th><th>依赖</th><th>证明什么</th></tr>
+      <tr><td>POC-1</td><td>CloudFront + WAF Web Bot Auth（S1）</td><td>2 周</td><td>仅 AWS 账户</td><td>agent 签名验证、bot 拦截</td></tr>
+      <tr><td>POC-2</td><td>AgentCore Payments x402 端到端（S2）</td><td>2 周</td><td>Coinbase CDP 测试钱包</td><td>托管支付执行 + 基础设施层限额</td></tr>
+      <tr><td>POC-3</td><td>AgentCore Policy（Cedar）KYA（S3）</td><td>2 周</td><td>Strands SDK</td><td>agent 粒度支出控制 + 审批流</td></tr>
+      <tr><td>POC-4</td><td>Payment Cryptography + 虚拟卡（S4）</td><td>3 周</td><td>Airwallex sandbox</td><td>发卡密钥托管、dCVV 性能</td></tr>
+      <tr><td>POC-5</td><td>Gateway 注册 Airwallex 工具（S6）</td><td>2 周</td><td>Airwallex API Key</td><td>AWS 生态分发渠道</td></tr>
+      <tr><td>POC-6</td><td>Bedrock 财务 AI（S5）</td><td>4 周</td><td>脱敏财务数据</td><td>区域内推理、准确率</td></tr>
+    </table>
+    <div class="g3c mt-m">
+      <div class="card c"><h4>起步资源</h4><p><code>awslabs/agentcore-samples</code>：13-AgentCore-payments workshop、08-agents-that-transact、Visa B2B AP agent、shopping concierge blueprint</p></div>
+      <div class="card c"><h4>其他仓库</h4><p><code>strands-agents/harness-sdk</code> · <code>aws-samples/samples-for-payment-cryptography-service</code> · <code>coinbase/x402</code> · LZA for FSI</p></div>
+      <div class="card c hot"><h4>关键策略</h4><p><b>POC-1/2/3 不依赖客户</b>：先做好演示，再邀请客户工程团队评估，用演示换取 POC-4/5/6 的合作。</p></div>
+    </div>
+    <aside class="notes">
+      <p>SA 落地的核心策略是<strong>先自包含，再联合</strong>。</p>
+      <p>POC 1、2、3 不需要客户任何配合，只用 AWS 账户和测试钱包，每个两周：分别证明 agent 签名验证、托管支付执行加限额、agent 粒度的支出控制。</p>
+      <p>这三个做好之后，作为演示带去见客户的工程团队，换取 POC 4、5、6 的合作——这三个需要 Airwallex 的 sandbox、API Key 或者脱敏数据。</p>
+      <p>起步资源已经核实过：awslabs 的 agentcore-samples 仓库里有 AgentCore payments 的完整 workshop，还有 Visa B2B 应付账款 agent 和购物 concierge 的蓝图，可以直接改。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 23. ROADMAP ============ -->
+  <section class="slide" data-title="路线图">
+    <p class="kicker">10 · Roadmap（建议）</p>
+    <h2 class="h2">分阶段路线图：<span class="accent">0–3 / 3–6 / 6–12 个月</span></h2>
+    <div class="g3c">
+      <div class="card c card-accent"><h4>0–3 个月 · 建立可信度</h4><ul>
+        <li>完成 POC-1/2/3 自包含演示</li><li>向产品团队拿到 6 个关键问题的答案</li>
+        <li>首次技术研讨：工程 + 产品合作</li><li>与合规团队对齐 DORA / MAS / HKMA 口径</li></ul></div>
+      <div class="card c card-accent"><h4>3–6 个月 · 联合验证</h4><ul>
+        <li>POC-4 发卡 HSM / POC-5 Gateway 工具注册</li><li>评估 Airwallex 作为 AgentCore Payments 卡轨 / 法币轨提供方 <span class="tag idea">合作设想</span></li>
+        <li>S1 联合方案原型（WAF + Agent Trust SDK）</li><li>ISV Accelerate / Marketplace 资质评估</li></ul></div>
+      <div class="card c card-accent"><h4>6–12 个月 · 规模化</h4><ul>
+        <li>联合方案上 Marketplace，面向 AWS 商户 co-sell</li><li>POC-6 → 增量 Bedrock workload 上线</li>
+        <li>视香港区域进展扩展</li><li>第二云 / 灾备 workload（如监管驱动成立）</li></ul></div>
+    </div>
+    <p class="xs mt-m">路线图为 SA 建议，依赖客户意愿与产品团队反馈，不代表 AWS 承诺。</p>
+    <aside class="notes">
+      <p>路线图分三段。<strong>前三个月的目标只有一个：建立可信度</strong>——把三个自包含 POC 做好，从产品团队拿到关键答案，和合规团队把监管口径对齐，然后做第一次技术研讨。</p>
+      <p>三到六个月是联合验证：做需要客户配合的 POC，并开始认真评估最有战略价值的合作——Airwallex 作为 AgentCore Payments 的卡轨和法币轨提供方。</p>
+      <p>六到十二个月是规模化：联合方案上 Marketplace 做 co-sell，内部 AI 的增量 workload 上线，香港视区域进展再扩展。</p>
+      <p>这是 SA 的建议版本，<strong>不是 AWS 的承诺</strong>，对客户讲的时候请这样表述。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 24. MULTI-RAIL: WHY + SCENE-RAIL MAP ============ -->
+  <section class="slide" data-title="多轨：场景与轨道">
+    <p class="kicker">10 · 多轨与沙箱</p>
+    <h2 class="h2">多轨：<span class="accent">场景决定轨道</span>，四条轨道全做真实调用</h2>
+    <div class="g2c">
+      <div>
+        <div class="stack mt-s">
+          <div class="qrow"><span class="n">01</span><div><b>稳定币按次付费</b>：agent 调用 API / MCP 工具，金额 $0.01，卡网络单笔成本不合算；需无人值守自动执行 → <b>x402 / MPP</b></div></div>
+          <div class="qrow"><span class="n">02</span><div><b>跨境供应商付款</b>：越南 / 印尼供应商只接本地法币，T+0 是合同要求 → <b>NAPAS / BI-FAST / FAST 本地轨道</b></div></div>
+          <div class="qrow"><span class="n">03</span><div><b>企业虚拟卡</b>：全球 SaaS 订阅 / 差旅报销，商户只接卡，需 MCC 支出限额 → <b>PSP 发卡（Visa / MC）</b></div></div>
+          <div class="qrow"><span class="n">04</span><div><b>大额 B2B 货款</b>：需要汇率锁定、可撤销、监管报告 → <b>锁汇 + SWIFT / RTGS</b></div></div>
+        </div>
+        <div class="callout mt-m"><b>结论</b>：出海 PSP 的价值在于"一套 API 接多条轨道、一份牌照覆多个辖区"——这套 demo 完整演示这四条，全部<b>真实 API 调用、不动真钱</b>。</div>
+      </div>
+      <div>
+        <table class="t">
+          <tr><th>场景</th><th>轨道</th><th>demo 状态</th></tr>
+          <tr><td>按次付费 API（$0.01）</td><td>x402 Base Sepolia</td><td><span class="tag ga">今日可用</span></td></tr>
+          <tr><td>越南供应商货款（$300）</td><td>VN NAPAS + FX 锁汇</td><td><span class="tag ga">今日可用</span></td></tr>
+          <tr><td>SaaS 订阅（$49）</td><td>PSP 发卡虚拟卡</td><td><span class="tag ga">今日可用</span></td></tr>
+          <tr><td>MPP 稳定币对比展示</td><td>MPP Tempo testnet</td><td><span class="tag ga">今日可用</span></td></tr>
+          <tr><td>商户 agent 验签</td><td>Visa TAP（本地开源）</td><td><span class="tag ga">今日可用</span></td></tr>
+          <tr><td>Stripe 卡路径（可选）</td><td>Stripe Issuing → SPT → MPP</td><td><span class="tag chk">合作团队申请</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>这一页讲<strong>为什么四条轨道都要做</strong>——不是炫技，是真实业务需求。出海支付机构的企业客户在同一天可能需要四种完全不同的支付方式：agent 按次调 API 用稳定币最经济；给越南供应商付款要本地法币 T+0；给 SaaS 平台续费要虚拟卡；大额货款要锁汇加可撤销轨道。</p>
+      <p>右边这张表是四条轨道在 demo 里的对应关系。<strong>重点：除了 Stripe 卡路径需要通过合作团队申请之外，其余所有轨道今天就可以用</strong>——Airwallex 沙箱自助注册即时开通，Coinbase CDP 半小时搞定，Visa TAP 开源本地跑。这是一套"开盒即演示"的方案。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 25. RAIL × SANDBOX TABLE ============ -->
+  <section class="slide" data-title="轨道与沙箱总表">
+    <p class="kicker">10 · 多轨与沙箱</p>
+    <h2 class="h2">轨道 × 沙箱总表：<span class="accent">按客户切换，不在客户面前展示竞品</span></h2>
+    <table class="t">
+      <tr><th>轨道</th><th>提供方</th><th>沙箱就绪</th><th>申请门槛</th><th>Airwallex 场景</th><th>连连/通用场景</th></tr>
+      <tr><td>x402 稳定币</td><td>Privy + AgentCore Payments</td><td><span class="tag ga">今日</span></td><td>Privy 账号（自助）</td><td>✅</td><td>✅</td></tr>
+      <tr><td>MPP Tempo 稳定币</td><td>Stripe + AgentCore Payments</td><td><span class="tag ga">今日</span></td><td>同上（StripePrivy 连接器）</td><td>✅</td><td>✅</td></tr>
+      <tr><td>本地实时（APAC 主）</td><td><b>Airwallex 沙箱</b></td><td><span class="tag ga">今日</span></td><td>自助注册，0 天</td><td>✅ 主轨</td><td>❌ 不用</td></tr>
+      <tr><td>本地实时（APAC 备）</td><td><b>Nium 沙箱</b></td><td><span class="tag ga">今日</span></td><td>自助注册，0 天</td><td>❌ 不用</td><td>✅ 主轨</td></tr>
+      <tr><td>虚拟卡发卡 + 授权模拟</td><td>Airwallex / Nium Issuing</td><td><span class="tag ga">已验证</span></td><td>同上</td><td>Airwallex ✅</td><td>Nium ⚠️</td></tr>
+      <tr><td>卡（Stripe 路径，可选）</td><td>Stripe Issuing → SPT</td><td><span class="tag chk">3–7 天</span></td><td>需美国主体；通过合作团队</td><td colspan="2" style="text-align:center">可选，SG/HK 不支持直注</td></tr>
+      <tr><td>连连国际</td><td>客户自备凭证</td><td><span class="tag pv">POC 阶段</span></td><td>需 KYB；由客户提供</td><td>—</td><td>✅ 接口预留</td></tr>
+      <tr><td>商户验签（Visa TAP）</td><td>开源本地实现</td><td><span class="tag ga">今日</span></td><td>无，纯本地</td><td>✅</td><td>✅</td></tr>
+    </table>
+    <div class="callout warn mt-m"><b>沙箱切换原则</b>：不在 Airwallex 客户面前展示 Nium 品牌；不在连连客户面前展示 Airwallex 竞品。场景切换只改配置（API Key + 产品名称映射），不改代码。</div>
+    <aside class="notes">
+      <p>这张是总表，SA 开发时用它对齐接入顺序，BD 用它向客户说明"你们用自己的沙箱"。</p>
+      <p><strong>最重要的原则</strong>：按客户切换沙箱。在 Airwallex 的会议室里，所有轨道都走 Airwallex 的 API，产品名称也用 Airwallex 的体系；面向连连就用 Nium 沙箱，但界面上叫"PSP 适配层"，不出现竞品名字。这个原则已定，不需要每次讨论。</p>
+      <p>注意 Stripe 那一行：SG/HK 主体不支持直接注册使用 Issuing 和 SPT，需要通过 AWS 与 Stripe 的合作团队申请合作伙伴测试环境。这是真实的地区限制，不要对客户承诺"Stripe 今天能用"。连连那一行是接口预留，不是已集成。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 26. PAYMENT ROUTING LAYER ============ -->
+  <section class="slide" data-title="支付路由层">
+    <p class="kicker">10 · 多轨与沙箱</p>
+    <h2 class="h2">支付路由层：<span class="accent">选轨道 → 过策略 → 留证据</span></h2>
+    <div class="layers mt-s">
+      <div class="layer"><div class="lab">1 · 路由决策</div><div class="boxes">
+        <div class="box aws"><b>成本</b><small>稳定币极低；卡、SWIFT 有固定费用（示意值，以 PSP 报价为准）</small></div>
+        <div class="box aws"><b>速度</b><small>链上 &lt;1 分钟；本地实时 T+0；ACH T+1</small></div>
+        <div class="box aws"><b>最小金额</b><small>x402 $0.01；SPT $0.50</small></div>
+        <div class="box aws"><b>可撤销性</b><small>链上不可撤；卡有争议期；本地视轨道</small></div>
+        <div class="box aws"><b>收款方接受度</b><small>供应商法币 / agent API 端点 USDC</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">2 · Cedar 策略</div><div class="boxes">
+        <div class="box aws">AgentCore Policy<small>收款方白名单；单笔上限；会话累计；时间窗口</small></div>
+        <div class="box aws">超阈值 → Step Functions<small>人工审批；审批人 ≠ 发起人</small></div>
+        <div class="box aws">硬拒绝<small>不在白名单 / 超过会话预算 → 直接拒绝，不上链</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">3 · 轨道执行</div><div class="boxes">
+        <div class="box aws">稳定币<small>AgentCore Payments x402 / MPP</small></div>
+        <div class="box aw">本地实时<small>Airwallex / Nium PSP 适配层</small></div>
+        <div class="box aw">虚拟卡<small>PSP Issuing</small></div>
+        <div class="box ext">SWIFT / RTGS<small>PSP 大额通道</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">4 · 证据</div><div class="boxes">
+        <div class="box aws">链上哈希<small>区块浏览器可独立验证</small></div>
+        <div class="box aws">审计事件<small>谁 / 何时 / 选了哪条轨道 / 策略判定结果</small></div>
+        <div class="box aws">CloudTrail Lake<small>控制面操作全记录</small></div>
+      </div></div>
+    </div>
+    <div class="callout mt-m">界面上显示"<b>为什么选这条轨道</b>"——路由决策对审批人和合规团队透明可见。</div>
+    <aside class="notes">
+      <p>支付路由层回答一个问题：<strong>agent 有钱要付，它怎么知道走哪条轨道？</strong> 答案是四个维度：成本、速度、最小金额、可撤销性，再加上收款方实际能接受什么。把这些因子输进去，路由层给出推荐轨道，界面上展示"为什么选这条"。</p>
+      <p>路由决策之后必须过 Cedar 策略——收款方不在白名单就直接拒绝；超过单笔阈值就进人工审批。这层不是路由层的职责，但它是支付执行前的<strong>必经关卡</strong>。所有决策和结果都留下审计事件，链上的留哈希，其余的存 DynamoDB 并关联到 CloudTrail。</p>
+      <p>这三层——路由、策略、证据——串在一起就是"有边界的 agent 付款"的技术底座。在客户面前，这一页可以让合规和风控团队看到：每一分钱的流向都有完整的决策轨迹。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 27. CARD SCHEMES & COMMERCE PROTOCOLS ============ -->
+  <section class="slide" data-title="卡组织与商业层协议">
+    <p class="kicker">10 · 多轨与沙箱</p>
+    <h2 class="h2">卡组织与商业层协议：<span class="accent">哪些今天能跑，哪些要申请</span></h2>
+    <div class="g2c">
+      <div>
+        <p class="xs b">卡组织协议</p>
+        <table class="t">
+          <tr><th>协议</th><th>demo 可用性</th><th>说明</th></tr>
+          <tr><td>Visa TAP<br><small>trusted-agent-protocol</small></td><td><span class="tag ga">今日</span></td><td>开源，5 个服务本地运行，无 Visa 凭证；演示商户侧 RFC 9421 验签</td></tr>
+          <tr><td>Visa VIC<br><small>sandbox.mcp.visa.com</small></td><td><span class="tag pv">申请中</span></td><td>需 Visa VIC onboarding；并行申请，数周到数月；第一版 demo 不依赖</td></tr>
+          <tr><td>Mastercard Agent Pay<br><small>AP4M</small></td><td><span class="tag no">不纳入</span></td><td>无公开沙箱；架构图中标注为"卡轨道 B"，需合作关系</td></tr>
+        </table>
+      </div>
+      <div>
+        <p class="xs b">商业层协议（下单 / 授权委托）</p>
+        <table class="t">
+          <tr><th>协议</th><th>可运行性</th><th>说明</th></tr>
+          <tr><td>AP2（Google → FIDO）</td><td><span class="tag ga">今日（local）</span></td><td>Google API Key（免费），`bash run.sh` 5 分钟跑通；含 mock 卡支付场景；可部署到 AgentCore Runtime</td></tr>
+          <tr><td>ACP（OpenAI + Stripe）</td><td><span class="tag build">按需</span></td><td>纯规范；实际运行需 Stripe 沙箱账号；适合已有 Stripe 合作的场景</td></tr>
+          <tr><td>UCP（NVIDIA 实现）</td><td><span class="tag build">按需</span></td><td>NVIDIA API Key（免费）+ Docker；ACP + UCP 双协议，供商户侧对照演示</td></tr>
+        </table>
+        <div class="callout mt-m"><b>AP2 已捐赠 FIDO Alliance</b>，是中立标准，可在 AgentCore Runtime 上运行，不存在"绑定 Google"的问题。</div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>这一页分两块：左边是卡组织协议，右边是商业层协议。</p>
+      <p>卡组织这边，<strong>Visa TAP 今天就能运行</strong>——它是开源的，不需要任何 Visa 凭证，启动 5 个本地服务就能演示"商户怎么验证 agent 身份"。Visa VIC 是真正的卡组织沙箱，已经在申请流程里，但不依赖它做第一版 demo。Mastercard Agent Pay 没有公开沙箱，本次不纳入，在架构图里标注为"卡轨道 B"。</p>
+      <p>商业层这边，<strong>AP2 是首选</strong>：Google API Key 免费，5 分钟跑通，有完整的 A2A 协议日志和 mock 卡支付场景，部署到 AgentCore Runtime 完全可行。特别要澄清一点：AP2 已经捐给了 FIDO Alliance，是中立标准，不是"Google 私有"——这个点在客户面前很有用，尤其是不想强绑 Google 的客户。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 28. SANDBOX ACTION CHECKLIST ============ -->
+  <section class="slide" data-title="沙箱申请清单">
+    <p class="kicker">10 · 多轨与沙箱</p>
+    <h2 class="h2">沙箱申请行动清单：<span class="accent">SA 今日自助 vs 走合作团队</span></h2>
+    <div class="g2c">
+      <div>
+        <p class="xs b">SA 自助完成（今日起，无需等待）</p>
+        <div class="stack">
+          <div class="qrow"><span class="n">①</span><div>Airwallex 沙箱：<b>airwallex.com/docs</b> → "Get started in sandbox"<span class="tag ga" style="margin-left:6px">即时</span></div></div>
+          <div class="qrow"><span class="n">②</span><div>Nium 沙箱：<b>app.nium.com/sign-up</b>，邮箱 + MFA<span class="tag ga" style="margin-left:6px">即时</span></div></div>
+          <div class="qrow"><span class="n">③</span><div>Stripe Privy（AgentCore Payments 钱包）：<b>用户需在会前通过 Privy 前端完成钱包授权</b>；无需 Marketplace 订阅<span class="tag ga" style="margin-left:6px">约 5 分钟</span></div></div>
+          <div class="qrow"><span class="n">④</span><div>Base Sepolia 测试 USDC：<b>faucet.circle.com</b><span class="tag ga" style="margin-left:6px">即时</span></div></div>
+          <div class="qrow"><span class="n">⑤</span><div>Google API Key（AP2）：<b>aistudio.google.com/apikey</b><span class="tag ga" style="margin-left:6px">即时</span></div></div>
+          <div class="qrow"><span class="n">⑥</span><div>Visa TAP 本地运行：<b>github.com/visa/trusted-agent-protocol</b> clone + pip install<span class="tag ga" style="margin-left:6px">&lt;30 分钟</span></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="xs b">需走合作团队或等待审批</p>
+        <div class="stack">
+          <div class="qrow"><span class="n">A</span><div><b>Stripe 卡轨</b>（Issuing + SPT + MPP）：联系 AWS × Stripe 合作团队申请 partner 测试环境（US 主体）<span class="tag pv" style="margin-left:6px">1–2 周</span></div></div>
+          <div class="qrow"><span class="n">B</span><div><b>Visa VIC</b>：登录 developer.visa.com → "request access"（VIC onboarding）<span class="tag pv" style="margin-left:6px">数周到数月</span></div></div>
+          <div class="qrow"><span class="n">C</span><div><b>Airwallex Connected Account API</b>：联系 Airwallex Sales（嵌入式金融场景）<span class="tag pv" style="margin-left:6px">1–2 周</span></div></div>
+          <div class="qrow"><span class="n">D</span><div><b>连连国际</b>：在 POC 阶段由客户方提供沙箱凭证，SA 负责接口适配<span class="tag pv" style="margin-left:6px">客户安排</span></div></div>
+        </div>
+        <div class="callout warn mt-m"><b>连连讲点</b>："换上你们的接口就能跑"——接口预留已完成，适配器接口与 Airwallex / Nium 一致。</div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>这一页是 SA 的行动清单。左边六项<strong>今天就能做，最长半小时</strong>：Airwallex 和 Nium 沙箱自助注册即时激活；Coinbase CDP 半小时；Circle 水龙头即时领测试 USDC；Google API Key 即时；Visa TAP 本地跑通半小时内。</p>
+      <p>右边是需要等待或走流程的：Stripe 卡轨因为 SG/HK 地区限制，必须通过 AWS 与 Stripe 合作团队申请合作伙伴测试环境，预计 1–2 周；Visa VIC onboarding 周期不定，已发起申请；Airwallex Connected Account API 需要联系 Sales；连连国际 POC 阶段由客户提供凭证。</p>
+      <p>特别提醒：<strong>Nium 本地付款与虚拟卡需 Nium 账号团队开通，默认沙箱账号为 RESTRICTED 配置（cardTxnProductCode=null）</strong>，不要对客户提前承诺"Nium 发卡今天就能跑通"。钱包凭证方面，AgentCore Payments 改用 <strong>Stripe Privy</strong>（③），Coinbase CDP 需要 Marketplace 订阅，如遇失败请换 Privy。</p>
+    </aside>
+  </section>
+
+  <!-- ============ Demo-a. THREE-ACT DEMO ============ -->
+  <section class="slide" data-title="Demo：主线三幕">
+    <p class="kicker">Demo · 架构与验证结果 · 2026-10-20</p>
+    <h2 class="h2">Demo 主线：<span class="accent">三幕，全程真实环境验证</span></h2>
+    <div class="flow mt-s">
+      <div class="st"><span class="n">幕一</span><b>可信接入</b>无签名 → 403 <code>http_library</code>；伪造签名 → 403 <code>wba:failed</code>；AgentCore Browser → 200 <code>wba:verified</code> + <code>vendor:agentcore</code></div>
+      <div class="ar">→</div>
+      <div class="st"><span class="n">幕二</span><b>有边界的付款</b>付费端点 → 402（x402 v2，Base Sepolia，0.01 USDC）；两笔测试网交易上链确认；预算超限 → 基础设施层硬拒绝，不签名不上链</div>
+      <div class="ar">→</div>
+      <div class="st"><span class="n">幕三</span><b>可追溯证据</b>Airwallex VN / HK / SG 全部 PAID；换汇 SETTLED；VISA 虚拟卡 49→APPROVED / 80→DECLINED；Nium 换汇实时可跑</div>
+    </div>
+    <div class="g3c mt-m">
+      <div class="card c"><h4>幕一关键发现</h4><ul>
+        <li>WAF 规则需同时匹配 <code>wba:failed</code> 与 <code>wba:invalid</code>，只写 invalid 会放行伪造签名</li>
+        <li>ap-southeast-1 Web Bot Auth <span class="tag ga">已确认可用</span></li></ul></div>
+      <div class="card c"><h4>幕二关键发现</h4><ul>
+        <li><code>ProcessPayment</code> 只返回 payload，调用方须自行组装完整 x402 载荷（建议用 Strands SDK）</li>
+        <li>Stripe Privy 连接器不需要 Marketplace 订阅 <span class="tag ga"></span></li></ul></div>
+      <div class="card c"><h4>幕三关键发现</h4><ul>
+        <li>Airwallex 不再需要 Admin Key；新账号同样可复现 <span class="tag ga"></span></li>
+        <li>Nium 本地付款 / 虚拟卡需 Nium 账号团队开通 <span class="tag chk">待确认</span></li></ul></div>
+    </div>
+    <aside class="notes">
+      <p>这是 demo 的<strong>主线故事</strong>，三幕全部在 2026-10-20 的真实 AWS 环境里跑通。</p>
+      <p><strong>第一幕可信接入</strong>：在新加坡（ap-southeast-1）部署 CloudFront 加 WAF，测了三条路径——普通 curl 没签名，403，标签 http_library；用真实 key 但伪造签名值，403，标签 web_bot_auth:failed；AgentCore Browser 开启签名，200，标签 verified 加 vendor:agentcore。<strong>最重要的坑</strong>：规则必须同时匹配 failed 和 invalid，首轮只写 invalid 就会放行伪造签名。</p>
+      <p><strong>第二幕有边界的付款</strong>：付费端点返回 402，x402 v2 格式。两条路径都跑通——x402 客户端直接生成 EIP-3009 授权签名付款，以及通过 AgentCore Payments 加 Stripe Privy 托管钱包付款。<strong>预算超限时基础设施层直接报错，不签名不上链</strong>。Stripe Privy 不需要 AWS Marketplace 订阅，比 Coinbase CDP 更方便。</p>
+      <p><strong>第三幕可追溯证据</strong>：Airwallex 三条本地轨道全 PAID，换汇四货币对全 SETTLED，VISA 虚拟卡额度控制精准，<strong>全部用普通 API Key 完成，不依赖 Admin Key</strong>。Nium 换汇实时，本地付款和卡需账号团队开通。</p>
+    </aside>
+  </section>
+
+  <!-- ============ Demo-b. DEMO ARCHITECTURE ============ -->
+  <section class="slide" data-title="Demo：架构">
+    <p class="kicker">Demo · 架构与验证结果</p>
+    <h2 class="h2">Demo 架构：<span class="accent">已验证组件全景</span></h2>
+    <div class="layers mt-s">
+      <div class="layer"><div class="lab">可信接入层</div><div class="boxes">
+        <div class="box ext"><b>AI Agent</b><small>AgentCore Browser（签名开启，ap-southeast-1）</small></div>
+        <div class="box aws"><b>CloudFront + WAF Bot Control</b><small>✅ 无签名 403 / 伪签名 403 / verified 200</small></div>
+        <div class="box aws"><b>WAF Monetize</b><small>✅ → 402 + x402 v2（Base Sepolia，0.01 USDC，300s）</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">支付执行层</div><div class="boxes">
+        <div class="box aws"><b>x402 客户端直付</b><small>✅ 0xc766…d013；买方 20→19.99 USDC</small></div>
+        <div class="box aws"><b>AgentCore Payments + Stripe Privy</b><small>✅ 0x7831…f186；私钥由 Privy 托管，AWS 不持有</small></div>
+        <div class="box aws"><b>PaymentSession 预算控制</b><small>✅ 超限 "Insufficient budget"，不签名不上链</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">多轨结算层</div><div class="boxes">
+        <div class="box aw"><b>Airwallex 本地付款</b><small>✅ VN NAPAS / HK FPS / SG FAST → PAID；失败路径 CANCELLED</small></div>
+        <div class="box aw"><b>Airwallex 换汇 + VISA 虚拟卡</b><small>✅ 4 对 SETTLED；49→APPROVED / 80→DECLINED；无需 Admin Key</small></div>
+        <div class="box aw"><b>Nium FX</b><small>✅ SGD→USD 实时；本地付款 / 卡需 Nium 开通 ⚠️</small></div>
+      </div></div>
+      <div class="layer"><div class="lab">安全基础层</div><div class="boxes">
+        <div class="box aws">S3 Block Public Access · Secrets Manager · IAM 服务角色（权限需手动补齐）</div>
+        <div class="box ext">Base Sepolia 测试网 · Circle 水龙头 · Privy 钱包前端（会前授权）</div>
+      </div></div>
+    </div>
+    <div class="legend mt-s"><span class="lg"><i class="sw aws"></i>AWS 服务</span><span class="lg"><i class="sw aw"></i>Airwallex / Nium（已验证）</span><span class="lg"><i class="sw ext"></i>外部</span><span>✅ = 2026-10-20 真实环境已验证</span></div>
+    <aside class="notes">
+      <p>这张图是 demo 的<strong>完整架构图，标出每个已验证的组件</strong>。打 ✅ 的都是今天真实跑通的，⚠️ 的是有条件能跑或需要开通。</p>
+      <p><strong>可信接入层</strong>：CloudFront 加 WAF，三条路径全部验证。WAF Monetize 返回 402，x402 v2 格式，包含 Base Sepolia 链、卖方钱包地址、金额 0.01 USDC，300 秒超时窗口。</p>
+      <p><strong>支付执行层</strong>：两条路径都跑通。x402 客户端直付是直接生成 EIP-3009 授权签名并重试；AgentCore Payments 加 Stripe Privy 是通过 AWS 调 Privy 托管钱包，<strong>私钥始终在 Privy 里，AWS 不持有</strong>。预算超限时不签名不上链，这是基础设施层的硬限制。</p>
+      <p><strong>多轨结算层</strong>：Airwallex 三条本地轨道全 PAID，换汇四货币对全 SETTLED，VISA 虚拟卡单笔限额精准。Nium 换汇实时可跑，本地付款和卡需要 Nium 账号团队开通。</p>
+      <p>安全层踩坑：<strong>AgentCore Payments 服务角色权限文档说会自动附加，实测需手动补齐</strong> TagResource 和 GetResourcePaymentToken，否则报 AccessDeniedException。</p>
+    </aside>
+  </section>
+
+  <!-- ============ Demo-c. VERIFICATION TABLE ============ -->
+  <section class="slide" data-title="Demo：验证结果总表">
+    <p class="kicker">Demo · 架构与验证结果</p>
+    <h2 class="h2">验证结果总表：<span class="accent">能力 × 状态 × 证据</span></h2>
+    <table class="t">
+      <tr><th>能力</th><th>状态</th><th>关键证据</th></tr>
+      <tr><td>WAF Web Bot Auth 可信接入（ap-southeast-1）</td><td><span class="tag ga">已验证</span></td><td>无签名 403 / 伪签名 403 / Browser 200；标签精准分类</td></tr>
+      <tr><td>WAF Monetize → x402 v2（402）</td><td><span class="tag ga">已验证</span></td><td>x402Version:2，Base Sepolia，0.01 USDC，maxTimeout:300s</td></tr>
+      <tr><td>x402 客户端链上付款</td><td><span class="tag ga">已验证</span></td><td>0xc766…d013；买方 20.00→19.99，卖方 0→0.01 USDC</td></tr>
+      <tr><td>AgentCore Payments + Stripe Privy</td><td><span class="tag ga">已验证</span></td><td>0x7831…f186；预算超限 "Insufficient budget"，不签名不上链</td></tr>
+      <tr><td>Airwallex 本地付款（VN / HK / SG）</td><td><span class="tag ga">已验证</span></td><td>全部 PAID；失败路径 CANCELLED；无需 Admin Key</td></tr>
+      <tr><td>Airwallex 换汇（SGD / USD / VND / EUR / HKD）</td><td><span class="tag ga">已验证</span></td><td>4 笔 SETTLED；标准 API Key 可用；即时 SETTLED</td></tr>
+      <tr><td>Airwallex VISA 虚拟卡 + 授权模拟</td><td><span class="tag ga">已验证</span></td><td>单笔限额 50 USD：49→APPROVED，80→DECLINED</td></tr>
+      <tr><td>Nium FX 换汇 / 本地付款 / 虚拟卡</td><td><span class="tag pv">部分</span></td><td>FX ✅ 实时；本地付款 / 卡需 Nium 开通（RESTRICTED 配置）</td></tr>
+    </table>
+    <p class="xs mt-s">测试环境：内部演示账号（ap-southeast-1）· 测试网：Base Sepolia（chainId 84532）· 日期：2026-10-20 · 不含真实资金</p>
+    <aside class="notes">
+      <p>这张表是<strong>今天的验证交卷</strong>，一眼能看出哪些是真实跑通的，哪些还有条件。</p>
+      <p>稳定币这条线，两个付款路径都链上确认了，交易哈希可以在 Base Sepolia 区块浏览器独立查验。<strong>预算超限是基础设施层强制的</strong>，不靠 prompt 也不靠模型自律——这对客户合规团队是很有说服力的证明。</p>
+      <p>Airwallex 这行重点：<strong>三条本地轨道全部到账 PAID</strong>，换汇四对货币全 SETTLED，VISA 虚拟卡单笔限额精准——49 通过，80 被拒。而且这些<strong>全部用普通 API Key 完成，不需要 Admin Key</strong>，2026 年 8 月之后注册的账号都可以直接复现，是零障碍自助体验。</p>
+      <p>最后一行 Nium 标⚠️，默认 Developer Portal 沙箱的 fundingInstrumentType 是 RESTRICTED，本地付款和虚拟卡需要 Nium 账号团队开通。FX 换汇实时可用，作为 Nium 场景主线展示没有问题。</p>
+    </aside>
+  </section>
+
+  <!-- ============ Demo-d. GOTCHAS & ADOPTION ============ -->
+  <section class="slide" data-title="Demo：踩坑与客户采纳">
+    <p class="kicker">Demo · 架构与验证结果</p>
+    <h2 class="h2">验证中的坑，<span class="accent">以及对客户采纳的意义</span></h2>
+    <div class="g2c">
+      <div>
+        <p class="xs b">踩坑记录（SA 上手必看）</p>
+        <div class="stack mt-s">
+          <div class="card c"><h4>坑① WAF 规则必须同时匹配 failed 与 invalid</h4><p>文档只列 <code>wba:invalid</code>；伪造签名实测返回 <code>wba:failed</code>。只写 invalid，伪造签名会被默认放行。→ 自定义规则需同时包含两个标签条件。</p></div>
+          <div class="card c"><h4>坑② AgentCore Payments 服务角色权限需手动补齐</h4><p>文档称会自动附加；实测需手动授予 <code>TagResource</code>（workload identity）、<code>GetResourcePaymentToken</code>（凭证提供方）、<code>secretsmanager:GetSecretValue</code>（托管密钥）。</p></div>
+          <div class="card c"><h4>坑③ ProcessPayment 只返回 payload 部分</h4><p>返回的是 x402 的 payload 字段，不是完整 PaymentPayload；需自行组装 <code>{x402Version:2, resource, accepted, payload}</code> 并 base64 编码。→ 建议直接用 Strands SDK，已封装。</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="xs b">对客户采纳的意义</p>
+        <div class="stack mt-s">
+          <div class="card c"><h4>✅ Airwallex 新账号不依赖 Admin Key</h4><p>2026-08-24 后注册账号不再发放 Admin Key；状态模拟改用 <code>/simulation/transfers/{id}/transition</code>；发卡用 <code>program.purpose/type</code>，不需要 program ID。<b>客户自助开通沙箱即可完成全部演示动作。</b></p></div>
+          <div class="card c"><h4>✅ Stripe Privy 无需 Marketplace 订阅</h4><p>Coinbase CDP 连接器需要 AWS Marketplace 订阅（本账号订阅失败）；Stripe Privy 连接器<b>无需订阅、无需特殊账号权限</b>。唯一前提：用户在会前经 Privy 前端完成钱包授权（约 5 分钟）。</p></div>
+          <div class="card c"><h4>⚠️ 连连 / 通用场景暂定方案</h4><p>稳定币（真实）+ Nium FX 换汇（真实）+ 本地付款 / 虚拟卡（视开通情况，未开通则走模拟或跳过）。<span class="tag chk">待 Nium 账号团队确认后更新</span></p></div>
+        </div>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>这一页是<strong>踩坑总结和对客户的好消息</strong>，各占一半。</p>
+      <p>三个坑对 SA 上手都很重要。<strong>WAF 规则的 failed 条件</strong>不是小问题——不加就会漏放伪造签名，这是实测出来的漏洞。<strong>AgentCore Payments 权限</strong>，文档说会自动加，实测不会，要手动补 TagResource 和 GetResourcePaymentToken，不加会报 AccessDeniedException。<strong>ProcessPayment 的 payload 组装</strong>，官方文档对这一步写得不够清楚，建议直接用 Strands SDK 内置的 payment tool，已经封装了组装和 base64 编码这些步骤。</p>
+      <p>对客户采纳意义更大的是右边两个好消息。<strong>Airwallex 新账号不需要 Admin Key</strong>，之前所有说"需要 Admin Key"的文档都已过时——2026 年 8 月之后注册的新账号只用普通 API Key 就能完整演示，客户零障碍自助体验。<strong>Stripe Privy 不需要 Marketplace 订阅</strong>，对 SA 在普通 AWS 账号里做 POC 很关键，Coinbase CDP 在我们账号上订阅失败了。</p>
+    </aside>
+  </section>
+
+  <!-- ============ 29. RISKS & TO-CONFIRM ============ -->
+  <section class="slide" data-title="风险与待确认">
+    <p class="kicker">11 · Risks &amp; Open Items</p>
+    <h2 class="h2">见客户之前，<span class="accent">必须先确认的 8 件事</span></h2>
+    <div class="g2c">
+      <div class="card c"><h4>向 AWS 产品 / 区域团队</h4><ul>
+        <li>AgentCore Payments 卡轨路线图；Airwallex 能否成为支付 / 钱包提供方</li>
+        <li>x402 v1 / v2 版本协商 <span class="tag ga">已验证：WAF 使用 x402 v2，链路端到端 v2</span></li>
+        <li>WAF Web Bot Auth ap-southeast-1 可用性 <span class="tag ga">已验证（2026-10-20）</span></li>
+        <li>WAF Web Bot Auth 能否直接验证 Visa TAP 签名（与 WBA 可用性为不同问题）</li>
+        <li>香港 Bedrock / AgentCore 的 ETA（NDA 下）</li>
+        <li>maxSpendAmount 的非 USD 多币种计划</li></ul></div>
+      <div class="card c"><h4>向合规 / 法务 · 待补出处</h4><ul>
+        <li>DORA 第 28(8) / 29 条对"AWS 作为第二云"的适用解读</li>
+        <li>MAS TRM / 外包指引、HKMA SA-2 的具体条款号</li>
+        <li>待补一手出处：Metal 合作细节、"CFO 600 个财务任务"、Airwallex 在 x402 中的具体角色</li></ul></div>
+    </div>
+    <table class="t mt-m">
+      <tr><th>主要风险</th><th>影响</th><th>缓解</th></tr>
+      <tr><td>客户把对话理解为迁移提案，直接拒绝</td><td>高</td><td>入口选产品合作而非主架构；只谈增量</td></tr>
+      <tr><td>Airwallex 不开放 USDC 接收 / 法币兑出 API</td><td>高</td><td>S2 退化为纯稳定币方案；优先推进 S1 / S4 / S6</td></tr>
+      <tr><td>HKMA 要求本地处理，新加坡路由不可接受</td><td>高</td><td>香港聚焦非推理类需求（CloudHSM / KMS），等待区域 GA</td></tr>
+    </table>
+    <aside class="notes">
+      <p>最后一页内容页，是<strong>出门前的检查清单</strong>。</p>
+      <p>左边五件事要问产品和区域团队：卡轨路线图和合作可能性、x402 版本、WAF 能否验 Visa TAP、香港 ETA、多币种限额。右边三件事要问合规法务，或者我们自己补出处。</p>
+      <p>三个主要风险：一是客户把我们当成来推迁移的，所以入口一定要选产品合作；二是 Airwallex 不开放稳定币的法币落地接口，那 S2 就退化成纯稳定币方案，我们优先推 S1、S4、S6；三是香港监管要求本地处理，那香港就先只做密钥类的需求。</p>
+      <p><strong>这八件事没确认之前，相关内容在客户面前都只能用"我们在探索"的口径。</strong></p>
+    </aside>
+  </section>
+
+  <!-- ============ 25. CLOSE ============ -->
+  <section class="slide cover" data-title="结束">
+    <p class="kicker">Next Steps</p>
+    <h2 class="h1" style="font-size:clamp(40px,4.4vw,64px)">AWS 上的 agent<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">× Airwallex 的轨道</span></h2>
+    <div class="g3c mt-l" style="max-width:1100px">
+      <div class="card c"><h4>BD · 2 周</h4><p>经合作团队接触产品合作负责人，提出卡轨 / 法币轨合作探讨</p></div>
+      <div class="card c"><h4>SA · 4 周</h4><p>完成 POC-1/2/3 自包含演示</p></div>
+      <div class="card c"><h4>SA · 2 周</h4><p>向产品、区域、合规团队拿到 8 个待确认项的答案</p></div>
+    </div>
+    <p class="xs mt-l">配套材料：方案文档 2026-10-20-aws-agentic-payment-solution-airwallex.md · 协议综述 2026-10-19-agentic-payment-protocols-survey.md · <b>多轨沙箱背景 2026-10-20-multi-rail-sandbox-background.md</b> · 验证报告目录 <b>demo/_spike/</b>（wba-waf · airwallex · nium）· 功能介绍 <b>demo/2026-10-20-demo-feature-guide.md</b> · 底稿 _aws/</p>
+    <aside class="notes">
+      <p>总结一句话：<strong>AWS 上的 agent，乘以 Airwallex 的轨道</strong>。</p>
+      <p>我们不去争主云，而是把 AWS 的托管 agent 支付执行、支付 HSM、身份与策略能力，和 Airwallex 的卡、法币、牌照、商户网络组合起来——让客户更快上市，也让 AWS 生态多一条全球支付轨道。</p>
+      <p>三个下一步：BD 两周内通过合作团队打通产品合作负责人；SA 四周内完成三个自包含 POC；同时两周内把八个待确认项问清楚。</p>
+      <p>完整的方案文档、协议综述和所有底稿都在知识库里，每条结论都能追溯到出处。谢谢大家，有问题随时找我。</p>
+    </aside>
+  </section>
+
+  <div class="deck-footer">
+    <span class="mono" style="background:none;padding:0;color:var(--text-3)">AWS FSI · Agentic Payment × Airwallex · Internal</span>
+    <span class="slide-number" data-current="1" data-total="34"></span>
+  </div>
+</div>
+
+<script src="sidebar.js"></script>
+<script src="assets/runtime.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* 本 deck 特有组件的工作台化覆盖 */
+.quote{border:1px solid var(--border);border-left:3px solid var(--text-3);background:var(--bg-soft);border-radius:var(--radius)}
+.quote .q{font-style:normal;color:var(--text-1)}
+.dir{background:var(--text-1);color:var(--bg);border-radius:6px;font-weight:600}
+.stars{color:var(--warn)}
+.flow .st[style*="124,58,237"]{border-color:var(--border-strong)!important;border-style:dashed!important;background:var(--bg-soft)}
+.flow .st .n[style*="7c3aed"]{background:var(--text-1)!important}

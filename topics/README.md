@@ -16,6 +16,12 @@ Organize notes by research area. Create subdirectories for each topic.
 - [PPT 审核：《Agentic Trading — Agent 回测与评估体系 V0.61》](/topics/agent/2026-08-10-ppt-review-agentic-trading-eval.md)
 - [附录：LLM Trading Agent 金融专项评估方法](/topics/agent/2026-08-10-trading-agent-eval-methods.md)
 
+### agentic-payment
+
+- [---](/topics/agentic-payment/2026-10-19-agentic-payment-protocols-survey.md)
+- [Agentic Payment 协议规范与源码深挖：离线源码核查与证据缺口](/topics/agentic-payment/2026-10-19-codex-spec-deep-dive.md)
+- [AWS Agentic Payment 解决方案：面向 Airwallex 等跨境支付 / FinTech 客户](/topics/agentic-payment/2026-10-20-aws-agentic-payment-solution-airwallex.md)
+
 ### ai-frontier-2026h1
 
 - [Agent 体系演化谱系 · 2026 上半年](/topics/ai-frontier-2026h1/2026-06-12-agent-evolution.md)
