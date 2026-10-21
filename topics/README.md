@@ -25,6 +25,25 @@ Organize notes by research area. Create subdirectories for each topic.
 - [2026 上半年 AI 前沿：趋势综合与开放问题](/topics/ai-frontier-2026h1/2026-06-12-trends.md)
 - [世界模型与具身演化](/topics/ai-frontier-2026h1/2026-06-12-world-models.md)
 
+### llm-inference
+
+- [DeepInfer 调研 00：执行摘要](/topics/llm-inference/2026-10-21-deepinfer-00-executive-summary.md)
+- [DeepInfer 调研 01：竞品产品对比](/topics/llm-inference/2026-10-21-deepinfer-01-product-comparison.md)
+- [DeepInfer 调研 02：大规模 LLM 推理 Infra 技术调研与解析](/topics/llm-inference/2026-10-21-deepinfer-02-infra-analysis.md)
+- [DeepInfer 调研 03：DeepInfer vs vLLM vs SGLang 同口径基准测试方案](/topics/llm-inference/2026-10-21-deepinfer-03-benchmark-plan.md)
+- [DeepInfer 调研 04：专题深挖索引、要点与全局勘误](/topics/llm-inference/2026-10-21-deepinfer-04-topics-index-errata.md)
+- [DeepInfer 专题 T1：系统形态 —— E/P/D 分离、PD 传输、AFD、容错与弹性](/topics/llm-inference/2026-10-21-deepinfer-05-t1-epd-disaggregation.md)
+- [DeepInfer 专题 T2：MoE 并行 —— 宽 EP、DeepEP、Mega MoE、EPLB、Engram 表并行](/topics/llm-inference/2026-10-21-deepinfer-06-t2-moe-wide-ep-eplb.md)
+- [DeepInfer 专题 T3：注意力与 KV 压缩](/topics/llm-inference/2026-10-21-deepinfer-07-t3-attention-kv-compression.md)
+- [DeepInfer 专题 T4：KV 缓存分层与存储](/topics/llm-inference/2026-10-21-deepinfer-08-t4-kv-cache-storage.md)
+- [DeepInfer 专题 T5：调度——引擎内调度器、零开销异步调度 ZOS、DP 同步、负载均衡与弹性](/topics/llm-inference/2026-10-21-deepinfer-09-t5-scheduling-load-balancing.md)
+- [DeepInfer 专题 T6：投机解码 —— DSpark / DFlash / 置信度调度的变长验证](/topics/llm-inference/2026-10-21-deepinfer-10-t6-speculative-decoding-dspark.md)
+- [DeepInfer 专题 T7：低精度 —— FP8 / MXFP4 / NVFP4 / UE8M0 在 V4.1 推理中的全链路使用](/topics/llm-inference/2026-10-21-deepinfer-11-t7-low-precision-fp8-fp4.md)
+- [DeepInfer 专题 T8：确定性与批次不变推理、采样器、结构化输出](/topics/llm-inference/2026-10-21-deepinfer-12-t8-determinism-sampling-so.md)
+- [DeepInfer 专题 T9：硬件与跨厂商适配 —— SM100 vs Ascend 950、scale-up 域、TileLang 双后端、kernel 库生态](/topics/llm-inference/2026-10-21-deepinfer-13-t9-hardware-cross-vendor.md)
+- [DeepInfer 调研 14：核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log.md)
+- [DeepInfer 调研 15：参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references.md)
+
 ### llm
 
 - [LLM Architecture](/topics/llm/2026-02-09-llm-intro-architecture.md)

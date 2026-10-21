@@ -1,0 +1,34 @@
+2311.18677	[2311.18677] Splitwise: Efficient generative LLM inference using phase splitting
+2312.07104	[2312.07104] SGLang: Efficient Execution of Structured Language Model Programs
+2401.09670	[2401.09670] DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving
+2403.02310	[2403.02310] Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve
+2405.04434	[2405.04434] DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
+2405.05254	[2405.05254] You Only Cache Once: Decoder-Decoder Architectures for Language Models
+2405.16444	[2405.16444] CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion
+2407.00079	[2407.00079] Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving
+2407.08608	[2407.08608] FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision
+2408.12757	[2408.12757] NanoFlow: Towards Optimal Large Language Model Serving Throughput
+2412.19437	[2412.19437] DeepSeek-V3 Technical Report
+2501.01005	[2501.01005] FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving
+2502.11089	[2502.11089] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention
+2503.01840	[2503.01840] EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test
+2504.02263	[2504.02263] MegaScale-Infer: Serving Mixture-of-Experts at Scale with Disaggregated Expert Parallelism
+2504.19867	[2504.19867] semi-PD: Towards Efficient LLM Serving via Phase-Wise Disaggregated Computation and Unified Storage
+2506.12708	[2506.12708] Serving Large Language Models on Huawei CloudMatrix384
+2507.19427	[2507.19427] Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding
+2510.09665	[2510.09665] LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference
+2512.09277	[2512.09277] Efficient MoE Serving in the Memory-Bound Regime: Balance Activated Experts, Not Tokens
+2601.02780	[2601.02780] MiMo-V2-Flash Technical Report
+2602.21548	[2602.21548] DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference
+2603.18567	[2603.18567] SpecForge: A Flexible and Efficient Open-Source Training Framework for Speculative Decoding
+2604.17789	[2604.17789] DuQuant++: Fine-grained Rotation Enhances Microscaling FP4 Quantization
+2605.27255	[2605.27255] Pair-In, Pair-Out: Latent Multi-Token Prediction for Efficient LLMs
+2605.28302	[2605.28302] How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving
+2607.13095	[2607.13095] Full-Pipeline Inference Optimization for MiMo-V2.5 Series: Pushing Hybrid SWA Efficiency to the Limit
+2609.04105	[2609.04105] Hardware-Aware FP4 FlashAttention-4
+2609.26763	[2609.26763] SARA: SLO-Aware Resource Allocation for Disaggregated Agentic LLM Services
+2609.27085	[2609.27085] Crossflow: Prefill-Decode Elasticity for Agentic LLM Serving
+2609.38981	[2609.38981] Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference
+2610.01380	[2610.01380] GPU-Initiated Communication: Dissecting Down to the Bone
+2610.20503	[2610.20503] ReaDy: Recurrent States as Dynamic Context for Speculative Drafting in Hybrid Linear Attention Large Language Models
+2610.23787	[2610.23787] DLite: History-free Speculative Decoding for Agentic AI

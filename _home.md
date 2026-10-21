@@ -21,7 +21,7 @@
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
 <a href="#/research-notes/2026-10-17-rsi-readable" class="arc-btn-primary">Latest Digest</a>
-<a href="#/topics/agent/2026-08-10-trading-agent-eval-methods" class="arc-btn-secondary">Explore Topics</a>
+<a href="#/topics/llm-inference/2026-10-21-deepinfer-15-references" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
-| 2026-10-17 | Note | [RSI：AI 能不能学会改进自己？](/research-notes/2026-10-17-rsi-readable) |
-| 2026-10-17 | Note | [RSI（递归自我改进）研究领域深度调研](/research-notes/2026-10-17-rsi-deep-research) |
-| 2026-10-17 | Note | [RSI 深度研究：重要研究、行业进展与技术机制](/research-notes/2026-10-17-rsi-detailed) |
-| 2026-10-17 | Note | [OpenMOSS 深度调研：项目、论文与技术路线](/research-notes/2026-10-17-openmoss-deep-research) |
-| 2026-10-13 | Note | [Strands Decider 与 Box：原理与实测](/research-notes/2026-10-13-decision-models-and-agent-governance-deep-research) |
+| 2026-10-21 | Topic | [DeepInfer 调研 15：参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references) |
+| 2026-10-21 | Topic | [DeepInfer 调研 14：核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log) |
+| 2026-10-21 | Topic | [DeepInfer 调研 04：专题深挖索引、要点与全局勘误](/topics/llm-inference/2026-10-21-deepinfer-04-topics-index-errata) |
+| 2026-10-21 | Topic | [DeepInfer 调研 03：DeepInfer vs vLLM vs SGLang 同口径基准测试方案](/topics/llm-inference/2026-10-21-deepinfer-03-benchmark-plan) |
+| 2026-10-21 | Topic | [DeepInfer 调研 02：大规模 LLM 推理 Infra 技术调研与解析](/topics/llm-inference/2026-10-21-deepinfer-02-infra-analysis) |
 <!-- AUTO:RECENT:END -->
