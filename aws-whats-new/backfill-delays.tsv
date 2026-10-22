@@ -217,3 +217,7 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-21 09:03	2026-10-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-prompt-optimization-shortening/
 2026-10-21 09:03	2026-10-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-migrations-landing-zones/
 2026-10-21 09:03	2026-10-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-cloudwatch-tags-on-alarm-actions-payload
+2026-10-22 09:03	2026-10-20 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/10/workspaces-ai-agents-oauth-connection-management
+2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-sequence-lengths/
+2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/network-firewall-route-53-ip-validation/
+2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-new-networks/
