@@ -224,3 +224,5 @@ ts_utc	task	phase	detail
 2026-10-21 09:05	aws	done	6 new + 8 backfill; BACKFILL_HOURS 216->240
 2026-10-22 09:03	aws	start	cron 09:04
 2026-10-22 09:03	aws	done	8+4ᴮ, 2 High, span 242.1
+2026-10-23 09:03	aws	start	daily cron
+2026-10-23 09:04	aws	done	12 items (7+5ᴮ), 4 High, span 241.1

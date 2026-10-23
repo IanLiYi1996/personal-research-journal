@@ -221,3 +221,8 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-sequence-lengths/
 2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/network-firewall-route-53-ip-validation/
 2026-10-22 09:03	2026-10-21 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-transform-new-networks/
+2026-10-23 09:03	2026-10-21 18:00	15.1	39.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-service-reference-information-global-condition-keys-service-names-data-plane/
+2026-10-23 09:03	2026-10-22 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-quick-now-available-in-the-aws-singapore-region/
+2026-10-23 09:03	2026-10-22 07:06	2.0	26.0	https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-microvms-4-additional-regions
+2026-10-23 09:03	2026-10-22 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-sagemaker-muse-qwen-ministral/
+2026-10-23 09:03	2026-10-22 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-invokemodel-fallback/
