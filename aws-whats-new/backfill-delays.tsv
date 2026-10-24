@@ -226,3 +226,7 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-23 09:03	2026-10-22 07:06	2.0	26.0	https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-microvms-4-additional-regions
 2026-10-23 09:03	2026-10-22 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-sagemaker-muse-qwen-ministral/
 2026-10-23 09:03	2026-10-22 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-gateway-invokemodel-fallback/
+2026-10-24 09:03	2026-10-22 15:00	18.1	42.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-msk-connect-pause-resume
+2026-10-24 09:03	2026-10-22 20:54	12.2	36.2	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-opensearch-intelligent-ingestion-logs-documents-s3
+2026-10-24 09:03	2026-10-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-mwaa-mexico-central/
+2026-10-24 09:03	2026-10-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/emr-eks-reduces-emr-charge-30-percent/
