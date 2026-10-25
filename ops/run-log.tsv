@@ -228,3 +228,5 @@ ts_utc	task	phase	detail
 2026-10-23 09:04	aws	done	12 items (7+5ᴮ), 4 High, span 241.1
 2026-10-24 09:03	aws	start	cron 10-24
 2026-10-24 09:04	aws	done	8 items (4+4ᴮ), 1 High, span 251.1, diff 8/8
+2026-10-25 09:03	aws	start	cron 10-25
+2026-10-25 09:04	aws	done	0 items; span 275.1; over-window 19/0; (b) 4/4
