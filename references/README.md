@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **2561** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2563** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -16,7 +16,7 @@
 - [高效训练 / 推理](#-) （689）
 - [综述 / Survey](#-survey) （161）
 - [检索增强 / RAG](#-rag) （188）
-- 未分类（212）
+- 未分类（214）
 
 ## 大语言模型 (LLM)
 
@@ -5803,6 +5803,7 @@
 - **2026** [LatentPress: Context Compression Beyond Text and Vision](http://arxiv.org/abs/2609.01507) — Zhengze Zhou et al. · arXiv:2609.01507 `{Zhou2026Latentpress}`
 - **2026** [Pelican-Sim 1.0: A General World Model Simulator for Embodied Intelligence](http://arxiv.org/abs/2609.12036) — Shilong Zou et al. · arXiv:2609.12036 `{Zou2026Pelican}`
 - **2026** [Poplar: A Scalable Pipeline for Human-Centric Image Dataset Synthesis](http://arxiv.org/abs/2608.00440) — Zhishan Zou et al. · arXiv:2608.00440 `{Zou2026Poplar}`
+- **2025** [Volume estimates for unions of convex sets, and the Kakeya set conjecture in three dimensions](http://arxiv.org/abs/2502.17655) — Hong Wang et al. · arXiv:2502.17655 `{Wang2025Volume}`
 - **2024** [Flow Matching Guide and Code](http://arxiv.org/abs/2412.06264) — ? et al. · arXiv:2412.06264 `{AnonndFlow}`
 - **2024** [OpenAI o1 System Card](http://arxiv.org/abs/2412.16720) — ? et al. · arXiv:2412.16720 `{AnonndOpenai}`
 - **2024** Log-Concave Sampling (unfinished draft) — Sinho Chewi et al. `{Chewi2024Log}`
@@ -5870,6 +5871,7 @@
 - **2020** M-SQL: Multi-Task Representation Learning for Single-Table Text2sql Generation — Xiaoyu Zhang et al. · arXiv:2020.29776 `{Zhang2020Sql}`
 - **2020** PairNorm — Lingxiao Zhao et al. `{Zhao2020Pairnorm}`
 - **2019** Better word embeddings by disentangling contextual n-gram information — Prakhar Gupta et al. `{Gupta2019Better}`
+- **2019** [A sharp square function estimate for the cone in $\mathbb{R}^3$](http://arxiv.org/abs/1909.10693) — Larry Guth et al. · arXiv:1909.10693 `{Guth2019Sharp}`
 - **2018** Data augmentation via dependency tree morphing for low-resource languages — Gözde Gül Şahin et al. `{ahin2018Data}`
 - **2018** [The expressive power of neural networks](arxiv:1709.02540v3) — David Brandfonbrener et al. · arXiv:1709.02540 `{Brandfonbrener2018Expressive}`
 - **2018** 异质信息网络分析与应用综述 — Jump Hashing-based Data et al. `{Data2018异质信息网络分析与应用综述}`

@@ -104,3 +104,5 @@ Naming: `YYYY-MM-DD-title.md`
 - [RSI（递归自我改进）研究领域深度调研](/research-notes/2026-10-17-rsi-deep-research.md)
 - [RSI 深度研究：重要研究、行业进展与技术机制](/research-notes/2026-10-17-rsi-detailed.md)
 - [RSI：AI 能不能学会改进自己？](/research-notes/2026-10-17-rsi-readable.md)
+- [独立核查：Lean 的可信边界与“生成—验证—人工理解”](/research-notes/2026-10-28-openai-scientific-understanding-verification-notes.md)
+- [AI 给出证明之后，科学还需要什么？](/research-notes/2026-10-28-openai-scientific-understanding.md)

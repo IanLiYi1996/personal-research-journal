@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-10-17-rsi-readable" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-10-28-openai-scientific-understanding" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/llm-inference/2026-10-21-deepinfer-15-references" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-10-28 | Note | [独立核查：Lean 的可信边界与“生成—验证—人工理解”](/research-notes/2026-10-28-openai-scientific-understanding-verification-notes) |
+| 2026-10-28 | Note | [AI 给出证明之后，科学还需要什么？](/research-notes/2026-10-28-openai-scientific-understanding) |
 | 2026-10-21 | Topic | [DeepInfer 调研 15：参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references) |
 | 2026-10-21 | Topic | [DeepInfer 调研 14：核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log) |
 | 2026-10-21 | Topic | [DeepInfer 调研 04：专题深挖索引、要点与全局勘误](/topics/llm-inference/2026-10-21-deepinfer-04-topics-index-errata) |
-| 2026-10-21 | Topic | [DeepInfer 调研 03：DeepInfer vs vLLM vs SGLang 同口径基准测试方案](/topics/llm-inference/2026-10-21-deepinfer-03-benchmark-plan) |
-| 2026-10-21 | Topic | [DeepInfer 调研 02：大规模 LLM 推理 Infra 技术调研与解析](/topics/llm-inference/2026-10-21-deepinfer-02-infra-analysis) |
 <!-- AUTO:RECENT:END -->
