@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-28",
+  "source_commit": "52ecc87775154b35d4550911de22faad4fc68f40",
+  "command": "python3 research-notes/2026-10-28-detectorscope/checks/principle_checks.py",
+  "linear_algebra": {
+    "toy_logit": 0.6000000000000001,
+    "toy_probability": 0.6456563062257954,
+    "contributions": [0.8, -0.3, 0.6000000000000001],
+    "zero_ablation_deltas": [0.8, -0.30000000000000004, 0.6000000000000001],
+    "probability_is_not_additive": true
+  },
+  "nonlinear_counterexample": {
+    "toy_zero_ablation_deltas": [1.0, 1.0],
+    "toy_residual": -1.0
+  },
+  "sampling_path": {
+    "synthetic_generation_documents": 10,
+    "synthetic_validation_documents": 50,
+    "overlap": 10,
+    "scope": "synthetic bins; stratified sampling; uniform negatives; seed 42",
+    "paper_experiment_reproduced": false
+  },
+  "detector_inference_run": false,
+  "paid_api_calls": 0
+}

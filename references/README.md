@@ -1,6 +1,6 @@
 # 文献库索引
 
-> 共 **2563** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2568** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
@@ -16,7 +16,7 @@
 - [高效训练 / 推理](#-) （689）
 - [综述 / Survey](#-survey) （161）
 - [检索增强 / RAG](#-rag) （188）
-- 未分类（214）
+- 未分类（219）
 
 ## 大语言模型 (LLM)
 
@@ -5736,6 +5736,7 @@
 - **2026** [Compile by Training: Turning Natural-Language Specifications into Local Neural Functions](http://arxiv.org/abs/2609.04199) — Yuntian Deng et al. · arXiv:2609.04199 `{Deng2026Compile}`
 - **2026** [Towards a Densing Law for User Representation Learning at Billion-Scale Capacity](http://arxiv.org/abs/2608.23392) — Bin Dou et al. · arXiv:2608.23392 `{Dou2026Towards}`
 - **2026** [Phantom Transfer: Data Poisoning can Survive Data-Level Defences](http://arxiv.org/abs/2602.04899) — Andrew Draganov et al. · arXiv:2602.04899 `{Draganov2026Phantom}`
+- **2026** [Building Auditable AI Text Detectors with Sparse Autoencoders](https://arxiv.org/abs/2610.30006) — Liam Dugan et al. · arXiv:2610.30006 `{Dugan2026Building}`
 - **2026** [Improving the matrix multiplication exponent with modern optimization and AlphaEvolve](http://arxiv.org/abs/2608.16884) — Emilien Dupont et al. · arXiv:2608.16884 `{Dupont2026Improving}`
 - **2026** [StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments](http://arxiv.org/abs/2608.24804) — Esakkivel Esakkiraja et al. · arXiv:2608.24804 `{Esakkiraja2026Starharness}`
 - **2026** [A Sparse and Truncated State Vector Simulator for Peaked Circuits](http://arxiv.org/abs/2607.07816) — Diogo R. Ferreira et al. · arXiv:2607.07816 `{Ferreira2026Sparse}`
@@ -5766,6 +5767,7 @@
 - **2026** [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](http://arxiv.org/abs/2603.19312) — Lucas Maes et al. · arXiv:2603.19312 `{Maes2026Leworldmodel}`
 - **2026** [Towards Interpretable Foundation Models for Retinal Fundus Images](http://arxiv.org/abs/2603.18846) — Samuel Ofosu Mensah et al. · arXiv:2603.18846 `{Mensah2026Towards}`
 - **2026** [An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics](http://arxiv.org/abs/2609.10712) — Ivan Moshkov et al. · arXiv:2609.10712 `{Moshkov2026Open}`
+- **2026** [Can AI Propose Interesting Research Questions?](https://after42.org/research/can-ai-propose-interesting-research-questions/) — Fan Nie et al. `{Nie2026Can}`
 - **2026** [Toward Robust and 3D-Aware RGB-NIR Imaging in the Dark](http://arxiv.org/abs/2607.29684) — Muyao Niu et al. · arXiv:2607.29684 `{Niu2026Toward}`
 - **2026** [Complementary Matrix-Gated QKAN Fast-Weight Programmers for Quantum Dynamics Forecasting](http://arxiv.org/abs/2607.27945) — Kuo-Chung Peng et al. · arXiv:2607.27945 `{Peng2026Complementary}`
 - **2026** [Beyond IID: How General Are Tabular Foundation Models, Really?](http://arxiv.org/abs/2606.30410) — Lennart Purucker et al. · arXiv:2606.30410 `{Purucker2026Beyond}`
@@ -5808,6 +5810,8 @@
 - **2024** [OpenAI o1 System Card](http://arxiv.org/abs/2412.16720) — ? et al. · arXiv:2412.16720 `{AnonndOpenai}`
 - **2024** Log-Concave Sampling (unfinished draft) — Sinho Chewi et al. `{Chewi2024Log}`
 - **2024** [Understanding Emergent Abilities of Language Models from the Loss Perspective](http://arxiv.org/abs/2403.15796) — Zhengxiao Du et al. · arXiv:2403.15796 `{DundUnderstanding}`
+- **2024** [Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2](https://arxiv.org/abs/2408.05147) — Tom Lieberum et al. · arXiv:2408.05147 `{Lieberum2024Gemma}`
+- **2024** [Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders](https://arxiv.org/abs/2407.14435) — Senthooran Rajamanoharan et al. · arXiv:2407.14435 `{Rajamanoharan2024Jumping}`
 - **2024** [Gemma - Open Models Based on Gemini Research and Technology](http://arxiv.org/abs/2403.08295) — Google DeepMind Gemma Team et al. · arXiv:2403.08295 `{TeamndGemma}`
 - **2024** Matting by Generation — Zhixiang Wang et al. · arXiv:1519.36575 `{Wang2024Matting}`
 - **2023** [XrayGLM：基于VisualGLM-6B微 调训练对X光胸片进行医学诊断](https://github.com/Vision-CAIR/MiniGPT-4) — ? et al. `{Anon2023Xrayglm}`
@@ -5858,6 +5862,7 @@
 - **2020** [Embracing Change: Continual Learning in Deep Neural Networks](https://doi.org/10.1016/j.tics.2020.09.004) — Raia Hadsell et al. `{Hadsell2020Embracing}`
 - **2020** Momentum Contrast for Unsupervised Visual Representation Learning — Kaiming He et al. · arXiv:2600.2020 `{He2020Momentum}`
 - **2020** Cold-Start and Interpretability: Turning Regular Expressions into Trainable Recurrent Neural Networks — Chengyue Jiang et al. `{Jiang2020Cold}`
+- **2020** [Concept Bottleneck Models](https://arxiv.org/abs/2007.04612) — Pang Wei Koh et al. · arXiv:2007.04612 `{Koh2020Concept}`
 - **2020** [On the Sentence Embeddings from Pre-trained Language Models](http://arxiv.org/abs/2011.05864) — Bohan Li et al. · arXiv:2011.05864 `{Li2020Sentence}`
 - **2020** FinBERT: A pre-trained financial language representation model for financial text mining — Zhuang Liu et al. `{Liu2020Finbert}`
 - **2020** Simplify the Usage of Lexicon in Chinese NER — Ruotian Ma et al. `{Ma2020Simplify}`

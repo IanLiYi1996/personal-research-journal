@@ -82,8 +82,8 @@ Datasets, tools, frameworks, and reference materials.
 | Date | Type | Title |
 |------|------|-------|
 | 2026-10-28 | Note | [独立核查：Lean 的可信边界与“生成—验证—人工理解”](/research-notes/2026-10-28-openai-scientific-understanding-verification-notes) |
+| 2026-10-28 | Note | [DetectorScope：让 AI 文本检测器展示它的判断依据](/research-notes/2026-10-28-detectorscope) |
+| 2026-10-28 | Note | [After42：以解促问的研究选题工作流](/research-notes/2026-10-28-after42) |
 | 2026-10-28 | Note | [AI 给出证明之后，科学还需要什么？](/research-notes/2026-10-28-openai-scientific-understanding) |
 | 2026-10-21 | Topic | [DeepInfer 调研 15：参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references) |
-| 2026-10-21 | Topic | [DeepInfer 调研 14：核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log) |
-| 2026-10-21 | Topic | [DeepInfer 调研 04：专题深挖索引、要点与全局勘误](/topics/llm-inference/2026-10-21-deepinfer-04-topics-index-errata) |
 <!-- AUTO:RECENT:END -->
