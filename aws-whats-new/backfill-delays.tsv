@@ -235,3 +235,8 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-27 09:04	2026-10-26 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-iam-identity-center-cross-region-tip/
 2026-10-27 09:04	2026-10-26 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/kms-ml-kem-post-quantum/
 2026-10-27 09:04	2026-10-26 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/ec2-auto-scaling-launch-before-terminate/
+2026-10-28 09:04	2026-10-26 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/10/mediaconnect-cross-account-endpoints/
+2026-10-28 09:04	2026-10-26 15:40	17.4	41.4	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ivs-low-latency-streaming-failover-slate
+2026-10-28 09:04	2026-10-26 20:24	12.7	36.7	https://aws.amazon.com/about-aws/whats-new/2026/10/replication-backfill-amazon-ecr
+2026-10-28 09:04	2026-10-27 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/neptune-online-index-rebuild/
+2026-10-28 09:04	2026-10-16 16:19	256.8	280.8	https://aws.amazon.com/whats-new/2026/10/agentic-cx-designer-flow-modules/

@@ -46,6 +46,8 @@ CATEGORIES = [
                # (title earliest-keyword rule).
                "aws transform"]),
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
+                 # 10-28: ECR had no keyword (replication backfill fell to 其他).
+                 "amazon ecr",
                 # Amazon EVS (Elastic VMware Service) had no keyword; all 4 historical
                 # items (07-24 / 08-28 / 09-11 / 09-22) landed in Compute only because
                 # the body name-drops "ec2" -- right category by accident (the
@@ -303,7 +305,10 @@ CATEGORIES = [
     # are absent because adding untested keywords is the speculation refused for
     # "health " on 08-15. Add them when one shows up.
     ("媒体服务", ["elemental", "mediaconnect", "medialive", "mediaconvert",
-                  "mediapackage", "mediatailor", "deadline cloud"]),
+                  "mediapackage", "mediatailor", "deadline cloud",
+                  # 10-28: first IVS item (failover slate) drifted to Management via a
+                  # body CloudWatch mention — the "add them when one shows up" case.
+                  "amazon ivs"]),
 ]
 
 
