@@ -102,3 +102,4 @@ run_utc	feed_span_h	backfill_hours	widen_band_items	widen_band_uncovered	over_wi
 2026-10-27 09:04	303.1	240	50	0	35	0
 2026-10-28 09:04	305.1	240	54	0	26	1
 2026-10-28 09:05	305.1	240	54	0	26	1
+2026-10-29 09:04	314.1	240	50	0	16	0

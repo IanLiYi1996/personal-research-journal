@@ -240,3 +240,8 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-28 09:04	2026-10-26 20:24	12.7	36.7	https://aws.amazon.com/about-aws/whats-new/2026/10/replication-backfill-amazon-ecr
 2026-10-28 09:04	2026-10-27 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/neptune-online-index-rebuild/
 2026-10-28 09:04	2026-10-16 16:19	256.8	280.8	https://aws.amazon.com/whats-new/2026/10/agentic-cx-designer-flow-modules/
+2026-10-29 09:04	2026-10-27 15:25	17.7	41.7	https://aws.amazon.com/about-aws/whats-new/2026/09/elasticache-data-tiering-spain/
+2026-10-29 09:04	2026-10-27 19:15	13.8	37.8	https://aws.amazon.com/about-aws/whats-new/2026/10/connect-attachment-previews/
+2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-adds-redshift-restore-testing/
+2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/marketplace-business-storefront/
+2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-change-notifications/
