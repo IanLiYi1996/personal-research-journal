@@ -236,3 +236,5 @@ ts_utc	task	phase	detail
 2026-10-27 09:04	aws	done	11 items (6+5B), 2 high, span 303.1
 2026-10-28 09:04	aws	start	cron
 2026-10-28 09:05	aws	done	5 new + 4 backfill + 1 manual over-window (256.8-280.8h); IVS/ECR keywords
+2026-10-29 09:04	aws	start	manual/cron 10-29
+2026-10-29 09:04	aws	done	9+5ᴮ, 1 High, span 314.1, over-window 16/0
