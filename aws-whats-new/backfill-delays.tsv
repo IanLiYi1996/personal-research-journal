@@ -245,3 +245,13 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-adds-redshift-restore-testing/
 2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/marketplace-business-storefront/
 2026-10-29 09:04	2026-10-28 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-identity-store-change-notifications/
+2026-10-30 09:04	2026-10-27 08:00	49.1	73.1	https://aws.amazon.com/about-aws/whats-new/2026/10/claude-haiku-5-5-canada-cris/
+2026-10-30 09:04	2026-10-28 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-agent-registry-four-regions/
+2026-10-30 09:04	2026-10-28 19:00	14.1	38.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-elasticache-serverless-public-endpoints-govcloud/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/dax-additional-regions/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/managed-grafana-upgrade-version-13-2/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/datasync-enhanced-fsx-openshift/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/acm-acme-support-govcloud-us/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-ai-soci-images-training/
+2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-cross-account-esc/
