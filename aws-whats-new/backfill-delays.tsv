@@ -255,3 +255,8 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/acm-acme-support-govcloud-us/
 2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-ai-soci-images-training/
 2026-10-30 09:04	2026-10-29 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-backup-cross-account-esc/
+2026-10-31 09:03	2026-10-29 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/10/redshift-automated-cross-region-backups/
+2026-10-31 09:03	2026-10-29 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-custom-designations/
+2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/prometheus-collectors-msk-metrics/
+2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/glue-data-catalog-optimizers-us-west-1/
+2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-gpu-partitioning/

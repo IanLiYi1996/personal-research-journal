@@ -240,3 +240,5 @@ ts_utc	task	phase	detail
 2026-10-29 09:04	aws	done	9+5ᴮ, 1 High, span 314.1, over-window 16/0
 2026-10-30 09:04	aws	start	cron 09:04
 2026-10-30 09:04	aws	done	4 new + 10 backfill, 2 High, span 265.1
+2026-10-31 09:03	aws	start	cron 10-31
+2026-10-31 09:04	aws	done	14 items 2 high, 5 backfill
