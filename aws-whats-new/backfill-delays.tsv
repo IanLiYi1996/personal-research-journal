@@ -260,3 +260,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/prometheus-collectors-msk-metrics/
 2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/glue-data-catalog-optimizers-us-west-1/
 2026-10-31 09:03	2026-10-30 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-gpu-partitioning/
+2026-11-03 09:03	2026-10-30 08:00	73.1	97.1	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-quick-essentials/
+2026-11-03 09:03	2026-11-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-amis-scanned-through-inspector/
+2026-11-03 09:03	2026-11-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/textract-tokyo-zurich/
+2026-11-03 09:03	2026-11-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2025/10/aws-fluent-bit-3-0-0-based-4-1-1
+2026-11-03 09:03	2026-11-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-self-service-quotas/
+2026-11-03 09:03	2026-11-02 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/textract-text-detection-model/
