@@ -269,3 +269,10 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-04 09:03	2026-11-03 06:00	3.1	27.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-argo-cd-notifications
 2026-11-04 09:03	2026-11-03 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-mainframe-reimagine/
 2026-11-04 09:03	2026-11-03 08:30	0.6	24.6	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-supports-latest-cumulative-update-gdr-microsoft-sql-server/
+2026-11-05 09:03	2026-11-03 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-api-keys-opentelemetry/
+2026-11-05 09:03	2026-11-03 18:00	15.1	39.1	https://aws.amazon.com/about-aws/whats-new/2026/11/workspaces-ai-agents-linux-windows-11
+2026-11-05 09:03	2026-11-04 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-capacity-manager-supportability-and-fulfillment/
+2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-vpc-related-resources-all-types/
+2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/datasync-enhanced-oidc-google-azure/
+2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-tables-managed-migration-hive-to-iceberg/
+2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rhel-10-rocky-10-ubuntu-26-04-workspaces/

@@ -250,3 +250,5 @@ ts_utc	task	phase	detail
 2026-11-03 09:04	aws	done	15 items (9+6B), 2 high, span 304.1, ow 23/0
 2026-11-04 09:03	aws	start	cron
 2026-11-04 09:04	aws	done	3+3B, 0 high
+2026-11-05 09:03	aws	start	cron 09:0x
+2026-11-05 09:04	aws	done	12 items (5+7B), 0 high, span 313.1
