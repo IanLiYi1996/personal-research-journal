@@ -276,3 +276,22 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/datasync-enhanced-oidc-google-azure/
 2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-tables-managed-migration-hive-to-iceberg/
 2026-11-05 09:03	2026-11-04 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rhel-10-rocky-10-ubuntu-26-04-workspaces/
+2026-11-07 01:59	2026-11-04 23:00	10.1	51.0	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-mwaa-cost-allocation-tags/
+2026-11-07 01:59	2026-11-05 05:00	4.1	45.0	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-ssm-parameter-store-allows-organization-validation-with-new-data-types/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-functions-default-quotas/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-imdsv1enabled-cloudwatch-metric/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-codeconnections-govcloud-west/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-ai-studio-iam/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-stripe-fiat-payouts/
+2026-11-07 01:59	2026-11-05 08:00	1.1	42.0	https://aws.amazon.com/about-aws/whats-new/2026/11/q-developer-renamed-aws-assistant/
+2026-11-07 01:59	2026-11-05 09:00	0.1	41.0	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-network-scanning-govcloud/
+2026-11-07 01:59	2026-11-05 10:30		39.5	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-kerberos-self-managed-ad/
+2026-11-07 01:59	2026-11-05 15:39		34.3	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-lustre-intelligent-tiering-16x-higher-metadata-iops
+2026-11-07 01:59	2026-11-05 17:00		33.0	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-service-support-traces
+2026-11-07 01:59	2026-11-05 17:38		32.4	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-roles-anywhere-cdp/
+2026-11-07 01:59	2026-11-05 18:00		32.0	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-dynamodb-now-supports-bulk-put-items/
+2026-11-07 01:59	2026-11-05 18:00		32.0	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cognito-sla-update/
+2026-11-07 01:59	2026-11-05 20:00		30.0	https://aws.amazon.com/about-aws/whats-new/2026/10/aws-nlb-available-phx-local-zone/
+2026-11-07 01:59	2026-11-05 20:56		29.1	https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/
+2026-11-07 01:59	2026-11-05 21:30		28.5	https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-northern-virginia/
+2026-11-07 01:59	2026-11-06 00:30		25.5	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-sbom-inventory/
