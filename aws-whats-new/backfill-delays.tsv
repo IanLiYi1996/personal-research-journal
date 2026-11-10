@@ -296,3 +296,11 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-07 01:59	2026-11-05 21:30		28.5	https://aws.amazon.com/about-aws/whats-new/2026/11/interconnect-last-mile-northern-virginia/
 2026-11-07 01:59	2026-11-06 00:30		25.5	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-sbom-inventory/
 2026-11-07 09:04	2026-10-29 00:33	217.4	224.5	https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-connect-journey-analytics/
+2026-11-10 09:04	2026-11-04 19:00	110.1	134.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-signin-token-exchange/
+2026-11-10 09:04	2026-11-06 18:00	63.1	87.1	https://aws.amazon.com/about-aws/whats-new/2026/11/mwaa-serverless-connections-variables/
+2026-11-10 09:04	2026-11-06 18:00	63.1	87.1	https://aws.amazon.com/about-aws/whats-new/2026/11/mwaa-serverless-custom-operators/
+2026-11-10 09:04	2026-11-09 06:00	3.1	27.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-auto-mode-karpenter-dra/
+2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-analytics-workday-data-cloud/
+2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/s3-access-points-fsx-regions/
+2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-profiles-multiple-per-vpc/
+2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/nitro-sandboxes-eks-ecs-ec2/

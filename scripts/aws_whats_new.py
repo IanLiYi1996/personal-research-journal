@@ -28,6 +28,9 @@ CATEGORIES = [
                # category. (Analytics is the QuickSight-lineage alternative; AI/ML wins
                # on consistency with the digests already written.)
                "amazon quick",
+               # Renamed "AWS Quick" on 11-09 ("Amazon Quick is now AWS Quick"); "amazon quick"
+               # would stop matching every later item, so the new name joins the same pin.
+               "aws quick",
                # AWS DevOps Agent (09-12): "adds support for bidirectional Slack communication" fell
                # through to 其他 with zero hits anywhere, while the only earlier item (06-17,
                # release management preview) reached AI/ML off body words. Two items, two
@@ -124,7 +127,11 @@ CATEGORIES = [
                     # home: live video transport, and CloudFront sits here). Moved to
                     # 媒体服务 on 09-02 — see that category for why.
                     ]),
-    ("Security", ["iam", "kms", "secrets manager", "guardduty", "inspector", "macie",
+    ("Security", ["iam", "aws sts", "security token service",
+                  # STS (11-10: cross-partition federation) had no keyword; its body
+                  # name-drops nothing strong beyond IAM, which loses on position to a
+                  # stray Management word. STS is IAM's credential service ⟹ Security.
+                  "kms", "secrets manager", "guardduty", "inspector", "macie",
                   "waf", "shield", "cognito", "verified access", "verified permissions",
                   "security hub", "detective", "audit manager", "artifact ",
                   # "control tower" lived here until 2026-10-07; moved to Management (AWS
