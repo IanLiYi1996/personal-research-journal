@@ -51,6 +51,11 @@ CATEGORIES = [
     ("Compute", ["ec2", "ecs", "eks", "lambda", "fargate", "batch", "outposts",
                  # 10-28: ECR had no keyword (replication backfill fell to 其他).
                  "amazon ecr",
+                # 11-11: GameLift had no keyword; 6 items scattered over 其他 / Security /
+                # Compute / Management / Storage (11-11 Placement Insights -> Storage via
+                # body S3 mentions). Dedicated game-server hosting on EC2; Compute is the
+                # plurality and the closest category (AWS files it under Game Tech).
+                "gamelift",
                 # Amazon EVS (Elastic VMware Service) had no keyword; all 4 historical
                 # items (07-24 / 08-28 / 09-11 / 09-22) landed in Compute only because
                 # the body name-drops "ec2" -- right category by accident (the

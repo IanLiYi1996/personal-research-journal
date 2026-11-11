@@ -304,3 +304,12 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/s3-access-points-fsx-regions/
 2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-profiles-multiple-per-vpc/
 2026-11-10 09:04	2026-11-09 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/nitro-sandboxes-eks-ecs-ec2/
+2026-11-11 09:04	2026-11-10 00:00	9.1	33.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-documentdb-8-0-3/
+2026-11-11 09:04	2026-11-10 02:30	6.6	30.6	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-service/upgrades/
+2026-11-11 09:04	2026-11-10 03:00	6.1	30.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-alarms-autoscaling-group-actions
+2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-tables-server-access-logging/
+2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-marketplace-free-trial-conversion/
+2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-launches-ngfw-policy/
+2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-elasticache-serverless-search-aggregations/
+2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/gamelift-game-session-insights/
+2026-11-11 09:04	2026-10-30 22:50	250.2	274.2	https://aws.amazon.com/whats-new/2026/10/aws-compute-optimizer-amazon-ec2/

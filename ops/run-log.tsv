@@ -262,3 +262,5 @@ ts_utc	task	phase	detail
 2026-11-09 09:06	aws	done	0 new 0 backfill; feed unchanged; span 289.1; cron rebuilt
 2026-11-10 09:04	aws	start	cron 09:0x
 2026-11-10 09:05	aws	done	13+8B, 2 High, span 289.1, ow 19/0, diff 21/21
+2026-11-11 09:04	aws	start	cron
+2026-11-11 09:06	aws	done	16 items (8+8ᴮ) + 1ᴹ >240h; gamelift->Compute
