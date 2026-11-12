@@ -209,7 +209,13 @@ CATEGORIES = [
                          # (x-ray/cdk) because a scaffolding toolkit name-drops many services.
                          # First observed instance of the known long-table bias noted below the
                          # count rule. Measured 09-09: exactly 1 flip, 0 collateral.
-                         "nx plugin"]),
+                         "nx plugin",
+                         # "AWS Emulator is now available for building and testing AWS
+                         # applications locally" (11-11 17:00): new first-party service with
+                         # no keyword; full-text count landed it in Database (DynamoDB/RDS
+                         # named as emulated services). Its subject is local SDK/CLI testing.
+                         # Measured 11-12 over the 100-item feed: exactly 1 flip, 0 collateral.
+                         "aws emulator"]),
     ("Analytics", ["athena", "glue", "emr", "kinesis", "msk", "opensearch",
                    "quicksight", "lake formation", "datazone", "data zone",
                    "managed grafana", "managed prometheus",

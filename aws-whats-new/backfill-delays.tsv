@@ -313,3 +313,4 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-elasticache-serverless-search-aggregations/
 2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/gamelift-game-session-insights/
 2026-11-11 09:04	2026-10-30 22:50	250.2	274.2	https://aws.amazon.com/whats-new/2026/10/aws-compute-optimizer-amazon-ec2/
+2026-11-12 09:03	2026-11-11 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ses-higher-resource-limits/
