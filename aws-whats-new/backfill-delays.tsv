@@ -314,3 +314,15 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-11 09:04	2026-11-10 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/gamelift-game-session-insights/
 2026-11-11 09:04	2026-10-30 22:50	250.2	274.2	https://aws.amazon.com/whats-new/2026/10/aws-compute-optimizer-amazon-ec2/
 2026-11-12 09:03	2026-11-11 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ses-higher-resource-limits/
+2026-11-13 09:04	2026-11-10 18:00	39.1	63.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-mwaa-serverless-duckdb-operators/
+2026-11-13 09:04	2026-11-12 05:00	4.1	28.1	https://aws.amazon.com/about-aws/whats-new/2026/11/new-agentcore-runtime-default/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-domains-self-service-restore/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-image-builder-devops-agent-integration
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/fsx-lustre-intelligent-tiering-lower-throughput/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-lag-vault-ebs-archive/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/glue-spark-auto-upgrades/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-resource-modifiers-eks/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/cloud-wan-bgp-community-directconnect/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/managed-flink-enhanced-snapshots/
+2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-m8id-r8id-instances
+2026-11-13 09:04	2026-11-12 09:00	0.1	24.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-structured-data-source-restrictions/

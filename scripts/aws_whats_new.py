@@ -219,6 +219,11 @@ CATEGORIES = [
     ("Analytics", ["athena", "glue", "emr", "kinesis", "msk", "opensearch",
                    "quicksight", "lake formation", "datazone", "data zone",
                    "managed grafana", "managed prometheus",
+                   # Managed Service for Apache Flink had no keyword; its three entries
+                   # scattered across 其他 (07-20) / AI/ML (07-14, via "AI Agent Skills") /
+                   # Storage (11-12, via S3 in the description). AWS files it under
+                   # Analytics (ex-Kinesis Data Analytics).
+                   "apache flink",
                    # Same drift story as WorkSpaces above. "Clean Rooms" matched no
                    # keyword ("supports" doesn't match the \b-anchored "support "),
                    # so it fell through to the description — and because its launches
