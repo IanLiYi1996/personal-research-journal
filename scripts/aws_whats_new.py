@@ -477,7 +477,12 @@ NO_CATEGORY = ["service availability updates",
                # files Braket under Quantum Technologies — no category here. n=1, rule-bearing.
                # Measured 10-18: exactly 1 flip, 0 collateral; "Amazon Bedrock now integrates
                # with Amazon Braket" keeps AI/ML via the position rule.
-               "amazon braket"]
+               "amazon braket",
+               # "AWS DMS Schema Conversion expands offline source conversion to Oracle"
+               # (11-06, backfilled 11-14) went to Networking on a body "direct connect".
+               # First DMS item; AWS files DMS under Migration & Transfer like Transfer
+               # Family — no category here. n=1, rule-bearing.
+               "aws dms", "database migration service"]
 
 
 def classify(title: str, summary: str) -> str:

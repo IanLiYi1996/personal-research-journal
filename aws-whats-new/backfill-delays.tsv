@@ -326,3 +326,17 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/managed-flink-enhanced-snapshots/
 2026-11-13 09:04	2026-11-12 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-m8id-r8id-instances
 2026-11-13 09:04	2026-11-12 09:00	0.1	24.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-structured-data-source-restrictions/
+2026-11-14 09:03	2026-11-06 23:53	153.2	177.2	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-dms-schema-conversion-expands-offline-source-conversion-to-oracle/
+2026-11-14 09:03	2026-11-10 08:00	73.1	97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/accelerated-compute-insights-cloudwatch/
+2026-11-14 09:03	2026-11-11 20:54	36.2	60.2	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-serverless-nextgen-time-series-intelligent-ingestion
+2026-11-14 09:03	2026-11-12 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/connect-batch-actions-100-cases/
+2026-11-14 09:03	2026-11-12 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-route-53-record-set-protection/
+2026-11-14 09:03	2026-11-12 18:00	15.1	39.1	https://aws.amazon.com/about-aws/whats-new/2026/11/airflow-ui-for-mwaa-serverless/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-reduces-maintenance-downtime-for-amvu-scheduled-upgrades/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-cspm-org-policies/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-oauth2-discovery/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-batch-eks-security-context/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-layout-customization/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-marketplace-vat-credit-notes/
+2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-google-cloud-support/
