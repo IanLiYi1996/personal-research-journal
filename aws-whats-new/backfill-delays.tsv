@@ -340,3 +340,11 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-layout-customization/
 2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-marketplace-vat-credit-notes/
 2026-11-14 09:03	2026-11-13 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-google-cloud-support/
+2026-11-17 09:04	2026-11-16 07:30		25.6	https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-aws-regions/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-managed-external-secrets-auth0-okta-palo-alto/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-identity-center-vpc-endpoints/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-kv-cache-routing/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-air-gapped-vault-rds/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/waf-advanced-rate-rules-available/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/networking-flexible-cost-allocation/
+2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-identity-center-reauth/
