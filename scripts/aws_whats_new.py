@@ -301,7 +301,13 @@ CATEGORIES = [
                     # verification..." 其他 -> Management, i.e. out of the fallback into the right
                     # class). Guards: "Amazon Bedrock now integrates with AWS Cost Explorer" stays
                     # AI/ML, "AWS Config now supports AWS Cost Explorer resource types" Management.
-                    "cost explorer", "aws budgets"]),
+                    "cost explorer", "aws budgets",
+                    # 11-18 (classifier example #31): three billing/cost subjects with no
+                    # keyword drifted to their objects — Cost Optimization Hub -> Compute (ec2),
+                    # Split Cost Allocation Data -> Storage (s3), "credit splitting" -> Developer
+                    # Tools. Measured: 100-item feed 3 flips (all targets), 1155 historical titles
+                    # 3 flips (same), guards with Bedrock/EC2 as subject keep their class.
+                    "cost optimization hub", "split cost allocation", "credit splitting"]),
     # Added 09-02. The two prior pins for this family each said, at the time, that a
     # Media category was the right home but too thin to justify (Deadline Cloud at
     # n=1 on 08-22 -> Compute; Elemental/Media* at n=2 on 08-21 -> Networking), and

@@ -348,3 +348,28 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/waf-advanced-rate-rules-available/
 2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/networking-flexible-cost-allocation/
 2026-11-17 09:04	2026-11-16 08:00		25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-identity-center-reauth/
+2026-11-18 09:04	2026-11-16 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-context-aware-rules/
+2026-11-18 09:04	2026-11-16 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-detects-vulnerable-software/
+2026-11-18 09:04	2026-11-16 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-network-scanning-rds/
+2026-11-18 09:04	2026-11-17 07:00	2.1	26.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-storage-lens-s3-intelligent-tiering-access-tiers/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-gcp/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-credit-splitting-transfers/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-access-troubleshooter/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/agentic-account-creation/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route53-dns-firewall-infoblox-preview/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-benefits-sharing-capabilities/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/split-cost-allocation-data-s3/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-cluster-ops/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-dns-firewall-auto-allowlists/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/kinesis-data-streams-queues/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/connect-case-and-calculated-attributes/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rtmp-support-aws-elemental-mediaconnect/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/eks-auto-mode-pod-rightsizing-preview/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/s3-split-cost-allocation/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-firewall-context-sharing/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-pause-delete/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-global-resolver-cloud-wan/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/acm-certificates-container-support/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding/
+2026-11-18 09:04	2026-11-17 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration/

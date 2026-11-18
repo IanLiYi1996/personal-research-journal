@@ -274,3 +274,5 @@ ts_utc	task	phase	detail
 2026-11-15 09:04	aws	done	0 new 0 backfill, span 240.1
 2026-11-17 09:04	aws	start	cron
 2026-11-17 09:06	aws	done	18 items (10 window + 8 backfill from 11-16 NO RUN), 1 High, span 255.1, cron rebuilt
+2026-11-18 09:04	aws	start	cron 11-18
+2026-11-18 09:05	aws	done	56 items (31+25B), span 145.1 blind, dirs 300 cross-check 0 lost, classifier #31
