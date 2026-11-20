@@ -278,3 +278,5 @@ ts_utc	task	phase	detail
 2026-11-18 09:05	aws	done	56 items (31+25B), span 145.1 blind, dirs 300 cross-check 0 lost, classifier #31
 2026-11-19 09:03	aws	start	cron 09:0x
 2026-11-19 09:05	aws	done	16+13ᴮ+2ᴹ, span 73.1 新最小, dirs 对账抓到 2 条 RSS 从未包含
+2026-11-20 09:03	aws	start	cron 11-20
+2026-11-20 09:04	aws	done	68 items (27+41ᴮ), span 61.1, dirs 300 recon 0 uncovered
