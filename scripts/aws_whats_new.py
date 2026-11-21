@@ -695,7 +695,7 @@ GENERATED_SECTIONS = {"Top Highlights", "按类别详情"}
 # The optional "ᴮ" is the backfill marker (see BACKFILL_HOURS); it also appeared as a
 # hand-written annotation in the 08-01..08-03 catch-up digests.
 ROW_RE = re.compile(
-    r"^\|\s*(\d{2})-(\d{2}) (\d{2}):(\d{2})\s*ᴮ?\s*\|\s*\[(.+?)\]\((\S+?)\)\s*\|\s*(\w+)\s*\|\s*$"
+    r"^\|\s*(\d{2})-(\d{2}) (\d{2}):(\d{2})\s*(ᴮ)?\s*\|\s*\[(.+?)\]\((\S+?)\)\s*\|\s*(\w+)\s*\|\s*$"
 )
 
 # 2026-08-14: the feed DOES backfill — items appear carrying timestamps hours to days in
@@ -958,6 +958,9 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
         for r in sorted(bf, key=lambda r: r["pub"]):
             pub = r["pub"]
             lower = ""
+            # dirs-only item: it was never in the RSS feed, so an RSS run "missing" it
+            # proves nothing about when it became available upstream -> no lower bound.
+            dirs_src = r.get("dirs_only", False)
             for t in runs:  # newest first ⟹ first match is the item's last missed chance
                 # Skip this very run: its header may already be on disk (same-day merge
                 # write, or a re-run), and it is the run *reporting* the item, so it
@@ -967,7 +970,8 @@ def _log_backfill_delays(rows: list[dict], now_utc: dt.datetime,
                     continue
                 look = _lookback_at(t)
                 if t >= pub >= t - dt.timedelta(hours=look):
-                    lower = f"{(t - pub).total_seconds() / 3600:.1f}"
+                    if not dirs_src:
+                        lower = f"{(t - pub).total_seconds() / 3600:.1f}"
                     break
             f.write(f"{now_utc:%Y-%m-%d %H:%M}\t{pub:%Y-%m-%d %H:%M}\t{lower}\t"
                     f"{(now_utc - pub).total_seconds() / 3600:.1f}\t{r['link']}\n")
@@ -1111,7 +1115,7 @@ def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
         m = ROW_RE.match(line)
         if not m:
             continue
-        mon, day, hh, mm, title, link, imp = m.groups()
+        mon, day, hh, mm, bmark, title, link, imp = m.groups()
         # Rows carry only MM-DD; pick the year that puts them at or before today.
         year = today.year
         try:
@@ -1123,13 +1127,63 @@ def _parse_existing(path: Path) -> tuple[dict[str, dict], list[str]]:
             pub = pub.replace(year=year - 1)
         prior[link] = {"title": title.replace("\\|", "|"), "link": link, "pub": pub,
                        "descr": "", "category": cat or "其他", "impact": imp,
-                       "carried": True}
+                       # 2026-11-21: keep the ᴮ mark on carry — it was dropped, so a
+                       # same-day rerun silently turned backfilled rows into in-window ones.
+                       "backfill": bool(bmark), "carried": True}
     while prose and not prose[-1].strip():
         prose.pop()
     return prior, prose
 
 
 MAX_RSS_AGE_MIN = 60
+
+
+# 2026-11-21: second backfill source. On 11-19 and again on 11-21 the RSS feed (100
+# items) was shallower than the backfill delay — re:Invent-week volume put its span at
+# 73h then 40h — so late-arriving announcements were never in ANY RSS snapshot and both
+# the backfill path and the over-window detector were blind to them (6 found by hand in
+# dirs pages). The exit condition written on 11-19 ("dirs reconciliation nonzero again
+# -> wire dirs in") fired today. dirs pages are optional: missing/stale files only warn,
+# because the RSS path must keep working on its own.
+DIRS_GLOB = "/tmp/aws-dirs-p*.json"
+DIRS_FETCH = ('for p in 0 1 2; do curl -s -G "https://aws.amazon.com/api/dirs/items/search" '
+              '--data-urlencode "item.directoryId=whats-new-v2" '
+              '--data-urlencode "sort_by=item.additionalFields.postDateTime" '
+              '--data-urlencode "sort_order=desc" --data-urlencode "size=100" '
+              '--data-urlencode "page=$p" --data-urlencode "item.locale=en_US" '
+              '-A "Mozilla/5.0" -o /tmp/aws-dirs-p$p.json; done')
+
+
+def _dirs_entries() -> list[tuple[str, str, dt.datetime, str]]:
+    import glob, json
+    out = []
+    files = sorted(glob.glob(DIRS_GLOB))
+    if not files:
+        print(f"  ~ no dirs pages at {DIRS_GLOB}; RSS-only backfill this run\n    {DIRS_FETCH}",
+              file=sys.stderr)
+        return out
+    for f in files:
+        age_min = (dt.datetime.now().timestamp() - Path(f).stat().st_mtime) / 60
+        if age_min > MAX_RSS_AGE_MIN:
+            print(f"  ~ {f} is {age_min:.0f} min old; ignored", file=sys.stderr)
+            continue
+        try:
+            data = json.load(open(f))
+        except Exception as e:
+            print(f"  ~ {f} unreadable ({e}); ignored", file=sys.stderr)
+            continue
+        for it in data.get("items", []):
+            a = it.get("item", {}).get("additionalFields", {})
+            url = (a.get("headlineUrl") or "").strip()
+            if url.startswith("/"):
+                url = "https://aws.amazon.com" + url
+            try:
+                pub = dt.datetime.fromisoformat(a["postDateTime"].replace("Z", "+00:00"))
+            except Exception:
+                continue
+            if url and a.get("headline"):
+                out.append((a["headline"].strip(), url, pub, a.get("postBody") or ""))
+    return out
 
 
 def main() -> int:
@@ -1160,17 +1214,28 @@ def main() -> int:
     rows = []
     backfilled = 0
     seen_links = set()
+    entries = []
     for it in items:
-        title = (it.findtext("title") or "").strip()
-        link = (it.findtext("link") or "").strip()
-        pubdate_s = (it.findtext("pubDate") or "").strip()
-        descr_raw = (it.findtext("description") or "").strip()
-        descr = html.unescape(re.sub(r"<[^>]+>", " ", descr_raw))
-        descr = re.sub(r"\s+", " ", descr).strip()
         try:
-            pub = parsedate_to_datetime(pubdate_s)
+            pub = parsedate_to_datetime((it.findtext("pubDate") or "").strip())
         except Exception:
             continue
+        entries.append(((it.findtext("title") or "").strip(),
+                        (it.findtext("link") or "").strip(), pub,
+                        (it.findtext("description") or "").strip()))
+    # RSS first, so on any overlap the RSS copy wins via seen_links below.
+    dirs_entries = _dirs_entries()
+    dirs_only = 0
+    rss_links = {_canon_link(e[1]) for e in entries}
+    dirs_links: set[str] = set()
+    for e in dirs_entries:
+        if _canon_link(e[1]) not in rss_links:
+            entries.append(e)
+            dirs_links.add(_canon_link(e[1]))
+            dirs_only += 1
+    for title, link, pub, descr_raw in entries:
+        descr = html.unescape(re.sub(r"<[^>]+>", " ", descr_raw))
+        descr = re.sub(r"\s+", " ", descr).strip()
         if pub.tzinfo is None:
             pub = pub.replace(tzinfo=dt.timezone.utc)
         prev = _slug_corrected(prior_tt, pub, title, link)
@@ -1199,6 +1264,7 @@ def main() -> int:
             "category": classify(title, descr),
             "impact": impact(title, descr),
             "backfill": is_backfill,
+            "dirs_only": _canon_link(link) in dirs_links,
         })
     today = dt.datetime.now().strftime("%Y-%m-%d")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1241,13 +1307,15 @@ def main() -> int:
               f"\n      {r['title']}\n      now : {_canon_link(r['link'])}"
               f"\n      prev: {prior_titles[r['title']]}", file=sys.stderr)
 
+    carried_bf = sum(1 for r in carried if r.get("backfill"))
+    all_bf = backfilled + carried_bf
     lines = [f"# AWS What's New: {today}", "",
              f"- **抓取时间:** {dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC",
-             f"- **过去 24h 公告数:** {len(rows) - backfilled}"
-             + (f"（本次抓取 {len(fresh_links) - backfilled} + 早前同日抓取保留 {len(carried)}）"
-                if carried else "")
-             + (f" ＋ **补录 {backfilled} 条**（`ᴮ`，pubDate 早于 24h 窗口但从未进过任何 digest）"
-                if backfilled else ""),
+             f"- **过去 24h 公告数:** {len(rows) - all_bf}"
+             + (f"（本次抓取 {len(fresh_links) - backfilled} + 早前同日抓取保留 {len(carried) - carried_bf}）"
+                if len(carried) > carried_bf else "")
+             + (f" ＋ **补录 {all_bf} 条**（`ᴮ`，pubDate 早于 24h 窗口但从未进过任何 digest）"
+                if all_bf else ""),
              "- **Source:** https://aws.amazon.com/about-aws/whats-new/recent/feed/",
              ""]
     if not rows:
@@ -1297,6 +1365,8 @@ def main() -> int:
     note = f", kept {len(carried)} carried, {len(prose)} prose lines" if (carried or prose) else ""
     if logged:
         note += f", logged {logged} backfill delay(s) to {DELAY_LOG.name}"
+    if dirs_only:
+        print(f"  dirs pages contributed {dirs_only} item(s) absent from RSS (eligible for backfill)", file=sys.stderr)
     print(f"wrote {out} ({len(rows)} items, {len(highs)} highs{note})")
     return 0
 

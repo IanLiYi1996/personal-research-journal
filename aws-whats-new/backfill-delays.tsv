@@ -429,3 +429,34 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-20 09:03	2026-11-19 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/network-load-balancer-mtls/
 2026-11-20 09:03	2026-11-19 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-dynamic-client-registration/
 2026-11-20 09:03	2026-11-19 09:00	0.1	24.1	https://aws.amazon.com/about-aws/whats-new/2026/11/parameter-store-raises-api-throughput-limits/
+2026-11-21 09:03	2026-11-19 19:23	13.7	37.7	https://aws.amazon.com/about-aws/whats-new/2026/11/iam-roles-anywhere-alias/
+2026-11-21 09:03	2026-11-19 21:51	11.2	35.2	https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-guides-mcp/
+2026-11-21 09:03	2026-11-20 05:00	4.1	28.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-third-generation/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-transcribe-germany/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-outposts-racks-osaka/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/continuum-pentest-cost-estimates/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-webbotauth-support/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-incremental-backups-dynamodb/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-textract-core-skill-ai-agents/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-public-dns-fallback/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-lattice-cloudwatch-metrics/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-tools-repository/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-new-chat-capabilities/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-reduces-latency/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/textract-insights-ga/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-store-csi-driver-assumerole/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-naming-public-discovery/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-microvms-customer-managed-keys/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-offers-advanced-hosted-zones/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-test-insights/
+2026-11-21 09:03	2026-11-20 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-adds-new-capabilities/
+2026-11-21 09:03	2026-11-20 08:06	1.0	25.0	https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda/
+2026-11-21 09:03	2026-11-20 08:21	0.7	24.7	https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing/
+2026-11-21 09:03	2026-11-20 08:30	0.6	24.6	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-custom-supports-latest-cumulative-update-gdr-microsoft-sql-server/
+2026-11-21 09:03	2026-11-20 08:34	0.5	24.5	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-object-level-audit-policies
+2026-11-21 09:03	2026-11-20 08:49	0.2	24.2	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-new-canadian-time
+2026-11-21 09:03	2026-11-20 08:53	0.2	24.2	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-rename-databases
+2026-11-21 09:05	2026-11-17 23:28		81.6	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-sign-in-ema-idjag/
+2026-11-21 09:05	2026-11-19 08:00		49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-now-supports-aws-partnership/
+2026-11-21 09:05	2026-11-19 08:00		49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/alb-adds-tls-key-exchange-header/
+2026-11-21 09:05	2026-11-19 15:00		42.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-rtb-fabric-modules-marketplace/

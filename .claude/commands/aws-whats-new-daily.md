@@ -7,6 +7,8 @@
 
 ```bash
 curl -s "https://aws.amazon.com/about-aws/whats-new/recent/feed/" -o /tmp/aws-rss.xml
+# 2026-11-21 起：dirs API 三页作补录第二候选源（RSS 100 条在高产周深度 < 回填延迟）
+for p in 0 1 2; do curl -s -G "https://aws.amazon.com/api/dirs/items/search" --data-urlencode "item.directoryId=whats-new-v2" --data-urlencode "sort_by=item.additionalFields.postDateTime" --data-urlencode "sort_order=desc" --data-urlencode "size=100" --data-urlencode "page=$p" --data-urlencode "item.locale=en_US" -A "Mozilla/5.0" -o /tmp/aws-dirs-p$p.json; done
 uv run python3 scripts/aws_whats_new.py
 ```
 
