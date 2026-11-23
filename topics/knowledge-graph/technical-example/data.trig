@@ -1,0 +1,73 @@
+@prefix ex:  <https://example.org/onto-tech/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:onto-demo:asserted:public:v1> {
+    ex:ProductA a ex:Product .
+    ex:BatchInference a ex:Capability .
+
+    # This release has no explicit ex:Release type: infer it or use a class path.
+    ex:Release21 a ex:EnterpriseRelease ;
+        ex:releaseOf ex:ProductA ;
+        ex:version "2.1" .
+    ex:Release20 a ex:Release ;
+        ex:releaseOf ex:ProductA ;
+        ex:version "2.0" .
+
+    ex:Evidence21 a ex:Evidence ;
+        ex:quote "虚构资料：A 2.1 在 Linux 自托管环境支持批量推理。" ;
+        ex:locator "demo-doc-v3，部署支持，第2段" .
+    ex:Evidence20 a ex:Evidence ;
+        ex:quote "虚构资料：A 2.0 的支持声明于2026-10-20结束。" ;
+        ex:locator "demo-doc-v2，第4段" .
+
+    ex:Claim21 a ex:SupportClaim ;
+        ex:forRelease ex:Release21 ;
+        ex:capability ex:BatchInference ;
+        ex:environment "linux-selfhosted" ;
+        ex:status "approved" ;
+        ex:validFrom "2026-10-20T00:00:00+08:00"^^xsd:dateTime ;
+        ex:hasEvidence ex:Evidence21 .
+
+    ex:Claim20 a ex:SupportClaim ;
+        ex:forRelease ex:Release20 ;
+        ex:capability ex:BatchInference ;
+        ex:environment "linux-selfhosted" ;
+        ex:status "approved" ;
+        ex:validFrom "2026-10-01T00:00:00+08:00"^^xsd:dateTime ;
+        ex:validTo "2026-10-20T00:00:00+08:00"^^xsd:dateTime ;
+        ex:hasEvidence ex:Evidence20 .
+
+    ex:Candidate21 a ex:SupportClaim ;
+        ex:forRelease ex:Release21 ;
+        ex:capability ex:BatchInference ;
+        ex:environment "linux-selfhosted" ;
+        ex:status "candidate" ;
+        ex:validFrom "2026-10-20T00:00:00+08:00"^^xsd:dateTime ;
+        ex:hasEvidence ex:Evidence21 .
+
+    ex:Staging21 a ex:SupportClaim ;
+        ex:forRelease ex:Release21 ;
+        ex:capability ex:BatchInference ;
+        ex:environment "staging" ;
+        ex:status "approved" ;
+        ex:validFrom "2026-10-20T00:00:00+08:00"^^xsd:dateTime ;
+        ex:hasEvidence ex:Evidence21 .
+}
+
+# Intentionally excluded from the demo's public graph allowlist.
+<urn:onto-demo:asserted:restricted:v1> {
+    ex:PrivateProduct a ex:Product .
+    ex:PrivateRelease a ex:Release ;
+        ex:releaseOf ex:PrivateProduct ;
+        ex:version "9.9" .
+    ex:PrivateEvidence a ex:Evidence ;
+        ex:quote "PRIVATE-DEMO-DO-NOT-RETURN" ;
+        ex:locator "restricted-doc" .
+    ex:PrivateClaim a ex:SupportClaim ;
+        ex:forRelease ex:PrivateRelease ;
+        ex:capability ex:BatchInference ;
+        ex:environment "linux-selfhosted" ;
+        ex:status "approved" ;
+        ex:validFrom "2026-10-01T00:00:00+08:00"^^xsd:dateTime ;
+        ex:hasEvidence ex:PrivateEvidence .
+}

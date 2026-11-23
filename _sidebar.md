@@ -8,6 +8,19 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [DuckDB Object Storage：定位、基准口径与采用边界](/research-notes/2026-11-23-duckdb-object-storage.md)
+  - [Always-on agent：运行时参考项目](/research-notes/2026-11-20-always-on-agent-runtime-notes.md)
+  - [个人微信接入：账号与授权边界核查](/research-notes/2026-11-20-always-on-agent-personal-weixin-access-notes.md)
+  - [Hermes：always-on agent 架构参考核对](/research-notes/2026-11-20-always-on-agent-hermes-notes.md)
+  - [Always-on agent：飞书与微信系渠道核验笔记](/research-notes/2026-11-20-always-on-agent-channel-notes.md)
+  - [Always-on agents：三项生产边界事实核查](/research-notes/2026-11-19-building-always-on-agents-fact-check.md)
+  - [Google AX：定位、运行机制与采用边界](/research-notes/2026-11-11-google-ax.md)
+  - [开放权重 voice-to-voice 模型选型核查](/research-notes/2026-11-03-voice-to-voice-model-selection.md)
+  - [AI 给出证明之后，科学还需要什么？](/research-notes/2026-10-28-openai-scientific-understanding.md)
+  - [独立核查：Lean 的可信边界与“生成—验证—人工理解”](/research-notes/2026-10-28-openai-scientific-understanding-verification-notes.md)
+  - [DetectorScope：让 AI 文本检测器展示它的判断依据](/research-notes/2026-10-28-detectorscope.md)
+  - [After42：以解促问的研究选题工作流](/research-notes/2026-10-28-after42-research-workflow.md)
+  - [How Codex Happened：完整调研报告](/research-notes/2026-10-26-how-codex-happened.md)
   - [RSI：AI 能不能学会改进自己？](/research-notes/2026-10-17-rsi-readable.md)
   - [RSI 深度研究：重要研究、行业进展与技术机制](/research-notes/2026-10-17-rsi-detailed.md)
   - [RSI（递归自我改进）研究领域深度调研](/research-notes/2026-10-17-rsi-deep-research.md)
@@ -126,6 +139,17 @@
     - [训练动态显微镜化：从经验配方到优化几何](/topics/ai-frontier-2026h1/2026-06-12-training-dynamics.md)
     - [2026 上半年 AI 前沿：趋势综合与开放问题](/topics/ai-frontier-2026h1/2026-06-12-trends.md)
     - [世界模型与具身演化](/topics/ai-frontier-2026h1/2026-06-12-world-models.md)
+  - **KNOWLEDGE-GRAPH**
+    - [Microsoft GraphRAG：一手资料核实](/topics/knowledge-graph/2026-10-22_GraphRAG_一手资料核实.md)
+    - [Ontology、Taxonomy、知识图谱与 GraphRAG：概念、选型和落地调研](/topics/knowledge-graph/2026-10-22_Ontology_Taxonomy_知识图谱与GraphRAG调研报告.md)
+    - [NebulaGraph 本体管理核实](/topics/knowledge-graph/2026-10-23_NebulaGraph本体管理_核实.md)
+    - [Ontology 全景梳理：从材料、发展脉络到构建、运行与应用](/topics/knowledge-graph/2026-10-23_Ontology从构建到应用_全景梳理.md)
+    - [部署与查询核实笔记](/topics/knowledge-graph/2026-10-23_Ontology存储与查询_技术核实.md)
+    - [Ontology 怎样建立、怎样存储管理、怎样应用](/topics/knowledge-graph/2026-10-23_Ontology建立_存储管理_应用_易读版.md)
+    - [Ontology 建立方法：补充核实](/topics/knowledge-graph/2026-10-23_Ontology建立方法_补充核实.md)
+    - [Ontology 技术实现：构建、图数据库管理与应用](/topics/knowledge-graph/2026-10-23_Ontology技术实现_构建_图数据库管理_应用.md)
+    - [贯穿示例：从本体构建到服务依赖查询、RAG 与变更 Agent](/topics/knowledge-graph/2026-10-23_Ontology构建到应用_贯穿示例.md)
+    - [Ontology 标准与方法：核实附录](/topics/knowledge-graph/2026-10-23_Ontology标准与方法_核实附录.md)
   - **LLM-INFERENCE**
     - [DeepInfer 调研 00：执行摘要](/topics/llm-inference/2026-10-21-deepinfer-00-executive-summary.md)
     - [DeepInfer 调研 01：竞品产品对比](/topics/llm-inference/2026-10-21-deepinfer-01-product-comparison.md)
@@ -155,6 +179,9 @@
     - [LLM 长上下文训练技术总结](/topics/llm/2026-02-09-llm-long-context-training.md)
   - **NLP**
     - [图结构 × 大模型：从依存句法到 GraphRAG 的演化谱系](/topics/nlp/2026-05-08-graph-structures-meet-llms.md)
+  - **PHYSICAL-AI**
+    - [GTC Berlin 2026：Physical AI 内容整理](/topics/physical-ai/2026-10-26-gtc-berlin-2026-physical-ai.md)
+    - [Physical AI：知识全景与学习指南](/topics/physical-ai/2026-10-27-physical-ai-guide.md)
   - **QUANTUM-COMPUTING**
     - [量子算法与应用](/topics/quantum-computing/2026-04-15-quantum-algorithms.md)
     - [量子计算技术全景总结（索引）](/topics/quantum-computing/2026-04-15-quantum-computing-comprehensive.md)

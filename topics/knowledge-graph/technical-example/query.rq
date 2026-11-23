@@ -1,0 +1,21 @@
+PREFIX ex: <https://example.org/onto-tech/>
+
+# Run over an already-authorized graph view. Bind capability/environment/at.
+SELECT DISTINCT ?claim ?product ?release ?version ?evidence ?quote ?locator
+WHERE {
+    ?claim a ex:SupportClaim ;
+           ex:forRelease ?release ;
+           ex:capability ?capability ;
+           ex:environment ?environment ;
+           ex:status "approved" ;
+           ex:validFrom ?from ;
+           ex:hasEvidence ?evidence .
+    ?release a ex:Release ;
+             ex:releaseOf ?product ;
+             ex:version ?version .
+    ?evidence ex:quote ?quote ;
+              ex:locator ?locator .
+    OPTIONAL { ?claim ex:validTo ?to . }
+    FILTER (?from <= ?at)
+    FILTER (!BOUND(?to) || ?at < ?to)
+}

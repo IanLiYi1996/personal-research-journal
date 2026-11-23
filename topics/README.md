@@ -31,6 +31,19 @@ Organize notes by research area. Create subdirectories for each topic.
 - [2026 上半年 AI 前沿：趋势综合与开放问题](/topics/ai-frontier-2026h1/2026-06-12-trends.md)
 - [世界模型与具身演化](/topics/ai-frontier-2026h1/2026-06-12-world-models.md)
 
+### knowledge-graph
+
+- [Microsoft GraphRAG：一手资料核实](/topics/knowledge-graph/2026-10-22_GraphRAG_一手资料核实.md)
+- [Ontology、Taxonomy、知识图谱与 GraphRAG：概念、选型和落地调研](/topics/knowledge-graph/2026-10-22_Ontology_Taxonomy_知识图谱与GraphRAG调研报告.md)
+- [NebulaGraph 本体管理核实](/topics/knowledge-graph/2026-10-23_NebulaGraph本体管理_核实.md)
+- [Ontology 全景梳理：从材料、发展脉络到构建、运行与应用](/topics/knowledge-graph/2026-10-23_Ontology从构建到应用_全景梳理.md)
+- [部署与查询核实笔记](/topics/knowledge-graph/2026-10-23_Ontology存储与查询_技术核实.md)
+- [Ontology 怎样建立、怎样存储管理、怎样应用](/topics/knowledge-graph/2026-10-23_Ontology建立_存储管理_应用_易读版.md)
+- [Ontology 建立方法：补充核实](/topics/knowledge-graph/2026-10-23_Ontology建立方法_补充核实.md)
+- [Ontology 技术实现：构建、图数据库管理与应用](/topics/knowledge-graph/2026-10-23_Ontology技术实现_构建_图数据库管理_应用.md)
+- [贯穿示例：从本体构建到服务依赖查询、RAG 与变更 Agent](/topics/knowledge-graph/2026-10-23_Ontology构建到应用_贯穿示例.md)
+- [Ontology 标准与方法：核实附录](/topics/knowledge-graph/2026-10-23_Ontology标准与方法_核实附录.md)
+
 ### llm-inference
 
 - [DeepInfer 调研 00：执行摘要](/topics/llm-inference/2026-10-21-deepinfer-00-executive-summary.md)
@@ -65,6 +78,11 @@ Organize notes by research area. Create subdirectories for each topic.
 ### nlp
 
 - [图结构 × 大模型：从依存句法到 GraphRAG 的演化谱系](/topics/nlp/2026-05-08-graph-structures-meet-llms.md)
+
+### physical-ai
+
+- [GTC Berlin 2026：Physical AI 内容整理](/topics/physical-ai/2026-10-26-gtc-berlin-2026-physical-ai.md)
+- [Physical AI：知识全景与学习指南](/topics/physical-ai/2026-10-27-physical-ai-guide.md)
 
 ### quantum-computing
 

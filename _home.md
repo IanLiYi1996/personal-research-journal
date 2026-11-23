@@ -20,8 +20,8 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-10-17-rsi-readable" class="arc-btn-primary">Latest Digest</a>
-<a href="#/topics/llm-inference/2026-10-21-deepinfer-15-references" class="arc-btn-secondary">Explore Topics</a>
+<a href="#/research-notes/2026-11-23-duckdb-object-storage" class="arc-btn-primary">Latest Digest</a>
+<a href="#/topics/physical-ai/2026-10-27-physical-ai-guide" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
-| 2026-10-21 | Topic | [DeepInfer 调研 15：参考文献与来源清单](/topics/llm-inference/2026-10-21-deepinfer-15-references) |
-| 2026-10-21 | Topic | [DeepInfer 调研 14：核实记录与方法说明](/topics/llm-inference/2026-10-21-deepinfer-14-verification-log) |
-| 2026-10-21 | Topic | [DeepInfer 调研 04：专题深挖索引、要点与全局勘误](/topics/llm-inference/2026-10-21-deepinfer-04-topics-index-errata) |
-| 2026-10-21 | Topic | [DeepInfer 调研 03：DeepInfer vs vLLM vs SGLang 同口径基准测试方案](/topics/llm-inference/2026-10-21-deepinfer-03-benchmark-plan) |
-| 2026-10-21 | Topic | [DeepInfer 调研 02：大规模 LLM 推理 Infra 技术调研与解析](/topics/llm-inference/2026-10-21-deepinfer-02-infra-analysis) |
+| 2026-11-23 | Note | [DuckDB Object Storage：定位、基准口径与采用边界](/research-notes/2026-11-23-duckdb-object-storage) |
+| 2026-11-20 | Note | [个人微信接入：账号与授权边界核查](/research-notes/2026-11-20-always-on-agent-personal-weixin-access-notes) |
+| 2026-11-20 | Note | [Hermes：always-on agent 架构参考核对](/research-notes/2026-11-20-always-on-agent-hermes-notes) |
+| 2026-11-20 | Note | [Always-on agent：飞书与微信系渠道核验笔记](/research-notes/2026-11-20-always-on-agent-channel-notes) |
+| 2026-11-20 | Note | [Always-on agent：运行时参考项目](/research-notes/2026-11-20-always-on-agent-runtime-notes) |
 <!-- AUTO:RECENT:END -->

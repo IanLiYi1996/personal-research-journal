@@ -1,0 +1,69 @@
+@prefix ex:  <https://example.org/onto-tech/> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ReleaseShape a sh:NodeShape ;
+    sh:targetClass ex:Release ;
+    sh:targetSubjectsOf ex:releaseOf ;
+    sh:class ex:Release ;
+    sh:property [
+        sh:path ex:releaseOf ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ex:Product
+    ] ;
+    sh:property [
+        sh:path ex:version ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:string ; sh:minLength 1
+    ] .
+
+ex:SupportClaimShape a sh:NodeShape ;
+    sh:targetClass ex:SupportClaim ;
+    sh:targetSubjectsOf ex:forRelease ;
+    sh:class ex:SupportClaim ;
+    sh:property [
+        sh:path ex:forRelease ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ex:Release
+    ] ;
+    sh:property [
+        sh:path ex:capability ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ex:Capability
+    ] ;
+    sh:property [
+        sh:path ex:environment ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ("linux-selfhosted" "staging")
+    ] ;
+    sh:property [
+        sh:path ex:status ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ("candidate" "approved" "revoked")
+    ] ;
+    sh:property [
+        sh:path ex:validFrom ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime
+    ] ;
+    sh:property [
+        sh:path ex:validTo ; sh:maxCount 1 ; sh:datatype xsd:dateTime
+    ] ;
+    sh:property [
+        sh:path ex:hasEvidence ; sh:minCount 1 ;
+        sh:class ex:Evidence ; sh:node ex:EvidenceShape
+    ] ;
+    sh:sparql [
+        sh:message "validTo must be later than validFrom." ;
+        sh:select """
+            PREFIX ex: <https://example.org/onto-tech/>
+            SELECT $this WHERE {
+                $this ex:validFrom ?from ; ex:validTo ?to .
+                FILTER (?to <= ?from)
+            }
+        """
+    ] .
+
+ex:EvidenceShape a sh:NodeShape ;
+    sh:targetClass ex:Evidence ;
+    sh:property [
+        sh:path ex:quote ; sh:minCount 1 ;
+        sh:datatype xsd:string ; sh:minLength 1
+    ] ;
+    sh:property [
+        sh:path ex:locator ; sh:minCount 1 ;
+        sh:datatype xsd:string ; sh:minLength 1
+    ] .

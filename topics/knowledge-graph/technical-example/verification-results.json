@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-23",
+  "environment": {
+    "python": "3.14.5",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.40.1",
+    "owlrl": "7.6.2",
+    "installation": "isolated temporary virtual environment"
+  },
+  "reference_tests": {
+    "tests_run": 13,
+    "failures": 0,
+    "errors": 0,
+    "shacl_conforms": true,
+    "authorized_view_triples": 86,
+    "expanded_view_triples": 330,
+    "current_result": {
+      "claim": "https://example.org/onto-tech/Claim21",
+      "release": "https://example.org/onto-tech/Release21",
+      "version": "2.1",
+      "evidence": "https://example.org/onto-tech/Evidence21"
+    }
+  },
+  "fuseki_config_syntax": {
+    "turtle_parse_succeeded": true,
+    "triples": 12,
+    "server_started": false
+  },
+  "not_executed": [
+    "Neo4j Cypher",
+    "Graph Types DDL",
+    "Fuseki/TDB2 service",
+    "Ontop mappings",
+    "HTTP API"
+  ],
+  "limitations": [
+    "Not a complete OWL DL or OWL Full reasoner test.",
+    "Graph allowlist is a fixture, not a complete authorization system.",
+    "No production deployment, performance or transaction concurrency test."
+  ]
+}
