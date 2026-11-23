@@ -7,6 +7,7 @@ Organize notes by research area. Create subdirectories for each topic.
 ### 3d
 
 - [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey.md)
+- [2025-2026年3D生成技术最新进展](/topics/3d/2026-02-25-3d-generation-2025-2026-advances.md)
 
 ### agent
 

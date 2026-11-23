@@ -122,6 +122,7 @@
 - **🌿 Topics**
   - **3D**
     - [3D 生成技术全景总结](/topics/3d/2026-02-09-3d-generation-survey.md)
+    - [2025-2026年3D生成技术最新进展](/topics/3d/2026-02-25-3d-generation-2025-2026-advances.md)
   - **AGENT**
     - [Agent 质量评估方案](/topics/agent/2026-08-07-agent-eval-briefing-for-sharing.md)
     - [附录：Agent 评估的量化方法手册](/topics/agent/2026-08-07-agent-eval-methods-appendix.md)
