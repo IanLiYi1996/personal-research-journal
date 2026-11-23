@@ -284,3 +284,5 @@ ts_utc	task	phase	detail
 2026-11-21 09:08	aws	done	50+31ᴮ(4 dirs-only); span 40.1; dirs backfill source wired
 2026-11-22 09:03	aws	start	cron
 2026-11-22 09:04	aws	done	4 backfill, 0 new, span 63.1
+2026-11-23 09:04	aws	start	cron 09:04
+2026-11-23 09:04	aws	done	0 new + 2 backfill (1 dirs-only)
