@@ -466,3 +466,28 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-22 09:03	2026-11-21 02:58	6.2	30.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows/
 2026-11-23 09:04	2026-11-17 08:00		145.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-lb-migration/
 2026-11-23 09:04	2026-11-21 03:00	30.1	54.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-query-studio-saved-queries
+2026-11-24 09:03	2026-11-16 08:00		193.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-memory-management/
+2026-11-24 09:03	2026-11-19 08:00		121.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-observability/
+2026-11-24 09:03	2026-11-20 08:00	73.1	97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-pcs-instance-health-checks/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cdk-blocks-ga/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/medialive-embedded-captions/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-quality-dashboards/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-adds-agent-sandboxes/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-pcs-network-topology-scheduling/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-global-gateway/
+2026-11-24 09:03	2026-11-20 08:00		97.1	https://aws.amazon.com/about-aws/whats-new/2026/11/alb-cnsa-2-0-tls-policies/
+2026-11-24 09:03	2026-11-20 20:00	61.1	85.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-private-ca-x509-iam-keys/
+2026-11-24 09:03	2026-11-20 21:11	59.9	83.9	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-fedramp-class-d/
+2026-11-24 09:03	2026-11-20 22:05	59.0	83.0	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-compute-optimizer/
+2026-11-24 09:03	2026-11-21 04:00	53.1	77.1	https://aws.amazon.com/about-aws/whats-new/2026/11/acm-amazon-n2-certificates/
+2026-11-24 09:03	2026-11-22 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/s3-access-points-server-side-copy-fsx/
+2026-11-24 09:03	2026-11-23 05:00	4.1	28.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-additional-resources/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-hyperpod/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/connect-ai-agents-fill-guides/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/inspector-runtime-reachability/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-codedeploy-suspend-asg-processes/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-console-eks/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-device-connect/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-multicloud-automation/
+2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-capacity-blocks-ml-flex-search/
