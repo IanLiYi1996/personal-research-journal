@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-11-23-duckdb-object-storage" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-11-25-hf-daily-papers-sep15-nov25" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/physical-ai/2026-10-27-physical-ai-guide" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-11-25 | Note | [嵌入式第三方评估落地了：METR 在 Anthropic 的 11 周 · OpenAI 的四家 embedded assessor · METR 对 OpenAI 监控系统的红队](/research-notes/2026-11-25-blog-embedded-assessments) |
+| 2026-11-25 | Note | [HF Daily Papers：09/15 回填 ~ 11/25（十周空缺补跑）](/research-notes/2026-11-25-hf-daily-papers-sep15-nov25) |
 | 2026-11-23 | Note | [DuckDB Object Storage：定位、基准口径与采用边界](/research-notes/2026-11-23-duckdb-object-storage) |
 | 2026-11-20 | Note | [个人微信接入：账号与授权边界核查](/research-notes/2026-11-20-always-on-agent-personal-weixin-access-notes) |
 | 2026-11-20 | Note | [Hermes：always-on agent 架构参考核对](/research-notes/2026-11-20-always-on-agent-hermes-notes) |
-| 2026-11-20 | Note | [Always-on agent：飞书与微信系渠道核验笔记](/research-notes/2026-11-20-always-on-agent-channel-notes) |
-| 2026-11-20 | Note | [Always-on agent：运行时参考项目](/research-notes/2026-11-20-always-on-agent-runtime-notes) |
 <!-- AUTO:RECENT:END -->

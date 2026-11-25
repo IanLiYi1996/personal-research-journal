@@ -290,3 +290,9 @@ ts_utc	task	phase	detail
 2026-11-24 09:05	aws	done	new=15 backfill=25(dirs-only 11) high=5 span=97.1 cron-rebuilt
 2026-11-25 09:03	aws	start	cron
 2026-11-25 09:04	aws	done	4 new + 14 backfill, 5 high
+2026-11-25 09:43	hf	start	catch-up after ~10wk gap, 11-25 09:4x
+2026-11-25 09:43	reddit	start	catch-up after ~10wk gap, 11-25 09:4x
+2026-11-25 09:43	tech-blogs	start	catch-up after ~10wk gap, 11-25 09:4x
+2026-11-25 09:58	hf	done	catch-up sep15-nov25: 2619 window, A=2587 B=2596 B-A=9, 48 ingested, 2 deep dives (RRSI/FalseFrontiers), verify 5/5 pass @09:57 vs snapshot 09:43
+2026-11-25 09:58	tech-blogs	done	W48 catch-up ~1680h gap: 1508 merged, 828 dated-new, 17 cap-bound sources lost content, deep dive embedded-assessments
+2026-11-25 09:58	reddit	done	FAILED: RSS 404 then 429 on all 12 subs incl. curl; no digest written
