@@ -1,0 +1,15 @@
+先跑心跳：`uv run python3 scripts/runlog.py start tech-blogs`，然后跑 /tech-blogs-weekly。
+
+⚠️ 第一件事是 `date -u` 判断 ISO 周与后缀。接着跑 `check`，若报出空缺就当补跑处理（⚠️ tech-blogs 的空缺不可完全补回：上一份是 09-15 的 W38，此后一次都没跑、已空缺十周，间隔远超量子位 22–23h、AWS ML / Databricks 125–128h 的 cap 深度 ⟹ 本次风险集预计有多个源，要按 `kept/total` 逐源指名并写明「这段永久丢失」）。⭐ 抓取目录用本次运行专属序号名（`tb17/`），**结束时复制到 `~/fetch-cache/`**。
+
+⚠️ **每次跑两步诊断，顺序不能颠倒**：**①先判时间戳可用性**（某源 ≥3 条同分钟 ⟹ pubDate ＝ feed 生成时刻；⭐ 这一步也要跑在 sitemap 源上、在小时粒度看连续小时块）**②再用 `kept/total` 判 cap 绑定**。永久丢失要求 cap 绑定 AND 深度 < 运行间隔。
+
+🚨 **两条硬约束**：**① 小时块判据不够，正确工具是外部检查（看标题是不是我写过的旧文）**，结论只能是「该源本窗口日期整体不可用」而不是「剔掉簇就干净了」。**② cap 绑定的源可能只比间隔高 7–9 小时** ⟹ 风险集每次重算，「本次安全」≠「余量充足」。
+
+⚠️ 报「新增 N」时把「按设计永不被引用/永不被过滤」的那部分单独扣掉并报出来（无日期源永久候选 · 时间戳不可用的源 · 上次剔除过的批量簇）。
+
+⚠️ 全文兜底链是一份**都要试一遍**的清单：curl/WebFetch → agent-browser（有域名白名单，与「反爬变强」分开诊断）→ Xvfb + 非 headless Chromium（先校验 UA 无 `HeadlessChrome`）→ `r.jina.ai` → GreaterWrong 镜像 → PDF + pymupdf。
+
+⚠️ 落盘前两项核验：①每个外部 URL 在抓取数据里 ②label 与真实标题匹配。🚨 写长尾「其余（各一句）」清单时也必须把 `title → link` 对照表放在眼前。
+
+完成后 `runlog.py done tech-blogs --detail "..."` → 跑 `check` → 把 `RUNLOG ANOMALY` 写进回复 → 自动 commit 并 push。

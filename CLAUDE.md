@@ -63,6 +63,12 @@ A personal research journal: markdown notes organized into folders, browsable vi
 - 每次跑都必须**对照最近数份 digest 去重**——HF 日期桶会回溯含旧论文，Reddit top-of-week 榜单在滚动。
 - **cross-digest 是唯一按周的**，须在当周各份 digest 都跑完后写；因其余四个每天产出，同一周往往有多份带后缀的 digest，要全部串进来（W31 那次串了 18 份）。
   - 🚨⭐⭐⭐ **而按 ISO 周切分有一个我 2026-09-08 才发现的限制：它会把「问题」与「它的形式化」切到两周里，而后者往往才是最该记的那一块。** W36 那次的实例：**「只看 transcript 的闸门不够」这条线在 W36 内拿到的是基准评分路径设计与厂商的行为测量，而它的形式化下界（Bilevel Coordinated Reflection 的不可能性定理，`even an ideal text-only judge`）出现在 W37 头两天** ⟹ ⭐⭐ **对策不是改周边界（那只会把切口挪到别处），而是在 §4「与上半周差异」那一节里主动写「本周某条线在下一周开头拿到了什么」** —— ⭐ 这与该节原本的用途（记录我上半周为何判断不出来）是同一种反思，只是方向朝前。
+- 🚨🚨🚨 **调度的真实机制（2026-11-25 查清，推翻下面整段 CronList 记录的归因）**：
+  - **CronList / `CronCreate` 的六个任务从来没有触发过一次，包括 aws。** 它们只在**常驻、空闲的交互式 Claude Code REPL** 里才会触发，而本机没有这样的会话。本机保留的 30 个会话记录全部以 `/aws-whats-new-daily 执行 AWS What's New 每日抓取任务…` 开头，没有一个以 CronList prompt 的「先跑心跳」开头。
+  - **每天 09:03 的 aws 是远端 Baton 服务经 `baton-bridge.service`（用户 systemd，`~/.baton-bridge/bridge.mjs`）拉起的 `claude -p`**，定时设在 Baton 侧，本地代码里没有调度器。aws 的心跳行是那个会话读 CLAUDE.md 后自己写的。
+  - ⟹ 下面记的「AWS 活、其余死」「lead time 梯度」「7 天在下一次触发时结算」「重建修不了跑不起来」等，**现象都是真的，但全部归因错了**：唯一的定时器是 Baton 里那一个。
+  - ✅ **其余任务现改由用户 systemd timer 驱动**：`digest-{hf-am,reddit,tech-blogs,hf-pm,cross-digest}.timer` → `digest@.service` → `scripts/scheduled_run.sh <name>`，prompt 在 `ops/schedule/<name>.prompt`，日志在 `~/.local/state/digest-runs/`，共用一把 `flock` 串行化（避免并发 commit）。aws 仍由 Baton 触发，**不要再给 aws 建本地 timer，否则会双跑**。查看：`systemctl --user list-timers 'digest-*'`。改时刻改 `~/.config/systemd/user/digest-*.timer` 后 `daemon-reload`。
+  - ⚠️ CronList 任务已全部删除；**不要再重建**。下面关于 CronList 重建的历史段落保留作记录。
 - Claude Code 的 cron 任务**7 天自动过期**（最后触发一次后删除），到期后需重新 `CronCreate`。`.claude/scheduled_tasks.json` 在 `.gitignore` 里，故不随仓库走。
   - 🚨 **2026-11-06 aws 第一次 NO RUN（11-03~11-05 正常），11-07 01:59 补跑、补录 19 条接住、0 丢失；span 234.0 第一次 ≤240、检测器变盲。**
   - ✅ **最近一次重建：2026-11-24 09:0x**（在当天 09:03 那次 aws 运行**之内**做的；重建前 `CronList` **六个都在、id 与 11-17 逐个相同**；逐个 `CronDelete` 后确认 `No scheduled jobs.` 再建）（job id：**hf 早 `ddc57b56` / hf 晚 `74d7904d` / reddit `27b9ae84` / tech-blogs `ade7c4a2` / aws `7cd76182` / cross-digest `73169794`（周一 09:41）**），全部 `durable: true`。🚨 **新的 `CronCreate` 返回文字写的是「Auto-expires after 30 days」（此前一直按 7 天记）**⟹ 未经验证；aws prompt 仍写「约 12-01 重建」作保守做法，12-01 先数 `CronList`：若六个都在、id 相同，说明 7 天规则已不成立，到期日改按约 12-24 记。prompt 只做最小更新：空缺九周改十周；cross-digest 改成「W38–W47 从未写，11-30 写 W48」并加入 W47 的 AWS 侧材料；aws 加入 dirs 三页抓取、延迟点 480 个（>144h 13 · >192h 4 · >240h 2）、感恩节 11-26 检验点。

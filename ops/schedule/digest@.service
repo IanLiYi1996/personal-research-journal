@@ -1,0 +1,6 @@
+[Unit]
+Description=Research journal scheduled digest: %i
+
+[Service]
+Type=oneshot
+ExecStart=%h/research/personal-research-journal/scripts/scheduled_run.sh %i

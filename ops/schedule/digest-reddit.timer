@@ -1,0 +1,10 @@
+[Unit]
+Description=Research journal digest timer: reddit
+
+[Timer]
+OnCalendar=*-*-* 08:13:00 UTC
+Unit=digest@reddit.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

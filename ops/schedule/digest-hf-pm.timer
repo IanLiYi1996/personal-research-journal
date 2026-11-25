@@ -1,0 +1,10 @@
+[Unit]
+Description=Research journal digest timer: hf-pm
+
+[Timer]
+OnCalendar=*-*-* 17:41:00 UTC
+Unit=digest@hf-pm.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
