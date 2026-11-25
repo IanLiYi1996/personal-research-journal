@@ -491,3 +491,17 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-device-connect/
 2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-multicloud-automation/
 2026-11-24 09:03	2026-11-23 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-capacity-blocks-ml-flex-search/
+2026-11-25 09:03	2026-11-20 08:00		121.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-move-nodes/
+2026-11-25 09:03	2026-11-23 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-capacity-reservations/
+2026-11-25 09:03	2026-11-23 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-access-profiles-orgs/
+2026-11-25 09:03	2026-11-23 08:00	25.1	49.1	https://aws.amazon.com/about-aws/whats-new/2026/11/pcs-supports-split-cost-data/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-patching-slurm-eks-inference/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-snowflake-databricks-3lo-end-user-permissions/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-slurm-hung-jobs/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/postgresql-19-amazon-rds-database-preview-environment/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-k8s-monitoring-agent/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-training-validation/
+2026-11-25 09:03	2026-11-23 17:00	16.1	40.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-ai-ready-existing-datasets/
+2026-11-25 09:03	2026-11-23 19:30	13.6	37.6	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9
+2026-11-25 09:03	2026-11-23 20:00	13.1	37.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/
+2026-11-25 09:03	2026-11-24 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-500-databases-per-instance

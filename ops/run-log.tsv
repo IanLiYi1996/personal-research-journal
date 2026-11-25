@@ -288,3 +288,5 @@ ts_utc	task	phase	detail
 2026-11-23 09:04	aws	done	0 new + 2 backfill (1 dirs-only)
 2026-11-24 09:03	aws	start	cron 09:04
 2026-11-24 09:05	aws	done	new=15 backfill=25(dirs-only 11) high=5 span=97.1 cron-rebuilt
+2026-11-25 09:03	aws	start	cron
+2026-11-25 09:04	aws	done	4 new + 14 backfill, 5 high
