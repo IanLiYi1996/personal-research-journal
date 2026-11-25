@@ -296,3 +296,5 @@ ts_utc	task	phase	detail
 2026-11-25 09:58	hf	done	catch-up sep15-nov25: 2619 window, A=2587 B=2596 B-A=9, 48 ingested, 2 deep dives (RRSI/FalseFrontiers), verify 5/5 pass @09:57 vs snapshot 09:43
 2026-11-25 09:58	tech-blogs	done	W48 catch-up ~1680h gap: 1508 merged, 828 dated-new, 17 cap-bound sources lost content, deep dive embedded-assessments
 2026-11-25 09:58	reddit	done	FAILED: RSS 404 then 429 on all 12 subs incl. curl; no digest written
+2026-11-25 17:41	hf	start	systemd hf-pm 2nd run
+2026-11-25 17:47	hf	done	nov25b: 2nd run 17:41, window 11-23..25=150, A=10 B=146 B-A=136, 1 vanished, 30 ingested, 1 deep dive RLVB

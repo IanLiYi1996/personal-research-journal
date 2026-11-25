@@ -83,7 +83,7 @@ Datasets, tools, frameworks, and reference materials.
 |------|------|-------|
 | 2026-11-25 | Note | [嵌入式第三方评估落地了：METR 在 Anthropic 的 11 周 · OpenAI 的四家 embedded assessor · METR 对 OpenAI 监控系统的红队](/research-notes/2026-11-25-blog-embedded-assessments) |
 | 2026-11-25 | Note | [HF Daily Papers：09/15 回填 ~ 11/25（十周空缺补跑）](/research-notes/2026-11-25-hf-daily-papers-sep15-nov25) |
+| 2026-11-25 | Note | [HF Daily Papers · 11/25 当日第二跑（11-23 ~ 11-25 三个桶）](/research-notes/2026-11-25-hf-daily-papers-nov25b) |
 | 2026-11-23 | Note | [DuckDB Object Storage：定位、基准口径与采用边界](/research-notes/2026-11-23-duckdb-object-storage) |
 | 2026-11-20 | Note | [个人微信接入：账号与授权边界核查](/research-notes/2026-11-20-always-on-agent-personal-weixin-access-notes) |
-| 2026-11-20 | Note | [Hermes：always-on agent 架构参考核对](/research-notes/2026-11-20-always-on-agent-hermes-notes) |
 <!-- AUTO:RECENT:END -->
