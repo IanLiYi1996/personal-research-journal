@@ -306,3 +306,5 @@ ts_utc	task	phase	detail
 2026-11-26 08:31	tech-blogs	done	W48b 22.6h; A=54 (36 real); risk qbit 10/10 17.2h, 0 lost via homepage, RSS omits 2/22; deep dive Anthropic Rust migration
 2026-11-26 09:03	aws	start	baton
 2026-11-26 09:04	aws	done	14 items (8+6B), 2 high, devicefarm pin
+2026-11-26 17:41	hf	start	pm run
+2026-11-26 17:46	hf	done	nov26b pm: A=20 (pred [1,18] falsified, curation not batch) B=117 B-A=98; 31237 moved bucket not removed; 20 ingested; 2 deep dives ELITE/video-blind
