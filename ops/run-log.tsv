@@ -298,3 +298,5 @@ ts_utc	task	phase	detail
 2026-11-25 09:58	reddit	done	FAILED: RSS 404 then 429 on all 12 subs incl. curl; no digest written
 2026-11-25 17:41	hf	start	systemd hf-pm 2nd run
 2026-11-25 17:47	hf	done	nov25b: 2nd run 17:41, window 11-23..25=150, A=10 B=146 B-A=136, 1 vanished, 30 ingested, 1 deep dive RLVB
+2026-11-26 07:57	hf	start	systemd/scheduled
+2026-11-26 08:05	hf	done	nov25-26: window 193, A=43 B=159, 41 ingested, 2 deep dives

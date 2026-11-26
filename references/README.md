@@ -1,22 +1,22 @@
 # 文献库索引
 
-> 共 **2639** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
+> 共 **2680** 条，由 `scripts/bib_index.py` 从 `references.bib` 自动生成。
 > 一篇文献可能出现在多个主题下。引用 key 在行尾 `{...}` 中。
 
 ## 主题导航
 
-- [大语言模型 (LLM)](#-llm-) （1151）
-- [智能体 / Agent](#-agent) （570）
-- [强化学习 / RLHF](#-rlhf) （530）
-- [推理 / Reasoning](#-reasoning) （655）
+- [大语言模型 (LLM)](#-llm-) （1170）
+- [智能体 / Agent](#-agent) （577）
+- [强化学习 / RLHF](#-rlhf) （537）
+- [推理 / Reasoning](#-reasoning) （669）
 - [图神经网络 / Graph](#-graph) （300）
-- [扩散 / 生成模型](#-) （420）
-- [多模态 / 视觉语言](#-) （657）
-- [Transformer / 架构](#transformer-) （518）
-- [高效训练 / 推理](#-) （720）
-- [综述 / Survey](#-survey) （161）
-- [检索增强 / RAG](#-rag) （190）
-- 未分类（215）
+- [扩散 / 生成模型](#-) （428）
+- [多模态 / 视觉语言](#-) （676）
+- [Transformer / 架构](#transformer-) （528）
+- [高效训练 / 推理](#-) （731）
+- [综述 / Survey](#-survey) （162）
+- [检索增强 / RAG](#-rag) （192）
+- 未分类（216）
 
 ## 大语言模型 (LLM)
 
@@ -54,6 +54,7 @@
 - **2026** [AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities](http://arxiv.org/abs/2607.13705) — Kai Chen et al. · arXiv:2607.13705 `{Chen2026Agentcompass}`
 - **2026** [Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems](http://arxiv.org/abs/2609.02750) — Yihang Chen et al. · arXiv:2609.02750 `{Chen2026Bilevel}`
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
+- **2026** [CONCOR: Benchmarking Contrastive Decoding for Visual Hallucination Mitigation Beyond Final-Output Performance](http://arxiv.org/abs/2611.30460) — Ting Chen et al. · arXiv:2611.30460 `{Chen2026Concor}`
 - **2026** [DFlash: Block Diffusion for Flash Speculative Decoding](http://arxiv.org/abs/2602.06036) — Jian Chen et al. · arXiv:2602.06036 `{Chen2026Dflash}`
 - **2026** [False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents](http://arxiv.org/abs/2609.39102) — Meijia Chen et al. · arXiv:2609.39102 `{Chen2026False}`
 - **2026** [GPTQ-2D: Cubic-Time Two-Sided Adaptive Rounding](http://arxiv.org/abs/2607.27042) — Jiale Chen et al. · arXiv:2607.27042 `{Chen2026Gptq}`
@@ -81,6 +82,7 @@
 - **2026** [Automata from Agent Traces: Failure and Next-Step Prediction](http://arxiv.org/abs/2608.23670) — Seonglae Cho et al. · arXiv:2608.23670 `{Cho2026Automata}`
 - **2026** [MBA: Multimodal Benchmark and Agents for Real-World Business Ideation](http://arxiv.org/abs/2608.11616) — Hojun Choi et al. · arXiv:2608.11616 `{Choi2026Mba}`
 - **2026** [Multi-Agent LLMs Fail to Explore Each Other](http://arxiv.org/abs/2607.11250) — Hyeong Kyu Choi et al. · arXiv:2607.11250 `{Choi2026Multi}`
+- **2026** [OWE-Bench: A long-horizon benchmark for measuring real-world engineering](http://arxiv.org/abs/2611.30017) — Jacob Cole et al. · arXiv:2611.30017 `{Cole2026Owe}`
 - **2026** [From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World](http://arxiv.org/abs/2605.10834) — Pedro Conde et al. · arXiv:2605.10834 `{Conde2026Controlled}`
 - **2026** [SymDiag: Explainable Diagnosis for LLM Reasoning via Neuro-Symbolic Verification](http://arxiv.org/abs/2608.08786) — Wenyao Cui et al. · arXiv:2608.08786 `{Cui2026Symdiag}`
 - **2026** [It Takes Two to Match: Co-Evolving Generative Retriever with Reinforcement Learning](http://arxiv.org/abs/2609.00638) — Runpeng Dai et al. · arXiv:2609.00638 `{Dai2026It}`
@@ -138,8 +140,10 @@
 - **2026** [Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos](http://arxiv.org/abs/2607.16107) — Sreyan Ghosh et al. · arXiv:2607.16107 `{Ghosh2026Audioa}`
 - **2026** [Power law graph attention: exact generalization of scaled dot-product attention, empirical collapse at inference](http://arxiv.org/abs/2608.10288) — Burc Gokden et al. · arXiv:2608.10288 `{Gokden2026Power}`
 - **2026** [LLaDA-UI: Bringing Block-wise Diffusion to Vision-Language GUI Agents](http://arxiv.org/abs/2609.13287) — Zhangxuan Gu et al. · arXiv:2609.13287 `{Gu2026Llada}`
+- **2026** [ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks](http://arxiv.org/abs/2611.32183) — Jiawei Gu et al. · arXiv:2611.32183 `{Gu2026Thinkmorph}`
 - **2026** [ContinualSkillBench: Can LLM Agents Truly Evolve Their Capabilities?](http://arxiv.org/abs/2608.03874) — Tianyi Guan et al. · arXiv:2608.03874 `{Guan2026Continualskillbench}`
 - **2026** [Knowing When to Quit: Diagnosing and Training LLMs to Abort Futile Reasoning](http://arxiv.org/abs/2607.29211) — Xinyan Guan et al. · arXiv:2607.29211 `{Guan2026Knowing}`
+- **2026** [SEEK: Self-Evolution through Execution Knowledge for Agentic Robot Manipulation](http://arxiv.org/abs/2611.33915) — Zeyang Guan et al. · arXiv:2611.33915 `{Guan2026Seek}`
 - **2026** [IDEAgent: Agentic Quality-Diversity Search for Research Idea Generation](http://arxiv.org/abs/2607.22375) — Varun Gumma et al. · arXiv:2607.22375 `{Gumma2026Ideagent}`
 - **2026** [Continuous Latent Diffusion Language Model](http://arxiv.org/abs/2605.06548) — Hongcan Guo et al. · arXiv:2605.06548 `{Guo2026Continuous}`
 - **2026** [CURV: Enhancing Chart Understanding Through Curriculum Visual Grounded Reasoning](http://arxiv.org/abs/2608.02833) — Xuehang Guo et al. · arXiv:2608.02833 `{Guo2026Curv}`
@@ -206,6 +210,7 @@
 - **2026** [Information-Aware KV Cache Compression for Long Reasoning](http://arxiv.org/abs/2606.26875) — Jushi Kai et al. · arXiv:2606.26875 `{Kai2026Information}`
 - **2026** [Decoding-Level Taboo: A Diagnostic Stress Test for LLM Robustness](http://arxiv.org/abs/2608.09900) — Tadanobu Chuyo Kamijo et al. · arXiv:2608.09900 `{Kamijo2026Decoding}`
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
+- **2026** [DiLE: Discrimination-Aware Latent-Space Learning for Universal Multimodal Embeddings](http://arxiv.org/abs/2611.25419) — Ben Kang et al. · arXiv:2611.25419 `{Kang2026Dile}`
 - **2026** [Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents](http://arxiv.org/abs/2609.39982) — Minki Kang et al. · arXiv:2609.39982 `{Kang2026Mid}`
 - **2026** [Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?](http://arxiv.org/abs/2605.22109) — Caixin Kang et al. · arXiv:2605.22109 `{Kang2026Perception}`
 - **2026** [MameLoshnLM: Yiddish Language Model and Evaluation Benchmark](http://arxiv.org/abs/2608.05850) — Uri Katz et al. · arXiv:2608.05850 `{Katz2026Mameloshnlm}`
@@ -228,6 +233,7 @@
 - **2026** [RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM](http://arxiv.org/abs/2607.11683) — Mikhail Komarov et al. · arXiv:2607.11683 `{Komarov2026Ragu}`
 - **2026** [AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification](http://arxiv.org/abs/2607.11849) — Lingkai Kong et al. · arXiv:2607.11849 `{Kong2026Advancedmathbench}`
 - **2026** [AI for Auto-Research: Roadmap &amp; User Guide](http://arxiv.org/abs/2605.18661) — Lingdong Kong et al. · arXiv:2605.18661 `{Kong2026Ai}`
+- **2026** [CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies](http://arxiv.org/abs/2611.33148) — Dawid J. Kopiczko et al. · arXiv:2611.33148 `{Kopiczko2026Cot}`
 - **2026** [RuleChef: Grounding LLM Task Knowledge in Human-Editable Rules](http://arxiv.org/abs/2607.01293) — Ádám Kovács et al. · arXiv:2607.01293 `{Kovcs2026Rulechef}`
 - **2026** [Why Gated DeltaNet Survives 4-Bit Quantization: NVFP4 W4A4 for the Recurrent Half of a Hybrid 27B LLM](http://arxiv.org/abs/2609.04098) — Sergii Kozyrev et al. · arXiv:2609.04098 `{Kozyrev2026Why}`
 - **2026** [GigaChat Audio: Time-aware Large Audio Language Model](http://arxiv.org/abs/2607.10387) — Aleksandr Kutsakov et al. · arXiv:2607.10387 `{Kutsakov2026Gigachat}`
@@ -242,6 +248,7 @@
 - **2026** [Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks](http://arxiv.org/abs/2606.29082) — Young-Jun Lee et al. · arXiv:2606.29082 `{Lee2026Evolution}`
 - **2026** [KronQ: LLM Quantization via Kronecker-Factored Hessian](http://arxiv.org/abs/2607.07964) — Donghyun Lee et al. · arXiv:2607.07964 `{Lee2026Kronq}`
 - **2026** [Meta-Harness: End-to-End Optimization of Model Harnesses](http://arxiv.org/abs/2603.28052) — Yoonho Lee et al. · arXiv:2603.28052 `{Lee2026Meta}`
+- **2026** [Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning](http://arxiv.org/abs/2611.15449) — Jaeseong Lee et al. · arXiv:2611.15449 `{Lee2026Reading}`
 - **2026** [WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data](http://arxiv.org/abs/2609.05405) — Ji Soo Lee et al. · arXiv:2609.05405 `{Lee2026Wearableqa}`
 - **2026** [Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients](http://arxiv.org/abs/2606.18216) — Byung-Kwan Lee et al. · arXiv:2606.18216 `{Lee2026Zone}`
 - **2026** [$δ$-mem: Efficient Online Memory for Large Language Models](http://arxiv.org/abs/2605.12357) — Jingdi Lei et al. · arXiv:2605.12357 `{Lei2026Mem}`
@@ -287,10 +294,12 @@
 - **2026** [AISPA: User-Centric System Prompt Auditing for Large Language Model Applications](http://arxiv.org/abs/2607.28617) — Xiangning Lin et al. · arXiv:2607.28617 `{Lin2026Aispa}`
 - **2026** [DreamGuard: Efficient Runtime Guardrail for LLM Agents via Risk-Aware World Model](http://arxiv.org/abs/2608.05695) — Wenhao Lin et al. · arXiv:2608.05695 `{Lin2026Dreamguard}`
 - **2026** [MentalThink: Shaping Thoughts in Mental SVG World](http://arxiv.org/abs/2607.03530) — Kangheng Lin et al. · arXiv:2607.03530 `{Lin2026Mentalthink}`
+- **2026** [Open Vision Banana: An Open Framework for Unified Visual Perception through Generation in RGB Space](http://arxiv.org/abs/2611.28489) — Xu Lin et al. · arXiv:2611.28489 `{Lin2026Open}`
 - **2026** [PerceptionBench: Evaluating Atomic Visual Perception in Multimodal Large Language Models](http://arxiv.org/abs/2607.24957) — Zichao Lin et al. · arXiv:2607.24957 `{Lin2026Perceptionbench}`
 - **2026** [On-policy Distillation with Verifiable Reward](http://arxiv.org/abs/2608.24696) — Wenze Lin et al. · arXiv:2608.24696 `{Lin2026Policy}`
 - **2026** [StepAudio 3 Gen Technical Report](http://arxiv.org/abs/2609.12945) — Bin Lin et al. · arXiv:2609.12945 `{Lin2026Stepaudio}`
 - **2026** [RecHarness: A Bandit-Routed Agentic Harness for Self-Evolving Recommender Systems](http://arxiv.org/abs/2607.29241) — Haoran Ling et al. · arXiv:2607.29241 `{Ling2026Recharness}`
+- **2026** [Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?](http://arxiv.org/abs/2611.28833) — Guoming Ling et al. · arXiv:2611.28833 `{Ling2026Self}`
 - **2026** [Length Penalties Make Chain-of-Thought Less Monitorable](http://arxiv.org/abs/2607.09786) — Bryce Little et al. · arXiv:2607.09786 `{Little2026Length}`
 - **2026** [Advances in Agentic Computer Graphics](http://arxiv.org/abs/2611.01860) — Hengyu Liu et al. · arXiv:2611.01860 `{Liu2026Advances}`
 - **2026** [AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security](http://arxiv.org/abs/2605.29801) — Dongrui Liu et al. · arXiv:2605.29801 `{Liu2026Agentdog}`
@@ -305,6 +314,7 @@
 - **2026** [The Past Is Not Past: Memory-Enhanced Dynamic Reward Shaping](http://arxiv.org/abs/2604.11297) — Yang Liu et al. · arXiv:2604.11297 `{Liu2026Past}`
 - **2026** [PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems](http://arxiv.org/abs/2606.22388) — Jiayu Liu et al. · arXiv:2606.22388 `{Liu2026Planbench}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
+- **2026** [Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation](http://arxiv.org/abs/2611.32736) — Zihao Liu et al. · arXiv:2611.32736 `{Liu2026Qwen}`
 - **2026** [SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution](http://arxiv.org/abs/2605.18401) — Hongyi Liu et al. · arXiv:2605.18401 `{Liu2026Skillsvote}`
 - **2026** [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](http://arxiv.org/abs/2609.20519) — Haozhe Liu et al. · arXiv:2609.20519 `{Liu2026Sol}`
 - **2026** [SPADE: Self-Play in Adaptive Synthetic Executable Environments](http://arxiv.org/abs/2608.19197) — Bo Liu et al. · arXiv:2608.19197 `{Liu2026Spade}`
@@ -347,6 +357,7 @@
 - **2026** [Pick Your Poison: Learning to Select Poison Sets for Stronger LLM Backdoor Attacks](http://arxiv.org/abs/2609.15029) — Aashiq Muhamed et al. · arXiv:2609.15029 `{Muhamed2026Pick}`
 - **2026** [Chunky Post-Training: Data Driven Failures of Generalization](http://arxiv.org/abs/2602.05910) — Seoirse Murray et al. · arXiv:2602.05910 `{Murray2026Chunky}`
 - **2026** [Agent Safety Should Be a Runtime Contract](http://arxiv.org/abs/2608.11274) — Albus W. Ng et al. · arXiv:2608.11274 `{Ng2026Agent}`
+- **2026** [MemOnce: A Scalable Memory Architecture for Large Language Models](http://arxiv.org/abs/2611.27973) — Chang Nie et al. · arXiv:2611.27973 `{Nie2026Memonce}`
 - **2026** [PersonaVLM: Long-Term Personalized Multimodal LLMs](http://arxiv.org/abs/2604.13074) — Chang Nie et al. · arXiv:2604.13074 `{Nie2026Personavlm}`
 - **2026** [Code as Agent Harness](http://arxiv.org/abs/2605.18747) — Xuying Ning et al. · arXiv:2605.18747 `{Ning2026Code}`
 - **2026** [Scores Alone Do Not Prove Discovery: The Discovery Certification Protocol for Auditing AI Research Agents](http://arxiv.org/abs/2609.09219) — Jingjie Ning et al. · arXiv:2609.09219 `{Ning2026Scores}`
@@ -451,8 +462,10 @@
 - **2026** [DiffusionGemma Technical Report](http://arxiv.org/abs/2608.00146) — DiffusionGemma Team et al. · arXiv:2608.00146 `{Team2026Diffusiongemma}`
 - **2026** [GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation](http://arxiv.org/abs/2607.02642) — GigaWorld Team et al. · arXiv:2607.02642 `{Team2026Gigaworld}`
 - **2026** [Kimi K3: Open Frontier Intelligence](http://arxiv.org/abs/2607.24653) — Kimi Team et al. · arXiv:2607.24653 `{Team2026Kimi}`
+- **2026** [KMed-31B Technical Report](http://arxiv.org/abs/2611.28719) — KMed Team et al. · arXiv:2611.28719 `{Team2026Kmed}`
 - **2026** [PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models](http://arxiv.org/abs/2609.14973) — DeepCybo Team et al. · arXiv:2609.14973 `{Team2026Physbrain}`
 - **2026** [Qwen3.5-Omni Technical Report](http://arxiv.org/abs/2604.15804) — Qwen Team et al. · arXiv:2604.15804 `{Team2026Qwen3}`
+- **2026** [Sage-Med: Scaling Medical Multimodal Intelligence](http://arxiv.org/abs/2611.34575) — Sage-Med Team et al. · arXiv:2611.34575 `{Team2026Sage}`
 - **2026** [SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning](http://arxiv.org/abs/2606.22873) — SingGuard Team et al. · arXiv:2606.22873 `{Team2026Singguard}`
 - **2026** [Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report](http://arxiv.org/abs/2608.15763) — TaoLive AIGC LLM Team et al. · arXiv:2608.15763 `{Team2026Training}`
 - **2026** [Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification](http://arxiv.org/abs/2608.14929) — Aman Singh Thakur et al. · arXiv:2608.14929 `{Thakur2026Training}`
@@ -524,6 +537,7 @@
 - **2026** [LoSoNA: A Benchmark for Local Social Norm Adaptation in Group Conversations](http://arxiv.org/abs/2606.14600) — Mateusz Winiarek et al. · arXiv:2606.14600 `{Winiarek2026Losona}`
 - **2026** [Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models](http://arxiv.org/abs/2607.15277) — Patrik Wolf et al. · arXiv:2607.15277 `{Wolf2026Partition}`
 - **2026** [Aspire: Can Models Self-Evolve from Vague Goals?](http://arxiv.org/abs/2608.31111) — Yuhao Wu et al. · arXiv:2608.31111 `{Wu2026Aspire}`
+- **2026** [Beyond Self-Consistency: Recursive Self-Improvement at Test Time](http://arxiv.org/abs/2611.30965) — Jianyu Wu et al. · arXiv:2611.30965 `{Wu2026Beyond}`
 - **2026** [DAPD: Dual-Anchored Policy Distillation](http://arxiv.org/abs/2608.01735) — Jianyu Wu et al. · arXiv:2608.01735 `{Wu2026Dapd}`
 - **2026** [HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?](http://arxiv.org/abs/2609.01437) — Yuhao Wu et al. · arXiv:2609.01437 `{Wu2026Harnessdev}`
 - **2026** [Lightning Weave: Improving the Accuracy-Efficiency Frontier of Reasoning Models through Capability Composition](http://arxiv.org/abs/2609.14708) — Yecheng Wu et al. · arXiv:2609.14708 `{Wu2026Lightning}`
@@ -555,6 +569,7 @@
 - **2026** [EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning](http://arxiv.org/abs/2608.06197) — Zishan Xu et al. · arXiv:2608.06197 `{Xu2026Envace}`
 - **2026** [EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL](http://arxiv.org/abs/2605.18703) — Minrui Xu et al. · arXiv:2605.18703 `{Xu2026Envfactory}`
 - **2026** [Fewer Clarifications, Better Code: Benchmarking Cross-Session Personalized Ambiguity Adaptation in Coding Assistants](http://arxiv.org/abs/2607.26611) — Zijian Xu et al. · arXiv:2607.26611 `{Xu2026Fewer}`
+- **2026** [Negative-Only Policy Optimization for One-Sided Verifiable Rewards](http://arxiv.org/abs/2611.17287) — Jiacheng Xu et al. · arXiv:2611.17287 `{Xu2026Negative}`
 - **2026** [Pass the Baton: Trajectory-Relayed On-Policy Distillation](http://arxiv.org/abs/2607.26057) — Haolei Xu et al. · arXiv:2607.26057 `{Xu2026Pass}`
 - **2026** [Qwen-Image-2.0-RL Technical Report](http://arxiv.org/abs/2606.27608) — Yixian Xu et al. · arXiv:2606.27608 `{Xu2026Qwen}`
 - **2026** [Qwen-Music Technical Report](http://arxiv.org/abs/2607.11699) — Jin Xu et al. · arXiv:2607.11699 `{Xu2026Qwena}`
@@ -639,6 +654,7 @@
 - **2026** [TEMPO: Scaling Test-time Training for Large Reasoning Models](http://arxiv.org/abs/2604.19295) — Qingyang Zhang et al. · arXiv:2604.19295 `{Zhang2026Tempo}`
 - **2026** [Turning the TIDE: Cross-Architecture Distillation for Diffusion Large Language Models](http://arxiv.org/abs/2604.26951) — Gongbo Zhang et al. · arXiv:2604.26951 `{Zhang2026Turning}`
 - **2026** [What to Edit Next: Visually Aligned Image-Editing Follow-Up Suggestions in Conversational Systems](http://arxiv.org/abs/2608.07565) — Zhijing Zhang et al. · arXiv:2608.07565 `{Zhang2026What}`
+- **2026** [What Makes Good Data for Training Coding Agents? A Systematic Study on SWE-Gym](http://arxiv.org/abs/2611.30207) — Yikai Zhang et al. · arXiv:2611.30207 `{Zhang2026Whata}`
 - **2026** [xHC: Expanded Hyper-Connections](http://arxiv.org/abs/2607.14530) — Xiangdong Zhang et al. · arXiv:2607.14530 `{Zhang2026Xhc}`
 - **2026** [AutoPILOT: A Visual Agent Harness for Real-Time Gameplay](http://arxiv.org/abs/2611.28202) — Mark Zhao et al. · arXiv:2611.28202 `{Zhao2026Autopilot}`
 - **2026** [Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](http://arxiv.org/abs/2604.18168) — Chenxi Zhao et al. · arXiv:2604.18168 `{Zhao2026Extending}`
@@ -646,10 +662,12 @@
 - **2026** [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](http://arxiv.org/abs/2609.13814) — Ruixiang Zhao et al. · arXiv:2609.13814 `{Zhao2026Realtime}`
 - **2026** [ResearchStudio-Idea: An Evidence-Grounded Research-Ideation Skill Suite from ML Conference Outcomes](http://arxiv.org/abs/2607.04439) — Qihao Zhao et al. · arXiv:2607.04439 `{Zhao2026Researchstudio}`
 - **2026** [S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation](http://arxiv.org/abs/2607.15686) — Jiahao Zhao et al. · arXiv:2607.15686 `{Zhao2026S1}`
+- **2026** [Unlocking the Power of Loops in Pretrained LLMs with Loop Residuals](http://arxiv.org/abs/2611.31094) — Xuanlei Zhao et al. · arXiv:2611.31094 `{Zhao2026Unlocking}`
 - **2026** [Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements](http://arxiv.org/abs/2608.17310) — Zhi Zheng et al. · arXiv:2608.17310 `{Zheng2026Agentic}`
 - **2026** [AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs](http://arxiv.org/abs/2605.15565) — Haizhong Zheng et al. · arXiv:2605.15565 `{Zheng2026Astraflow}`
 - **2026** [OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents](http://arxiv.org/abs/2608.05013) — Jingsheng Zheng et al. · arXiv:2608.05013 `{Zheng2026Onedayagent}`
 - **2026** [RecGPT-V3 Technical Report](http://arxiv.org/abs/2607.15591) — Bowen Zheng et al. · arXiv:2607.15591 `{Zheng2026Recgpt}`
+- **2026** [VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation](http://arxiv.org/abs/2611.34237) — Xuanyu Zheng et al. · arXiv:2611.34237 `{Zheng2026Vibevideoagent}`
 - **2026** [VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression](http://arxiv.org/abs/2607.12756) — Yupeng Zheng et al. · arXiv:2607.12756 `{Zheng2026Visco}`
 - **2026** [EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions](http://arxiv.org/abs/2606.23654) — Jincheng Zhong et al. · arXiv:2606.23654 `{Zhong2026Enterpriseclawbench}`
 - **2026** [From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality](http://arxiv.org/abs/2607.13196) — Suzhen Zhong et al. · arXiv:2607.13196 `{Zhong2026Human}`
@@ -678,6 +696,7 @@
 - **2026** [Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning](http://arxiv.org/abs/2606.24428) — Shiding Zhu et al. · arXiv:2606.24428 `{Zhu2026Escaping}`
 - **2026** [LightThinker++: From Reasoning Compression to Memory Management](http://arxiv.org/abs/2604.03679) — Yuqi Zhu et al. · arXiv:2604.03679 `{Zhu2026Lightthinker}`
 - **2026** [LLaDA MoE v2: Scaling Mixture-of-Experts Diffusion Language Models](http://arxiv.org/abs/2608.03457) — Fengqi Zhu et al. · arXiv:2608.03457 `{Zhu2026Llada}`
+- **2026** [Mixture-of-Loops Transformer](http://arxiv.org/abs/2611.34923) — Lianghui Zhu et al. · arXiv:2611.34923 `{Zhu2026Mixture}`
 - **2026** [MMOOC: A Comprehensive Benchmark for Out-of-Context Evaluation in Multimodal Large Language Models](http://arxiv.org/abs/2607.27637) — Wenjie Zhu et al. · arXiv:2607.27637 `{Zhu2026Mmooc}`
 - **2026** [MobilePA-Bench: Benchmarking Mobile Planner Agents on Complex Real-World Tasks](http://arxiv.org/abs/2608.23035) — Yi Zhu et al. · arXiv:2608.23035 `{Zhu2026Mobilepa}`
 - **2026** [RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments](http://arxiv.org/abs/2609.15364) — Sibo Zhu et al. · arXiv:2609.15364 `{Zhu2026Rsiagent}`
@@ -1196,6 +1215,7 @@
 - **2026** [Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems](http://arxiv.org/abs/2609.02750) — Yihang Chen et al. · arXiv:2609.02750 `{Chen2026Bilevel}`
 - **2026** [CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?](http://arxiv.org/abs/2605.16679) — Haolin Chen et al. · arXiv:2605.16679 `{Chen2026Chi}`
 - **2026** [Code World Model: Coding Agent as World Brain](http://arxiv.org/abs/2608.25927) — Yiwen Chen et al. · arXiv:2608.25927 `{Chen2026Code}`
+- **2026** [EgoUseBench: Benchmarking Computer-Use Agents under Evolving First-Person Contexts](http://arxiv.org/abs/2611.34466) — Yurun Chen et al. · arXiv:2611.34466 `{Chen2026Egousebench}`
 - **2026** [HarnessEval-W: Agentifying the Evaluation of Visual Worlds](http://arxiv.org/abs/2608.16859) — Weiliang Chen et al. · arXiv:2608.16859 `{Chen2026Harnesseval}`
 - **2026** [HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry](http://arxiv.org/abs/2606.14249) — Tingyang Chen et al. · arXiv:2606.14249 `{Chen2026Harnessx}`
 - **2026** [KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation](http://arxiv.org/abs/2604.08455) — Tongbo Chen et al. · arXiv:2604.08455 `{Chen2026Knowu}`
@@ -1204,6 +1224,7 @@
 - **2026** [OpenART: Scaling Agent Red Teaming via Open-Ended Environment Evolution](http://arxiv.org/abs/2608.00677) — Yunhao Chen et al. · arXiv:2608.00677 `{Chen2026Openart}`
 - **2026** [Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control](http://arxiv.org/abs/2608.12123) — Josef Liyanjun Chen et al. · arXiv:2608.12123 `{Chen2026Ready}`
 - **2026** [Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills](http://arxiv.org/abs/2609.02749) — Jianlyu Chen et al. · arXiv:2609.02749 `{Chen2026Repo}`
+- **2026** [RUIBench: What Makes a Good Robot-Use Interface?](http://arxiv.org/abs/2611.31115) — Yanzhe Chen et al. · arXiv:2611.31115 `{Chen2026Ruibench}`
 - **2026** [Show-Harness: Just a VLM Agent Can Play Robots](http://arxiv.org/abs/2609.10522) — Yanzhe Chen et al. · arXiv:2609.10522 `{Chen2026Show}`
 - **2026** [SpecFirst: Behavioral Specification Elicitation as a First-Class Step in Agent-Based Program Synthesis from Scratch](http://arxiv.org/abs/2607.27167) — Yihao Chen et al. · arXiv:2607.27167 `{Chen2026Specfirst}`
 - **2026** [Toward Autonomous Long-Horizon Engineering for ML Research](http://arxiv.org/abs/2604.13018) — Guoxin Chen et al. · arXiv:2604.13018 `{Chen2026Toward}`
@@ -1218,6 +1239,7 @@
 - **2026** [AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems](http://arxiv.org/abs/2609.08572) — Jaewon Chu et al. · arXiv:2609.08572 `{Chu2026Agentgrad}`
 - **2026** [Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond](http://arxiv.org/abs/2604.22748) — Meng Chu et al. · arXiv:2604.22748 `{Chu2026Agentic}`
 - **2026** [Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment](http://arxiv.org/abs/2608.23691) — Stephen Chung et al. · arXiv:2608.23691 `{Chung2026Autonomous}`
+- **2026** [OWE-Bench: A long-horizon benchmark for measuring real-world engineering](http://arxiv.org/abs/2611.30017) — Jacob Cole et al. · arXiv:2611.30017 `{Cole2026Owe}`
 - **2026** [Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems](http://arxiv.org/abs/2607.21503) — Gaurav Dadhich et al. · arXiv:2607.21503 `{Dadhich2026Agentic}`
 - **2026** [SKILLER: Language-Level Reinforcement Learning for Reusable Skill Extraction in Small Language Models](http://arxiv.org/abs/2608.10538) — Chenhao Dang et al. · arXiv:2608.10538 `{Dang2026Skiller}`
 - **2026** [StealthBench: Measuring Operational Stealth in Autonomous Offensive-Security Agents](http://arxiv.org/abs/2607.26314) — Ads Dawson et al. · arXiv:2607.26314 `{Dawson2026Stealthbench}`
@@ -1370,6 +1392,7 @@
 - **2026** [OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data](http://arxiv.org/abs/2606.13432) — Jiwen Liu et al. · arXiv:2606.13432 `{Liu2026Omnidirector}`
 - **2026** [PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems](http://arxiv.org/abs/2606.22388) — Jiayu Liu et al. · arXiv:2606.22388 `{Liu2026Planbench}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
+- **2026** [RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution](http://arxiv.org/abs/2611.34675) — Chenzhi Liu et al. · arXiv:2611.34675 `{Liu2026Roboevo}`
 - **2026** [SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution](http://arxiv.org/abs/2605.18401) — Hongyi Liu et al. · arXiv:2605.18401 `{Liu2026Skillsvote}`
 - **2026** [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](http://arxiv.org/abs/2609.20519) — Haozhe Liu et al. · arXiv:2609.20519 `{Liu2026Sol}`
 - **2026** [SPADE: Self-Play in Adaptive Synthetic Executable Environments](http://arxiv.org/abs/2608.19197) — Bo Liu et al. · arXiv:2608.19197 `{Liu2026Spade}`
@@ -1430,6 +1453,7 @@
 - **2026** [Self-Improvements in Modern Agentic Systems: A Survey](http://arxiv.org/abs/2607.13104) — Zhe Ren et al. · arXiv:2607.13104 `{Ren2026Self}`
 - **2026** [UniVR: Thinking in Visual Space for Unified Visual Reasoning](http://arxiv.org/abs/2607.12800) — Zhongwei Ren et al. · arXiv:2607.12800 `{Ren2026Univr}`
 - **2026** [AlloSpatial: Agentic Harness Framework for Spatial Reasoning in Foundation Models](http://arxiv.org/abs/2606.08952) — Shouwei Ruan et al. · arXiv:2606.08952 `{Ruan2026Allospatial}`
+- **2026** [PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents](http://arxiv.org/abs/2611.33144) — Feixiang Ruan et al. · arXiv:2611.33144 `{Ruan2026Pyrua}`
 - **2026** [SchemeArena: Factorized Stress Testing of Scheming in LLM Agents](http://arxiv.org/abs/2609.08126) — Jie Ruan et al. · arXiv:2609.08126 `{Ruan2026Schemearena}`
 - **2026** [EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses](http://arxiv.org/abs/2608.28363) — Tanmay Sah et al. · arXiv:2608.28363 `{Sah2026Evoundo}`
 - **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
@@ -1634,10 +1658,12 @@
 - **2026** [OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents](http://arxiv.org/abs/2608.05013) — Jingsheng Zheng et al. · arXiv:2608.05013 `{Zheng2026Onedayagent}`
 - **2026** [RecGPT-V3 Technical Report](http://arxiv.org/abs/2607.15591) — Bowen Zheng et al. · arXiv:2607.15591 `{Zheng2026Recgpt}`
 - **2026** [SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents](http://arxiv.org/abs/2609.08149) — Pujun Zheng et al. · arXiv:2609.08149 `{Zheng2026Swe}`
+- **2026** [VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation](http://arxiv.org/abs/2611.34237) — Xuanyu Zheng et al. · arXiv:2611.34237 `{Zheng2026Vibevideoagent}`
 - **2026** [EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions](http://arxiv.org/abs/2606.23654) — Jincheng Zhong et al. · arXiv:2606.23654 `{Zhong2026Enterpriseclawbench}`
 - **2026** [From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality](http://arxiv.org/abs/2607.13196) — Suzhen Zhong et al. · arXiv:2607.13196 `{Zhong2026Human}`
 - **2026** [ASI-Bench: At the Dawn of Artificial Superintelligence](http://arxiv.org/abs/2608.17271) — Junwei Zhou et al. · arXiv:2608.17271 `{Zhou2026Asi}`
 - **2026** [COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation](http://arxiv.org/abs/2605.31264) — Tianyi Zhou et al. · arXiv:2605.31264 `{Zhou2026Colleague}`
+- **2026** [Distilling Visual Agents from Limited Interaction Experience](http://arxiv.org/abs/2611.28618) — Siyu Zhou et al. · arXiv:2611.28618 `{Zhou2026Distilling}`
 - **2026** [Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering](http://arxiv.org/abs/2604.08224) — Chenyu Zhou et al. · arXiv:2604.08224 `{Zhou2026Externalization}`
 - **2026** [Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability](http://arxiv.org/abs/2607.26637) — Sizhe Zhou et al. · arXiv:2607.26637 `{Zhou2026Filesystem}`
 - **2026** [GDPevo: Evaluating Agent Self-Evolution on Real Business Tasks](http://arxiv.org/abs/2608.03764) — Leijun Zhou et al. · arXiv:2608.03764 `{Zhou2026Gdpevo}`
@@ -1755,6 +1781,7 @@
 - **2026** [Context-Matched Distillation: Teacher Causality for Autoregressive Video Distillation](http://arxiv.org/abs/2608.13391) — Hmrishav Bandyopadhyay et al. · arXiv:2608.13391 `{Bandyopadhyay2026Context}`
 - **2026** [HarvestBench: Measuring Whether LLM Agents Will Pay to Avoid Killing Animals](http://arxiv.org/abs/2609.04444) — Jasmine Brazilek et al. · arXiv:2609.04444 `{Brazilek2026Harvestbench}`
 - **2026** [HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement](http://arxiv.org/abs/2607.18217) — Yiyang Cai et al. · arXiv:2607.18217 `{Cai2026Homie}`
+- **2026** [Steerable by Design: Conditional Pretraining for Robust Control of Language Models](http://arxiv.org/abs/2611.32199) — Henry Castillo et al. · arXiv:2611.32199 `{Castillo2026Steerable}`
 - **2026** [Reinforcement Learning for Code Optimization](http://arxiv.org/abs/2607.25970) — Pierre Chambon et al. · arXiv:2607.25970 `{Chambon2026Reinforcement}`
 - **2026** [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](http://arxiv.org/abs/2608.06756) — Ying Chen et al. · arXiv:2608.06756 `{Chen2026Capek}`
 - **2026** [GenRouter: Unified Workflow Routing for Agentic Image Generation](http://arxiv.org/abs/2608.16721) — Harold Haodong Chen et al. · arXiv:2608.16721 `{Chen2026Genrouter}`
@@ -1852,6 +1879,7 @@
 - **2026** [MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models](http://arxiv.org/abs/2607.07673) — Hyunjae Kim et al. · arXiv:2607.07673 `{Kim2026Medpmc}`
 - **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [Macaron-A2UI: A Model for Generative UI in Personal Agents](http://arxiv.org/abs/2605.24830) — Fancy Kong et al. · arXiv:2605.24830 `{Kong2026Macaron}`
+- **2026** [CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies](http://arxiv.org/abs/2611.33148) — Dawid J. Kopiczko et al. · arXiv:2611.33148 `{Kopiczko2026Cot}`
 - **2026** [Principled Analysis of Deep Reinforcement Learning Evaluation and Design Paradigms](http://arxiv.org/abs/2607.07769) — Ezgi Korkmaz et al. · arXiv:2607.07769 `{Korkmaz2026Principled}`
 - **2026** [Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA](http://arxiv.org/abs/2608.09819) — Mind Lab et al. · arXiv:2608.09819 `{Lab2026Macaron}`
 - **2026** [MinT: Managed Infrastructure for Training and Serving Millions of LLMs](http://arxiv.org/abs/2605.13779) — Mind Lab et al. · arXiv:2605.13779 `{Lab2026Mint}`
@@ -1966,6 +1994,7 @@
 - **2026** [Is Next-Chunk Reasoning RL Really Better than SFT? Revisiting Training Strategies under no-CoT Data](http://arxiv.org/abs/2608.23256) — Yinhao Tang et al. · arXiv:2608.23256 `{Tang2026Next}`
 - **2026** [Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning](http://arxiv.org/abs/2607.12395) — Xinyu Tang et al. · arXiv:2607.12395 `{Tang2026Ring}`
 - **2026** [TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents](http://arxiv.org/abs/2607.13988) — Leitian Tao et al. · arXiv:2607.13988 `{Tao2026Trace}`
+- **2026** [Beam Model Technical Report](http://arxiv.org/abs/2611.26358) — Reflection Team et al. · arXiv:2611.26358 `{Team2026Beam}`
 - **2026** [DiffusionGemma Technical Report](http://arxiv.org/abs/2608.00146) — DiffusionGemma Team et al. · arXiv:2608.00146 `{Team2026Diffusiongemma}`
 - **2026** [DR-Venus: Towards Frontier Edge-Scale Deep Research Agents with Only 10K Open Data](http://arxiv.org/abs/2604.19859) — Venus Team et al. · arXiv:2604.19859 `{Team2026Dr}`
 - **2026** [GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture](http://arxiv.org/abs/2608.15875) — GigaBrain Team et al. · arXiv:2608.15875 `{Team2026Gigabrain}`
@@ -1974,6 +2003,7 @@
 - **2026** [Kimi K3: Open Frontier Intelligence](http://arxiv.org/abs/2607.24653) — Kimi Team et al. · arXiv:2607.24653 `{Team2026Kimi}`
 - **2026** [Kwai Keye-VL-2.0 Technical Report](http://arxiv.org/abs/2606.10651) — Kwai Keye Team et al. · arXiv:2606.10651 `{Team2026Kwai}`
 - **2026** [MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement](http://arxiv.org/abs/2610.11959) — Xiaomi LLM-Core Team et al. · arXiv:2610.11959 `{Team2026Mimo}`
+- **2026** [Sage-Med: Scaling Medical Multimodal Intelligence](http://arxiv.org/abs/2611.34575) — Sage-Med Team et al. · arXiv:2611.34575 `{Team2026Sage}`
 - **2026** [SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning](http://arxiv.org/abs/2606.22873) — SingGuard Team et al. · arXiv:2606.22873 `{Team2026Singguard}`
 - **2026** [Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report](http://arxiv.org/abs/2608.15763) — TaoLive AIGC LLM Team et al. · arXiv:2608.15763 `{Team2026Training}`
 - **2026** [UI-Venus-2 Technical Report](http://arxiv.org/abs/2609.00028) — Venus Team et al. · arXiv:2609.00028 `{Team2026Ui}`
@@ -2034,6 +2064,7 @@
 - **2026** [Beyond Visual Similarity: Entity-Aligned Retrieval for Knowledge-Based Visual Question Answering](http://arxiv.org/abs/2608.21450) — Hangrui Xu et al. · arXiv:2608.21450 `{Xu2026Beyonda}`
 - **2026** [EnvACE: Internalizing Environment Dynamics via World Rehearsal for Agentic Reinforcement Learning](http://arxiv.org/abs/2608.06197) — Zishan Xu et al. · arXiv:2608.06197 `{Xu2026Envace}`
 - **2026** [EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL](http://arxiv.org/abs/2605.18703) — Minrui Xu et al. · arXiv:2605.18703 `{Xu2026Envfactory}`
+- **2026** [Negative-Only Policy Optimization for One-Sided Verifiable Rewards](http://arxiv.org/abs/2611.17287) — Jiacheng Xu et al. · arXiv:2611.17287 `{Xu2026Negative}`
 - **2026** [$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation](http://arxiv.org/abs/2607.28582) — Jiawei Xu et al. · arXiv:2607.28582 `{Xu2026Opsd}`
 - **2026** [Qwen-Image-2.0-RL Technical Report](http://arxiv.org/abs/2606.27608) — Yixian Xu et al. · arXiv:2606.27608 `{Xu2026Qwen}`
 - **2026** [Qwen-Music Technical Report](http://arxiv.org/abs/2607.11699) — Jin Xu et al. · arXiv:2607.11699 `{Xu2026Qwena}`
@@ -2092,6 +2123,8 @@
 - **2026** [ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step](http://arxiv.org/abs/2611.26389) — Kaiwen Zhang et al. · arXiv:2611.26389 `{Zhang2026Videcide}`
 - **2026** [Vision-Language Grounding as Bidirectional Concept Correspondence](http://arxiv.org/abs/2608.07886) — Jieyu Zhang et al. · arXiv:2608.07886 `{Zhang2026Vision}`
 - **2026** [What to Edit Next: Visually Aligned Image-Editing Follow-Up Suggestions in Conversational Systems](http://arxiv.org/abs/2608.07565) — Zhijing Zhang et al. · arXiv:2608.07565 `{Zhang2026What}`
+- **2026** [What Makes Good Data for Training Coding Agents? A Systematic Study on SWE-Gym](http://arxiv.org/abs/2611.30207) — Yikai Zhang et al. · arXiv:2611.30207 `{Zhang2026Whata}`
+- **2026** [Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures](http://arxiv.org/abs/2611.33925) — Zhiyue Zhao et al. · arXiv:2611.33925 `{Zhao2026Beyond}`
 - **2026** [Memory as Plans: World-Action Modeling with Memory-Grounded Planning](http://arxiv.org/abs/2609.11561) — Sizhe Zhao et al. · arXiv:2609.11561 `{Zhao2026Memory}`
 - **2026** [MirrorWorld: Taming Video Diffusion Models for Mirror Reflection Generation](http://arxiv.org/abs/2608.07463) — Youjun Zhao et al. · arXiv:2608.07463 `{Zhao2026Mirrorworld}`
 - **2026** [S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation](http://arxiv.org/abs/2607.15686) — Jiahao Zhao et al. · arXiv:2607.15686 `{Zhao2026S1}`
@@ -2296,6 +2329,7 @@
 - **2026** [Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation](http://arxiv.org/abs/2605.11739) — Yuchen Cai et al. · arXiv:2605.11739 `{Cai2026Learning}`
 - **2026** [OmniVideo-100K: A Dataset for Audio-Visual Reasoning through Structured Scripts and Evidence Chains](http://arxiv.org/abs/2606.14702) — Xinyue Cai et al. · arXiv:2606.14702 `{Cai2026Omnivideo}`
 - **2026** [PartAgent: Agentic 3D Part Segmentation via Expert Integration and Closed-Loop Refinement](http://arxiv.org/abs/2611.32554) — Yang Cao et al. · arXiv:2611.32554 `{Cao2026Partagent}`
+- **2026** [Steerable by Design: Conditional Pretraining for Robust Control of Language Models](http://arxiv.org/abs/2611.32199) — Henry Castillo et al. · arXiv:2611.32199 `{Castillo2026Steerable}`
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
 - **2026** [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](http://arxiv.org/abs/2608.06756) — Ying Chen et al. · arXiv:2608.06756 `{Chen2026Capek}`
 - **2026** [Code World Model: Coding Agent as World Brain](http://arxiv.org/abs/2608.25927) — Yiwen Chen et al. · arXiv:2608.25927 `{Chen2026Code}`
@@ -2314,6 +2348,7 @@
 - **2026** [Constitutional Midtraining: Content Presence Drives Alignment Gains](http://arxiv.org/abs/2607.26654) — Desiree Cho et al. · arXiv:2607.26654 `{Cho2026Constitutional}`
 - **2026** [EXAONE 4.5 Technical Report](http://arxiv.org/abs/2604.08644) — Eunbi Choi et al. · arXiv:2604.08644 `{Choi2026Exaone}`
 - **2026** [K-EXAONE 2.0 Technical Report](http://arxiv.org/abs/2608.04505) — Eunbi Choi et al. · arXiv:2608.04505 `{Choi2026Exaonea}`
+- **2026** [OWE-Bench: A long-horizon benchmark for measuring real-world engineering](http://arxiv.org/abs/2611.30017) — Jacob Cole et al. · arXiv:2611.30017 `{Cole2026Owe}`
 - **2026** [SymDiag: Explainable Diagnosis for LLM Reasoning via Neuro-Symbolic Verification](http://arxiv.org/abs/2608.08786) — Wenyao Cui et al. · arXiv:2608.08786 `{Cui2026Symdiag}`
 - **2026** [Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems](http://arxiv.org/abs/2607.21503) — Gaurav Dadhich et al. · arXiv:2607.21503 `{Dadhich2026Agentic}`
 - **2026** [LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning](http://arxiv.org/abs/2605.22012) — Yifan Dai et al. · arXiv:2605.22012 `{Dai2026Latentomni}`
@@ -2355,6 +2390,7 @@
 - **2026** [GROVE: Growing and Reasoning over Temporally Stratified Memory from Streaming Video Experience](http://arxiv.org/abs/2608.02392) — Sitong Gong et al. · arXiv:2608.02392 `{Gong2026Grove}`
 - **2026** [AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation](http://arxiv.org/abs/2605.13724) — Yuchao Gu et al. · arXiv:2605.13724 `{Gu2026Anyflow}`
 - **2026** [Co-Evolving Policy Distillation](http://arxiv.org/abs/2604.27083) — Naibin Gu et al. · arXiv:2604.27083 `{Gu2026Co}`
+- **2026** [ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks](http://arxiv.org/abs/2611.32183) — Jiawei Gu et al. · arXiv:2611.32183 `{Gu2026Thinkmorph}`
 - **2026** [Knowing When to Quit: Diagnosing and Training LLMs to Abort Futile Reasoning](http://arxiv.org/abs/2607.29211) — Xinyan Guan et al. · arXiv:2607.29211 `{Guan2026Knowing}`
 - **2026** [Consistency-Driven Co-Evolution for Self-Supervised Cross-Representation Learning](http://arxiv.org/abs/2608.04926) — Xuehang Guo et al. · arXiv:2608.04926 `{Guo2026Consistency}`
 - **2026** [CURV: Enhancing Chart Understanding Through Curriculum Visual Grounded Reasoning](http://arxiv.org/abs/2608.02833) — Xuehang Guo et al. · arXiv:2608.02833 `{Guo2026Curv}`
@@ -2407,6 +2443,7 @@
 - **2026** [From Atomic Evidence to Logical Composition: Structured Compositional Reasoning over Compound Answer Options](http://arxiv.org/abs/2608.12836) — Obed Junias et al. · arXiv:2608.12836 `{Junias2026Atomic}`
 - **2026** [Information-Aware KV Cache Compression for Long Reasoning](http://arxiv.org/abs/2606.26875) — Jushi Kai et al. · arXiv:2606.26875 `{Kai2026Information}`
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
+- **2026** [DiLE: Discrimination-Aware Latent-Space Learning for Universal Multimodal Embeddings](http://arxiv.org/abs/2611.25419) — Ben Kang et al. · arXiv:2611.25419 `{Kang2026Dile}`
 - **2026** [Mid-Harness: Scaling Actions Between Model and Harness for Terminal Agents](http://arxiv.org/abs/2609.39982) — Minki Kang et al. · arXiv:2609.39982 `{Kang2026Mid}`
 - **2026** [Normalized Low-Rank Adaptation](http://arxiv.org/abs/2608.31036) — Jiale Kang et al. · arXiv:2608.31036 `{Kang2026Normalized}`
 - **2026** [Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?](http://arxiv.org/abs/2605.22109) — Caixin Kang et al. · arXiv:2605.22109 `{Kang2026Perception}`
@@ -2419,6 +2456,7 @@
 - **2026** [Spectral Prior for Reducing Exposure Bias in Diffusion Models](http://arxiv.org/abs/2607.22091) — Yuya Kobayashi et al. · arXiv:2607.22091 `{Kobayashi2026Spectral}`
 - **2026** [RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM](http://arxiv.org/abs/2607.11683) — Mikhail Komarov et al. · arXiv:2607.11683 `{Komarov2026Ragu}`
 - **2026** [AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification](http://arxiv.org/abs/2607.11849) — Lingkai Kong et al. · arXiv:2607.11849 `{Kong2026Advancedmathbench}`
+- **2026** [CoT-Proxy: Cross-Format Transfer for Distilling Long-Horizon Policies](http://arxiv.org/abs/2611.33148) — Dawid J. Kopiczko et al. · arXiv:2611.33148 `{Kopiczko2026Cot}`
 - **2026** [Autodata: An agentic data scientist to create high quality synthetic data](http://arxiv.org/abs/2606.25996) — Ilia Kulikov et al. · arXiv:2606.25996 `{Kulikov2026Autodata}`
 - **2026** [CADENCE: Closing the Reasoning Gap via Coverage-Adaptive On-Policy Distillation](http://arxiv.org/abs/2607.16955) — Satyam Kumar et al. · arXiv:2607.16955 `{Kumar2026Cadence}`
 - **2026** [TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks](http://arxiv.org/abs/2611.22115) — Xingchen AGI Lab et al. · arXiv:2611.22115 `{Lab2026Telechat}`
@@ -2431,6 +2469,7 @@
 - **2026** [Know When to Stop: Segment-Level Credit Assignment for Reducing Overthinking](http://arxiv.org/abs/2607.00482) — Chia-Hsuan Lee et al. · arXiv:2607.00482 `{Lee2026Know}`
 - **2026** [MET: Theory-Grounded and Culture-Aware Multilingual Moral Reasoning](http://arxiv.org/abs/2607.11736) — Ayoung Lee et al. · arXiv:2607.11736 `{Lee2026Met}`
 - **2026** [Meta-Harness: End-to-End Optimization of Model Harnesses](http://arxiv.org/abs/2603.28052) — Yoonho Lee et al. · arXiv:2603.28052 `{Lee2026Meta}`
+- **2026** [Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning](http://arxiv.org/abs/2611.15449) — Jaeseong Lee et al. · arXiv:2611.15449 `{Lee2026Reading}`
 - **2026** [Recursive Harness Self-Improvement](http://arxiv.org/abs/2607.15524) — Hyunin Lee et al. · arXiv:2607.15524 `{Lee2026Recursive}`
 - **2026** [WearableQA: A Benchmark for Health Reasoning over Real-World Wearable Data](http://arxiv.org/abs/2609.05405) — Ji Soo Lee et al. · arXiv:2609.05405 `{Lee2026Wearableqa}`
 - **2026** [Scaffolding Foundation Models into Physical-World Agents Pushes the Frontier of Long-Horizon Navigation](http://arxiv.org/abs/2608.30396) — Zixing Lei et al. · arXiv:2608.30396 `{Lei2026Scaffolding}`
@@ -2486,6 +2525,7 @@
 - **2026** [Iris: Climbing to the Search Frontier](http://arxiv.org/abs/2609.04304) — Ziyuan Liu et al. · arXiv:2609.04304 `{Liu2026Iris}`
 - **2026** [OpenSpatial: A Principled Data Engine for Empowering Spatial Intelligence](http://arxiv.org/abs/2604.07296) — Jianhui Liu et al. · arXiv:2604.07296 `{Liu2026Openspatial}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
+- **2026** [RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution](http://arxiv.org/abs/2611.34675) — Chenzhi Liu et al. · arXiv:2611.34675 `{Liu2026Roboevo}`
 - **2026** [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](http://arxiv.org/abs/2609.20519) — Haozhe Liu et al. · arXiv:2609.20519 `{Liu2026Sol}`
 - **2026** [SPADE: Self-Play in Adaptive Synthetic Executable Environments](http://arxiv.org/abs/2608.19197) — Bo Liu et al. · arXiv:2608.19197 `{Liu2026Spade}`
 - **2026** [StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models](http://arxiv.org/abs/2608.26067) — Zhe Liu et al. · arXiv:2608.26067 `{Liu2026Streampi}`
@@ -2537,6 +2577,7 @@
 - **2026** [TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning](http://arxiv.org/abs/2608.04007) — Changle Qu et al. · arXiv:2608.04007 `{Qu2026Turnsight}`
 - **2026** [DSAgentBench: Can Agents Automate End-to-End Data-Science Workflows in Real Computer Environments?](http://arxiv.org/abs/2608.10366) — Mizanur Rahman et al. · arXiv:2608.10366 `{Rahman2026Dsagentbench}`
 - **2026** [Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures](http://arxiv.org/abs/2607.28802) — Harsh Raj et al. · arXiv:2607.28802 `{Raj2026Model}`
+- **2026** [ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification](http://arxiv.org/abs/2611.33143) — Xingjian Ran et al. · arXiv:2611.33143 `{Ran2026Roam}`
 - **2026** [Flash-BoN: Instant Drafts for Inference-Time Scaling in Diffusion Models](http://arxiv.org/abs/2607.04461) — Ruchit Rawal et al. · arXiv:2607.04461 `{Rawal2026Flash}`
 - **2026** [Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability](http://arxiv.org/abs/2604.06628) — Qihan Ren et al. · arXiv:2604.06628 `{Ren2026Rethinking}`
 - **2026** [Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO](http://arxiv.org/abs/2605.30789) — Yiming Ren et al. · arXiv:2605.30789 `{Ren2026Smaller}`
@@ -2591,14 +2632,17 @@
 - **2026** [Is Next-Chunk Reasoning RL Really Better than SFT? Revisiting Training Strategies under no-CoT Data](http://arxiv.org/abs/2608.23256) — Yinhao Tang et al. · arXiv:2608.23256 `{Tang2026Next}`
 - **2026** [Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning](http://arxiv.org/abs/2607.12395) — Xinyu Tang et al. · arXiv:2607.12395 `{Tang2026Ring}`
 - **2026** [TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents](http://arxiv.org/abs/2607.13988) — Leitian Tao et al. · arXiv:2607.13988 `{Tao2026Trace}`
+- **2026** [Beam Model Technical Report](http://arxiv.org/abs/2611.26358) — Reflection Team et al. · arXiv:2611.26358 `{Team2026Beam}`
 - **2026** [CocoaBench: Evaluating Unified Digital Agents in the Wild](http://arxiv.org/abs/2604.11201) — CocoaBench Team et al. · arXiv:2604.11201 `{Team2026Cocoabench}`
 - **2026** [DR-Venus: Towards Frontier Edge-Scale Deep Research Agents with Only 10K Open Data](http://arxiv.org/abs/2604.19859) — Venus Team et al. · arXiv:2604.19859 `{Team2026Dr}`
 - **2026** [Gemma 4 Technical Report](http://arxiv.org/abs/2607.02770) — Gemma Team et al. · arXiv:2607.02770 `{Team2026Gemma}`
 - **2026** [GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents](http://arxiv.org/abs/2604.26752) — GLM-V Team et al. · arXiv:2604.26752 `{Team2026Glm}`
 - **2026** [Kimi K3: Open Frontier Intelligence](http://arxiv.org/abs/2607.24653) — Kimi Team et al. · arXiv:2607.24653 `{Team2026Kimi}`
 - **2026** [Kwai Keye-VL-2.0 Technical Report](http://arxiv.org/abs/2606.10651) — Kwai Keye Team et al. · arXiv:2606.10651 `{Team2026Kwai}`
+- **2026** [LingSante MedGuard Technical Report](http://arxiv.org/abs/2611.25509) — LingSante MedGuard Team et al. · arXiv:2611.25509 `{Team2026Lingsante}`
 - **2026** [NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness](http://arxiv.org/abs/2609.08183) — NeoHorse Team et al. · arXiv:2609.08183 `{Team2026Neohorse}`
 - **2026** [Qwen3.5-Omni Technical Report](http://arxiv.org/abs/2604.15804) — Qwen Team et al. · arXiv:2604.15804 `{Team2026Qwen3}`
+- **2026** [Sage-Med: Scaling Medical Multimodal Intelligence](http://arxiv.org/abs/2611.34575) — Sage-Med Team et al. · arXiv:2611.34575 `{Team2026Sage}`
 - **2026** [SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning](http://arxiv.org/abs/2606.22873) — SingGuard Team et al. · arXiv:2606.22873 `{Team2026Singguard}`
 - **2026** [Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report](http://arxiv.org/abs/2608.15763) — TaoLive AIGC LLM Team et al. · arXiv:2608.15763 `{Team2026Training}`
 - **2026** [UI-Venus-2 Technical Report](http://arxiv.org/abs/2609.00028) — Venus Team et al. · arXiv:2609.00028 `{Team2026Ui}`
@@ -2646,6 +2690,7 @@
 - **2026** [Memory Decoder at Scale: A Pretrained, Parametric Long-Term Memory](http://arxiv.org/abs/2607.27919) — Rubin Wei et al. · arXiv:2607.27919 `{Wei2026Memory}`
 - **2026** [PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception](http://arxiv.org/abs/2606.28322) — Yana Wei et al. · arXiv:2606.28322 `{Wei2026Perceptionrubrics}`
 - **2026** [You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories](http://arxiv.org/abs/2605.21468) — Zhepei Wei et al. · arXiv:2605.21468 `{Wei2026You}`
+- **2026** [Beyond Self-Consistency: Recursive Self-Improvement at Test Time](http://arxiv.org/abs/2611.30965) — Jianyu Wu et al. · arXiv:2611.30965 `{Wu2026Beyond}`
 - **2026** [DAPD: Dual-Anchored Policy Distillation](http://arxiv.org/abs/2608.01735) — Jianyu Wu et al. · arXiv:2608.01735 `{Wu2026Dapd}`
 - **2026** [EffectLearner: World-Aware Object-Effect Reasoning for Real-World Video Object Removal](http://arxiv.org/abs/2608.05565) — Feier Wu et al. · arXiv:2608.05565 `{Wu2026Effectlearner}`
 - **2026** [Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness](http://arxiv.org/abs/2611.31201) — Xiao-Ming Wu et al. · arXiv:2611.31201 `{Wu2026Embo}`
@@ -2666,6 +2711,7 @@
 - **2026** [The Depth Ceiling: On the Limits of Large Language Models in Discovering Latent Planning](http://arxiv.org/abs/2604.06427) — Yi Xu et al. · arXiv:2604.06427 `{Xu2026Depth}`
 - **2026** [EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL](http://arxiv.org/abs/2605.18703) — Minrui Xu et al. · arXiv:2605.18703 `{Xu2026Envfactory}`
 - **2026** [Fewer Clarifications, Better Code: Benchmarking Cross-Session Personalized Ambiguity Adaptation in Coding Assistants](http://arxiv.org/abs/2607.26611) — Zijian Xu et al. · arXiv:2607.26611 `{Xu2026Fewer}`
+- **2026** [Negative-Only Policy Optimization for One-Sided Verifiable Rewards](http://arxiv.org/abs/2611.17287) — Jiacheng Xu et al. · arXiv:2611.17287 `{Xu2026Negative}`
 - **2026** [$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation](http://arxiv.org/abs/2607.28582) — Jiawei Xu et al. · arXiv:2607.28582 `{Xu2026Opsd}`
 - **2026** [Pass the Baton: Trajectory-Relayed On-Policy Distillation](http://arxiv.org/abs/2607.26057) — Haolei Xu et al. · arXiv:2607.26057 `{Xu2026Pass}`
 - **2026** [Qwen-Image-2.0-RL Technical Report](http://arxiv.org/abs/2606.27608) — Yixian Xu et al. · arXiv:2606.27608 `{Xu2026Qwen}`
@@ -2732,6 +2778,7 @@
 - **2026** [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](http://arxiv.org/abs/2609.13814) — Ruixiang Zhao et al. · arXiv:2609.13814 `{Zhao2026Realtime}`
 - **2026** [S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation](http://arxiv.org/abs/2607.15686) — Jiahao Zhao et al. · arXiv:2607.15686 `{Zhao2026S1}`
 - **2026** [ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation](http://arxiv.org/abs/2608.04436) — Jiahao Zhao et al. · arXiv:2608.04436 `{Zhao2026Toolartist}`
+- **2026** [Unlocking the Power of Loops in Pretrained LLMs with Loop Residuals](http://arxiv.org/abs/2611.31094) — Xuanlei Zhao et al. · arXiv:2611.31094 `{Zhao2026Unlocking}`
 - **2026** [Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements](http://arxiv.org/abs/2608.17310) — Zhi Zheng et al. · arXiv:2608.17310 `{Zheng2026Agentic}`
 - **2026** [AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs](http://arxiv.org/abs/2605.15565) — Haizhong Zheng et al. · arXiv:2605.15565 `{Zheng2026Astraflow}`
 - **2026** [RecGPT-V3 Technical Report](http://arxiv.org/abs/2607.15591) — Bowen Zheng et al. · arXiv:2607.15591 `{Zheng2026Recgpt}`
@@ -3254,6 +3301,7 @@
 - **2026** [AdaptVPR: Route-Aware Hard Positive Generation for Robust Visual Place Recognition](http://arxiv.org/abs/2609.04369) — Shunpeng Chen et al. · arXiv:2609.04369 `{Chen2026Adaptvpr}`
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
 - **2026** [Code World Model: Coding Agent as World Brain](http://arxiv.org/abs/2608.25927) — Yiwen Chen et al. · arXiv:2608.25927 `{Chen2026Code}`
+- **2026** [CONCOR: Benchmarking Contrastive Decoding for Visual Hallucination Mitigation Beyond Final-Output Performance](http://arxiv.org/abs/2611.30460) — Ting Chen et al. · arXiv:2611.30460 `{Chen2026Concor}`
 - **2026** [DFlash: Block Diffusion for Flash Speculative Decoding](http://arxiv.org/abs/2602.06036) — Jian Chen et al. · arXiv:2602.06036 `{Chen2026Dflash}`
 - **2026** [DMax: Aggressive Parallel Decoding for dLLMs](http://arxiv.org/abs/2604.08302) — Zigeng Chen et al. · arXiv:2604.08302 `{Chen2026Dmax}`
 - **2026** [DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation](http://arxiv.org/abs/2606.26058) — Nan Chen et al. · arXiv:2606.26058 `{Chen2026Domainshuttle}`
@@ -3311,6 +3359,7 @@
 - **2026** [Demystifying When Pruning Works via Representation Hierarchies](http://arxiv.org/abs/2603.24652) — Shwai He et al. · arXiv:2603.24652 `{He2026Demystifying}`
 - **2026** [VGI-Bench: Probing Visual Intelligence in Video Generation Models](http://arxiv.org/abs/2608.19583) — Xuan He et al. · arXiv:2608.19583 `{He2026Vgi}`
 - **2026** [ReRound: Reconstructive Rounding to Resolve Midpoint Ambiguity in Calibration-Free LLM Quantization](http://arxiv.org/abs/2608.11045) — He-Yen Hsieh et al. · arXiv:2608.11045 `{Hsieh2026Reround}`
+- **2026** [Single-Transformer Latent Diffusion](http://arxiv.org/abs/2611.29064) — Hao-Yu Hsu et al. · arXiv:2611.29064 `{Hsu2026Single}`
 - **2026** [JetSpec: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting](http://arxiv.org/abs/2606.18394) — Lanxiang Hu et al. · arXiv:2606.18394 `{Hu2026Jetspec}`
 - **2026** [PosterMELD: Multi-Agent Paper-to-Poster Generation for Controllable Design Diversity with Editable Print-Ready Outputs](http://arxiv.org/abs/2608.02218) — Haojie Hu et al. · arXiv:2608.02218 `{Hu2026Postermeld}`
 - **2026** [Agentic Visual Generation: From Generative Models to Agentic Control](http://arxiv.org/abs/2609.06758) — Yinming Huang et al. · arXiv:2609.06758 `{Huang2026Agentic}`
@@ -3332,6 +3381,7 @@
 - **2026** [Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes](http://arxiv.org/abs/2607.13188) — Minh-Quan Le et al. · arXiv:2607.13188 `{Le2026Concurrent}`
 - **2026** [Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation](http://arxiv.org/abs/2606.12594) — Joshua Ong Jun Leang et al. · arXiv:2606.12594 `{Leang2026Pythagoras}`
 - **2026** [Dynin-Robotics: Omnimodal Unified Diffusion Vision-Language-Action Model](http://arxiv.org/abs/2609.13053) — Hoeun Lee et al. · arXiv:2609.13053 `{Lee2026Dynin}`
+- **2026** [DyLoMo-DiT: Dynamic Looped Mixture-of-Experts Diffusion Transformers](http://arxiv.org/abs/2611.30844) — Lernie Li et al. · arXiv:2611.30844 `{Li2026Dylomo}`
 - **2026** [FP4 Explore, BF16 Train: Diffusion Reinforcement Learning via Efficient Rollout Scaling](http://arxiv.org/abs/2604.06916) — Yitong Li et al. · arXiv:2604.06916 `{Li2026Fp4}`
 - **2026** [From Pixels to States: Rethinking Interactive World Models as Game Engines](http://arxiv.org/abs/2607.14076) — Zhen Li et al. · arXiv:2607.14076 `{Li2026Pixels}`
 - **2026** [Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation](http://arxiv.org/abs/2607.24731) — Bingnan Li et al. · arXiv:2607.24731 `{Li2026Rethinkinga}`
@@ -3340,6 +3390,7 @@
 - **2026** [Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers](http://arxiv.org/abs/2607.19139) — Maohua Li et al. · arXiv:2607.19139 `{Li2026Text}`
 - **2026** [UniWorld-Design: From Pixel Generation to Layer-Native Design](http://arxiv.org/abs/2608.03971) — Zongjian Li et al. · arXiv:2608.03971 `{Li2026Uniworld}`
 - **2026** [VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System](http://arxiv.org/abs/2607.27380) — Haodong Li et al. · arXiv:2607.27380 `{Li2026Videococo}`
+- **2026** [World Models as Native Latent Action Models](http://arxiv.org/abs/2611.30898) — Qinyue Li et al. · arXiv:2611.30898 `{Li2026World}`
 - **2026** [Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model](http://arxiv.org/abs/2607.11643) — Xinghang Li et al. · arXiv:2607.11643 `{Li2026Xiaomi}`
 - **2026** [AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling](http://arxiv.org/abs/2608.02602) — Jiajun Liang et al. · arXiv:2608.02602 `{Liang2026Aurora}`
 - **2026** [RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination](http://arxiv.org/abs/2607.14187) — Haotian Liang et al. · arXiv:2607.14187 `{Liang2026Rxbrain}`
@@ -3347,6 +3398,7 @@
 - **2026** [Puffin-World: Scaling a Unified Multimodal Model with Native 3D World States](http://arxiv.org/abs/2609.04196) — Kang Liao et al. · arXiv:2609.04196 `{Liao2026Puffin}`
 - **2026** [Generative World Renderer at the Speed of Play](http://arxiv.org/abs/2607.18703) — Guixu Lin et al. · arXiv:2607.18703 `{Lin2026Generative}`
 - **2026** [JarvisHub: An Open Harness for Canvas-Native Multimodal Creative Agents](http://arxiv.org/abs/2607.23588) — Yunlong Lin et al. · arXiv:2607.23588 `{Lin2026Jarvishub}`
+- **2026** [Open Vision Banana: An Open Framework for Unified Visual Perception through Generation in RGB Space](http://arxiv.org/abs/2611.28489) — Xu Lin et al. · arXiv:2611.28489 `{Lin2026Open}`
 - **2026** [StepAudio 3 Gen Technical Report](http://arxiv.org/abs/2609.12945) — Bin Lin et al. · arXiv:2609.12945 `{Lin2026Stepaudio}`
 - **2026** [VIBE: Voice-Induced open-ended Bias Evaluation for Large Audio-Language Models via Real-World Speech](http://arxiv.org/abs/2604.17248) — Yi-Cheng Lin et al. · arXiv:2604.17248 `{Lin2026Vibe}`
 - **2026** [Beyond Pixels: From Video Priors to 4D Worlds](http://arxiv.org/abs/2608.10744) — Zihao Liu et al. · arXiv:2608.10744 `{Liu2026Beyond}`
@@ -3354,6 +3406,7 @@
 - **2026** [Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players](http://arxiv.org/abs/2605.28816) — Fangfu Liu et al. · arXiv:2605.28816 `{Liu2026Gamma}`
 - **2026** [Jeveration: System One Models Now Generate](http://arxiv.org/abs/2611.24738) — Yuhe Liu et al. · arXiv:2611.24738 `{Liu2026Jeveration}`
 - **2026** [OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data](http://arxiv.org/abs/2606.13432) — Jiwen Liu et al. · arXiv:2606.13432 `{Liu2026Omnidirector}`
+- **2026** [Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation](http://arxiv.org/abs/2611.32736) — Zihao Liu et al. · arXiv:2611.32736 `{Liu2026Qwen}`
 - **2026** [Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation](http://arxiv.org/abs/2604.24763) — Zhiheng Liu et al. · arXiv:2604.24763 `{Liu2026Tuna}`
 - **2026** [LATO.2: Factorized 3D Mesh Generation with Vertex and Topology Flow](http://arxiv.org/abs/2607.10623) — Hang Long et al. · arXiv:2607.10623 `{Long2026Lato}`
 - **2026** [Mean Mode Screaming: Mean--Variance Split Residuals for 1000-Layer Diffusion Transformers](http://arxiv.org/abs/2605.06169) — Pengqi Lu et al. · arXiv:2605.06169 `{Lu2026Mean}`
@@ -3426,6 +3479,7 @@
 - **2026** [TRACE-Bench: Decomposing and Diagnosing Multi-Reference Image Generation](http://arxiv.org/abs/2608.16765) — Haoran Wang et al. · arXiv:2608.16765 `{Wang2026Trace}`
 - **2026** [UniDDT: Unifying Multimodal Understanding and Generation with Decoupled Diffusion Transformer](http://arxiv.org/abs/2606.16255) — Shuai Wang et al. · arXiv:2606.16255 `{Wang2026Uniddt}`
 - **2026** [Video Generation Models are General-Purpose Vision Learners](http://arxiv.org/abs/2607.09024) — Letian Wang et al. · arXiv:2607.09024 `{Wang2026Video}`
+- **2026** [ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild](http://arxiv.org/abs/2611.30597) — Yuxi Wang et al. · arXiv:2611.30597 `{Wang2026Vidihand2}`
 - **2026** [Forecasting Scientific Progress with Artificial Intelligence](http://arxiv.org/abs/2605.22681) — Sean Wu et al. · arXiv:2605.22681 `{Wu2026Forecasting}`
 - **2026** [UniEvo-VL: An On-policy Self-Distillation Training Recipe for Multimodal Model Self-improvement](http://arxiv.org/abs/2609.38721) — Fang Wu et al. · arXiv:2609.38721 `{Wu2026Unievo}`
 - **2026** [ZimaBlue: Evolving Generalizable World Action Models through Scalable Video Pre-training](http://arxiv.org/abs/2609.00188) — Xionghao Wu et al. · arXiv:2609.00188 `{Wu2026Zimablue}`
@@ -3469,6 +3523,7 @@
 - **2026** [LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time](http://arxiv.org/abs/2608.11745) — Yuxuan Zhang et al. · arXiv:2608.11745 `{Zhang2026Liveanimate}`
 - **2026** [Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing](http://arxiv.org/abs/2607.19064) — Xinjie Zhang et al. · arXiv:2607.19064 `{Zhang2026Mage}`
 - **2026** [MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction](http://arxiv.org/abs/2606.18558) — Jianing Zhang et al. · arXiv:2606.18558 `{Zhang2026Molmomotion}`
+- **2026** [Plan4D: Generative Plannable 4D Worlds](http://arxiv.org/abs/2611.26516) — Hangwei Zhang et al. · arXiv:2611.26516 `{Zhang2026Plan4d}`
 - **2026** [Qwen-Image-VAE-2.0 Technical Report](http://arxiv.org/abs/2605.13565) — Zekai Zhang et al. · arXiv:2605.13565 `{Zhang2026Qwen}`
 - **2026** [Qwen-Image-Agent: Bridging the Context Gap in Real-World Image Generation](http://arxiv.org/abs/2606.26907) — Zekai Zhang et al. · arXiv:2606.26907 `{Zhang2026Qwena}`
 - **2026** [Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning](http://arxiv.org/abs/2604.04746) — Lei Zhang et al. · arXiv:2604.04746 `{Zhang2026Think}`
@@ -3688,6 +3743,7 @@
 - **2026** [Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation](http://arxiv.org/abs/2607.13125) — Guoxuan Chen et al. · arXiv:2607.13125 `{Chen2026Boogu}`
 - **2026** [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](http://arxiv.org/abs/2608.06756) — Ying Chen et al. · arXiv:2608.06756 `{Chen2026Capek}`
 - **2026** [Code World Model: Coding Agent as World Brain](http://arxiv.org/abs/2608.25927) — Yiwen Chen et al. · arXiv:2608.25927 `{Chen2026Code}`
+- **2026** [CONCOR: Benchmarking Contrastive Decoding for Visual Hallucination Mitigation Beyond Final-Output Performance](http://arxiv.org/abs/2611.30460) — Ting Chen et al. · arXiv:2611.30460 `{Chen2026Concor}`
 - **2026** [DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation](http://arxiv.org/abs/2606.26058) — Nan Chen et al. · arXiv:2606.26058 `{Chen2026Domainshuttle}`
 - **2026** [Douyin Multimodal Embedding Model Technical Report](http://arxiv.org/abs/2608.02148) — Haonan Chen et al. · arXiv:2608.02148 `{Chen2026Douyin}`
 - **2026** [ECHO: Efficient Chest X-ray Report Generation with One-step Block Diffusion](http://arxiv.org/abs/2604.09450) — Lifeng Chen et al. · arXiv:2604.09450 `{Chen2026Echo}`
@@ -3758,8 +3814,10 @@
 - **2026** [AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation](http://arxiv.org/abs/2605.13724) — Yuchao Gu et al. · arXiv:2605.13724 `{Gu2026Anyflow}`
 - **2026** [Co-Evolving Policy Distillation](http://arxiv.org/abs/2604.27083) — Naibin Gu et al. · arXiv:2604.27083 `{Gu2026Co}`
 - **2026** [LLaDA-UI: Bringing Block-wise Diffusion to Vision-Language GUI Agents](http://arxiv.org/abs/2609.13287) — Zhangxuan Gu et al. · arXiv:2609.13287 `{Gu2026Llada}`
+- **2026** [ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks](http://arxiv.org/abs/2611.32183) — Jiawei Gu et al. · arXiv:2611.32183 `{Gu2026Thinkmorph}`
 - **2026** [WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models](http://arxiv.org/abs/2608.04964) — Bohai Gu et al. · arXiv:2608.04964 `{Gu2026Worldcycle}`
 - **2026** [FATE: Frame-Level Audio-Visual Temporal Embedding](http://arxiv.org/abs/2608.01310) — Kaisi Guan et al. · arXiv:2608.01310 `{Guan2026Fate}`
+- **2026** [SEEK: Self-Evolution through Execution Knowledge for Agentic Robot Manipulation](http://arxiv.org/abs/2611.33915) — Zeyang Guan et al. · arXiv:2611.33915 `{Guan2026Seek}`
 - **2026** [ContextMaster: Interactive Multi-Shot Video Creation via Fixed-Budget Sparse Context Routing](http://arxiv.org/abs/2608.04956) — Xu Guo et al. · arXiv:2608.04956 `{Guo2026Contextmaster}`
 - **2026** [CURV: Enhancing Chart Understanding Through Curriculum Visual Grounded Reasoning](http://arxiv.org/abs/2608.02833) — Xuehang Guo et al. · arXiv:2608.02833 `{Guo2026Curv}`
 - **2026** [GameWAM: A World Action Model for Video Games](http://arxiv.org/abs/2608.26200) — Yuncheng Guo et al. · arXiv:2608.26200 `{Guo2026Gamewam}`
@@ -3811,6 +3869,7 @@
 - **2026** [One Editor, Many Edits: A Unified Training-Free Framework for Diverse Video Editing](http://arxiv.org/abs/2609.04190) — Adheesh Sunil Juvekar et al. · arXiv:2609.04190 `{Juvekar2026One}`
 - **2026** [Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models](http://arxiv.org/abs/2606.19297) — Nikita Kachaev et al. · arXiv:2606.19297 `{Kachaev2026Does}`
 - **2026** [Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation](http://arxiv.org/abs/2610.05608) — Team Kandinsky et al. · arXiv:2610.05608 `{Kandinsky2026Kandinsky}`
+- **2026** [DiLE: Discrimination-Aware Latent-Space Learning for Universal Multimodal Embeddings](http://arxiv.org/abs/2611.25419) — Ben Kang et al. · arXiv:2611.25419 `{Kang2026Dile}`
 - **2026** [Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?](http://arxiv.org/abs/2605.22109) — Caixin Kang et al. · arXiv:2605.22109 `{Kang2026Perception}`
 - **2026** [CollabVR: Collaborative Video Reasoning with Vision-Language and Video Generation Models](http://arxiv.org/abs/2605.08735) — Joowon Kim et al. · arXiv:2605.08735 `{Kim2026Collabvr}`
 - **2026** [Knowing What Not to Answer: Selective Non-Compliance in Vision-Language Models](http://arxiv.org/abs/2609.04720) — Minji Kim et al. · arXiv:2609.04720 `{Kim2026Knowing}`
@@ -3822,6 +3881,7 @@
 - **2026** [Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes](http://arxiv.org/abs/2607.13188) — Minh-Quan Le et al. · arXiv:2607.13188 `{Le2026Concurrent}`
 - **2026** [Act with Intent: Distilling Behavior Intent for Vision-Language-Action Models](http://arxiv.org/abs/2608.23478) — Sangoh Lee et al. · arXiv:2608.23478 `{Lee2026Act}`
 - **2026** [Dynin-Robotics: Omnimodal Unified Diffusion Vision-Language-Action Model](http://arxiv.org/abs/2609.13053) — Hoeun Lee et al. · arXiv:2609.13053 `{Lee2026Dynin}`
+- **2026** [Reading the Unreadable: Text-Aware Image Super-Resolution Needs Reasoning](http://arxiv.org/abs/2611.15449) — Jaeseong Lee et al. · arXiv:2611.15449 `{Lee2026Reading}`
 - **2026** [Rethinking RAG in Long Videos: What to Retrieve and How to Use It?](http://arxiv.org/abs/2606.13141) — Yuho Lee et al. · arXiv:2606.13141 `{Lee2026Rethinking}`
 - **2026** [$μ_0$: A Scalable 3D Interaction-Trace World Model](http://arxiv.org/abs/2606.13769) — Seungjae Lee et al. · arXiv:2606.13769 `{Lee2026Scalable}`
 - **2026** [Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients](http://arxiv.org/abs/2606.18216) — Byung-Kwan Lee et al. · arXiv:2606.18216 `{Lee2026Zone}`
@@ -3854,6 +3914,7 @@
 - **2026** [UniWorld-Design: From Pixel Generation to Layer-Native Design](http://arxiv.org/abs/2608.03971) — Zongjian Li et al. · arXiv:2608.03971 `{Li2026Uniworld}`
 - **2026** [VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding](http://arxiv.org/abs/2607.14935) — Xinhao Li et al. · arXiv:2607.14935 `{Li2026Videochat3}`
 - **2026** [VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System](http://arxiv.org/abs/2607.27380) — Haodong Li et al. · arXiv:2607.27380 `{Li2026Videococo}`
+- **2026** [World Models as Native Latent Action Models](http://arxiv.org/abs/2611.30898) — Qinyue Li et al. · arXiv:2611.30898 `{Li2026World}`
 - **2026** [Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model](http://arxiv.org/abs/2607.11643) — Xinghang Li et al. · arXiv:2607.11643 `{Li2026Xiaomi}`
 - **2026** [PhysBrain 1.0 Technical Report](http://arxiv.org/abs/2605.15298) — Shijie Lian et al. · arXiv:2605.15298 `{Lian2026Physbrain}`
 - **2026** [UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning](http://arxiv.org/abs/2607.04425) — Niu Lian et al. · arXiv:2607.04425 `{Lian2026Ui}`
@@ -3874,6 +3935,7 @@
 - **2026** [Beyond Pixels: From Video Priors to 4D Worlds](http://arxiv.org/abs/2608.10744) — Zihao Liu et al. · arXiv:2608.10744 `{Liu2026Beyond}`
 - **2026** [CAPEval: A Decoupled Caption Evaluation across Understanding and Generation](http://arxiv.org/abs/2608.02589) — Zhipeng Liu et al. · arXiv:2608.02589 `{Liu2026Capeval}`
 - **2026** [DistilVDR: A Compact End-to-End Visual Document Retriever via Dual-Student Distillation](http://arxiv.org/abs/2608.10636) — Zhuchenyang Liu et al. · arXiv:2608.10636 `{Liu2026Distilvdr}`
+- **2026** [Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies](http://arxiv.org/abs/2611.33010) — Xuanchen Liu et al. · arXiv:2611.33010 `{Liu2026Embodied}`
 - **2026** [FileGram: Grounding Agent Personalization in File-System Behavioral Traces](http://arxiv.org/abs/2604.04901) — Shuai Liu et al. · arXiv:2604.04901 `{Liu2026Filegram}`
 - **2026** [Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players](http://arxiv.org/abs/2605.28816) — Fangfu Liu et al. · arXiv:2605.28816 `{Liu2026Gamma}`
 - **2026** [HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark](http://arxiv.org/abs/2608.13555) — Dairu Liu et al. · arXiv:2608.13555 `{Liu2026Humantracker}`
@@ -3885,6 +3947,7 @@
 - **2026** [OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data](http://arxiv.org/abs/2606.13432) — Jiwen Liu et al. · arXiv:2606.13432 `{Liu2026Omnidirector}`
 - **2026** [PRM-as-a-Judge 1.5: A Toolkit for Robot Process Assessment](http://arxiv.org/abs/2608.14284) — Yuyang Liu et al. · arXiv:2608.14284 `{Liu2026Prm}`
 - **2026** [RefCaptioner: Multi-Reference Image-Grounded Video Captioning](http://arxiv.org/abs/2607.28509) — Tengfei Liu et al. · arXiv:2607.28509 `{Liu2026Refcaptioner}`
+- **2026** [RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution](http://arxiv.org/abs/2611.34675) — Chenzhi Liu et al. · arXiv:2611.34675 `{Liu2026Roboevo}`
 - **2026** [StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models](http://arxiv.org/abs/2608.26067) — Zhe Liu et al. · arXiv:2608.26067 `{Liu2026Streampi}`
 - **2026** [Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation](http://arxiv.org/abs/2604.24763) — Zhiheng Liu et al. · arXiv:2604.24763 `{Liu2026Tuna}`
 - **2026** [VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance](http://arxiv.org/abs/2607.14660) — Yunfeng Liu et al. · arXiv:2607.14660 `{Liu2026Viabench}`
@@ -3921,6 +3984,7 @@
 - **2026** [GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents](http://arxiv.org/abs/2604.07429) — Mingyu Ouyang et al. · arXiv:2604.07429 `{Ouyang2026Gameworld}`
 - **2026** [HelloWorld: Enabling Socially Interactive Characters in Video World Models](http://arxiv.org/abs/2608.05070) — Liangyang Ouyang et al. · arXiv:2608.05070 `{Ouyang2026Helloworld}`
 - **2026** [RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space](http://arxiv.org/abs/2606.14700) — Xichen Pan et al. · arXiv:2606.14700 `{Pan2026Repfusion}`
+- **2026** [UUBench: Understanding the Unspoken toward Full-Duplex Multimodal Interaction](http://arxiv.org/abs/2611.30157) — Ye Pan et al. · arXiv:2611.30157 `{Pan2026Uubench}`
 - **2026** [World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation](http://arxiv.org/abs/2608.05369) — Yuhao Pan et al. · arXiv:2608.05369 `{Pan2026World}`
 - **2026** [$π\mathbf{R}^2$: Reactive Real-time Flow Policies](http://arxiv.org/abs/2607.26055) — Sungjae Park et al. · arXiv:2607.26055 `{Park2026Mathbfr}`
 - **2026** [Reason Through the Latent! Making Latent Visual Reasoning Necessary](http://arxiv.org/abs/2609.06746) — Suhyeong Park et al. · arXiv:2609.06746 `{Park2026Reason}`
@@ -3933,11 +3997,13 @@
 - **2026** [RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning](http://arxiv.org/abs/2609.03199) — Howard Qian et al. · arXiv:2609.03199 `{Qian2026Robotok}`
 - **2026** [Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling](http://arxiv.org/abs/2608.30821) — Minghan Qin et al. · arXiv:2608.30821 `{Qin2026Lucida}`
 - **2026** [Beyond Retrieval: Progressive Latent Memory Evolution for Streaming Video Understanding](http://arxiv.org/abs/2609.04131) — Hongyu Qu et al. · arXiv:2609.04131 `{Qu2026Beyond}`
+- **2026** [ROAM-Bench: Evaluating Embodied Active Spatial Intelligence through Evidence Verification](http://arxiv.org/abs/2611.33143) — Xingjian Ran et al. · arXiv:2611.33143 `{Ran2026Roam}`
 - **2026** [SceneMosaic: Efficient and Diverse Simulation-Ready Scene Generation via Hybrid Agentic Layout Evolution](http://arxiv.org/abs/2609.05594) — Xingjian Ran et al. · arXiv:2609.05594 `{Ran2026Scenemosaic}`
 - **2026** [SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation](http://arxiv.org/abs/2606.28276) — Nadun Ranawaka et al. · arXiv:2606.28276 `{Ranawaka2026Simfoundry}`
 - **2026** [UniVR: Thinking in Visual Space for Unified Visual Reasoning](http://arxiv.org/abs/2607.12800) — Zhongwei Ren et al. · arXiv:2607.12800 `{Ren2026Univr}`
 - **2026** [H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models](http://arxiv.org/abs/2608.13049) — Dingyi Rong et al. · arXiv:2608.13049 `{Rong2026H2r}`
 - **2026** [AlloSpatial: Agentic Harness Framework for Spatial Reasoning in Foundation Models](http://arxiv.org/abs/2606.08952) — Shouwei Ruan et al. · arXiv:2606.08952 `{Ruan2026Allospatial}`
+- **2026** [PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents](http://arxiv.org/abs/2611.33144) — Feixiang Ruan et al. · arXiv:2611.33144 `{Ruan2026Pyrua}`
 - **2026** [Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models](http://arxiv.org/abs/2607.08317) — Matteo Santelmo et al. · arXiv:2607.08317 `{Santelmo2026Blind}`
 - **2026** [VectraYX-Vision-1B: A Sub-2B Spanish/LATAM Cybersecurity Vision-Language Model with Structured Visual Reasoning and Native Tool Use](http://arxiv.org/abs/2608.08477) — Juan S. Santillana et al. · arXiv:2608.08477 `{Santillana2026Vectrayx}`
 - **2026** [Vero: An Open RL Recipe for General Visual Reasoning](http://arxiv.org/abs/2604.04917) — Gabriel Sarch et al. · arXiv:2604.04917 `{Sarch2026Vero}`
@@ -3985,9 +4051,11 @@
 - **2026** [GLM-5V-Turbo: Toward a Native Foundation Model for Multimodal Agents](http://arxiv.org/abs/2604.26752) — GLM-V Team et al. · arXiv:2604.26752 `{Team2026Glm}`
 - **2026** [INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling](http://arxiv.org/abs/2604.07209) — InSpatio Team et al. · arXiv:2604.07209 `{Team2026Inspatio}`
 - **2026** [Kwai Keye-VL-2.0 Technical Report](http://arxiv.org/abs/2606.10651) — Kwai Keye Team et al. · arXiv:2606.10651 `{Team2026Kwai}`
+- **2026** [LingSante MedGuard Technical Report](http://arxiv.org/abs/2611.25509) — LingSante MedGuard Team et al. · arXiv:2611.25509 `{Team2026Lingsante}`
 - **2026** [MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement](http://arxiv.org/abs/2610.11959) — Xiaomi LLM-Core Team et al. · arXiv:2610.11959 `{Team2026Mimo}`
 - **2026** [PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models](http://arxiv.org/abs/2609.14973) — DeepCybo Team et al. · arXiv:2609.14973 `{Team2026Physbrain}`
 - **2026** [Qwen3.5-Omni Technical Report](http://arxiv.org/abs/2604.15804) — Qwen Team et al. · arXiv:2604.15804 `{Team2026Qwen3}`
+- **2026** [Sage-Med: Scaling Medical Multimodal Intelligence](http://arxiv.org/abs/2611.34575) — Sage-Med Team et al. · arXiv:2611.34575 `{Team2026Sage}`
 - **2026** [SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning](http://arxiv.org/abs/2606.22873) — SingGuard Team et al. · arXiv:2606.22873 `{Team2026Singguard}`
 - **2026** [$N_0$-TWAM: Scaling Tactile-Native World-Action Model for Contact-Rich Manipulation](http://arxiv.org/abs/2607.23783) — NeoteAI Team et al. · arXiv:2607.23783 `{Team2026Twam}`
 - **2026** [UI-Venus-2 Technical Report](http://arxiv.org/abs/2609.00028) — Venus Team et al. · arXiv:2609.00028 `{Team2026Ui}`
@@ -4030,6 +4098,7 @@
 - **2026** [UniDDT: Unifying Multimodal Understanding and Generation with Decoupled Diffusion Transformer](http://arxiv.org/abs/2606.16255) — Shuai Wang et al. · arXiv:2606.16255 `{Wang2026Uniddt}`
 - **2026** [VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery](http://arxiv.org/abs/2607.06374) — Jiazi Wang et al. · arXiv:2607.06374 `{Wang2026Vasemuseum}`
 - **2026** [Video Generation Models are General-Purpose Vision Learners](http://arxiv.org/abs/2607.09024) — Letian Wang et al. · arXiv:2607.09024 `{Wang2026Video}`
+- **2026** [ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild](http://arxiv.org/abs/2611.30597) — Yuxi Wang et al. · arXiv:2611.30597 `{Wang2026Vidihand2}`
 - **2026** [World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](http://arxiv.org/abs/2604.24764) — Weijie Wang et al. · arXiv:2604.24764 `{Wang2026World}`
 - **2026** [World Action Models: The Next Frontier in Embodied AI](http://arxiv.org/abs/2605.12090) — Siyin Wang et al. · arXiv:2605.12090 `{Wang2026Worlda}`
 - **2026** [WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory](http://arxiv.org/abs/2607.02517) — Hanlin Wang et al. · arXiv:2607.02517 `{Wang2026Worlddirector}`
@@ -4052,6 +4121,7 @@
 - **2026** [ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog](http://arxiv.org/abs/2607.04438) — Lingao Xiao et al. · arXiv:2607.04438 `{Xiao2026Researchstudio}`
 - **2026** [ReToken: One Token to Improve Vision-Language Models for Visual Retrieval](http://arxiv.org/abs/2607.28627) — Yao Xiao et al. · arXiv:2607.28627 `{Xiao2026Retoken}`
 - **2026** [GRNEdit: Efficient General Video Editing from a New Binary-Evidence Perspective in Generative Refinement Networks](http://arxiv.org/abs/2608.16328) — Feng Xie et al. · arXiv:2608.16328 `{Xie2026Grnedit}`
+- **2026** [Improving and Expanding Video Editing Capabilities Without Videos](http://arxiv.org/abs/2611.34941) — Ji Xie et al. · arXiv:2611.34941 `{Xie2026Improving}`
 - **2026** [TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM](http://arxiv.org/abs/2607.27205) — Hengyi Xie et al. · arXiv:2607.27205 `{Xie2026Turbovla}`
 - **2026** [VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders](http://arxiv.org/abs/2607.14088) — Zhihao Xie et al. · arXiv:2607.14088 `{Xie2026Videorae}`
 - **2026** [WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce](http://arxiv.org/abs/2611.30662) — Binhui Xie et al. · arXiv:2611.30662 `{Xie2026Wemm}`
@@ -4120,6 +4190,7 @@
 - **2026** [Navigating the Mirage: A Dual-Path Agentic Framework for Robust Misleading Chart Question Answering](http://arxiv.org/abs/2603.28583) — Yanjie Zhang et al. · arXiv:2603.28583 `{Zhang2026Navigating}`
 - **2026** [Orchestra-o1: Omnimodal Agent Orchestration](http://arxiv.org/abs/2606.13707) — Fan Zhang et al. · arXiv:2606.13707 `{Zhang2026Orchestra}`
 - **2026** [PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation](http://arxiv.org/abs/2606.28128) — Peiwen Zhang et al. · arXiv:2606.28128 `{Zhang2026Physisforcing}`
+- **2026** [Plan4D: Generative Plannable 4D Worlds](http://arxiv.org/abs/2611.26516) — Hangwei Zhang et al. · arXiv:2611.26516 `{Zhang2026Plan4d}`
 - **2026** [ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](http://arxiv.org/abs/2604.24300) — Yiming Zhang et al. · arXiv:2604.24300 `{Zhang2026Revsi}`
 - **2026** [Sci-VBench: Evaluating Knowledge- and Reasoning-Intensive Video Generation in Science Domains](http://arxiv.org/abs/2608.09873) — Diandian Zhang et al. · arXiv:2608.09873 `{Zhang2026Sci}`
 - **2026** [From Seeing to Acting: Smart Glasses as First-Person Intelligence Platforms](http://arxiv.org/abs/2608.24877) — Jiangning Zhang et al. · arXiv:2608.24877 `{Zhang2026Seeing}`
@@ -4139,6 +4210,8 @@
 - **2026** [ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation](http://arxiv.org/abs/2607.08741) — Kaifeng Zhao et al. · arXiv:2607.08741 `{Zhao2026Ardy}`
 - **2026** [AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models](http://arxiv.org/abs/2608.06729) — Guiyu Zhao et al. · arXiv:2608.06729 `{Zhao2026Atlasvla}`
 - **2026** [AutoPILOT: A Visual Agent Harness for Real-Time Gameplay](http://arxiv.org/abs/2611.28202) — Mark Zhao et al. · arXiv:2611.28202 `{Zhao2026Autopilot}`
+- **2026** [Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures](http://arxiv.org/abs/2611.33925) — Zhiyue Zhao et al. · arXiv:2611.33925 `{Zhao2026Beyond}`
+- **2026** [Coding4Games: Can Modern Coding Agents Play Modern Video Games?](http://arxiv.org/abs/2611.31974) — Shifang Zhao et al. · arXiv:2611.31974 `{Zhao2026Coding4games}`
 - **2026** [CT-1: Vision-Language-Camera Models Transfer Spatial Reasoning Knowledge to Camera-Controllable Video Generation](http://arxiv.org/abs/2604.09201) — Haoyu Zhao et al. · arXiv:2604.09201 `{Zhao2026Ct}`
 - **2026** [Mask Forcing: Improving Autoregressive Video Diffusion Distillation via Dual-Noise Masking Rollout](http://arxiv.org/abs/2609.09123) — Zhuoran Zhao et al. · arXiv:2609.09123 `{Zhao2026Mask}`
 - **2026** [Memory as Plans: World-Action Modeling with Memory-Grounded Planning](http://arxiv.org/abs/2609.11561) — Sizhe Zhao et al. · arXiv:2609.11561 `{Zhao2026Memory}`
@@ -4153,6 +4226,7 @@
 - **2026** [SimWAM: A Simple World Action Model for End-to-End Autonomous Driving](http://arxiv.org/abs/2608.07468) — Zongchuang Zhao et al. · arXiv:2608.07468 `{Zhao2026Simwam}`
 - **2026** [ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation](http://arxiv.org/abs/2608.04436) — Jiahao Zhao et al. · arXiv:2608.04436 `{Zhao2026Toolartist}`
 - **2026** [OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents](http://arxiv.org/abs/2608.05013) — Jingsheng Zheng et al. · arXiv:2608.05013 `{Zheng2026Onedayagent}`
+- **2026** [VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation](http://arxiv.org/abs/2611.34237) — Xuanyu Zheng et al. · arXiv:2611.34237 `{Zheng2026Vibevideoagent}`
 - **2026** [VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression](http://arxiv.org/abs/2607.12756) — Yupeng Zheng et al. · arXiv:2607.12756 `{Zheng2026Visco}`
 - **2026** [EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos](http://arxiv.org/abs/2607.09701) — Yifan Zhong et al. · arXiv:2607.09701 `{Zhong2026Egosteer}`
 - **2026** [Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models](http://arxiv.org/abs/2608.25518) — Pengfei Zhou et al. · arXiv:2608.25518 `{Zhou2026Agentic}`
@@ -4333,6 +4407,7 @@
 - **2026** [Kalman Delta Networks: Uncertainty-aware Associative Memory](http://arxiv.org/abs/2609.07816) — Ngoc Bui et al. · arXiv:2609.07816 `{Bui2026Kalman}`
 - **2026** [HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement](http://arxiv.org/abs/2607.18217) — Yiyang Cai et al. · arXiv:2607.18217 `{Cai2026Homie}`
 - **2026** [Gaze Target Estimation Anywhere with Concepts](http://arxiv.org/abs/2608.11367) — Xu Cao et al. · arXiv:2608.11367 `{Cao2026Gaze}`
+- **2026** [Steerable by Design: Conditional Pretraining for Robust Control of Language Models](http://arxiv.org/abs/2611.32199) — Henry Castillo et al. · arXiv:2611.32199 `{Castillo2026Steerable}`
 - **2026** [Linear Attention Architectures: Mechanisms, Trade-offs, and Cross-Layer Routing](http://arxiv.org/abs/2607.07953) — Tommaso Cerruti et al. · arXiv:2607.07953 `{Cerruti2026Linear}`
 - **2026** [H3-World: Turning Language Understanding into World Control](http://arxiv.org/abs/2609.01560) — Danze Chen et al. · arXiv:2609.01560 `{Chen2026H3}`
 - **2026** [Intern-S2-Mobius: Foundation Model with Decoupled Knowledge and Reasoning](http://arxiv.org/abs/2608.14290) — Kai Chen et al. · arXiv:2608.14290 `{Chen2026Intern}`
@@ -4374,6 +4449,7 @@
 - **2026** [Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention](http://arxiv.org/abs/2605.22791) — Ali Hatamizadeh et al. · arXiv:2605.22791 `{Hatamizadeh2026Gated}`
 - **2026** [ZGCM-1: A Fully Open and Extremely Efficient Foundation Model for Math and Agentic Search](http://arxiv.org/abs/2609.13356) — Jiyan He et al. · arXiv:2609.13356 `{He2026Zgcm}`
 - **2026** [Language Models Can Control Their Own Attention](http://arxiv.org/abs/2609.02737) — Namgyu Ho et al. · arXiv:2609.02737 `{Ho2026Language}`
+- **2026** [Single-Transformer Latent Diffusion](http://arxiv.org/abs/2611.29064) — Hao-Yu Hsu et al. · arXiv:2611.29064 `{Hsu2026Single}`
 - **2026** [Hierarchical Sparse Attention Done Right: Toward Infinite Context Modeling](http://arxiv.org/abs/2607.02980) — Xiang Hu et al. · arXiv:2607.02980 `{Hu2026Hierarchical}`
 - **2026** [JetSpec: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting](http://arxiv.org/abs/2606.18394) — Lanxiang Hu et al. · arXiv:2606.18394 `{Hu2026Jetspec}`
 - **2026** [CineMobile: On-Device Image-to-Video Diffusion for Cinematic Camera Motion Generation](http://arxiv.org/abs/2607.03803) — Xuyao Huang et al. · arXiv:2607.03803 `{Huang2026Cinemobile}`
@@ -4405,6 +4481,7 @@
 - **2026** [Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes](http://arxiv.org/abs/2607.13188) — Minh-Quan Le et al. · arXiv:2607.13188 `{Le2026Concurrent}`
 - **2026** [$δ$-mem: Efficient Online Memory for Large Language Models](http://arxiv.org/abs/2605.12357) — Jingdi Lei et al. · arXiv:2605.12357 `{Lei2026Mem}`
 - **2026** [DeepLoop: Depth Scaling for Looped Transformers](http://arxiv.org/abs/2607.13491) — Shuzhen Li et al. · arXiv:2607.13491 `{Li2026Deeploop}`
+- **2026** [DyLoMo-DiT: Dynamic Looped Mixture-of-Experts Diffusion Transformers](http://arxiv.org/abs/2611.30844) — Lernie Li et al. · arXiv:2611.30844 `{Li2026Dylomo}`
 - **2026** [DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation](http://arxiv.org/abs/2608.06374) — Junfeng Li et al. · arXiv:2608.06374 `{Li2026Dypes}`
 - **2026** [HunyuanOCR-1.5: Making Lightweight OCR VLMs Faster and Better](http://arxiv.org/abs/2607.04884) — Gengluo Li et al. · arXiv:2607.04884 `{Li2026Hunyuanocr}`
 - **2026** [iFAN: Inference-Aware Learning for Plain Mask Transformers](http://arxiv.org/abs/2608.03216) — Fang Li et al. · arXiv:2608.03216 `{Li2026Ifan}`
@@ -4413,6 +4490,8 @@
 - **2026** [Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification](http://arxiv.org/abs/2607.24027) — Haopeng Li et al. · arXiv:2607.24027 `{Li2026Sol}`
 - **2026** [Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers](http://arxiv.org/abs/2607.19139) — Maohua Li et al. · arXiv:2607.19139 `{Li2026Text}`
 - **2026** [VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding](http://arxiv.org/abs/2607.14935) — Xinhao Li et al. · arXiv:2607.14935 `{Li2026Videochat3}`
+- **2026** [WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming](http://arxiv.org/abs/2611.25476) — Bo Li et al. · arXiv:2611.25476 `{Li2026Weightcode}`
+- **2026** [World Models as Native Latent Action Models](http://arxiv.org/abs/2611.30898) — Qinyue Li et al. · arXiv:2611.30898 `{Li2026World}`
 - **2026** [AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling](http://arxiv.org/abs/2608.02602) — Jiajun Liang et al. · arXiv:2608.02602 `{Liang2026Aurora}`
 - **2026** [Avatar V: Scaling Video-Reference Avatar Video Generation](http://arxiv.org/abs/2606.13872) — Benjamin Liang et al. · arXiv:2606.13872 `{Liang2026Avatar}`
 - **2026** [The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning](http://arxiv.org/abs/2606.29526) — Jing Liang et al. · arXiv:2606.29526 `{Liang2026Mirage}`
@@ -4440,6 +4519,7 @@
 - **2026** [TriAttention: Efficient Long Reasoning with Trigonometric KV Compression](http://arxiv.org/abs/2604.04921) — Weian Mao et al. · arXiv:2604.04921 `{Mao2026Triattention}`
 - **2026** [UniMate: One Unified Model to Animate Diverse Skeletons](http://arxiv.org/abs/2609.05415) — Linzhan Mou et al. · arXiv:2609.05415 `{Mou2026Unimate}`
 - **2026** [Cross-Space Distillation: Teaching One-Step Students with Modern Diffusion Teachers](http://arxiv.org/abs/2606.32020) — Anh Nguyen et al. · arXiv:2606.32020 `{Nguyen2026Cross}`
+- **2026** [MemOnce: A Scalable Memory Architecture for Large Language Models](http://arxiv.org/abs/2611.27973) — Chang Nie et al. · arXiv:2611.27973 `{Nie2026Memonce}`
 - **2026** [Cosmos 3: Omnimodal World Models for Physical AI](http://arxiv.org/abs/2606.02800) — NVIDIA et al. · arXiv:2606.02800 `{NVIDIA2026Cosmos}`
 - **2026** [Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](http://arxiv.org/abs/2604.12374) — NVIDIA et al. · arXiv:2604.12374 `{NVIDIA2026Nemotron}`
 - **2026** [Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner's Expertise](http://arxiv.org/abs/2609.07139) — Mika Okamoto et al. · arXiv:2609.07139 `{Okamoto2026Encoded}`
@@ -4469,6 +4549,7 @@
 - **2026** [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](http://arxiv.org/abs/2607.07740) — Haozhan Tang et al. · arXiv:2607.07740 `{Tang2026Jet}`
 - **2026** [AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report](http://arxiv.org/abs/2607.18367) — AlayaWorld Team et al. · arXiv:2607.18367 `{Team2026Alayaworlda}`
 - **2026** [Attention Residuals](http://arxiv.org/abs/2603.15031) — Kimi Team et al. · arXiv:2603.15031 `{Team2026Attention}`
+- **2026** [Beam Model Technical Report](http://arxiv.org/abs/2611.26358) — Reflection Team et al. · arXiv:2611.26358 `{Team2026Beam}`
 - **2026** [Clover-35B-A3B-Preview Technical Report](http://arxiv.org/abs/2611.24636) — DiffuSpace Technical Team et al. · arXiv:2611.24636 `{Team2026Clover}`
 - **2026** [DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation](http://arxiv.org/abs/2608.13489) — DreamX Team et al. · arXiv:2608.13489 `{Team2026Dreamx}`
 - **2026** [GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch](http://arxiv.org/abs/2607.13960) — GigaWorld Team et al. · arXiv:2607.13960 `{Team2026Gigaworlda}`
@@ -4542,6 +4623,8 @@
 - **2026** [RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation](http://arxiv.org/abs/2607.06558) — Haoyu Zhao et al. · arXiv:2607.06558 `{Zhao2026Rynnworld}`
 - **2026** [RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation](http://arxiv.org/abs/2607.06559) — Haoyu Zhao et al. · arXiv:2607.06559 `{Zhao2026Rynnworlda}`
 - **2026** [SimWAM: A Simple World Action Model for End-to-End Autonomous Driving](http://arxiv.org/abs/2608.07468) — Zongchuang Zhao et al. · arXiv:2608.07468 `{Zhao2026Simwam}`
+- **2026** [Unlocking the Power of Loops in Pretrained LLMs with Loop Residuals](http://arxiv.org/abs/2611.31094) — Xuanlei Zhao et al. · arXiv:2611.31094 `{Zhao2026Unlocking}`
+- **2026** [Model Carving: Training Transformers That Optimize Their Own Topology](http://arxiv.org/abs/2611.27962) — Kaden Zheng et al. · arXiv:2611.27962 `{Zheng2026Model}`
 - **2026** [DanceOPD: On-Policy Generative Field Distillation](http://arxiv.org/abs/2606.27377) — Wei Zhou et al. · arXiv:2606.27377 `{Zhou2026Danceopd}`
 - **2026** [Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps](http://arxiv.org/abs/2605.16928) — Yanke Zhou et al. · arXiv:2605.16928 `{Zhou2026Full}`
 - **2026** [The Impossibility Triangle of Long-Context Modeling](http://arxiv.org/abs/2605.05066) — Yan Zhou et al. · arXiv:2605.05066 `{Zhou2026Impossibility}`
@@ -4551,6 +4634,7 @@
 - **2026** [Memory for Large Language Models](http://arxiv.org/abs/2607.25380) — Sining Zhoubian et al. · arXiv:2607.25380 `{Zhoubian2026Memory}`
 - **2026** [DreamX-Creator: Democratizing Native Audio-Video Generation at 2K Resolution](http://arxiv.org/abs/2608.31106) — Jiashu Zhu et al. · arXiv:2608.31106 `{Zhu2026Dreamx}`
 - **2026** [LLaDA MoE v2: Scaling Mixture-of-Experts Diffusion Language Models](http://arxiv.org/abs/2608.03457) — Fengqi Zhu et al. · arXiv:2608.03457 `{Zhu2026Llada}`
+- **2026** [Mixture-of-Loops Transformer](http://arxiv.org/abs/2611.34923) — Lianghui Zhu et al. · arXiv:2611.34923 `{Zhu2026Mixture}`
 - **2026** [SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer](http://arxiv.org/abs/2605.15178) — Haoyi Zhu et al. · arXiv:2605.15178 `{Zhu2026Sana}`
 - **2026** [The Thinking Leakage in Reinforcement Learning for LLMs](http://arxiv.org/abs/2610.14270) — Wenxuan Zhu et al. · arXiv:2610.14270 `{Zhu2026Thinking}`
 - **2026** [Self Gradient Forcing: Native Long Video Extrapolation](http://arxiv.org/abs/2607.20368) — Junhao Zhuang et al. · arXiv:2607.20368 `{Zhuang2026Self}`
@@ -4971,6 +5055,7 @@
 - **2026** [Wave Forcing: Towards Speed-of-Light Streaming Video Generation](http://arxiv.org/abs/2611.00859) — Yijie Jin et al. · arXiv:2611.00859 `{Jin2026Wave}`
 - **2026** [Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation](http://arxiv.org/abs/2610.05608) — Team Kandinsky et al. · arXiv:2610.05608 `{Kandinsky2026Kandinsky}`
 - **2026** [AsyncOPD: How Stale Can On-Policy Distillation Be?](http://arxiv.org/abs/2606.24143) — Wonjun Kang et al. · arXiv:2606.24143 `{Kang2026Asyncopd}`
+- **2026** [DiLE: Discrimination-Aware Latent-Space Learning for Universal Multimodal Embeddings](http://arxiv.org/abs/2611.25419) — Ben Kang et al. · arXiv:2611.25419 `{Kang2026Dile}`
 - **2026** [Normalized Low-Rank Adaptation](http://arxiv.org/abs/2608.31036) — Jiale Kang et al. · arXiv:2608.31036 `{Kang2026Normalized}`
 - **2026** [Prime Agent: A Self-Improving RLM Harness](http://arxiv.org/abs/2608.23552) — Seth Karten et al. · arXiv:2608.23552 `{Karten2026Prime}`
 - **2026** [What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation](http://arxiv.org/abs/2609.03254) — Daisuke Kikuta et al. · arXiv:2609.03254 `{Kikuta2026What}`
@@ -5055,6 +5140,7 @@
 - **2026** [Maglev: Sliding Recurrent Memory](http://arxiv.org/abs/2608.02870) — Bo Liu et al. · arXiv:2608.02870 `{Liu2026Maglev}`
 - **2026** [ODEWorld: A Continuous Predictive Architecture via Physical-Time Flow](http://arxiv.org/abs/2607.27924) — Dongxiu Liu et al. · arXiv:2607.27924 `{Liu2026Odeworld}`
 - **2026** [From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search](http://arxiv.org/abs/2607.24280) — Junlin Liu et al. · arXiv:2607.24280 `{Liu2026Proprietary}`
+- **2026** [RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution](http://arxiv.org/abs/2611.34675) — Chenzhi Liu et al. · arXiv:2611.34675 `{Liu2026Roboevo}`
 - **2026** [SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness](http://arxiv.org/abs/2609.20519) — Haozhe Liu et al. · arXiv:2609.20519 `{Liu2026Sol}`
 - **2026** [When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents](http://arxiv.org/abs/2608.05219) — Junzhuo Liu et al. · arXiv:2608.05219 `{Liu2026When}`
 - **2026** [When Agents Slow Down: Understanding LLM Agents' Test-Time Strategies via Elo-per-token Analysis](http://arxiv.org/abs/2609.15309) — Kaiyuan Liu et al. · arXiv:2609.15309 `{Liu2026Whena}`
@@ -5078,6 +5164,7 @@
 - **2026** [The Physics of Multi-Turn Long-Horizon Planning: From Pre-training to Post-training via Single- and Multi-Teacher On-Policy Agentic Distillation](http://arxiv.org/abs/2607.24720) — Tianyi Men et al. · arXiv:2607.24720 `{Men2026Physics}`
 - **2026** [Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion](http://arxiv.org/abs/2606.14732) — Matiur Rahman Minar et al. · arXiv:2606.14732 `{Minar2026Steady}`
 - **2026** [Cross-Space Distillation: Teaching One-Step Students with Modern Diffusion Teachers](http://arxiv.org/abs/2606.32020) — Anh Nguyen et al. · arXiv:2606.32020 `{Nguyen2026Cross}`
+- **2026** [MemOnce: A Scalable Memory Architecture for Large Language Models](http://arxiv.org/abs/2611.27973) — Chang Nie et al. · arXiv:2611.27973 `{Nie2026Memonce}`
 - **2026** [Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](http://arxiv.org/abs/2604.12374) — NVIDIA et al. · arXiv:2604.12374 `{NVIDIA2026Nemotron}`
 - **2026** [Large Language Models Generate Harmful Content Using a Distinct, Unified Mechanism](http://arxiv.org/abs/2604.09544) — Hadas Orgad et al. · arXiv:2604.09544 `{Orgad2026Large}`
 - **2026** [HelloWorld: Enabling Socially Interactive Characters in Video World Models](http://arxiv.org/abs/2608.05070) — Liangyang Ouyang et al. · arXiv:2608.05070 `{Ouyang2026Helloworld}`
@@ -5100,6 +5187,7 @@
 - **2026** [SceneMosaic: Efficient and Diverse Simulation-Ready Scene Generation via Hybrid Agentic Layout Evolution](http://arxiv.org/abs/2609.05594) — Xingjian Ran et al. · arXiv:2609.05594 `{Ran2026Scenemosaic}`
 - **2026** [Flash-BoN: Instant Drafts for Inference-Time Scaling in Diffusion Models](http://arxiv.org/abs/2607.04461) — Ruchit Rawal et al. · arXiv:2607.04461 `{Rawal2026Flash}`
 - **2026** [One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation](http://arxiv.org/abs/2608.25936) — Justin Robert et al. · arXiv:2608.25936 `{Robert2026One}`
+- **2026** [PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents](http://arxiv.org/abs/2611.33144) — Feixiang Ruan et al. · arXiv:2611.33144 `{Ruan2026Pyrua}`
 - **2026** [Enoki: Efficient Multi-Level Hallucination Detection](http://arxiv.org/abs/2609.00581) — Elisei Rykov et al. · arXiv:2609.00581 `{Rykov2026Enoki}`
 - **2026** [Efficient Knowledge Distillation for LLMs: Offline Top-K Logits and a Fused Chunked KL Loss](http://arxiv.org/abs/2608.03796) — Bakbergen Ryskulov et al. · arXiv:2608.03796 `{Ryskulov2026Efficient}`
 - **2026** [Unlocking Lossless Speedups in LLMs via Discrete Diffusion](http://arxiv.org/abs/2609.04010) — Subham Sekhar Sahoo et al. · arXiv:2609.04010 `{Sahoo2026Unlocking}`
@@ -5132,13 +5220,16 @@
 - **2026** [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](http://arxiv.org/abs/2607.07740) — Haozhan Tang et al. · arXiv:2607.07740 `{Tang2026Jet}`
 - **2026** [Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning](http://arxiv.org/abs/2607.12395) — Xinyu Tang et al. · arXiv:2607.12395 `{Tang2026Ring}`
 - **2026** [AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report](http://arxiv.org/abs/2607.18367) — AlayaWorld Team et al. · arXiv:2607.18367 `{Team2026Alayaworlda}`
+- **2026** [Beam Model Technical Report](http://arxiv.org/abs/2611.26358) — Reflection Team et al. · arXiv:2611.26358 `{Team2026Beam}`
 - **2026** [DiffusionGemma Technical Report](http://arxiv.org/abs/2608.00146) — DiffusionGemma Team et al. · arXiv:2608.00146 `{Team2026Diffusiongemma}`
 - **2026** [DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation](http://arxiv.org/abs/2608.13489) — DreamX Team et al. · arXiv:2608.13489 `{Team2026Dreamx}`
 - **2026** [GigaWorld-1: A Roadmap to Build World Models for Robot Policy Evaluation](http://arxiv.org/abs/2607.02642) — GigaWorld Team et al. · arXiv:2607.02642 `{Team2026Gigaworld}`
 - **2026** [GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch](http://arxiv.org/abs/2607.13960) — GigaWorld Team et al. · arXiv:2607.13960 `{Team2026Gigaworlda}`
 - **2026** [INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling](http://arxiv.org/abs/2604.07209) — InSpatio Team et al. · arXiv:2604.07209 `{Team2026Inspatio}`
 - **2026** [Kimi K3: Open Frontier Intelligence](http://arxiv.org/abs/2607.24653) — Kimi Team et al. · arXiv:2607.24653 `{Team2026Kimi}`
+- **2026** [KMed-31B Technical Report](http://arxiv.org/abs/2611.28719) — KMed Team et al. · arXiv:2611.28719 `{Team2026Kmed}`
 - **2026** [Kwai Keye-VL-2.0 Technical Report](http://arxiv.org/abs/2606.10651) — Kwai Keye Team et al. · arXiv:2606.10651 `{Team2026Kwai}`
+- **2026** [LingSante MedGuard Technical Report](http://arxiv.org/abs/2611.25509) — LingSante MedGuard Team et al. · arXiv:2611.25509 `{Team2026Lingsante}`
 - **2026** [MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement](http://arxiv.org/abs/2610.11959) — Xiaomi LLM-Core Team et al. · arXiv:2610.11959 `{Team2026Mimo}`
 - **2026** [NeoHorse-1: Towards Recursive Self-Improvement via Agentic Post-Training with Routing Harness](http://arxiv.org/abs/2609.08183) — NeoHorse Team et al. · arXiv:2609.08183 `{Team2026Neohorse}`
 - **2026** [OpenWorldLib: A Unified Codebase and Definition of Advanced World Models](http://arxiv.org/abs/2604.04707) — DataFlow Team et al. · arXiv:2604.04707 `{Team2026Openworldlib}`
@@ -5203,6 +5294,7 @@
 - **2026** [OasisKV: Scaling In-Decode KV Cache Beyond HBM with Lookahead Sparse Prefetching](http://arxiv.org/abs/2608.08097) — Can Xiao et al. · arXiv:2608.08097 `{Xiao2026Oasiskv}`
 - **2026** [Rewirable Circuits in Transformers with Loom Attention](http://arxiv.org/abs/2611.30634) — Da Xiao et al. · arXiv:2611.30634 `{Xiao2026Rewirable}`
 - **2026** [GRNEdit: Efficient General Video Editing from a New Binary-Evidence Perspective in Generative Refinement Networks](http://arxiv.org/abs/2608.16328) — Feng Xie et al. · arXiv:2608.16328 `{Xie2026Grnedit}`
+- **2026** [Improving and Expanding Video Editing Capabilities Without Videos](http://arxiv.org/abs/2611.34941) — Ji Xie et al. · arXiv:2611.34941 `{Xie2026Improving}`
 - **2026** [Trust Region Policy Distillation](http://arxiv.org/abs/2607.04751) — Zhengpeng Xie et al. · arXiv:2607.04751 `{Xie2026Trust}`
 - **2026** [TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM](http://arxiv.org/abs/2607.27205) — Hengyi Xie et al. · arXiv:2607.27205 `{Xie2026Turbovla}`
 - **2026** [VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders](http://arxiv.org/abs/2607.14088) — Zhihao Xie et al. · arXiv:2607.14088 `{Xie2026Videorae}`
@@ -5282,12 +5374,14 @@
 - **2026** [RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation](http://arxiv.org/abs/2607.06558) — Haoyu Zhao et al. · arXiv:2607.06558 `{Zhao2026Rynnworld}`
 - **2026** [SimWAM: A Simple World Action Model for End-to-End Autonomous Driving](http://arxiv.org/abs/2608.07468) — Zongchuang Zhao et al. · arXiv:2608.07468 `{Zhao2026Simwam}`
 - **2026** [AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs](http://arxiv.org/abs/2605.15565) — Haizhong Zheng et al. · arXiv:2605.15565 `{Zheng2026Astraflow}`
+- **2026** [Model Carving: Training Transformers That Optimize Their Own Topology](http://arxiv.org/abs/2611.27962) — Kaden Zheng et al. · arXiv:2611.27962 `{Zheng2026Model}`
 - **2026** [VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression](http://arxiv.org/abs/2607.12756) — Yupeng Zheng et al. · arXiv:2607.12756 `{Zheng2026Visco}`
 - **2026** [AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling](http://arxiv.org/abs/2607.10995) — Yingji Zhong et al. · arXiv:2607.10995 `{Zhong2026Asysplat}`
 - **2026** [EgoSteer: A Full-Stack System Towards Steerable Dexterous Manipulation from Egocentric Videos](http://arxiv.org/abs/2607.09701) — Yifan Zhong et al. · arXiv:2607.09701 `{Zhong2026Egosteer}`
 - **2026** [Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models](http://arxiv.org/abs/2608.25518) — Pengfei Zhou et al. · arXiv:2608.25518 `{Zhou2026Agentic}`
 - **2026** [COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation](http://arxiv.org/abs/2605.31264) — Tianyi Zhou et al. · arXiv:2605.31264 `{Zhou2026Colleague}`
 - **2026** [DanceOPD: On-Policy Generative Field Distillation](http://arxiv.org/abs/2606.27377) — Wei Zhou et al. · arXiv:2606.27377 `{Zhou2026Danceopd}`
+- **2026** [Distilling Visual Agents from Limited Interaction Experience](http://arxiv.org/abs/2611.28618) — Siyu Zhou et al. · arXiv:2611.28618 `{Zhou2026Distilling}`
 - **2026** [Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps](http://arxiv.org/abs/2605.16928) — Yanke Zhou et al. · arXiv:2605.16928 `{Zhou2026Full}`
 - **2026** [OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation](http://arxiv.org/abs/2604.11804) — Donghao Zhou et al. · arXiv:2604.11804 `{Zhou2026Omnishow}`
 - **2026** [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization](http://arxiv.org/abs/2605.17757) — Zhongzhu Zhou et al. · arXiv:2605.17757 `{Zhou2026Oscar}`
@@ -5296,6 +5390,7 @@
 - **2026** [Are We Ready For An Agent-Native Memory System?](http://arxiv.org/abs/2606.24775) — Wei Zhou et al. · arXiv:2606.24775 `{Zhou2026We}`
 - **2026** [Memory for Large Language Models](http://arxiv.org/abs/2607.25380) — Sining Zhoubian et al. · arXiv:2607.25380 `{Zhoubian2026Memory}`
 - **2026** [Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning](http://arxiv.org/abs/2606.24428) — Shiding Zhu et al. · arXiv:2606.24428 `{Zhu2026Escaping}`
+- **2026** [Mixture-of-Loops Transformer](http://arxiv.org/abs/2611.34923) — Lianghui Zhu et al. · arXiv:2611.34923 `{Zhu2026Mixture}`
 - **2026** [RSIAgent: Autonomous Exploration for Recursive Self-improvement in New Environments](http://arxiv.org/abs/2609.15364) — Sibo Zhu et al. · arXiv:2609.15364 `{Zhu2026Rsiagent}`
 - **2026** [SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer](http://arxiv.org/abs/2605.15178) — Haoyi Zhu et al. · arXiv:2605.15178 `{Zhu2026Sana}`
 - **2026** [SFT Conflicts, RL Coexists: A Theoretical and Empirical Analysis of Multi-Task Learning for LLMs](http://arxiv.org/abs/2608.03573) — Kejian Zhu et al. · arXiv:2608.03573 `{Zhu2026Sft}`
@@ -5576,6 +5671,7 @@
 - **2026** [MatrAIx: Simulating the World with 8.3 Billion Persona Agents](http://arxiv.org/abs/2608.04205) — Xiaomin Li et al. · arXiv:2608.04205 `{Li2026Matraix}`
 - **2026** [OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers](http://arxiv.org/abs/2607.04033) — Siyuan Li et al. · arXiv:2607.04033 `{Li2026Omniopt}`
 - **2026** [Metacognition in LLMs: Foundations, Progress, and Opportunities](http://arxiv.org/abs/2607.11881) — Gabrielle Kaili-May Liu et al. · arXiv:2607.11881 `{Liu2026Metacognition}`
+- **2026** [Qwen-Image-HD: Autoregressive Diffusion for High Definition Image Generation](http://arxiv.org/abs/2611.32736) — Zihao Liu et al. · arXiv:2611.32736 `{Liu2026Qwen}`
 - **2026** [Agent Safety Should Be a Runtime Contract](http://arxiv.org/abs/2608.11274) — Albus W. Ng et al. · arXiv:2608.11274 `{Ng2026Agent}`
 - **2026** [Code as Agent Harness](http://arxiv.org/abs/2605.18747) — Xuying Ning et al. · arXiv:2605.18747 `{Ning2026Code}`
 - **2026** [Self-Improvements in Modern Agentic Systems: A Survey](http://arxiv.org/abs/2607.13104) — Zhe Ren et al. · arXiv:2607.13104 `{Ren2026Self}`
@@ -5768,6 +5864,7 @@
 - **2026** [OpenBioRQ: Unsolved Biomedical Research Questions for Agents](http://arxiv.org/abs/2606.21959) — Minbyul Jeong et al. · arXiv:2606.21959 `{Jeong2026Openbiorq}`
 - **2026** [Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents](http://arxiv.org/abs/2606.06036) — Shuo Ji et al. · arXiv:2606.06036 `{Ji2026Memory}`
 - **2026** [Demystifying Agent Skills: Why They Work-Until They Don't](http://arxiv.org/abs/2608.14036) — Zhiyuan Jiang et al. · arXiv:2608.14036 `{Jiang2026Demystifying}`
+- **2026** [DiLE: Discrimination-Aware Latent-Space Learning for Universal Multimodal Embeddings](http://arxiv.org/abs/2611.25419) — Ben Kang et al. · arXiv:2611.25419 `{Kang2026Dile}`
 - **2026** [Quantifying and Expanding the Theoretical Capacity of Late-Interaction Retrieval Models](http://arxiv.org/abs/2607.05803) — Julian Killingback et al. · arXiv:2607.05803 `{Killingback2026Quantifying}`
 - **2026** [CoinRAG: Contextualized Information Nugget KV Cache Reuse for Long-Context RAG](http://arxiv.org/abs/2608.07458) — Gyuwan Kim et al. · arXiv:2608.07458 `{Kim2026Coinrag}`
 - **2026** [Leveraging External Knowledge for Historical Document Restoration via Retrieval-Augmented Large Language Models](http://arxiv.org/abs/2607.21936) — Gabeen Kim et al. · arXiv:2607.21936 `{Kim2026Leveraging}`
@@ -5819,6 +5916,7 @@
 - **2026** [When Classic Cache Policies Fail: Learning-Augmented Replacement for Semantic Retrieval Buffers](http://arxiv.org/abs/2607.00394) — Yushi Sun et al. · arXiv:2607.00394 `{Sun2026Whena}`
 - **2026** [SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries](http://arxiv.org/abs/2608.05604) — Xingyu Tan et al. · arXiv:2608.05604 `{Tan2026Skillzip}`
 - **2026** [Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE](http://arxiv.org/abs/2607.07740) — Haozhan Tang et al. · arXiv:2607.07740 `{Tang2026Jet}`
+- **2026** [LingSante MedGuard Technical Report](http://arxiv.org/abs/2611.25509) — LingSante MedGuard Team et al. · arXiv:2611.25509 `{Team2026Lingsante}`
 - **2026** [BM25 Wins at Scale: A Scaling Study of Retrieval-Augmented Generation Paradigms](http://arxiv.org/abs/2607.26497) — Pengyu Wang et al. · arXiv:2607.26497 `{Wang2026Bm25}`
 - **2026** [Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory](http://arxiv.org/abs/2604.08995) — Zile Wang et al. · arXiv:2604.08995 `{Wang2026Matrix}`
 - **2026** [MemSFT: Mitigating Alignment Tax with an External Parametric Memory](http://arxiv.org/abs/2607.25614) — Jiarui Wang et al. · arXiv:2607.25614 `{Wang2026Memsft}`
@@ -5994,6 +6092,7 @@
 - **2026** [DianShi-RxnDB: A Large-Scale, Fine-Grained Organic Reaction Data Platform Built via a Fully Automated Pipeline for Researchers and AI Agents](http://arxiv.org/abs/2609.06703) — Yubin Wang et al. · arXiv:2609.06703 `{Wang2026Dianshi}`
 - **2026** [InfiniSplat: Implicit Gaussian Decoding for Large-Baseline Monocular View Synthesis](http://arxiv.org/abs/2608.02437) — Jiawei Wang et al. · arXiv:2608.02437 `{Wang2026Infinisplat}`
 - **2026** [LoopArena: Benchmarking Models as Runtime Controllers for Loop Engineering](http://arxiv.org/abs/2608.28281) — Yi Wang et al. · arXiv:2608.28281 `{Wang2026Looparena}`
+- **2026** [SpecEngineeringBench: Evaluating Coding Agents as Autonomous Specification Engineers](http://arxiv.org/abs/2611.32973) — Xingjian Wang et al. · arXiv:2611.32973 `{Wang2026Specengineeringbench}`
 - **2026** [360CityArena: A Realistic Virtual Urban Navigation Benchmark for Embodied Agents](http://arxiv.org/abs/2608.08814) — Kenta Watanabe et al. · arXiv:2608.08814 `{Watanabe2026360cityarena}`
 - **2026** [PhyMRI-SR: Toward Physics-Aware MRI Image Super-Resolution](http://arxiv.org/abs/2607.06238) — Lihua Wei et al. · arXiv:2607.06238 `{Wei2026Phymri}`
 - **2026** [Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation](http://arxiv.org/abs/2609.11115) — Koutian Wu et al. · arXiv:2609.11115 `{Wu2026Benchmark}`

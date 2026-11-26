@@ -8,6 +8,7 @@
   - [OpenClaw-RL: Train Any Agent Simply by Talking](/papers/2026-openclaw-rl.md)
   - [Scaling Latent Reasoning via Looped Language Models (Ouro)](/papers/2026-ouro-looped-lm.md)
 - **🔬 Research Notes**
+  - [HF Daily Papers 11/25 回填 + 11/26（当日首跑；奖励标签错 74% 藏在「从未解出」里、循环 Transformer 同日三篇）](/research-notes/2026-11-26-hf-daily-papers-nov25-26.md)
   - [HF Daily Papers：09/15 回填 ~ 11/25（十周空缺补跑）](/research-notes/2026-11-25-hf-daily-papers-sep15-nov25.md)
   - [HF Daily Papers · 11/25 当日第二跑（11-23 ~ 11-25 三个桶）](/research-notes/2026-11-25-hf-daily-papers-nov25b.md)
   - [嵌入式第三方评估落地了：METR 在 Anthropic 的 11 周 · OpenAI 的四家 embedded assessor · METR 对 OpenAI 监控系统的红队](/research-notes/2026-11-25-blog-embedded-assessments.md)
