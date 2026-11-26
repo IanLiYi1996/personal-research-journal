@@ -179,6 +179,11 @@ CATEGORIES = [
                          # 08-21 "AWS Partner Central agents MCP Server" item keeps AI/ML on
                          # its earlier title hit. Measured 09-05: exactly 1 flip, 0 collateral.
                          "aws mcp server",
+                         # AWS Device Farm (11-26): three items in a week landed in three
+                         # classes (Management 11-21 / 其他 11-24 / Compute 11-26), each decided
+                         # by whatever the description name-dropped. AWS files it under
+                         # Developer Tools (mobile/web app testing).
+                         "device farm",
                          # "Amazon Corretto 27 is now generally available" (09-17) had no
                          # keyword at all and fell to 其他; the three Corretto items on
                          # record sat in two categories (Management 07-23, 其他 08-19/09-17).

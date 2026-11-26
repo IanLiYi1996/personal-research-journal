@@ -505,3 +505,9 @@ observed_utc	pub_utc	delay_lower_h	delay_upper_h	link
 2026-11-25 09:03	2026-11-23 19:30	13.6	37.6	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9
 2026-11-25 09:03	2026-11-23 20:00	13.1	37.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/
 2026-11-25 09:03	2026-11-24 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-500-databases-per-instance
+2026-11-26 09:03	2026-11-23 17:00	40.1	64.1	https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-nccl-profiler/
+2026-11-26 09:03	2026-11-25 06:00	3.1	27.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iam/
+2026-11-26 09:03	2026-11-25 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/transcribe-turbo-preview/
+2026-11-26 09:03	2026-11-25 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-dedicated-ipv6-ranges/
+2026-11-26 09:03	2026-11-25 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-quota-usage-monitoring/
+2026-11-26 09:03	2026-11-25 08:00	1.1	25.1	https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-virtual-devices/

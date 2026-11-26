@@ -304,3 +304,5 @@ ts_utc	task	phase	detail
 2026-11-26 08:14	reddit	done	FAILED: RSS 404 (rss.reddit.com Not Found) / old.reddit RSS→login redirect / firecrawl unsupported / agentcore browser error; posts=0 no digest
 2026-11-26 08:22	tech-blogs	start	
 2026-11-26 08:31	tech-blogs	done	W48b 22.6h; A=54 (36 real); risk qbit 10/10 17.2h, 0 lost via homepage, RSS omits 2/22; deep dive Anthropic Rust migration
+2026-11-26 09:03	aws	start	baton
+2026-11-26 09:04	aws	done	14 items (8+6B), 2 high, devicefarm pin
