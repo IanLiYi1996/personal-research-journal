@@ -302,3 +302,5 @@ ts_utc	task	phase	detail
 2026-11-26 08:05	hf	done	nov25-26: window 193, A=43 B=159, 41 ingested, 2 deep dives
 2026-11-26 08:13	reddit	start	
 2026-11-26 08:14	reddit	done	FAILED: RSS 404 (rss.reddit.com Not Found) / old.reddit RSS→login redirect / firecrawl unsupported / agentcore browser error; posts=0 no digest
+2026-11-26 08:22	tech-blogs	start	
+2026-11-26 08:31	tech-blogs	done	W48b 22.6h; A=54 (36 real); risk qbit 10/10 17.2h, 0 lost via homepage, RSS omits 2/22; deep dive Anthropic Rust migration
