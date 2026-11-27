@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-11-26-hf-daily-papers-nov26b" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-11-27-hf-daily-papers-nov26-27" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/physical-ai/2026-10-27-physical-ai-guide" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-11-27 | Note | [HF Daily Papers：11/26 隔夜回填 + 11/27（nov26-27）](/research-notes/2026-11-27-hf-daily-papers-nov26-27) |
 | 2026-11-26 | Note | [把生产系统当验证器：Anthropic 用 Claude 把 Messages API 迁到 Rust](/research-notes/2026-11-26-blog-anthropic-rust-migration-verifier) |
 | 2026-11-26 | Note | [HF Daily Papers 当日第二跑：11/26（nov26b）](/research-notes/2026-11-26-hf-daily-papers-nov26b) |
 | 2026-11-26 | Note | [HF Daily Papers 11/25 回填 + 11/26（当日首跑；奖励标签错 74% 藏在「从未解出」里、循环 Transformer 同日三篇）](/research-notes/2026-11-26-hf-daily-papers-nov25-26) |
 | 2026-11-25 | Note | [嵌入式第三方评估落地了：METR 在 Anthropic 的 11 周 · OpenAI 的四家 embedded assessor · METR 对 OpenAI 监控系统的红队](/research-notes/2026-11-25-blog-embedded-assessments) |
-| 2026-11-25 | Note | [HF Daily Papers：09/15 回填 ~ 11/25（十周空缺补跑）](/research-notes/2026-11-25-hf-daily-papers-sep15-nov25) |
 <!-- AUTO:RECENT:END -->

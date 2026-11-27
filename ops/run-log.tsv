@@ -308,3 +308,5 @@ ts_utc	task	phase	detail
 2026-11-26 09:04	aws	done	14 items (8+6B), 2 high, devicefarm pin
 2026-11-26 17:41	hf	start	pm run
 2026-11-26 17:46	hf	done	nov26b pm: A=20 (pred [1,18] falsified, curation not batch) B=117 B-A=98; 31237 moved bucket not removed; 20 ingested; 2 deep dives ELITE/video-blind
+2026-11-27 07:57	hf	start	am run 11-27
+2026-11-27 08:02	hf	done	nov26-27: 11-26 55->60, 11-27 16, A=21 B=72, 21 ingested, preds held, verify 5/5 pass
