@@ -20,7 +20,7 @@
 <p>Navigating the frontiers of AI — one paper at a time.</p>
 <div class="arc-hero-buttons">
 <!-- AUTO:HERO_BUTTONS:START -->
-<a href="#/research-notes/2026-11-27-hf-daily-papers-nov26-27" class="arc-btn-primary">Latest Digest</a>
+<a href="#/research-notes/2026-11-27-hf-daily-papers-nov27b" class="arc-btn-primary">Latest Digest</a>
 <a href="#/topics/physical-ai/2026-10-27-physical-ai-guide" class="arc-btn-secondary">Explore Topics</a>
 <!-- AUTO:HERO_BUTTONS:END -->
 </div>
@@ -83,7 +83,7 @@ Datasets, tools, frameworks, and reference materials.
 |------|------|-------|
 | 2026-11-27 | Note | [「拒绝也要有边界」：AIs Should Never Refuse Destructively（LessWrong，2026-11-26）](/research-notes/2026-11-27-blog-destructive-refusals) |
 | 2026-11-27 | Note | [HF Daily Papers：11/26 隔夜回填 + 11/27（nov26-27）](/research-notes/2026-11-27-hf-daily-papers-nov26-27) |
+| 2026-11-27 | Note | [HF Daily Papers 当日第二跑：11/27（nov27b）](/research-notes/2026-11-27-hf-daily-papers-nov27b) |
 | 2026-11-26 | Note | [把生产系统当验证器：Anthropic 用 Claude 把 Messages API 迁到 Rust](/research-notes/2026-11-26-blog-anthropic-rust-migration-verifier) |
 | 2026-11-26 | Note | [HF Daily Papers 当日第二跑：11/26（nov26b）](/research-notes/2026-11-26-hf-daily-papers-nov26b) |
-| 2026-11-26 | Note | [HF Daily Papers 11/25 回填 + 11/26（当日首跑；奖励标签错 74% 藏在「从未解出」里、循环 Transformer 同日三篇）](/research-notes/2026-11-26-hf-daily-papers-nov25-26) |
 <!-- AUTO:RECENT:END -->

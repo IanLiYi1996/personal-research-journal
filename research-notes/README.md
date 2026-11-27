@@ -125,3 +125,4 @@ Naming: `YYYY-MM-DD-title.md`
 - [HF Daily Papers 当日第二跑：11/26（nov26b）](/research-notes/2026-11-26-hf-daily-papers-nov26b.md)
 - [「拒绝也要有边界」：AIs Should Never Refuse Destructively（LessWrong，2026-11-26）](/research-notes/2026-11-27-blog-destructive-refusals.md)
 - [HF Daily Papers：11/26 隔夜回填 + 11/27（nov26-27）](/research-notes/2026-11-27-hf-daily-papers-nov26-27.md)
+- [HF Daily Papers 当日第二跑：11/27（nov27b）](/research-notes/2026-11-27-hf-daily-papers-nov27b.md)
