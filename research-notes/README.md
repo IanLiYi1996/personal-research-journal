@@ -123,4 +123,5 @@ Naming: `YYYY-MM-DD-title.md`
 - [把生产系统当验证器：Anthropic 用 Claude 把 Messages API 迁到 Rust](/research-notes/2026-11-26-blog-anthropic-rust-migration-verifier.md)
 - [HF Daily Papers 11/25 回填 + 11/26（当日首跑；奖励标签错 74% 藏在「从未解出」里、循环 Transformer 同日三篇）](/research-notes/2026-11-26-hf-daily-papers-nov25-26.md)
 - [HF Daily Papers 当日第二跑：11/26（nov26b）](/research-notes/2026-11-26-hf-daily-papers-nov26b.md)
+- [「拒绝也要有边界」：AIs Should Never Refuse Destructively（LessWrong，2026-11-26）](/research-notes/2026-11-27-blog-destructive-refusals.md)
 - [HF Daily Papers：11/26 隔夜回填 + 11/27（nov26-27）](/research-notes/2026-11-27-hf-daily-papers-nov26-27.md)
