@@ -318,3 +318,5 @@ ts_utc	task	phase	detail
 2026-11-27 09:04	aws	done	1+1B, thanksgiving 11-26=1 day+1, span 159.6
 2026-11-27 17:41	hf	start	pm 2nd run
 2026-11-27 17:45	hf	done	nov27b: 11-27 16->20, A=4 B=102, 16 ingested, verify 5/5 pass
+2026-11-28 07:57	hf	start	am
+2026-11-28 08:02	hf	done	nov27-28: window 214, A=2 B=88, 18 cited/ingested, 2 deep dives (VideoJSON, hallucination memorization), verify 5/5 ok
