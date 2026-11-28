@@ -1302,6 +1302,7 @@ curl -s -G "https://aws.amazon.com/api/dirs/items/search" \
 - 🚨🚨 **2026-11-25：RSS 路径整体失效。** 十周空缺后补跑，12 个子版 `top/.rss` 先全部 **HTTP 404**、随后 **429**，`curl` 同样 404/429，`.json` 与 HTML 页 403；冷却约 10 分钟后单子版重试仍 429 ⟹ **当次未产出 digest**（心跳记为 `done` 带 `FAILED`，没有编造内容）。⚠️ 未查明是上游改了 RSS 端点、还是本 IP 被封；**下次先用单个子版 `curl` 探一次（不要直接跑 12 个子版的循环，连续重试只会延长限流）**，若仍 404 就需要换数据源（OAuth 仍被卡）。
   - 🚨 **2026-11-26 第二天复现，且查清是上游变化而非限流**：单子版 `curl` 探 `www.reddit.com/r/statistics/top/.rss?t=week` ⟹ **404，body 是 `rss.reddit.com` 返回的 Atom `<title>Not Found</title>`**（`/new/.rss` 同样 404）；⭐ **`old.reddit.com/.../top/.rss` ⟹ 302 到 `/login/?reason=lor2`＝RSS 现在要求登录**；`rss.reddit.com/r/...` 与 `.json` 403；其余变体 429（是我自己连探造成的）。备用通道：**Firecrawl 明确回「reddit 不支持」**、**AgentCore 云浏览器 `start_browser_session` 报错**。⟹ 当天未产出 digest，心跳 `done` 带 `FAILED`。⚠️ **不要再每天把 12 个子版的循环跑一遍**；恢复路径只剩 ①拿到 OAuth 凭证 ②登录态的浏览器会话（需要用户提供）。在此之前 reddit 任务每天只做一次单子版探测、失败即退出。
   - ⚠️ **2026-11-27 第三天同形**（单子版探测：www 404 Atom Not Found / old.reddit 302 `/login/?reason=lor2`）⟹ 未产出、未抓 12 子版。⚠️ **cron prompt 仍写「上一份 09-15 W38、空缺十周、rd18」已过时，应改成「先探一次、失败即退出」**；需要用户提供 OAuth 凭证或登录态会话才能恢复。
+  - ⚠️ **2026-11-28 第四天**：www `top/.rss` 仍 404（Atom Not Found）；⚠️ **old.reddit 从 302 → login 变成直接 403** ⟹ 未产出、未抓 12 子版。
 - **若日后拿到 OAuth 凭证**：凭证存 `~/.reddit/.env`（模板 `~/.reddit/.env.example`），把脚本切回 OAuth 路径即可恢复 score/评论数与跨子版数字排序。
 
 ### Workflow
