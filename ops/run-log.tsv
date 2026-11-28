@@ -322,3 +322,5 @@ ts_utc	task	phase	detail
 2026-11-28 08:02	hf	done	nov27-28: window 214, A=2 B=88, 18 cited/ingested, 2 deep dives (VideoJSON, hallucination memorization), verify 5/5 ok
 2026-11-28 08:13	reddit	start	
 2026-11-28 08:13	reddit	done	FAILED: RSS 404 (www) / old.reddit 403; no digest; posts=0 4th day
+2026-11-28 08:22	tech-blogs	start	
+2026-11-28 08:27	tech-blogs	done	W48f: merged 104, new 74 = 42 Cohere relastmod + 11 undated + 1 residual + 20 real; qbit 10/10 depth 26.2h >24h, 0 lost; EleutherAI 404 x4; deep-dive METR attribution; dir tb20
