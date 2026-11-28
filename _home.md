@@ -81,9 +81,9 @@ Datasets, tools, frameworks, and reference materials.
 <!-- AUTO:RECENT:START -->
 | Date | Type | Title |
 |------|------|-------|
+| 2026-11-28 | Note | [「Anthropic 的加速有多少来自 AI」：METR 那份报告的归因被拆开，以及谁有权看全本](/research-notes/2026-11-28-blog-metr-acceleration-attribution) |
 | 2026-11-28 | Note | [HF Daily Papers：11/27 隔夜回填 + 11/28（nov27-28）](/research-notes/2026-11-28-hf-daily-papers-nov27-28) |
 | 2026-11-27 | Note | [「拒绝也要有边界」：AIs Should Never Refuse Destructively（LessWrong，2026-11-26）](/research-notes/2026-11-27-blog-destructive-refusals) |
 | 2026-11-27 | Note | [HF Daily Papers：11/26 隔夜回填 + 11/27（nov26-27）](/research-notes/2026-11-27-hf-daily-papers-nov26-27) |
 | 2026-11-27 | Note | [HF Daily Papers 当日第二跑：11/27（nov27b）](/research-notes/2026-11-27-hf-daily-papers-nov27b) |
-| 2026-11-26 | Note | [把生产系统当验证器：Anthropic 用 Claude 把 Messages API 迁到 Rust](/research-notes/2026-11-26-blog-anthropic-rust-migration-verifier) |
 <!-- AUTO:RECENT:END -->
